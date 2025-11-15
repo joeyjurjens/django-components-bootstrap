@@ -1,0 +1,71 @@
+from django.template import Context
+from django_components import Component, SlotInput, register, types
+
+from django_components_bootstrap.templatetags.bootstrap5 import comp_registry
+
+
+@register("Breadcrumb", registry=comp_registry)
+class Breadcrumb(Component):
+    class Kwargs:
+        label: str = "breadcrumb"
+        as_: str = "nav"
+        attrs: dict | None = None
+
+    class Slots:
+        default: SlotInput
+
+    def get_template_data(self, args, kwargs: Kwargs, slots: Slots, context: Context):
+        return {
+            "tag": kwargs.as_,
+            "label": kwargs.label,
+            "attrs": kwargs.attrs or {},
+        }
+
+    template: types.django_html = """
+        <{{ tag }} {% html_attrs attrs defaults:aria-label=label %}>
+            <ol class="breadcrumb">
+                {% slot "default" / %}
+            </ol>
+        </{{ tag }}>
+    """
+
+
+@register("BreadcrumbItem", registry=comp_registry)
+class BreadcrumbItem(Component):
+    class Kwargs:
+        active: bool = False
+        href: str | None = None
+        as_: str = "li"
+        attrs: dict | None = None
+
+    class Slots:
+        default: SlotInput
+
+    def get_template_data(self, args, kwargs: Kwargs, slots: Slots, context: Context):
+        css_classes = ["breadcrumb-item"]
+        if kwargs.active:
+            css_classes.append("active")
+
+        html_attrs = {}
+        if kwargs.active:
+            html_attrs["aria-current"] = "page"
+
+        final_attrs = {**html_attrs, **(kwargs.attrs or {})}
+
+        return {
+            "tag": kwargs.as_,
+            "css_class": " ".join(css_classes),
+            "active": kwargs.active,
+            "href": kwargs.href,
+            "attrs": final_attrs,
+        }
+
+    template: types.django_html = """
+        <{{ tag }} {% html_attrs attrs class=css_class %}>
+            {% if not active and href %}
+                <a href="{{ href }}">{% slot "default" / %}</a>
+            {% else %}
+                {% slot "default" / %}
+            {% endif %}
+        </{{ tag }}>
+    """

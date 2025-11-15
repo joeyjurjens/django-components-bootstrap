@@ -1,0 +1,67 @@
+[project]
+name = "django-components-bootstrap"
+version = "0.1.0"
+description = "Bootstrap components for django-components"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "django-components",
+]
+authors = [
+    { name = "Joey Jurjens", email = "joeyjurjens@gmail.com" }
+]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Framework :: Django",
+    "Framework :: Django :: 5.2",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+]
+keywords = ["django", "components", "bootstrap"]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["django_components_bootstrap"]
+
+[project.optional-dependencies]
+dev = [
+    "ruff",
+]
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"
+
+[tool.ruff.lint]
+select = [
+    "E",          # pycodestyle errors
+    "W",          # pycodestyle warnings
+    "F",          # pyflakes
+    "I",          # isort
+    "B",          # flake8-bugbear
+    "C4",         # flake8-comprehensions
+    "UP",         # pyupgrade
+    "DJ",         # flake8-django
+]
+ignore = [
+    "E501",  # line-too-long
+]
+
+[tool.ruff.lint.isort]
+known-first-party = ["django_components_bootstrap"]
+
+[tool.ruff.lint.per-file-ignores]
+"__init__.py" = ["F401"]  # Allow unused imports in __init__.py
+
+[dependency-groups]
+dev = [
+    "pytest>=9.0.1",
+    "pytest-django>=4.11.1",
+    "pytest-cov>=6.0.0",
+    "ruff>=0.14.5",
+]
