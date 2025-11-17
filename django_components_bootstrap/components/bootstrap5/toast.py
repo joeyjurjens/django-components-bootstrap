@@ -2,10 +2,10 @@ from django.template import Context
 from django_components import Component, SlotInput, register, types
 
 from django_components_bootstrap.components.bootstrap5.types import BgColor, Placement
-from django_components_bootstrap.templatetags.bootstrap5 import comp_registry
+from django_components_bootstrap.templatetags.bootstrap5 import bs5_registry
 
 
-@register("ToastContainer", registry=comp_registry)
+@register("ToastContainer", registry=bs5_registry)
 class ToastContainer(Component):
     class Kwargs:
         position: Placement | None = None
@@ -42,7 +42,7 @@ class ToastContainer(Component):
     """
 
 
-@register("Toast", registry=comp_registry)
+@register("Toast", registry=bs5_registry)
 class Toast(Component):
     class Kwargs:
         show: bool = False
@@ -95,7 +95,7 @@ class Toast(Component):
     """
 
 
-@register("ToastHeader", registry=comp_registry)
+@register("ToastHeader", registry=bs5_registry)
 class ToastHeader(Component):
     class Kwargs:
         close_button: bool = True
@@ -126,7 +126,7 @@ class ToastHeader(Component):
     """
 
 
-@register("ToastBody", registry=comp_registry)
+@register("ToastBody", registry=bs5_registry)
 class ToastBody(Component):
     class Kwargs:
         attrs: dict | None = None

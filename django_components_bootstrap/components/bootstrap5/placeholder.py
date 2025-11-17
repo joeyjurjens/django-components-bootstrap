@@ -2,10 +2,10 @@ from django.template import Context
 from django_components import Component, register, types
 
 from django_components_bootstrap.components.bootstrap5.types import BgColor, Size, Variant
-from django_components_bootstrap.templatetags.bootstrap5 import comp_registry
+from django_components_bootstrap.templatetags.bootstrap5 import bs5_registry
 
 
-@register("Placeholder", registry=comp_registry)
+@register("Placeholder", registry=bs5_registry)
 class Placeholder(Component):
     class Kwargs:
         as_: str = "span"
@@ -46,7 +46,7 @@ class Placeholder(Component):
     """
 
 
-@register("PlaceholderButton", registry=comp_registry)
+@register("PlaceholderButton", registry=bs5_registry)
 class PlaceholderButton(Component):
     class Kwargs:
         variant: Variant = "primary"

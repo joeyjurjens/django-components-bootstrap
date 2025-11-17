@@ -8,10 +8,10 @@ from django_components_bootstrap.components.bootstrap5.types import (
     HeadingLevel,
     OffcanvasPlacement,
 )
-from django_components_bootstrap.templatetags.bootstrap5 import comp_registry
+from django_components_bootstrap.templatetags.bootstrap5 import bs5_registry
 
 
-@register("Offcanvas", registry=comp_registry)
+@register("Offcanvas", registry=bs5_registry)
 class Offcanvas(Component):
     class Kwargs:
         placement: OffcanvasPlacement = "start"
@@ -54,7 +54,7 @@ class Offcanvas(Component):
     """
 
 
-@register("OffcanvasHeader", registry=comp_registry)
+@register("OffcanvasHeader", registry=bs5_registry)
 class OffcanvasHeader(Component):
     class Kwargs:
         close_button: bool = True
@@ -85,7 +85,7 @@ class OffcanvasHeader(Component):
     """
 
 
-@register("OffcanvasBody", registry=comp_registry)
+@register("OffcanvasBody", registry=bs5_registry)
 class OffcanvasBody(Component):
     class Kwargs:
         attrs: dict | None = None
@@ -107,7 +107,7 @@ class OffcanvasBody(Component):
     """
 
 
-@register("OffcanvasTitle", registry=comp_registry)
+@register("OffcanvasTitle", registry=bs5_registry)
 class OffcanvasTitle(Component):
     class Kwargs:
         as_: HeadingLevel = "h5"
@@ -135,7 +135,7 @@ class OffcanvasTitle(Component):
     """
 
 
-@register("OffcanvasToggle", registry=comp_registry)
+@register("OffcanvasToggle", registry=bs5_registry)
 class OffcanvasToggle(Component):
     class Kwargs:
         as_: ButtonTag = "button"

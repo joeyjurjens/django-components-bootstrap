@@ -7,10 +7,10 @@ from django_components_bootstrap.components.bootstrap5.types import (
     ResponsiveBreakpoint,
     Variant,
 )
-from django_components_bootstrap.templatetags.bootstrap5 import comp_registry
+from django_components_bootstrap.templatetags.bootstrap5 import bs5_registry
 
 
-@register("ListGroup", registry=comp_registry)
+@register("ListGroup", registry=bs5_registry)
 class ListGroup(Component):
     class Kwargs:
         as_: ListGroupTag = "ul"
@@ -51,7 +51,7 @@ class ListGroup(Component):
     """
 
 
-@register("ListGroupItem", registry=comp_registry)
+@register("ListGroupItem", registry=bs5_registry)
 class ListGroupItem(Component):
     class Kwargs:
         as_: ListGroupItemTag = "li"

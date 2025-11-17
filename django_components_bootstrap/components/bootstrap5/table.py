@@ -5,10 +5,10 @@ from django_components_bootstrap.components.bootstrap5.types import (
     ResponsiveBreakpoint,
     Variant,
 )
-from django_components_bootstrap.templatetags.bootstrap5 import comp_registry
+from django_components_bootstrap.templatetags.bootstrap5 import bs5_registry
 
 
-@register("Table", registry=comp_registry)
+@register("Table", registry=bs5_registry)
 class Table(Component):
     class Kwargs:
         striped: bool = False

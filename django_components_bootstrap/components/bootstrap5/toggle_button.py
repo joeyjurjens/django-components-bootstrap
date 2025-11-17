@@ -2,10 +2,10 @@ from django.template import Context
 from django_components import Component, SlotInput, register, types
 
 from django_components_bootstrap.components.bootstrap5.types import Size, ToggleButtonType, Variant
-from django_components_bootstrap.templatetags.bootstrap5 import comp_registry
+from django_components_bootstrap.templatetags.bootstrap5 import bs5_registry
 
 
-@register("ToggleButtonGroup", registry=comp_registry)
+@register("ToggleButtonGroup", registry=bs5_registry)
 class ToggleButtonGroup(Component):
     class Kwargs:
         name: str
@@ -38,7 +38,7 @@ class ToggleButtonGroup(Component):
     """
 
 
-@register("ToggleButton", registry=comp_registry)
+@register("ToggleButton", registry=bs5_registry)
 class ToggleButton(Component):
     class Kwargs:
         type: ToggleButtonType = "checkbox"

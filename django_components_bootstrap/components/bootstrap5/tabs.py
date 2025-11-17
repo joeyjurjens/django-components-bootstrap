@@ -6,7 +6,7 @@ from django.utils.text import slugify
 from django_components import Component, SlotInput, register, types
 
 from django_components_bootstrap.components.bootstrap5.types import NOT_PROVIDED, NavVariant
-from django_components_bootstrap.templatetags.bootstrap5 import comp_registry
+from django_components_bootstrap.templatetags.bootstrap5 import bs5_registry
 
 
 class TabContext(NamedTuple):
@@ -15,7 +15,7 @@ class TabContext(NamedTuple):
     enabled: bool
 
 
-@register("TabContainer", registry=comp_registry)
+@register("TabContainer", registry=bs5_registry)
 class TabContainer(Component):
     class Kwargs:
         id: str | None = None
@@ -43,7 +43,7 @@ class TabContainer(Component):
     """
 
 
-@register("TabContent", registry=comp_registry)
+@register("TabContent", registry=bs5_registry)
 class TabContent(Component):
     class Kwargs:
         as_: str = "div"
@@ -67,7 +67,7 @@ class TabContent(Component):
     """
 
 
-@register("TabPane", registry=comp_registry)
+@register("TabPane", registry=bs5_registry)
 class TabPane(Component):
     class Kwargs:
         active: bool = False
@@ -100,7 +100,7 @@ class TabPane(Component):
     """
 
 
-@register("TabsRenderer", registry=comp_registry)
+@register("TabsRenderer", registry=bs5_registry)
 class TabsRenderer(Component):
     class Kwargs:
         tabs_id: str
@@ -149,7 +149,7 @@ class TabsRenderer(Component):
     """
 
 
-@register("Tabs", registry=comp_registry)
+@register("Tabs", registry=bs5_registry)
 class Tabs(Component):
     class Kwargs:
         id: str | None = None
@@ -201,7 +201,7 @@ class Tabs(Component):
         )
 
 
-@register("Tab", registry=comp_registry)
+@register("Tab", registry=bs5_registry)
 class Tab(Component):
     class Kwargs:
         tab_id: str

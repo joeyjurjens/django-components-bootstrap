@@ -7,10 +7,10 @@ from django_components_bootstrap.components.bootstrap5.types import (
     NavTag,
     NavVariant,
 )
-from django_components_bootstrap.templatetags.bootstrap5 import comp_registry
+from django_components_bootstrap.templatetags.bootstrap5 import bs5_registry
 
 
-@register("Nav", registry=comp_registry)
+@register("Nav", registry=bs5_registry)
 class Nav(Component):
     class Kwargs:
         variant: NavVariant | None = None
@@ -58,7 +58,7 @@ class Nav(Component):
     """
 
 
-@register("NavItem", registry=comp_registry)
+@register("NavItem", registry=bs5_registry)
 class NavItem(Component):
     class Kwargs:
         as_: NavItemTag = "li"
@@ -82,7 +82,7 @@ class NavItem(Component):
     """
 
 
-@register("NavLink", registry=comp_registry)
+@register("NavLink", registry=bs5_registry)
 class NavLink(Component):
     class Kwargs:
         as_: AnchorOrButton = "a"

@@ -7,10 +7,10 @@ from django_components_bootstrap.components.bootstrap5.types import (
     CarouselRide,
     ThemeVariant,
 )
-from django_components_bootstrap.templatetags.bootstrap5 import comp_registry
+from django_components_bootstrap.templatetags.bootstrap5 import bs5_registry
 
 
-@register("Carousel", registry=comp_registry)
+@register("Carousel", registry=bs5_registry)
 class Carousel(Component):
     class Kwargs:
         fade: bool = False
@@ -77,7 +77,7 @@ class Carousel(Component):
         )
 
 
-@register("CarouselRenderer", registry=comp_registry)
+@register("CarouselRenderer", registry=bs5_registry)
 class CarouselRenderer(Component):
     class Kwargs:
         carousel_id: str
@@ -153,7 +153,7 @@ class CarouselRenderer(Component):
     """
 
 
-@register("CarouselItem", registry=comp_registry)
+@register("CarouselItem", registry=bs5_registry)
 class CarouselItem(Component):
     class Kwargs:
         active: bool = False
@@ -196,7 +196,7 @@ class CarouselItem(Component):
         return None
 
 
-@register("CarouselCaption", registry=comp_registry)
+@register("CarouselCaption", registry=bs5_registry)
 class CarouselCaption(Component):
     class Kwargs:
         attrs: dict | None = None
@@ -218,7 +218,7 @@ class CarouselCaption(Component):
     """
 
 
-@register("CarouselIndicator", registry=comp_registry)
+@register("CarouselIndicator", registry=bs5_registry)
 class CarouselIndicator(Component):
     class Kwargs:
         slide_to: int = 0

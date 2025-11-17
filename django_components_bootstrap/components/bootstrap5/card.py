@@ -6,10 +6,10 @@ from django_components_bootstrap.components.bootstrap5.types import (
     CardImgVariant,
     HeadingLevel,
 )
-from django_components_bootstrap.templatetags.bootstrap5 import comp_registry
+from django_components_bootstrap.templatetags.bootstrap5 import bs5_registry
 
 
-@register("Card", registry=comp_registry)
+@register("Card", registry=bs5_registry)
 class Card(Component):
     class Kwargs:
         as_: str = "div"
@@ -59,7 +59,7 @@ class Card(Component):
     """
 
 
-@register("CardHeader", registry=comp_registry)
+@register("CardHeader", registry=bs5_registry)
 class CardHeader(Component):
     class Kwargs:
         attrs: dict | None = None
@@ -81,7 +81,7 @@ class CardHeader(Component):
     """
 
 
-@register("CardBody", registry=comp_registry)
+@register("CardBody", registry=bs5_registry)
 class CardBody(Component):
     class Kwargs:
         attrs: dict | None = None
@@ -103,7 +103,7 @@ class CardBody(Component):
     """
 
 
-@register("CardFooter", registry=comp_registry)
+@register("CardFooter", registry=bs5_registry)
 class CardFooter(Component):
     class Kwargs:
         attrs: dict | None = None
@@ -125,7 +125,7 @@ class CardFooter(Component):
     """
 
 
-@register("CardTitle", registry=comp_registry)
+@register("CardTitle", registry=bs5_registry)
 class CardTitle(Component):
     class Kwargs:
         as_: HeadingLevel = "h5"
@@ -149,7 +149,7 @@ class CardTitle(Component):
     """
 
 
-@register("CardSubtitle", registry=comp_registry)
+@register("CardSubtitle", registry=bs5_registry)
 class CardSubtitle(Component):
     class Kwargs:
         as_: HeadingLevel = "h6"
@@ -173,7 +173,7 @@ class CardSubtitle(Component):
     """
 
 
-@register("CardText", registry=comp_registry)
+@register("CardText", registry=bs5_registry)
 class CardText(Component):
     class Kwargs:
         attrs: dict | None = None
@@ -195,7 +195,7 @@ class CardText(Component):
     """
 
 
-@register("CardLink", registry=comp_registry)
+@register("CardLink", registry=bs5_registry)
 class CardLink(Component):
     class Kwargs:
         href: str = "#"
@@ -219,7 +219,7 @@ class CardLink(Component):
     """
 
 
-@register("CardImg", registry=comp_registry)
+@register("CardImg", registry=bs5_registry)
 class CardImg(Component):
     class Kwargs:
         src: str
@@ -252,7 +252,7 @@ class CardImg(Component):
     """
 
 
-@register("CardImgOverlay", registry=comp_registry)
+@register("CardImgOverlay", registry=bs5_registry)
 class CardImgOverlay(Component):
     class Kwargs:
         attrs: dict | None = None
@@ -274,7 +274,7 @@ class CardImgOverlay(Component):
     """
 
 
-@register("CardGroup", registry=comp_registry)
+@register("CardGroup", registry=bs5_registry)
 class CardGroup(Component):
     class Kwargs:
         attrs: dict | None = None

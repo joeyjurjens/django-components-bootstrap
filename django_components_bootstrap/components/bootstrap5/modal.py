@@ -8,10 +8,10 @@ from django_components_bootstrap.components.bootstrap5.types import (
     ResponsiveBreakpoint,
     SizeWithXl,
 )
-from django_components_bootstrap.templatetags.bootstrap5 import comp_registry
+from django_components_bootstrap.templatetags.bootstrap5 import bs5_registry
 
 
-@register("Modal", registry=comp_registry)
+@register("Modal", registry=bs5_registry)
 class Modal(Component):
     class Kwargs:
         size: SizeWithXl | None = None
@@ -79,7 +79,7 @@ class Modal(Component):
     """
 
 
-@register("ModalHeader", registry=comp_registry)
+@register("ModalHeader", registry=bs5_registry)
 class ModalHeader(Component):
     class Kwargs:
         close_button: bool = True
@@ -110,7 +110,7 @@ class ModalHeader(Component):
     """
 
 
-@register("ModalBody", registry=comp_registry)
+@register("ModalBody", registry=bs5_registry)
 class ModalBody(Component):
     class Kwargs:
         attrs: dict | None = None
@@ -132,7 +132,7 @@ class ModalBody(Component):
     """
 
 
-@register("ModalFooter", registry=comp_registry)
+@register("ModalFooter", registry=bs5_registry)
 class ModalFooter(Component):
     class Kwargs:
         attrs: dict | None = None
@@ -154,7 +154,7 @@ class ModalFooter(Component):
     """
 
 
-@register("ModalTitle", registry=comp_registry)
+@register("ModalTitle", registry=bs5_registry)
 class ModalTitle(Component):
     class Kwargs:
         as_: HeadingLevel = "h5"
@@ -182,7 +182,7 @@ class ModalTitle(Component):
     """
 
 
-@register("ModalToggle", registry=comp_registry)
+@register("ModalToggle", registry=bs5_registry)
 class ModalToggle(Component):
     class Kwargs:
         as_: ButtonTag = "button"

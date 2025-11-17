@@ -5,10 +5,10 @@ from django_components_bootstrap.components.bootstrap5.types import (
     BreakpointOrAuto,
     ContainerFluid,
 )
-from django_components_bootstrap.templatetags.bootstrap5 import comp_registry
+from django_components_bootstrap.templatetags.bootstrap5 import bs5_registry
 
 
-@register("Container", registry=comp_registry)
+@register("Container", registry=bs5_registry)
 class Container(Component):
     class Kwargs:
         as_: str = "div"
@@ -41,7 +41,7 @@ class Container(Component):
     """
 
 
-@register("Row", registry=comp_registry)
+@register("Row", registry=bs5_registry)
 class Row(Component):
     class Kwargs:
         as_: str = "div"
@@ -97,7 +97,7 @@ class Row(Component):
     """
 
 
-@register("Col", registry=comp_registry)
+@register("Col", registry=bs5_registry)
 class Col(Component):
     class Kwargs:
         as_: str = "div"

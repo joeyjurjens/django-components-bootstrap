@@ -2,10 +2,10 @@ from django.template import Context
 from django_components import Component, SlotInput, register, types
 
 from django_components_bootstrap.components.bootstrap5.types import Size
-from django_components_bootstrap.templatetags.bootstrap5 import comp_registry
+from django_components_bootstrap.templatetags.bootstrap5 import bs5_registry
 
 
-@register("InputGroup", registry=comp_registry)
+@register("InputGroup", registry=bs5_registry)
 class InputGroup(Component):
     class Kwargs:
         size: Size | None = None
@@ -36,7 +36,7 @@ class InputGroup(Component):
     """
 
 
-@register("InputGroupText", registry=comp_registry)
+@register("InputGroupText", registry=bs5_registry)
 class InputGroupText(Component):
     class Kwargs:
         attrs: dict | None = None
@@ -58,7 +58,7 @@ class InputGroupText(Component):
     """
 
 
-@register("InputGroupRadio", registry=comp_registry)
+@register("InputGroupRadio", registry=bs5_registry)
 class InputGroupRadio(Component):
     class Kwargs:
         attrs: dict | None = None
@@ -80,7 +80,7 @@ class InputGroupRadio(Component):
     """
 
 
-@register("InputGroupCheckbox", registry=comp_registry)
+@register("InputGroupCheckbox", registry=bs5_registry)
 class InputGroupCheckbox(Component):
     class Kwargs:
         attrs: dict | None = None
@@ -102,7 +102,7 @@ class InputGroupCheckbox(Component):
     """
 
 
-@register("FloatingLabel", registry=comp_registry)
+@register("FloatingLabel", registry=bs5_registry)
 class FloatingLabel(Component):
     class Kwargs:
         label: str

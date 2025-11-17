@@ -1,10 +1,10 @@
 from django.template import Context
 from django_components import Component, SlotInput, register, types
 
-from django_components_bootstrap.templatetags.bootstrap5 import comp_registry
+from django_components_bootstrap.templatetags.bootstrap5 import bs5_registry
 
 
-@register("Figure", registry=comp_registry)
+@register("Figure", registry=bs5_registry)
 class Figure(Component):
     class Kwargs:
         attrs: dict | None = None
@@ -26,7 +26,7 @@ class Figure(Component):
     """
 
 
-@register("FigureImage", registry=comp_registry)
+@register("FigureImage", registry=bs5_registry)
 class FigureImage(Component):
     class Kwargs:
         src: str
@@ -56,7 +56,7 @@ class FigureImage(Component):
     """
 
 
-@register("FigureCaption", registry=comp_registry)
+@register("FigureCaption", registry=bs5_registry)
 class FigureCaption(Component):
     class Kwargs:
         attrs: dict | None = None

@@ -11,10 +11,10 @@ from django_components_bootstrap.components.bootstrap5.types import (
     Size,
     VariantWithLink,
 )
-from django_components_bootstrap.templatetags.bootstrap5 import comp_registry
+from django_components_bootstrap.templatetags.bootstrap5 import bs5_registry
 
 
-@register("Dropdown", registry=comp_registry)
+@register("Dropdown", registry=bs5_registry)
 class Dropdown(Component):
     class Kwargs:
         direction: DropdownDirection = "down"
@@ -62,7 +62,7 @@ class Dropdown(Component):
     """
 
 
-@register("DropdownToggle", registry=comp_registry)
+@register("DropdownToggle", registry=bs5_registry)
 class DropdownToggle(Component):
     class Kwargs:
         variant: VariantWithLink = "primary"
@@ -99,7 +99,7 @@ class DropdownToggle(Component):
     """
 
 
-@register("DropdownMenu", registry=comp_registry)
+@register("DropdownMenu", registry=bs5_registry)
 class DropdownMenu(Component):
     class Kwargs:
         align: AlignmentStartEnd | None = None
@@ -153,7 +153,7 @@ class DropdownMenu(Component):
     """
 
 
-@register("DropdownItem", registry=comp_registry)
+@register("DropdownItem", registry=bs5_registry)
 class DropdownItem(Component):
     class Kwargs:
         as_: AnchorOrButton = "a"
@@ -205,7 +205,7 @@ class DropdownItem(Component):
     """
 
 
-@register("DropdownDivider", registry=comp_registry)
+@register("DropdownDivider", registry=bs5_registry)
 class DropdownDivider(Component):
     class Kwargs:
         attrs: dict | None = None
@@ -222,7 +222,7 @@ class DropdownDivider(Component):
     """
 
 
-@register("DropdownHeader", registry=comp_registry)
+@register("DropdownHeader", registry=bs5_registry)
 class DropdownHeader(Component):
     class Kwargs:
         as_: HeadingLevel = "h6"
@@ -248,7 +248,7 @@ class DropdownHeader(Component):
     """
 
 
-@register("DropdownItemText", registry=comp_registry)
+@register("DropdownItemText", registry=bs5_registry)
 class DropdownItemText(Component):
     class Kwargs:
         attrs: dict | None = None

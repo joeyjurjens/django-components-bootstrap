@@ -2,10 +2,10 @@ from django.template import Context
 from django_components import Component, SlotInput, register, types
 
 from django_components_bootstrap.components.bootstrap5.types import ButtonTag
-from django_components_bootstrap.templatetags.bootstrap5 import comp_registry
+from django_components_bootstrap.templatetags.bootstrap5 import bs5_registry
 
 
-@register("Collapse", registry=comp_registry)
+@register("Collapse", registry=bs5_registry)
 class Collapse(Component):
     class Kwargs:
         show: bool = False
@@ -43,7 +43,7 @@ class Collapse(Component):
     """
 
 
-@register("CollapseToggle", registry=comp_registry)
+@register("CollapseToggle", registry=bs5_registry)
 class CollapseToggle(Component):
     class Kwargs:
         as_: ButtonTag = "button"

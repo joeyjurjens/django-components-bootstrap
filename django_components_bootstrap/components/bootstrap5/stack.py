@@ -2,10 +2,10 @@ from django.template import Context
 from django_components import Component, SlotInput, register, types
 
 from django_components_bootstrap.components.bootstrap5.types import Breakpoint, StackDirection
-from django_components_bootstrap.templatetags.bootstrap5 import comp_registry
+from django_components_bootstrap.templatetags.bootstrap5 import bs5_registry
 
 
-@register("Stack", registry=comp_registry)
+@register("Stack", registry=bs5_registry)
 class Stack(Component):
     class Kwargs:
         direction: StackDirection = "vertical"

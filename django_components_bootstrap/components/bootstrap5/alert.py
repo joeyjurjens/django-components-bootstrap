@@ -1,10 +1,10 @@
 from django.template import Context
 from django_components import Component, SlotInput, register, types
 
-from django_components_bootstrap.templatetags.bootstrap5 import comp_registry
+from django_components_bootstrap.templatetags.bootstrap5 import bs5_registry
 
 
-@register("Alert", registry=comp_registry)
+@register("Alert", registry=bs5_registry)
 class Alert(Component):
     class Kwargs:
         variant: str = "primary"
@@ -42,7 +42,7 @@ class Alert(Component):
     """
 
 
-@register("AlertLink", registry=comp_registry)
+@register("AlertLink", registry=bs5_registry)
 class AlertLink(Component):
     class Kwargs:
         href: str = "#"
@@ -66,7 +66,7 @@ class AlertLink(Component):
     """
 
 
-@register("AlertHeading", registry=comp_registry)
+@register("AlertHeading", registry=bs5_registry)
 class AlertHeading(Component):
     class Kwargs:
         as_: str = "h4"

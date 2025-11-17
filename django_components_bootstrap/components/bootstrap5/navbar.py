@@ -8,10 +8,10 @@ from django_components_bootstrap.components.bootstrap5.types import (
     NavbarPlacement,
     ThemeVariant,
 )
-from django_components_bootstrap.templatetags.bootstrap5 import comp_registry
+from django_components_bootstrap.templatetags.bootstrap5 import bs5_registry
 
 
-@register("Navbar", registry=comp_registry)
+@register("Navbar", registry=bs5_registry)
 class Navbar(Component):
     class Kwargs:
         expand: Breakpoint | None = None
@@ -72,7 +72,7 @@ class Navbar(Component):
     """
 
 
-@register("NavbarBrand", registry=comp_registry)
+@register("NavbarBrand", registry=bs5_registry)
 class NavbarBrand(Component):
     class Kwargs:
         as_: AnchorOrSpan = "a"
@@ -104,7 +104,7 @@ class NavbarBrand(Component):
     """
 
 
-@register("NavbarToggler", registry=comp_registry)
+@register("NavbarToggler", registry=bs5_registry)
 class NavbarToggler(Component):
     class Kwargs:
         attrs: dict | None = None
@@ -134,7 +134,7 @@ class NavbarToggler(Component):
     """
 
 
-@register("NavbarCollapse", registry=comp_registry)
+@register("NavbarCollapse", registry=bs5_registry)
 class NavbarCollapse(Component):
     class Kwargs:
         attrs: dict | None = None
@@ -160,7 +160,7 @@ class NavbarCollapse(Component):
     """
 
 
-@register("NavbarNav", registry=comp_registry)
+@register("NavbarNav", registry=bs5_registry)
 class NavbarNav(Component):
     class Kwargs:
         scroll: bool = False
@@ -188,7 +188,7 @@ class NavbarNav(Component):
     """
 
 
-@register("NavbarText", registry=comp_registry)
+@register("NavbarText", registry=bs5_registry)
 class NavbarText(Component):
     class Kwargs:
         attrs: dict | None = None

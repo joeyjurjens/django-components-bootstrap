@@ -2,10 +2,10 @@ from django.template import Context
 from django_components import Component, SlotInput, register, types
 
 from django_components_bootstrap.components.bootstrap5.types import Variant
-from django_components_bootstrap.templatetags.bootstrap5 import comp_registry
+from django_components_bootstrap.templatetags.bootstrap5 import bs5_registry
 
 
-@register("Progress", registry=comp_registry)
+@register("Progress", registry=bs5_registry)
 class Progress(Component):
     class Kwargs:
         height: str | None = None
@@ -36,7 +36,7 @@ class Progress(Component):
     """
 
 
-@register("ProgressStacked", registry=comp_registry)
+@register("ProgressStacked", registry=bs5_registry)
 class ProgressStacked(Component):
     class Kwargs:
         attrs: dict | None = None
@@ -58,7 +58,7 @@ class ProgressStacked(Component):
     """
 
 
-@register("ProgressBar", registry=comp_registry)
+@register("ProgressBar", registry=bs5_registry)
 class ProgressBar(Component):
     class Kwargs:
         now: int = 0

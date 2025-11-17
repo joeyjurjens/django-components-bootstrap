@@ -6,10 +6,10 @@ from django_components_bootstrap.components.bootstrap5.types import (
     Size,
     VariantWithLink,
 )
-from django_components_bootstrap.templatetags.bootstrap5 import comp_registry
+from django_components_bootstrap.templatetags.bootstrap5 import bs5_registry
 
 
-@register("Button", registry=comp_registry)
+@register("Button", registry=bs5_registry)
 class Button(Component):
     class Kwargs:
         as_: str | None = None

@@ -1,10 +1,10 @@
 from django.template import Context
 from django_components import Component, register, types
 
-from django_components_bootstrap.templatetags.bootstrap5 import comp_registry
+from django_components_bootstrap.templatetags.bootstrap5 import bs5_registry
 
 
-@register("Image", registry=comp_registry)
+@register("Image", registry=bs5_registry)
 class Image(Component):
     class Kwargs:
         src: str

@@ -8,10 +8,10 @@ from django_components_bootstrap.components.bootstrap5.types import (
     FormCheckType,
     Size,
 )
-from django_components_bootstrap.templatetags.bootstrap5 import comp_registry
+from django_components_bootstrap.templatetags.bootstrap5 import bs5_registry
 
 
-@register("Form", registry=comp_registry)
+@register("Form", registry=bs5_registry)
 class Form(Component):
     class Kwargs:
         validated: bool = False
@@ -39,7 +39,7 @@ class Form(Component):
     """
 
 
-@register("FormGroup", registry=comp_registry)
+@register("FormGroup", registry=bs5_registry)
 class FormGroup(Component):
     class Kwargs:
         control_id: str | None = None
@@ -67,7 +67,7 @@ class FormGroup(Component):
     """
 
 
-@register("FormLabel", registry=comp_registry)
+@register("FormLabel", registry=bs5_registry)
 class FormLabel(Component):
     class Kwargs:
         for_: str | None = None
@@ -97,7 +97,7 @@ class FormLabel(Component):
     """
 
 
-@register("FormControl", registry=comp_registry)
+@register("FormControl", registry=bs5_registry)
 class FormControl(Component):
     class Kwargs:
         type: Literal[
@@ -175,7 +175,7 @@ class FormControl(Component):
     """
 
 
-@register("FormTextarea", registry=comp_registry)
+@register("FormTextarea", registry=bs5_registry)
 class FormTextarea(Component):
     class Kwargs:
         rows: int = 3
@@ -223,7 +223,7 @@ class FormTextarea(Component):
     """
 
 
-@register("FormSelect", registry=comp_registry)
+@register("FormSelect", registry=bs5_registry)
 class FormSelect(Component):
     class Kwargs:
         size: Size | None = None
@@ -274,7 +274,7 @@ class FormSelect(Component):
     """
 
 
-@register("FormCheckInput", registry=comp_registry)
+@register("FormCheckInput", registry=bs5_registry)
 class FormCheckInput(Component):
     class Kwargs:
         type: FormCheckType | None = None
@@ -342,7 +342,7 @@ class FormCheckInput(Component):
     """
 
 
-@register("FormCheckLabel", registry=comp_registry)
+@register("FormCheckLabel", registry=bs5_registry)
 class FormCheckLabel(Component):
     class Kwargs:
         for_: str | None = None
@@ -374,7 +374,7 @@ class FormCheckLabel(Component):
     """
 
 
-@register("FormCheck", registry=comp_registry)
+@register("FormCheck", registry=bs5_registry)
 class FormCheck(Component):
     class Kwargs:
         type: FormCheckType = "checkbox"
@@ -443,7 +443,7 @@ class FormCheck(Component):
     """
 
 
-@register("FormText", registry=comp_registry)
+@register("FormText", registry=bs5_registry)
 class FormText(Component):
     class Kwargs:
         attrs: dict | None = None
@@ -465,7 +465,7 @@ class FormText(Component):
     """
 
 
-@register("FormFloating", registry=comp_registry)
+@register("FormFloating", registry=bs5_registry)
 class FormFloating(Component):
     class Kwargs:
         attrs: dict | None = None

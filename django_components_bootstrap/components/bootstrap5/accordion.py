@@ -1,10 +1,10 @@
 from django.template import Context
 from django_components import Component, SlotInput, register, types
 
-from django_components_bootstrap.templatetags.bootstrap5 import comp_registry
+from django_components_bootstrap.templatetags.bootstrap5 import bs5_registry
 
 
-@register("Accordion", registry=comp_registry)
+@register("Accordion", registry=bs5_registry)
 class Accordion(Component):
     class Kwargs:
         flush: bool = False
@@ -39,7 +39,7 @@ class Accordion(Component):
     """
 
 
-@register("AccordionItem", registry=comp_registry)
+@register("AccordionItem", registry=bs5_registry)
 class AccordionItem(Component):
     class Kwargs:
         default_open: bool = False
@@ -75,7 +75,7 @@ class AccordionItem(Component):
     """
 
 
-@register("AccordionButton", registry=comp_registry)
+@register("AccordionButton", registry=bs5_registry)
 class AccordionButton(Component):
     class Kwargs:
         disabled: bool = False
@@ -108,7 +108,7 @@ class AccordionButton(Component):
     """
 
 
-@register("AccordionHeader", registry=comp_registry)
+@register("AccordionHeader", registry=bs5_registry)
 class AccordionHeader(Component):
     class Kwargs:
         disabled: bool = False
@@ -137,7 +137,7 @@ class AccordionHeader(Component):
     """
 
 
-@register("AccordionBody", registry=comp_registry)
+@register("AccordionBody", registry=bs5_registry)
 class AccordionBody(Component):
     class Kwargs:
         attrs: dict | None = None

@@ -2,10 +2,10 @@ from django.template import Context
 from django_components import Component, SlotInput, register, types
 
 from django_components_bootstrap.components.bootstrap5.types import Size
-from django_components_bootstrap.templatetags.bootstrap5 import comp_registry
+from django_components_bootstrap.templatetags.bootstrap5 import bs5_registry
 
 
-@register("Pagination", registry=comp_registry)
+@register("Pagination", registry=bs5_registry)
 class Pagination(Component):
     class Kwargs:
         size: Size | None = None
@@ -37,7 +37,7 @@ class Pagination(Component):
     """
 
 
-@register("PaginationItem", registry=comp_registry)
+@register("PaginationItem", registry=bs5_registry)
 class PaginationItem(Component):
     class Kwargs:
         active: bool = False
@@ -76,12 +76,12 @@ class PaginationItem(Component):
     """
 
 
-@register("PageItem", registry=comp_registry)
+@register("PageItem", registry=bs5_registry)
 class PageItem(PaginationItem):
     pass
 
 
-@register("PageLink", registry=comp_registry)
+@register("PageLink", registry=bs5_registry)
 class PageLink(Component):
     class Kwargs:
         href: str = "#"
@@ -107,7 +107,7 @@ class PageLink(Component):
     """
 
 
-@register("PaginationFirst", registry=comp_registry)
+@register("PaginationFirst", registry=bs5_registry)
 class PaginationFirst(Component):
     class Kwargs:
         disabled: bool = False
@@ -141,7 +141,7 @@ class PaginationFirst(Component):
     """
 
 
-@register("PaginationPrev", registry=comp_registry)
+@register("PaginationPrev", registry=bs5_registry)
 class PaginationPrev(Component):
     class Kwargs:
         disabled: bool = False
@@ -175,7 +175,7 @@ class PaginationPrev(Component):
     """
 
 
-@register("PaginationNext", registry=comp_registry)
+@register("PaginationNext", registry=bs5_registry)
 class PaginationNext(Component):
     class Kwargs:
         disabled: bool = False
@@ -209,7 +209,7 @@ class PaginationNext(Component):
     """
 
 
-@register("PaginationLast", registry=comp_registry)
+@register("PaginationLast", registry=bs5_registry)
 class PaginationLast(Component):
     class Kwargs:
         disabled: bool = False
@@ -243,7 +243,7 @@ class PaginationLast(Component):
     """
 
 
-@register("PaginationEllipsis", registry=comp_registry)
+@register("PaginationEllipsis", registry=bs5_registry)
 class PaginationEllipsis(Component):
     class Kwargs:
         disabled: bool = False

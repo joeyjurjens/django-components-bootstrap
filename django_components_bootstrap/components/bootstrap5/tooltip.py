@@ -2,10 +2,10 @@ from django.template import Context
 from django_components import Component, SlotInput, register, types
 
 from django_components_bootstrap.components.bootstrap5.types import OverlayPlacement, TriggerEvent
-from django_components_bootstrap.templatetags.bootstrap5 import comp_registry
+from django_components_bootstrap.templatetags.bootstrap5 import bs5_registry
 
 
-@register("Tooltip", registry=comp_registry)
+@register("Tooltip", registry=bs5_registry)
 class Tooltip(Component):
     class Kwargs:
         text: str
