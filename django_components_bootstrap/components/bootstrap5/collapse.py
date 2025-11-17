@@ -14,6 +14,7 @@ class Collapse(Component):
 
     class Slots:
         default: SlotInput
+        toggle: SlotInput = None
 
     def get_template_data(self, args, kwargs: Kwargs, slots: Slots, context: Context):
         collapse_id = f"collapse-{self.id}"
@@ -27,12 +28,13 @@ class Collapse(Component):
         return {
             "collapse_id": collapse_id,
             "classes": " ".join(classes),
-            "attrs": kwargs.attrs or {},
+            "attrs": kwargs.attrs,
         }
 
     template: types.django_html = """
         {% provide "collapse" collapse_id=collapse_id %}
-            <div {% html_attrs attrs defaults:id=collapse_id class=classes %}>
+            {% slot "toggle" / %}
+            <div {% html_attrs attrs id=collapse_id class=classes %}>
                 {% slot "default" / %}
             </div>
         {% endprovide %}
@@ -54,21 +56,27 @@ class CollapseToggle(Component):
         collapse = self.inject("collapse")
         target_id = collapse.collapse_id
 
+        button_type = "button" if kwargs.as_ == "button" else None
+        link_href = kwargs.href or f"#{target_id}" if kwargs.as_ != "button" else None
+        link_role = "button" if kwargs.as_ != "button" else None
+
         return {
             "tag": kwargs.as_,
             "target_id": target_id,
             "expanded": "true" if kwargs.expanded else "false",
-            "href": kwargs.href or f"#{target_id}",
-            "attrs": kwargs.attrs or {},
+            "button_type": button_type,
+            "link_href": link_href,
+            "link_role": link_role,
+            "attrs": kwargs.attrs,
         }
 
     template: types.django_html = """
         {% if tag == "button" %}
-            <button {% html_attrs attrs defaults:type="button" defaults:data-bs-toggle="collapse" defaults:data-bs-target="#{{ target_id }}" defaults:aria-expanded=expanded defaults:aria-controls=target_id %}>
+            <button {% html_attrs attrs type=button_type data-bs-toggle="collapse" data-bs-target="#{{ target_id }}" defaults:aria-expanded=expanded defaults:aria-controls=target_id %}>
                 {% slot "default" / %}
             </button>
         {% else %}
-            <a {% html_attrs attrs defaults:href=href defaults:data-bs-toggle="collapse" defaults:role="button" defaults:aria-expanded=expanded defaults:aria-controls=target_id %}>
+            <a {% html_attrs attrs href=link_href data-bs-toggle="collapse" role=link_role defaults:aria-expanded=expanded defaults:aria-controls=target_id %}>
                 {% slot "default" / %}
             </a>
         {% endif %}

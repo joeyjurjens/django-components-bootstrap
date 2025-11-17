@@ -25,12 +25,12 @@ class Accordion(Component):
             "accordion_id": accordion_id,
             "css_class": " ".join(css_classes),
             "always_open": kwargs.always_open,
-            "attrs": kwargs.attrs or {},
+            "attrs": kwargs.attrs,
         }
 
     template: types.django_html = """
         {% provide "accordion" accordion_id=accordion_id always_open=always_open %}
-            <div {% html_attrs attrs class=css_class defaults:id=accordion_id %}>
+            <div {% html_attrs attrs class=css_class id=accordion_id %}>
                 {% slot "default" / %}
             </div>
         {% endprovide %}
@@ -59,12 +59,12 @@ class AccordionItem(Component):
             "is_open": kwargs.default_open,
             "data_bs_parent": data_bs_parent,
             "always_open": accordion.always_open,
-            "attrs": kwargs.attrs or {},
+            "attrs": kwargs.attrs,
         }
 
     template: types.django_html = """
         {% provide "accordion_item" heading_id=heading_id collapse_id=collapse_id is_open=is_open data_bs_parent=data_bs_parent always_open=always_open %}
-            <div {% html_attrs attrs defaults:class="accordion-item" %}>
+            <div {% html_attrs attrs class="accordion-item" %}>
                 {% slot "default" / %}
             </div>
         {% endprovide %}
@@ -88,16 +88,15 @@ class AccordionButton(Component):
             classes.append("collapsed")
 
         return {
-            "collapse_id": accordion_item.collapse_id,
-            "is_open": accordion_item.is_open,
-            "disabled": kwargs.disabled,
             "button_classes": " ".join(classes),
-            "attrs": kwargs.attrs or {},
+            "collapse_id": accordion_item.collapse_id,
+            "aria_expanded": "true" if accordion_item.is_open else "false",
+            "disabled": kwargs.disabled,
+            "attrs": kwargs.attrs,
         }
 
     template: types.django_html = """
-
-        <button {% html_attrs attrs class=button_classes defaults:type="button" defaults:data-bs-toggle="collapse" defaults:data-bs-target="#{{ collapse_id }}" defaults:aria-expanded=is_open defaults:aria-controls=collapse_id defaults:disabled=disabled %}>
+        <button {% html_attrs attrs class=button_classes type="button" data-bs-toggle="collapse" data-bs-target="#{{ collapse_id }}" defaults:aria-expanded=aria_expanded defaults:aria-controls=collapse_id disabled=disabled %}>
             {% slot "default" / %}
         </button>
     """
@@ -118,12 +117,11 @@ class AccordionHeader(Component):
         return {
             "heading_id": accordion_item.heading_id,
             "disabled": kwargs.disabled,
-            "attrs": kwargs.attrs or {},
+            "attrs": kwargs.attrs,
         }
 
     template: types.django_html = """
-
-        <h2 {% html_attrs attrs defaults:class="accordion-header" defaults:id=heading_id %}>
+        <h2 {% html_attrs attrs class="accordion-header" id=heading_id %}>
             {% component "AccordionButton" disabled=disabled %}
                 {% slot "default" / %}
             {% endcomponent %}
@@ -142,21 +140,22 @@ class AccordionBody(Component):
     def get_template_data(self, args, kwargs: Kwargs, slots: Slots, context: Context):
         accordion_item = self.inject("accordion_item")
 
+        collapse_classes = ["accordion-collapse", "collapse"]
+        if accordion_item.is_open:
+            collapse_classes.append("show")
+
         return {
             "heading_id": accordion_item.heading_id,
             "collapse_id": accordion_item.collapse_id,
-            "is_open": accordion_item.is_open,
+            "collapse_classes": " ".join(collapse_classes),
             "data_bs_parent": accordion_item.data_bs_parent,
             "always_open": accordion_item.always_open,
-            "attrs": kwargs.attrs or {},
+            "attrs": kwargs.attrs,
         }
 
     template: types.django_html = """
-        <div id="{{ collapse_id }}"
-             class="accordion-collapse collapse{% if is_open %} show{% endif %}"
-             aria-labelledby="{{ heading_id }}"
-             {% if not always_open %}data-bs-parent="{{ data_bs_parent }}"{% endif %}>
-            <div {% html_attrs attrs defaults:class="accordion-body" %}>
+        <div {% html_attrs id=collapse_id class=collapse_classes defaults:aria-labelledby=heading_id %} {% if not always_open %}data-bs-parent="{{ data_bs_parent }}"{% endif %}>
+            <div {% html_attrs attrs class="accordion-body" %}>
                 {% slot "default" / %}
             </div>
         </div>

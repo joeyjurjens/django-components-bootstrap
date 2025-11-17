@@ -1,8 +1,7 @@
-from typing import Literal
-
 from django.template import Context
 from django_components import Component, SlotInput, register, types
 
+from django_components_bootstrap.components.bootstrap5.types import OverlayPlacement, TriggerEvent
 from django_components_bootstrap.templatetags.bootstrap5 import comp_registry
 
 
@@ -10,29 +9,23 @@ from django_components_bootstrap.templatetags.bootstrap5 import comp_registry
 class Tooltip(Component):
     class Kwargs:
         text: str
-        placement: Literal["top", "bottom", "left", "right"] = "top"
-        as_: str = "span"
+        placement: OverlayPlacement = "top"
+        trigger: TriggerEvent = "hover"
         attrs: dict | None = None
 
     class Slots:
         default: SlotInput
 
     def get_template_data(self, args, kwargs: Kwargs, slots: Slots, context: Context):
-        html_attrs = {
-            "data-bs-toggle": "tooltip",
-            "data-bs-placement": kwargs.placement,
-            "title": kwargs.text,
-        }
-
-        final_attrs = {**html_attrs, **(kwargs.attrs or {})}
-
         return {
-            "tag": kwargs.as_,
-            "attrs": final_attrs,
+            "text": kwargs.text,
+            "placement": kwargs.placement,
+            "trigger": kwargs.trigger,
+            "attrs": kwargs.attrs,
         }
 
     template: types.django_html = """
-        <{{ tag }} {% html_attrs attrs %}>
+        <span {% html_attrs attrs data-bs-toggle="tooltip" data-bs-title=text data-bs-placement=placement data-bs-trigger=trigger %}>
             {% slot "default" / %}
-        </{{ tag }}>
+        </span>
     """

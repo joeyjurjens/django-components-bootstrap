@@ -14,11 +14,11 @@ class Figure(Component):
 
     def get_template_data(self, args, kwargs: Kwargs, slots: Slots, context: Context):
         return {
-            "attrs": kwargs.attrs or {},
+            "attrs": kwargs.attrs,
         }
 
     template: types.django_html = """
-        <figure {% html_attrs attrs defaults:class="figure" %}>
+        <figure {% html_attrs attrs class="figure" %}>
             {% slot "default" / %}
         </figure>
     """
@@ -44,11 +44,11 @@ class FigureImage(Component):
             "src": kwargs.src,
             "alt": kwargs.alt,
             "classes": " ".join(classes),
-            "attrs": kwargs.attrs or {},
+            "attrs": kwargs.attrs,
         }
 
     template: types.django_html = """
-        <img {% html_attrs attrs class=classes defaults:src=src defaults:alt=alt %} />
+        <img {% html_attrs attrs class=classes src=src alt=alt %} />
     """
 
 
@@ -62,11 +62,11 @@ class FigureCaption(Component):
 
     def get_template_data(self, args, kwargs: Kwargs, slots: Slots, context: Context):
         return {
-            "attrs": kwargs.attrs or {},
+            "attrs": kwargs.attrs,
         }
 
     template: types.django_html = """
-        <figcaption {% html_attrs attrs defaults:class="figure-caption" %}>
+        <figcaption {% html_attrs attrs class="figure-caption" %}>
             {% slot "default" / %}
         </figcaption>
     """

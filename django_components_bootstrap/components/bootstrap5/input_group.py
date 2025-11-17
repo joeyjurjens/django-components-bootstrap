@@ -24,7 +24,7 @@ class InputGroup(Component):
 
         return {
             "classes": " ".join(classes),
-            "attrs": kwargs.attrs or {},
+            "attrs": kwargs.attrs,
         }
 
     template: types.django_html = """
@@ -44,11 +44,11 @@ class InputGroupText(Component):
 
     def get_template_data(self, args, kwargs: Kwargs, slots: Slots, context: Context):
         return {
-            "attrs": kwargs.attrs or {},
+            "attrs": kwargs.attrs,
         }
 
     template: types.django_html = """
-        <span {% html_attrs attrs defaults:class="input-group-text" %}>
+        <span {% html_attrs attrs class="input-group-text" %}>
             {% slot "default" / %}
         </span>
     """
@@ -64,12 +64,12 @@ class InputGroupRadio(Component):
 
     def get_template_data(self, args, kwargs: Kwargs, slots: Slots, context: Context):
         return {
-            "attrs": kwargs.attrs or {},
+            "attrs": kwargs.attrs,
         }
 
     template: types.django_html = """
         <div class="input-group-text">
-            <input {% html_attrs attrs defaults:type="radio" defaults:class="form-check-input mt-0" %} />
+            <input {% html_attrs attrs type="radio" class="form-check-input mt-0" %} />
         </div>
     """
 
@@ -84,12 +84,12 @@ class InputGroupCheckbox(Component):
 
     def get_template_data(self, args, kwargs: Kwargs, slots: Slots, context: Context):
         return {
-            "attrs": kwargs.attrs or {},
+            "attrs": kwargs.attrs,
         }
 
     template: types.django_html = """
         <div class="input-group-text">
-            <input {% html_attrs attrs defaults:type="checkbox" defaults:class="form-check-input mt-0" %} />
+            <input {% html_attrs attrs type="checkbox" class="form-check-input mt-0" %} />
         </div>
     """
 
@@ -108,12 +108,12 @@ class FloatingLabel(Component):
         return {
             "control_id": kwargs.control_id,
             "label": kwargs.label,
-            "attrs": kwargs.attrs or {},
+            "attrs": kwargs.attrs,
         }
 
     template: types.django_html = """
         {% provide "formgroup" control_id=control_id %}
-            <div {% html_attrs attrs defaults:class="form-floating" %}>
+            <div {% html_attrs attrs class="form-floating" %}>
                 {% slot "default" / %}
                 <label{% if control_id %} for="{{ control_id }}"{% endif %}>{{ label }}</label>
             </div>

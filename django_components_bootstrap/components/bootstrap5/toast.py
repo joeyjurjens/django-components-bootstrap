@@ -30,7 +30,7 @@ class ToastContainer(Component):
 
         return {
             "classes": " ".join(classes),
-            "attrs": kwargs.attrs or {},
+            "attrs": kwargs.attrs,
         }
 
     template: types.django_html = """
@@ -53,6 +53,8 @@ class Toast(Component):
         default: SlotInput
 
     def get_template_data(self, args, kwargs: Kwargs, slots: Slots, context: Context):
+        toast_id = f"toast-{self.id}"
+
         classes = ["toast"]
 
         if kwargs.show:
@@ -71,22 +73,19 @@ class Toast(Component):
             ]:
                 classes.append("text-white")
 
-        html_attrs = {}
-        if kwargs.autohide:
-            html_attrs["data-bs-autohide"] = "true"
-            html_attrs["data-bs-delay"] = str(kwargs.delay)
-        else:
-            html_attrs["data-bs-autohide"] = "false"
-
-        final_attrs = {**html_attrs, **(kwargs.attrs or {})}
+        autohide_attr = "false" if not kwargs.autohide else None
+        delay_attr = str(kwargs.delay) if kwargs.autohide and kwargs.delay != 5000 else None
 
         return {
+            "toast_id": toast_id,
             "classes": " ".join(classes),
-            "attrs": final_attrs,
+            "autohide_attr": autohide_attr,
+            "delay_attr": delay_attr,
+            "attrs": kwargs.attrs,
         }
 
     template: types.django_html = """
-        <div {% html_attrs attrs class=classes role="alert" aria-live="assertive" aria-atomic="true" %}>
+        <div {% html_attrs attrs id=toast_id class=classes role="alert" defaults:aria-live="assertive" defaults:aria-atomic="true" data-bs-autohide=autohide_attr data-bs-delay=delay_attr %}>
             {% slot "default" / %}
         </div>
     """
@@ -108,14 +107,14 @@ class ToastHeader(Component):
             "close_button": kwargs.close_button,
             "close_label": kwargs.close_label,
             "close_variant": kwargs.close_variant,
-            "attrs": kwargs.attrs or {},
+            "attrs": kwargs.attrs,
         }
 
     template: types.django_html = """
-        <div {% html_attrs attrs defaults:class="toast-header" %}>
+        <div {% html_attrs attrs class="toast-header" %}>
             {% slot "default" / %}
             {% if close_button %}
-                {% component "CloseButton" aria_label=close_label variant=close_variant attrs={"data-bs-dismiss": "toast"} / %}
+                {% component "CloseButton" variant=close_variant attrs:aria-label=close_label attrs:data-bs-dismiss="toast" / %}
             {% endif %}
         </div>
     """
@@ -131,11 +130,11 @@ class ToastBody(Component):
 
     def get_template_data(self, args, kwargs: Kwargs, slots: Slots, context: Context):
         return {
-            "attrs": kwargs.attrs or {},
+            "attrs": kwargs.attrs,
         }
 
     template: types.django_html = """
-        <div {% html_attrs attrs defaults:class="toast-body" %}>
+        <div {% html_attrs attrs class="toast-body" %}>
             {% slot "default" / %}
         </div>
     """

@@ -32,7 +32,7 @@ class Badge(Component):
         return {
             "tag": kwargs.as_,
             "css_class": " ".join(css_classes),
-            "attrs": kwargs.attrs or {},
+            "attrs": kwargs.attrs,
         }
 
     template: types.django_html = """

@@ -3,7 +3,11 @@ from typing import Literal
 from django.template import Context
 from django_components import Component, SlotInput, register, types
 
-from django_components_bootstrap.components.bootstrap5.types import FormCheckType, Size
+from django_components_bootstrap.components.bootstrap5.types import (
+    NOT_PROVIDED,
+    FormCheckType,
+    Size,
+)
 from django_components_bootstrap.templatetags.bootstrap5 import comp_registry
 
 
@@ -22,12 +26,12 @@ class Form(Component):
             classes.append("was-validated")
 
         return {
-            "form_class": " ".join(classes),
+            "form_class": " ".join(classes) if classes else "",
             "attrs": kwargs.attrs or {},
         }
 
     template: types.django_html = """
-        <form {% html_attrs attrs class=form_class %}>
+        <form {% html_attrs attrs %}{% if form_class %} class="{{ form_class }}"{% endif %}>
             {% slot "default" / %}
         </form>
     """
@@ -69,10 +73,10 @@ class FormLabel(Component):
         default: SlotInput
 
     def get_template_data(self, args, kwargs: Kwargs, slots: Slots, context: Context):
-        try:
-            formgroup = self.inject("formgroup")
+        formgroup = self.inject("formgroup", NOT_PROVIDED)
+        if formgroup is not NOT_PROVIDED:
             for_value = kwargs.for_ or formgroup.control_id
-        except Exception:
+        else:
             for_value = kwargs.for_
 
         return {
@@ -115,7 +119,6 @@ class FormControl(Component):
         html_size: int | None = None
         value: str | None = None
         placeholder: str | None = None
-        id: str | None = None
         name: str | None = None
         attrs: dict | None = None
 
@@ -123,11 +126,8 @@ class FormControl(Component):
         pass
 
     def get_template_data(self, args, kwargs: Kwargs, slots: Slots, context: Context):
-        try:
-            formgroup = self.inject("formgroup")
-            control_id = kwargs.id or formgroup.control_id
-        except Exception:
-            control_id = kwargs.id
+        formgroup = self.inject("formgroup", NOT_PROVIDED)
+        control_id = formgroup.control_id if formgroup is not NOT_PROVIDED else None
 
         if kwargs.plaintext:
             form_class = "form-control-plaintext"
@@ -176,7 +176,6 @@ class FormTextarea(Component):
         readonly: bool = False
         value: str | None = None
         placeholder: str | None = None
-        id: str | None = None
         name: str | None = None
         attrs: dict | None = None
 
@@ -184,6 +183,9 @@ class FormTextarea(Component):
         default: SlotInput | None = None
 
     def get_template_data(self, args, kwargs: Kwargs, slots: Slots, context: Context):
+        formgroup = self.inject("formgroup", NOT_PROVIDED)
+        control_id = formgroup.control_id if formgroup is not NOT_PROVIDED else None
+
         classes = ["form-control"]
         if kwargs.size:
             classes.append(f"form-control-{kwargs.size}")
@@ -201,7 +203,7 @@ class FormTextarea(Component):
             "rows": kwargs.rows,
             "value": kwargs.value,
             "placeholder": kwargs.placeholder,
-            "id": kwargs.id,
+            "id": control_id,
             "name": kwargs.name,
             "attrs": final_attrs,
         }
@@ -220,7 +222,6 @@ class FormSelect(Component):
         is_invalid: bool = False
         html_size: int | None = None
         value: str | None = None
-        id: str | None = None
         name: str | None = None
         attrs: dict | None = None
 
@@ -228,6 +229,9 @@ class FormSelect(Component):
         default: SlotInput
 
     def get_template_data(self, args, kwargs: Kwargs, slots: Slots, context: Context):
+        formgroup = self.inject("formgroup", NOT_PROVIDED)
+        control_id = formgroup.control_id if formgroup is not NOT_PROVIDED else None
+
         classes = ["form-select"]
         if kwargs.size:
             classes.append(f"form-select-{kwargs.size}")
@@ -246,7 +250,7 @@ class FormSelect(Component):
             "classes": " ".join(classes),
             "html_size": kwargs.html_size,
             "value": kwargs.value,
-            "id": kwargs.id,
+            "id": control_id,
             "name": kwargs.name,
             "attrs": final_attrs,
         }
@@ -266,7 +270,6 @@ class FormCheckInput(Component):
         checked: bool = False
         is_valid: bool = False
         is_invalid: bool = False
-        id: str | None = None
         name: str | None = None
         value: str | None = None
         attrs: dict | None = None
@@ -275,8 +278,8 @@ class FormCheckInput(Component):
         pass
 
     def get_template_data(self, args, kwargs: Kwargs, slots: Slots, context: Context):
-        try:
-            formcheck = self.inject("formcheck")
+        formcheck = self.inject("formcheck", NOT_PROVIDED)
+        if formcheck is not NOT_PROVIDED:
             control_id = formcheck.control_id
             check_type = formcheck.type
             is_valid = formcheck.is_valid if hasattr(formcheck, "is_valid") else kwargs.is_valid
@@ -285,8 +288,8 @@ class FormCheckInput(Component):
             )
             disabled = formcheck.disabled if hasattr(formcheck, "disabled") else kwargs.disabled
             checked = formcheck.checked if hasattr(formcheck, "checked") else kwargs.checked
-        except Exception:
-            control_id = kwargs.id
+        else:
+            control_id = None
             check_type = kwargs.type if kwargs.type else "checkbox"
             is_valid = kwargs.is_valid
             is_invalid = kwargs.is_invalid
@@ -306,13 +309,15 @@ class FormCheckInput(Component):
             html_attrs["checked"] = True
         if disabled:
             html_attrs["disabled"] = True
+        if check_type == "switch":
+            html_attrs["role"] = "switch"
 
         final_attrs = {**html_attrs, **(kwargs.attrs or {})}
 
         return {
             "input_classes": " ".join(input_classes),
             "input_type": input_type,
-            "id": control_id if control_id else kwargs.id,
+            "id": control_id,
             "name": kwargs.name,
             "value": kwargs.value,
             "attrs": final_attrs,
@@ -335,10 +340,10 @@ class FormCheckLabel(Component):
         default: SlotInput
 
     def get_template_data(self, args, kwargs: Kwargs, slots: Slots, context: Context):
-        try:
-            formcheck = self.inject("formcheck")
+        formcheck = self.inject("formcheck", NOT_PROVIDED)
+        if formcheck is not NOT_PROVIDED:
             control_id = formcheck.control_id
-        except Exception:
+        else:
             control_id = kwargs.for_
 
         return {
@@ -365,7 +370,6 @@ class FormCheck(Component):
         checked: bool = False
         is_valid: bool = False
         is_invalid: bool = False
-        id: str | None = None
         name: str | None = None
         value: str | None = None
         label: str | None = None
@@ -389,7 +393,7 @@ class FormCheck(Component):
 
         has_label = kwargs.label is not None
 
-        control_id = kwargs.id if kwargs.id else f"formcheck-{self.id}"
+        control_id = f"formcheck-{self.id}"
 
         return {
             "wrapper_classes": " ".join(wrapper_classes),
@@ -412,7 +416,7 @@ class FormCheck(Component):
         {% provide "formcheck" control_id=control_id type=type is_valid=is_valid is_invalid=is_invalid disabled=disabled checked=checked %}
             <div {% html_attrs attrs class=wrapper_classes %}>
                 {% slot "default" default %}
-                    {% component "FormCheckInput" type=type disabled=disabled checked=checked is_valid=is_valid is_invalid=is_invalid id=control_id name=name value=value %}{% endcomponent %}
+                    {% component "FormCheckInput" type=type disabled=disabled checked=checked is_valid=is_valid is_invalid=is_invalid name=name value=value %}{% endcomponent %}
                     {% if has_label %}
                         {% component "FormCheckLabel" for_=control_id title=title %}
                             {{ label }}
@@ -439,6 +443,26 @@ class FormText(Component):
 
     template: types.django_html = """
         <div {% html_attrs attrs defaults:class="form-text" %}>
+            {% slot "default" / %}
+        </div>
+    """
+
+
+@register("FormFloating", registry=comp_registry)
+class FormFloating(Component):
+    class Kwargs:
+        attrs: dict | None = None
+
+    class Slots:
+        default: SlotInput
+
+    def get_template_data(self, args, kwargs: Kwargs, slots: Slots, context: Context):
+        return {
+            "attrs": kwargs.attrs or {},
+        }
+
+    template: types.django_html = """
+        <div {% html_attrs attrs defaults:class="form-floating" %}>
             {% slot "default" / %}
         </div>
     """

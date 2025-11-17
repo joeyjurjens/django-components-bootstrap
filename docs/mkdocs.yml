@@ -1,0 +1,63 @@
+site_name: Django Components Bootstrap
+site_description: Bootstrap 5 components for Django with React-Bootstrap API parity
+site_url: https://joeyjurjens.github.io/django-components-bootstrap/
+repo_url: https://github.com/joeyjurjens/django-components-bootstrap
+repo_name: joeyjurjens/django-components-bootstrap
+
+docs_dir: source
+site_dir: ../site
+
+theme:
+  name: mkdocs
+
+markdown_extensions:
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.superfences
+  - pymdownx.inlinehilite
+  - pymdownx.snippets:
+      base_path: ["source"]
+  - attr_list
+
+extra_css:
+  - stylesheets/extra.css
+
+extra_javascript:
+  - javascripts/bootstrap-init.js
+
+nav:
+  - Home: index.md
+  - Components:
+      - Accordion: components/accordion.md
+      - Alert: components/alert.md
+      - Badge: components/badge.md
+      - Breadcrumb: components/breadcrumb.md
+      - Button: components/button.md
+      - Button Group: components/buttongroup.md
+      - Card: components/card.md
+      - Carousel: components/carousel.md
+      - Close Button: components/closebutton.md
+      - Collapse: components/collapse.md
+      - Dropdown: components/dropdown.md
+      - Dropdown Button: components/dropdownbutton.md
+      - Figure: components/figure.md
+      - Form: components/form.md
+      - Image: components/image.md
+      - Layout: components/layout.md
+      - List Group: components/listgroup.md
+      - Modal: components/modal.md
+      - Nav: components/nav.md
+      - Nav Dropdown: components/navdropdown.md
+      - Navbar: components/navbar.md
+      - Offcanvas: components/offcanvas.md
+      - Pagination: components/pagination.md
+      - Placeholder: components/placeholder.md
+      - Popover: components/popover.md
+      - Progress: components/progress.md
+      - Spinner: components/spinner.md
+      - Stack: components/stack.md
+      - Table: components/table.md
+      - Tabs: components/tabs.md
+      - Toast: components/toast.md
+      - Toggle Button: components/togglebutton.md
+      - Tooltip: components/tooltip.md

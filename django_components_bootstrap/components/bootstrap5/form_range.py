@@ -12,7 +12,6 @@ class FormRange(Component):
         step: int | float = 1
         value: int | float | None = None
         disabled: bool = False
-        id: str | None = None
         name: str | None = None
         attrs: dict | None = None
 
@@ -28,11 +27,10 @@ class FormRange(Component):
             "max": kwargs.max,
             "step": kwargs.step,
             "value": kwargs.value,
-            "id": kwargs.id,
             "name": kwargs.name,
             "attrs": final_attrs,
         }
 
     template: types.django_html = """
-        <input {% html_attrs attrs type="range" class="form-range" defaults:min=min defaults:max=max defaults:step=step defaults:value=value defaults:id=id defaults:name=name %} />
+        <input {% html_attrs attrs type="range" class="form-range" min=min max=max step=step value=value name=name %} />
     """

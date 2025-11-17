@@ -36,7 +36,7 @@ class Placeholder(Component):
         return {
             "tag": kwargs.as_,
             "classes": " ".join(classes),
-            "attrs": kwargs.attrs or {},
+            "attrs": kwargs.attrs,
         }
 
     template: types.django_html = """
@@ -62,9 +62,9 @@ class PlaceholderButton(Component):
 
         return {
             "classes": " ".join(classes),
-            "attrs": kwargs.attrs or {},
+            "attrs": kwargs.attrs,
         }
 
     template: types.django_html = """
-        <button {% html_attrs attrs class=classes disabled=True aria-hidden="true" %}></button>
+        <button {% html_attrs attrs class=classes disabled=True defaults:aria-hidden="true" %}></button>
     """

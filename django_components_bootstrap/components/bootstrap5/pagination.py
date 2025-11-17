@@ -9,8 +9,8 @@ from django_components_bootstrap.templatetags.bootstrap5 import comp_registry
 class Pagination(Component):
     class Kwargs:
         size: Size | None = None
-        aria_label: str = "Page navigation"
         attrs: dict | None = None
+        ul_attrs: dict | None = None
 
     class Slots:
         default: SlotInput
@@ -22,13 +22,13 @@ class Pagination(Component):
 
         return {
             "classes": " ".join(classes),
-            "aria_label": kwargs.aria_label,
-            "attrs": kwargs.attrs or {},
+            "attrs": kwargs.attrs,
+            "ul_attrs": kwargs.ul_attrs,
         }
 
     template: types.django_html = """
-        <nav {% html_attrs attrs defaults:aria-label=aria_label %}>
-            <ul class="{{ classes }}">
+        <nav {% html_attrs attrs defaults:aria-label="Page navigation" %}>
+            <ul {% html_attrs ul_attrs class=classes %}>
                 {% slot "default" / %}
             </ul>
         </nav>
@@ -60,12 +60,12 @@ class PaginationItem(Component):
             "disabled": kwargs.disabled,
             "href": kwargs.href,
             "aria_label": kwargs.aria_label,
-            "attrs": kwargs.attrs or {},
+            "attrs": kwargs.attrs,
         }
 
     template: types.django_html = """
         <li {% html_attrs attrs class=classes %}>
-            <a class="page-link" href="{{ href }}"{% if aria_label %} aria-label="{{ aria_label }}"{% endif %}{% if disabled %} tabindex="-1" aria-disabled="true"{% endif %}>
+            <a {% html_attrs class="page-link" href=href defaults:aria-label=aria_label %}{% if active %} aria-current="page"{% endif %}{% if disabled %} tabindex="-1" aria-disabled="true"{% endif %}>
                 {% slot "default" / %}
             </a>
         </li>
@@ -91,11 +91,11 @@ class PageLink(Component):
         return {
             "href": kwargs.href,
             "aria_label": kwargs.aria_label,
-            "attrs": kwargs.attrs or {},
+            "attrs": kwargs.attrs,
         }
 
     template: types.django_html = """
-        <a {% html_attrs attrs defaults:class="page-link" defaults:href=href %} {% if aria_label %}aria-label="{{ aria_label }}"{% endif %}>
+        <a {% html_attrs attrs class="page-link" href=href defaults:aria-label=aria_label %}>
             {% slot "default" / %}
         </a>
     """
@@ -120,13 +120,13 @@ class PaginationFirst(Component):
             "classes": " ".join(classes),
             "disabled": kwargs.disabled,
             "href": kwargs.href,
-            "attrs": kwargs.attrs or {},
+            "attrs": kwargs.attrs,
         }
 
     template: types.django_html = """
         <li {% html_attrs attrs class=classes %}>
             <a class="page-link" href="{{ href }}"{% if disabled %} tabindex="-1" aria-disabled="true"{% endif %}>
-                <span aria-hidden="true">{% slot "default" %}«{% endslot %}</span>
+                <span {% html_attrs defaults:aria-hidden="true" %}>{% slot "default" %}«{% endslot %}</span>
                 <span class="visually-hidden">First</span>
             </a>
         </li>
@@ -152,13 +152,13 @@ class PaginationPrev(Component):
             "classes": " ".join(classes),
             "disabled": kwargs.disabled,
             "href": kwargs.href,
-            "attrs": kwargs.attrs or {},
+            "attrs": kwargs.attrs,
         }
 
     template: types.django_html = """
         <li {% html_attrs attrs class=classes %}>
             <a class="page-link" href="{{ href }}"{% if disabled %} tabindex="-1" aria-disabled="true"{% endif %}>
-                <span aria-hidden="true">{% slot "default" %}‹{% endslot %}</span>
+                <span {% html_attrs defaults:aria-hidden="true" %}>{% slot "default" %}‹{% endslot %}</span>
                 <span class="visually-hidden">Previous</span>
             </a>
         </li>
@@ -184,13 +184,13 @@ class PaginationNext(Component):
             "classes": " ".join(classes),
             "disabled": kwargs.disabled,
             "href": kwargs.href,
-            "attrs": kwargs.attrs or {},
+            "attrs": kwargs.attrs,
         }
 
     template: types.django_html = """
         <li {% html_attrs attrs class=classes %}>
             <a class="page-link" href="{{ href }}"{% if disabled %} tabindex="-1" aria-disabled="true"{% endif %}>
-                <span aria-hidden="true">{% slot "default" %}›{% endslot %}</span>
+                <span {% html_attrs defaults:aria-hidden="true" %}>{% slot "default" %}›{% endslot %}</span>
                 <span class="visually-hidden">Next</span>
             </a>
         </li>
@@ -216,13 +216,13 @@ class PaginationLast(Component):
             "classes": " ".join(classes),
             "disabled": kwargs.disabled,
             "href": kwargs.href,
-            "attrs": kwargs.attrs or {},
+            "attrs": kwargs.attrs,
         }
 
     template: types.django_html = """
         <li {% html_attrs attrs class=classes %}>
             <a class="page-link" href="{{ href }}"{% if disabled %} tabindex="-1" aria-disabled="true"{% endif %}>
-                <span aria-hidden="true">{% slot "default" %}»{% endslot %}</span>
+                <span {% html_attrs defaults:aria-hidden="true" %}>{% slot "default" %}»{% endslot %}</span>
                 <span class="visually-hidden">Last</span>
             </a>
         </li>
@@ -246,13 +246,13 @@ class PaginationEllipsis(Component):
         return {
             "classes": " ".join(classes),
             "disabled": kwargs.disabled,
-            "attrs": kwargs.attrs or {},
+            "attrs": kwargs.attrs,
         }
 
     template: types.django_html = """
         <li {% html_attrs attrs class=classes %}>
             <span class="page-link">
-                <span aria-hidden="true">{% slot "default" %}…{% endslot %}</span>
+                <span {% html_attrs defaults:aria-hidden="true" %}>{% slot "default" %}…{% endslot %}</span>
                 <span class="visually-hidden">More</span>
             </span>
         </li>

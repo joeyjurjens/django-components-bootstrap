@@ -41,7 +41,7 @@ class Card(Component):
             "tag": kwargs.as_,
             "classes": " ".join(classes),
             "body": kwargs.body,
-            "attrs": kwargs.attrs or {},
+            "attrs": kwargs.attrs,
         }
 
     template: types.django_html = """
@@ -68,11 +68,11 @@ class CardHeader(Component):
 
     def get_template_data(self, args, kwargs: Kwargs, slots: Slots, context: Context):
         return {
-            "attrs": kwargs.attrs or {},
+            "attrs": kwargs.attrs,
         }
 
     template: types.django_html = """
-        <div {% html_attrs attrs defaults:class="card-header" %}>
+        <div {% html_attrs attrs class="card-header" %}>
             {% slot "default" / %}
         </div>
     """
@@ -88,11 +88,11 @@ class CardBody(Component):
 
     def get_template_data(self, args, kwargs: Kwargs, slots: Slots, context: Context):
         return {
-            "attrs": kwargs.attrs or {},
+            "attrs": kwargs.attrs,
         }
 
     template: types.django_html = """
-        <div {% html_attrs attrs defaults:class="card-body" %}>
+        <div {% html_attrs attrs class="card-body" %}>
             {% slot "default" / %}
         </div>
     """
@@ -108,11 +108,11 @@ class CardFooter(Component):
 
     def get_template_data(self, args, kwargs: Kwargs, slots: Slots, context: Context):
         return {
-            "attrs": kwargs.attrs or {},
+            "attrs": kwargs.attrs,
         }
 
     template: types.django_html = """
-        <div {% html_attrs attrs defaults:class="card-footer" %}>
+        <div {% html_attrs attrs class="card-footer" %}>
             {% slot "default" / %}
         </div>
     """
@@ -130,11 +130,11 @@ class CardTitle(Component):
     def get_template_data(self, args, kwargs: Kwargs, slots: Slots, context: Context):
         return {
             "tag": kwargs.as_,
-            "attrs": kwargs.attrs or {},
+            "attrs": kwargs.attrs,
         }
 
     template: types.django_html = """
-        <{{ tag }} {% html_attrs attrs defaults:class="card-title" %}>
+        <{{ tag }} {% html_attrs attrs class="card-title" %}>
             {% slot "default" / %}
         </{{ tag }}>
     """
@@ -152,11 +152,11 @@ class CardSubtitle(Component):
     def get_template_data(self, args, kwargs: Kwargs, slots: Slots, context: Context):
         return {
             "tag": kwargs.as_,
-            "attrs": kwargs.attrs or {},
+            "attrs": kwargs.attrs,
         }
 
     template: types.django_html = """
-        <{{ tag }} {% html_attrs attrs defaults:class="card-subtitle" %}>
+        <{{ tag }} {% html_attrs attrs class="card-subtitle" %}>
             {% slot "default" / %}
         </{{ tag }}>
     """
@@ -172,11 +172,11 @@ class CardText(Component):
 
     def get_template_data(self, args, kwargs: Kwargs, slots: Slots, context: Context):
         return {
-            "attrs": kwargs.attrs or {},
+            "attrs": kwargs.attrs,
         }
 
     template: types.django_html = """
-        <p {% html_attrs attrs defaults:class="card-text" %}>
+        <p {% html_attrs attrs class="card-text" %}>
             {% slot "default" / %}
         </p>
     """
@@ -194,11 +194,11 @@ class CardLink(Component):
     def get_template_data(self, args, kwargs: Kwargs, slots: Slots, context: Context):
         return {
             "href": kwargs.href,
-            "attrs": kwargs.attrs or {},
+            "attrs": kwargs.attrs,
         }
 
     template: types.django_html = """
-        <a {% html_attrs attrs defaults:href=href defaults:class="card-link" %}>
+        <a {% html_attrs attrs href=href class="card-link" %}>
             {% slot "default" / %}
         </a>
     """
@@ -227,11 +227,11 @@ class CardImg(Component):
             "src": kwargs.src,
             "alt": kwargs.alt,
             "img_class": img_class,
-            "attrs": kwargs.attrs or {},
+            "attrs": kwargs.attrs,
         }
 
     template: types.django_html = """
-        <img {% html_attrs attrs defaults:src=src defaults:alt=alt class=img_class %} />
+        <img {% html_attrs attrs src=src alt=alt class=img_class %} />
     """
 
 
@@ -245,11 +245,11 @@ class CardImgOverlay(Component):
 
     def get_template_data(self, args, kwargs: Kwargs, slots: Slots, context: Context):
         return {
-            "attrs": kwargs.attrs or {},
+            "attrs": kwargs.attrs,
         }
 
     template: types.django_html = """
-        <div {% html_attrs attrs defaults:class="card-img-overlay" %}>
+        <div {% html_attrs attrs class="card-img-overlay" %}>
             {% slot "default" / %}
         </div>
     """
@@ -265,11 +265,11 @@ class CardGroup(Component):
 
     def get_template_data(self, args, kwargs: Kwargs, slots: Slots, context: Context):
         return {
-            "attrs": kwargs.attrs or {},
+            "attrs": kwargs.attrs,
         }
 
     template: types.django_html = """
-        <div {% html_attrs attrs defaults:class="card-group" %}>
+        <div {% html_attrs attrs class="card-group" %}>
             {% slot "default" / %}
         </div>
     """

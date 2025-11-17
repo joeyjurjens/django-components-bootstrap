@@ -1,10 +1,10 @@
-from typing import Literal
-
 from django.template import Context
 from django_components import Component, SlotInput, register, types
 
 from django_components_bootstrap.components.bootstrap5.types import (
     AnchorOrButton,
+    NavItemTag,
+    NavTag,
     NavVariant,
 )
 from django_components_bootstrap.templatetags.bootstrap5 import comp_registry
@@ -17,7 +17,7 @@ class Nav(Component):
         fill: bool = False
         justified: bool = False
         vertical: bool = False
-        as_: Literal["nav", "ul"] = "nav"
+        as_: NavTag = "nav"
         role: str | None = None
         attrs: dict | None = None
 
@@ -46,7 +46,7 @@ class Nav(Component):
             "tag": kwargs.as_,
             "classes": " ".join(classes),
             "role": kwargs.role,
-            "attrs": kwargs.attrs or {},
+            "attrs": kwargs.attrs,
         }
 
     template: types.django_html = """
@@ -59,7 +59,7 @@ class Nav(Component):
 @register("NavItem", registry=comp_registry)
 class NavItem(Component):
     class Kwargs:
-        as_: Literal["li", "div"] = "li"
+        as_: NavItemTag = "li"
         attrs: dict | None = None
 
     class Slots:
@@ -68,11 +68,11 @@ class NavItem(Component):
     def get_template_data(self, args, kwargs: Kwargs, slots: Slots, context: Context):
         return {
             "tag": kwargs.as_,
-            "attrs": kwargs.attrs or {},
+            "attrs": kwargs.attrs,
         }
 
     template: types.django_html = """
-        <{{ tag }} {% html_attrs attrs defaults:class="nav-item" %}>
+        <{{ tag }} {% html_attrs attrs class="nav-item" %}>
             {% slot "default" / %}
         </{{ tag }}>
     """
@@ -97,35 +97,29 @@ class NavLink(Component):
         if kwargs.disabled:
             classes.append("disabled")
 
-        html_attrs = {}
+        button_disabled = True if kwargs.as_ == "button" and kwargs.disabled else None
+        aria_disabled = "true" if kwargs.as_ == "a" and kwargs.disabled else None
+        aria_current = "page" if kwargs.active and kwargs.as_ == "a" else None
 
-        if kwargs.as_ == "button" and kwargs.disabled:
-            html_attrs["disabled"] = True
-
-        if kwargs.as_ == "a":
-            html_attrs["aria-disabled"] = "true" if kwargs.disabled else "false"
-            if kwargs.disabled:
-                html_attrs["tabindex"] = "-1"
-
-        if kwargs.active:
-            html_attrs["aria-current"] = "page"
-
-        final_attrs = {**html_attrs, **(kwargs.attrs or {})}
+        link_href = None if kwargs.disabled else kwargs.href
 
         return {
             "tag": kwargs.as_,
             "classes": " ".join(classes),
-            "href": kwargs.href,
-            "attrs": final_attrs,
+            "href": link_href,
+            "button_disabled": button_disabled,
+            "aria_disabled": aria_disabled,
+            "aria_current": aria_current,
+            "attrs": kwargs.attrs,
         }
 
     template: types.django_html = """
         {% if tag == "a" %}
-            <a {% html_attrs attrs defaults:href=href class=classes %}>
+            <a {% html_attrs attrs href=href class=classes defaults:aria-disabled=aria_disabled defaults:aria-current=aria_current %}>
                 {% slot "default" / %}
             </a>
         {% else %}
-            <button {% html_attrs attrs defaults:type="button" class=classes %}>
+            <button {% html_attrs attrs defaults:type="button" class=classes disabled=button_disabled defaults:aria-current=aria_current %}>
                 {% slot "default" / %}
             </button>
         {% endif %}

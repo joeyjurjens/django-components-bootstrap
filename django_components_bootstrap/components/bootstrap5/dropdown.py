@@ -1,15 +1,15 @@
-from typing import Literal
-
 from django.template import Context
 from django_components import Component, SlotInput, register, types
 
 from django_components_bootstrap.components.bootstrap5.types import (
+    AlignmentStartEnd,
     AnchorOrButton,
     AutoClose,
     Breakpoint,
     DropdownDirection,
     HeadingLevel,
     Size,
+    VariantWithLink,
 )
 from django_components_bootstrap.templatetags.bootstrap5 import comp_registry
 
@@ -48,7 +48,7 @@ class Dropdown(Component):
             "wrapper_class": wrapper_class,
             "auto_close": kwargs.auto_close,
             "direction": kwargs.direction,
-            "attrs": kwargs.attrs or {},
+            "attrs": kwargs.attrs,
         }
 
     template: types.django_html = """
@@ -63,19 +63,11 @@ class Dropdown(Component):
 @register("DropdownToggle", registry=comp_registry)
 class DropdownToggle(Component):
     class Kwargs:
-        variant: Literal[
-            "primary",
-            "secondary",
-            "success",
-            "danger",
-            "warning",
-            "info",
-            "light",
-            "dark",
-            "link",
-        ] = "primary"
+        variant: VariantWithLink = "primary"
         split: bool = False
         size: Size | None = None
+        disabled: bool = False
+        href: str | None = None
         attrs: dict | None = None
 
     class Slots:
@@ -88,13 +80,16 @@ class DropdownToggle(Component):
         if kwargs.size:
             classes.append(f"btn-{kwargs.size}")
 
+        disabled = True if kwargs.disabled else None
+
         return {
             "classes": " ".join(classes),
-            "attrs": kwargs.attrs or {},
+            "disabled": disabled,
+            "attrs": kwargs.attrs,
         }
 
     template: types.django_html = """
-        <button {% html_attrs attrs class=classes defaults:type="button" defaults:data-bs-toggle="dropdown" defaults:aria-expanded="false" %}>
+        <button {% html_attrs attrs class=classes type="button" data-bs-toggle="dropdown" defaults:aria-expanded="false" disabled=disabled %}>
             {% slot "default" / %}
         </button>
     """
@@ -103,13 +98,13 @@ class DropdownToggle(Component):
 @register("DropdownMenu", registry=comp_registry)
 class DropdownMenu(Component):
     class Kwargs:
-        align: Literal["start", "end"] | None = None
-        align_responsive: dict[Breakpoint, Literal["start", "end"]] | None = None
-        align_sm: Literal["start", "end"] | None = None
-        align_md: Literal["start", "end"] | None = None
-        align_lg: Literal["start", "end"] | None = None
-        align_xl: Literal["start", "end"] | None = None
-        align_xxl: Literal["start", "end"] | None = None
+        align: AlignmentStartEnd | None = None
+        align_responsive: dict[Breakpoint, AlignmentStartEnd] | None = None
+        align_sm: AlignmentStartEnd | None = None
+        align_md: AlignmentStartEnd | None = None
+        align_lg: AlignmentStartEnd | None = None
+        align_xl: AlignmentStartEnd | None = None
+        align_xxl: AlignmentStartEnd | None = None
         dark: bool = False
         attrs: dict | None = None
 
@@ -142,7 +137,7 @@ class DropdownMenu(Component):
 
         return {
             "classes": " ".join(classes),
-            "attrs": kwargs.attrs or {},
+            "attrs": kwargs.attrs,
         }
 
     template: types.django_html = """
@@ -171,36 +166,30 @@ class DropdownItem(Component):
         if kwargs.disabled:
             classes.append("disabled")
 
-        html_attrs = {}
-
-        if kwargs.active:
-            html_attrs["aria-current"] = "true"
-
-        if kwargs.as_ == "button" and kwargs.disabled:
-            html_attrs["disabled"] = True
-
-        if kwargs.as_ == "a":
-            html_attrs["aria-disabled"] = "true" if kwargs.disabled else "false"
-            if kwargs.disabled:
-                html_attrs["tabindex"] = "-1"
-
-        final_attrs = {**html_attrs, **(kwargs.attrs or {})}
+        aria_current = "true" if kwargs.active else None
+        button_disabled = True if kwargs.as_ == "button" and kwargs.disabled else None
+        link_aria_disabled = "true" if kwargs.as_ == "a" and kwargs.disabled else None
+        link_tabindex = "-1" if kwargs.as_ == "a" and kwargs.disabled else None
 
         return {
             "tag": kwargs.as_,
             "classes": " ".join(classes),
             "href": kwargs.href,
-            "attrs": final_attrs,
+            "aria_current": aria_current,
+            "button_disabled": button_disabled,
+            "link_aria_disabled": link_aria_disabled,
+            "link_tabindex": link_tabindex,
+            "attrs": kwargs.attrs,
         }
 
     template: types.django_html = """
         <li>
             {% if tag == "a" %}
-                <a {% html_attrs attrs defaults:href=href class=classes %}>
+                <a {% html_attrs attrs href=href class=classes aria-current=aria_current aria-disabled=link_aria_disabled tabindex=link_tabindex %}>
                     {% slot "default" / %}
                 </a>
             {% else %}
-                <button {% html_attrs attrs defaults:type="button" class=classes %}>
+                <button {% html_attrs attrs type="button" class=classes aria-current=aria_current disabled=button_disabled %}>
                     {% slot "default" / %}
                 </button>
             {% endif %}
@@ -215,11 +204,11 @@ class DropdownDivider(Component):
 
     def get_template_data(self, args, kwargs: Kwargs, slots, context: Context):
         return {
-            "attrs": kwargs.attrs or {},
+            "attrs": kwargs.attrs,
         }
 
     template: types.django_html = """
-        <li><hr {% html_attrs attrs defaults:class="dropdown-divider" %}></li>
+        <li><hr {% html_attrs attrs class="dropdown-divider" %}></li>
     """
 
 
@@ -235,12 +224,12 @@ class DropdownHeader(Component):
     def get_template_data(self, args, kwargs: Kwargs, slots: Slots, context: Context):
         return {
             "tag": kwargs.as_,
-            "attrs": kwargs.attrs or {},
+            "attrs": kwargs.attrs,
         }
 
     template: types.django_html = """
         <li>
-            <{{ tag }} {% html_attrs attrs defaults:class="dropdown-header" %}>
+            <{{ tag }} {% html_attrs attrs class="dropdown-header" %}>
                 {% slot "default" / %}
             </{{ tag }}>
         </li>
@@ -257,12 +246,12 @@ class DropdownItemText(Component):
 
     def get_template_data(self, args, kwargs: Kwargs, slots: Slots, context: Context):
         return {
-            "attrs": kwargs.attrs or {},
+            "attrs": kwargs.attrs,
         }
 
     template: types.django_html = """
         <li>
-            <span {% html_attrs attrs defaults:class="dropdown-item-text" %}>
+            <span {% html_attrs attrs class="dropdown-item-text" %}>
                 {% slot "default" / %}
             </span>
         </li>

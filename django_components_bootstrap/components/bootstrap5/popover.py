@@ -1,47 +1,33 @@
-from typing import Literal
-
 from django.template import Context
 from django_components import Component, SlotInput, register, types
 
+from django_components_bootstrap.components.bootstrap5.types import OverlayPlacement, TriggerEvent
 from django_components_bootstrap.templatetags.bootstrap5 import comp_registry
 
 
 @register("Popover", registry=comp_registry)
 class Popover(Component):
     class Kwargs:
+        title: str
         content: str
-        title: str | None = None
-        placement: Literal["top", "bottom", "left", "right"] = "top"
-        trigger: Literal["click", "hover", "focus", "manual"] = "click"
-        as_: str = "button"
+        placement: OverlayPlacement = "top"
+        trigger: TriggerEvent = "click"
         attrs: dict | None = None
 
     class Slots:
         default: SlotInput
 
     def get_template_data(self, args, kwargs: Kwargs, slots: Slots, context: Context):
-        html_attrs = {
-            "data-bs-toggle": "popover",
-            "data-bs-placement": kwargs.placement,
-            "data-bs-content": kwargs.content,
-            "data-bs-trigger": kwargs.trigger,
-        }
-
-        if kwargs.title:
-            html_attrs["data-bs-title"] = kwargs.title
-
-        if kwargs.as_ == "button":
-            html_attrs["type"] = "button"
-
-        final_attrs = {**html_attrs, **(kwargs.attrs or {})}
-
         return {
-            "tag": kwargs.as_,
-            "attrs": final_attrs,
+            "title": kwargs.title,
+            "content": kwargs.content,
+            "placement": kwargs.placement,
+            "trigger": kwargs.trigger,
+            "attrs": kwargs.attrs,
         }
 
     template: types.django_html = """
-        <{{ tag }} {% html_attrs attrs %}>
+        <span {% html_attrs attrs data-bs-toggle="popover" data-bs-title=title data-bs-content=content data-bs-placement=placement data-bs-trigger=trigger %}>
             {% slot "default" / %}
-        </{{ tag }}>
+        </span>
     """

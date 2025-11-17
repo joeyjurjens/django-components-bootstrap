@@ -9,7 +9,7 @@ class Alert(Component):
     class Kwargs:
         variant: str = "primary"
         dismissible: bool = False
-        close_label: str = "Close alert"
+        close_label: str = "Close"
         close_variant: str | None = None
         attrs: dict | None = None
 
@@ -27,14 +27,14 @@ class Alert(Component):
             "dismissible": kwargs.dismissible,
             "close_label": kwargs.close_label,
             "close_variant": kwargs.close_variant,
-            "attrs": kwargs.attrs or {},
+            "attrs": kwargs.attrs,
         }
 
     template: types.django_html = """
-        <div {% html_attrs attrs class=css_class defaults:role="alert" %}>
+        <div {% html_attrs attrs class=css_class role="alert" %}>
             {% slot "default" / %}
             {% if dismissible %}
-                {% component "CloseButton" aria_label=close_label variant=close_variant attrs={"data-bs-dismiss": "alert"} / %}
+                {% component "CloseButton" variant=close_variant attrs:aria-label=close_label attrs:data-bs-dismiss="alert" / %}
             {% endif %}
         </div>
     """
@@ -52,11 +52,11 @@ class AlertLink(Component):
     def get_template_data(self, args, kwargs: Kwargs, slots: Slots, context: Context):
         return {
             "href": kwargs.href,
-            "attrs": kwargs.attrs or {},
+            "attrs": kwargs.attrs,
         }
 
     template: types.django_html = """
-        <a {% html_attrs attrs defaults:href=href defaults:class="alert-link" %}>
+        <a {% html_attrs attrs class="alert-link" href=href %}>
             {% slot "default" / %}
         </a>
     """
@@ -74,11 +74,11 @@ class AlertHeading(Component):
     def get_template_data(self, args, kwargs: Kwargs, slots: Slots, context: Context):
         return {
             "tag": kwargs.as_,
-            "attrs": kwargs.attrs or {},
+            "attrs": kwargs.attrs,
         }
 
     template: types.django_html = """
-        <{{ tag }} {% html_attrs attrs defaults:class="alert-heading" %}>
+        <{{ tag }} {% html_attrs attrs class="alert-heading" %}>
             {% slot "default" / %}
         </{{ tag }}>
     """

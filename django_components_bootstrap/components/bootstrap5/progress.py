@@ -24,7 +24,7 @@ class Progress(Component):
         return {
             "classes": " ".join(classes),
             "style": style,
-            "attrs": kwargs.attrs or {},
+            "attrs": kwargs.attrs,
         }
 
     template: types.django_html = """
@@ -44,11 +44,11 @@ class ProgressStacked(Component):
 
     def get_template_data(self, args, kwargs: Kwargs, slots: Slots, context: Context):
         return {
-            "attrs": kwargs.attrs or {},
+            "attrs": kwargs.attrs,
         }
 
     template: types.django_html = """
-        <div {% html_attrs attrs defaults:class="progress-stacked" %}>
+        <div {% html_attrs attrs class="progress-stacked" %}>
             {% slot "default" / %}
         </div>
     """
@@ -90,11 +90,11 @@ class ProgressBar(Component):
             "min": kwargs.min,
             "max": kwargs.max,
             "label": kwargs.label,
-            "attrs": kwargs.attrs or {},
+            "attrs": kwargs.attrs,
         }
 
     template: types.django_html = """
-        <div {% html_attrs attrs class=classes defaults:role="progressbar" defaults:aria-valuenow=now defaults:aria-valuemin=min defaults:aria-valuemax=max %} style="width: {{ percentage }}%">
+        <div {% html_attrs attrs class=classes %} style="width: {{ percentage }}%">
             {% if label %}{{ label }}{% endif %}
             {% slot "default" default / %}
         </div>

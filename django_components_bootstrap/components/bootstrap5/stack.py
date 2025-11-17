@@ -1,16 +1,14 @@
-from typing import Literal
-
 from django.template import Context
 from django_components import Component, SlotInput, register, types
 
-from django_components_bootstrap.components.bootstrap5.types import Breakpoint
+from django_components_bootstrap.components.bootstrap5.types import Breakpoint, StackDirection
 from django_components_bootstrap.templatetags.bootstrap5 import comp_registry
 
 
 @register("Stack", registry=comp_registry)
 class Stack(Component):
     class Kwargs:
-        direction: Literal["horizontal", "vertical"] = "vertical"
+        direction: StackDirection = "vertical"
         gap: int | None = None
         responsive: Breakpoint | None = None
         attrs: dict | None = None
@@ -34,7 +32,7 @@ class Stack(Component):
 
         return {
             "classes": " ".join(classes),
-            "attrs": kwargs.attrs or {},
+            "attrs": kwargs.attrs,
         }
 
     template: types.django_html = """

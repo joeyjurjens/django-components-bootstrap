@@ -5,7 +5,7 @@ from django.utils.safestring import mark_safe
 from django.utils.text import slugify
 from django_components import Component, SlotInput, register, types
 
-from django_components_bootstrap.components.bootstrap5.types import NavVariant
+from django_components_bootstrap.components.bootstrap5.types import NOT_PROVIDED, NavVariant
 from django_components_bootstrap.templatetags.bootstrap5 import comp_registry
 
 
@@ -66,7 +66,6 @@ class TabContent(Component):
 @register("TabPane", registry=comp_registry)
 class TabPane(Component):
     class Kwargs:
-        id: str | None = None
         active: bool = False
         fade: bool = True
         as_: str = "div"
@@ -76,8 +75,6 @@ class TabPane(Component):
         default: SlotInput
 
     def get_template_data(self, args, kwargs: Kwargs, slots: Slots, context: Context):
-        pane_id = kwargs.id or f"tab-pane-{self.id}"
-
         classes = ["tab-pane"]
         if kwargs.fade:
             classes.append("fade")
@@ -86,13 +83,12 @@ class TabPane(Component):
 
         return {
             "tag": kwargs.as_,
-            "pane_id": pane_id,
             "classes": " ".join(classes),
             "attrs": kwargs.attrs or {},
         }
 
     template: types.django_html = """
-        <{{ tag }} {% html_attrs attrs id=pane_id class=classes defaults:role="tabpanel" defaults:tabindex="0" %}>
+        <{{ tag }} {% html_attrs attrs class=classes defaults:role="tabpanel" defaults:tabindex="0" %}>
             {% slot "default" / %}
         </{{ tag }}>
     """
@@ -128,7 +124,7 @@ class TabsRenderer(Component):
             {% component "Nav" variant=variant fill=fill justified=justified as_="ul" attrs:id=tabs_id attrs:role="tablist" %}
                 {% for tab in tab_data %}
                     {% component "NavItem" as_="li" attrs:role="presentation" %}
-                        {% component "NavLink" as_="button" active=tab.is_active disabled=tab.disabled attrs:id=tab.nav_tab_id attrs:data-bs-toggle="tab" attrs:data-bs-target="#{{ tab.pane_id }}" attrs:type="button" attrs:role="tab" attrs:aria-controls=tab.pane_id attrs:aria-selected=tab.is_active attrs:class=tab.tab_class %}
+                        {% component "NavLink" as_="button" active=tab.is_active disabled=tab.disabled attrs:id=tab.nav_tab_id attrs:data-bs-toggle="tab" attrs:data-bs-target="#{{ tab.pane_id }}" attrs:role="tab" attrs:aria-controls=tab.pane_id attrs:aria-selected=tab.aria_selected attrs:class=tab.tab_class %}
                             {{ tab.title }}
                         {% endcomponent %}
                     {% endcomponent %}
@@ -136,7 +132,7 @@ class TabsRenderer(Component):
             {% endcomponent %}
             {% component "TabContent" %}
                 {% for tab in tab_data %}
-                    {% component "TabPane" id=tab.pane_id active=tab.is_active attrs:aria-labelledby=tab.nav_tab_id %}
+                    {% component "TabPane" active=tab.is_active attrs:id=tab.pane_id attrs:aria-labelledby=tab.nav_tab_id %}
                         {{ tab.content }}
                     {% endcomponent %}
                 {% endfor %}
@@ -207,12 +203,11 @@ class Tab(Component):
         default: SlotInput
 
     def get_template_data(self, args, kwargs: Kwargs, slots: Slots, context: Context):
-        try:
-            tabs_ctx: TabContext = self.inject("_tabs")
-        except Exception as e:
+        tabs_ctx: TabContext = self.inject("_tabs", NOT_PROVIDED)
+        if tabs_ctx is NOT_PROVIDED:
             raise RuntimeError(
                 f"'{self.registered_name}' must be used as a child of 'Tabs' component"
-            ) from e
+            )
 
         if not tabs_ctx.enabled:
             raise RuntimeError(
@@ -249,6 +244,7 @@ class Tab(Component):
 
     def on_render_after(self, context, template, content):
         parent_tabs: list[dict] = context["parent_tabs"]
+        is_active = context["is_active"]
         parent_tabs.append(
             {
                 "nav_tab_id": context["nav_tab_id"],
@@ -257,7 +253,8 @@ class Tab(Component):
                 "title": context["title"],
                 "disabled": context["disabled"],
                 "tab_class": context["tab_class"],
-                "is_active": context["is_active"],
+                "is_active": is_active,
+                "aria_selected": "true" if is_active else "false",
                 "content": mark_safe(content.strip()),
             }
         )

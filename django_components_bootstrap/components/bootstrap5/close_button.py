@@ -9,7 +9,6 @@ class CloseButton(Component):
     class Kwargs:
         variant: str | None = None
         disabled: bool = False
-        aria_label: str = "Close"
         attrs: dict | None = None
 
     class Slots:
@@ -20,18 +19,14 @@ class CloseButton(Component):
         if kwargs.variant:
             classes.append(f"btn-close-{kwargs.variant}")
 
-        html_attrs = {}
-        if kwargs.disabled:
-            html_attrs["disabled"] = True
-
-        final_attrs = {**html_attrs, **(kwargs.attrs or {})}
+        disabled = True if kwargs.disabled else None
 
         return {
             "classes": " ".join(classes),
-            "aria_label": kwargs.aria_label,
-            "attrs": final_attrs,
+            "disabled": disabled,
+            "attrs": kwargs.attrs,
         }
 
     template: types.django_html = """
-        <button {% html_attrs attrs type="button" class=classes defaults:aria-label=aria_label %}></button>
+        <button {% html_attrs attrs type="button" class=classes defaults:aria-label="Close" disabled=disabled %}></button>
     """

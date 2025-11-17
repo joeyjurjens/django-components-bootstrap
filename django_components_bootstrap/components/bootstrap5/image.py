@@ -29,10 +29,14 @@ class Image(Component):
         return {
             "src": kwargs.src,
             "alt": kwargs.alt,
-            "classes": " ".join(classes) if classes else None,
-            "attrs": kwargs.attrs or {},
+            "classes": " ".join(classes) if classes else "",
+            "attrs": kwargs.attrs,
         }
 
     template: types.django_html = """
-        <img {% html_attrs attrs defaults:src=src defaults:alt=alt class=classes %} />
+        {% if classes %}
+            <img {% html_attrs attrs src=src alt=alt class=classes %} />
+        {% else %}
+            <img {% html_attrs attrs src=src alt=alt %} />
+        {% endif %}
     """

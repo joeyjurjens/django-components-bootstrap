@@ -1,9 +1,8 @@
-from typing import Literal
-
 from django.template import Context
 from django_components import Component, SlotInput, register, types
 
 from django_components_bootstrap.components.bootstrap5.types import (
+    BackdropBehavior,
     ButtonTag,
     HeadingLevel,
     ResponsiveBreakpoint,
@@ -19,7 +18,7 @@ class Modal(Component):
         fullscreen: ResponsiveBreakpoint | None = None
         centered: bool = False
         scrollable: bool = False
-        backdrop: Literal["static", "true", "false"] | None = None
+        backdrop: BackdropBehavior | None = None
         keyboard: bool = True
         fade: bool = True
         dialog_class: str | None = None
@@ -62,12 +61,12 @@ class Modal(Component):
             "content_classes": " ".join(content_classes),
             "backdrop": kwargs.backdrop,
             "keyboard": kwargs.keyboard,
-            "attrs": kwargs.attrs or {},
+            "attrs": kwargs.attrs,
         }
 
     template: types.django_html = """
         {% provide "modal" modal_id=modal_id %}
-            <div {% html_attrs attrs defaults:id=modal_id class=modal_classes defaults:tabindex="-1" defaults:aria-labelledby="{{ modal_id }}-label" defaults:aria-hidden="true" %} {% if backdrop %}data-bs-backdrop="{{ backdrop }}"{% endif %} data-bs-keyboard="{% if keyboard %}true{% else %}false{% endif %}">
+            <div {% html_attrs attrs id=modal_id class=modal_classes tabindex="-1" defaults:aria-labelledby="{{ modal_id }}-label" defaults:aria-hidden="true" %} {% if backdrop %}data-bs-backdrop="{{ backdrop }}"{% endif %}{% if not keyboard %} data-bs-keyboard="false"{% endif %}>
                 <div class="{{ dialog_classes }}">
                     <div class="{{ content_classes }}">
                         {% slot "default" / %}
@@ -94,14 +93,14 @@ class ModalHeader(Component):
             "close_button": kwargs.close_button,
             "close_label": kwargs.close_label,
             "close_variant": kwargs.close_variant,
-            "attrs": kwargs.attrs or {},
+            "attrs": kwargs.attrs,
         }
 
     template: types.django_html = """
-        <div {% html_attrs attrs defaults:class="modal-header" %}>
+        <div {% html_attrs attrs class="modal-header" %}>
             {% slot "default" / %}
             {% if close_button %}
-                {% component "CloseButton" aria_label=close_label variant=close_variant attrs={"data-bs-dismiss": "modal"} / %}
+                {% component "CloseButton" variant=close_variant attrs:aria-label=close_label attrs:data-bs-dismiss="modal" / %}
             {% endif %}
         </div>
     """
@@ -117,11 +116,11 @@ class ModalBody(Component):
 
     def get_template_data(self, args, kwargs: Kwargs, slots: Slots, context: Context):
         return {
-            "attrs": kwargs.attrs or {},
+            "attrs": kwargs.attrs,
         }
 
     template: types.django_html = """
-        <div {% html_attrs attrs defaults:class="modal-body" %}>
+        <div {% html_attrs attrs class="modal-body" %}>
             {% slot "default" / %}
         </div>
     """
@@ -137,11 +136,11 @@ class ModalFooter(Component):
 
     def get_template_data(self, args, kwargs: Kwargs, slots: Slots, context: Context):
         return {
-            "attrs": kwargs.attrs or {},
+            "attrs": kwargs.attrs,
         }
 
     template: types.django_html = """
-        <div {% html_attrs attrs defaults:class="modal-footer" %}>
+        <div {% html_attrs attrs class="modal-footer" %}>
             {% slot "default" / %}
         </div>
     """
@@ -163,11 +162,11 @@ class ModalTitle(Component):
         return {
             "tag": kwargs.as_,
             "modal_id": modal_id,
-            "attrs": kwargs.attrs or {},
+            "attrs": kwargs.attrs,
         }
 
     template: types.django_html = """
-        <{{ tag }} {% html_attrs attrs defaults:class="modal-title" defaults:id="{{ modal_id }}-label" %}>
+        <{{ tag }} {% html_attrs attrs class="modal-title" id="{{ modal_id }}-label" %}>
             {% slot "default" / %}
         </{{ tag }}>
     """
@@ -189,11 +188,11 @@ class ModalToggle(Component):
         return {
             "tag": kwargs.as_,
             "target_id": target_id,
-            "attrs": kwargs.attrs or {},
+            "attrs": kwargs.attrs,
         }
 
     template: types.django_html = """
-        <{{ tag }} {% html_attrs attrs defaults:data-bs-toggle="modal" defaults:data-bs-target="#{{ target_id }}" %}>
+        <{{ tag }} {% html_attrs attrs data-bs-toggle="modal" data-bs-target="#{{ target_id }}" %}>
             {% slot "default" / %}
         </{{ tag }}>
     """

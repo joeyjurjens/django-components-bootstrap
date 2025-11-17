@@ -1,9 +1,7 @@
-from typing import Literal
-
 from django.template import Context
 from django_components import Component, SlotInput, register, types
 
-from django_components_bootstrap.components.bootstrap5.types import Size, Variant
+from django_components_bootstrap.components.bootstrap5.types import Size, ToggleButtonType, Variant
 from django_components_bootstrap.templatetags.bootstrap5 import comp_registry
 
 
@@ -11,7 +9,7 @@ from django_components_bootstrap.templatetags.bootstrap5 import comp_registry
 class ToggleButtonGroup(Component):
     class Kwargs:
         name: str
-        type: Literal["checkbox", "radio"] = "radio"
+        type: ToggleButtonType = "radio"
         vertical: bool = False
         size: Size | None = None
         attrs: dict | None = None
@@ -28,7 +26,7 @@ class ToggleButtonGroup(Component):
             "classes": " ".join(classes),
             "type": kwargs.type,
             "name": kwargs.name,
-            "attrs": kwargs.attrs or {},
+            "attrs": kwargs.attrs,
         }
 
     template: types.django_html = """
@@ -41,8 +39,7 @@ class ToggleButtonGroup(Component):
 @register("ToggleButton", registry=comp_registry)
 class ToggleButton(Component):
     class Kwargs:
-        id: str
-        type: Literal["checkbox", "radio"] = "checkbox"
+        type: ToggleButtonType = "checkbox"
         name: str | None = None
         value: str | None = None
         checked: bool = False
@@ -56,10 +53,12 @@ class ToggleButton(Component):
         default: SlotInput
 
     def get_template_data(self, args, kwargs: Kwargs, slots: Slots, context: Context):
+        toggle_id = f"toggle-button-{self.id}"
+
         input_attrs = {
             "type": kwargs.type,
             "class": "btn-check",
-            "id": kwargs.id,
+            "id": toggle_id,
             "autocomplete": "off",
         }
 
@@ -84,13 +83,13 @@ class ToggleButton(Component):
         return {
             "input_attrs": input_attrs,
             "label_classes": " ".join(label_classes),
-            "id": kwargs.id,
-            "attrs": kwargs.attrs or {},
+            "id": toggle_id,
+            "attrs": kwargs.attrs,
         }
 
     template: types.django_html = """
         <input {% html_attrs input_attrs %} />
-        <label {% html_attrs attrs class=label_classes defaults:for=id %}>
+        <label {% html_attrs attrs class=label_classes for=id %}>
             {% slot "default" / %}
         </label>
     """

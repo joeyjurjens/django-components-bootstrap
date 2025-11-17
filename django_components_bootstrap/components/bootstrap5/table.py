@@ -55,7 +55,7 @@ class Table(Component):
         return {
             "classes": " ".join(classes),
             "responsive_class": responsive_class,
-            "attrs": kwargs.attrs or {},
+            "attrs": kwargs.attrs,
         }
 
     template: types.django_html = """

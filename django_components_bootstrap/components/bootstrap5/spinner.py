@@ -30,11 +30,11 @@ class Spinner(Component):
         return {
             "classes": " ".join(classes),
             "label": kwargs.label,
-            "attrs": kwargs.attrs or {},
+            "attrs": kwargs.attrs,
         }
 
     template: types.django_html = """
-        <div {% html_attrs attrs class=classes defaults:role="status" %}>
+        <div {% html_attrs attrs class=classes role="status" %}>
             <span class="visually-hidden">{{ label }}</span>
         </div>
     """

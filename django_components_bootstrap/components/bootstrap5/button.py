@@ -1,9 +1,11 @@
-from typing import Literal
-
 from django.template import Context
 from django_components import Component, SlotInput, register, types
 
-from django_components_bootstrap.components.bootstrap5.types import ButtonType, Size, Variant
+from django_components_bootstrap.components.bootstrap5.types import (
+    ButtonType,
+    Size,
+    VariantWithLink,
+)
 from django_components_bootstrap.templatetags.bootstrap5 import comp_registry
 
 
@@ -11,13 +13,14 @@ from django_components_bootstrap.templatetags.bootstrap5 import comp_registry
 class Button(Component):
     class Kwargs:
         as_: str | None = None
-        variant: Variant | Literal["link"] = "primary"
+        variant: VariantWithLink = "primary"
         outline: bool = False
         size: Size | None = None
         active: bool = False
         disabled: bool = False
         type: ButtonType = "button"
         href: str | None = None
+        target: str | None = None
         attrs: dict | None = None
 
     class Slots:
@@ -28,9 +31,6 @@ class Button(Component):
             tag = kwargs.as_
             is_link = tag == "a"
         elif kwargs.href is not None:
-            tag = "a"
-            is_link = True
-        elif kwargs.variant == "link":
             tag = "a"
             is_link = True
         else:
@@ -54,30 +54,31 @@ class Button(Component):
         if kwargs.disabled and is_link:
             classes.append("disabled")
 
-        html_attrs = {}
-
-        if tag == "button":
-            html_attrs["type"] = kwargs.type
-            if kwargs.disabled:
-                html_attrs["disabled"] = True
-
-        if is_link:
-            html_attrs["href"] = kwargs.href or "#"
-            html_attrs["role"] = "button"
-            if kwargs.disabled:
-                html_attrs["aria-disabled"] = "true"
-                html_attrs["tabindex"] = "-1"
-
-        final_attrs = {**html_attrs, **(kwargs.attrs or {})}
+        button_type = kwargs.type if tag == "button" else None
+        button_disabled = kwargs.disabled if tag == "button" else None
+        aria_pressed = "true" if kwargs.active else None
+        link_href = kwargs.href or "#" if is_link else None
+        link_target = kwargs.target if is_link else None
+        link_role = "button" if is_link else None
+        link_aria_disabled = "true" if is_link and kwargs.disabled else None
+        link_tabindex = "-1" if is_link and kwargs.disabled else None
 
         return {
             "tag": tag,
             "classes": " ".join(classes),
-            "attrs": final_attrs,
+            "button_type": button_type,
+            "button_disabled": button_disabled,
+            "aria_pressed": aria_pressed,
+            "link_href": link_href,
+            "link_target": link_target,
+            "link_role": link_role,
+            "link_aria_disabled": link_aria_disabled,
+            "link_tabindex": link_tabindex,
+            "attrs": kwargs.attrs,
         }
 
     template: types.django_html = """
-        <{{ tag }} {% html_attrs attrs class=classes %}>
+        <{{ tag }} {% html_attrs attrs class=classes type=button_type disabled=button_disabled aria-pressed=aria_pressed href=link_href target=link_target role=link_role aria-disabled=link_aria_disabled tabindex=link_tabindex %}>
             {% slot "default" / %}
         </{{ tag }}>
     """

@@ -29,7 +29,7 @@ class Container(Component):
         return {
             "tag": kwargs.as_,
             "container_class": container_class,
-            "attrs": kwargs.attrs or {},
+            "attrs": kwargs.attrs,
         }
 
     template: types.django_html = """
@@ -83,7 +83,7 @@ class Row(Component):
         return {
             "tag": kwargs.as_,
             "classes": " ".join(classes),
-            "attrs": kwargs.attrs or {},
+            "attrs": kwargs.attrs,
         }
 
     template: types.django_html = """
@@ -162,7 +162,7 @@ class Col(Component):
         return {
             "tag": kwargs.as_,
             "classes": " ".join(classes) if classes else "col",
-            "attrs": kwargs.attrs or {},
+            "attrs": kwargs.attrs,
         }
 
     template: types.django_html = """

@@ -1,5 +1,10 @@
 from typing import Literal
 
+# Sentinel object for optional inject() defaults
+# Used to distinguish between "not provided" and "explicitly None"
+# since django-components treats None as "no default provided"
+NOT_PROVIDED = object()
+
 Breakpoint = Literal["sm", "md", "lg", "xl", "xxl"]
 BreakpointOrAuto = int | Literal["auto"]
 
@@ -84,3 +89,35 @@ AutoClose = Literal["true", "inside", "outside", "false"]
 
 ContainerFluid = Breakpoint | Literal["fluid"] | bool
 ResponsiveBreakpoint = Breakpoint | bool
+
+AlignmentStartEnd = Literal["start", "end"]
+OverlayPlacement = Literal["top", "bottom", "left", "right"]
+
+ListGroupTag = Literal["ul", "ol", "div"]
+ListGroupItemTag = Literal["li", "a", "button", "div"]
+NavTag = Literal["nav", "ul"]
+NavItemTag = Literal["li", "div"]
+
+BackdropBehavior = Literal["static", "true", "false"]
+CarouselPause = Literal["hover", "false"]
+CarouselRide = bool | Literal["carousel", "true"]
+FormControlType = Literal[
+    "text",
+    "email",
+    "password",
+    "number",
+    "tel",
+    "url",
+    "search",
+    "date",
+    "time",
+    "datetime-local",
+    "month",
+    "week",
+    "color",
+    "file",
+]
+NavbarContainer = Literal["sm", "md", "lg", "xl", "xxl", "fluid"] | bool
+StackDirection = Literal["horizontal", "vertical"]
+ToggleButtonType = Literal["checkbox", "radio"]
+TriggerEvent = Literal["click", "hover", "focus", "manual"]

@@ -11,7 +11,6 @@ class ButtonGroup(Component):
         size: Size | None = None
         vertical: bool = False
         role: str = "group"
-        aria_label: str | None = None
         attrs: dict | None = None
 
     class Slots:
@@ -25,12 +24,11 @@ class ButtonGroup(Component):
         return {
             "classes": " ".join(classes),
             "role": kwargs.role,
-            "aria_label": kwargs.aria_label,
-            "attrs": kwargs.attrs or {},
+            "attrs": kwargs.attrs,
         }
 
     template: types.django_html = """
-        <div {% html_attrs attrs class=classes defaults:role=role defaults:aria-label=aria_label %}>
+        <div {% html_attrs attrs class=classes defaults:role=role %}>
             {% slot "default" / %}
         </div>
     """
@@ -40,7 +38,6 @@ class ButtonGroup(Component):
 class ButtonToolbar(Component):
     class Kwargs:
         role: str = "toolbar"
-        aria_label: str | None = None
         attrs: dict | None = None
 
     class Slots:
@@ -49,12 +46,11 @@ class ButtonToolbar(Component):
     def get_template_data(self, args, kwargs: Kwargs, slots: Slots, context: Context):
         return {
             "role": kwargs.role,
-            "aria_label": kwargs.aria_label,
-            "attrs": kwargs.attrs or {},
+            "attrs": kwargs.attrs,
         }
 
     template: types.django_html = """
-        <div {% html_attrs attrs defaults:class="btn-toolbar" defaults:role=role defaults:aria-label=aria_label %}>
+        <div {% html_attrs attrs class="btn-toolbar" defaults:role=role %}>
             {% slot "default" / %}
         </div>
     """

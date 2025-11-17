@@ -1,11 +1,10 @@
-from typing import Literal
-
 from django.template import Context
 from django_components import Component, SlotInput, register, types
 
 from django_components_bootstrap.components.bootstrap5.types import (
     AnchorOrSpan,
     Breakpoint,
+    NavbarContainer,
     NavbarPlacement,
     ThemeVariant,
 )
@@ -19,7 +18,7 @@ class Navbar(Component):
         bg: str | None = None
         variant: ThemeVariant | None = None
         placement: NavbarPlacement | None = None
-        container: Literal["sm", "md", "lg", "xl", "xxl", "fluid", True] | None = "fluid"
+        container: NavbarContainer | None = "fluid"
         attrs: dict | None = None
 
     class Slots:
@@ -38,7 +37,7 @@ class Navbar(Component):
             classes.append(kwargs.placement)
 
         container_class = None
-        if kwargs.container is not None:
+        if kwargs.container is not None and kwargs.container is not False:
             if kwargs.container is True:
                 container_class = "container"
             elif kwargs.container == "fluid":
@@ -53,7 +52,7 @@ class Navbar(Component):
             "theme": kwargs.variant,
             "container_class": container_class,
             "navbar_collapse_id": navbar_collapse_id,
-            "attrs": kwargs.attrs or {},
+            "attrs": kwargs.attrs,
         }
 
     template: types.django_html = """
@@ -85,16 +84,16 @@ class NavbarBrand(Component):
         return {
             "tag": kwargs.as_,
             "href": kwargs.href,
-            "attrs": kwargs.attrs or {},
+            "attrs": kwargs.attrs,
         }
 
     template: types.django_html = """
         {% if tag == "a" %}
-            <a {% html_attrs attrs defaults:class="navbar-brand" defaults:href=href %}>
+            <a {% html_attrs attrs class="navbar-brand" href=href %}>
                 {% slot "default" / %}
             </a>
         {% else %}
-            <span {% html_attrs attrs defaults:class="navbar-brand" %}>
+            <span {% html_attrs attrs class="navbar-brand" %}>
                 {% slot "default" / %}
             </span>
         {% endif %}
@@ -104,7 +103,6 @@ class NavbarBrand(Component):
 @register("NavbarToggler", registry=comp_registry)
 class NavbarToggler(Component):
     class Kwargs:
-        aria_label: str = "Toggle navigation"
         attrs: dict | None = None
 
     class Slots:
@@ -116,12 +114,11 @@ class NavbarToggler(Component):
 
         return {
             "target_id": target_id,
-            "aria_label": kwargs.aria_label,
-            "attrs": kwargs.attrs or {},
+            "attrs": kwargs.attrs,
         }
 
     template: types.django_html = """
-        <button {% html_attrs attrs defaults:class="navbar-toggler" defaults:type="button" defaults:data-bs-toggle="collapse" defaults:data-bs-target="#{{ target_id }}" defaults:aria-controls=target_id defaults:aria-expanded="false" defaults:aria-label=aria_label %}>
+        <button {% html_attrs attrs class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#{{ target_id }}" defaults:aria-controls=target_id defaults:aria-expanded="false" defaults:aria-label="Toggle navigation" %}>
             {% if slot_default_filled %}
                 {% slot "default" / %}
             {% else %}
@@ -145,11 +142,11 @@ class NavbarCollapse(Component):
 
         return {
             "collapse_id": collapse_id,
-            "attrs": kwargs.attrs or {},
+            "attrs": kwargs.attrs,
         }
 
     template: types.django_html = """
-        <div {% html_attrs attrs defaults:class="collapse navbar-collapse" defaults:id=collapse_id %}>
+        <div {% html_attrs attrs class="collapse navbar-collapse" id=collapse_id %}>
             {% slot "default" / %}
         </div>
     """
@@ -171,7 +168,7 @@ class NavbarNav(Component):
 
         return {
             "classes": " ".join(classes),
-            "attrs": kwargs.attrs or {},
+            "attrs": kwargs.attrs,
         }
 
     template: types.django_html = """
@@ -191,11 +188,11 @@ class NavbarText(Component):
 
     def get_template_data(self, args, kwargs: Kwargs, slots: Slots, context: Context):
         return {
-            "attrs": kwargs.attrs or {},
+            "attrs": kwargs.attrs,
         }
 
     template: types.django_html = """
-        <span {% html_attrs attrs defaults:class="navbar-text" %}>
+        <span {% html_attrs attrs class="navbar-text" %}>
             {% slot "default" / %}
         </span>
     """

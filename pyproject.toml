@@ -56,7 +56,7 @@ ignore = [
 known-first-party = ["django_components_bootstrap"]
 
 [tool.ruff.lint.per-file-ignores]
-"__init__.py" = ["F401"]  # Allow unused imports in __init__.py
+"__init__.py" = ["F401"]
 
 [dependency-groups]
 dev = [
@@ -64,4 +64,5 @@ dev = [
     "pytest-django>=4.11.1",
     "pytest-cov>=6.0.0",
     "ruff>=0.14.5",
+    "mkdocs-material>=9.7.0",
 ]

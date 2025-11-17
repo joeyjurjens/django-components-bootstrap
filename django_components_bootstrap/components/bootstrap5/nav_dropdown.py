@@ -22,6 +22,16 @@ class NavDropdown(Component):
     def get_template_data(self, args, kwargs: Kwargs, slots: Slots, context: Context):
         dropdown_id = f"nav-dropdown-{self.id}"
 
+        # Merge default attrs with user-provided attrs
+        # User attrs override defaults
+        default_attrs = {
+            "id": dropdown_id,
+            "class": "dropdown-toggle",
+            "data-bs-toggle": "dropdown",
+            "aria-expanded": "false",
+        }
+        merged_attrs = {**default_attrs, **(kwargs.attrs or {})}
+
         return {
             "dropdown_id": dropdown_id,
             "title": kwargs.title,
@@ -30,17 +40,16 @@ class NavDropdown(Component):
             "auto_close": kwargs.auto_close,
             "align": kwargs.align,
             "dark": kwargs.dark,
-            "attrs": kwargs.attrs or {},
+            "merged_attrs": merged_attrs,
         }
 
     template: types.django_html = """
-
-        {% component "Dropdown" auto_close=auto_close attrs:class="nav-item" %}
-            {% component "NavLink" as_="button" active=active disabled=disabled attrs:id=dropdown_id attrs:class="dropdown-toggle" attrs:data-bs-toggle="dropdown" attrs:aria-expanded="false" %}
+        <li class="nav-item dropdown">
+            {% component "NavLink" as_="button" disabled=disabled attrs=merged_attrs %}
                 {{ title }}
             {% endcomponent %}
             {% component "DropdownMenu" align=align dark=dark %}
                 {% slot "default" / %}
             {% endcomponent %}
-        {% endcomponent %}
+        </li>
     """

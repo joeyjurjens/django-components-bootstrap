@@ -34,13 +34,13 @@ class DropdownButton(Component):
             "auto_close": kwargs.auto_close,
             "align": kwargs.align,
             "dark": kwargs.dark,
-            "attrs": kwargs.attrs or {},
+            "attrs": kwargs.attrs,
         }
 
     template: types.django_html = """
 
         {% component "Dropdown" auto_close=auto_close attrs=attrs %}
-            {% component "DropdownToggle" variant=variant size=size attrs:id=dropdown_id attrs:disabled=disabled attrs:href=href %}
+            {% component "DropdownToggle" variant=variant size=size disabled=disabled href=href %}
                 {{ title }}
             {% endcomponent %}
             {% component "DropdownMenu" align=align dark=dark %}
@@ -85,17 +85,17 @@ class SplitButton(Component):
             "auto_close": kwargs.auto_close,
             "align": kwargs.align,
             "dark": kwargs.dark,
-            "attrs": kwargs.attrs or {},
+            "attrs": kwargs.attrs,
         }
 
     template: types.django_html = """
 
         {% component "Dropdown" auto_close=auto_close %}
             {% component "ButtonGroup" attrs=attrs %}
-                {% component "Button" variant=variant size=size disabled=disabled href=href attrs:target=target attrs:type=type %}
+                {% component "Button" variant=variant size=size disabled=disabled href=href target=target type=type %}
                     {{ title }}
                 {% endcomponent %}
-                {% component "DropdownToggle" split=True variant=variant size=size attrs:id=dropdown_id attrs:disabled=disabled %}
+                {% component "DropdownToggle" split=True variant=variant size=size disabled=disabled %}
                     <span class="visually-hidden">{{ toggle_label }}</span>
                 {% endcomponent %}
                 {% component "DropdownMenu" align=align dark=dark %}

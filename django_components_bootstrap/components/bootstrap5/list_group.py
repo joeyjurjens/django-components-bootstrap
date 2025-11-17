@@ -1,9 +1,9 @@
-from typing import Literal
-
 from django.template import Context
 from django_components import Component, SlotInput, register, types
 
 from django_components_bootstrap.components.bootstrap5.types import (
+    ListGroupItemTag,
+    ListGroupTag,
     ResponsiveBreakpoint,
     Variant,
 )
@@ -13,7 +13,7 @@ from django_components_bootstrap.templatetags.bootstrap5 import comp_registry
 @register("ListGroup", registry=comp_registry)
 class ListGroup(Component):
     class Kwargs:
-        as_: Literal["ul", "ol", "div"] = "ul"
+        as_: ListGroupTag = "ul"
         flush: bool = False
         numbered: bool = False
         horizontal: ResponsiveBreakpoint | None = None
@@ -39,7 +39,7 @@ class ListGroup(Component):
         return {
             "tag": tag,
             "classes": " ".join(classes),
-            "attrs": kwargs.attrs or {},
+            "attrs": kwargs.attrs,
         }
 
     template: types.django_html = """
@@ -52,7 +52,7 @@ class ListGroup(Component):
 @register("ListGroupItem", registry=comp_registry)
 class ListGroupItem(Component):
     class Kwargs:
-        as_: Literal["li", "a", "button", "div"] = "li"
+        as_: ListGroupItemTag = "li"
         variant: Variant | None = None
         active: bool = False
         disabled: bool = False
@@ -78,36 +78,37 @@ class ListGroupItem(Component):
             classes.append(f"list-group-item-{kwargs.variant}")
         if kwargs.active:
             classes.append("active")
-        if kwargs.disabled:
+
+        if kwargs.disabled and tag != "button":
             classes.append("disabled")
 
-        html_attrs = {}
-
-        if kwargs.active:
-            html_attrs["aria-current"] = "true"
-
-        if tag == "button" and kwargs.disabled:
-            html_attrs["disabled"] = True
-
-        if tag != "button":
-            html_attrs["aria-disabled"] = "true" if kwargs.disabled else "false"
-
-        final_attrs = {**html_attrs, **(kwargs.attrs or {})}
+        aria_current = "true" if kwargs.active else None
+        button_disabled = True if tag == "button" and kwargs.disabled else None
+        aria_disabled = "true" if tag != "button" and kwargs.disabled else None
+        button_type = "button" if tag == "button" else None
 
         return {
             "tag": tag,
             "classes": " ".join(classes),
             "href": kwargs.href,
-            "attrs": final_attrs,
+            "aria_current": aria_current,
+            "button_disabled": button_disabled,
+            "button_type": button_type,
+            "aria_disabled": aria_disabled,
+            "attrs": kwargs.attrs,
         }
 
     template: types.django_html = """
         {% if tag == "a" and href %}
-            <a {% html_attrs attrs defaults:href=href class=classes %}>
+            <a {% html_attrs attrs href=href class=classes aria-current=aria_current aria-disabled=aria_disabled %}>
                 {% slot "default" / %}
             </a>
+        {% elif tag == "button" %}
+            <button {% html_attrs attrs class=classes type=button_type aria-current=aria_current disabled=button_disabled %}>
+                {% slot "default" / %}
+            </button>
         {% else %}
-            <{{ tag }} {% html_attrs attrs class=classes %}>
+            <{{ tag }} {% html_attrs attrs class=classes aria-current=aria_current aria-disabled=aria_disabled %}>
                 {% slot "default" / %}
             </{{ tag }}>
         {% endif %}
