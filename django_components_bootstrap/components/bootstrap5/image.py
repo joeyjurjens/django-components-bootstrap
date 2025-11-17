@@ -34,6 +34,8 @@ class Image(Component):
         }
 
     template: types.django_html = """
+        {% load component_tags bootstrap5 %}
+
         {% if classes %}
             <img {% html_attrs attrs src=src alt=alt class=classes %} />
         {% else %}

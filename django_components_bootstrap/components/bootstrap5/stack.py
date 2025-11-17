@@ -36,6 +36,8 @@ class Stack(Component):
         }
 
     template: types.django_html = """
+        {% load component_tags bootstrap5 %}
+
         <div {% html_attrs attrs class=classes %}>
             {% slot "default" / %}
         </div>

@@ -18,6 +18,8 @@ class Figure(Component):
         }
 
     template: types.django_html = """
+        {% load component_tags bootstrap5 %}
+
         <figure {% html_attrs attrs class="figure" %}>
             {% slot "default" / %}
         </figure>
@@ -48,6 +50,8 @@ class FigureImage(Component):
         }
 
     template: types.django_html = """
+        {% load component_tags bootstrap5 %}
+
         <img {% html_attrs attrs class=classes src=src alt=alt %} />
     """
 
@@ -66,6 +70,8 @@ class FigureCaption(Component):
         }
 
     template: types.django_html = """
+    {% load component_tags bootstrap5 %}
+
         <figcaption {% html_attrs attrs class="figure-caption" %}>
             {% slot "default" / %}
         </figcaption>

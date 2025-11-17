@@ -38,6 +38,7 @@ class DropdownButton(Component):
         }
 
     template: types.django_html = """
+        {% load component_tags bootstrap5 %}
 
         {% component "Dropdown" auto_close=auto_close attrs=attrs %}
             {% component "DropdownToggle" variant=variant size=size disabled=disabled href=href %}
@@ -89,6 +90,7 @@ class SplitButton(Component):
         }
 
     template: types.django_html = """
+    {% load component_tags bootstrap5 %}
 
         {% component "Dropdown" auto_close=auto_close %}
             {% component "ButtonGroup" attrs=attrs %}

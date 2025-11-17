@@ -47,6 +47,8 @@ class Carousel(Component):
         }
 
     template: types.django_html = """
+        {% load component_tags bootstrap5 %}
+
         {% provide "carousel" carousel_id=carousel_id items=items %}
             {% slot "default" required / %}
         {% endprovide %}
@@ -122,6 +124,8 @@ class CarouselRenderer(Component):
         }
 
     template: types.django_html = """
+        {% load component_tags bootstrap5 %}
+
         {% provide "carousel" carousel_id=carousel_id %}
             <div {% html_attrs attrs id=carousel_id class=classes data-bs-ride=data_bs_ride data-bs-interval=data_bs_interval data-bs-keyboard=data_bs_keyboard data-bs-pause=data_bs_pause data-bs-touch=data_bs_touch data-bs-theme=data_bs_theme %}>
                 {% if show_indicators %}
@@ -175,6 +179,8 @@ class CarouselItem(Component):
         }
 
     template: types.django_html = """
+        {% load component_tags bootstrap5 %}
+
         <div {% html_attrs attrs class=classes data-bs-interval=interval %}>
             {% slot "default" / %}
         </div>
@@ -204,6 +210,8 @@ class CarouselCaption(Component):
         }
 
     template: types.django_html = """
+    {% load component_tags bootstrap5 %}
+
         <div {% html_attrs attrs class="carousel-caption" %}>
             {% slot "default" / %}
         </div>
@@ -240,5 +248,7 @@ class CarouselIndicator(Component):
         }
 
     template: types.django_html = """
+        {% load component_tags bootstrap5 %}
+
         <button {% html_attrs attrs type="button" data-bs-target="#{{ carousel_id }}" data-bs-slide-to=slide_to defaults:aria-label=aria_label %}{% if classes %} class="{{ classes }}"{% endif %}{% if active %} aria-current="true"{% endif %}></button>
     """

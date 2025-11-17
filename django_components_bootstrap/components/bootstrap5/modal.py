@@ -65,6 +65,8 @@ class Modal(Component):
         }
 
     template: types.django_html = """
+        {% load component_tags bootstrap5 %}
+
         {% provide "modal" modal_id=modal_id %}
             <div {% html_attrs attrs id=modal_id class=modal_classes tabindex="-1" defaults:aria-labelledby="{{ modal_id }}-label" defaults:aria-hidden="true" %} {% if backdrop %}data-bs-backdrop="{{ backdrop }}"{% endif %}{% if not keyboard %} data-bs-keyboard="false"{% endif %}>
                 <div class="{{ dialog_classes }}">
@@ -97,6 +99,8 @@ class ModalHeader(Component):
         }
 
     template: types.django_html = """
+        {% load component_tags bootstrap5 %}
+
         <div {% html_attrs attrs class="modal-header" %}>
             {% slot "default" / %}
             {% if close_button %}
@@ -120,6 +124,8 @@ class ModalBody(Component):
         }
 
     template: types.django_html = """
+    {% load component_tags bootstrap5 %}
+
         <div {% html_attrs attrs class="modal-body" %}>
             {% slot "default" / %}
         </div>
@@ -140,6 +146,8 @@ class ModalFooter(Component):
         }
 
     template: types.django_html = """
+    {% load component_tags bootstrap5 %}
+
         <div {% html_attrs attrs class="modal-footer" %}>
             {% slot "default" / %}
         </div>
@@ -166,6 +174,8 @@ class ModalTitle(Component):
         }
 
     template: types.django_html = """
+        {% load component_tags bootstrap5 %}
+
         <{{ tag }} {% html_attrs attrs class="modal-title" id="{{ modal_id }}-label" %}>
             {% slot "default" / %}
         </{{ tag }}>
@@ -192,6 +202,8 @@ class ModalToggle(Component):
         }
 
     template: types.django_html = """
+        {% load component_tags bootstrap5 %}
+
         <{{ tag }} {% html_attrs attrs data-bs-toggle="modal" data-bs-target="#{{ target_id }}" %}>
             {% slot "default" / %}
         </{{ tag }}>

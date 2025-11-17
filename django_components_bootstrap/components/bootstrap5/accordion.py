@@ -29,6 +29,8 @@ class Accordion(Component):
         }
 
     template: types.django_html = """
+        {% load component_tags bootstrap5 %}
+
         {% provide "accordion" accordion_id=accordion_id always_open=always_open %}
             <div {% html_attrs attrs class=css_class id=accordion_id %}>
                 {% slot "default" / %}
@@ -63,6 +65,8 @@ class AccordionItem(Component):
         }
 
     template: types.django_html = """
+        {% load component_tags bootstrap5 %}
+
         {% provide "accordion_item" heading_id=heading_id collapse_id=collapse_id is_open=is_open data_bs_parent=data_bs_parent always_open=always_open %}
             <div {% html_attrs attrs class="accordion-item" %}>
                 {% slot "default" / %}
@@ -96,6 +100,8 @@ class AccordionButton(Component):
         }
 
     template: types.django_html = """
+        {% load component_tags bootstrap5 %}
+
         <button {% html_attrs attrs class=button_classes type="button" data-bs-toggle="collapse" data-bs-target="#{{ collapse_id }}" defaults:aria-expanded=aria_expanded defaults:aria-controls=collapse_id disabled=disabled %}>
             {% slot "default" / %}
         </button>
@@ -121,6 +127,8 @@ class AccordionHeader(Component):
         }
 
     template: types.django_html = """
+        {% load component_tags bootstrap5 %}
+
         <h2 {% html_attrs attrs class="accordion-header" id=heading_id %}>
             {% component "AccordionButton" disabled=disabled %}
                 {% slot "default" / %}
@@ -154,6 +162,8 @@ class AccordionBody(Component):
         }
 
     template: types.django_html = """
+        {% load component_tags bootstrap5 %}
+
         <div {% html_attrs id=collapse_id class=collapse_classes defaults:aria-labelledby=heading_id %} {% if not always_open %}data-bs-parent="{{ data_bs_parent }}"{% endif %}>
             <div {% html_attrs attrs class="accordion-body" %}>
                 {% slot "default" / %}

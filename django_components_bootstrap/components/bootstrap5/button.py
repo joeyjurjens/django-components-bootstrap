@@ -78,6 +78,8 @@ class Button(Component):
         }
 
     template: types.django_html = """
+        {% load component_tags bootstrap5 %}
+
         <{{ tag }} {% html_attrs attrs class=classes type=button_type disabled=button_disabled aria-pressed=aria_pressed href=link_href target=link_target role=link_role aria-disabled=link_aria_disabled tabindex=link_tabindex %}>
             {% slot "default" / %}
         </{{ tag }}>

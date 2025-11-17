@@ -40,6 +40,8 @@ class Placeholder(Component):
         }
 
     template: types.django_html = """
+        {% load component_tags bootstrap5 %}
+
         <{{ tag }} {% html_attrs attrs class=classes %}></{{ tag }}>
     """
 
@@ -66,5 +68,7 @@ class PlaceholderButton(Component):
         }
 
     template: types.django_html = """
+        {% load component_tags bootstrap5 %}
+
         <button {% html_attrs attrs class=classes disabled=True defaults:aria-hidden="true" %}></button>
     """

@@ -31,10 +31,6 @@ TEMPLATES = [
                 "django.template.context_processors.debug",
                 "django.template.context_processors.request",
             ],
-            "builtins": [
-                "django_components.templatetags.component_tags",
-                "django_components_bootstrap.templatetags.bootstrap5",
-            ],
         },
     },
 ]

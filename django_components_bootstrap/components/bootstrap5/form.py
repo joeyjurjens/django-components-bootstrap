@@ -31,6 +31,8 @@ class Form(Component):
         }
 
     template: types.django_html = """
+        {% load component_tags bootstrap5 %}
+
         <form {% html_attrs attrs %}{% if form_class %} class="{{ form_class }}"{% endif %}>
             {% slot "default" / %}
         </form>
@@ -55,6 +57,8 @@ class FormGroup(Component):
         }
 
     template: types.django_html = """
+        {% load component_tags bootstrap5 %}
+
         {% provide "formgroup" control_id=control_id %}
             <{{ tag }} {% html_attrs attrs %}>
                 {% slot "default" / %}
@@ -85,6 +89,8 @@ class FormLabel(Component):
         }
 
     template: types.django_html = """
+        {% load component_tags bootstrap5 %}
+
         <label {% html_attrs attrs defaults:class="form-label" defaults:for=for_ %}>
             {% slot "default" / %}
         </label>
@@ -163,6 +169,8 @@ class FormControl(Component):
         }
 
     template: types.django_html = """
+        {% load component_tags bootstrap5 %}
+
         <input {% html_attrs attrs class=form_class defaults:type=type defaults:id=id defaults:name=name defaults:value=value defaults:placeholder=placeholder defaults:size=html_size %} />
     """
 
@@ -209,6 +217,8 @@ class FormTextarea(Component):
         }
 
     template: types.django_html = """
+        {% load component_tags bootstrap5 %}
+
         <textarea {% html_attrs attrs class=classes defaults:rows=rows defaults:id=id defaults:name=name defaults:placeholder=placeholder %}>{% if value %}{{ value }}{% endif %}{% slot "default" default / %}</textarea>
     """
 
@@ -256,6 +266,8 @@ class FormSelect(Component):
         }
 
     template: types.django_html = """
+        {% load component_tags bootstrap5 %}
+
         <select {% html_attrs attrs class=classes defaults:id=id defaults:name=name defaults:size=html_size %}>
             {% slot "default" / %}
         </select>
@@ -324,6 +336,7 @@ class FormCheckInput(Component):
         }
 
     template: types.django_html = """
+        {% load component_tags bootstrap5 %}
 
         <input {% html_attrs attrs class=input_classes defaults:type=input_type defaults:id=id defaults:name=name defaults:value=value %} />
     """
@@ -353,6 +366,7 @@ class FormCheckLabel(Component):
         }
 
     template: types.django_html = """
+        {% load component_tags bootstrap5 %}
 
         <label {% html_attrs attrs defaults:class="form-check-label" defaults:for=for_ defaults:title=title %}>
             {% slot "default" / %}
@@ -412,6 +426,7 @@ class FormCheck(Component):
         }
 
     template: types.django_html = """
+        {% load component_tags bootstrap5 %}
 
         {% provide "formcheck" control_id=control_id type=type is_valid=is_valid is_invalid=is_invalid disabled=disabled checked=checked %}
             <div {% html_attrs attrs class=wrapper_classes %}>
@@ -442,6 +457,8 @@ class FormText(Component):
         }
 
     template: types.django_html = """
+        {% load component_tags bootstrap5 %}
+
         <div {% html_attrs attrs defaults:class="form-text" %}>
             {% slot "default" / %}
         </div>
@@ -462,6 +479,8 @@ class FormFloating(Component):
         }
 
     template: types.django_html = """
+        {% load component_tags bootstrap5 %}
+
         <div {% html_attrs attrs defaults:class="form-floating" %}>
             {% slot "default" / %}
         </div>

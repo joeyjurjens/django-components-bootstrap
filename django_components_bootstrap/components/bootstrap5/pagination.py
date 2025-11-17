@@ -27,6 +27,8 @@ class Pagination(Component):
         }
 
     template: types.django_html = """
+        {% load component_tags bootstrap5 %}
+
         <nav {% html_attrs attrs defaults:aria-label="Page navigation" %}>
             <ul {% html_attrs ul_attrs class=classes %}>
                 {% slot "default" / %}
@@ -64,6 +66,8 @@ class PaginationItem(Component):
         }
 
     template: types.django_html = """
+        {% load component_tags bootstrap5 %}
+
         <li {% html_attrs attrs class=classes %}>
             <a {% html_attrs class="page-link" href=href defaults:aria-label=aria_label %}{% if active %} aria-current="page"{% endif %}{% if disabled %} tabindex="-1" aria-disabled="true"{% endif %}>
                 {% slot "default" / %}
@@ -95,6 +99,8 @@ class PageLink(Component):
         }
 
     template: types.django_html = """
+        {% load component_tags bootstrap5 %}
+
         <a {% html_attrs attrs class="page-link" href=href defaults:aria-label=aria_label %}>
             {% slot "default" / %}
         </a>
@@ -124,6 +130,8 @@ class PaginationFirst(Component):
         }
 
     template: types.django_html = """
+    {% load component_tags bootstrap5 %}
+
         <li {% html_attrs attrs class=classes %}>
             <a class="page-link" href="{{ href }}"{% if disabled %} tabindex="-1" aria-disabled="true"{% endif %}>
                 <span {% html_attrs defaults:aria-hidden="true" %}>{% slot "default" %}«{% endslot %}</span>
@@ -156,6 +164,8 @@ class PaginationPrev(Component):
         }
 
     template: types.django_html = """
+    {% load component_tags bootstrap5 %}
+
         <li {% html_attrs attrs class=classes %}>
             <a class="page-link" href="{{ href }}"{% if disabled %} tabindex="-1" aria-disabled="true"{% endif %}>
                 <span {% html_attrs defaults:aria-hidden="true" %}>{% slot "default" %}‹{% endslot %}</span>
@@ -188,6 +198,8 @@ class PaginationNext(Component):
         }
 
     template: types.django_html = """
+    {% load component_tags bootstrap5 %}
+
         <li {% html_attrs attrs class=classes %}>
             <a class="page-link" href="{{ href }}"{% if disabled %} tabindex="-1" aria-disabled="true"{% endif %}>
                 <span {% html_attrs defaults:aria-hidden="true" %}>{% slot "default" %}›{% endslot %}</span>
@@ -220,6 +232,8 @@ class PaginationLast(Component):
         }
 
     template: types.django_html = """
+    {% load component_tags bootstrap5 %}
+
         <li {% html_attrs attrs class=classes %}>
             <a class="page-link" href="{{ href }}"{% if disabled %} tabindex="-1" aria-disabled="true"{% endif %}>
                 <span {% html_attrs defaults:aria-hidden="true" %}>{% slot "default" %}»{% endslot %}</span>
@@ -250,6 +264,8 @@ class PaginationEllipsis(Component):
         }
 
     template: types.django_html = """
+    {% load component_tags bootstrap5 %}
+
         <li {% html_attrs attrs class=classes %}>
             <span class="page-link">
                 <span {% html_attrs defaults:aria-hidden="true" %}>{% slot "default" %}…{% endslot %}</span>

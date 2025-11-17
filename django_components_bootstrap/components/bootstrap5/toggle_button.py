@@ -30,6 +30,8 @@ class ToggleButtonGroup(Component):
         }
 
     template: types.django_html = """
+        {% load component_tags bootstrap5 %}
+
         <div {% html_attrs attrs class=classes role="group" %}>
             {% slot "default" / %}
         </div>
@@ -88,6 +90,8 @@ class ToggleButton(Component):
         }
 
     template: types.django_html = """
+        {% load component_tags bootstrap5 %}
+
         <input {% html_attrs input_attrs %} />
         <label {% html_attrs attrs class=label_classes for=id %}>
             {% slot "default" / %}

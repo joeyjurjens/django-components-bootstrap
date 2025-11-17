@@ -59,6 +59,8 @@ class Table(Component):
         }
 
     template: types.django_html = """
+        {% load component_tags bootstrap5 %}
+
         {% if responsive_class %}
             <div class="{{ responsive_class }}">
                 <table {% html_attrs attrs class=classes %}>

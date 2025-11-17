@@ -28,6 +28,8 @@ class ButtonGroup(Component):
         }
 
     template: types.django_html = """
+        {% load component_tags bootstrap5 %}
+
         <div {% html_attrs attrs class=classes defaults:role=role %}>
             {% slot "default" / %}
         </div>
@@ -50,6 +52,8 @@ class ButtonToolbar(Component):
         }
 
     template: types.django_html = """
+    {% load component_tags bootstrap5 %}
+
         <div {% html_attrs attrs class="btn-toolbar" defaults:role=role %}>
             {% slot "default" / %}
         </div>

@@ -28,6 +28,8 @@ class InputGroup(Component):
         }
 
     template: types.django_html = """
+        {% load component_tags bootstrap5 %}
+
         <div {% html_attrs attrs class=classes %}>
             {% slot "default" / %}
         </div>
@@ -48,6 +50,8 @@ class InputGroupText(Component):
         }
 
     template: types.django_html = """
+        {% load component_tags bootstrap5 %}
+
         <span {% html_attrs attrs class="input-group-text" %}>
             {% slot "default" / %}
         </span>
@@ -68,6 +72,8 @@ class InputGroupRadio(Component):
         }
 
     template: types.django_html = """
+    {% load component_tags bootstrap5 %}
+
         <div class="input-group-text">
             <input {% html_attrs attrs type="radio" class="form-check-input mt-0" %} />
         </div>
@@ -88,6 +94,8 @@ class InputGroupCheckbox(Component):
         }
 
     template: types.django_html = """
+    {% load component_tags bootstrap5 %}
+
         <div class="input-group-text">
             <input {% html_attrs attrs type="checkbox" class="form-check-input mt-0" %} />
         </div>
@@ -112,6 +120,8 @@ class FloatingLabel(Component):
         }
 
     template: types.django_html = """
+        {% load component_tags bootstrap5 %}
+
         {% provide "formgroup" control_id=control_id %}
             <div {% html_attrs attrs class="form-floating" %}>
                 {% slot "default" / %}

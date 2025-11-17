@@ -32,6 +32,8 @@ class Collapse(Component):
         }
 
     template: types.django_html = """
+        {% load component_tags bootstrap5 %}
+
         {% provide "collapse" collapse_id=collapse_id %}
             {% slot "toggle" / %}
             <div {% html_attrs attrs id=collapse_id class=classes %}>
@@ -71,6 +73,8 @@ class CollapseToggle(Component):
         }
 
     template: types.django_html = """
+    {% load component_tags bootstrap5 %}
+
         {% if tag == "button" %}
             <button {% html_attrs attrs type=button_type data-bs-toggle="collapse" data-bs-target="#{{ target_id }}" defaults:aria-expanded=expanded defaults:aria-controls=target_id %}>
                 {% slot "default" / %}

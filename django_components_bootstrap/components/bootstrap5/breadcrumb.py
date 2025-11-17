@@ -20,6 +20,8 @@ class Breadcrumb(Component):
         }
 
     template: types.django_html = """
+        {% load component_tags bootstrap5 %}
+
         <{{ tag }} {% html_attrs attrs defaults:aria-label="breadcrumb" %}>
             <ol class="breadcrumb">
                 {% slot "default" / %}
@@ -56,6 +58,8 @@ class BreadcrumbItem(Component):
         }
 
     template: types.django_html = """
+    {% load component_tags bootstrap5 %}
+
         <{{ tag }} {% html_attrs attrs class=css_class aria-current=aria_current %}>
             {% if not active and href %}
                 <a href="{{ href }}">{% slot "default" / %}</a>

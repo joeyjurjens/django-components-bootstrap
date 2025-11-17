@@ -34,6 +34,8 @@ class Spinner(Component):
         }
 
     template: types.django_html = """
+        {% load component_tags bootstrap5 %}
+
         <div {% html_attrs attrs class=classes role="status" %}>
             <span class="visually-hidden">{{ label }}</span>
         </div>

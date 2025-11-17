@@ -43,6 +43,8 @@ class ListGroup(Component):
         }
 
     template: types.django_html = """
+        {% load component_tags bootstrap5 %}
+
         <{{ tag }} {% html_attrs attrs class=classes %}>
             {% slot "default" / %}
         </{{ tag }}>
@@ -99,6 +101,8 @@ class ListGroupItem(Component):
         }
 
     template: types.django_html = """
+        {% load component_tags bootstrap5 %}
+
         {% if tag == "a" and href %}
             <a {% html_attrs attrs href=href class=classes aria-current=aria_current aria-disabled=aria_disabled %}>
                 {% slot "default" / %}

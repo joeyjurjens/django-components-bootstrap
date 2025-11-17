@@ -12,7 +12,7 @@ class TestOffcanvas(SimpleTestCase):
     def test_basic(self):
         with mock_component_id():
             template = Template("""
-            {% load bootstrap5 %}
+            {% load component_tags bootstrap5 %}
             {% component "Offcanvas" scroll=False keyboard=False %}
               {% fill "toggle" %}
                 {% component "OffcanvasToggle" attrs={"class": "btn btn-primary", "type": "button"} %}Toggle Offcanvas{% endcomponent %}
@@ -48,7 +48,7 @@ class TestOffcanvas(SimpleTestCase):
     def test_offcanvas_placement_start(self):
         with mock_component_id():
             template = Template("""
-            {% load bootstrap5 %}
+            {% load component_tags bootstrap5 %}
             {% component "Offcanvas" placement="start" %}
               {% fill "toggle" %}
                 {% component "OffcanvasToggle" attrs:class="btn btn-primary" %}Toggle Offcanvas{% endcomponent %}
@@ -84,7 +84,7 @@ class TestOffcanvas(SimpleTestCase):
     def test_offcanvas_placement_end(self):
         with mock_component_id():
             template = Template("""
-            {% load bootstrap5 %}
+            {% load component_tags bootstrap5 %}
             {% component "Offcanvas" placement="end" %}
               {% fill "toggle" %}
                 {% component "OffcanvasToggle" attrs:class="btn btn-primary" %}Toggle Offcanvas{% endcomponent %}
@@ -120,7 +120,7 @@ class TestOffcanvas(SimpleTestCase):
     def test_offcanvas_placement_top(self):
         with mock_component_id():
             template = Template("""
-            {% load bootstrap5 %}
+            {% load component_tags bootstrap5 %}
             {% component "Offcanvas" placement="top" %}
               {% fill "toggle" %}
                 {% component "OffcanvasToggle" attrs:class="btn btn-primary" %}Toggle Offcanvas{% endcomponent %}
@@ -156,7 +156,7 @@ class TestOffcanvas(SimpleTestCase):
     def test_offcanvas_placement_bottom(self):
         with mock_component_id():
             template = Template("""
-            {% load bootstrap5 %}
+            {% load component_tags bootstrap5 %}
             {% component "Offcanvas" placement="bottom" %}
               {% fill "toggle" %}
                 {% component "OffcanvasToggle" attrs:class="btn btn-primary" %}Toggle Offcanvas{% endcomponent %}
@@ -192,7 +192,7 @@ class TestOffcanvas(SimpleTestCase):
     def test_offcanvas_body_scrolling_enabled(self):
         with mock_component_id():
             template = Template("""
-            {% load bootstrap5 %}
+            {% load component_tags bootstrap5 %}
             {% component "Offcanvas" scroll=True backdrop="false" %}
               {% fill "toggle" %}
                 {% component "OffcanvasToggle" attrs:class="btn btn-primary" %}Toggle Offcanvas{% endcomponent %}
@@ -228,7 +228,7 @@ class TestOffcanvas(SimpleTestCase):
     def test_offcanvas_with_backdrop(self):
         with mock_component_id():
             template = Template("""
-            {% load bootstrap5 %}
+            {% load component_tags bootstrap5 %}
             {% component "Offcanvas" scroll=True %}
               {% fill "toggle" %}
                 {% component "OffcanvasToggle" attrs:class="btn btn-primary" %}Toggle Offcanvas{% endcomponent %}
@@ -264,7 +264,7 @@ class TestOffcanvas(SimpleTestCase):
     def test_offcanvas_static_backdrop(self):
         with mock_component_id():
             template = Template("""
-            {% load bootstrap5 %}
+            {% load component_tags bootstrap5 %}
             {% component "Offcanvas" backdrop="static" %}
               {% fill "toggle" %}
                 {% component "OffcanvasToggle" attrs:class="btn btn-primary" %}Toggle Offcanvas{% endcomponent %}
@@ -300,7 +300,7 @@ class TestOffcanvas(SimpleTestCase):
     def test_offcanvas_no_backdrop(self):
         with mock_component_id():
             template = Template("""
-            {% load bootstrap5 %}
+            {% load component_tags bootstrap5 %}
             {% component "Offcanvas" backdrop="false" %}
               {% fill "toggle" %}
                 {% component "OffcanvasToggle" attrs:class="btn btn-primary" %}Toggle Offcanvas{% endcomponent %}
@@ -336,7 +336,7 @@ class TestOffcanvas(SimpleTestCase):
     def test_offcanvas_responsive_lg(self):
         with mock_component_id():
             template = Template("""
-            {% load bootstrap5 %}
+            {% load component_tags bootstrap5 %}
             {% component "Offcanvas" responsive="lg" placement="end" %}
               {% fill "toggle" %}
                 {% component "OffcanvasToggle" attrs:class="btn btn-primary" %}Toggle Offcanvas{% endcomponent %}
@@ -372,7 +372,7 @@ class TestOffcanvas(SimpleTestCase):
     def test_offcanvas_responsive_md(self):
         with mock_component_id():
             template = Template("""
-            {% load bootstrap5 %}
+            {% load component_tags bootstrap5 %}
             {% component "Offcanvas" responsive="md" %}
               {% fill "toggle" %}
                 {% component "OffcanvasToggle" attrs:class="btn btn-primary" %}Toggle Offcanvas{% endcomponent %}
@@ -408,7 +408,7 @@ class TestOffcanvas(SimpleTestCase):
     def test_offcanvas_without_close_button(self):
         with mock_component_id():
             template = Template("""
-            {% load bootstrap5 %}
+            {% load component_tags bootstrap5 %}
             {% component "Offcanvas" %}
               {% fill "toggle" %}
                 {% component "OffcanvasToggle" attrs:class="btn btn-primary" %}Toggle Offcanvas{% endcomponent %}
@@ -443,7 +443,7 @@ class TestOffcanvas(SimpleTestCase):
     def test_offcanvas_custom_title_heading(self):
         with mock_component_id():
             template = Template("""
-            {% load bootstrap5 %}
+            {% load component_tags bootstrap5 %}
             {% component "Offcanvas" %}
               {% fill "toggle" %}
                 {% component "OffcanvasToggle" attrs:class="btn btn-primary" %}Toggle Offcanvas{% endcomponent %}

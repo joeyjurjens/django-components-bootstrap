@@ -28,6 +28,8 @@ class Progress(Component):
         }
 
     template: types.django_html = """
+        {% load component_tags bootstrap5 %}
+
         <div {% html_attrs attrs class=classes %} {% if style %}style="{% for key, value in style.items %}{{ key }}: {{ value }};{% endfor %}"{% endif %}>
             {% slot "default" / %}
         </div>
@@ -48,6 +50,8 @@ class ProgressStacked(Component):
         }
 
     template: types.django_html = """
+        {% load component_tags bootstrap5 %}
+
         <div {% html_attrs attrs class="progress-stacked" %}>
             {% slot "default" / %}
         </div>
@@ -94,6 +98,8 @@ class ProgressBar(Component):
         }
 
     template: types.django_html = """
+        {% load component_tags bootstrap5 %}
+
         <div {% html_attrs attrs class=classes %} style="width: {{ percentage }}%">
             {% if label %}{{ label }}{% endif %}
             {% slot "default" default / %}

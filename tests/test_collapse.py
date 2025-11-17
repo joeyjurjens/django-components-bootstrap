@@ -12,7 +12,7 @@ class TestCollapse(SimpleTestCase):
     def test_basic(self):
         with mock_component_id():
             template = Template("""
-            {% load bootstrap5 %}
+            {% load component_tags bootstrap5 %}
             {% component "Collapse" %}
               {% fill "toggle" %}
                 {% component "CollapseToggle" attrs:class="btn btn-primary" %}Toggle collapse{% endcomponent %}
@@ -41,7 +41,7 @@ class TestCollapse(SimpleTestCase):
     def test_multiple_targets(self):
         with mock_component_id():
             template = Template("""
-            {% load bootstrap5 %}
+            {% load component_tags bootstrap5 %}
             <p>
               {% component "Collapse" %}
                 {% fill "toggle" %}
@@ -74,7 +74,7 @@ class TestCollapse(SimpleTestCase):
     def test_horizontal(self):
         with mock_component_id():
             template = Template("""
-            {% load bootstrap5 %}
+            {% load component_tags bootstrap5 %}
             {% component "Collapse" horizontal=True %}
               {% fill "toggle" %}
                 {% component "CollapseToggle" attrs:class="btn btn-primary" %}Toggle horizontal collapse{% endcomponent %}
@@ -103,7 +103,7 @@ class TestCollapse(SimpleTestCase):
     def test_with_button_toggle(self):
         with mock_component_id():
             template = Template("""
-            {% load bootstrap5 %}
+            {% load component_tags bootstrap5 %}
             {% component "Collapse" %}
               {% fill "toggle" %}
                 {% component "CollapseToggle" attrs={"class": "btn btn-primary"} %}
@@ -136,7 +136,7 @@ class TestCollapse(SimpleTestCase):
     def test_with_link_toggle(self):
         with mock_component_id():
             template = Template("""
-            {% load bootstrap5 %}
+            {% load component_tags bootstrap5 %}
             {% component "Collapse" %}
               {% fill "toggle" %}
                 {% component "CollapseToggle" as_="a" attrs={"class": "btn btn-primary"} %}

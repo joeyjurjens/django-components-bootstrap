@@ -28,5 +28,7 @@ class CloseButton(Component):
         }
 
     template: types.django_html = """
+        {% load component_tags bootstrap5 %}
+
         <button {% html_attrs attrs type="button" class=classes defaults:aria-label="Close" disabled=disabled %}></button>
     """

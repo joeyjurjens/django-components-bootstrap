@@ -25,6 +25,8 @@ class Tooltip(Component):
         }
 
     template: types.django_html = """
+        {% load component_tags bootstrap5 %}
+
         <span {% html_attrs attrs data-bs-toggle="tooltip" data-bs-title=text data-bs-placement=placement data-bs-trigger=trigger %}>
             {% slot "default" / %}
         </span>

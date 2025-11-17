@@ -34,6 +34,8 @@ class ToastContainer(Component):
         }
 
     template: types.django_html = """
+        {% load component_tags bootstrap5 %}
+
         <div {% html_attrs attrs class=classes %}>
             {% slot "default" / %}
         </div>
@@ -85,6 +87,8 @@ class Toast(Component):
         }
 
     template: types.django_html = """
+        {% load component_tags bootstrap5 %}
+
         <div {% html_attrs attrs id=toast_id class=classes role="alert" defaults:aria-live="assertive" defaults:aria-atomic="true" data-bs-autohide=autohide_attr data-bs-delay=delay_attr %}>
             {% slot "default" / %}
         </div>
@@ -111,6 +115,8 @@ class ToastHeader(Component):
         }
 
     template: types.django_html = """
+        {% load component_tags bootstrap5 %}
+
         <div {% html_attrs attrs class="toast-header" %}>
             {% slot "default" / %}
             {% if close_button %}
@@ -134,6 +140,8 @@ class ToastBody(Component):
         }
 
     template: types.django_html = """
+    {% load component_tags bootstrap5 %}
+
         <div {% html_attrs attrs class="toast-body" %}>
             {% slot "default" / %}
         </div>

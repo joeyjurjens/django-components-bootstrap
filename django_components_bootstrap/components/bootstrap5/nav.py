@@ -50,6 +50,8 @@ class Nav(Component):
         }
 
     template: types.django_html = """
+        {% load component_tags bootstrap5 %}
+
         <{{ tag }} {% html_attrs attrs class=classes defaults:role=role %}>
             {% slot "default" / %}
         </{{ tag }}>
@@ -72,6 +74,8 @@ class NavItem(Component):
         }
 
     template: types.django_html = """
+    {% load component_tags bootstrap5 %}
+
         <{{ tag }} {% html_attrs attrs class="nav-item" %}>
             {% slot "default" / %}
         </{{ tag }}>
@@ -114,6 +118,8 @@ class NavLink(Component):
         }
 
     template: types.django_html = """
+        {% load component_tags bootstrap5 %}
+
         {% if tag == "a" %}
             <a {% html_attrs attrs href=href class=classes defaults:aria-disabled=aria_disabled defaults:aria-current=aria_current %}>
                 {% slot "default" / %}

@@ -31,6 +31,8 @@ class Alert(Component):
         }
 
     template: types.django_html = """
+        {% load component_tags bootstrap5 %}
+
         <div {% html_attrs attrs class=css_class role="alert" %}>
             {% slot "default" / %}
             {% if dismissible %}
@@ -56,6 +58,8 @@ class AlertLink(Component):
         }
 
     template: types.django_html = """
+    {% load component_tags bootstrap5 %}
+
         <a {% html_attrs attrs class="alert-link" href=href %}>
             {% slot "default" / %}
         </a>
@@ -78,6 +82,8 @@ class AlertHeading(Component):
         }
 
     template: types.django_html = """
+    {% load component_tags bootstrap5 %}
+
         <{{ tag }} {% html_attrs attrs class="alert-heading" %}>
             {% slot "default" / %}
         </{{ tag }}>

@@ -33,6 +33,8 @@ class Container(Component):
         }
 
     template: types.django_html = """
+        {% load component_tags bootstrap5 %}
+
         <{{ tag }} {% html_attrs attrs class=container_class %}>
             {% slot "default" / %}
         </{{ tag }}>
@@ -87,6 +89,8 @@ class Row(Component):
         }
 
     template: types.django_html = """
+        {% load component_tags bootstrap5 %}
+
         <{{ tag }} {% html_attrs attrs class=classes %}>
             {% slot "default" / %}
         </{{ tag }}>
@@ -166,6 +170,8 @@ class Col(Component):
         }
 
     template: types.django_html = """
+    {% load component_tags bootstrap5 %}
+
         <{{ tag }} {% html_attrs attrs class=classes %}>
             {% slot "default" / %}
         </{{ tag }}>

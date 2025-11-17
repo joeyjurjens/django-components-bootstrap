@@ -33,6 +33,8 @@ class TabContainer(Component):
         }
 
     template: types.django_html = """
+        {% load component_tags bootstrap5 %}
+
         {% provide "tab_container" id=container_id %}
             <div {% html_attrs attrs %}>
                 {% slot "default" / %}
@@ -57,6 +59,8 @@ class TabContent(Component):
         }
 
     template: types.django_html = """
+        {% load component_tags bootstrap5 %}
+
         <{{ tag }} {% html_attrs attrs defaults:class="tab-content" %}>
             {% slot "default" / %}
         </{{ tag }}>
@@ -88,6 +92,8 @@ class TabPane(Component):
         }
 
     template: types.django_html = """
+        {% load component_tags bootstrap5 %}
+
         <{{ tag }} {% html_attrs attrs class=classes defaults:role="tabpanel" defaults:tabindex="0" %}>
             {% slot "default" / %}
         </{{ tag }}>
@@ -120,6 +126,8 @@ class TabsRenderer(Component):
         }
 
     template: types.django_html = """
+        {% load component_tags bootstrap5 %}
+
         <div {% html_attrs attrs %}>
             {% component "Nav" variant=variant fill=fill justified=justified as_="ul" attrs:id=tabs_id attrs:role="tablist" %}
                 {% for tab in tab_data %}
@@ -169,6 +177,8 @@ class Tabs(Component):
         }
 
     template: types.django_html = """
+        {% load component_tags bootstrap5 %}
+
         {% provide "_tabs" id=tabs_id tab_data=tab_data default_active_tab=default_active_tab enabled=True %}
             {% slot "default" / %}
         {% endprovide %}
@@ -237,6 +247,8 @@ class Tab(Component):
         }
 
     template: types.django_html = """
+        {% load component_tags bootstrap5 %}
+
         {% provide "_tabs" id="" tab_data=empty_tab_data default_active_tab="" enabled=False %}
             {% slot "default" / %}
         {% endprovide %}

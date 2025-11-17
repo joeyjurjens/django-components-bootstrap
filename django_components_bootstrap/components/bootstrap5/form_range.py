@@ -32,5 +32,7 @@ class FormRange(Component):
         }
 
     template: types.django_html = """
+        {% load component_tags bootstrap5 %}
+
         <input {% html_attrs attrs type="range" class="form-range" min=min max=max step=step value=value name=name %} />
     """

@@ -52,6 +52,8 @@ class Dropdown(Component):
         }
 
     template: types.django_html = """
+        {% load component_tags bootstrap5 %}
+
         {% provide "dropdown" dropdown_id=dropdown_id direction=direction auto_close=auto_close %}
             <div {% html_attrs attrs class=wrapper_class %} {% if auto_close %}data-bs-auto-close="{{ auto_close }}"{% endif %}>
                 {% slot "default" / %}
@@ -89,6 +91,8 @@ class DropdownToggle(Component):
         }
 
     template: types.django_html = """
+        {% load component_tags bootstrap5 %}
+
         <button {% html_attrs attrs class=classes type="button" data-bs-toggle="dropdown" defaults:aria-expanded="false" disabled=disabled %}>
             {% slot "default" / %}
         </button>
@@ -141,6 +145,8 @@ class DropdownMenu(Component):
         }
 
     template: types.django_html = """
+        {% load component_tags bootstrap5 %}
+
         <ul {% html_attrs attrs class=classes %}>
             {% slot "default" / %}
         </ul>
@@ -183,6 +189,8 @@ class DropdownItem(Component):
         }
 
     template: types.django_html = """
+        {% load component_tags bootstrap5 %}
+
         <li>
             {% if tag == "a" %}
                 <a {% html_attrs attrs href=href class=classes aria-current=aria_current aria-disabled=link_aria_disabled tabindex=link_tabindex %}>
@@ -208,6 +216,8 @@ class DropdownDivider(Component):
         }
 
     template: types.django_html = """
+        {% load component_tags bootstrap5 %}
+
         <li><hr {% html_attrs attrs class="dropdown-divider" %}></li>
     """
 
@@ -228,6 +238,8 @@ class DropdownHeader(Component):
         }
 
     template: types.django_html = """
+        {% load component_tags bootstrap5 %}
+
         <li>
             <{{ tag }} {% html_attrs attrs class="dropdown-header" %}>
                 {% slot "default" / %}
@@ -250,6 +262,8 @@ class DropdownItemText(Component):
         }
 
     template: types.django_html = """
+        {% load component_tags bootstrap5 %}
+
         <li>
             <span {% html_attrs attrs class="dropdown-item-text" %}>
                 {% slot "default" / %}

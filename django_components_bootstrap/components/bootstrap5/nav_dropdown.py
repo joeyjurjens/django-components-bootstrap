@@ -44,6 +44,8 @@ class NavDropdown(Component):
         }
 
     template: types.django_html = """
+        {% load component_tags bootstrap5 %}
+
         <li class="nav-item dropdown">
             {% component "NavLink" as_="button" disabled=disabled attrs=merged_attrs %}
                 {{ title }}

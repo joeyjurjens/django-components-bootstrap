@@ -36,6 +36,8 @@ class Badge(Component):
         }
 
     template: types.django_html = """
+        {% load component_tags bootstrap5 %}
+
         <{{ tag }} {% html_attrs attrs class=css_class %}>
             {% slot "default" / %}
         </{{ tag }}>

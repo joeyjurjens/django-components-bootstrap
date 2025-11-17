@@ -45,6 +45,7 @@ class Card(Component):
         }
 
     template: types.django_html = """
+        {% load component_tags bootstrap5 %}
 
         <{{ tag }} {% html_attrs attrs class=classes %}>
             {% if body %}
@@ -72,6 +73,8 @@ class CardHeader(Component):
         }
 
     template: types.django_html = """
+        {% load component_tags bootstrap5 %}
+
         <div {% html_attrs attrs class="card-header" %}>
             {% slot "default" / %}
         </div>
@@ -92,6 +95,8 @@ class CardBody(Component):
         }
 
     template: types.django_html = """
+    {% load component_tags bootstrap5 %}
+
         <div {% html_attrs attrs class="card-body" %}>
             {% slot "default" / %}
         </div>
@@ -112,6 +117,8 @@ class CardFooter(Component):
         }
 
     template: types.django_html = """
+    {% load component_tags bootstrap5 %}
+
         <div {% html_attrs attrs class="card-footer" %}>
             {% slot "default" / %}
         </div>
@@ -134,6 +141,8 @@ class CardTitle(Component):
         }
 
     template: types.django_html = """
+    {% load component_tags bootstrap5 %}
+
         <{{ tag }} {% html_attrs attrs class="card-title" %}>
             {% slot "default" / %}
         </{{ tag }}>
@@ -156,6 +165,8 @@ class CardSubtitle(Component):
         }
 
     template: types.django_html = """
+    {% load component_tags bootstrap5 %}
+
         <{{ tag }} {% html_attrs attrs class="card-subtitle" %}>
             {% slot "default" / %}
         </{{ tag }}>
@@ -176,6 +187,8 @@ class CardText(Component):
         }
 
     template: types.django_html = """
+        {% load component_tags bootstrap5 %}
+
         <p {% html_attrs attrs class="card-text" %}>
             {% slot "default" / %}
         </p>
@@ -198,6 +211,8 @@ class CardLink(Component):
         }
 
     template: types.django_html = """
+        {% load component_tags bootstrap5 %}
+
         <a {% html_attrs attrs href=href class="card-link" %}>
             {% slot "default" / %}
         </a>
@@ -231,6 +246,8 @@ class CardImg(Component):
         }
 
     template: types.django_html = """
+        {% load component_tags bootstrap5 %}
+
         <img {% html_attrs attrs src=src alt=alt class=img_class %} />
     """
 
@@ -249,6 +266,8 @@ class CardImgOverlay(Component):
         }
 
     template: types.django_html = """
+    {% load component_tags bootstrap5 %}
+
         <div {% html_attrs attrs class="card-img-overlay" %}>
             {% slot "default" / %}
         </div>
@@ -269,6 +288,8 @@ class CardGroup(Component):
         }
 
     template: types.django_html = """
+    {% load component_tags bootstrap5 %}
+
         <div {% html_attrs attrs class="card-group" %}>
             {% slot "default" / %}
         </div>

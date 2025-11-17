@@ -56,6 +56,8 @@ class Navbar(Component):
         }
 
     template: types.django_html = """
+        {% load component_tags bootstrap5 %}
+
         {% provide "navbar" navbar_collapse_id=navbar_collapse_id %}
             <nav {% html_attrs attrs class=classes %} {% if theme %}data-bs-theme="{{ theme }}"{% endif %}>
                 {% if container_class %}
@@ -88,6 +90,8 @@ class NavbarBrand(Component):
         }
 
     template: types.django_html = """
+        {% load component_tags bootstrap5 %}
+
         {% if tag == "a" %}
             <a {% html_attrs attrs class="navbar-brand" href=href %}>
                 {% slot "default" / %}
@@ -118,6 +122,8 @@ class NavbarToggler(Component):
         }
 
     template: types.django_html = """
+        {% load component_tags bootstrap5 %}
+
         <button {% html_attrs attrs class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#{{ target_id }}" defaults:aria-controls=target_id defaults:aria-expanded="false" defaults:aria-label="Toggle navigation" %}>
             {% if slot_default_filled %}
                 {% slot "default" / %}
@@ -146,6 +152,8 @@ class NavbarCollapse(Component):
         }
 
     template: types.django_html = """
+        {% load component_tags bootstrap5 %}
+
         <div {% html_attrs attrs class="collapse navbar-collapse" id=collapse_id %}>
             {% slot "default" / %}
         </div>
@@ -172,6 +180,8 @@ class NavbarNav(Component):
         }
 
     template: types.django_html = """
+        {% load component_tags bootstrap5 %}
+
         <ul {% html_attrs attrs class=classes %}>
             {% slot "default" / %}
         </ul>
@@ -192,6 +202,8 @@ class NavbarText(Component):
         }
 
     template: types.django_html = """
+        {% load component_tags bootstrap5 %}
+
         <span {% html_attrs attrs class="navbar-text" %}>
             {% slot "default" / %}
         </span>

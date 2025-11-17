@@ -43,6 +43,8 @@ class Offcanvas(Component):
         }
 
     template: types.django_html = """
+        {% load component_tags bootstrap5 %}
+
         {% provide "offcanvas" offcanvas_id=offcanvas_id %}
             {% slot "toggle" / %}
             <div {% html_attrs attrs id=offcanvas_id class=classes tabindex="-1" defaults:aria-labelledby="{{ offcanvas_id }}-label" %} {% if backdrop %}data-bs-backdrop="{{ backdrop }}"{% endif %}{% if scroll %} data-bs-scroll="true"{% endif %}{% if not keyboard %} data-bs-keyboard="false"{% endif %}>
@@ -72,6 +74,8 @@ class OffcanvasHeader(Component):
         }
 
     template: types.django_html = """
+        {% load component_tags bootstrap5 %}
+
         <div {% html_attrs attrs class="offcanvas-header" %}>
             {% slot "default" / %}
             {% if close_button %}
@@ -95,6 +99,8 @@ class OffcanvasBody(Component):
         }
 
     template: types.django_html = """
+    {% load component_tags bootstrap5 %}
+
         <div {% html_attrs attrs class="offcanvas-body" %}>
             {% slot "default" / %}
         </div>
@@ -121,6 +127,8 @@ class OffcanvasTitle(Component):
         }
 
     template: types.django_html = """
+        {% load component_tags bootstrap5 %}
+
         <{{ tag }} {% html_attrs attrs class="offcanvas-title" id="{{ offcanvas_id }}-label" %}>
             {% slot "default" / %}
         </{{ tag }}>
@@ -147,6 +155,8 @@ class OffcanvasToggle(Component):
         }
 
     template: types.django_html = """
+        {% load component_tags bootstrap5 %}
+
         <{{ tag }} {% html_attrs attrs data-bs-toggle="offcanvas" data-bs-target="#{{ target_id }}" defaults:aria-controls=target_id %}>
             {% slot "default" / %}
         </{{ tag }}>
