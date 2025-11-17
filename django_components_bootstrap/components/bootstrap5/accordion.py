@@ -130,9 +130,9 @@ class AccordionHeader(Component):
         {% load component_tags bootstrap5 %}
 
         <h2 {% html_attrs attrs class="accordion-header" id=heading_id %}>
-            {% component "AccordionButton" disabled=disabled %}
+            {% bootstrap5 "AccordionButton" disabled=disabled %}
                 {% slot "default" / %}
-            {% endcomponent %}
+            {% endbootstrap5 %}
         </h2>
     """
 

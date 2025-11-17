@@ -49,9 +49,9 @@ class Card(Component):
 
         <{{ tag }} {% html_attrs attrs class=classes %}>
             {% if body %}
-                {% component "CardBody" %}
+                {% bootstrap5 "CardBody" %}
                     {% slot "default" / %}
-                {% endcomponent %}
+                {% endbootstrap5 %}
             {% else %}
                 {% slot "default" / %}
             {% endif %}

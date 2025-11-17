@@ -47,11 +47,11 @@ class NavDropdown(Component):
         {% load component_tags bootstrap5 %}
 
         <li class="nav-item dropdown">
-            {% component "NavLink" as_="button" disabled=disabled attrs=merged_attrs %}
+            {% bootstrap5 "NavLink" as_="button" disabled=disabled attrs=merged_attrs %}
                 {{ title }}
-            {% endcomponent %}
-            {% component "DropdownMenu" align=align dark=dark %}
+            {% endbootstrap5 %}
+            {% bootstrap5 "DropdownMenu" align=align dark=dark %}
                 {% slot "default" / %}
-            {% endcomponent %}
+            {% endbootstrap5 %}
         </li>
     """

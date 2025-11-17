@@ -23,13 +23,13 @@ INSTALLED_APPS = [
 ```django
 {% load bootstrap5 %}
 
-{% component "Button" variant="primary" %}
+{% bootstrap5 "Button" variant="primary" %}
     Click me!
-{% endcomponent %}
+{% endbootstrap5 %}
 
-{% component "Alert" variant="success" dismissible=True %}
+{% bootstrap5 "Alert" variant="success" dismissible=True %}
     <strong>Success!</strong> Your changes have been saved.
-{% endcomponent %}
+{% endbootstrap5 %}
 ```
 
 ## Documentation

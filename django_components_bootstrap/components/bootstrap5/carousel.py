@@ -131,7 +131,7 @@ class CarouselRenderer(Component):
                 {% if show_indicators %}
                     <div class="carousel-indicators">
                         {% for item in items %}
-                            {% component "CarouselIndicator" slide_to=forloop.counter0 active=item.active / %}
+                            {% bootstrap5 "CarouselIndicator" slide_to=forloop.counter0 active=item.active / %}
                         {% endfor %}
                     </div>
                 {% endif %}

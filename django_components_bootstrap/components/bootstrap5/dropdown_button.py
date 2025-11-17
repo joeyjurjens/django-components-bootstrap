@@ -40,14 +40,14 @@ class DropdownButton(Component):
     template: types.django_html = """
         {% load component_tags bootstrap5 %}
 
-        {% component "Dropdown" auto_close=auto_close attrs=attrs %}
-            {% component "DropdownToggle" variant=variant size=size disabled=disabled href=href %}
+        {% bootstrap5 "Dropdown" auto_close=auto_close attrs=attrs %}
+            {% bootstrap5 "DropdownToggle" variant=variant size=size disabled=disabled href=href %}
                 {{ title }}
-            {% endcomponent %}
-            {% component "DropdownMenu" align=align dark=dark %}
+            {% endbootstrap5 %}
+            {% bootstrap5 "DropdownMenu" align=align dark=dark %}
                 {% slot "default" / %}
-            {% endcomponent %}
-        {% endcomponent %}
+            {% endbootstrap5 %}
+        {% endbootstrap5 %}
     """
 
 
@@ -92,17 +92,17 @@ class SplitButton(Component):
     template: types.django_html = """
     {% load component_tags bootstrap5 %}
 
-        {% component "Dropdown" auto_close=auto_close %}
-            {% component "ButtonGroup" attrs=attrs %}
-                {% component "Button" variant=variant size=size disabled=disabled href=href target=target type=type %}
+        {% bootstrap5 "Dropdown" auto_close=auto_close %}
+            {% bootstrap5 "ButtonGroup" attrs=attrs %}
+                {% bootstrap5 "Button" variant=variant size=size disabled=disabled href=href target=target type=type %}
                     {{ title }}
-                {% endcomponent %}
-                {% component "DropdownToggle" split=True variant=variant size=size disabled=disabled %}
+                {% endbootstrap5 %}
+                {% bootstrap5 "DropdownToggle" split=True variant=variant size=size disabled=disabled %}
                     <span class="visually-hidden">{{ toggle_label }}</span>
-                {% endcomponent %}
-                {% component "DropdownMenu" align=align dark=dark %}
+                {% endbootstrap5 %}
+                {% bootstrap5 "DropdownMenu" align=align dark=dark %}
                     {% slot "default" / %}
-                {% endcomponent %}
-            {% endcomponent %}
-        {% endcomponent %}
+                {% endbootstrap5 %}
+            {% endbootstrap5 %}
+        {% endbootstrap5 %}
     """

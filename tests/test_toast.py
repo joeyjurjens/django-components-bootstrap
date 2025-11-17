@@ -13,16 +13,16 @@ class TestToast(SimpleTestCase):
         with mock_component_id():
             template = Template("""
                 {% load bootstrap5 %}
-                {% component "Toast" %}
-                  {% component "ToastHeader" %}
+                {% bootstrap5 "Toast" %}
+                  {% bootstrap5 "ToastHeader" %}
                     <img src="https://placehold.net/600x400.png" class="rounded me-2" alt="Toast icon">
                     <strong class="me-auto">Bootstrap</strong>
                     <small>11 mins ago</small>
-                  {% endcomponent %}
-                  {% component "ToastBody" %}
+                  {% endbootstrap5 %}
+                  {% bootstrap5 "ToastBody" %}
                     Hello, world! This is a toast message.
-                  {% endcomponent %}
-                {% endcomponent %}
+                  {% endbootstrap5 %}
+                {% endbootstrap5 %}
             """)
             rendered = template.render(Context())
 
@@ -47,16 +47,16 @@ class TestToast(SimpleTestCase):
         with mock_component_id():
             template = Template("""
                 {% load bootstrap5 %}
-                {% component "Toast" autohide=False %}
-                  {% component "ToastHeader" %}
+                {% bootstrap5 "Toast" autohide=False %}
+                  {% bootstrap5 "ToastHeader" %}
                     <img src="https://placehold.net/600x400.png" class="rounded me-2" alt="Toast icon">
                     <strong class="me-auto">Bootstrap</strong>
                     <small>11 mins ago</small>
-                  {% endcomponent %}
-                  {% component "ToastBody" %}
+                  {% endbootstrap5 %}
+                  {% bootstrap5 "ToastBody" %}
                     Hello, world! This is a toast message.
-                  {% endcomponent %}
-                {% endcomponent %}
+                  {% endbootstrap5 %}
+                {% endbootstrap5 %}
             """)
             rendered = template.render(Context())
 
@@ -81,16 +81,16 @@ class TestToast(SimpleTestCase):
         with mock_component_id():
             template = Template("""
                 {% load bootstrap5 %}
-                {% component "Toast" %}
-                  {% component "ToastHeader" %}
+                {% bootstrap5 "Toast" %}
+                  {% bootstrap5 "ToastHeader" %}
                     <img src="https://placehold.net/600x400.png" class="rounded me-2" alt="Toast icon">
                     <strong class="me-auto">Bootstrap</strong>
                     <small class="text-body-secondary">11 mins ago</small>
-                  {% endcomponent %}
-                  {% component "ToastBody" %}
+                  {% endbootstrap5 %}
+                  {% bootstrap5 "ToastBody" %}
                     Hello, world! This is a toast message.
-                  {% endcomponent %}
-                {% endcomponent %}
+                  {% endbootstrap5 %}
+                {% endbootstrap5 %}
             """)
             rendered = template.render(Context())
 
@@ -116,27 +116,27 @@ class TestToast(SimpleTestCase):
             template = Template("""
                 {% load bootstrap5 %}
                 <div class="toast-container position-static">
-                  {% component "Toast" %}
-                    {% component "ToastHeader" %}
+                  {% bootstrap5 "Toast" %}
+                    {% bootstrap5 "ToastHeader" %}
                       <img src="https://placehold.net/600x400.png" class="rounded me-2" alt="Toast icon">
                       <strong class="me-auto">Bootstrap</strong>
                       <small class="text-body-secondary">just now</small>
-                    {% endcomponent %}
-                    {% component "ToastBody" %}
+                    {% endbootstrap5 %}
+                    {% bootstrap5 "ToastBody" %}
                       See? Just like this.
-                    {% endcomponent %}
-                  {% endcomponent %}
+                    {% endbootstrap5 %}
+                  {% endbootstrap5 %}
 
-                  {% component "Toast" %}
-                    {% component "ToastHeader" %}
+                  {% bootstrap5 "Toast" %}
+                    {% bootstrap5 "ToastHeader" %}
                       <img src="https://placehold.net/600x400.png" class="rounded me-2" alt="Toast icon">
                       <strong class="me-auto">Bootstrap</strong>
                       <small class="text-body-secondary">2 seconds ago</small>
-                    {% endcomponent %}
-                    {% component "ToastBody" %}
+                    {% endbootstrap5 %}
+                    {% bootstrap5 "ToastBody" %}
                       Heads up, toasts will stack automatically
-                    {% endcomponent %}
-                  {% endcomponent %}
+                    {% endbootstrap5 %}
+                  {% endbootstrap5 %}
                 </div>
             """)
             rendered = template.render(Context())
@@ -176,14 +176,14 @@ class TestToast(SimpleTestCase):
         with mock_component_id():
             template = Template("""
                 {% load bootstrap5 %}
-                {% component "Toast" attrs:class="align-items-center" %}
+                {% bootstrap5 "Toast" attrs:class="align-items-center" %}
                   <div class="d-flex">
-                    {% component "ToastBody" %}
+                    {% bootstrap5 "ToastBody" %}
                       Hello, world! This is a toast message.
-                    {% endcomponent %}
-                    {% component "CloseButton" attrs:class="me-2 m-auto" attrs:data-bs-dismiss="toast" / %}
+                    {% endbootstrap5 %}
+                    {% bootstrap5 "CloseButton" attrs:class="me-2 m-auto" attrs:data-bs-dismiss="toast" / %}
                   </div>
-                {% endcomponent %}
+                {% endbootstrap5 %}
             """)
             rendered = template.render(Context())
 
@@ -205,15 +205,15 @@ class TestToast(SimpleTestCase):
         with mock_component_id():
             template = Template("""
                 {% load bootstrap5 %}
-                {% component "Toast" %}
-                  {% component "ToastBody" %}
+                {% bootstrap5 "Toast" %}
+                  {% bootstrap5 "ToastBody" %}
                     Hello, world! This is a toast message.
                     <div class="mt-2 pt-2 border-top">
-                      {% component "Button" variant="primary" size="sm" %}Take action{% endcomponent %}
-                      {% component "Button" variant="secondary" size="sm" attrs:data-bs-dismiss="toast" %}Close{% endcomponent %}
+                      {% bootstrap5 "Button" variant="primary" size="sm" %}Take action{% endbootstrap5 %}
+                      {% bootstrap5 "Button" variant="secondary" size="sm" attrs:data-bs-dismiss="toast" %}Close{% endbootstrap5 %}
                     </div>
-                  {% endcomponent %}
-                {% endcomponent %}
+                  {% endbootstrap5 %}
+                {% endbootstrap5 %}
             """)
             rendered = template.render(Context())
 
@@ -236,14 +236,14 @@ class TestToast(SimpleTestCase):
         with mock_component_id():
             template = Template("""
                 {% load bootstrap5 %}
-                {% component "Toast" attrs:class="align-items-center text-bg-primary border-0" %}
+                {% bootstrap5 "Toast" attrs:class="align-items-center text-bg-primary border-0" %}
                   <div class="d-flex">
-                    {% component "ToastBody" %}
+                    {% bootstrap5 "ToastBody" %}
                       Hello, world! This is a toast message.
-                    {% endcomponent %}
-                    {% component "CloseButton" variant="white" attrs:class="me-2 m-auto" attrs:data-bs-dismiss="toast" / %}
+                    {% endbootstrap5 %}
+                    {% bootstrap5 "CloseButton" variant="white" attrs:class="me-2 m-auto" attrs:data-bs-dismiss="toast" / %}
                   </div>
-                {% endcomponent %}
+                {% endbootstrap5 %}
             """)
             rendered = template.render(Context())
 
@@ -265,18 +265,18 @@ class TestToast(SimpleTestCase):
         with mock_component_id():
             template = Template("""
                 {% load bootstrap5 %}
-                {% component "ToastContainer" position="end" attrs:class="bottom-0 p-3" %}
-                  {% component "Toast" %}
-                    {% component "ToastHeader" %}
+                {% bootstrap5 "ToastContainer" position="end" attrs:class="bottom-0 p-3" %}
+                  {% bootstrap5 "Toast" %}
+                    {% bootstrap5 "ToastHeader" %}
                       <img src="https://placehold.net/600x400.png" class="rounded me-2" alt="Toast icon">
                       <strong class="me-auto">Bootstrap</strong>
                       <small>11 mins ago</small>
-                    {% endcomponent %}
-                    {% component "ToastBody" %}
+                    {% endbootstrap5 %}
+                    {% bootstrap5 "ToastBody" %}
                       Hello, world! This is a toast message.
-                    {% endcomponent %}
-                  {% endcomponent %}
-                {% endcomponent %}
+                    {% endbootstrap5 %}
+                  {% endbootstrap5 %}
+                {% endbootstrap5 %}
             """)
             rendered = template.render(Context())
 

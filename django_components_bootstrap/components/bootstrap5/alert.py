@@ -36,7 +36,7 @@ class Alert(Component):
         <div {% html_attrs attrs class=css_class role="alert" %}>
             {% slot "default" / %}
             {% if dismissible %}
-                {% component "CloseButton" variant=close_variant attrs:aria-label=close_label attrs:data-bs-dismiss="alert" / %}
+                {% bootstrap5 "CloseButton" variant=close_variant attrs:aria-label=close_label attrs:data-bs-dismiss="alert" / %}
             {% endif %}
         </div>
     """

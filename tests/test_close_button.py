@@ -10,7 +10,7 @@ class CloseButtonTests(SimpleTestCase):
     def test_basic(self):
         template = Template("""
             {% load bootstrap5 %}
-            {% component "CloseButton" / %}
+            {% bootstrap5 "CloseButton" / %}
         """)
         rendered = normalize_html(template.render(Context({})))
 
@@ -23,7 +23,7 @@ class CloseButtonTests(SimpleTestCase):
     def test_disabled(self):
         template = Template("""
             {% load bootstrap5 %}
-            {% component "CloseButton" disabled=True / %}
+            {% bootstrap5 "CloseButton" disabled=True / %}
         """)
         rendered = normalize_html(template.render(Context({})))
 
@@ -36,7 +36,7 @@ class CloseButtonTests(SimpleTestCase):
     def test_white_variant(self):
         template = Template("""
             {% load bootstrap5 %}
-            {% component "CloseButton" variant="white" / %}
+            {% bootstrap5 "CloseButton" variant="white" / %}
         """)
         rendered = normalize_html(template.render(Context({})))
 
@@ -49,7 +49,7 @@ class CloseButtonTests(SimpleTestCase):
     def test_white_variant_disabled(self):
         template = Template("""
             {% load bootstrap5 %}
-            {% component "CloseButton" variant="white" disabled=True / %}
+            {% bootstrap5 "CloseButton" variant="white" disabled=True / %}
         """)
         rendered = normalize_html(template.render(Context({})))
 
@@ -62,7 +62,7 @@ class CloseButtonTests(SimpleTestCase):
     def test_custom_aria_label(self):
         template = Template("""
             {% load bootstrap5 %}
-            {% component "CloseButton" / %}
+            {% bootstrap5 "CloseButton" / %}
         """)
         rendered = normalize_html(template.render(Context({})))
 
@@ -75,7 +75,7 @@ class CloseButtonTests(SimpleTestCase):
     def test_custom_attrs(self):
         template = Template("""
             {% load bootstrap5 %}
-            {% component "CloseButton" attrs:class="custom-class" / %}
+            {% bootstrap5 "CloseButton" attrs:class="custom-class" / %}
         """)
         rendered = normalize_html(template.render(Context({})))
 
@@ -88,7 +88,7 @@ class CloseButtonTests(SimpleTestCase):
     def test_data_bs_dismiss(self):
         template = Template("""
             {% load bootstrap5 %}
-            {% component "CloseButton" attrs:data-bs-dismiss="modal" / %}
+            {% bootstrap5 "CloseButton" attrs:data-bs-dismiss="modal" / %}
         """)
         rendered = normalize_html(template.render(Context({})))
 
@@ -101,7 +101,7 @@ class CloseButtonTests(SimpleTestCase):
     def test_data_bs_dismiss_alert(self):
         template = Template("""
             {% load bootstrap5 %}
-            {% component "CloseButton" attrs:data-bs-dismiss="alert" / %}
+            {% bootstrap5 "CloseButton" attrs:data-bs-dismiss="alert" / %}
         """)
         rendered = normalize_html(template.render(Context({})))
 

@@ -10,7 +10,7 @@ class ImageTests(SimpleTestCase):
     def test_fluid(self):
         template = Template("""
             {% load bootstrap5 %}
-            {% component "Image" src="https://placehold.net/600x400.png" alt="Responsive image" fluid=True / %}
+            {% bootstrap5 "Image" src="https://placehold.net/600x400.png" alt="Responsive image" fluid=True / %}
         """)
         rendered = normalize_html(template.render(Context({})))
 
@@ -23,7 +23,7 @@ class ImageTests(SimpleTestCase):
     def test_thumbnail(self):
         template = Template("""
             {% load bootstrap5 %}
-            {% component "Image" src="https://placehold.net/600x400.png" alt="Thumbnail image" thumbnail=True / %}
+            {% bootstrap5 "Image" src="https://placehold.net/600x400.png" alt="Thumbnail image" thumbnail=True / %}
         """)
         rendered = normalize_html(template.render(Context({})))
 
@@ -36,7 +36,7 @@ class ImageTests(SimpleTestCase):
     def test_rounded(self):
         template = Template("""
             {% load bootstrap5 %}
-            {% component "Image" src="https://placehold.net/600x400.png" alt="Rounded image" rounded=True / %}
+            {% bootstrap5 "Image" src="https://placehold.net/600x400.png" alt="Rounded image" rounded=True / %}
         """)
         rendered = normalize_html(template.render(Context({})))
 
@@ -49,7 +49,7 @@ class ImageTests(SimpleTestCase):
     def test_rounded_circle(self):
         template = Template("""
             {% load bootstrap5 %}
-            {% component "Image" src="https://placehold.net/600x400.png" alt="Circle image" rounded_circle=True / %}
+            {% bootstrap5 "Image" src="https://placehold.net/600x400.png" alt="Circle image" rounded_circle=True / %}
         """)
         rendered = normalize_html(template.render(Context({})))
 
@@ -62,7 +62,7 @@ class ImageTests(SimpleTestCase):
     def test_rounded_float_start(self):
         template = Template("""
             {% load bootstrap5 %}
-            {% component "Image" src="https://placehold.net/600x400.png" alt="Float start image" rounded=True / %}
+            {% bootstrap5 "Image" src="https://placehold.net/600x400.png" alt="Float start image" rounded=True / %}
         """)
         rendered = normalize_html(template.render(Context({})))
 
@@ -75,7 +75,7 @@ class ImageTests(SimpleTestCase):
     def test_rounded_float_end(self):
         template = Template("""
             {% load bootstrap5 %}
-            {% component "Image" src="https://placehold.net/600x400.png" alt="Float end image" rounded=True / %}
+            {% bootstrap5 "Image" src="https://placehold.net/600x400.png" alt="Float end image" rounded=True / %}
         """)
         rendered = normalize_html(template.render(Context({})))
 
@@ -88,7 +88,7 @@ class ImageTests(SimpleTestCase):
     def test_centered_block(self):
         template = Template("""
             {% load bootstrap5 %}
-            {% component "Image" src="https://placehold.net/600x400.png" alt="Centered image" rounded=True attrs:class="mx-auto d-block" / %}
+            {% bootstrap5 "Image" src="https://placehold.net/600x400.png" alt="Centered image" rounded=True attrs:class="mx-auto d-block" / %}
         """)
         rendered = normalize_html(template.render(Context({})))
 
@@ -101,7 +101,7 @@ class ImageTests(SimpleTestCase):
     def test_fluid_and_thumbnail(self):
         template = Template("""
             {% load bootstrap5 %}
-            {% component "Image" src="https://placehold.net/600x400.png" alt="Fluid thumbnail" fluid=True thumbnail=True / %}
+            {% bootstrap5 "Image" src="https://placehold.net/600x400.png" alt="Fluid thumbnail" fluid=True thumbnail=True / %}
         """)
         rendered = normalize_html(template.render(Context({})))
 
@@ -114,7 +114,7 @@ class ImageTests(SimpleTestCase):
     def test_all_rounded_options(self):
         template = Template("""
             {% load bootstrap5 %}
-            {% component "Image" src="https://placehold.net/600x400.png" alt="Fluid rounded image" fluid=True rounded=True / %}
+            {% bootstrap5 "Image" src="https://placehold.net/600x400.png" alt="Fluid rounded image" fluid=True rounded=True / %}
         """)
         rendered = normalize_html(template.render(Context({})))
 
@@ -127,7 +127,7 @@ class ImageTests(SimpleTestCase):
     def test_custom_attrs(self):
         template = Template("""
             {% load bootstrap5 %}
-            {% component "Image" src="https://placehold.net/600x400.png" alt="Custom image" attrs:width="200" / %}
+            {% bootstrap5 "Image" src="https://placehold.net/600x400.png" alt="Custom image" attrs:width="200" / %}
         """)
         rendered = normalize_html(template.render(Context({})))
 
@@ -140,7 +140,7 @@ class ImageTests(SimpleTestCase):
     def test_no_alt(self):
         template = Template("""
             {% load bootstrap5 %}
-            {% component "Image" src="https://placehold.net/600x400.png" / %}
+            {% bootstrap5 "Image" src="https://placehold.net/600x400.png" / %}
         """)
         rendered = normalize_html(template.render(Context({})))
 

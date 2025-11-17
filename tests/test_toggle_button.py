@@ -11,7 +11,7 @@ class TestToggleButton(SimpleTestCase):
         with mock_component_id():
             template = Template("""
                 {% load bootstrap5 %}
-                {% component "ToggleButton" attrs:id="btn-check" variant="primary" outline=False %}Single toggle{% endcomponent %}
+                {% bootstrap5 "ToggleButton" attrs:id="btn-check" variant="primary" outline=False %}Single toggle{% endbootstrap5 %}
             """)
             rendered = template.render(Context())
 
@@ -27,7 +27,7 @@ class TestToggleButton(SimpleTestCase):
         with mock_component_id():
             template = Template("""
                 {% load bootstrap5 %}
-                {% component "ToggleButton" attrs:id="btn-check-2" checked=True variant="primary" outline=False %}Checked{% endcomponent %}
+                {% bootstrap5 "ToggleButton" attrs:id="btn-check-2" checked=True variant="primary" outline=False %}Checked{% endbootstrap5 %}
             """)
             rendered = template.render(Context())
 
@@ -43,7 +43,7 @@ class TestToggleButton(SimpleTestCase):
         with mock_component_id():
             template = Template("""
                 {% load bootstrap5 %}
-                {% component "ToggleButton" attrs:id="btn-check-3" disabled=True variant="primary" outline=False %}Disabled{% endcomponent %}
+                {% bootstrap5 "ToggleButton" attrs:id="btn-check-3" disabled=True variant="primary" outline=False %}Disabled{% endbootstrap5 %}
             """)
             rendered = template.render(Context())
 
@@ -59,7 +59,7 @@ class TestToggleButton(SimpleTestCase):
         with mock_component_id():
             template = Template("""
                 {% load bootstrap5 %}
-                {% component "ToggleButton" type="radio" name="options" attrs:id="option1" checked=True variant="secondary" outline=False %}Checked{% endcomponent %}
+                {% bootstrap5 "ToggleButton" type="radio" name="options" attrs:id="option1" checked=True variant="secondary" outline=False %}Checked{% endbootstrap5 %}
             """)
             rendered = template.render(Context())
 
@@ -75,7 +75,7 @@ class TestToggleButton(SimpleTestCase):
         with mock_component_id():
             template = Template("""
                 {% load bootstrap5 %}
-                {% component "ToggleButton" type="radio" name="options" attrs:id="option2" variant="secondary" outline=False %}Radio{% endcomponent %}
+                {% bootstrap5 "ToggleButton" type="radio" name="options" attrs:id="option2" variant="secondary" outline=False %}Radio{% endbootstrap5 %}
             """)
             rendered = template.render(Context())
 
@@ -91,7 +91,7 @@ class TestToggleButton(SimpleTestCase):
         with mock_component_id():
             template = Template("""
                 {% load bootstrap5 %}
-                {% component "ToggleButton" type="radio" name="options" attrs:id="option3" disabled=True variant="secondary" outline=False %}Disabled{% endcomponent %}
+                {% bootstrap5 "ToggleButton" type="radio" name="options" attrs:id="option3" disabled=True variant="secondary" outline=False %}Disabled{% endbootstrap5 %}
             """)
             rendered = template.render(Context())
 

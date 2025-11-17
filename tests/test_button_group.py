@@ -8,11 +8,11 @@ class TestButtonGroup(SimpleTestCase):
     def test_basic(self):
         template = Template("""
             {% load bootstrap5 %}
-            {% component "ButtonGroup" %}
-              {% component "Button" variant="primary" %}Left{% endcomponent %}
-              {% component "Button" variant="primary" %}Middle{% endcomponent %}
-              {% component "Button" variant="primary" %}Right{% endcomponent %}
-            {% endcomponent %}
+            {% bootstrap5 "ButtonGroup" %}
+              {% bootstrap5 "Button" variant="primary" %}Left{% endbootstrap5 %}
+              {% bootstrap5 "Button" variant="primary" %}Middle{% endbootstrap5 %}
+              {% bootstrap5 "Button" variant="primary" %}Right{% endbootstrap5 %}
+            {% endbootstrap5 %}
         """)
         rendered = template.render(Context())
 
@@ -29,11 +29,11 @@ class TestButtonGroup(SimpleTestCase):
     def test_mixed_styles(self):
         template = Template("""
             {% load bootstrap5 %}
-            {% component "ButtonGroup" %}
-              {% component "Button" variant="danger" %}Danger{% endcomponent %}
-              {% component "Button" variant="warning" %}Warning{% endcomponent %}
-              {% component "Button" variant="success" %}Success{% endcomponent %}
-            {% endcomponent %}
+            {% bootstrap5 "ButtonGroup" %}
+              {% bootstrap5 "Button" variant="danger" %}Danger{% endbootstrap5 %}
+              {% bootstrap5 "Button" variant="warning" %}Warning{% endbootstrap5 %}
+              {% bootstrap5 "Button" variant="success" %}Success{% endbootstrap5 %}
+            {% endbootstrap5 %}
         """)
         rendered = template.render(Context())
 
@@ -50,7 +50,7 @@ class TestButtonGroup(SimpleTestCase):
     def test_checkbox_buttons(self):
         template = Template("""
             {% load bootstrap5 %}
-            {% component "ButtonGroup" %}
+            {% bootstrap5 "ButtonGroup" %}
               <input type="checkbox" class="btn-check" id="btncheck1" autocomplete="off">
               <label class="btn btn-outline-primary" for="btncheck1">Checkbox 1</label>
 
@@ -59,7 +59,7 @@ class TestButtonGroup(SimpleTestCase):
 
               <input type="checkbox" class="btn-check" id="btncheck3" autocomplete="off">
               <label class="btn btn-outline-primary" for="btncheck3">Checkbox 3</label>
-            {% endcomponent %}
+            {% endbootstrap5 %}
         """)
         rendered = template.render(Context())
 
@@ -71,7 +71,7 @@ class TestButtonGroup(SimpleTestCase):
     def test_radio_buttons(self):
         template = Template("""
             {% load bootstrap5 %}
-            {% component "ButtonGroup" %}
+            {% bootstrap5 "ButtonGroup" %}
               <input type="radio" class="btn-check" name="btnradio" id="btnradio1" autocomplete="off" checked>
               <label class="btn btn-outline-primary" for="btnradio1">Radio 1</label>
 
@@ -80,7 +80,7 @@ class TestButtonGroup(SimpleTestCase):
 
               <input type="radio" class="btn-check" name="btnradio" id="btnradio3" autocomplete="off">
               <label class="btn btn-outline-primary" for="btnradio3">Radio 3</label>
-            {% endcomponent %}
+            {% endbootstrap5 %}
         """)
         rendered = template.render(Context())
 
@@ -92,11 +92,11 @@ class TestButtonGroup(SimpleTestCase):
     def test_large(self):
         template = Template("""
             {% load bootstrap5 %}
-            {% component "ButtonGroup" size="lg" %}
-              {% component "Button" variant="primary" outline=True %}Left{% endcomponent %}
-              {% component "Button" variant="primary" outline=True %}Middle{% endcomponent %}
-              {% component "Button" variant="primary" outline=True %}Right{% endcomponent %}
-            {% endcomponent %}
+            {% bootstrap5 "ButtonGroup" size="lg" %}
+              {% bootstrap5 "Button" variant="primary" outline=True %}Left{% endbootstrap5 %}
+              {% bootstrap5 "Button" variant="primary" outline=True %}Middle{% endbootstrap5 %}
+              {% bootstrap5 "Button" variant="primary" outline=True %}Right{% endbootstrap5 %}
+            {% endbootstrap5 %}
         """)
         rendered = template.render(Context())
 
@@ -113,11 +113,11 @@ class TestButtonGroup(SimpleTestCase):
     def test_small(self):
         template = Template("""
             {% load bootstrap5 %}
-            {% component "ButtonGroup" size="sm" %}
-              {% component "Button" variant="primary" outline=True %}Left{% endcomponent %}
-              {% component "Button" variant="primary" outline=True %}Middle{% endcomponent %}
-              {% component "Button" variant="primary" outline=True %}Right{% endcomponent %}
-            {% endcomponent %}
+            {% bootstrap5 "ButtonGroup" size="sm" %}
+              {% bootstrap5 "Button" variant="primary" outline=True %}Left{% endbootstrap5 %}
+              {% bootstrap5 "Button" variant="primary" outline=True %}Middle{% endbootstrap5 %}
+              {% bootstrap5 "Button" variant="primary" outline=True %}Right{% endbootstrap5 %}
+            {% endbootstrap5 %}
         """)
         rendered = template.render(Context())
 
@@ -134,12 +134,12 @@ class TestButtonGroup(SimpleTestCase):
     def test_vertical(self):
         template = Template("""
             {% load bootstrap5 %}
-            {% component "ButtonGroup" vertical=True %}
-              {% component "Button" variant="primary" %}Button{% endcomponent %}
-              {% component "Button" variant="primary" %}Button{% endcomponent %}
-              {% component "Button" variant="primary" %}Button{% endcomponent %}
-              {% component "Button" variant="primary" %}Button{% endcomponent %}
-            {% endcomponent %}
+            {% bootstrap5 "ButtonGroup" vertical=True %}
+              {% bootstrap5 "Button" variant="primary" %}Button{% endbootstrap5 %}
+              {% bootstrap5 "Button" variant="primary" %}Button{% endbootstrap5 %}
+              {% bootstrap5 "Button" variant="primary" %}Button{% endbootstrap5 %}
+              {% bootstrap5 "Button" variant="primary" %}Button{% endbootstrap5 %}
+            {% endbootstrap5 %}
         """)
         rendered = template.render(Context())
 
@@ -159,22 +159,22 @@ class TestButtonToolbar(SimpleTestCase):
     def test_basic(self):
         template = Template("""
             {% load bootstrap5 %}
-            {% component "ButtonToolbar" %}
-              {% component "ButtonGroup" attrs:class="me-2" %}
-                {% component "Button" variant="primary" %}1{% endcomponent %}
-                {% component "Button" variant="primary" %}2{% endcomponent %}
-                {% component "Button" variant="primary" %}3{% endcomponent %}
-                {% component "Button" variant="primary" %}4{% endcomponent %}
-              {% endcomponent %}
-              {% component "ButtonGroup" attrs:class="me-2" %}
-                {% component "Button" variant="secondary" %}5{% endcomponent %}
-                {% component "Button" variant="secondary" %}6{% endcomponent %}
-                {% component "Button" variant="secondary" %}7{% endcomponent %}
-              {% endcomponent %}
-              {% component "ButtonGroup" %}
-                {% component "Button" variant="info" %}8{% endcomponent %}
-              {% endcomponent %}
-            {% endcomponent %}
+            {% bootstrap5 "ButtonToolbar" %}
+              {% bootstrap5 "ButtonGroup" attrs:class="me-2" %}
+                {% bootstrap5 "Button" variant="primary" %}1{% endbootstrap5 %}
+                {% bootstrap5 "Button" variant="primary" %}2{% endbootstrap5 %}
+                {% bootstrap5 "Button" variant="primary" %}3{% endbootstrap5 %}
+                {% bootstrap5 "Button" variant="primary" %}4{% endbootstrap5 %}
+              {% endbootstrap5 %}
+              {% bootstrap5 "ButtonGroup" attrs:class="me-2" %}
+                {% bootstrap5 "Button" variant="secondary" %}5{% endbootstrap5 %}
+                {% bootstrap5 "Button" variant="secondary" %}6{% endbootstrap5 %}
+                {% bootstrap5 "Button" variant="secondary" %}7{% endbootstrap5 %}
+              {% endbootstrap5 %}
+              {% bootstrap5 "ButtonGroup" %}
+                {% bootstrap5 "Button" variant="info" %}8{% endbootstrap5 %}
+              {% endbootstrap5 %}
+            {% endbootstrap5 %}
         """)
         rendered = template.render(Context())
 

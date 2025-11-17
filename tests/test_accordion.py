@@ -13,26 +13,26 @@ class AccordionTests(SimpleTestCase):
         with mock_component_id():
             template = Template("""
             {% load bootstrap5 %}
-            {% component "Accordion" %}
-                {% component "AccordionItem" default_open=True %}
-                    {% component "AccordionHeader" %}Accordion Item #1{% endcomponent %}
-                    {% component "AccordionBody" %}
+            {% bootstrap5 "Accordion" %}
+                {% bootstrap5 "AccordionItem" default_open=True %}
+                    {% bootstrap5 "AccordionHeader" %}Accordion Item #1{% endbootstrap5 %}
+                    {% bootstrap5 "AccordionBody" %}
                         <strong>This is the first item's accordion body.</strong> It is shown by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
-                    {% endcomponent %}
-                {% endcomponent %}
-                {% component "AccordionItem" %}
-                    {% component "AccordionHeader" %}Accordion Item #2{% endcomponent %}
-                    {% component "AccordionBody" %}
+                    {% endbootstrap5 %}
+                {% endbootstrap5 %}
+                {% bootstrap5 "AccordionItem" %}
+                    {% bootstrap5 "AccordionHeader" %}Accordion Item #2{% endbootstrap5 %}
+                    {% bootstrap5 "AccordionBody" %}
                         <strong>This is the second item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
-                    {% endcomponent %}
-                {% endcomponent %}
-                {% component "AccordionItem" %}
-                    {% component "AccordionHeader" %}Accordion Item #3{% endcomponent %}
-                    {% component "AccordionBody" %}
+                    {% endbootstrap5 %}
+                {% endbootstrap5 %}
+                {% bootstrap5 "AccordionItem" %}
+                    {% bootstrap5 "AccordionHeader" %}Accordion Item #3{% endbootstrap5 %}
+                    {% bootstrap5 "AccordionBody" %}
                         <strong>This is the third item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
-                    {% endcomponent %}
-                {% endcomponent %}
-            {% endcomponent %}
+                    {% endbootstrap5 %}
+                {% endbootstrap5 %}
+            {% endbootstrap5 %}
             """)
             rendered = normalize_html(template.render(Context({})))
 
@@ -84,16 +84,16 @@ class AccordionTests(SimpleTestCase):
         with mock_component_id():
             template = Template("""
             {% load bootstrap5 %}
-            {% component "Accordion" %}
-                {% component "AccordionItem" default_open=True %}
-                    {% component "AccordionHeader" %}
+            {% bootstrap5 "Accordion" %}
+                {% bootstrap5 "AccordionItem" default_open=True %}
+                    {% bootstrap5 "AccordionHeader" %}
                         <i class="bi bi-info-circle"></i> Accordion Item with Icon
-                    {% endcomponent %}
-                    {% component "AccordionBody" %}
+                    {% endbootstrap5 %}
+                    {% bootstrap5 "AccordionBody" %}
                         This accordion item has an icon in the header.
-                    {% endcomponent %}
-                {% endcomponent %}
-            {% endcomponent %}
+                    {% endbootstrap5 %}
+                {% endbootstrap5 %}
+            {% endbootstrap5 %}
         """)
             rendered = normalize_html(template.render(Context({})))
 
@@ -105,16 +105,16 @@ class AccordionTests(SimpleTestCase):
         with mock_component_id():
             template = Template("""
             {% load bootstrap5 %}
-            {% component "Accordion" %}
-                {% component "AccordionItem" default_open=True %}
-                    {% component "AccordionHeader" %}
+            {% bootstrap5 "Accordion" %}
+                {% bootstrap5 "AccordionItem" default_open=True %}
+                    {% bootstrap5 "AccordionHeader" %}
                         Accordion Item <span class="badge bg-primary">New</span>
-                    {% endcomponent %}
-                    {% component "AccordionBody" %}
+                    {% endbootstrap5 %}
+                    {% bootstrap5 "AccordionBody" %}
                         This accordion item has a badge in the header.
-                    {% endcomponent %}
-                {% endcomponent %}
-            {% endcomponent %}
+                    {% endbootstrap5 %}
+                {% endbootstrap5 %}
+            {% endbootstrap5 %}
         """)
             rendered = normalize_html(template.render(Context({})))
 
@@ -126,26 +126,26 @@ class AccordionTests(SimpleTestCase):
         with mock_component_id():
             template = Template("""
         {% load bootstrap5 %}
-        {% component "Accordion" flush=True %}
-            {% component "AccordionItem" %}
-                {% component "AccordionHeader" %}Accordion Item #1{% endcomponent %}
-                {% component "AccordionBody" %}
+        {% bootstrap5 "Accordion" flush=True %}
+            {% bootstrap5 "AccordionItem" %}
+                {% bootstrap5 "AccordionHeader" %}Accordion Item #1{% endbootstrap5 %}
+                {% bootstrap5 "AccordionBody" %}
                     Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> class. This is the first item's accordion body.
-                {% endcomponent %}
-            {% endcomponent %}
-            {% component "AccordionItem" %}
-                {% component "AccordionHeader" %}Accordion Item #2{% endcomponent %}
-                {% component "AccordionBody" %}
+                {% endbootstrap5 %}
+            {% endbootstrap5 %}
+            {% bootstrap5 "AccordionItem" %}
+                {% bootstrap5 "AccordionHeader" %}Accordion Item #2{% endbootstrap5 %}
+                {% bootstrap5 "AccordionBody" %}
                     Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> class. This is the second item's accordion body. Let's imagine this being filled with some actual content.
-                {% endcomponent %}
-            {% endcomponent %}
-            {% component "AccordionItem" %}
-                {% component "AccordionHeader" %}Accordion Item #3{% endcomponent %}
-                {% component "AccordionBody" %}
+                {% endbootstrap5 %}
+            {% endbootstrap5 %}
+            {% bootstrap5 "AccordionItem" %}
+                {% bootstrap5 "AccordionHeader" %}Accordion Item #3{% endbootstrap5 %}
+                {% bootstrap5 "AccordionBody" %}
                     Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> class. This is the third item's accordion body. Nothing more exciting happening here in terms of content, but just filling up the space to make it look, at least at first glance, a bit more representative of how this would look in a real-world application.
-                {% endcomponent %}
-            {% endcomponent %}
-        {% endcomponent %}
+                {% endbootstrap5 %}
+            {% endbootstrap5 %}
+        {% endbootstrap5 %}
         """)
             rendered = normalize_html(template.render(Context({})))
 
@@ -191,26 +191,26 @@ class AccordionTests(SimpleTestCase):
         with mock_component_id():
             template = Template("""
         {% load bootstrap5 %}
-        {% component "Accordion" always_open=True %}
-            {% component "AccordionItem" default_open=True %}
-                {% component "AccordionHeader" %}Accordion Item #1{% endcomponent %}
-                {% component "AccordionBody" %}
+        {% bootstrap5 "Accordion" always_open=True %}
+            {% bootstrap5 "AccordionItem" default_open=True %}
+                {% bootstrap5 "AccordionHeader" %}Accordion Item #1{% endbootstrap5 %}
+                {% bootstrap5 "AccordionBody" %}
                     <strong>This is the first item's accordion body.</strong> It is shown by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
-                {% endcomponent %}
-            {% endcomponent %}
-            {% component "AccordionItem" %}
-                {% component "AccordionHeader" %}Accordion Item #2{% endcomponent %}
-                {% component "AccordionBody" %}
+                {% endbootstrap5 %}
+            {% endbootstrap5 %}
+            {% bootstrap5 "AccordionItem" %}
+                {% bootstrap5 "AccordionHeader" %}Accordion Item #2{% endbootstrap5 %}
+                {% bootstrap5 "AccordionBody" %}
                     <strong>This is the second item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
-                {% endcomponent %}
-            {% endcomponent %}
-            {% component "AccordionItem" %}
-                {% component "AccordionHeader" %}Accordion Item #3{% endcomponent %}
-                {% component "AccordionBody" %}
+                {% endbootstrap5 %}
+            {% endbootstrap5 %}
+            {% bootstrap5 "AccordionItem" %}
+                {% bootstrap5 "AccordionHeader" %}Accordion Item #3{% endbootstrap5 %}
+                {% bootstrap5 "AccordionBody" %}
                     <strong>This is the third item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
-                {% endcomponent %}
-            {% endcomponent %}
-        {% endcomponent %}
+                {% endbootstrap5 %}
+            {% endbootstrap5 %}
+        {% endbootstrap5 %}
         """)
             rendered = normalize_html(template.render(Context({})))
 

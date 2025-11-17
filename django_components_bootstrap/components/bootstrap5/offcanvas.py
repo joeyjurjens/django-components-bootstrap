@@ -79,7 +79,7 @@ class OffcanvasHeader(Component):
         <div {% html_attrs attrs class="offcanvas-header" %}>
             {% slot "default" / %}
             {% if close_button %}
-                {% component "CloseButton" variant=close_variant attrs:aria-label=close_label attrs:data-bs-dismiss="offcanvas" / %}
+                {% bootstrap5 "CloseButton" variant=close_variant attrs:aria-label=close_label attrs:data-bs-dismiss="offcanvas" / %}
             {% endif %}
         </div>
     """

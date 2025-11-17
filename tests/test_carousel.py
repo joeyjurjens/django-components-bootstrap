@@ -11,17 +11,17 @@ class TestCarousel(SimpleTestCase):
         with mock_component_id():
             template = Template("""
         {% load bootstrap5 %}
-        {% component "Carousel" indicators=False %}
-          {% component "CarouselItem" active=True %}
+        {% bootstrap5 "Carousel" indicators=False %}
+          {% bootstrap5 "CarouselItem" active=True %}
             <img src="https://placehold.net/600x400.png" class="d-block w-100" alt="Slide">
-          {% endcomponent %}
-          {% component "CarouselItem" %}
+          {% endbootstrap5 %}
+          {% bootstrap5 "CarouselItem" %}
             <img src="https://placehold.net/600x400.png" class="d-block w-100" alt="Slide">
-          {% endcomponent %}
-          {% component "CarouselItem" %}
+          {% endbootstrap5 %}
+          {% bootstrap5 "CarouselItem" %}
             <img src="https://placehold.net/600x400.png" class="d-block w-100" alt="Slide">
-          {% endcomponent %}
-        {% endcomponent %}
+          {% endbootstrap5 %}
+        {% endbootstrap5 %}
         """)
             rendered = template.render(Context())
 
@@ -56,17 +56,17 @@ class TestCarousel(SimpleTestCase):
         with mock_component_id():
             template = Template("""
         {% load bootstrap5 %}
-        {% component "Carousel" %}
-          {% component "CarouselItem" active=True %}
+        {% bootstrap5 "Carousel" %}
+          {% bootstrap5 "CarouselItem" active=True %}
             <img src="https://placehold.net/600x400.png" class="d-block w-100" alt="Slide">
-          {% endcomponent %}
-          {% component "CarouselItem" %}
+          {% endbootstrap5 %}
+          {% bootstrap5 "CarouselItem" %}
             <img src="https://placehold.net/600x400.png" class="d-block w-100" alt="Slide">
-          {% endcomponent %}
-          {% component "CarouselItem" %}
+          {% endbootstrap5 %}
+          {% bootstrap5 "CarouselItem" %}
             <img src="https://placehold.net/600x400.png" class="d-block w-100" alt="Slide">
-          {% endcomponent %}
-        {% endcomponent %}
+          {% endbootstrap5 %}
+        {% endbootstrap5 %}
         """)
             rendered = template.render(Context())
 
@@ -106,29 +106,29 @@ class TestCarousel(SimpleTestCase):
         with mock_component_id():
             template = Template("""
         {% load bootstrap5 %}
-        {% component "Carousel" %}
-          {% component "CarouselItem" active=True %}
+        {% bootstrap5 "Carousel" %}
+          {% bootstrap5 "CarouselItem" active=True %}
             <img src="https://placehold.net/600x400.png" class="d-block w-100" alt="Slide">
-            {% component "CarouselCaption" %}
+            {% bootstrap5 "CarouselCaption" %}
               <h5>First slide label</h5>
               <p>Some representative placeholder content for the first slide.</p>
-            {% endcomponent %}
-          {% endcomponent %}
-          {% component "CarouselItem" %}
+            {% endbootstrap5 %}
+          {% endbootstrap5 %}
+          {% bootstrap5 "CarouselItem" %}
             <img src="https://placehold.net/600x400.png" class="d-block w-100" alt="Slide">
-            {% component "CarouselCaption" %}
+            {% bootstrap5 "CarouselCaption" %}
               <h5>Second slide label</h5>
               <p>Some representative placeholder content for the second slide.</p>
-            {% endcomponent %}
-          {% endcomponent %}
-          {% component "CarouselItem" %}
+            {% endbootstrap5 %}
+          {% endbootstrap5 %}
+          {% bootstrap5 "CarouselItem" %}
             <img src="https://placehold.net/600x400.png" class="d-block w-100" alt="Slide">
-            {% component "CarouselCaption" %}
+            {% bootstrap5 "CarouselCaption" %}
               <h5>Third slide label</h5>
               <p>Some representative placeholder content for the third slide.</p>
-            {% endcomponent %}
-          {% endcomponent %}
-        {% endcomponent %}
+            {% endbootstrap5 %}
+          {% endbootstrap5 %}
+        {% endbootstrap5 %}
         """)
             rendered = template.render(Context())
 
@@ -180,17 +180,17 @@ class TestCarousel(SimpleTestCase):
         with mock_component_id():
             template = Template("""
         {% load bootstrap5 %}
-        {% component "Carousel" fade=True indicators=False %}
-          {% component "CarouselItem" active=True %}
+        {% bootstrap5 "Carousel" fade=True indicators=False %}
+          {% bootstrap5 "CarouselItem" active=True %}
             <img src="https://placehold.net/600x400.png" class="d-block w-100" alt="Slide">
-          {% endcomponent %}
-          {% component "CarouselItem" %}
+          {% endbootstrap5 %}
+          {% bootstrap5 "CarouselItem" %}
             <img src="https://placehold.net/600x400.png" class="d-block w-100" alt="Slide">
-          {% endcomponent %}
-          {% component "CarouselItem" %}
+          {% endbootstrap5 %}
+          {% bootstrap5 "CarouselItem" %}
             <img src="https://placehold.net/600x400.png" class="d-block w-100" alt="Slide">
-          {% endcomponent %}
-        {% endcomponent %}
+          {% endbootstrap5 %}
+        {% endbootstrap5 %}
         """)
             rendered = template.render(Context())
 
@@ -225,17 +225,17 @@ class TestCarousel(SimpleTestCase):
         with mock_component_id():
             template = Template("""
         {% load bootstrap5 %}
-        {% component "Carousel" ride="carousel" indicators=False %}
-          {% component "CarouselItem" active=True %}
+        {% bootstrap5 "Carousel" ride="carousel" indicators=False %}
+          {% bootstrap5 "CarouselItem" active=True %}
             <img src="https://placehold.net/600x400.png" class="d-block w-100" alt="Slide">
-          {% endcomponent %}
-          {% component "CarouselItem" %}
+          {% endbootstrap5 %}
+          {% bootstrap5 "CarouselItem" %}
             <img src="https://placehold.net/600x400.png" class="d-block w-100" alt="Slide">
-          {% endcomponent %}
-          {% component "CarouselItem" %}
+          {% endbootstrap5 %}
+          {% bootstrap5 "CarouselItem" %}
             <img src="https://placehold.net/600x400.png" class="d-block w-100" alt="Slide">
-          {% endcomponent %}
-        {% endcomponent %}
+          {% endbootstrap5 %}
+        {% endbootstrap5 %}
         """)
             rendered = template.render(Context())
 
@@ -270,17 +270,17 @@ class TestCarousel(SimpleTestCase):
         with mock_component_id():
             template = Template("""
         {% load bootstrap5 %}
-        {% component "Carousel" ride="true" indicators=False %}
-          {% component "CarouselItem" active=True %}
+        {% bootstrap5 "Carousel" ride="true" indicators=False %}
+          {% bootstrap5 "CarouselItem" active=True %}
             <img src="https://placehold.net/600x400.png" class="d-block w-100" alt="Slide">
-          {% endcomponent %}
-          {% component "CarouselItem" %}
+          {% endbootstrap5 %}
+          {% bootstrap5 "CarouselItem" %}
             <img src="https://placehold.net/600x400.png" class="d-block w-100" alt="Slide">
-          {% endcomponent %}
-          {% component "CarouselItem" %}
+          {% endbootstrap5 %}
+          {% bootstrap5 "CarouselItem" %}
             <img src="https://placehold.net/600x400.png" class="d-block w-100" alt="Slide">
-          {% endcomponent %}
-        {% endcomponent %}
+          {% endbootstrap5 %}
+        {% endbootstrap5 %}
         """)
             rendered = template.render(Context())
 
@@ -315,17 +315,17 @@ class TestCarousel(SimpleTestCase):
         with mock_component_id():
             template = Template("""
         {% load bootstrap5 %}
-        {% component "Carousel" ride="carousel" indicators=False %}
-          {% component "CarouselItem" active=True interval=10000 %}
+        {% bootstrap5 "Carousel" ride="carousel" indicators=False %}
+          {% bootstrap5 "CarouselItem" active=True interval=10000 %}
             <img src="https://placehold.net/600x400.png" class="d-block w-100" alt="Slide">
-          {% endcomponent %}
-          {% component "CarouselItem" interval=2000 %}
+          {% endbootstrap5 %}
+          {% bootstrap5 "CarouselItem" interval=2000 %}
             <img src="https://placehold.net/600x400.png" class="d-block w-100" alt="Slide">
-          {% endcomponent %}
-          {% component "CarouselItem" %}
+          {% endbootstrap5 %}
+          {% bootstrap5 "CarouselItem" %}
             <img src="https://placehold.net/600x400.png" class="d-block w-100" alt="Slide">
-          {% endcomponent %}
-        {% endcomponent %}
+          {% endbootstrap5 %}
+        {% endbootstrap5 %}
         """)
             rendered = template.render(Context())
 
@@ -360,17 +360,17 @@ class TestCarousel(SimpleTestCase):
         with mock_component_id():
             template = Template("""
         {% load bootstrap5 %}
-        {% component "Carousel" ride="carousel" controls=False indicators=False %}
-          {% component "CarouselItem" active=True %}
+        {% bootstrap5 "Carousel" ride="carousel" controls=False indicators=False %}
+          {% bootstrap5 "CarouselItem" active=True %}
             <img src="https://placehold.net/600x400.png" class="d-block w-100" alt="Slide">
-          {% endcomponent %}
-          {% component "CarouselItem" %}
+          {% endbootstrap5 %}
+          {% bootstrap5 "CarouselItem" %}
             <img src="https://placehold.net/600x400.png" class="d-block w-100" alt="Slide">
-          {% endcomponent %}
-          {% component "CarouselItem" %}
+          {% endbootstrap5 %}
+          {% bootstrap5 "CarouselItem" %}
             <img src="https://placehold.net/600x400.png" class="d-block w-100" alt="Slide">
-          {% endcomponent %}
-        {% endcomponent %}
+          {% endbootstrap5 %}
+        {% endbootstrap5 %}
         """)
             rendered = template.render(Context())
 
@@ -397,17 +397,17 @@ class TestCarousel(SimpleTestCase):
         with mock_component_id():
             template = Template("""
         {% load bootstrap5 %}
-        {% component "Carousel" touch=False indicators=False %}
-          {% component "CarouselItem" active=True %}
+        {% bootstrap5 "Carousel" touch=False indicators=False %}
+          {% bootstrap5 "CarouselItem" active=True %}
             <img src="https://placehold.net/600x400.png" class="d-block w-100" alt="Slide">
-          {% endcomponent %}
-          {% component "CarouselItem" %}
+          {% endbootstrap5 %}
+          {% bootstrap5 "CarouselItem" %}
             <img src="https://placehold.net/600x400.png" class="d-block w-100" alt="Slide">
-          {% endcomponent %}
-          {% component "CarouselItem" %}
+          {% endbootstrap5 %}
+          {% bootstrap5 "CarouselItem" %}
             <img src="https://placehold.net/600x400.png" class="d-block w-100" alt="Slide">
-          {% endcomponent %}
-        {% endcomponent %}
+          {% endbootstrap5 %}
+        {% endbootstrap5 %}
         """)
             rendered = template.render(Context())
 
@@ -442,29 +442,29 @@ class TestCarousel(SimpleTestCase):
         with mock_component_id():
             template = Template("""
         {% load bootstrap5 %}
-        {% component "Carousel" theme="dark" %}
-          {% component "CarouselItem" active=True interval=10000 %}
+        {% bootstrap5 "Carousel" theme="dark" %}
+          {% bootstrap5 "CarouselItem" active=True interval=10000 %}
             <img src="https://placehold.net/600x400.png" class="d-block w-100" alt="Slide">
-            {% component "CarouselCaption" %}
+            {% bootstrap5 "CarouselCaption" %}
               <h5>First slide label</h5>
               <p>Some representative placeholder content for the first slide.</p>
-            {% endcomponent %}
-          {% endcomponent %}
-          {% component "CarouselItem" interval=2000 %}
+            {% endbootstrap5 %}
+          {% endbootstrap5 %}
+          {% bootstrap5 "CarouselItem" interval=2000 %}
             <img src="https://placehold.net/600x400.png" class="d-block w-100" alt="Slide">
-            {% component "CarouselCaption" %}
+            {% bootstrap5 "CarouselCaption" %}
               <h5>Second slide label</h5>
               <p>Some representative placeholder content for the second slide.</p>
-            {% endcomponent %}
-          {% endcomponent %}
-          {% component "CarouselItem" %}
+            {% endbootstrap5 %}
+          {% endbootstrap5 %}
+          {% bootstrap5 "CarouselItem" %}
             <img src="https://placehold.net/600x400.png" class="d-block w-100" alt="Slide">
-            {% component "CarouselCaption" %}
+            {% bootstrap5 "CarouselCaption" %}
               <h5>Third slide label</h5>
               <p>Some representative placeholder content for the third slide.</p>
-            {% endcomponent %}
-          {% endcomponent %}
-        {% endcomponent %}
+            {% endbootstrap5 %}
+          {% endbootstrap5 %}
+        {% endbootstrap5 %}
         """)
             rendered = template.render(Context())
 

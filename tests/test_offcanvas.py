@@ -13,19 +13,19 @@ class TestOffcanvas(SimpleTestCase):
         with mock_component_id():
             template = Template("""
             {% load component_tags bootstrap5 %}
-            {% component "Offcanvas" scroll=False keyboard=False %}
+            {% bootstrap5 "Offcanvas" scroll=False keyboard=False %}
               {% fill "toggle" %}
-                {% component "OffcanvasToggle" attrs={"class": "btn btn-primary", "type": "button"} %}Toggle Offcanvas{% endcomponent %}
+                {% bootstrap5 "OffcanvasToggle" attrs={"class": "btn btn-primary", "type": "button"} %}Toggle Offcanvas{% endbootstrap5 %}
               {% endfill %}
               {% fill "default" %}
-                {% component "OffcanvasHeader" %}
-                  {% component "OffcanvasTitle" %}Offcanvas{% endcomponent %}
-                {% endcomponent %}
-                {% component "OffcanvasBody" %}
+                {% bootstrap5 "OffcanvasHeader" %}
+                  {% bootstrap5 "OffcanvasTitle" %}Offcanvas{% endbootstrap5 %}
+                {% endbootstrap5 %}
+                {% bootstrap5 "OffcanvasBody" %}
                   Content for the offcanvas goes here. You can place just about any Bootstrap component or custom elements here.
-                {% endcomponent %}
+                {% endbootstrap5 %}
               {% endfill %}
-            {% endcomponent %}
+            {% endbootstrap5 %}
         """)
             rendered = template.render(Context())
 
@@ -49,19 +49,19 @@ class TestOffcanvas(SimpleTestCase):
         with mock_component_id():
             template = Template("""
             {% load component_tags bootstrap5 %}
-            {% component "Offcanvas" placement="start" %}
+            {% bootstrap5 "Offcanvas" placement="start" %}
               {% fill "toggle" %}
-                {% component "OffcanvasToggle" attrs:class="btn btn-primary" %}Toggle Offcanvas{% endcomponent %}
+                {% bootstrap5 "OffcanvasToggle" attrs:class="btn btn-primary" %}Toggle Offcanvas{% endbootstrap5 %}
               {% endfill %}
               {% fill "default" %}
-                {% component "OffcanvasHeader" %}
-                  {% component "OffcanvasTitle" %}Offcanvas Start{% endcomponent %}
-                {% endcomponent %}
-                {% component "OffcanvasBody" %}
+                {% bootstrap5 "OffcanvasHeader" %}
+                  {% bootstrap5 "OffcanvasTitle" %}Offcanvas Start{% endbootstrap5 %}
+                {% endbootstrap5 %}
+                {% bootstrap5 "OffcanvasBody" %}
                   <p>This offcanvas appears from the start (left).</p>
-                {% endcomponent %}
+                {% endbootstrap5 %}
               {% endfill %}
-            {% endcomponent %}
+            {% endbootstrap5 %}
         """)
             rendered = template.render(Context())
 
@@ -85,19 +85,19 @@ class TestOffcanvas(SimpleTestCase):
         with mock_component_id():
             template = Template("""
             {% load component_tags bootstrap5 %}
-            {% component "Offcanvas" placement="end" %}
+            {% bootstrap5 "Offcanvas" placement="end" %}
               {% fill "toggle" %}
-                {% component "OffcanvasToggle" attrs:class="btn btn-primary" %}Toggle Offcanvas{% endcomponent %}
+                {% bootstrap5 "OffcanvasToggle" attrs:class="btn btn-primary" %}Toggle Offcanvas{% endbootstrap5 %}
               {% endfill %}
               {% fill "default" %}
-                {% component "OffcanvasHeader" %}
-                  {% component "OffcanvasTitle" %}Offcanvas End{% endcomponent %}
-                {% endcomponent %}
-                {% component "OffcanvasBody" %}
+                {% bootstrap5 "OffcanvasHeader" %}
+                  {% bootstrap5 "OffcanvasTitle" %}Offcanvas End{% endbootstrap5 %}
+                {% endbootstrap5 %}
+                {% bootstrap5 "OffcanvasBody" %}
                   <p>This offcanvas appears from the end (right).</p>
-                {% endcomponent %}
+                {% endbootstrap5 %}
               {% endfill %}
-            {% endcomponent %}
+            {% endbootstrap5 %}
         """)
             rendered = template.render(Context())
 
@@ -121,19 +121,19 @@ class TestOffcanvas(SimpleTestCase):
         with mock_component_id():
             template = Template("""
             {% load component_tags bootstrap5 %}
-            {% component "Offcanvas" placement="top" %}
+            {% bootstrap5 "Offcanvas" placement="top" %}
               {% fill "toggle" %}
-                {% component "OffcanvasToggle" attrs:class="btn btn-primary" %}Toggle Offcanvas{% endcomponent %}
+                {% bootstrap5 "OffcanvasToggle" attrs:class="btn btn-primary" %}Toggle Offcanvas{% endbootstrap5 %}
               {% endfill %}
               {% fill "default" %}
-                {% component "OffcanvasHeader" %}
-                  {% component "OffcanvasTitle" %}Offcanvas Top{% endcomponent %}
-                {% endcomponent %}
-                {% component "OffcanvasBody" %}
+                {% bootstrap5 "OffcanvasHeader" %}
+                  {% bootstrap5 "OffcanvasTitle" %}Offcanvas Top{% endbootstrap5 %}
+                {% endbootstrap5 %}
+                {% bootstrap5 "OffcanvasBody" %}
                   <p>This offcanvas appears from the top.</p>
-                {% endcomponent %}
+                {% endbootstrap5 %}
               {% endfill %}
-            {% endcomponent %}
+            {% endbootstrap5 %}
         """)
             rendered = template.render(Context())
 
@@ -157,19 +157,19 @@ class TestOffcanvas(SimpleTestCase):
         with mock_component_id():
             template = Template("""
             {% load component_tags bootstrap5 %}
-            {% component "Offcanvas" placement="bottom" %}
+            {% bootstrap5 "Offcanvas" placement="bottom" %}
               {% fill "toggle" %}
-                {% component "OffcanvasToggle" attrs:class="btn btn-primary" %}Toggle Offcanvas{% endcomponent %}
+                {% bootstrap5 "OffcanvasToggle" attrs:class="btn btn-primary" %}Toggle Offcanvas{% endbootstrap5 %}
               {% endfill %}
               {% fill "default" %}
-                {% component "OffcanvasHeader" %}
-                  {% component "OffcanvasTitle" %}Offcanvas Bottom{% endcomponent %}
-                {% endcomponent %}
-                {% component "OffcanvasBody" %}
+                {% bootstrap5 "OffcanvasHeader" %}
+                  {% bootstrap5 "OffcanvasTitle" %}Offcanvas Bottom{% endbootstrap5 %}
+                {% endbootstrap5 %}
+                {% bootstrap5 "OffcanvasBody" %}
                   <p>This offcanvas appears from the bottom.</p>
-                {% endcomponent %}
+                {% endbootstrap5 %}
               {% endfill %}
-            {% endcomponent %}
+            {% endbootstrap5 %}
         """)
             rendered = template.render(Context())
 
@@ -193,19 +193,19 @@ class TestOffcanvas(SimpleTestCase):
         with mock_component_id():
             template = Template("""
             {% load component_tags bootstrap5 %}
-            {% component "Offcanvas" scroll=True backdrop="false" %}
+            {% bootstrap5 "Offcanvas" scroll=True backdrop="false" %}
               {% fill "toggle" %}
-                {% component "OffcanvasToggle" attrs:class="btn btn-primary" %}Toggle Offcanvas{% endcomponent %}
+                {% bootstrap5 "OffcanvasToggle" attrs:class="btn btn-primary" %}Toggle Offcanvas{% endbootstrap5 %}
               {% endfill %}
               {% fill "default" %}
-                {% component "OffcanvasHeader" %}
-                  {% component "OffcanvasTitle" %}Offcanvas with body scrolling{% endcomponent %}
-                {% endcomponent %}
-                {% component "OffcanvasBody" %}
+                {% bootstrap5 "OffcanvasHeader" %}
+                  {% bootstrap5 "OffcanvasTitle" %}Offcanvas with body scrolling{% endbootstrap5 %}
+                {% endbootstrap5 %}
+                {% bootstrap5 "OffcanvasBody" %}
                   <p>Try scrolling the rest of the page to see this option in action.</p>
-                {% endcomponent %}
+                {% endbootstrap5 %}
               {% endfill %}
-            {% endcomponent %}
+            {% endbootstrap5 %}
         """)
             rendered = template.render(Context())
 
@@ -229,19 +229,19 @@ class TestOffcanvas(SimpleTestCase):
         with mock_component_id():
             template = Template("""
             {% load component_tags bootstrap5 %}
-            {% component "Offcanvas" scroll=True %}
+            {% bootstrap5 "Offcanvas" scroll=True %}
               {% fill "toggle" %}
-                {% component "OffcanvasToggle" attrs:class="btn btn-primary" %}Toggle Offcanvas{% endcomponent %}
+                {% bootstrap5 "OffcanvasToggle" attrs:class="btn btn-primary" %}Toggle Offcanvas{% endbootstrap5 %}
               {% endfill %}
               {% fill "default" %}
-                {% component "OffcanvasHeader" %}
-                  {% component "OffcanvasTitle" %}Backdrop with scrolling{% endcomponent %}
-                {% endcomponent %}
-                {% component "OffcanvasBody" %}
+                {% bootstrap5 "OffcanvasHeader" %}
+                  {% bootstrap5 "OffcanvasTitle" %}Backdrop with scrolling{% endbootstrap5 %}
+                {% endbootstrap5 %}
+                {% bootstrap5 "OffcanvasBody" %}
                   <p>Try scrolling the rest of the page to see this option in action.</p>
-                {% endcomponent %}
+                {% endbootstrap5 %}
               {% endfill %}
-            {% endcomponent %}
+            {% endbootstrap5 %}
         """)
             rendered = template.render(Context())
 
@@ -265,19 +265,19 @@ class TestOffcanvas(SimpleTestCase):
         with mock_component_id():
             template = Template("""
             {% load component_tags bootstrap5 %}
-            {% component "Offcanvas" backdrop="static" %}
+            {% bootstrap5 "Offcanvas" backdrop="static" %}
               {% fill "toggle" %}
-                {% component "OffcanvasToggle" attrs:class="btn btn-primary" %}Toggle Offcanvas{% endcomponent %}
+                {% bootstrap5 "OffcanvasToggle" attrs:class="btn btn-primary" %}Toggle Offcanvas{% endbootstrap5 %}
               {% endfill %}
               {% fill "default" %}
-                {% component "OffcanvasHeader" %}
-                  {% component "OffcanvasTitle" %}Static Backdrop{% endcomponent %}
-                {% endcomponent %}
-                {% component "OffcanvasBody" %}
+                {% bootstrap5 "OffcanvasHeader" %}
+                  {% bootstrap5 "OffcanvasTitle" %}Static Backdrop{% endbootstrap5 %}
+                {% endbootstrap5 %}
+                {% bootstrap5 "OffcanvasBody" %}
                   <p>I will not close if you click outside of me.</p>
-                {% endcomponent %}
+                {% endbootstrap5 %}
               {% endfill %}
-            {% endcomponent %}
+            {% endbootstrap5 %}
         """)
             rendered = template.render(Context())
 
@@ -301,19 +301,19 @@ class TestOffcanvas(SimpleTestCase):
         with mock_component_id():
             template = Template("""
             {% load component_tags bootstrap5 %}
-            {% component "Offcanvas" backdrop="false" %}
+            {% bootstrap5 "Offcanvas" backdrop="false" %}
               {% fill "toggle" %}
-                {% component "OffcanvasToggle" attrs:class="btn btn-primary" %}Toggle Offcanvas{% endcomponent %}
+                {% bootstrap5 "OffcanvasToggle" attrs:class="btn btn-primary" %}Toggle Offcanvas{% endbootstrap5 %}
               {% endfill %}
               {% fill "default" %}
-                {% component "OffcanvasHeader" %}
-                  {% component "OffcanvasTitle" %}No Backdrop{% endcomponent %}
-                {% endcomponent %}
-                {% component "OffcanvasBody" %}
+                {% bootstrap5 "OffcanvasHeader" %}
+                  {% bootstrap5 "OffcanvasTitle" %}No Backdrop{% endbootstrap5 %}
+                {% endbootstrap5 %}
+                {% bootstrap5 "OffcanvasBody" %}
                   <p>This offcanvas has no backdrop.</p>
-                {% endcomponent %}
+                {% endbootstrap5 %}
               {% endfill %}
-            {% endcomponent %}
+            {% endbootstrap5 %}
         """)
             rendered = template.render(Context())
 
@@ -337,19 +337,19 @@ class TestOffcanvas(SimpleTestCase):
         with mock_component_id():
             template = Template("""
             {% load component_tags bootstrap5 %}
-            {% component "Offcanvas" responsive="lg" placement="end" %}
+            {% bootstrap5 "Offcanvas" responsive="lg" placement="end" %}
               {% fill "toggle" %}
-                {% component "OffcanvasToggle" attrs:class="btn btn-primary" %}Toggle Offcanvas{% endcomponent %}
+                {% bootstrap5 "OffcanvasToggle" attrs:class="btn btn-primary" %}Toggle Offcanvas{% endbootstrap5 %}
               {% endfill %}
               {% fill "default" %}
-                {% component "OffcanvasHeader" %}
-                  {% component "OffcanvasTitle" %}Responsive offcanvas{% endcomponent %}
-                {% endcomponent %}
-                {% component "OffcanvasBody" %}
+                {% bootstrap5 "OffcanvasHeader" %}
+                  {% bootstrap5 "OffcanvasTitle" %}Responsive offcanvas{% endbootstrap5 %}
+                {% endbootstrap5 %}
+                {% bootstrap5 "OffcanvasBody" %}
                   <p>This is content within an offcanvas-lg.</p>
-                {% endcomponent %}
+                {% endbootstrap5 %}
               {% endfill %}
-            {% endcomponent %}
+            {% endbootstrap5 %}
         """)
             rendered = template.render(Context())
 
@@ -373,19 +373,19 @@ class TestOffcanvas(SimpleTestCase):
         with mock_component_id():
             template = Template("""
             {% load component_tags bootstrap5 %}
-            {% component "Offcanvas" responsive="md" %}
+            {% bootstrap5 "Offcanvas" responsive="md" %}
               {% fill "toggle" %}
-                {% component "OffcanvasToggle" attrs:class="btn btn-primary" %}Toggle Offcanvas{% endcomponent %}
+                {% bootstrap5 "OffcanvasToggle" attrs:class="btn btn-primary" %}Toggle Offcanvas{% endbootstrap5 %}
               {% endfill %}
               {% fill "default" %}
-                {% component "OffcanvasHeader" %}
-                  {% component "OffcanvasTitle" %}Responsive MD offcanvas{% endcomponent %}
-                {% endcomponent %}
-                {% component "OffcanvasBody" %}
+                {% bootstrap5 "OffcanvasHeader" %}
+                  {% bootstrap5 "OffcanvasTitle" %}Responsive MD offcanvas{% endbootstrap5 %}
+                {% endbootstrap5 %}
+                {% bootstrap5 "OffcanvasBody" %}
                   <p>This is content within an offcanvas-md.</p>
-                {% endcomponent %}
+                {% endbootstrap5 %}
               {% endfill %}
-            {% endcomponent %}
+            {% endbootstrap5 %}
         """)
             rendered = template.render(Context())
 
@@ -409,19 +409,19 @@ class TestOffcanvas(SimpleTestCase):
         with mock_component_id():
             template = Template("""
             {% load component_tags bootstrap5 %}
-            {% component "Offcanvas" %}
+            {% bootstrap5 "Offcanvas" %}
               {% fill "toggle" %}
-                {% component "OffcanvasToggle" attrs:class="btn btn-primary" %}Toggle Offcanvas{% endcomponent %}
+                {% bootstrap5 "OffcanvasToggle" attrs:class="btn btn-primary" %}Toggle Offcanvas{% endbootstrap5 %}
               {% endfill %}
               {% fill "default" %}
-                {% component "OffcanvasHeader" close_button=False %}
-                  {% component "OffcanvasTitle" %}No Close Button{% endcomponent %}
-                {% endcomponent %}
-                {% component "OffcanvasBody" %}
+                {% bootstrap5 "OffcanvasHeader" close_button=False %}
+                  {% bootstrap5 "OffcanvasTitle" %}No Close Button{% endbootstrap5 %}
+                {% endbootstrap5 %}
+                {% bootstrap5 "OffcanvasBody" %}
                   <p>This offcanvas header has no close button.</p>
-                {% endcomponent %}
+                {% endbootstrap5 %}
               {% endfill %}
-            {% endcomponent %}
+            {% endbootstrap5 %}
         """)
             rendered = template.render(Context())
 
@@ -444,19 +444,19 @@ class TestOffcanvas(SimpleTestCase):
         with mock_component_id():
             template = Template("""
             {% load component_tags bootstrap5 %}
-            {% component "Offcanvas" %}
+            {% bootstrap5 "Offcanvas" %}
               {% fill "toggle" %}
-                {% component "OffcanvasToggle" attrs:class="btn btn-primary" %}Toggle Offcanvas{% endcomponent %}
+                {% bootstrap5 "OffcanvasToggle" attrs:class="btn btn-primary" %}Toggle Offcanvas{% endbootstrap5 %}
               {% endfill %}
               {% fill "default" %}
-                {% component "OffcanvasHeader" %}
-                  {% component "OffcanvasTitle" as_="h3" %}Custom Heading{% endcomponent %}
-                {% endcomponent %}
-                {% component "OffcanvasBody" %}
+                {% bootstrap5 "OffcanvasHeader" %}
+                  {% bootstrap5 "OffcanvasTitle" as_="h3" %}Custom Heading{% endbootstrap5 %}
+                {% endbootstrap5 %}
+                {% bootstrap5 "OffcanvasBody" %}
                   <p>This offcanvas title uses h3.</p>
-                {% endcomponent %}
+                {% endbootstrap5 %}
               {% endfill %}
-            {% endcomponent %}
+            {% endbootstrap5 %}
         """)
             rendered = template.render(Context())
 

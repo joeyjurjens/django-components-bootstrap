@@ -431,11 +431,11 @@ class FormCheck(Component):
         {% provide "formcheck" control_id=control_id type=type is_valid=is_valid is_invalid=is_invalid disabled=disabled checked=checked %}
             <div {% html_attrs attrs class=wrapper_classes %}>
                 {% slot "default" default %}
-                    {% component "FormCheckInput" type=type disabled=disabled checked=checked is_valid=is_valid is_invalid=is_invalid name=name value=value %}{% endcomponent %}
+                    {% bootstrap5 "FormCheckInput" type=type disabled=disabled checked=checked is_valid=is_valid is_invalid=is_invalid name=name value=value %}{% endbootstrap5 %}
                     {% if has_label %}
-                        {% component "FormCheckLabel" for_=control_id title=title %}
+                        {% bootstrap5 "FormCheckLabel" for_=control_id title=title %}
                             {{ label }}
-                        {% endcomponent %}
+                        {% endbootstrap5 %}
                     {% endif %}
                 {% endslot %}
             </div>

@@ -11,11 +11,11 @@ class PlaceholderTests(SimpleTestCase):
         template = Template("""
             {% load bootstrap5 %}
             <p class="card-text placeholder-glow">
-                {% component "Placeholder" xs=7 / %}
-                {% component "Placeholder" xs=4 / %}
-                {% component "Placeholder" xs=4 / %}
-                {% component "Placeholder" xs=6 / %}
-                {% component "Placeholder" xs=8 / %}
+                {% bootstrap5 "Placeholder" xs=7 / %}
+                {% bootstrap5 "Placeholder" xs=4 / %}
+                {% bootstrap5 "Placeholder" xs=4 / %}
+                {% bootstrap5 "Placeholder" xs=6 / %}
+                {% bootstrap5 "Placeholder" xs=8 / %}
             </p>
         """)
         rendered = normalize_html(template.render(Context({})))
@@ -36,9 +36,9 @@ class PlaceholderTests(SimpleTestCase):
         template = Template("""
             {% load bootstrap5 %}
             <div>
-                {% component "Placeholder" xs=6 / %}
-                {% component "Placeholder" xs=12 / %}
-                {% component "Placeholder" xs=3 / %}
+                {% bootstrap5 "Placeholder" xs=6 / %}
+                {% bootstrap5 "Placeholder" xs=12 / %}
+                {% bootstrap5 "Placeholder" xs=3 / %}
             </div>
         """)
         rendered = normalize_html(template.render(Context({})))
@@ -56,7 +56,7 @@ class PlaceholderTests(SimpleTestCase):
     def test_placeholder_size_large(self):
         template = Template("""
             {% load bootstrap5 %}
-            {% component "Placeholder" xs=12 size="lg" / %}
+            {% bootstrap5 "Placeholder" xs=12 size="lg" / %}
         """)
         rendered = normalize_html(template.render(Context({})))
 
@@ -69,7 +69,7 @@ class PlaceholderTests(SimpleTestCase):
     def test_placeholder_size_small(self):
         template = Template("""
             {% load bootstrap5 %}
-            {% component "Placeholder" xs=12 size="sm" / %}
+            {% bootstrap5 "Placeholder" xs=12 size="sm" / %}
         """)
         rendered = normalize_html(template.render(Context({})))
 
@@ -82,7 +82,7 @@ class PlaceholderTests(SimpleTestCase):
     def test_placeholder_size_extra_small(self):
         template = Template("""
             {% load bootstrap5 %}
-            {% component "Placeholder" xs=12 size="xs" / %}
+            {% bootstrap5 "Placeholder" xs=12 size="xs" / %}
         """)
         rendered = normalize_html(template.render(Context({})))
 
@@ -95,7 +95,7 @@ class PlaceholderTests(SimpleTestCase):
     def test_placeholder_bg_primary(self):
         template = Template("""
             {% load bootstrap5 %}
-            {% component "Placeholder" xs=12 bg="primary" / %}
+            {% bootstrap5 "Placeholder" xs=12 bg="primary" / %}
         """)
         rendered = normalize_html(template.render(Context({})))
 
@@ -108,7 +108,7 @@ class PlaceholderTests(SimpleTestCase):
     def test_placeholder_bg_secondary(self):
         template = Template("""
             {% load bootstrap5 %}
-            {% component "Placeholder" xs=12 bg="secondary" / %}
+            {% bootstrap5 "Placeholder" xs=12 bg="secondary" / %}
         """)
         rendered = normalize_html(template.render(Context({})))
 
@@ -121,7 +121,7 @@ class PlaceholderTests(SimpleTestCase):
     def test_placeholder_bg_success(self):
         template = Template("""
             {% load bootstrap5 %}
-            {% component "Placeholder" xs=12 bg="success" / %}
+            {% bootstrap5 "Placeholder" xs=12 bg="success" / %}
         """)
         rendered = normalize_html(template.render(Context({})))
 
@@ -134,7 +134,7 @@ class PlaceholderTests(SimpleTestCase):
     def test_placeholder_bg_danger(self):
         template = Template("""
             {% load bootstrap5 %}
-            {% component "Placeholder" xs=12 bg="danger" / %}
+            {% bootstrap5 "Placeholder" xs=12 bg="danger" / %}
         """)
         rendered = normalize_html(template.render(Context({})))
 
@@ -147,7 +147,7 @@ class PlaceholderTests(SimpleTestCase):
     def test_placeholder_bg_warning(self):
         template = Template("""
             {% load bootstrap5 %}
-            {% component "Placeholder" xs=12 bg="warning" / %}
+            {% bootstrap5 "Placeholder" xs=12 bg="warning" / %}
         """)
         rendered = normalize_html(template.render(Context({})))
 
@@ -160,7 +160,7 @@ class PlaceholderTests(SimpleTestCase):
     def test_placeholder_bg_info(self):
         template = Template("""
             {% load bootstrap5 %}
-            {% component "Placeholder" xs=12 bg="info" / %}
+            {% bootstrap5 "Placeholder" xs=12 bg="info" / %}
         """)
         rendered = normalize_html(template.render(Context({})))
 
@@ -173,7 +173,7 @@ class PlaceholderTests(SimpleTestCase):
     def test_placeholder_bg_light(self):
         template = Template("""
             {% load bootstrap5 %}
-            {% component "Placeholder" xs=12 bg="light" / %}
+            {% bootstrap5 "Placeholder" xs=12 bg="light" / %}
         """)
         rendered = normalize_html(template.render(Context({})))
 
@@ -186,7 +186,7 @@ class PlaceholderTests(SimpleTestCase):
     def test_placeholder_bg_dark(self):
         template = Template("""
             {% load bootstrap5 %}
-            {% component "Placeholder" xs=12 bg="dark" / %}
+            {% bootstrap5 "Placeholder" xs=12 bg="dark" / %}
         """)
         rendered = normalize_html(template.render(Context({})))
 
@@ -200,7 +200,7 @@ class PlaceholderTests(SimpleTestCase):
         template = Template("""
             {% load bootstrap5 %}
             <p class="placeholder-glow">
-                {% component "Placeholder" xs=12 / %}
+                {% bootstrap5 "Placeholder" xs=12 / %}
             </p>
         """)
         rendered = normalize_html(template.render(Context({})))
@@ -217,7 +217,7 @@ class PlaceholderTests(SimpleTestCase):
         template = Template("""
             {% load bootstrap5 %}
             <p class="placeholder-wave">
-                {% component "Placeholder" xs=12 / %}
+                {% bootstrap5 "Placeholder" xs=12 / %}
             </p>
         """)
         rendered = normalize_html(template.render(Context({})))
@@ -233,7 +233,7 @@ class PlaceholderTests(SimpleTestCase):
     def test_placeholder_with_animation_prop(self):
         template = Template("""
             {% load bootstrap5 %}
-            {% component "Placeholder" xs=12 animation="glow" / %}
+            {% bootstrap5 "Placeholder" xs=12 animation="glow" / %}
         """)
         rendered = normalize_html(template.render(Context({})))
 
@@ -246,7 +246,7 @@ class PlaceholderTests(SimpleTestCase):
     def test_placeholder_with_wave_animation(self):
         template = Template("""
             {% load bootstrap5 %}
-            {% component "Placeholder" xs=12 animation="wave" / %}
+            {% bootstrap5 "Placeholder" xs=12 animation="wave" / %}
         """)
         rendered = normalize_html(template.render(Context({})))
 
@@ -259,7 +259,7 @@ class PlaceholderTests(SimpleTestCase):
     def test_placeholder_button_primary(self):
         template = Template("""
             {% load bootstrap5 %}
-            {% component "PlaceholderButton" variant="primary" xs=6 / %}
+            {% bootstrap5 "PlaceholderButton" variant="primary" xs=6 / %}
         """)
         rendered = normalize_html(template.render(Context({})))
 
@@ -272,7 +272,7 @@ class PlaceholderTests(SimpleTestCase):
     def test_placeholder_button_secondary(self):
         template = Template("""
             {% load bootstrap5 %}
-            {% component "PlaceholderButton" variant="secondary" xs=4 / %}
+            {% bootstrap5 "PlaceholderButton" variant="secondary" xs=4 / %}
         """)
         rendered = normalize_html(template.render(Context({})))
 
@@ -285,7 +285,7 @@ class PlaceholderTests(SimpleTestCase):
     def test_placeholder_button_success(self):
         template = Template("""
             {% load bootstrap5 %}
-            {% component "PlaceholderButton" variant="success" xs=6 / %}
+            {% bootstrap5 "PlaceholderButton" variant="success" xs=6 / %}
         """)
         rendered = normalize_html(template.render(Context({})))
 
@@ -298,7 +298,7 @@ class PlaceholderTests(SimpleTestCase):
     def test_placeholder_button_danger(self):
         template = Template("""
             {% load bootstrap5 %}
-            {% component "PlaceholderButton" variant="danger" xs=6 / %}
+            {% bootstrap5 "PlaceholderButton" variant="danger" xs=6 / %}
         """)
         rendered = normalize_html(template.render(Context({})))
 
@@ -311,7 +311,7 @@ class PlaceholderTests(SimpleTestCase):
     def test_placeholder_custom_element(self):
         template = Template("""
             {% load bootstrap5 %}
-            {% component "Placeholder" as_="div" xs=12 / %}
+            {% bootstrap5 "Placeholder" as_="div" xs=12 / %}
         """)
         rendered = normalize_html(template.render(Context({})))
 
@@ -324,7 +324,7 @@ class PlaceholderTests(SimpleTestCase):
     def test_placeholder_combined_size_and_color(self):
         template = Template("""
             {% load bootstrap5 %}
-            {% component "Placeholder" xs=12 size="lg" bg="primary" / %}
+            {% bootstrap5 "Placeholder" xs=12 size="lg" bg="primary" / %}
         """)
         rendered = normalize_html(template.render(Context({})))
 
@@ -337,7 +337,7 @@ class PlaceholderTests(SimpleTestCase):
     def test_placeholder_combined_all_props(self):
         template = Template("""
             {% load bootstrap5 %}
-            {% component "Placeholder" xs=8 size="sm" bg="success" animation="wave" / %}
+            {% bootstrap5 "Placeholder" xs=8 size="sm" bg="success" animation="wave" / %}
         """)
         rendered = normalize_html(template.render(Context({})))
 

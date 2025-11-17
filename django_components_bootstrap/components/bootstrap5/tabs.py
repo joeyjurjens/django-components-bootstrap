@@ -129,22 +129,22 @@ class TabsRenderer(Component):
         {% load component_tags bootstrap5 %}
 
         <div {% html_attrs attrs %}>
-            {% component "Nav" variant=variant fill=fill justified=justified as_="ul" attrs:id=tabs_id attrs:role="tablist" %}
+            {% bootstrap5 "Nav" variant=variant fill=fill justified=justified as_="ul" attrs:id=tabs_id attrs:role="tablist" %}
                 {% for tab in tab_data %}
-                    {% component "NavItem" as_="li" attrs:role="presentation" %}
-                        {% component "NavLink" as_="button" active=tab.is_active disabled=tab.disabled attrs:id=tab.nav_tab_id attrs:data-bs-toggle="tab" attrs:data-bs-target="#{{ tab.pane_id }}" attrs:role="tab" attrs:aria-controls=tab.pane_id attrs:aria-selected=tab.aria_selected attrs:class=tab.tab_class %}
+                    {% bootstrap5 "NavItem" as_="li" attrs:role="presentation" %}
+                        {% bootstrap5 "NavLink" as_="button" active=tab.is_active disabled=tab.disabled attrs:id=tab.nav_tab_id attrs:data-bs-toggle="tab" attrs:data-bs-target="#{{ tab.pane_id }}" attrs:role="tab" attrs:aria-controls=tab.pane_id attrs:aria-selected=tab.aria_selected attrs:class=tab.tab_class %}
                             {{ tab.title }}
-                        {% endcomponent %}
-                    {% endcomponent %}
+                        {% endbootstrap5 %}
+                    {% endbootstrap5 %}
                 {% endfor %}
-            {% endcomponent %}
-            {% component "TabContent" %}
+            {% endbootstrap5 %}
+            {% bootstrap5 "TabContent" %}
                 {% for tab in tab_data %}
-                    {% component "TabPane" active=tab.is_active attrs:id=tab.pane_id attrs:aria-labelledby=tab.nav_tab_id %}
+                    {% bootstrap5 "TabPane" active=tab.is_active attrs:id=tab.pane_id attrs:aria-labelledby=tab.nav_tab_id %}
                         {{ tab.content }}
-                    {% endcomponent %}
+                    {% endbootstrap5 %}
                 {% endfor %}
-            {% endcomponent %}
+            {% endbootstrap5 %}
         </div>
     """
 

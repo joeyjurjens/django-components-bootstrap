@@ -8,20 +8,20 @@ class TestNav(SimpleTestCase):
     def test_basic(self):
         template = Template("""
             {% load bootstrap5 %}
-            {% component "Nav" as_="ul" %}
-              {% component "NavItem" %}
-                {% component "NavLink" active=True href="#" %}Active{% endcomponent %}
-              {% endcomponent %}
-              {% component "NavItem" %}
-                {% component "NavLink" href="#" %}Link{% endcomponent %}
-              {% endcomponent %}
-              {% component "NavItem" %}
-                {% component "NavLink" href="#" %}Link{% endcomponent %}
-              {% endcomponent %}
-              {% component "NavItem" %}
-                {% component "NavLink" disabled=True %}Disabled{% endcomponent %}
-              {% endcomponent %}
-            {% endcomponent %}
+            {% bootstrap5 "Nav" as_="ul" %}
+              {% bootstrap5 "NavItem" %}
+                {% bootstrap5 "NavLink" active=True href="#" %}Active{% endbootstrap5 %}
+              {% endbootstrap5 %}
+              {% bootstrap5 "NavItem" %}
+                {% bootstrap5 "NavLink" href="#" %}Link{% endbootstrap5 %}
+              {% endbootstrap5 %}
+              {% bootstrap5 "NavItem" %}
+                {% bootstrap5 "NavLink" href="#" %}Link{% endbootstrap5 %}
+              {% endbootstrap5 %}
+              {% bootstrap5 "NavItem" %}
+                {% bootstrap5 "NavLink" disabled=True %}Disabled{% endbootstrap5 %}
+              {% endbootstrap5 %}
+            {% endbootstrap5 %}
         """)
         rendered = template.render(Context())
 
@@ -47,12 +47,12 @@ class TestNav(SimpleTestCase):
     def test_basic_nav_element(self):
         template = Template("""
             {% load bootstrap5 %}
-            {% component "Nav" %}
-              {% component "NavLink" active=True href="#" %}Active{% endcomponent %}
-              {% component "NavLink" href="#" %}Link{% endcomponent %}
-              {% component "NavLink" href="#" %}Link{% endcomponent %}
-              {% component "NavLink" disabled=True %}Disabled{% endcomponent %}
-            {% endcomponent %}
+            {% bootstrap5 "Nav" %}
+              {% bootstrap5 "NavLink" active=True href="#" %}Active{% endbootstrap5 %}
+              {% bootstrap5 "NavLink" href="#" %}Link{% endbootstrap5 %}
+              {% bootstrap5 "NavLink" href="#" %}Link{% endbootstrap5 %}
+              {% bootstrap5 "NavLink" disabled=True %}Disabled{% endbootstrap5 %}
+            {% endbootstrap5 %}
         """)
         rendered = template.render(Context())
 
@@ -70,20 +70,20 @@ class TestNav(SimpleTestCase):
     def test_tabs(self):
         template = Template("""
             {% load bootstrap5 %}
-            {% component "Nav" variant="tabs" as_="ul" %}
-              {% component "NavItem" %}
-                {% component "NavLink" active=True href="#" %}Active{% endcomponent %}
-              {% endcomponent %}
-              {% component "NavItem" %}
-                {% component "NavLink" href="#" %}Link{% endcomponent %}
-              {% endcomponent %}
-              {% component "NavItem" %}
-                {% component "NavLink" href="#" %}Link{% endcomponent %}
-              {% endcomponent %}
-              {% component "NavItem" %}
-                {% component "NavLink" disabled=True %}Disabled{% endcomponent %}
-              {% endcomponent %}
-            {% endcomponent %}
+            {% bootstrap5 "Nav" variant="tabs" as_="ul" %}
+              {% bootstrap5 "NavItem" %}
+                {% bootstrap5 "NavLink" active=True href="#" %}Active{% endbootstrap5 %}
+              {% endbootstrap5 %}
+              {% bootstrap5 "NavItem" %}
+                {% bootstrap5 "NavLink" href="#" %}Link{% endbootstrap5 %}
+              {% endbootstrap5 %}
+              {% bootstrap5 "NavItem" %}
+                {% bootstrap5 "NavLink" href="#" %}Link{% endbootstrap5 %}
+              {% endbootstrap5 %}
+              {% bootstrap5 "NavItem" %}
+                {% bootstrap5 "NavLink" disabled=True %}Disabled{% endbootstrap5 %}
+              {% endbootstrap5 %}
+            {% endbootstrap5 %}
         """)
         rendered = template.render(Context())
 
@@ -109,20 +109,20 @@ class TestNav(SimpleTestCase):
     def test_pills(self):
         template = Template("""
             {% load bootstrap5 %}
-            {% component "Nav" variant="pills" as_="ul" %}
-              {% component "NavItem" %}
-                {% component "NavLink" active=True href="#" %}Active{% endcomponent %}
-              {% endcomponent %}
-              {% component "NavItem" %}
-                {% component "NavLink" href="#" %}Link{% endcomponent %}
-              {% endcomponent %}
-              {% component "NavItem" %}
-                {% component "NavLink" href="#" %}Link{% endcomponent %}
-              {% endcomponent %}
-              {% component "NavItem" %}
-                {% component "NavLink" disabled=True %}Disabled{% endcomponent %}
-              {% endcomponent %}
-            {% endcomponent %}
+            {% bootstrap5 "Nav" variant="pills" as_="ul" %}
+              {% bootstrap5 "NavItem" %}
+                {% bootstrap5 "NavLink" active=True href="#" %}Active{% endbootstrap5 %}
+              {% endbootstrap5 %}
+              {% bootstrap5 "NavItem" %}
+                {% bootstrap5 "NavLink" href="#" %}Link{% endbootstrap5 %}
+              {% endbootstrap5 %}
+              {% bootstrap5 "NavItem" %}
+                {% bootstrap5 "NavLink" href="#" %}Link{% endbootstrap5 %}
+              {% endbootstrap5 %}
+              {% bootstrap5 "NavItem" %}
+                {% bootstrap5 "NavLink" disabled=True %}Disabled{% endbootstrap5 %}
+              {% endbootstrap5 %}
+            {% endbootstrap5 %}
         """)
         rendered = template.render(Context())
 
@@ -148,20 +148,20 @@ class TestNav(SimpleTestCase):
     def test_underline(self):
         template = Template("""
             {% load bootstrap5 %}
-            {% component "Nav" variant="underline" as_="ul" %}
-              {% component "NavItem" %}
-                {% component "NavLink" active=True href="#" %}Active{% endcomponent %}
-              {% endcomponent %}
-              {% component "NavItem" %}
-                {% component "NavLink" href="#" %}Link{% endcomponent %}
-              {% endcomponent %}
-              {% component "NavItem" %}
-                {% component "NavLink" href="#" %}Link{% endcomponent %}
-              {% endcomponent %}
-              {% component "NavItem" %}
-                {% component "NavLink" disabled=True %}Disabled{% endcomponent %}
-              {% endcomponent %}
-            {% endcomponent %}
+            {% bootstrap5 "Nav" variant="underline" as_="ul" %}
+              {% bootstrap5 "NavItem" %}
+                {% bootstrap5 "NavLink" active=True href="#" %}Active{% endbootstrap5 %}
+              {% endbootstrap5 %}
+              {% bootstrap5 "NavItem" %}
+                {% bootstrap5 "NavLink" href="#" %}Link{% endbootstrap5 %}
+              {% endbootstrap5 %}
+              {% bootstrap5 "NavItem" %}
+                {% bootstrap5 "NavLink" href="#" %}Link{% endbootstrap5 %}
+              {% endbootstrap5 %}
+              {% bootstrap5 "NavItem" %}
+                {% bootstrap5 "NavLink" disabled=True %}Disabled{% endbootstrap5 %}
+              {% endbootstrap5 %}
+            {% endbootstrap5 %}
         """)
         rendered = template.render(Context())
 
@@ -187,20 +187,20 @@ class TestNav(SimpleTestCase):
     def test_vertical(self):
         template = Template("""
             {% load bootstrap5 %}
-            {% component "Nav" vertical=True as_="ul" %}
-              {% component "NavItem" %}
-                {% component "NavLink" active=True href="#" %}Active{% endcomponent %}
-              {% endcomponent %}
-              {% component "NavItem" %}
-                {% component "NavLink" href="#" %}Link{% endcomponent %}
-              {% endcomponent %}
-              {% component "NavItem" %}
-                {% component "NavLink" href="#" %}Link{% endcomponent %}
-              {% endcomponent %}
-              {% component "NavItem" %}
-                {% component "NavLink" disabled=True %}Disabled{% endcomponent %}
-              {% endcomponent %}
-            {% endcomponent %}
+            {% bootstrap5 "Nav" vertical=True as_="ul" %}
+              {% bootstrap5 "NavItem" %}
+                {% bootstrap5 "NavLink" active=True href="#" %}Active{% endbootstrap5 %}
+              {% endbootstrap5 %}
+              {% bootstrap5 "NavItem" %}
+                {% bootstrap5 "NavLink" href="#" %}Link{% endbootstrap5 %}
+              {% endbootstrap5 %}
+              {% bootstrap5 "NavItem" %}
+                {% bootstrap5 "NavLink" href="#" %}Link{% endbootstrap5 %}
+              {% endbootstrap5 %}
+              {% bootstrap5 "NavItem" %}
+                {% bootstrap5 "NavLink" disabled=True %}Disabled{% endbootstrap5 %}
+              {% endbootstrap5 %}
+            {% endbootstrap5 %}
         """)
         rendered = template.render(Context())
 
@@ -226,12 +226,12 @@ class TestNav(SimpleTestCase):
     def test_vertical_nav_element(self):
         template = Template("""
             {% load bootstrap5 %}
-            {% component "Nav" vertical=True %}
-              {% component "NavLink" active=True href="#" %}Active{% endcomponent %}
-              {% component "NavLink" href="#" %}Link{% endcomponent %}
-              {% component "NavLink" href="#" %}Link{% endcomponent %}
-              {% component "NavLink" disabled=True %}Disabled{% endcomponent %}
-            {% endcomponent %}
+            {% bootstrap5 "Nav" vertical=True %}
+              {% bootstrap5 "NavLink" active=True href="#" %}Active{% endbootstrap5 %}
+              {% bootstrap5 "NavLink" href="#" %}Link{% endbootstrap5 %}
+              {% bootstrap5 "NavLink" href="#" %}Link{% endbootstrap5 %}
+              {% bootstrap5 "NavLink" disabled=True %}Disabled{% endbootstrap5 %}
+            {% endbootstrap5 %}
         """)
         rendered = template.render(Context())
 
@@ -249,20 +249,20 @@ class TestNav(SimpleTestCase):
     def test_fill(self):
         template = Template("""
             {% load bootstrap5 %}
-            {% component "Nav" variant="pills" fill=True as_="ul" %}
-              {% component "NavItem" %}
-                {% component "NavLink" active=True href="#" %}Active{% endcomponent %}
-              {% endcomponent %}
-              {% component "NavItem" %}
-                {% component "NavLink" href="#" %}Much longer nav link{% endcomponent %}
-              {% endcomponent %}
-              {% component "NavItem" %}
-                {% component "NavLink" href="#" %}Link{% endcomponent %}
-              {% endcomponent %}
-              {% component "NavItem" %}
-                {% component "NavLink" disabled=True %}Disabled{% endcomponent %}
-              {% endcomponent %}
-            {% endcomponent %}
+            {% bootstrap5 "Nav" variant="pills" fill=True as_="ul" %}
+              {% bootstrap5 "NavItem" %}
+                {% bootstrap5 "NavLink" active=True href="#" %}Active{% endbootstrap5 %}
+              {% endbootstrap5 %}
+              {% bootstrap5 "NavItem" %}
+                {% bootstrap5 "NavLink" href="#" %}Much longer nav link{% endbootstrap5 %}
+              {% endbootstrap5 %}
+              {% bootstrap5 "NavItem" %}
+                {% bootstrap5 "NavLink" href="#" %}Link{% endbootstrap5 %}
+              {% endbootstrap5 %}
+              {% bootstrap5 "NavItem" %}
+                {% bootstrap5 "NavLink" disabled=True %}Disabled{% endbootstrap5 %}
+              {% endbootstrap5 %}
+            {% endbootstrap5 %}
         """)
         rendered = template.render(Context())
 
@@ -288,12 +288,12 @@ class TestNav(SimpleTestCase):
     def test_fill_nav_element(self):
         template = Template("""
             {% load bootstrap5 %}
-            {% component "Nav" variant="pills" fill=True %}
-              {% component "NavLink" active=True href="#" %}Active{% endcomponent %}
-              {% component "NavLink" href="#" %}Much longer nav link{% endcomponent %}
-              {% component "NavLink" href="#" %}Link{% endcomponent %}
-              {% component "NavLink" disabled=True %}Disabled{% endcomponent %}
-            {% endcomponent %}
+            {% bootstrap5 "Nav" variant="pills" fill=True %}
+              {% bootstrap5 "NavLink" active=True href="#" %}Active{% endbootstrap5 %}
+              {% bootstrap5 "NavLink" href="#" %}Much longer nav link{% endbootstrap5 %}
+              {% bootstrap5 "NavLink" href="#" %}Link{% endbootstrap5 %}
+              {% bootstrap5 "NavLink" disabled=True %}Disabled{% endbootstrap5 %}
+            {% endbootstrap5 %}
         """)
         rendered = template.render(Context())
 
@@ -311,20 +311,20 @@ class TestNav(SimpleTestCase):
     def test_justified(self):
         template = Template("""
             {% load bootstrap5 %}
-            {% component "Nav" variant="pills" justified=True as_="ul" %}
-              {% component "NavItem" %}
-                {% component "NavLink" active=True href="#" %}Active{% endcomponent %}
-              {% endcomponent %}
-              {% component "NavItem" %}
-                {% component "NavLink" href="#" %}Much longer nav link{% endcomponent %}
-              {% endcomponent %}
-              {% component "NavItem" %}
-                {% component "NavLink" href="#" %}Link{% endcomponent %}
-              {% endcomponent %}
-              {% component "NavItem" %}
-                {% component "NavLink" disabled=True %}Disabled{% endcomponent %}
-              {% endcomponent %}
-            {% endcomponent %}
+            {% bootstrap5 "Nav" variant="pills" justified=True as_="ul" %}
+              {% bootstrap5 "NavItem" %}
+                {% bootstrap5 "NavLink" active=True href="#" %}Active{% endbootstrap5 %}
+              {% endbootstrap5 %}
+              {% bootstrap5 "NavItem" %}
+                {% bootstrap5 "NavLink" href="#" %}Much longer nav link{% endbootstrap5 %}
+              {% endbootstrap5 %}
+              {% bootstrap5 "NavItem" %}
+                {% bootstrap5 "NavLink" href="#" %}Link{% endbootstrap5 %}
+              {% endbootstrap5 %}
+              {% bootstrap5 "NavItem" %}
+                {% bootstrap5 "NavLink" disabled=True %}Disabled{% endbootstrap5 %}
+              {% endbootstrap5 %}
+            {% endbootstrap5 %}
         """)
         rendered = template.render(Context())
 
@@ -350,12 +350,12 @@ class TestNav(SimpleTestCase):
     def test_justified_nav_element(self):
         template = Template("""
             {% load bootstrap5 %}
-            {% component "Nav" variant="pills" justified=True %}
-              {% component "NavLink" active=True href="#" %}Active{% endcomponent %}
-              {% component "NavLink" href="#" %}Much longer nav link{% endcomponent %}
-              {% component "NavLink" href="#" %}Link{% endcomponent %}
-              {% component "NavLink" disabled=True %}Disabled{% endcomponent %}
-            {% endcomponent %}
+            {% bootstrap5 "Nav" variant="pills" justified=True %}
+              {% bootstrap5 "NavLink" active=True href="#" %}Active{% endbootstrap5 %}
+              {% bootstrap5 "NavLink" href="#" %}Much longer nav link{% endbootstrap5 %}
+              {% bootstrap5 "NavLink" href="#" %}Link{% endbootstrap5 %}
+              {% bootstrap5 "NavLink" disabled=True %}Disabled{% endbootstrap5 %}
+            {% endbootstrap5 %}
         """)
         rendered = template.render(Context())
 
@@ -373,20 +373,20 @@ class TestNav(SimpleTestCase):
     def test_button_links(self):
         template = Template("""
             {% load bootstrap5 %}
-            {% component "Nav" variant="pills" as_="ul" %}
-              {% component "NavItem" %}
-                {% component "NavLink" as_="button" active=True %}Active{% endcomponent %}
-              {% endcomponent %}
-              {% component "NavItem" %}
-                {% component "NavLink" as_="button" %}Link{% endcomponent %}
-              {% endcomponent %}
-              {% component "NavItem" %}
-                {% component "NavLink" as_="button" %}Link{% endcomponent %}
-              {% endcomponent %}
-              {% component "NavItem" %}
-                {% component "NavLink" as_="button" disabled=True %}Disabled{% endcomponent %}
-              {% endcomponent %}
-            {% endcomponent %}
+            {% bootstrap5 "Nav" variant="pills" as_="ul" %}
+              {% bootstrap5 "NavItem" %}
+                {% bootstrap5 "NavLink" as_="button" active=True %}Active{% endbootstrap5 %}
+              {% endbootstrap5 %}
+              {% bootstrap5 "NavItem" %}
+                {% bootstrap5 "NavLink" as_="button" %}Link{% endbootstrap5 %}
+              {% endbootstrap5 %}
+              {% bootstrap5 "NavItem" %}
+                {% bootstrap5 "NavLink" as_="button" %}Link{% endbootstrap5 %}
+              {% endbootstrap5 %}
+              {% bootstrap5 "NavItem" %}
+                {% bootstrap5 "NavLink" as_="button" disabled=True %}Disabled{% endbootstrap5 %}
+              {% endbootstrap5 %}
+            {% endbootstrap5 %}
         """)
         rendered = template.render(Context())
 
@@ -412,10 +412,10 @@ class TestNav(SimpleTestCase):
     def test_custom_attrs(self):
         template = Template("""
             {% load bootstrap5 %}
-            {% component "Nav" attrs:class="custom-nav" %}
-              {% component "NavLink" active=True href="#" %}Active{% endcomponent %}
-              {% component "NavLink" href="#" %}Link{% endcomponent %}
-            {% endcomponent %}
+            {% bootstrap5 "Nav" attrs:class="custom-nav" %}
+              {% bootstrap5 "NavLink" active=True href="#" %}Active{% endbootstrap5 %}
+              {% bootstrap5 "NavLink" href="#" %}Link{% endbootstrap5 %}
+            {% endbootstrap5 %}
         """)
         rendered = template.render(Context())
 
@@ -431,10 +431,10 @@ class TestNav(SimpleTestCase):
     def test_custom_role(self):
         template = Template("""
             {% load bootstrap5 %}
-            {% component "Nav" role="tablist" %}
-              {% component "NavLink" active=True href="#" %}Active{% endcomponent %}
-              {% component "NavLink" href="#" %}Link{% endcomponent %}
-            {% endcomponent %}
+            {% bootstrap5 "Nav" role="tablist" %}
+              {% bootstrap5 "NavLink" active=True href="#" %}Active{% endbootstrap5 %}
+              {% bootstrap5 "NavLink" href="#" %}Link{% endbootstrap5 %}
+            {% endbootstrap5 %}
         """)
         rendered = template.render(Context())
 

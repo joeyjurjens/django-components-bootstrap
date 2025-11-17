@@ -13,18 +13,18 @@ class TestModal(SimpleTestCase):
         with mock_component_id():
             template = Template("""
             {% load bootstrap5 %}
-            {% component "Modal" %}
-              {% component "ModalHeader" %}
-                {% component "ModalTitle" %}Modal title{% endcomponent %}
-              {% endcomponent %}
-              {% component "ModalBody" %}
+            {% bootstrap5 "Modal" %}
+              {% bootstrap5 "ModalHeader" %}
+                {% bootstrap5 "ModalTitle" %}Modal title{% endbootstrap5 %}
+              {% endbootstrap5 %}
+              {% bootstrap5 "ModalBody" %}
                 <p>Modal body text goes here.</p>
-              {% endcomponent %}
-              {% component "ModalFooter" %}
+              {% endbootstrap5 %}
+              {% bootstrap5 "ModalFooter" %}
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                 <button type="button" class="btn btn-primary">Save changes</button>
-              {% endcomponent %}
-            {% endcomponent %}
+              {% endbootstrap5 %}
+            {% endbootstrap5 %}
         """)
             rendered = template.render(Context())
 
@@ -55,14 +55,14 @@ class TestModal(SimpleTestCase):
         with mock_component_id():
             template = Template("""
             {% load bootstrap5 %}
-            {% component "Modal" size="sm" %}
-              {% component "ModalHeader" %}
-                {% component "ModalTitle" %}Small Modal{% endcomponent %}
-              {% endcomponent %}
-              {% component "ModalBody" %}
+            {% bootstrap5 "Modal" size="sm" %}
+              {% bootstrap5 "ModalHeader" %}
+                {% bootstrap5 "ModalTitle" %}Small Modal{% endbootstrap5 %}
+              {% endbootstrap5 %}
+              {% bootstrap5 "ModalBody" %}
                 <p>This is a small modal.</p>
-              {% endcomponent %}
-            {% endcomponent %}
+              {% endbootstrap5 %}
+            {% endbootstrap5 %}
         """)
             rendered = template.render(Context())
 
@@ -89,14 +89,14 @@ class TestModal(SimpleTestCase):
         with mock_component_id():
             template = Template("""
             {% load bootstrap5 %}
-            {% component "Modal" size="lg" %}
-              {% component "ModalHeader" %}
-                {% component "ModalTitle" %}Large Modal{% endcomponent %}
-              {% endcomponent %}
-              {% component "ModalBody" %}
+            {% bootstrap5 "Modal" size="lg" %}
+              {% bootstrap5 "ModalHeader" %}
+                {% bootstrap5 "ModalTitle" %}Large Modal{% endbootstrap5 %}
+              {% endbootstrap5 %}
+              {% bootstrap5 "ModalBody" %}
                 <p>This is a large modal.</p>
-              {% endcomponent %}
-            {% endcomponent %}
+              {% endbootstrap5 %}
+            {% endbootstrap5 %}
         """)
             rendered = template.render(Context())
 
@@ -123,14 +123,14 @@ class TestModal(SimpleTestCase):
         with mock_component_id():
             template = Template("""
             {% load bootstrap5 %}
-            {% component "Modal" size="xl" %}
-              {% component "ModalHeader" %}
-                {% component "ModalTitle" %}Extra Large Modal{% endcomponent %}
-              {% endcomponent %}
-              {% component "ModalBody" %}
+            {% bootstrap5 "Modal" size="xl" %}
+              {% bootstrap5 "ModalHeader" %}
+                {% bootstrap5 "ModalTitle" %}Extra Large Modal{% endbootstrap5 %}
+              {% endbootstrap5 %}
+              {% bootstrap5 "ModalBody" %}
                 <p>This is an extra large modal.</p>
-              {% endcomponent %}
-            {% endcomponent %}
+              {% endbootstrap5 %}
+            {% endbootstrap5 %}
         """)
             rendered = template.render(Context())
 
@@ -157,14 +157,14 @@ class TestModal(SimpleTestCase):
         with mock_component_id():
             template = Template("""
             {% load bootstrap5 %}
-            {% component "Modal" fullscreen=True %}
-              {% component "ModalHeader" %}
-                {% component "ModalTitle" %}Fullscreen Modal{% endcomponent %}
-              {% endcomponent %}
-              {% component "ModalBody" %}
+            {% bootstrap5 "Modal" fullscreen=True %}
+              {% bootstrap5 "ModalHeader" %}
+                {% bootstrap5 "ModalTitle" %}Fullscreen Modal{% endbootstrap5 %}
+              {% endbootstrap5 %}
+              {% bootstrap5 "ModalBody" %}
                 <p>This is a fullscreen modal.</p>
-              {% endcomponent %}
-            {% endcomponent %}
+              {% endbootstrap5 %}
+            {% endbootstrap5 %}
         """)
             rendered = template.render(Context())
 
@@ -191,14 +191,14 @@ class TestModal(SimpleTestCase):
         with mock_component_id():
             template = Template("""
             {% load bootstrap5 %}
-            {% component "Modal" fullscreen="sm" %}
-              {% component "ModalHeader" %}
-                {% component "ModalTitle" %}Fullscreen Below SM{% endcomponent %}
-              {% endcomponent %}
-              {% component "ModalBody" %}
+            {% bootstrap5 "Modal" fullscreen="sm" %}
+              {% bootstrap5 "ModalHeader" %}
+                {% bootstrap5 "ModalTitle" %}Fullscreen Below SM{% endbootstrap5 %}
+              {% endbootstrap5 %}
+              {% bootstrap5 "ModalBody" %}
                 <p>This modal is fullscreen below sm breakpoint.</p>
-              {% endcomponent %}
-            {% endcomponent %}
+              {% endbootstrap5 %}
+            {% endbootstrap5 %}
         """)
             rendered = template.render(Context())
 
@@ -225,14 +225,14 @@ class TestModal(SimpleTestCase):
         with mock_component_id():
             template = Template("""
             {% load bootstrap5 %}
-            {% component "Modal" fullscreen="md" %}
-              {% component "ModalHeader" %}
-                {% component "ModalTitle" %}Fullscreen Below MD{% endcomponent %}
-              {% endcomponent %}
-              {% component "ModalBody" %}
+            {% bootstrap5 "Modal" fullscreen="md" %}
+              {% bootstrap5 "ModalHeader" %}
+                {% bootstrap5 "ModalTitle" %}Fullscreen Below MD{% endbootstrap5 %}
+              {% endbootstrap5 %}
+              {% bootstrap5 "ModalBody" %}
                 <p>This modal is fullscreen below md breakpoint.</p>
-              {% endcomponent %}
-            {% endcomponent %}
+              {% endbootstrap5 %}
+            {% endbootstrap5 %}
         """)
             rendered = template.render(Context())
 
@@ -259,14 +259,14 @@ class TestModal(SimpleTestCase):
         with mock_component_id():
             template = Template("""
             {% load bootstrap5 %}
-            {% component "Modal" fullscreen="lg" %}
-              {% component "ModalHeader" %}
-                {% component "ModalTitle" %}Fullscreen Below LG{% endcomponent %}
-              {% endcomponent %}
-              {% component "ModalBody" %}
+            {% bootstrap5 "Modal" fullscreen="lg" %}
+              {% bootstrap5 "ModalHeader" %}
+                {% bootstrap5 "ModalTitle" %}Fullscreen Below LG{% endbootstrap5 %}
+              {% endbootstrap5 %}
+              {% bootstrap5 "ModalBody" %}
                 <p>This modal is fullscreen below lg breakpoint.</p>
-              {% endcomponent %}
-            {% endcomponent %}
+              {% endbootstrap5 %}
+            {% endbootstrap5 %}
         """)
             rendered = template.render(Context())
 
@@ -293,14 +293,14 @@ class TestModal(SimpleTestCase):
         with mock_component_id():
             template = Template("""
             {% load bootstrap5 %}
-            {% component "Modal" centered=True %}
-              {% component "ModalHeader" %}
-                {% component "ModalTitle" %}Vertically Centered Modal{% endcomponent %}
-              {% endcomponent %}
-              {% component "ModalBody" %}
+            {% bootstrap5 "Modal" centered=True %}
+              {% bootstrap5 "ModalHeader" %}
+                {% bootstrap5 "ModalTitle" %}Vertically Centered Modal{% endbootstrap5 %}
+              {% endbootstrap5 %}
+              {% bootstrap5 "ModalBody" %}
                 <p>This modal is vertically centered.</p>
-              {% endcomponent %}
-            {% endcomponent %}
+              {% endbootstrap5 %}
+            {% endbootstrap5 %}
         """)
             rendered = template.render(Context())
 
@@ -327,15 +327,15 @@ class TestModal(SimpleTestCase):
         with mock_component_id():
             template = Template("""
             {% load bootstrap5 %}
-            {% component "Modal" scrollable=True %}
-              {% component "ModalHeader" %}
-                {% component "ModalTitle" %}Scrollable Modal{% endcomponent %}
-              {% endcomponent %}
-              {% component "ModalBody" %}
+            {% bootstrap5 "Modal" scrollable=True %}
+              {% bootstrap5 "ModalHeader" %}
+                {% bootstrap5 "ModalTitle" %}Scrollable Modal{% endbootstrap5 %}
+              {% endbootstrap5 %}
+              {% bootstrap5 "ModalBody" %}
                 <p>This modal has a scrollable body when content is long.</p>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-              {% endcomponent %}
-            {% endcomponent %}
+              {% endbootstrap5 %}
+            {% endbootstrap5 %}
         """)
             rendered = template.render(Context())
 
@@ -363,14 +363,14 @@ class TestModal(SimpleTestCase):
         with mock_component_id():
             template = Template("""
             {% load bootstrap5 %}
-            {% component "Modal" backdrop="static" keyboard=False %}
-              {% component "ModalHeader" %}
-                {% component "ModalTitle" %}Static Backdrop Modal{% endcomponent %}
-              {% endcomponent %}
-              {% component "ModalBody" %}
+            {% bootstrap5 "Modal" backdrop="static" keyboard=False %}
+              {% bootstrap5 "ModalHeader" %}
+                {% bootstrap5 "ModalTitle" %}Static Backdrop Modal{% endbootstrap5 %}
+              {% endbootstrap5 %}
+              {% bootstrap5 "ModalBody" %}
                 <p>This modal won't close when clicking outside.</p>
-              {% endcomponent %}
-            {% endcomponent %}
+              {% endbootstrap5 %}
+            {% endbootstrap5 %}
         """)
             rendered = template.render(Context())
 
@@ -397,11 +397,11 @@ class TestModal(SimpleTestCase):
         with mock_component_id():
             template = Template("""
             {% load bootstrap5 %}
-            {% component "Modal" %}
-              {% component "ModalHeader" %}
-                {% component "ModalTitle" %}New message{% endcomponent %}
-              {% endcomponent %}
-              {% component "ModalBody" %}
+            {% bootstrap5 "Modal" %}
+              {% bootstrap5 "ModalHeader" %}
+                {% bootstrap5 "ModalTitle" %}New message{% endbootstrap5 %}
+              {% endbootstrap5 %}
+              {% bootstrap5 "ModalBody" %}
                 <form>
                   <div class="mb-3">
                     <label for="recipient-name" class="col-form-label">Recipient:</label>
@@ -412,12 +412,12 @@ class TestModal(SimpleTestCase):
                     <textarea class="form-control" id="message-text"></textarea>
                   </div>
                 </form>
-              {% endcomponent %}
-              {% component "ModalFooter" %}
+              {% endbootstrap5 %}
+              {% bootstrap5 "ModalFooter" %}
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                 <button type="button" class="btn btn-primary">Send message</button>
-              {% endcomponent %}
-            {% endcomponent %}
+              {% endbootstrap5 %}
+            {% endbootstrap5 %}
         """)
             rendered = template.render(Context())
 
@@ -457,14 +457,14 @@ class TestModal(SimpleTestCase):
         with mock_component_id():
             template = Template("""
             {% load bootstrap5 %}
-            {% component "Modal" fade=False %}
-              {% component "ModalHeader" %}
-                {% component "ModalTitle" %}No Fade Modal{% endcomponent %}
-              {% endcomponent %}
-              {% component "ModalBody" %}
+            {% bootstrap5 "Modal" fade=False %}
+              {% bootstrap5 "ModalHeader" %}
+                {% bootstrap5 "ModalTitle" %}No Fade Modal{% endbootstrap5 %}
+              {% endbootstrap5 %}
+              {% bootstrap5 "ModalBody" %}
                 <p>This modal doesn't have fade animation.</p>
-              {% endcomponent %}
-            {% endcomponent %}
+              {% endbootstrap5 %}
+            {% endbootstrap5 %}
         """)
             rendered = template.render(Context())
 
@@ -491,14 +491,14 @@ class TestModal(SimpleTestCase):
         with mock_component_id():
             template = Template("""
             {% load bootstrap5 %}
-            {% component "Modal" %}
-              {% component "ModalHeader" close_button=False %}
-                {% component "ModalTitle" %}No Close Button{% endcomponent %}
-              {% endcomponent %}
-              {% component "ModalBody" %}
+            {% bootstrap5 "Modal" %}
+              {% bootstrap5 "ModalHeader" close_button=False %}
+                {% bootstrap5 "ModalTitle" %}No Close Button{% endbootstrap5 %}
+              {% endbootstrap5 %}
+              {% bootstrap5 "ModalBody" %}
                 <p>This modal header has no close button.</p>
-              {% endcomponent %}
-            {% endcomponent %}
+              {% endbootstrap5 %}
+            {% endbootstrap5 %}
         """)
             rendered = template.render(Context())
 
@@ -524,14 +524,14 @@ class TestModal(SimpleTestCase):
         with mock_component_id():
             template = Template("""
             {% load bootstrap5 %}
-            {% component "Modal" %}
-              {% component "ModalHeader" %}
-                {% component "ModalTitle" as_="h1" %}Custom Heading Level{% endcomponent %}
-              {% endcomponent %}
-              {% component "ModalBody" %}
+            {% bootstrap5 "Modal" %}
+              {% bootstrap5 "ModalHeader" %}
+                {% bootstrap5 "ModalTitle" as_="h1" %}Custom Heading Level{% endbootstrap5 %}
+              {% endbootstrap5 %}
+              {% bootstrap5 "ModalBody" %}
                 <p>This modal title uses h1 instead of h5.</p>
-              {% endcomponent %}
-            {% endcomponent %}
+              {% endbootstrap5 %}
+            {% endbootstrap5 %}
         """)
             rendered = template.render(Context())
 
@@ -558,14 +558,14 @@ class TestModal(SimpleTestCase):
         with mock_component_id():
             template = Template("""
             {% load bootstrap5 %}
-            {% component "Modal" centered=True scrollable=True %}
-              {% component "ModalHeader" %}
-                {% component "ModalTitle" %}Centered & Scrollable{% endcomponent %}
-              {% endcomponent %}
-              {% component "ModalBody" %}
+            {% bootstrap5 "Modal" centered=True scrollable=True %}
+              {% bootstrap5 "ModalHeader" %}
+                {% bootstrap5 "ModalTitle" %}Centered & Scrollable{% endbootstrap5 %}
+              {% endbootstrap5 %}
+              {% bootstrap5 "ModalBody" %}
                 <p>This modal is both centered and scrollable.</p>
-              {% endcomponent %}
-            {% endcomponent %}
+              {% endbootstrap5 %}
+            {% endbootstrap5 %}
         """)
             rendered = template.render(Context())
 
