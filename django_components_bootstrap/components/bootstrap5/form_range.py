@@ -2,7 +2,6 @@ from django.template import Context
 from django_components import Component, types
 
 
-
 class FormRange(Component):
     class Kwargs:
         min: int | float = 0

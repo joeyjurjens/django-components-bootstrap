@@ -2,7 +2,6 @@ from django.template import Context
 from django_components import Component, SlotInput, types
 
 
-
 class Accordion(Component):
     class Kwargs:
         flush: bool = False

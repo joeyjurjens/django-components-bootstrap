@@ -2,7 +2,6 @@ from django.template import Context
 from django_components import Component, types
 
 
-
 class CloseButton(Component):
     class Kwargs:
         variant: str | None = None

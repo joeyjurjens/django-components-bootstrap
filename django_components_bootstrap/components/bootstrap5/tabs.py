@@ -102,20 +102,15 @@ class TabsRenderer(Component):
         variant: NavVariant
         fill: bool
         justified: bool
-        default_active_tab: str | None
         tab_data: list[dict]
         attrs: dict | None
 
     def get_template_data(self, args, kwargs: Kwargs, slots, context: Context):
-        first_key = kwargs.tab_data[0]["tab_id"] if kwargs.tab_data else None
-        active_key = kwargs.default_active_tab or first_key
-
         return {
             "tabs_id": kwargs.tabs_id,
             "variant": kwargs.variant,
             "fill": kwargs.fill,
             "justified": kwargs.justified,
-            "active_key": active_key,
             "tab_data": kwargs.tab_data,
             "attrs": kwargs.attrs or {},
         }
@@ -127,7 +122,7 @@ class TabsRenderer(Component):
             {% component "Nav" variant=variant fill=fill justified=justified as_="ul" attrs:id=tabs_id attrs:role="tablist" %}
                 {% for tab in tab_data %}
                     {% component "NavItem" as_="li" attrs:role="presentation" %}
-                        {% component "NavLink" as_="button" active=tab.is_active disabled=tab.disabled attrs:id=tab.nav_tab_id attrs:data-bs-toggle="tab" attrs:data-bs-target="#{{ tab.pane_id }}" attrs:role="tab" attrs:aria-controls=tab.pane_id attrs:aria-selected=tab.aria_selected attrs:class=tab.tab_class %}
+                        {% component "NavLink" as_="button" active=tab.is_active disabled=tab.disabled attrs:id=tab.nav_tab_id attrs:data-bs-toggle="tab" attrs:data-bs-target="#{{ tab.pane_id }}" attrs:role="tab" attrs:aria-controls=tab.pane_id attrs:aria-selected=tab.aria_selected %}
                             {{ tab.title }}
                         {% endcomponent %}
                     {% endcomponent %}
@@ -147,7 +142,6 @@ class TabsRenderer(Component):
 class Tabs(Component):
     class Kwargs:
         id: str | None = None
-        default_active_tab: str | None = None
         variant: NavVariant = "tabs"
         fill: bool = False
         justified: bool = False
@@ -162,7 +156,6 @@ class Tabs(Component):
 
         return {
             "tabs_id": tabs_id,
-            "default_active_tab": kwargs.default_active_tab,
             "variant": kwargs.variant,
             "fill": kwargs.fill,
             "justified": kwargs.justified,
@@ -173,7 +166,7 @@ class Tabs(Component):
     template: types.django_html = """
         {% load component_tags %}
 
-        {% provide "_tabs" id=tabs_id tab_data=tab_data default_active_tab=default_active_tab enabled=True %}
+        {% provide "_tabs" id=tabs_id tab_data=tab_data enabled=True %}
             {% slot "default" / %}
         {% endprovide %}
     """
@@ -181,13 +174,16 @@ class Tabs(Component):
     def on_render_after(self, context, template, content):
         tab_data: list[dict] = context["tab_data"]
 
+        if tab_data and not any(tab["is_active"] for tab in tab_data):
+            tab_data[0]["is_active"] = True
+            tab_data[0]["aria_selected"] = "true"
+
         return TabsRenderer.render(
             kwargs={
                 "tabs_id": context["tabs_id"],
                 "variant": context["variant"],
                 "fill": context["fill"],
                 "justified": context["justified"],
-                "default_active_tab": context["default_active_tab"],
                 "tab_data": tab_data,
                 "attrs": context["attrs"],
             },
@@ -197,10 +193,10 @@ class Tabs(Component):
 
 class Tab(Component):
     class Kwargs:
-        tab_id: str
         title: str
+        tab_id: str | None = None
+        active: bool = False
         disabled: bool = False
-        tab_class: str | None = None
 
     class Slots:
         default: SlotInput
@@ -217,49 +213,42 @@ class Tab(Component):
                 f"'{self.registered_name}' must be a direct child of 'Tabs' component"
             )
 
-        slugs = (slugify(tabs_ctx.id), slugify(kwargs.tab_id))
+        tab_index = len(tabs_ctx.tab_data)
+        tab_id = kwargs.tab_id or slugify(kwargs.title) or f"tab-{tab_index}"
+        slugs = (slugify(tabs_ctx.id), tab_id)
         nav_tab_id = f"{slugs[0]}-tab-{slugs[1]}"
         pane_id = f"{slugs[0]}-pane-{slugs[1]}"
 
         return {
             "parent_tabs": tabs_ctx.tab_data,
-            "default_active_tab": tabs_ctx.default_active_tab,
             "nav_tab_id": nav_tab_id,
             "pane_id": pane_id,
-            "tab_id": kwargs.tab_id,
+            "tab_id": tab_id,
             "title": kwargs.title,
+            "active": kwargs.active,
             "disabled": kwargs.disabled,
-            "tab_class": kwargs.tab_class or "",
             "empty_tab_data": [],
         }
 
     template: types.django_html = """
         {% load component_tags %}
 
-        {% provide "_tabs" id="" tab_data=empty_tab_data default_active_tab="" enabled=False %}
+        {% provide "_tabs" id="" tab_data=empty_tab_data enabled=False %}
             {% slot "default" / %}
         {% endprovide %}
     """
 
     def on_render_after(self, context, template, content):
         parent_tabs: list[dict] = context["parent_tabs"]
-        default_active_tab = context["default_active_tab"]
-        tab_id = context["tab_id"]
-
-        is_active = (
-            tab_id == default_active_tab
-            if default_active_tab
-            else len(parent_tabs) == 0
-        )
+        is_active = context["active"]
 
         parent_tabs.append(
             {
                 "nav_tab_id": context["nav_tab_id"],
                 "pane_id": context["pane_id"],
-                "tab_id": tab_id,
+                "tab_id": context["tab_id"],
                 "title": context["title"],
                 "disabled": context["disabled"],
-                "tab_class": context["tab_class"],
                 "is_active": is_active,
                 "aria_selected": "true" if is_active else "false",
                 "content": mark_safe(content.strip()),
