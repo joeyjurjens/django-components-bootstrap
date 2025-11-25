@@ -9,15 +9,15 @@ class TestDropdown(SimpleTestCase):
 
     def test_basic(self):
         template = Template("""
-            {% load bootstrap5 %}
-            {% bootstrap5 "Dropdown" %}
-              {% bootstrap5 "DropdownToggle" variant="secondary" %}Dropdown button{% endbootstrap5 %}
-              {% bootstrap5 "DropdownMenu" %}
-                {% bootstrap5 "DropdownItem" href="#" %}Action{% endbootstrap5 %}
-                {% bootstrap5 "DropdownItem" href="#" %}Another action{% endbootstrap5 %}
-                {% bootstrap5 "DropdownItem" href="#" %}Something else here{% endbootstrap5 %}
-              {% endbootstrap5 %}
-            {% endbootstrap5 %}
+            {% load component_tags %}
+            {% component "Dropdown" %}
+              {% component "DropdownToggle" variant="secondary" %}Dropdown button{% endcomponent %}
+              {% component "DropdownMenu" %}
+                {% component "DropdownItem" href="#" %}Action{% endcomponent %}
+                {% component "DropdownItem" href="#" %}Another action{% endcomponent %}
+                {% component "DropdownItem" href="#" %}Something else here{% endcomponent %}
+              {% endcomponent %}
+            {% endcomponent %}
         """)
         rendered = template.render(Context())
 
@@ -39,91 +39,91 @@ class TestDropdown(SimpleTestCase):
     # Color Variants
     def test_variant_primary(self):
         template = Template("""
-            {% load bootstrap5 %}
-            {% bootstrap5 "Dropdown" %}
-              {% bootstrap5 "DropdownToggle" variant="primary" %}Primary{% endbootstrap5 %}
-              {% bootstrap5 "DropdownMenu" %}
-                {% bootstrap5 "DropdownItem" href="#" %}Action{% endbootstrap5 %}
-              {% endbootstrap5 %}
-            {% endbootstrap5 %}
+            {% load component_tags %}
+            {% component "Dropdown" %}
+              {% component "DropdownToggle" variant="primary" %}Primary{% endcomponent %}
+              {% component "DropdownMenu" %}
+                {% component "DropdownItem" href="#" %}Action{% endcomponent %}
+              {% endcomponent %}
+            {% endcomponent %}
         """)
         rendered = template.render(Context())
         self.assertIn("btn-primary", rendered)
 
     def test_variant_success(self):
         template = Template("""
-            {% load bootstrap5 %}
-            {% bootstrap5 "Dropdown" %}
-              {% bootstrap5 "DropdownToggle" variant="success" %}Success{% endbootstrap5 %}
-              {% bootstrap5 "DropdownMenu" %}
-                {% bootstrap5 "DropdownItem" href="#" %}Action{% endbootstrap5 %}
-              {% endbootstrap5 %}
-            {% endbootstrap5 %}
+            {% load component_tags %}
+            {% component "Dropdown" %}
+              {% component "DropdownToggle" variant="success" %}Success{% endcomponent %}
+              {% component "DropdownMenu" %}
+                {% component "DropdownItem" href="#" %}Action{% endcomponent %}
+              {% endcomponent %}
+            {% endcomponent %}
         """)
         rendered = template.render(Context())
         self.assertIn("btn-success", rendered)
 
     def test_variant_danger(self):
         template = Template("""
-            {% load bootstrap5 %}
-            {% bootstrap5 "Dropdown" %}
-              {% bootstrap5 "DropdownToggle" variant="danger" %}Danger{% endbootstrap5 %}
-              {% bootstrap5 "DropdownMenu" %}
-                {% bootstrap5 "DropdownItem" href="#" %}Action{% endbootstrap5 %}
-              {% endbootstrap5 %}
-            {% endbootstrap5 %}
+            {% load component_tags %}
+            {% component "Dropdown" %}
+              {% component "DropdownToggle" variant="danger" %}Danger{% endcomponent %}
+              {% component "DropdownMenu" %}
+                {% component "DropdownItem" href="#" %}Action{% endcomponent %}
+              {% endcomponent %}
+            {% endcomponent %}
         """)
         rendered = template.render(Context())
         self.assertIn("btn-danger", rendered)
 
     def test_variant_warning(self):
         template = Template("""
-            {% load bootstrap5 %}
-            {% bootstrap5 "Dropdown" %}
-              {% bootstrap5 "DropdownToggle" variant="warning" %}Warning{% endbootstrap5 %}
-              {% bootstrap5 "DropdownMenu" %}
-                {% bootstrap5 "DropdownItem" href="#" %}Action{% endbootstrap5 %}
-              {% endbootstrap5 %}
-            {% endbootstrap5 %}
+            {% load component_tags %}
+            {% component "Dropdown" %}
+              {% component "DropdownToggle" variant="warning" %}Warning{% endcomponent %}
+              {% component "DropdownMenu" %}
+                {% component "DropdownItem" href="#" %}Action{% endcomponent %}
+              {% endcomponent %}
+            {% endcomponent %}
         """)
         rendered = template.render(Context())
         self.assertIn("btn-warning", rendered)
 
     def test_variant_info(self):
         template = Template("""
-            {% load bootstrap5 %}
-            {% bootstrap5 "Dropdown" %}
-              {% bootstrap5 "DropdownToggle" variant="info" %}Info{% endbootstrap5 %}
-              {% bootstrap5 "DropdownMenu" %}
-                {% bootstrap5 "DropdownItem" href="#" %}Action{% endbootstrap5 %}
-              {% endbootstrap5 %}
-            {% endbootstrap5 %}
+            {% load component_tags %}
+            {% component "Dropdown" %}
+              {% component "DropdownToggle" variant="info" %}Info{% endcomponent %}
+              {% component "DropdownMenu" %}
+                {% component "DropdownItem" href="#" %}Action{% endcomponent %}
+              {% endcomponent %}
+            {% endcomponent %}
         """)
         rendered = template.render(Context())
         self.assertIn("btn-info", rendered)
 
     def test_variant_light(self):
         template = Template("""
-            {% load bootstrap5 %}
-            {% bootstrap5 "Dropdown" %}
-              {% bootstrap5 "DropdownToggle" variant="light" %}Light{% endbootstrap5 %}
-              {% bootstrap5 "DropdownMenu" %}
-                {% bootstrap5 "DropdownItem" href="#" %}Action{% endbootstrap5 %}
-              {% endbootstrap5 %}
-            {% endbootstrap5 %}
+            {% load component_tags %}
+            {% component "Dropdown" %}
+              {% component "DropdownToggle" variant="light" %}Light{% endcomponent %}
+              {% component "DropdownMenu" %}
+                {% component "DropdownItem" href="#" %}Action{% endcomponent %}
+              {% endcomponent %}
+            {% endcomponent %}
         """)
         rendered = template.render(Context())
         self.assertIn("btn-light", rendered)
 
     def test_variant_dark(self):
         template = Template("""
-            {% load bootstrap5 %}
-            {% bootstrap5 "Dropdown" %}
-              {% bootstrap5 "DropdownToggle" variant="dark" %}Dark{% endbootstrap5 %}
-              {% bootstrap5 "DropdownMenu" %}
-                {% bootstrap5 "DropdownItem" href="#" %}Action{% endbootstrap5 %}
-              {% endbootstrap5 %}
-            {% endbootstrap5 %}
+            {% load component_tags %}
+            {% component "Dropdown" %}
+              {% component "DropdownToggle" variant="dark" %}Dark{% endcomponent %}
+              {% component "DropdownMenu" %}
+                {% component "DropdownItem" href="#" %}Action{% endcomponent %}
+              {% endcomponent %}
+            {% endcomponent %}
         """)
         rendered = template.render(Context())
         self.assertIn("btn-dark", rendered)
@@ -131,13 +131,13 @@ class TestDropdown(SimpleTestCase):
     # Sizing
     def test_size_large(self):
         template = Template("""
-            {% load bootstrap5 %}
-            {% bootstrap5 "Dropdown" %}
-              {% bootstrap5 "DropdownToggle" variant="secondary" size="lg" %}Large button{% endbootstrap5 %}
-              {% bootstrap5 "DropdownMenu" %}
-                {% bootstrap5 "DropdownItem" href="#" %}Action{% endbootstrap5 %}
-              {% endbootstrap5 %}
-            {% endbootstrap5 %}
+            {% load component_tags %}
+            {% component "Dropdown" %}
+              {% component "DropdownToggle" variant="secondary" size="lg" %}Large button{% endcomponent %}
+              {% component "DropdownMenu" %}
+                {% component "DropdownItem" href="#" %}Action{% endcomponent %}
+              {% endcomponent %}
+            {% endcomponent %}
         """)
         rendered = template.render(Context())
 
@@ -156,13 +156,13 @@ class TestDropdown(SimpleTestCase):
 
     def test_size_small(self):
         template = Template("""
-            {% load bootstrap5 %}
-            {% bootstrap5 "Dropdown" %}
-              {% bootstrap5 "DropdownToggle" variant="secondary" size="sm" %}Small button{% endbootstrap5 %}
-              {% bootstrap5 "DropdownMenu" %}
-                {% bootstrap5 "DropdownItem" href="#" %}Action{% endbootstrap5 %}
-              {% endbootstrap5 %}
-            {% endbootstrap5 %}
+            {% load component_tags %}
+            {% component "Dropdown" %}
+              {% component "DropdownToggle" variant="secondary" size="sm" %}Small button{% endcomponent %}
+              {% component "DropdownMenu" %}
+                {% component "DropdownItem" href="#" %}Action{% endcomponent %}
+              {% endcomponent %}
+            {% endcomponent %}
         """)
         rendered = template.render(Context())
 
@@ -182,13 +182,13 @@ class TestDropdown(SimpleTestCase):
     # Directions
     def test_dropup(self):
         template = Template("""
-            {% load bootstrap5 %}
-            {% bootstrap5 "Dropdown" direction="up" %}
-              {% bootstrap5 "DropdownToggle" variant="secondary" %}Dropup{% endbootstrap5 %}
-              {% bootstrap5 "DropdownMenu" %}
-                {% bootstrap5 "DropdownItem" href="#" %}Action{% endbootstrap5 %}
-              {% endbootstrap5 %}
-            {% endbootstrap5 %}
+            {% load component_tags %}
+            {% component "Dropdown" direction="up" %}
+              {% component "DropdownToggle" variant="secondary" %}Dropup{% endcomponent %}
+              {% component "DropdownMenu" %}
+                {% component "DropdownItem" href="#" %}Action{% endcomponent %}
+              {% endcomponent %}
+            {% endcomponent %}
         """)
         rendered = template.render(Context())
 
@@ -207,13 +207,13 @@ class TestDropdown(SimpleTestCase):
 
     def test_dropend(self):
         template = Template("""
-            {% load bootstrap5 %}
-            {% bootstrap5 "Dropdown" direction="end" %}
-              {% bootstrap5 "DropdownToggle" variant="secondary" %}Dropend{% endbootstrap5 %}
-              {% bootstrap5 "DropdownMenu" %}
-                {% bootstrap5 "DropdownItem" href="#" %}Action{% endbootstrap5 %}
-              {% endbootstrap5 %}
-            {% endbootstrap5 %}
+            {% load component_tags %}
+            {% component "Dropdown" direction="end" %}
+              {% component "DropdownToggle" variant="secondary" %}Dropend{% endcomponent %}
+              {% component "DropdownMenu" %}
+                {% component "DropdownItem" href="#" %}Action{% endcomponent %}
+              {% endcomponent %}
+            {% endcomponent %}
         """)
         rendered = template.render(Context())
 
@@ -232,13 +232,13 @@ class TestDropdown(SimpleTestCase):
 
     def test_dropstart(self):
         template = Template("""
-            {% load bootstrap5 %}
-            {% bootstrap5 "Dropdown" direction="start" %}
-              {% bootstrap5 "DropdownToggle" variant="secondary" %}Dropstart{% endbootstrap5 %}
-              {% bootstrap5 "DropdownMenu" %}
-                {% bootstrap5 "DropdownItem" href="#" %}Action{% endbootstrap5 %}
-              {% endbootstrap5 %}
-            {% endbootstrap5 %}
+            {% load component_tags %}
+            {% component "Dropdown" direction="start" %}
+              {% component "DropdownToggle" variant="secondary" %}Dropstart{% endcomponent %}
+              {% component "DropdownMenu" %}
+                {% component "DropdownItem" href="#" %}Action{% endcomponent %}
+              {% endcomponent %}
+            {% endcomponent %}
         """)
         rendered = template.render(Context())
 
@@ -257,13 +257,13 @@ class TestDropdown(SimpleTestCase):
 
     def test_centered(self):
         template = Template("""
-            {% load bootstrap5 %}
-            {% bootstrap5 "Dropdown" centered=True %}
-              {% bootstrap5 "DropdownToggle" variant="secondary" %}Centered dropdown{% endbootstrap5 %}
-              {% bootstrap5 "DropdownMenu" %}
-                {% bootstrap5 "DropdownItem" href="#" %}Action{% endbootstrap5 %}
-              {% endbootstrap5 %}
-            {% endbootstrap5 %}
+            {% load component_tags %}
+            {% component "Dropdown" centered=True %}
+              {% component "DropdownToggle" variant="secondary" %}Centered dropdown{% endcomponent %}
+              {% component "DropdownMenu" %}
+                {% component "DropdownItem" href="#" %}Action{% endcomponent %}
+              {% endcomponent %}
+            {% endcomponent %}
         """)
         rendered = template.render(Context())
 
@@ -282,13 +282,13 @@ class TestDropdown(SimpleTestCase):
 
     def test_centered_dropup(self):
         template = Template("""
-            {% load bootstrap5 %}
-            {% bootstrap5 "Dropdown" direction="up" centered=True %}
-              {% bootstrap5 "DropdownToggle" variant="secondary" %}Centered dropup{% endbootstrap5 %}
-              {% bootstrap5 "DropdownMenu" %}
-                {% bootstrap5 "DropdownItem" href="#" %}Action{% endbootstrap5 %}
-              {% endbootstrap5 %}
-            {% endbootstrap5 %}
+            {% load component_tags %}
+            {% component "Dropdown" direction="up" centered=True %}
+              {% component "DropdownToggle" variant="secondary" %}Centered dropup{% endcomponent %}
+              {% component "DropdownMenu" %}
+                {% component "DropdownItem" href="#" %}Action{% endcomponent %}
+              {% endcomponent %}
+            {% endcomponent %}
         """)
         rendered = template.render(Context())
 
@@ -308,13 +308,13 @@ class TestDropdown(SimpleTestCase):
     # Menu Alignment
     def test_menu_align_end(self):
         template = Template("""
-            {% load bootstrap5 %}
-            {% bootstrap5 "Dropdown" %}
-              {% bootstrap5 "DropdownToggle" variant="secondary" %}Right-aligned menu{% endbootstrap5 %}
-              {% bootstrap5 "DropdownMenu" align="end" %}
-                {% bootstrap5 "DropdownItem" href="#" %}Action{% endbootstrap5 %}
-              {% endbootstrap5 %}
-            {% endbootstrap5 %}
+            {% load component_tags %}
+            {% component "Dropdown" %}
+              {% component "DropdownToggle" variant="secondary" %}Right-aligned menu{% endcomponent %}
+              {% component "DropdownMenu" align="end" %}
+                {% component "DropdownItem" href="#" %}Action{% endcomponent %}
+              {% endcomponent %}
+            {% endcomponent %}
         """)
         rendered = template.render(Context())
 
@@ -333,13 +333,13 @@ class TestDropdown(SimpleTestCase):
 
     def test_menu_responsive_align_lg_end(self):
         template = Template("""
-            {% load bootstrap5 %}
-            {% bootstrap5 "Dropdown" %}
-              {% bootstrap5 "DropdownToggle" variant="secondary" %}Left-aligned, lg-right{% endbootstrap5 %}
-              {% bootstrap5 "DropdownMenu" align_lg="end" %}
-                {% bootstrap5 "DropdownItem" href="#" %}Action{% endbootstrap5 %}
-              {% endbootstrap5 %}
-            {% endbootstrap5 %}
+            {% load component_tags %}
+            {% component "Dropdown" %}
+              {% component "DropdownToggle" variant="secondary" %}Left-aligned, lg-right{% endcomponent %}
+              {% component "DropdownMenu" align_lg="end" %}
+                {% component "DropdownItem" href="#" %}Action{% endcomponent %}
+              {% endcomponent %}
+            {% endcomponent %}
         """)
         rendered = template.render(Context())
 
@@ -358,13 +358,13 @@ class TestDropdown(SimpleTestCase):
 
     def test_menu_responsive_align_end_lg_start(self):
         template = Template("""
-            {% load bootstrap5 %}
-            {% bootstrap5 "Dropdown" %}
-              {% bootstrap5 "DropdownToggle" variant="secondary" %}Right-aligned, lg-left{% endbootstrap5 %}
-              {% bootstrap5 "DropdownMenu" align="end" align_lg="start" %}
-                {% bootstrap5 "DropdownItem" href="#" %}Action{% endbootstrap5 %}
-              {% endbootstrap5 %}
-            {% endbootstrap5 %}
+            {% load component_tags %}
+            {% component "Dropdown" %}
+              {% component "DropdownToggle" variant="secondary" %}Right-aligned, lg-left{% endcomponent %}
+              {% component "DropdownMenu" align="end" align_lg="start" %}
+                {% component "DropdownItem" href="#" %}Action{% endcomponent %}
+              {% endcomponent %}
+            {% endcomponent %}
         """)
         rendered = template.render(Context())
 
@@ -384,52 +384,52 @@ class TestDropdown(SimpleTestCase):
     # Auto Close Behaviors
     def test_auto_close_true(self):
         template = Template("""
-            {% load bootstrap5 %}
-            {% bootstrap5 "Dropdown" auto_close="true" %}
-              {% bootstrap5 "DropdownToggle" variant="secondary" %}Default dropdown{% endbootstrap5 %}
-              {% bootstrap5 "DropdownMenu" %}
-                {% bootstrap5 "DropdownItem" href="#" %}Menu item{% endbootstrap5 %}
-              {% endbootstrap5 %}
-            {% endbootstrap5 %}
+            {% load component_tags %}
+            {% component "Dropdown" auto_close="true" %}
+              {% component "DropdownToggle" variant="secondary" %}Default dropdown{% endcomponent %}
+              {% component "DropdownMenu" %}
+                {% component "DropdownItem" href="#" %}Menu item{% endcomponent %}
+              {% endcomponent %}
+            {% endcomponent %}
         """)
         rendered = template.render(Context())
         self.assertIn('data-bs-auto-close="true"', rendered)
 
     def test_auto_close_false(self):
         template = Template("""
-            {% load bootstrap5 %}
-            {% bootstrap5 "Dropdown" auto_close="false" %}
-              {% bootstrap5 "DropdownToggle" variant="secondary" %}Manual close{% endbootstrap5 %}
-              {% bootstrap5 "DropdownMenu" %}
-                {% bootstrap5 "DropdownItem" href="#" %}Menu item{% endbootstrap5 %}
-              {% endbootstrap5 %}
-            {% endbootstrap5 %}
+            {% load component_tags %}
+            {% component "Dropdown" auto_close="false" %}
+              {% component "DropdownToggle" variant="secondary" %}Manual close{% endcomponent %}
+              {% component "DropdownMenu" %}
+                {% component "DropdownItem" href="#" %}Menu item{% endcomponent %}
+              {% endcomponent %}
+            {% endcomponent %}
         """)
         rendered = template.render(Context())
         self.assertIn('data-bs-auto-close="false"', rendered)
 
     def test_auto_close_inside(self):
         template = Template("""
-            {% load bootstrap5 %}
-            {% bootstrap5 "Dropdown" auto_close="inside" %}
-              {% bootstrap5 "DropdownToggle" variant="secondary" %}Clickable inside{% endbootstrap5 %}
-              {% bootstrap5 "DropdownMenu" %}
-                {% bootstrap5 "DropdownItem" href="#" %}Menu item{% endbootstrap5 %}
-              {% endbootstrap5 %}
-            {% endbootstrap5 %}
+            {% load component_tags %}
+            {% component "Dropdown" auto_close="inside" %}
+              {% component "DropdownToggle" variant="secondary" %}Clickable inside{% endcomponent %}
+              {% component "DropdownMenu" %}
+                {% component "DropdownItem" href="#" %}Menu item{% endcomponent %}
+              {% endcomponent %}
+            {% endcomponent %}
         """)
         rendered = template.render(Context())
         self.assertIn('data-bs-auto-close="inside"', rendered)
 
     def test_auto_close_outside(self):
         template = Template("""
-            {% load bootstrap5 %}
-            {% bootstrap5 "Dropdown" auto_close="outside" %}
-              {% bootstrap5 "DropdownToggle" variant="secondary" %}Clickable outside{% endbootstrap5 %}
-              {% bootstrap5 "DropdownMenu" %}
-                {% bootstrap5 "DropdownItem" href="#" %}Menu item{% endbootstrap5 %}
-              {% endbootstrap5 %}
-            {% endbootstrap5 %}
+            {% load component_tags %}
+            {% component "Dropdown" auto_close="outside" %}
+              {% component "DropdownToggle" variant="secondary" %}Clickable outside{% endcomponent %}
+              {% component "DropdownMenu" %}
+                {% component "DropdownItem" href="#" %}Menu item{% endcomponent %}
+              {% endcomponent %}
+            {% endcomponent %}
         """)
         rendered = template.render(Context())
         self.assertIn('data-bs-auto-close="outside"', rendered)
@@ -437,17 +437,17 @@ class TestDropdown(SimpleTestCase):
     # Dark Dropdown
     def test_dark_dropdown(self):
         template = Template("""
-            {% load bootstrap5 %}
-            {% bootstrap5 "Dropdown" %}
-              {% bootstrap5 "DropdownToggle" variant="secondary" %}Dropdown button{% endbootstrap5 %}
-              {% bootstrap5 "DropdownMenu" dark=True %}
-                {% bootstrap5 "DropdownItem" href="#" active=True %}Action{% endbootstrap5 %}
-                {% bootstrap5 "DropdownItem" href="#" %}Another action{% endbootstrap5 %}
-                {% bootstrap5 "DropdownItem" href="#" %}Something else here{% endbootstrap5 %}
-                {% bootstrap5 "DropdownDivider" / %}
-                {% bootstrap5 "DropdownItem" href="#" %}Separated link{% endbootstrap5 %}
-              {% endbootstrap5 %}
-            {% endbootstrap5 %}
+            {% load component_tags %}
+            {% component "Dropdown" %}
+              {% component "DropdownToggle" variant="secondary" %}Dropdown button{% endcomponent %}
+              {% component "DropdownMenu" dark=True %}
+                {% component "DropdownItem" href="#" active=True %}Action{% endcomponent %}
+                {% component "DropdownItem" href="#" %}Another action{% endcomponent %}
+                {% component "DropdownItem" href="#" %}Something else here{% endcomponent %}
+                {% component "DropdownDivider" / %}
+                {% component "DropdownItem" href="#" %}Separated link{% endcomponent %}
+              {% endcomponent %}
+            {% endcomponent %}
         """)
         rendered = template.render(Context())
 
@@ -471,14 +471,14 @@ class TestDropdown(SimpleTestCase):
     # Menu Headers and Dividers
     def test_with_divider(self):
         template = Template("""
-            {% load bootstrap5 %}
-            {% bootstrap5 "DropdownMenu" %}
-              {% bootstrap5 "DropdownItem" href="#" %}Action{% endbootstrap5 %}
-              {% bootstrap5 "DropdownItem" href="#" %}Another action{% endbootstrap5 %}
-              {% bootstrap5 "DropdownItem" href="#" %}Something else here{% endbootstrap5 %}
-              {% bootstrap5 "DropdownDivider" / %}
-              {% bootstrap5 "DropdownItem" href="#" %}Separated link{% endbootstrap5 %}
-            {% endbootstrap5 %}
+            {% load component_tags %}
+            {% component "DropdownMenu" %}
+              {% component "DropdownItem" href="#" %}Action{% endcomponent %}
+              {% component "DropdownItem" href="#" %}Another action{% endcomponent %}
+              {% component "DropdownItem" href="#" %}Something else here{% endcomponent %}
+              {% component "DropdownDivider" / %}
+              {% component "DropdownItem" href="#" %}Separated link{% endcomponent %}
+            {% endcomponent %}
         """)
         rendered = template.render(Context())
 
@@ -496,12 +496,12 @@ class TestDropdown(SimpleTestCase):
 
     def test_with_header(self):
         template = Template("""
-            {% load bootstrap5 %}
-            {% bootstrap5 "DropdownMenu" %}
-              {% bootstrap5 "DropdownHeader" %}Dropdown header{% endbootstrap5 %}
-              {% bootstrap5 "DropdownItem" href="#" %}Action{% endbootstrap5 %}
-              {% bootstrap5 "DropdownItem" href="#" %}Another action{% endbootstrap5 %}
-            {% endbootstrap5 %}
+            {% load component_tags %}
+            {% component "DropdownMenu" %}
+              {% component "DropdownHeader" %}Dropdown header{% endcomponent %}
+              {% component "DropdownItem" href="#" %}Action{% endcomponent %}
+              {% component "DropdownItem" href="#" %}Another action{% endcomponent %}
+            {% endcomponent %}
         """)
         rendered = template.render(Context())
 
@@ -517,12 +517,12 @@ class TestDropdown(SimpleTestCase):
 
     def test_with_text(self):
         template = Template("""
-            {% load bootstrap5 %}
-            {% bootstrap5 "DropdownMenu" %}
-              {% bootstrap5 "DropdownItemText" %}Dropdown item text{% endbootstrap5 %}
-              {% bootstrap5 "DropdownItem" href="#" %}Action{% endbootstrap5 %}
-              {% bootstrap5 "DropdownItem" href="#" %}Another action{% endbootstrap5 %}
-            {% endbootstrap5 %}
+            {% load component_tags %}
+            {% component "DropdownMenu" %}
+              {% component "DropdownItemText" %}Dropdown item text{% endcomponent %}
+              {% component "DropdownItem" href="#" %}Action{% endcomponent %}
+              {% component "DropdownItem" href="#" %}Another action{% endcomponent %}
+            {% endcomponent %}
         """)
         rendered = template.render(Context())
 
@@ -539,12 +539,12 @@ class TestDropdown(SimpleTestCase):
     # Active and Disabled Items
     def test_active_item(self):
         template = Template("""
-            {% load bootstrap5 %}
-            {% bootstrap5 "DropdownMenu" %}
-              {% bootstrap5 "DropdownItem" href="#" %}Regular link{% endbootstrap5 %}
-              {% bootstrap5 "DropdownItem" href="#" active=True %}Active link{% endbootstrap5 %}
-              {% bootstrap5 "DropdownItem" href="#" %}Another link{% endbootstrap5 %}
-            {% endbootstrap5 %}
+            {% load component_tags %}
+            {% component "DropdownMenu" %}
+              {% component "DropdownItem" href="#" %}Regular link{% endcomponent %}
+              {% component "DropdownItem" href="#" active=True %}Active link{% endcomponent %}
+              {% component "DropdownItem" href="#" %}Another link{% endcomponent %}
+            {% endcomponent %}
         """)
         rendered = template.render(Context())
 
@@ -560,12 +560,12 @@ class TestDropdown(SimpleTestCase):
 
     def test_disabled_item(self):
         template = Template("""
-            {% load bootstrap5 %}
-            {% bootstrap5 "DropdownMenu" %}
-              {% bootstrap5 "DropdownItem" href="#" %}Regular link{% endbootstrap5 %}
-              {% bootstrap5 "DropdownItem" href="#" disabled=True %}Disabled link{% endbootstrap5 %}
-              {% bootstrap5 "DropdownItem" href="#" %}Another link{% endbootstrap5 %}
-            {% endbootstrap5 %}
+            {% load component_tags %}
+            {% component "DropdownMenu" %}
+              {% component "DropdownItem" href="#" %}Regular link{% endcomponent %}
+              {% component "DropdownItem" href="#" disabled=True %}Disabled link{% endcomponent %}
+              {% component "DropdownItem" href="#" %}Another link{% endcomponent %}
+            {% endcomponent %}
         """)
         rendered = template.render(Context())
 
@@ -581,12 +581,12 @@ class TestDropdown(SimpleTestCase):
 
     def test_button_items(self):
         template = Template("""
-            {% load bootstrap5 %}
-            {% bootstrap5 "DropdownMenu" %}
-              {% bootstrap5 "DropdownItem" as_="button" %}Action{% endbootstrap5 %}
-              {% bootstrap5 "DropdownItem" as_="button" %}Another action{% endbootstrap5 %}
-              {% bootstrap5 "DropdownItem" as_="button" %}Something else here{% endbootstrap5 %}
-            {% endbootstrap5 %}
+            {% load component_tags %}
+            {% component "DropdownMenu" %}
+              {% component "DropdownItem" as_="button" %}Action{% endcomponent %}
+              {% component "DropdownItem" as_="button" %}Another action{% endcomponent %}
+              {% component "DropdownItem" as_="button" %}Something else here{% endcomponent %}
+            {% endcomponent %}
         """)
         rendered = template.render(Context())
 

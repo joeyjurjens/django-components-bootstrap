@@ -9,8 +9,8 @@ class SpinnerTests(SimpleTestCase):
 
     def test_border(self):
         template = Template("""
-            {% load bootstrap5 %}
-            {% bootstrap5 "Spinner" animation="border" / %}
+            {% load component_tags %}
+            {% component "Spinner" animation="border" / %}
         """)
         rendered = normalize_html(template.render(Context({})))
 
@@ -24,8 +24,8 @@ class SpinnerTests(SimpleTestCase):
 
     def test_grow(self):
         template = Template("""
-            {% load bootstrap5 %}
-            {% bootstrap5 "Spinner" animation="grow" / %}
+            {% load component_tags %}
+            {% component "Spinner" animation="grow" / %}
         """)
         rendered = normalize_html(template.render(Context({})))
 
@@ -39,8 +39,8 @@ class SpinnerTests(SimpleTestCase):
 
     def test_border_primary(self):
         template = Template("""
-            {% load bootstrap5 %}
-            {% bootstrap5 "Spinner" animation="border" variant="primary" / %}
+            {% load component_tags %}
+            {% component "Spinner" animation="border" variant="primary" / %}
         """)
         rendered = normalize_html(template.render(Context({})))
 
@@ -54,8 +54,8 @@ class SpinnerTests(SimpleTestCase):
 
     def test_border_secondary(self):
         template = Template("""
-            {% load bootstrap5 %}
-            {% bootstrap5 "Spinner" animation="border" variant="secondary" / %}
+            {% load component_tags %}
+            {% component "Spinner" animation="border" variant="secondary" / %}
         """)
         rendered = normalize_html(template.render(Context({})))
 
@@ -69,8 +69,8 @@ class SpinnerTests(SimpleTestCase):
 
     def test_border_success(self):
         template = Template("""
-            {% load bootstrap5 %}
-            {% bootstrap5 "Spinner" animation="border" variant="success" / %}
+            {% load component_tags %}
+            {% component "Spinner" animation="border" variant="success" / %}
         """)
         rendered = normalize_html(template.render(Context({})))
 
@@ -84,8 +84,8 @@ class SpinnerTests(SimpleTestCase):
 
     def test_border_danger(self):
         template = Template("""
-            {% load bootstrap5 %}
-            {% bootstrap5 "Spinner" animation="border" variant="danger" / %}
+            {% load component_tags %}
+            {% component "Spinner" animation="border" variant="danger" / %}
         """)
         rendered = normalize_html(template.render(Context({})))
 
@@ -99,8 +99,8 @@ class SpinnerTests(SimpleTestCase):
 
     def test_border_warning(self):
         template = Template("""
-            {% load bootstrap5 %}
-            {% bootstrap5 "Spinner" animation="border" variant="warning" / %}
+            {% load component_tags %}
+            {% component "Spinner" animation="border" variant="warning" / %}
         """)
         rendered = normalize_html(template.render(Context({})))
 
@@ -114,8 +114,8 @@ class SpinnerTests(SimpleTestCase):
 
     def test_border_info(self):
         template = Template("""
-            {% load bootstrap5 %}
-            {% bootstrap5 "Spinner" animation="border" variant="info" / %}
+            {% load component_tags %}
+            {% component "Spinner" animation="border" variant="info" / %}
         """)
         rendered = normalize_html(template.render(Context({})))
 
@@ -129,8 +129,8 @@ class SpinnerTests(SimpleTestCase):
 
     def test_border_light(self):
         template = Template("""
-            {% load bootstrap5 %}
-            {% bootstrap5 "Spinner" animation="border" variant="light" / %}
+            {% load component_tags %}
+            {% component "Spinner" animation="border" variant="light" / %}
         """)
         rendered = normalize_html(template.render(Context({})))
 
@@ -144,8 +144,8 @@ class SpinnerTests(SimpleTestCase):
 
     def test_border_dark(self):
         template = Template("""
-            {% load bootstrap5 %}
-            {% bootstrap5 "Spinner" animation="border" variant="dark" / %}
+            {% load component_tags %}
+            {% component "Spinner" animation="border" variant="dark" / %}
         """)
         rendered = normalize_html(template.render(Context({})))
 
@@ -159,8 +159,8 @@ class SpinnerTests(SimpleTestCase):
 
     def test_grow_primary(self):
         template = Template("""
-            {% load bootstrap5 %}
-            {% bootstrap5 "Spinner" animation="grow" variant="primary" / %}
+            {% load component_tags %}
+            {% component "Spinner" animation="grow" variant="primary" / %}
         """)
         rendered = normalize_html(template.render(Context({})))
 
@@ -174,8 +174,8 @@ class SpinnerTests(SimpleTestCase):
 
     def test_grow_secondary(self):
         template = Template("""
-            {% load bootstrap5 %}
-            {% bootstrap5 "Spinner" animation="grow" variant="secondary" / %}
+            {% load component_tags %}
+            {% component "Spinner" animation="grow" variant="secondary" / %}
         """)
         rendered = normalize_html(template.render(Context({})))
 
@@ -189,8 +189,8 @@ class SpinnerTests(SimpleTestCase):
 
     def test_grow_success(self):
         template = Template("""
-            {% load bootstrap5 %}
-            {% bootstrap5 "Spinner" animation="grow" variant="success" / %}
+            {% load component_tags %}
+            {% component "Spinner" animation="grow" variant="success" / %}
         """)
         rendered = normalize_html(template.render(Context({})))
 
@@ -204,8 +204,8 @@ class SpinnerTests(SimpleTestCase):
 
     def test_grow_danger(self):
         template = Template("""
-            {% load bootstrap5 %}
-            {% bootstrap5 "Spinner" animation="grow" variant="danger" / %}
+            {% load component_tags %}
+            {% component "Spinner" animation="grow" variant="danger" / %}
         """)
         rendered = normalize_html(template.render(Context({})))
 
@@ -219,8 +219,8 @@ class SpinnerTests(SimpleTestCase):
 
     def test_grow_warning(self):
         template = Template("""
-            {% load bootstrap5 %}
-            {% bootstrap5 "Spinner" animation="grow" variant="warning" / %}
+            {% load component_tags %}
+            {% component "Spinner" animation="grow" variant="warning" / %}
         """)
         rendered = normalize_html(template.render(Context({})))
 
@@ -234,8 +234,8 @@ class SpinnerTests(SimpleTestCase):
 
     def test_grow_info(self):
         template = Template("""
-            {% load bootstrap5 %}
-            {% bootstrap5 "Spinner" animation="grow" variant="info" / %}
+            {% load component_tags %}
+            {% component "Spinner" animation="grow" variant="info" / %}
         """)
         rendered = normalize_html(template.render(Context({})))
 
@@ -249,8 +249,8 @@ class SpinnerTests(SimpleTestCase):
 
     def test_grow_light(self):
         template = Template("""
-            {% load bootstrap5 %}
-            {% bootstrap5 "Spinner" animation="grow" variant="light" / %}
+            {% load component_tags %}
+            {% component "Spinner" animation="grow" variant="light" / %}
         """)
         rendered = normalize_html(template.render(Context({})))
 
@@ -264,8 +264,8 @@ class SpinnerTests(SimpleTestCase):
 
     def test_grow_dark(self):
         template = Template("""
-            {% load bootstrap5 %}
-            {% bootstrap5 "Spinner" animation="grow" variant="dark" / %}
+            {% load component_tags %}
+            {% component "Spinner" animation="grow" variant="dark" / %}
         """)
         rendered = normalize_html(template.render(Context({})))
 
@@ -279,8 +279,8 @@ class SpinnerTests(SimpleTestCase):
 
     def test_border_small(self):
         template = Template("""
-            {% load bootstrap5 %}
-            {% bootstrap5 "Spinner" animation="border" size="sm" / %}
+            {% load component_tags %}
+            {% component "Spinner" animation="border" size="sm" / %}
         """)
         rendered = normalize_html(template.render(Context({})))
 
@@ -294,8 +294,8 @@ class SpinnerTests(SimpleTestCase):
 
     def test_grow_small(self):
         template = Template("""
-            {% load bootstrap5 %}
-            {% bootstrap5 "Spinner" animation="grow" size="sm" / %}
+            {% load component_tags %}
+            {% component "Spinner" animation="grow" size="sm" / %}
         """)
         rendered = normalize_html(template.render(Context({})))
 
@@ -309,8 +309,8 @@ class SpinnerTests(SimpleTestCase):
 
     def test_custom_label(self):
         template = Template("""
-            {% load bootstrap5 %}
-            {% bootstrap5 "Spinner" animation="border" label="Please wait..." / %}
+            {% load component_tags %}
+            {% component "Spinner" animation="border" label="Please wait..." / %}
         """)
         rendered = normalize_html(template.render(Context({})))
 
@@ -324,8 +324,8 @@ class SpinnerTests(SimpleTestCase):
 
     def test_custom_attrs(self):
         template = Template("""
-            {% load bootstrap5 %}
-            {% bootstrap5 "Spinner" animation="border" attrs:class="custom-class" / %}
+            {% load component_tags %}
+            {% component "Spinner" animation="border" attrs:class="custom-class" / %}
         """)
         rendered = normalize_html(template.render(Context({})))
 
@@ -339,8 +339,8 @@ class SpinnerTests(SimpleTestCase):
 
     def test_with_margin(self):
         template = Template("""
-            {% load bootstrap5 %}
-            {% bootstrap5 "Spinner" animation="border" / %}
+            {% load component_tags %}
+            {% component "Spinner" animation="border" / %}
         """)
         rendered = normalize_html(template.render(Context({})))
 
@@ -354,8 +354,8 @@ class SpinnerTests(SimpleTestCase):
 
     def test_custom_size_style(self):
         template = Template("""
-            {% load bootstrap5 %}
-            {% bootstrap5 "Spinner" animation="border" / %}
+            {% load component_tags %}
+            {% component "Spinner" animation="border" / %}
         """)
         rendered = normalize_html(template.render(Context({})))
 

@@ -14,22 +14,22 @@ class NavDropdownTestCase(SimpleTestCase):
 
     def test_nav_dropdown_basic(self):
         template = Template("""
-            {% load bootstrap5 %}
-            {% bootstrap5 "Nav" variant="tabs" as_="ul" %}
-                {% bootstrap5 "NavItem" %}
-                    {% bootstrap5 "NavLink" href="#" active=True %}Active{% endbootstrap5 %}
-                {% endbootstrap5 %}
-                {% bootstrap5 "NavDropdown" title="Dropdown" %}
-                    {% bootstrap5 "DropdownItem" href="#" %}Action{% endbootstrap5 %}
-                    {% bootstrap5 "DropdownItem" href="#" %}Another action{% endbootstrap5 %}
-                    {% bootstrap5 "DropdownItem" href="#" %}Something else here{% endbootstrap5 %}
-                    {% bootstrap5 "DropdownDivider" / %}
-                    {% bootstrap5 "DropdownItem" href="#" %}Separated link{% endbootstrap5 %}
-                {% endbootstrap5 %}
-                {% bootstrap5 "NavItem" %}
-                    {% bootstrap5 "NavLink" href="#" %}Link{% endbootstrap5 %}
-                {% endbootstrap5 %}
-            {% endbootstrap5 %}
+            {% load component_tags %}
+            {% component "Nav" variant="tabs" as_="ul" %}
+                {% component "NavItem" %}
+                    {% component "NavLink" href="#" active=True %}Active{% endcomponent %}
+                {% endcomponent %}
+                {% component "NavDropdown" title="Dropdown" %}
+                    {% component "DropdownItem" href="#" %}Action{% endcomponent %}
+                    {% component "DropdownItem" href="#" %}Another action{% endcomponent %}
+                    {% component "DropdownItem" href="#" %}Something else here{% endcomponent %}
+                    {% component "DropdownDivider" / %}
+                    {% component "DropdownItem" href="#" %}Separated link{% endcomponent %}
+                {% endcomponent %}
+                {% component "NavItem" %}
+                    {% component "NavLink" href="#" %}Link{% endcomponent %}
+                {% endcomponent %}
+            {% endcomponent %}
         """)
         rendered = template.render(Context({}))
 
@@ -63,12 +63,12 @@ class NavDropdownTestCase(SimpleTestCase):
 
     def test_nav_dropdown_disabled(self):
         template = Template("""
-            {% load bootstrap5 %}
-            {% bootstrap5 "Nav" as_="ul" %}
-                {% bootstrap5 "NavDropdown" title="Disabled Dropdown" disabled=True %}
-                    {% bootstrap5 "DropdownItem" href="#" %}Action{% endbootstrap5 %}
-                {% endbootstrap5 %}
-            {% endbootstrap5 %}
+            {% load component_tags %}
+            {% component "Nav" as_="ul" %}
+                {% component "NavDropdown" title="Disabled Dropdown" disabled=True %}
+                    {% component "DropdownItem" href="#" %}Action{% endcomponent %}
+                {% endcomponent %}
+            {% endcomponent %}
         """)
         rendered = template.render(Context({}))
 
@@ -92,12 +92,12 @@ class NavDropdownTestCase(SimpleTestCase):
 
     def test_nav_dropdown_dark(self):
         template = Template("""
-            {% load bootstrap5 %}
-            {% bootstrap5 "Nav" as_="ul" %}
-                {% bootstrap5 "NavDropdown" title="Dark Dropdown" dark=True %}
-                    {% bootstrap5 "DropdownItem" href="#" %}Action{% endbootstrap5 %}
-                {% endbootstrap5 %}
-            {% endbootstrap5 %}
+            {% load component_tags %}
+            {% component "Nav" as_="ul" %}
+                {% component "NavDropdown" title="Dark Dropdown" dark=True %}
+                    {% component "DropdownItem" href="#" %}Action{% endcomponent %}
+                {% endcomponent %}
+            {% endcomponent %}
         """)
         rendered = template.render(Context({}))
 

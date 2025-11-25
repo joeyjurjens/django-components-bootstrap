@@ -9,8 +9,8 @@ class TableTests(SimpleTestCase):
 
     def test_basic(self):
         template = Template("""
-            {% load bootstrap5 %}
-            {% bootstrap5 "Table" %}
+            {% load component_tags %}
+            {% component "Table" %}
                 <thead>
                     <tr>
                       <th scope="col">#</th>
@@ -39,7 +39,7 @@ class TableTests(SimpleTestCase):
                       <td>@social</td>
                     </tr>
                 </tbody>
-            {% endbootstrap5 %}
+            {% endcomponent %}
         """)
         rendered = normalize_html(template.render(Context({})))
 
@@ -80,8 +80,8 @@ class TableTests(SimpleTestCase):
 
     def test_striped_rows(self):
         template = Template("""
-            {% load bootstrap5 %}
-            {% bootstrap5 "Table" striped=True %}
+            {% load component_tags %}
+            {% component "Table" striped=True %}
                 <thead>
                     <tr>
                       <th scope="col">#</th>
@@ -110,7 +110,7 @@ class TableTests(SimpleTestCase):
                       <td>@social</td>
                     </tr>
                 </tbody>
-            {% endbootstrap5 %}
+            {% endcomponent %}
         """)
         rendered = normalize_html(template.render(Context({})))
 
@@ -151,8 +151,8 @@ class TableTests(SimpleTestCase):
 
     def test_striped_columns(self):
         template = Template("""
-            {% load bootstrap5 %}
-            {% bootstrap5 "Table" striped_columns=True %}
+            {% load component_tags %}
+            {% component "Table" striped_columns=True %}
                 <thead>
                     <tr>
                       <th scope="col">#</th>
@@ -181,7 +181,7 @@ class TableTests(SimpleTestCase):
                       <td>@social</td>
                     </tr>
                 </tbody>
-            {% endbootstrap5 %}
+            {% endcomponent %}
         """)
         rendered = normalize_html(template.render(Context({})))
 
@@ -222,8 +222,8 @@ class TableTests(SimpleTestCase):
 
     def test_dark_striped_rows(self):
         template = Template("""
-            {% load bootstrap5 %}
-            {% bootstrap5 "Table" variant="dark" striped=True %}
+            {% load component_tags %}
+            {% component "Table" variant="dark" striped=True %}
                 <thead>
                     <tr>
                       <th scope="col">#</th>
@@ -252,7 +252,7 @@ class TableTests(SimpleTestCase):
                       <td>@social</td>
                     </tr>
                 </tbody>
-            {% endbootstrap5 %}
+            {% endcomponent %}
         """)
         rendered = normalize_html(template.render(Context({})))
 
@@ -293,8 +293,8 @@ class TableTests(SimpleTestCase):
 
     def test_dark_striped_columns(self):
         template = Template("""
-            {% load bootstrap5 %}
-            {% bootstrap5 "Table" variant="dark" striped_columns=True %}
+            {% load component_tags %}
+            {% component "Table" variant="dark" striped_columns=True %}
                 <thead>
                     <tr>
                       <th scope="col">#</th>
@@ -323,7 +323,7 @@ class TableTests(SimpleTestCase):
                       <td>@social</td>
                     </tr>
                 </tbody>
-            {% endbootstrap5 %}
+            {% endcomponent %}
         """)
         rendered = normalize_html(template.render(Context({})))
 
@@ -364,8 +364,8 @@ class TableTests(SimpleTestCase):
 
     def test_success_striped_rows(self):
         template = Template("""
-            {% load bootstrap5 %}
-            {% bootstrap5 "Table" variant="success" striped=True %}
+            {% load component_tags %}
+            {% component "Table" variant="success" striped=True %}
                 <thead>
                     <tr>
                       <th scope="col">#</th>
@@ -394,7 +394,7 @@ class TableTests(SimpleTestCase):
                       <td>@social</td>
                     </tr>
                 </tbody>
-            {% endbootstrap5 %}
+            {% endcomponent %}
         """)
         rendered = normalize_html(template.render(Context({})))
 
@@ -435,8 +435,8 @@ class TableTests(SimpleTestCase):
 
     def test_success_striped_columns(self):
         template = Template("""
-            {% load bootstrap5 %}
-            {% bootstrap5 "Table" variant="success" striped_columns=True %}
+            {% load component_tags %}
+            {% component "Table" variant="success" striped_columns=True %}
                 <thead>
                     <tr>
                       <th scope="col">#</th>
@@ -465,7 +465,7 @@ class TableTests(SimpleTestCase):
                       <td>@social</td>
                     </tr>
                 </tbody>
-            {% endbootstrap5 %}
+            {% endcomponent %}
         """)
         rendered = normalize_html(template.render(Context({})))
 
@@ -506,8 +506,8 @@ class TableTests(SimpleTestCase):
 
     def test_hoverable_rows(self):
         template = Template("""
-            {% load bootstrap5 %}
-            {% bootstrap5 "Table" hover=True %}
+            {% load component_tags %}
+            {% component "Table" hover=True %}
                 <thead>
                     <tr>
                       <th scope="col">#</th>
@@ -536,7 +536,7 @@ class TableTests(SimpleTestCase):
                       <td>@social</td>
                     </tr>
                 </tbody>
-            {% endbootstrap5 %}
+            {% endcomponent %}
         """)
         rendered = normalize_html(template.render(Context({})))
 
@@ -577,8 +577,8 @@ class TableTests(SimpleTestCase):
 
     def test_dark_hoverable_rows(self):
         template = Template("""
-            {% load bootstrap5 %}
-            {% bootstrap5 "Table" variant="dark" hover=True %}
+            {% load component_tags %}
+            {% component "Table" variant="dark" hover=True %}
                 <thead>
                     <tr>
                       <th scope="col">#</th>
@@ -607,7 +607,7 @@ class TableTests(SimpleTestCase):
                       <td>@social</td>
                     </tr>
                 </tbody>
-            {% endbootstrap5 %}
+            {% endcomponent %}
         """)
         rendered = normalize_html(template.render(Context({})))
 
@@ -648,8 +648,8 @@ class TableTests(SimpleTestCase):
 
     def test_striped_and_hoverable(self):
         template = Template("""
-            {% load bootstrap5 %}
-            {% bootstrap5 "Table" striped=True hover=True %}
+            {% load component_tags %}
+            {% component "Table" striped=True hover=True %}
                 <thead>
                     <tr>
                       <th scope="col">#</th>
@@ -678,7 +678,7 @@ class TableTests(SimpleTestCase):
                       <td>@social</td>
                     </tr>
                 </tbody>
-            {% endbootstrap5 %}
+            {% endcomponent %}
         """)
         rendered = normalize_html(template.render(Context({})))
 
@@ -719,8 +719,8 @@ class TableTests(SimpleTestCase):
 
     def test_bordered(self):
         template = Template("""
-            {% load bootstrap5 %}
-            {% bootstrap5 "Table" bordered=True %}
+            {% load component_tags %}
+            {% component "Table" bordered=True %}
                 <thead>
                     <tr>
                       <th scope="col">#</th>
@@ -749,7 +749,7 @@ class TableTests(SimpleTestCase):
                       <td>@social</td>
                     </tr>
                 </tbody>
-            {% endbootstrap5 %}
+            {% endcomponent %}
         """)
         rendered = normalize_html(template.render(Context({})))
 
@@ -790,8 +790,8 @@ class TableTests(SimpleTestCase):
 
     def test_borderless(self):
         template = Template("""
-            {% load bootstrap5 %}
-            {% bootstrap5 "Table" borderless=True %}
+            {% load component_tags %}
+            {% component "Table" borderless=True %}
                 <thead>
                     <tr>
                       <th scope="col">#</th>
@@ -820,7 +820,7 @@ class TableTests(SimpleTestCase):
                       <td>@social</td>
                     </tr>
                 </tbody>
-            {% endbootstrap5 %}
+            {% endcomponent %}
         """)
         rendered = normalize_html(template.render(Context({})))
 
@@ -861,8 +861,8 @@ class TableTests(SimpleTestCase):
 
     def test_dark_borderless(self):
         template = Template("""
-            {% load bootstrap5 %}
-            {% bootstrap5 "Table" variant="dark" borderless=True %}
+            {% load component_tags %}
+            {% component "Table" variant="dark" borderless=True %}
                 <thead>
                     <tr>
                       <th scope="col">#</th>
@@ -891,7 +891,7 @@ class TableTests(SimpleTestCase):
                       <td>@social</td>
                     </tr>
                 </tbody>
-            {% endbootstrap5 %}
+            {% endcomponent %}
         """)
         rendered = normalize_html(template.render(Context({})))
 
@@ -932,8 +932,8 @@ class TableTests(SimpleTestCase):
 
     def test_small(self):
         template = Template("""
-            {% load bootstrap5 %}
-            {% bootstrap5 "Table" small=True %}
+            {% load component_tags %}
+            {% component "Table" small=True %}
                 <thead>
                     <tr>
                       <th scope="col">#</th>
@@ -962,7 +962,7 @@ class TableTests(SimpleTestCase):
                       <td>@social</td>
                     </tr>
                 </tbody>
-            {% endbootstrap5 %}
+            {% endcomponent %}
         """)
         rendered = normalize_html(template.render(Context({})))
 
@@ -1003,8 +1003,8 @@ class TableTests(SimpleTestCase):
 
     def test_dark_small(self):
         template = Template("""
-            {% load bootstrap5 %}
-            {% bootstrap5 "Table" variant="dark" small=True %}
+            {% load component_tags %}
+            {% component "Table" variant="dark" small=True %}
                 <thead>
                     <tr>
                       <th scope="col">#</th>
@@ -1033,7 +1033,7 @@ class TableTests(SimpleTestCase):
                       <td>@social</td>
                     </tr>
                 </tbody>
-            {% endbootstrap5 %}
+            {% endcomponent %}
         """)
         rendered = normalize_html(template.render(Context({})))
 
@@ -1074,8 +1074,8 @@ class TableTests(SimpleTestCase):
 
     def test_caption_top(self):
         template = Template("""
-            {% load bootstrap5 %}
-            {% bootstrap5 "Table" caption_top=True %}
+            {% load component_tags %}
+            {% component "Table" caption_top=True %}
                 <caption>List of users</caption>
                 <thead>
                     <tr>
@@ -1105,7 +1105,7 @@ class TableTests(SimpleTestCase):
                       <td>@social</td>
                     </tr>
                 </tbody>
-            {% endbootstrap5 %}
+            {% endcomponent %}
         """)
         rendered = normalize_html(template.render(Context({})))
 
@@ -1147,8 +1147,8 @@ class TableTests(SimpleTestCase):
 
     def test_responsive(self):
         template = Template("""
-            {% load bootstrap5 %}
-            {% bootstrap5 "Table" responsive=True %}
+            {% load component_tags %}
+            {% component "Table" responsive=True %}
                 <thead>
                     <tr>
                       <th scope="col">#</th>
@@ -1197,7 +1197,7 @@ class TableTests(SimpleTestCase):
                       <td>Cell</td>
                     </tr>
                 </tbody>
-            {% endbootstrap5 %}
+            {% endcomponent %}
         """)
         rendered = normalize_html(template.render(Context({})))
 
@@ -1260,8 +1260,8 @@ class TableTests(SimpleTestCase):
 
     def test_responsive_sm(self):
         template = Template("""
-            {% load bootstrap5 %}
-            {% bootstrap5 "Table" responsive="sm" %}
+            {% load component_tags %}
+            {% component "Table" responsive="sm" %}
                 <thead>
                     <tr>
                       <th scope="col">#</th>
@@ -1278,7 +1278,7 @@ class TableTests(SimpleTestCase):
                       <td>@mdo</td>
                     </tr>
                 </tbody>
-            {% endbootstrap5 %}
+            {% endcomponent %}
         """)
         rendered = normalize_html(template.render(Context({})))
 
@@ -1309,8 +1309,8 @@ class TableTests(SimpleTestCase):
 
     def test_variant_primary(self):
         template = Template("""
-            {% load bootstrap5 %}
-            {% bootstrap5 "Table" variant="primary" %}
+            {% load component_tags %}
+            {% component "Table" variant="primary" %}
                 <thead>
                     <tr>
                       <th scope="col">#</th>
@@ -1327,7 +1327,7 @@ class TableTests(SimpleTestCase):
                       <td>@mdo</td>
                     </tr>
                 </tbody>
-            {% endbootstrap5 %}
+            {% endcomponent %}
         """)
         rendered = normalize_html(template.render(Context({})))
 
@@ -1356,8 +1356,8 @@ class TableTests(SimpleTestCase):
 
     def test_variant_secondary(self):
         template = Template("""
-            {% load bootstrap5 %}
-            {% bootstrap5 "Table" variant="secondary" %}
+            {% load component_tags %}
+            {% component "Table" variant="secondary" %}
                 <thead>
                     <tr>
                       <th scope="col">#</th>
@@ -1374,7 +1374,7 @@ class TableTests(SimpleTestCase):
                       <td>@mdo</td>
                     </tr>
                 </tbody>
-            {% endbootstrap5 %}
+            {% endcomponent %}
         """)
         rendered = normalize_html(template.render(Context({})))
 
@@ -1403,8 +1403,8 @@ class TableTests(SimpleTestCase):
 
     def test_variant_success(self):
         template = Template("""
-            {% load bootstrap5 %}
-            {% bootstrap5 "Table" variant="success" %}
+            {% load component_tags %}
+            {% component "Table" variant="success" %}
                 <thead>
                     <tr>
                       <th scope="col">#</th>
@@ -1421,7 +1421,7 @@ class TableTests(SimpleTestCase):
                       <td>@mdo</td>
                     </tr>
                 </tbody>
-            {% endbootstrap5 %}
+            {% endcomponent %}
         """)
         rendered = normalize_html(template.render(Context({})))
 
@@ -1450,8 +1450,8 @@ class TableTests(SimpleTestCase):
 
     def test_variant_danger(self):
         template = Template("""
-            {% load bootstrap5 %}
-            {% bootstrap5 "Table" variant="danger" %}
+            {% load component_tags %}
+            {% component "Table" variant="danger" %}
                 <thead>
                     <tr>
                       <th scope="col">#</th>
@@ -1468,7 +1468,7 @@ class TableTests(SimpleTestCase):
                       <td>@mdo</td>
                     </tr>
                 </tbody>
-            {% endbootstrap5 %}
+            {% endcomponent %}
         """)
         rendered = normalize_html(template.render(Context({})))
 
@@ -1497,8 +1497,8 @@ class TableTests(SimpleTestCase):
 
     def test_variant_warning(self):
         template = Template("""
-            {% load bootstrap5 %}
-            {% bootstrap5 "Table" variant="warning" %}
+            {% load component_tags %}
+            {% component "Table" variant="warning" %}
                 <thead>
                     <tr>
                       <th scope="col">#</th>
@@ -1515,7 +1515,7 @@ class TableTests(SimpleTestCase):
                       <td>@mdo</td>
                     </tr>
                 </tbody>
-            {% endbootstrap5 %}
+            {% endcomponent %}
         """)
         rendered = normalize_html(template.render(Context({})))
 
@@ -1544,8 +1544,8 @@ class TableTests(SimpleTestCase):
 
     def test_variant_info(self):
         template = Template("""
-            {% load bootstrap5 %}
-            {% bootstrap5 "Table" variant="info" %}
+            {% load component_tags %}
+            {% component "Table" variant="info" %}
                 <thead>
                     <tr>
                       <th scope="col">#</th>
@@ -1562,7 +1562,7 @@ class TableTests(SimpleTestCase):
                       <td>@mdo</td>
                     </tr>
                 </tbody>
-            {% endbootstrap5 %}
+            {% endcomponent %}
         """)
         rendered = normalize_html(template.render(Context({})))
 
@@ -1591,8 +1591,8 @@ class TableTests(SimpleTestCase):
 
     def test_variant_light(self):
         template = Template("""
-            {% load bootstrap5 %}
-            {% bootstrap5 "Table" variant="light" %}
+            {% load component_tags %}
+            {% component "Table" variant="light" %}
                 <thead>
                     <tr>
                       <th scope="col">#</th>
@@ -1609,7 +1609,7 @@ class TableTests(SimpleTestCase):
                       <td>@mdo</td>
                     </tr>
                 </tbody>
-            {% endbootstrap5 %}
+            {% endcomponent %}
         """)
         rendered = normalize_html(template.render(Context({})))
 
@@ -1638,8 +1638,8 @@ class TableTests(SimpleTestCase):
 
     def test_variant_dark(self):
         template = Template("""
-            {% load bootstrap5 %}
-            {% bootstrap5 "Table" variant="dark" %}
+            {% load component_tags %}
+            {% component "Table" variant="dark" %}
                 <thead>
                     <tr>
                       <th scope="col">#</th>
@@ -1656,7 +1656,7 @@ class TableTests(SimpleTestCase):
                       <td>@mdo</td>
                     </tr>
                 </tbody>
-            {% endbootstrap5 %}
+            {% endcomponent %}
         """)
         rendered = normalize_html(template.render(Context({})))
 

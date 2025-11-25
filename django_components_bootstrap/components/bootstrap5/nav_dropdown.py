@@ -1,11 +1,9 @@
 from django.template import Context
-from django_components import Component, SlotInput, register, types
+from django_components import Component, SlotInput, types
 
 from django_components_bootstrap.components.bootstrap5.types import AutoClose
-from django_components_bootstrap.templatetags.bootstrap5 import bs5_registry
 
 
-@register("NavDropdown", registry=bs5_registry)
 class NavDropdown(Component):
     class Kwargs:
         title: str
@@ -44,14 +42,14 @@ class NavDropdown(Component):
         }
 
     template: types.django_html = """
-        {% load component_tags bootstrap5 %}
+        {% load component_tags %}
 
         <li class="nav-item dropdown">
-            {% bootstrap5 "NavLink" as_="button" disabled=disabled attrs=merged_attrs %}
+            {% component "NavLink" as_="button" disabled=disabled attrs=merged_attrs %}
                 {{ title }}
-            {% endbootstrap5 %}
-            {% bootstrap5 "DropdownMenu" align=align dark=dark %}
+            {% endcomponent %}
+            {% component "DropdownMenu" align=align dark=dark %}
                 {% slot "default" / %}
-            {% endbootstrap5 %}
+            {% endcomponent %}
         </li>
     """

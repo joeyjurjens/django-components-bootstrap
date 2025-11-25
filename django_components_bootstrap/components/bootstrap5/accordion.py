@@ -1,10 +1,8 @@
 from django.template import Context
-from django_components import Component, SlotInput, register, types
-
-from django_components_bootstrap.templatetags.bootstrap5 import bs5_registry
+from django_components import Component, SlotInput, types
 
 
-@register("Accordion", registry=bs5_registry)
+
 class Accordion(Component):
     class Kwargs:
         flush: bool = False
@@ -29,7 +27,7 @@ class Accordion(Component):
         }
 
     template: types.django_html = """
-        {% load component_tags bootstrap5 %}
+        {% load component_tags %}
 
         {% provide "accordion" accordion_id=accordion_id always_open=always_open %}
             <div {% html_attrs attrs class=css_class id=accordion_id %}>
@@ -39,7 +37,6 @@ class Accordion(Component):
     """
 
 
-@register("AccordionItem", registry=bs5_registry)
 class AccordionItem(Component):
     class Kwargs:
         default_open: bool = False
@@ -65,7 +62,7 @@ class AccordionItem(Component):
         }
 
     template: types.django_html = """
-        {% load component_tags bootstrap5 %}
+        {% load component_tags %}
 
         {% provide "accordion_item" heading_id=heading_id collapse_id=collapse_id is_open=is_open data_bs_parent=data_bs_parent always_open=always_open %}
             <div {% html_attrs attrs class="accordion-item" %}>
@@ -75,7 +72,6 @@ class AccordionItem(Component):
     """
 
 
-@register("AccordionButton", registry=bs5_registry)
 class AccordionButton(Component):
     class Kwargs:
         disabled: bool = False
@@ -100,7 +96,7 @@ class AccordionButton(Component):
         }
 
     template: types.django_html = """
-        {% load component_tags bootstrap5 %}
+        {% load component_tags %}
 
         <button {% html_attrs attrs class=button_classes type="button" data-bs-toggle="collapse" data-bs-target="#{{ collapse_id }}" defaults:aria-expanded=aria_expanded defaults:aria-controls=collapse_id disabled=disabled %}>
             {% slot "default" / %}
@@ -108,7 +104,6 @@ class AccordionButton(Component):
     """
 
 
-@register("AccordionHeader", registry=bs5_registry)
 class AccordionHeader(Component):
     class Kwargs:
         disabled: bool = False
@@ -127,17 +122,16 @@ class AccordionHeader(Component):
         }
 
     template: types.django_html = """
-        {% load component_tags bootstrap5 %}
+        {% load component_tags %}
 
         <h2 {% html_attrs attrs class="accordion-header" id=heading_id %}>
-            {% bootstrap5 "AccordionButton" disabled=disabled %}
+            {% component "AccordionButton" disabled=disabled %}
                 {% slot "default" / %}
-            {% endbootstrap5 %}
+            {% endcomponent %}
         </h2>
     """
 
 
-@register("AccordionBody", registry=bs5_registry)
 class AccordionBody(Component):
     class Kwargs:
         attrs: dict | None = None
@@ -162,7 +156,7 @@ class AccordionBody(Component):
         }
 
     template: types.django_html = """
-        {% load component_tags bootstrap5 %}
+        {% load component_tags %}
 
         <div {% html_attrs id=collapse_id class=collapse_classes defaults:aria-labelledby=heading_id %} {% if not always_open %}data-bs-parent="{{ data_bs_parent }}"{% endif %}>
             <div {% html_attrs attrs class="accordion-body" %}>

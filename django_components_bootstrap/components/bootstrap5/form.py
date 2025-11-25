@@ -1,17 +1,15 @@
 from typing import Literal
 
 from django.template import Context
-from django_components import Component, SlotInput, register, types
+from django_components import Component, SlotInput, types
 
 from django_components_bootstrap.components.bootstrap5.types import (
     NOT_PROVIDED,
     FormCheckType,
     Size,
 )
-from django_components_bootstrap.templatetags.bootstrap5 import bs5_registry
 
 
-@register("Form", registry=bs5_registry)
 class Form(Component):
     class Kwargs:
         validated: bool = False
@@ -31,7 +29,7 @@ class Form(Component):
         }
 
     template: types.django_html = """
-        {% load component_tags bootstrap5 %}
+        {% load component_tags %}
 
         <form {% html_attrs attrs %}{% if form_class %} class="{{ form_class }}"{% endif %}>
             {% slot "default" / %}
@@ -39,7 +37,6 @@ class Form(Component):
     """
 
 
-@register("FormGroup", registry=bs5_registry)
 class FormGroup(Component):
     class Kwargs:
         control_id: str | None = None
@@ -57,7 +54,7 @@ class FormGroup(Component):
         }
 
     template: types.django_html = """
-        {% load component_tags bootstrap5 %}
+        {% load component_tags %}
 
         {% provide "formgroup" control_id=control_id %}
             <{{ tag }} {% html_attrs attrs %}>
@@ -67,7 +64,6 @@ class FormGroup(Component):
     """
 
 
-@register("FormLabel", registry=bs5_registry)
 class FormLabel(Component):
     class Kwargs:
         for_: str | None = None
@@ -89,7 +85,7 @@ class FormLabel(Component):
         }
 
     template: types.django_html = """
-        {% load component_tags bootstrap5 %}
+        {% load component_tags %}
 
         <label {% html_attrs attrs defaults:class="form-label" defaults:for=for_ %}>
             {% slot "default" / %}
@@ -97,7 +93,6 @@ class FormLabel(Component):
     """
 
 
-@register("FormControl", registry=bs5_registry)
 class FormControl(Component):
     class Kwargs:
         type: Literal[
@@ -169,13 +164,12 @@ class FormControl(Component):
         }
 
     template: types.django_html = """
-        {% load component_tags bootstrap5 %}
+        {% load component_tags %}
 
         <input {% html_attrs attrs class=form_class defaults:type=type defaults:id=id defaults:name=name defaults:value=value defaults:placeholder=placeholder defaults:size=html_size %} />
     """
 
 
-@register("FormTextarea", registry=bs5_registry)
 class FormTextarea(Component):
     class Kwargs:
         rows: int = 3
@@ -217,13 +211,12 @@ class FormTextarea(Component):
         }
 
     template: types.django_html = """
-        {% load component_tags bootstrap5 %}
+        {% load component_tags %}
 
         <textarea {% html_attrs attrs class=classes defaults:rows=rows defaults:id=id defaults:name=name defaults:placeholder=placeholder %}>{% if value %}{{ value }}{% endif %}{% slot "default" default / %}</textarea>
     """
 
 
-@register("FormSelect", registry=bs5_registry)
 class FormSelect(Component):
     class Kwargs:
         size: Size | None = None
@@ -266,7 +259,7 @@ class FormSelect(Component):
         }
 
     template: types.django_html = """
-        {% load component_tags bootstrap5 %}
+        {% load component_tags %}
 
         <select {% html_attrs attrs class=classes defaults:id=id defaults:name=name defaults:size=html_size %}>
             {% slot "default" / %}
@@ -274,7 +267,6 @@ class FormSelect(Component):
     """
 
 
-@register("FormCheckInput", registry=bs5_registry)
 class FormCheckInput(Component):
     class Kwargs:
         type: FormCheckType | None = None
@@ -336,13 +328,12 @@ class FormCheckInput(Component):
         }
 
     template: types.django_html = """
-        {% load component_tags bootstrap5 %}
+        {% load component_tags %}
 
         <input {% html_attrs attrs class=input_classes defaults:type=input_type defaults:id=id defaults:name=name defaults:value=value %} />
     """
 
 
-@register("FormCheckLabel", registry=bs5_registry)
 class FormCheckLabel(Component):
     class Kwargs:
         for_: str | None = None
@@ -366,7 +357,7 @@ class FormCheckLabel(Component):
         }
 
     template: types.django_html = """
-        {% load component_tags bootstrap5 %}
+        {% load component_tags %}
 
         <label {% html_attrs attrs defaults:class="form-check-label" defaults:for=for_ defaults:title=title %}>
             {% slot "default" / %}
@@ -374,7 +365,6 @@ class FormCheckLabel(Component):
     """
 
 
-@register("FormCheck", registry=bs5_registry)
 class FormCheck(Component):
     class Kwargs:
         type: FormCheckType = "checkbox"
@@ -426,16 +416,16 @@ class FormCheck(Component):
         }
 
     template: types.django_html = """
-        {% load component_tags bootstrap5 %}
+        {% load component_tags %}
 
         {% provide "formcheck" control_id=control_id type=type is_valid=is_valid is_invalid=is_invalid disabled=disabled checked=checked %}
             <div {% html_attrs attrs class=wrapper_classes %}>
                 {% slot "default" default %}
-                    {% bootstrap5 "FormCheckInput" type=type disabled=disabled checked=checked is_valid=is_valid is_invalid=is_invalid name=name value=value %}{% endbootstrap5 %}
+                    {% component "FormCheckInput" type=type disabled=disabled checked=checked is_valid=is_valid is_invalid=is_invalid name=name value=value %}{% endcomponent %}
                     {% if has_label %}
-                        {% bootstrap5 "FormCheckLabel" for_=control_id title=title %}
+                        {% component "FormCheckLabel" for_=control_id title=title %}
                             {{ label }}
-                        {% endbootstrap5 %}
+                        {% endcomponent %}
                     {% endif %}
                 {% endslot %}
             </div>
@@ -443,7 +433,6 @@ class FormCheck(Component):
     """
 
 
-@register("FormText", registry=bs5_registry)
 class FormText(Component):
     class Kwargs:
         attrs: dict | None = None
@@ -457,7 +446,7 @@ class FormText(Component):
         }
 
     template: types.django_html = """
-        {% load component_tags bootstrap5 %}
+        {% load component_tags %}
 
         <div {% html_attrs attrs defaults:class="form-text" %}>
             {% slot "default" / %}
@@ -465,7 +454,6 @@ class FormText(Component):
     """
 
 
-@register("FormFloating", registry=bs5_registry)
 class FormFloating(Component):
     class Kwargs:
         attrs: dict | None = None
@@ -479,7 +467,7 @@ class FormFloating(Component):
         }
 
     template: types.django_html = """
-        {% load component_tags bootstrap5 %}
+        {% load component_tags %}
 
         <div {% html_attrs attrs defaults:class="form-floating" %}>
             {% slot "default" / %}

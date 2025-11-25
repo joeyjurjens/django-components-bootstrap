@@ -9,8 +9,8 @@ class ButtonTests(SimpleTestCase):
 
     def test_variant_primary(self):
         template = Template("""
-            {% load bootstrap5 %}
-            {% bootstrap5 "Button" variant="primary" %}Primary{% endbootstrap5 %}
+            {% load component_tags %}
+            {% component "Button" variant="primary" %}Primary{% endcomponent %}
         """)
         rendered = normalize_html(template.render(Context({})))
 
@@ -22,8 +22,8 @@ class ButtonTests(SimpleTestCase):
 
     def test_variant_secondary(self):
         template = Template("""
-            {% load bootstrap5 %}
-            {% bootstrap5 "Button" variant="secondary" %}Secondary{% endbootstrap5 %}
+            {% load component_tags %}
+            {% component "Button" variant="secondary" %}Secondary{% endcomponent %}
         """)
         rendered = normalize_html(template.render(Context({})))
 
@@ -35,8 +35,8 @@ class ButtonTests(SimpleTestCase):
 
     def test_variant_success(self):
         template = Template("""
-            {% load bootstrap5 %}
-            {% bootstrap5 "Button" variant="success" %}Success{% endbootstrap5 %}
+            {% load component_tags %}
+            {% component "Button" variant="success" %}Success{% endcomponent %}
         """)
         rendered = normalize_html(template.render(Context({})))
 
@@ -48,8 +48,8 @@ class ButtonTests(SimpleTestCase):
 
     def test_variant_danger(self):
         template = Template("""
-            {% load bootstrap5 %}
-            {% bootstrap5 "Button" variant="danger" %}Danger{% endbootstrap5 %}
+            {% load component_tags %}
+            {% component "Button" variant="danger" %}Danger{% endcomponent %}
         """)
         rendered = normalize_html(template.render(Context({})))
 
@@ -61,8 +61,8 @@ class ButtonTests(SimpleTestCase):
 
     def test_variant_warning(self):
         template = Template("""
-            {% load bootstrap5 %}
-            {% bootstrap5 "Button" variant="warning" %}Warning{% endbootstrap5 %}
+            {% load component_tags %}
+            {% component "Button" variant="warning" %}Warning{% endcomponent %}
         """)
         rendered = normalize_html(template.render(Context({})))
 
@@ -74,8 +74,8 @@ class ButtonTests(SimpleTestCase):
 
     def test_variant_info(self):
         template = Template("""
-            {% load bootstrap5 %}
-            {% bootstrap5 "Button" variant="info" %}Info{% endbootstrap5 %}
+            {% load component_tags %}
+            {% component "Button" variant="info" %}Info{% endcomponent %}
         """)
         rendered = normalize_html(template.render(Context({})))
 
@@ -87,8 +87,8 @@ class ButtonTests(SimpleTestCase):
 
     def test_variant_light(self):
         template = Template("""
-            {% load bootstrap5 %}
-            {% bootstrap5 "Button" variant="light" %}Light{% endbootstrap5 %}
+            {% load component_tags %}
+            {% component "Button" variant="light" %}Light{% endcomponent %}
         """)
         rendered = normalize_html(template.render(Context({})))
 
@@ -100,8 +100,8 @@ class ButtonTests(SimpleTestCase):
 
     def test_variant_dark(self):
         template = Template("""
-            {% load bootstrap5 %}
-            {% bootstrap5 "Button" variant="dark" %}Dark{% endbootstrap5 %}
+            {% load component_tags %}
+            {% component "Button" variant="dark" %}Dark{% endcomponent %}
         """)
         rendered = normalize_html(template.render(Context({})))
 
@@ -113,8 +113,8 @@ class ButtonTests(SimpleTestCase):
 
     def test_variant_link(self):
         template = Template("""
-            {% load bootstrap5 %}
-            {% bootstrap5 "Button" variant="link" %}Link{% endbootstrap5 %}
+            {% load component_tags %}
+            {% component "Button" variant="link" %}Link{% endcomponent %}
         """)
         rendered = normalize_html(template.render(Context({})))
 
@@ -126,8 +126,8 @@ class ButtonTests(SimpleTestCase):
 
     def test_outline_primary(self):
         template = Template("""
-            {% load bootstrap5 %}
-            {% bootstrap5 "Button" variant="primary" outline=True %}Primary{% endbootstrap5 %}
+            {% load component_tags %}
+            {% component "Button" variant="primary" outline=True %}Primary{% endcomponent %}
         """)
         rendered = normalize_html(template.render(Context({})))
 
@@ -139,8 +139,8 @@ class ButtonTests(SimpleTestCase):
 
     def test_outline_secondary(self):
         template = Template("""
-            {% load bootstrap5 %}
-            {% bootstrap5 "Button" variant="secondary" outline=True %}Secondary{% endbootstrap5 %}
+            {% load component_tags %}
+            {% component "Button" variant="secondary" outline=True %}Secondary{% endcomponent %}
         """)
         rendered = normalize_html(template.render(Context({})))
 
@@ -152,8 +152,8 @@ class ButtonTests(SimpleTestCase):
 
     def test_size_large(self):
         template = Template("""
-            {% load bootstrap5 %}
-            {% bootstrap5 "Button" variant="primary" size="lg" %}Large button{% endbootstrap5 %}
+            {% load component_tags %}
+            {% component "Button" variant="primary" size="lg" %}Large button{% endcomponent %}
         """)
         rendered = normalize_html(template.render(Context({})))
 
@@ -165,8 +165,8 @@ class ButtonTests(SimpleTestCase):
 
     def test_size_small(self):
         template = Template("""
-            {% load bootstrap5 %}
-            {% bootstrap5 "Button" variant="primary" size="sm" %}Small button{% endbootstrap5 %}
+            {% load component_tags %}
+            {% component "Button" variant="primary" size="sm" %}Small button{% endcomponent %}
         """)
         rendered = normalize_html(template.render(Context({})))
 
@@ -178,8 +178,8 @@ class ButtonTests(SimpleTestCase):
 
     def test_disabled(self):
         template = Template("""
-            {% load bootstrap5 %}
-            {% bootstrap5 "Button" variant="primary" disabled=True %}Disabled button{% endbootstrap5 %}
+            {% load component_tags %}
+            {% component "Button" variant="primary" disabled=True %}Disabled button{% endcomponent %}
         """)
         rendered = normalize_html(template.render(Context({})))
 
@@ -191,8 +191,8 @@ class ButtonTests(SimpleTestCase):
 
     def test_link_button(self):
         template = Template("""
-            {% load bootstrap5 %}
-            {% bootstrap5 "Button" variant="primary" as_="a" href="#" %}Link{% endbootstrap5 %}
+            {% load component_tags %}
+            {% component "Button" variant="primary" as_="a" href="#" %}Link{% endcomponent %}
         """)
         rendered = normalize_html(template.render(Context({})))
 
@@ -204,8 +204,8 @@ class ButtonTests(SimpleTestCase):
 
     def test_link_button_disabled(self):
         template = Template("""
-            {% load bootstrap5 %}
-            {% bootstrap5 "Button" variant="primary" as_="a" href="#" disabled=True %}Disabled link{% endbootstrap5 %}
+            {% load component_tags %}
+            {% component "Button" variant="primary" as_="a" href="#" disabled=True %}Disabled link{% endcomponent %}
         """)
         rendered = normalize_html(template.render(Context({})))
 
@@ -217,8 +217,8 @@ class ButtonTests(SimpleTestCase):
 
     def test_active_state(self):
         template = Template("""
-            {% load bootstrap5 %}
-            {% bootstrap5 "Button" variant="primary" active=True %}Active button{% endbootstrap5 %}
+            {% load component_tags %}
+            {% component "Button" variant="primary" active=True %}Active button{% endcomponent %}
         """)
         rendered = normalize_html(template.render(Context({})))
 

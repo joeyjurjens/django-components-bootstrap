@@ -1,14 +1,12 @@
 from django.template import Context
-from django_components import Component, SlotInput, register, types
+from django_components import Component, SlotInput, types
 
 from django_components_bootstrap.components.bootstrap5.types import (
     ResponsiveBreakpoint,
     Variant,
 )
-from django_components_bootstrap.templatetags.bootstrap5 import bs5_registry
 
 
-@register("Table", registry=bs5_registry)
 class Table(Component):
     class Kwargs:
         striped: bool = False
@@ -59,7 +57,7 @@ class Table(Component):
         }
 
     template: types.django_html = """
-        {% load component_tags bootstrap5 %}
+        {% load component_tags %}
 
         {% if responsive_class %}
             <div class="{{ responsive_class }}">

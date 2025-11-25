@@ -1,11 +1,9 @@
 from django.template import Context
-from django_components import Component, SlotInput, register, types
+from django_components import Component, SlotInput, types
 
 from django_components_bootstrap.components.bootstrap5.types import OverlayPlacement, TriggerEvent
-from django_components_bootstrap.templatetags.bootstrap5 import bs5_registry
 
 
-@register("Popover", registry=bs5_registry)
 class Popover(Component):
     class Kwargs:
         title: str
@@ -27,7 +25,7 @@ class Popover(Component):
         }
 
     template: types.django_html = """
-        {% load component_tags bootstrap5 %}
+        {% load component_tags %}
 
         <span {% html_attrs attrs data-bs-toggle="popover" data-bs-title=title data-bs-content=content data-bs-placement=placement data-bs-trigger=trigger %}>
             {% slot "default" / %}

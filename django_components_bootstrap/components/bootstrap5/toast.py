@@ -1,11 +1,9 @@
 from django.template import Context
-from django_components import Component, SlotInput, register, types
+from django_components import Component, SlotInput, types
 
 from django_components_bootstrap.components.bootstrap5.types import BgColor, Placement
-from django_components_bootstrap.templatetags.bootstrap5 import bs5_registry
 
 
-@register("ToastContainer", registry=bs5_registry)
 class ToastContainer(Component):
     class Kwargs:
         position: Placement | None = None
@@ -34,7 +32,7 @@ class ToastContainer(Component):
         }
 
     template: types.django_html = """
-        {% load component_tags bootstrap5 %}
+        {% load component_tags %}
 
         <div {% html_attrs attrs class=classes %}>
             {% slot "default" / %}
@@ -42,7 +40,6 @@ class ToastContainer(Component):
     """
 
 
-@register("Toast", registry=bs5_registry)
 class Toast(Component):
     class Kwargs:
         show: bool = False
@@ -87,7 +84,7 @@ class Toast(Component):
         }
 
     template: types.django_html = """
-        {% load component_tags bootstrap5 %}
+        {% load component_tags %}
 
         <div {% html_attrs attrs id=toast_id class=classes role="alert" defaults:aria-live="assertive" defaults:aria-atomic="true" data-bs-autohide=autohide_attr data-bs-delay=delay_attr %}>
             {% slot "default" / %}
@@ -95,7 +92,6 @@ class Toast(Component):
     """
 
 
-@register("ToastHeader", registry=bs5_registry)
 class ToastHeader(Component):
     class Kwargs:
         close_button: bool = True
@@ -115,18 +111,17 @@ class ToastHeader(Component):
         }
 
     template: types.django_html = """
-        {% load component_tags bootstrap5 %}
+        {% load component_tags %}
 
         <div {% html_attrs attrs class="toast-header" %}>
             {% slot "default" / %}
             {% if close_button %}
-                {% bootstrap5 "CloseButton" variant=close_variant attrs:aria-label=close_label attrs:data-bs-dismiss="toast" / %}
+                {% component "CloseButton" variant=close_variant attrs:aria-label=close_label attrs:data-bs-dismiss="toast" / %}
             {% endif %}
         </div>
     """
 
 
-@register("ToastBody", registry=bs5_registry)
 class ToastBody(Component):
     class Kwargs:
         attrs: dict | None = None
@@ -140,7 +135,7 @@ class ToastBody(Component):
         }
 
     template: types.django_html = """
-    {% load component_tags bootstrap5 %}
+    {% load component_tags %}
 
         <div {% html_attrs attrs class="toast-body" %}>
             {% slot "default" / %}

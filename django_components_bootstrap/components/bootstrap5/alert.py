@@ -1,10 +1,8 @@
 from django.template import Context
-from django_components import Component, SlotInput, register, types
-
-from django_components_bootstrap.templatetags.bootstrap5 import bs5_registry
+from django_components import Component, SlotInput, types
 
 
-@register("Alert", registry=bs5_registry)
+
 class Alert(Component):
     class Kwargs:
         variant: str = "primary"
@@ -31,18 +29,17 @@ class Alert(Component):
         }
 
     template: types.django_html = """
-        {% load component_tags bootstrap5 %}
+        {% load component_tags %}
 
         <div {% html_attrs attrs class=css_class role="alert" %}>
             {% slot "default" / %}
             {% if dismissible %}
-                {% bootstrap5 "CloseButton" variant=close_variant attrs:aria-label=close_label attrs:data-bs-dismiss="alert" / %}
+                {% component "CloseButton" variant=close_variant attrs:aria-label=close_label attrs:data-bs-dismiss="alert" / %}
             {% endif %}
         </div>
     """
 
 
-@register("AlertLink", registry=bs5_registry)
 class AlertLink(Component):
     class Kwargs:
         href: str = "#"
@@ -58,7 +55,7 @@ class AlertLink(Component):
         }
 
     template: types.django_html = """
-    {% load component_tags bootstrap5 %}
+    {% load component_tags %}
 
         <a {% html_attrs attrs class="alert-link" href=href %}>
             {% slot "default" / %}
@@ -66,7 +63,6 @@ class AlertLink(Component):
     """
 
 
-@register("AlertHeading", registry=bs5_registry)
 class AlertHeading(Component):
     class Kwargs:
         as_: str = "h4"
@@ -82,7 +78,7 @@ class AlertHeading(Component):
         }
 
     template: types.django_html = """
-    {% load component_tags bootstrap5 %}
+    {% load component_tags %}
 
         <{{ tag }} {% html_attrs attrs class="alert-heading" %}>
             {% slot "default" / %}

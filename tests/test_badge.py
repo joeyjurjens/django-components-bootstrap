@@ -9,8 +9,8 @@ class BadgeTests(SimpleTestCase):
 
     def test_basic(self):
         template = Template("""
-            {% load bootstrap5 %}
-            <h1>Example heading {% bootstrap5 "Badge" bg="secondary" %}New{% endbootstrap5 %}</h1>
+            {% load component_tags %}
+            <h1>Example heading {% component "Badge" bg="secondary" %}New{% endcomponent %}</h1>
         """)
         rendered = normalize_html(template.render(Context({})))
 
@@ -22,9 +22,9 @@ class BadgeTests(SimpleTestCase):
 
     def test_in_button(self):
         template = Template("""
-            {% load bootstrap5 %}
+            {% load component_tags %}
             <button type="button" class="btn btn-primary">
-              Notifications {% bootstrap5 "Badge" bg="secondary" %}4{% endbootstrap5 %}
+              Notifications {% component "Badge" bg="secondary" %}4{% endcomponent %}
             </button>
         """)
         rendered = normalize_html(template.render(Context({})))
@@ -39,8 +39,8 @@ class BadgeTests(SimpleTestCase):
 
     def test_pill(self):
         template = Template("""
-            {% load bootstrap5 %}
-            {% bootstrap5 "Badge" bg="primary" pill=True %}Primary{% endbootstrap5 %}
+            {% load component_tags %}
+            {% component "Badge" bg="primary" pill=True %}Primary{% endcomponent %}
         """)
         rendered = normalize_html(template.render(Context({})))
 
@@ -52,8 +52,8 @@ class BadgeTests(SimpleTestCase):
 
     def test_bg_primary(self):
         template = Template("""
-            {% load bootstrap5 %}
-            {% bootstrap5 "Badge" bg="primary" %}Primary{% endbootstrap5 %}
+            {% load component_tags %}
+            {% component "Badge" bg="primary" %}Primary{% endcomponent %}
         """)
         rendered = normalize_html(template.render(Context({})))
 
@@ -65,8 +65,8 @@ class BadgeTests(SimpleTestCase):
 
     def test_bg_secondary(self):
         template = Template("""
-            {% load bootstrap5 %}
-            {% bootstrap5 "Badge" bg="secondary" %}Secondary{% endbootstrap5 %}
+            {% load component_tags %}
+            {% component "Badge" bg="secondary" %}Secondary{% endcomponent %}
         """)
         rendered = normalize_html(template.render(Context({})))
 
@@ -78,8 +78,8 @@ class BadgeTests(SimpleTestCase):
 
     def test_bg_success(self):
         template = Template("""
-            {% load bootstrap5 %}
-            {% bootstrap5 "Badge" bg="success" %}Success{% endbootstrap5 %}
+            {% load component_tags %}
+            {% component "Badge" bg="success" %}Success{% endcomponent %}
         """)
         rendered = normalize_html(template.render(Context({})))
 
@@ -91,8 +91,8 @@ class BadgeTests(SimpleTestCase):
 
     def test_bg_danger(self):
         template = Template("""
-            {% load bootstrap5 %}
-            {% bootstrap5 "Badge" bg="danger" %}Danger{% endbootstrap5 %}
+            {% load component_tags %}
+            {% component "Badge" bg="danger" %}Danger{% endcomponent %}
         """)
         rendered = normalize_html(template.render(Context({})))
 
@@ -104,8 +104,8 @@ class BadgeTests(SimpleTestCase):
 
     def test_bg_warning(self):
         template = Template("""
-            {% load bootstrap5 %}
-            {% bootstrap5 "Badge" bg="warning" %}Warning{% endbootstrap5 %}
+            {% load component_tags %}
+            {% component "Badge" bg="warning" %}Warning{% endcomponent %}
         """)
         rendered = normalize_html(template.render(Context({})))
 
@@ -117,8 +117,8 @@ class BadgeTests(SimpleTestCase):
 
     def test_bg_info(self):
         template = Template("""
-            {% load bootstrap5 %}
-            {% bootstrap5 "Badge" bg="info" %}Info{% endbootstrap5 %}
+            {% load component_tags %}
+            {% component "Badge" bg="info" %}Info{% endcomponent %}
         """)
         rendered = normalize_html(template.render(Context({})))
 
@@ -130,8 +130,8 @@ class BadgeTests(SimpleTestCase):
 
     def test_bg_light(self):
         template = Template("""
-            {% load bootstrap5 %}
-            {% bootstrap5 "Badge" bg="light" %}Light{% endbootstrap5 %}
+            {% load component_tags %}
+            {% component "Badge" bg="light" %}Light{% endcomponent %}
         """)
         rendered = normalize_html(template.render(Context({})))
 
@@ -143,8 +143,8 @@ class BadgeTests(SimpleTestCase):
 
     def test_bg_dark(self):
         template = Template("""
-            {% load bootstrap5 %}
-            {% bootstrap5 "Badge" bg="dark" %}Dark{% endbootstrap5 %}
+            {% load component_tags %}
+            {% component "Badge" bg="dark" %}Dark{% endcomponent %}
         """)
         rendered = normalize_html(template.render(Context({})))
 
@@ -156,8 +156,8 @@ class BadgeTests(SimpleTestCase):
 
     def test_pill_primary(self):
         template = Template("""
-            {% load bootstrap5 %}
-            {% bootstrap5 "Badge" bg="primary" pill=True %}Primary{% endbootstrap5 %}
+            {% load component_tags %}
+            {% component "Badge" bg="primary" pill=True %}Primary{% endcomponent %}
         """)
         rendered = normalize_html(template.render(Context({})))
 
@@ -169,8 +169,8 @@ class BadgeTests(SimpleTestCase):
 
     def test_pill_secondary(self):
         template = Template("""
-            {% load bootstrap5 %}
-            {% bootstrap5 "Badge" bg="secondary" pill=True %}Secondary{% endbootstrap5 %}
+            {% load component_tags %}
+            {% component "Badge" bg="secondary" pill=True %}Secondary{% endcomponent %}
         """)
         rendered = normalize_html(template.render(Context({})))
 
@@ -182,8 +182,8 @@ class BadgeTests(SimpleTestCase):
 
     def test_pill_success(self):
         template = Template("""
-            {% load bootstrap5 %}
-            {% bootstrap5 "Badge" bg="success" pill=True %}Success{% endbootstrap5 %}
+            {% load component_tags %}
+            {% component "Badge" bg="success" pill=True %}Success{% endcomponent %}
         """)
         rendered = normalize_html(template.render(Context({})))
 
@@ -195,8 +195,8 @@ class BadgeTests(SimpleTestCase):
 
     def test_pill_danger(self):
         template = Template("""
-            {% load bootstrap5 %}
-            {% bootstrap5 "Badge" bg="danger" pill=True %}Danger{% endbootstrap5 %}
+            {% load component_tags %}
+            {% component "Badge" bg="danger" pill=True %}Danger{% endcomponent %}
         """)
         rendered = normalize_html(template.render(Context({})))
 
@@ -208,8 +208,8 @@ class BadgeTests(SimpleTestCase):
 
     def test_pill_warning(self):
         template = Template("""
-            {% load bootstrap5 %}
-            {% bootstrap5 "Badge" bg="warning" pill=True %}Warning{% endbootstrap5 %}
+            {% load component_tags %}
+            {% component "Badge" bg="warning" pill=True %}Warning{% endcomponent %}
         """)
         rendered = normalize_html(template.render(Context({})))
 
@@ -221,8 +221,8 @@ class BadgeTests(SimpleTestCase):
 
     def test_pill_info(self):
         template = Template("""
-            {% load bootstrap5 %}
-            {% bootstrap5 "Badge" bg="info" pill=True %}Info{% endbootstrap5 %}
+            {% load component_tags %}
+            {% component "Badge" bg="info" pill=True %}Info{% endcomponent %}
         """)
         rendered = normalize_html(template.render(Context({})))
 
@@ -234,8 +234,8 @@ class BadgeTests(SimpleTestCase):
 
     def test_pill_light(self):
         template = Template("""
-            {% load bootstrap5 %}
-            {% bootstrap5 "Badge" bg="light" pill=True %}Light{% endbootstrap5 %}
+            {% load component_tags %}
+            {% component "Badge" bg="light" pill=True %}Light{% endcomponent %}
         """)
         rendered = normalize_html(template.render(Context({})))
 
@@ -247,8 +247,8 @@ class BadgeTests(SimpleTestCase):
 
     def test_pill_dark(self):
         template = Template("""
-            {% load bootstrap5 %}
-            {% bootstrap5 "Badge" bg="dark" pill=True %}Dark{% endbootstrap5 %}
+            {% load component_tags %}
+            {% component "Badge" bg="dark" pill=True %}Dark{% endcomponent %}
         """)
         rendered = normalize_html(template.render(Context({})))
 

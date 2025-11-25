@@ -1,15 +1,13 @@
 from django.template import Context
-from django_components import Component, SlotInput, register, types
+from django_components import Component, SlotInput, types
 
 from django_components_bootstrap.components.bootstrap5.types import (
     ButtonType,
     Size,
     VariantWithLink,
 )
-from django_components_bootstrap.templatetags.bootstrap5 import bs5_registry
 
 
-@register("Button", registry=bs5_registry)
 class Button(Component):
     class Kwargs:
         as_: str | None = None
@@ -78,7 +76,7 @@ class Button(Component):
         }
 
     template: types.django_html = """
-        {% load component_tags bootstrap5 %}
+        {% load component_tags %}
 
         <{{ tag }} {% html_attrs attrs class=classes type=button_type disabled=button_disabled aria-pressed=aria_pressed href=link_href target=link_target role=link_role aria-disabled=link_aria_disabled tabindex=link_tabindex %}>
             {% slot "default" / %}

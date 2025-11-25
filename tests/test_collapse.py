@@ -12,17 +12,17 @@ class TestCollapse(SimpleTestCase):
     def test_basic(self):
         with mock_component_id():
             template = Template("""
-            {% load component_tags bootstrap5 %}
-            {% bootstrap5 "Collapse" %}
+            {% load component_tags %}
+            {% component "Collapse" %}
               {% fill "toggle" %}
-                {% bootstrap5 "CollapseToggle" attrs:class="btn btn-primary" %}Toggle collapse{% endbootstrap5 %}
+                {% component "CollapseToggle" attrs:class="btn btn-primary" %}Toggle collapse{% endcomponent %}
               {% endfill %}
               {% fill "default" %}
                 <div class="card card-body">
                   Some placeholder content for the collapse component. This panel is hidden by default but revealed when the user activates the relevant trigger.
                 </div>
               {% endfill %}
-            {% endbootstrap5 %}
+            {% endcomponent %}
         """)
             rendered = template.render(Context())
 
@@ -41,28 +41,28 @@ class TestCollapse(SimpleTestCase):
     def test_multiple_targets(self):
         with mock_component_id():
             template = Template("""
-            {% load component_tags bootstrap5 %}
+            {% load component_tags %}
             <p>
-              {% bootstrap5 "Collapse" %}
+              {% component "Collapse" %}
                 {% fill "toggle" %}
-                  {% bootstrap5 "CollapseToggle" as_="a" attrs={"class": "btn btn-primary"} %}Toggle first element{% endbootstrap5 %}
+                  {% component "CollapseToggle" as_="a" attrs={"class": "btn btn-primary"} %}Toggle first element{% endcomponent %}
                 {% endfill %}
                 {% fill "default" %}
                   <div class="card card-body">
                     Some placeholder content for the first collapse component.
                   </div>
                 {% endfill %}
-              {% endbootstrap5 %}
-              {% bootstrap5 "Collapse" %}
+              {% endcomponent %}
+              {% component "Collapse" %}
                 {% fill "toggle" %}
-                  {% bootstrap5 "CollapseToggle" attrs={"class": "btn btn-primary"} %}Toggle second element{% endbootstrap5 %}
+                  {% component "CollapseToggle" attrs={"class": "btn btn-primary"} %}Toggle second element{% endcomponent %}
                 {% endfill %}
                 {% fill "default" %}
                   <div class="card card-body">
                     Some placeholder content for the second collapse component.
                   </div>
                 {% endfill %}
-              {% endbootstrap5 %}
+              {% endcomponent %}
             </p>
         """)
             rendered = template.render(Context())
@@ -74,17 +74,17 @@ class TestCollapse(SimpleTestCase):
     def test_horizontal(self):
         with mock_component_id():
             template = Template("""
-            {% load component_tags bootstrap5 %}
-            {% bootstrap5 "Collapse" horizontal=True %}
+            {% load component_tags %}
+            {% component "Collapse" horizontal=True %}
               {% fill "toggle" %}
-                {% bootstrap5 "CollapseToggle" attrs:class="btn btn-primary" %}Toggle horizontal collapse{% endbootstrap5 %}
+                {% component "CollapseToggle" attrs:class="btn btn-primary" %}Toggle horizontal collapse{% endcomponent %}
               {% endfill %}
               {% fill "default" %}
                 <div class="card card-body" style="width: 300px;">
                   This is some placeholder content for a horizontal collapse. It's hidden by default and shown when triggered.
                 </div>
               {% endfill %}
-            {% endbootstrap5 %}
+            {% endcomponent %}
         """)
             rendered = template.render(Context())
 
@@ -103,19 +103,19 @@ class TestCollapse(SimpleTestCase):
     def test_with_button_toggle(self):
         with mock_component_id():
             template = Template("""
-            {% load component_tags bootstrap5 %}
-            {% bootstrap5 "Collapse" %}
+            {% load component_tags %}
+            {% component "Collapse" %}
               {% fill "toggle" %}
-                {% bootstrap5 "CollapseToggle" attrs={"class": "btn btn-primary"} %}
+                {% component "CollapseToggle" attrs={"class": "btn btn-primary"} %}
                   Button with data-bs-target
-                {% endbootstrap5 %}
+                {% endcomponent %}
               {% endfill %}
               {% fill "default" %}
                 <div class="card card-body">
                   Some placeholder content for the collapse component. This panel is hidden by default but revealed when the user activates the relevant trigger.
                 </div>
               {% endfill %}
-            {% endbootstrap5 %}
+            {% endcomponent %}
         """)
             rendered = template.render(Context())
 
@@ -136,19 +136,19 @@ class TestCollapse(SimpleTestCase):
     def test_with_link_toggle(self):
         with mock_component_id():
             template = Template("""
-            {% load component_tags bootstrap5 %}
-            {% bootstrap5 "Collapse" %}
+            {% load component_tags %}
+            {% component "Collapse" %}
               {% fill "toggle" %}
-                {% bootstrap5 "CollapseToggle" as_="a" attrs={"class": "btn btn-primary"} %}
+                {% component "CollapseToggle" as_="a" attrs={"class": "btn btn-primary"} %}
                   Link with href
-                {% endbootstrap5 %}
+                {% endcomponent %}
               {% endfill %}
               {% fill "default" %}
                 <div class="card card-body">
                   Some placeholder content for the collapse component. This panel is hidden by default but revealed when the user activates the relevant trigger.
                 </div>
               {% endfill %}
-            {% endbootstrap5 %}
+            {% endcomponent %}
         """)
             rendered = template.render(Context())
 

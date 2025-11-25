@@ -1,11 +1,9 @@
 from django.template import Context
-from django_components import Component, SlotInput, register, types
+from django_components import Component, SlotInput, types
 
 from django_components_bootstrap.components.bootstrap5.types import AutoClose, Size, VariantWithLink
-from django_components_bootstrap.templatetags.bootstrap5 import bs5_registry
 
 
-@register("DropdownButton", registry=bs5_registry)
 class DropdownButton(Component):
     class Kwargs:
         title: str
@@ -38,20 +36,19 @@ class DropdownButton(Component):
         }
 
     template: types.django_html = """
-        {% load component_tags bootstrap5 %}
+        {% load component_tags %}
 
-        {% bootstrap5 "Dropdown" auto_close=auto_close attrs=attrs %}
-            {% bootstrap5 "DropdownToggle" variant=variant size=size disabled=disabled href=href %}
+        {% component "Dropdown" auto_close=auto_close attrs=attrs %}
+            {% component "DropdownToggle" variant=variant size=size disabled=disabled href=href %}
                 {{ title }}
-            {% endbootstrap5 %}
-            {% bootstrap5 "DropdownMenu" align=align dark=dark %}
+            {% endcomponent %}
+            {% component "DropdownMenu" align=align dark=dark %}
                 {% slot "default" / %}
-            {% endbootstrap5 %}
-        {% endbootstrap5 %}
+            {% endcomponent %}
+        {% endcomponent %}
     """
 
 
-@register("SplitButton", registry=bs5_registry)
 class SplitButton(Component):
     class Kwargs:
         title: str
@@ -90,19 +87,19 @@ class SplitButton(Component):
         }
 
     template: types.django_html = """
-    {% load component_tags bootstrap5 %}
+    {% load component_tags %}
 
-        {% bootstrap5 "Dropdown" auto_close=auto_close %}
-            {% bootstrap5 "ButtonGroup" attrs=attrs %}
-                {% bootstrap5 "Button" variant=variant size=size disabled=disabled href=href target=target type=type %}
+        {% component "Dropdown" auto_close=auto_close %}
+            {% component "ButtonGroup" attrs=attrs %}
+                {% component "Button" variant=variant size=size disabled=disabled href=href target=target type=type %}
                     {{ title }}
-                {% endbootstrap5 %}
-                {% bootstrap5 "DropdownToggle" split=True variant=variant size=size disabled=disabled %}
+                {% endcomponent %}
+                {% component "DropdownToggle" split=True variant=variant size=size disabled=disabled %}
                     <span class="visually-hidden">{{ toggle_label }}</span>
-                {% endbootstrap5 %}
-                {% bootstrap5 "DropdownMenu" align=align dark=dark %}
+                {% endcomponent %}
+                {% component "DropdownMenu" align=align dark=dark %}
                     {% slot "default" / %}
-                {% endbootstrap5 %}
-            {% endbootstrap5 %}
-        {% endbootstrap5 %}
+                {% endcomponent %}
+            {% endcomponent %}
+        {% endcomponent %}
     """

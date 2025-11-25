@@ -1,5 +1,5 @@
 from django.template import Context
-from django_components import Component, SlotInput, register, types
+from django_components import Component, SlotInput, types
 
 from django_components_bootstrap.components.bootstrap5.types import (
     ListGroupItemTag,
@@ -7,10 +7,8 @@ from django_components_bootstrap.components.bootstrap5.types import (
     ResponsiveBreakpoint,
     Variant,
 )
-from django_components_bootstrap.templatetags.bootstrap5 import bs5_registry
 
 
-@register("ListGroup", registry=bs5_registry)
 class ListGroup(Component):
     class Kwargs:
         as_: ListGroupTag = "ul"
@@ -43,7 +41,7 @@ class ListGroup(Component):
         }
 
     template: types.django_html = """
-        {% load component_tags bootstrap5 %}
+        {% load component_tags %}
 
         <{{ tag }} {% html_attrs attrs class=classes %}>
             {% slot "default" / %}
@@ -51,7 +49,6 @@ class ListGroup(Component):
     """
 
 
-@register("ListGroupItem", registry=bs5_registry)
 class ListGroupItem(Component):
     class Kwargs:
         as_: ListGroupItemTag = "li"
@@ -101,7 +98,7 @@ class ListGroupItem(Component):
         }
 
     template: types.django_html = """
-        {% load component_tags bootstrap5 %}
+        {% load component_tags %}
 
         {% if tag == "a" and href %}
             <a {% html_attrs attrs href=href class=classes aria-current=aria_current aria-disabled=aria_disabled %}>

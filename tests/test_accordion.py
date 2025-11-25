@@ -12,27 +12,27 @@ class AccordionTests(SimpleTestCase):
     def test_basic(self):
         with mock_component_id():
             template = Template("""
-            {% load bootstrap5 %}
-            {% bootstrap5 "Accordion" %}
-                {% bootstrap5 "AccordionItem" default_open=True %}
-                    {% bootstrap5 "AccordionHeader" %}Accordion Item #1{% endbootstrap5 %}
-                    {% bootstrap5 "AccordionBody" %}
+            {% load component_tags %}
+            {% component "Accordion" %}
+                {% component "AccordionItem" default_open=True %}
+                    {% component "AccordionHeader" %}Accordion Item #1{% endcomponent %}
+                    {% component "AccordionBody" %}
                         <strong>This is the first item's accordion body.</strong> It is shown by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
-                    {% endbootstrap5 %}
-                {% endbootstrap5 %}
-                {% bootstrap5 "AccordionItem" %}
-                    {% bootstrap5 "AccordionHeader" %}Accordion Item #2{% endbootstrap5 %}
-                    {% bootstrap5 "AccordionBody" %}
+                    {% endcomponent %}
+                {% endcomponent %}
+                {% component "AccordionItem" %}
+                    {% component "AccordionHeader" %}Accordion Item #2{% endcomponent %}
+                    {% component "AccordionBody" %}
                         <strong>This is the second item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
-                    {% endbootstrap5 %}
-                {% endbootstrap5 %}
-                {% bootstrap5 "AccordionItem" %}
-                    {% bootstrap5 "AccordionHeader" %}Accordion Item #3{% endbootstrap5 %}
-                    {% bootstrap5 "AccordionBody" %}
+                    {% endcomponent %}
+                {% endcomponent %}
+                {% component "AccordionItem" %}
+                    {% component "AccordionHeader" %}Accordion Item #3{% endcomponent %}
+                    {% component "AccordionBody" %}
                         <strong>This is the third item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
-                    {% endbootstrap5 %}
-                {% endbootstrap5 %}
-            {% endbootstrap5 %}
+                    {% endcomponent %}
+                {% endcomponent %}
+            {% endcomponent %}
             """)
             rendered = normalize_html(template.render(Context({})))
 
@@ -51,24 +51,24 @@ class AccordionTests(SimpleTestCase):
             </div>
           </div>
           <div class="accordion-item">
-            <h2 class="accordion-header" id="heading-ctest06">
-              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-ctest06" aria-expanded="false" aria-controls="collapse-ctest06">
+            <h2 class="accordion-header" id="heading-ctest03">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-ctest03" aria-expanded="false" aria-controls="collapse-ctest03">
                 Accordion Item #2
               </button>
             </h2>
-            <div id="collapse-ctest06" class="accordion-collapse collapse" aria-labelledby="heading-ctest06" data-bs-parent="#accordion-ctest01">
+            <div id="collapse-ctest03" class="accordion-collapse collapse" aria-labelledby="heading-ctest03" data-bs-parent="#accordion-ctest01">
               <div class="accordion-body">
                 <strong>This is the second item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
               </div>
             </div>
           </div>
           <div class="accordion-item">
-            <h2 class="accordion-header" id="heading-ctest10">
-              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-ctest10" aria-expanded="false" aria-controls="collapse-ctest10">
+            <h2 class="accordion-header" id="heading-ctest04">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-ctest04" aria-expanded="false" aria-controls="collapse-ctest04">
                 Accordion Item #3
               </button>
             </h2>
-            <div id="collapse-ctest10" class="accordion-collapse collapse" aria-labelledby="heading-ctest10" data-bs-parent="#accordion-ctest01">
+            <div id="collapse-ctest04" class="accordion-collapse collapse" aria-labelledby="heading-ctest04" data-bs-parent="#accordion-ctest01">
               <div class="accordion-body">
                 <strong>This is the third item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
               </div>
@@ -83,17 +83,17 @@ class AccordionTests(SimpleTestCase):
     def test_with_icon_in_header(self):
         with mock_component_id():
             template = Template("""
-            {% load bootstrap5 %}
-            {% bootstrap5 "Accordion" %}
-                {% bootstrap5 "AccordionItem" default_open=True %}
-                    {% bootstrap5 "AccordionHeader" %}
+            {% load component_tags %}
+            {% component "Accordion" %}
+                {% component "AccordionItem" default_open=True %}
+                    {% component "AccordionHeader" %}
                         <i class="bi bi-info-circle"></i> Accordion Item with Icon
-                    {% endbootstrap5 %}
-                    {% bootstrap5 "AccordionBody" %}
+                    {% endcomponent %}
+                    {% component "AccordionBody" %}
                         This accordion item has an icon in the header.
-                    {% endbootstrap5 %}
-                {% endbootstrap5 %}
-            {% endbootstrap5 %}
+                    {% endcomponent %}
+                {% endcomponent %}
+            {% endcomponent %}
         """)
             rendered = normalize_html(template.render(Context({})))
 
@@ -104,17 +104,17 @@ class AccordionTests(SimpleTestCase):
     def test_with_badge_in_header(self):
         with mock_component_id():
             template = Template("""
-            {% load bootstrap5 %}
-            {% bootstrap5 "Accordion" %}
-                {% bootstrap5 "AccordionItem" default_open=True %}
-                    {% bootstrap5 "AccordionHeader" %}
+            {% load component_tags %}
+            {% component "Accordion" %}
+                {% component "AccordionItem" default_open=True %}
+                    {% component "AccordionHeader" %}
                         Accordion Item <span class="badge bg-primary">New</span>
-                    {% endbootstrap5 %}
-                    {% bootstrap5 "AccordionBody" %}
+                    {% endcomponent %}
+                    {% component "AccordionBody" %}
                         This accordion item has a badge in the header.
-                    {% endbootstrap5 %}
-                {% endbootstrap5 %}
-            {% endbootstrap5 %}
+                    {% endcomponent %}
+                {% endcomponent %}
+            {% endcomponent %}
         """)
             rendered = normalize_html(template.render(Context({})))
 
@@ -125,27 +125,27 @@ class AccordionTests(SimpleTestCase):
     def test_flush(self):
         with mock_component_id():
             template = Template("""
-        {% load bootstrap5 %}
-        {% bootstrap5 "Accordion" flush=True %}
-            {% bootstrap5 "AccordionItem" %}
-                {% bootstrap5 "AccordionHeader" %}Accordion Item #1{% endbootstrap5 %}
-                {% bootstrap5 "AccordionBody" %}
+        {% load component_tags %}
+        {% component "Accordion" flush=True %}
+            {% component "AccordionItem" %}
+                {% component "AccordionHeader" %}Accordion Item #1{% endcomponent %}
+                {% component "AccordionBody" %}
                     Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> class. This is the first item's accordion body.
-                {% endbootstrap5 %}
-            {% endbootstrap5 %}
-            {% bootstrap5 "AccordionItem" %}
-                {% bootstrap5 "AccordionHeader" %}Accordion Item #2{% endbootstrap5 %}
-                {% bootstrap5 "AccordionBody" %}
+                {% endcomponent %}
+            {% endcomponent %}
+            {% component "AccordionItem" %}
+                {% component "AccordionHeader" %}Accordion Item #2{% endcomponent %}
+                {% component "AccordionBody" %}
                     Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> class. This is the second item's accordion body. Let's imagine this being filled with some actual content.
-                {% endbootstrap5 %}
-            {% endbootstrap5 %}
-            {% bootstrap5 "AccordionItem" %}
-                {% bootstrap5 "AccordionHeader" %}Accordion Item #3{% endbootstrap5 %}
-                {% bootstrap5 "AccordionBody" %}
+                {% endcomponent %}
+            {% endcomponent %}
+            {% component "AccordionItem" %}
+                {% component "AccordionHeader" %}Accordion Item #3{% endcomponent %}
+                {% component "AccordionBody" %}
                     Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> class. This is the third item's accordion body. Nothing more exciting happening here in terms of content, but just filling up the space to make it look, at least at first glance, a bit more representative of how this would look in a real-world application.
-                {% endbootstrap5 %}
-            {% endbootstrap5 %}
-        {% endbootstrap5 %}
+                {% endcomponent %}
+            {% endcomponent %}
+        {% endcomponent %}
         """)
             rendered = normalize_html(template.render(Context({})))
 
@@ -162,22 +162,22 @@ class AccordionTests(SimpleTestCase):
             </div>
           </div>
           <div class="accordion-item">
-            <h2 class="accordion-header" id="heading-ctest06">
-              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-ctest06" aria-expanded="false" aria-controls="collapse-ctest06">
+            <h2 class="accordion-header" id="heading-ctest03">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-ctest03" aria-expanded="false" aria-controls="collapse-ctest03">
                 Accordion Item #2
               </button>
             </h2>
-            <div id="collapse-ctest06" class="accordion-collapse collapse" aria-labelledby="heading-ctest06" data-bs-parent="#accordion-ctest01">
+            <div id="collapse-ctest03" class="accordion-collapse collapse" aria-labelledby="heading-ctest03" data-bs-parent="#accordion-ctest01">
               <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> class. This is the second item's accordion body. Let's imagine this being filled with some actual content.</div>
             </div>
           </div>
           <div class="accordion-item">
-            <h2 class="accordion-header" id="heading-ctest10">
-              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-ctest10" aria-expanded="false" aria-controls="collapse-ctest10">
+            <h2 class="accordion-header" id="heading-ctest04">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-ctest04" aria-expanded="false" aria-controls="collapse-ctest04">
                 Accordion Item #3
               </button>
             </h2>
-            <div id="collapse-ctest10" class="accordion-collapse collapse" aria-labelledby="heading-ctest10" data-bs-parent="#accordion-ctest01">
+            <div id="collapse-ctest04" class="accordion-collapse collapse" aria-labelledby="heading-ctest04" data-bs-parent="#accordion-ctest01">
               <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> class. This is the third item's accordion body. Nothing more exciting happening here in terms of content, but just filling up the space to make it look, at least at first glance, a bit more representative of how this would look in a real-world application.</div>
             </div>
           </div>
@@ -190,27 +190,27 @@ class AccordionTests(SimpleTestCase):
     def test_always_open(self):
         with mock_component_id():
             template = Template("""
-        {% load bootstrap5 %}
-        {% bootstrap5 "Accordion" always_open=True %}
-            {% bootstrap5 "AccordionItem" default_open=True %}
-                {% bootstrap5 "AccordionHeader" %}Accordion Item #1{% endbootstrap5 %}
-                {% bootstrap5 "AccordionBody" %}
+        {% load component_tags %}
+        {% component "Accordion" always_open=True %}
+            {% component "AccordionItem" default_open=True %}
+                {% component "AccordionHeader" %}Accordion Item #1{% endcomponent %}
+                {% component "AccordionBody" %}
                     <strong>This is the first item's accordion body.</strong> It is shown by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
-                {% endbootstrap5 %}
-            {% endbootstrap5 %}
-            {% bootstrap5 "AccordionItem" %}
-                {% bootstrap5 "AccordionHeader" %}Accordion Item #2{% endbootstrap5 %}
-                {% bootstrap5 "AccordionBody" %}
+                {% endcomponent %}
+            {% endcomponent %}
+            {% component "AccordionItem" %}
+                {% component "AccordionHeader" %}Accordion Item #2{% endcomponent %}
+                {% component "AccordionBody" %}
                     <strong>This is the second item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
-                {% endbootstrap5 %}
-            {% endbootstrap5 %}
-            {% bootstrap5 "AccordionItem" %}
-                {% bootstrap5 "AccordionHeader" %}Accordion Item #3{% endbootstrap5 %}
-                {% bootstrap5 "AccordionBody" %}
+                {% endcomponent %}
+            {% endcomponent %}
+            {% component "AccordionItem" %}
+                {% component "AccordionHeader" %}Accordion Item #3{% endcomponent %}
+                {% component "AccordionBody" %}
                     <strong>This is the third item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
-                {% endbootstrap5 %}
-            {% endbootstrap5 %}
-        {% endbootstrap5 %}
+                {% endcomponent %}
+            {% endcomponent %}
+        {% endcomponent %}
         """)
             rendered = normalize_html(template.render(Context({})))
 
@@ -229,24 +229,24 @@ class AccordionTests(SimpleTestCase):
             </div>
           </div>
           <div class="accordion-item">
-            <h2 class="accordion-header" id="heading-ctest06">
-              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-ctest06" aria-expanded="false" aria-controls="collapse-ctest06">
+            <h2 class="accordion-header" id="heading-ctest03">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-ctest03" aria-expanded="false" aria-controls="collapse-ctest03">
                 Accordion Item #2
               </button>
             </h2>
-            <div id="collapse-ctest06" class="accordion-collapse collapse" aria-labelledby="heading-ctest06">
+            <div id="collapse-ctest03" class="accordion-collapse collapse" aria-labelledby="heading-ctest03">
               <div class="accordion-body">
                 <strong>This is the second item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
               </div>
             </div>
           </div>
           <div class="accordion-item">
-            <h2 class="accordion-header" id="heading-ctest10">
-              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-ctest10" aria-expanded="false" aria-controls="collapse-ctest10">
+            <h2 class="accordion-header" id="heading-ctest04">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-ctest04" aria-expanded="false" aria-controls="collapse-ctest04">
                 Accordion Item #3
               </button>
             </h2>
-            <div id="collapse-ctest10" class="accordion-collapse collapse" aria-labelledby="heading-ctest10">
+            <div id="collapse-ctest04" class="accordion-collapse collapse" aria-labelledby="heading-ctest04">
               <div class="accordion-body">
                 <strong>This is the third item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
               </div>

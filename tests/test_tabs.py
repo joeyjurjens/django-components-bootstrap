@@ -12,18 +12,18 @@ class TestTabs(SimpleTestCase):
     def test_basic(self):
         with mock_component_id():
             template = Template("""
-            {% load bootstrap5 %}
-            {% bootstrap5 "Tabs" %}
-              {% bootstrap5 "Tab" tab_id="home" title="Home" %}
+            {% load component_tags %}
+            {% component "Tabs" %}
+              {% component "Tab" tab_id="home" title="Home" %}
                 Home content
-              {% endbootstrap5 %}
-              {% bootstrap5 "Tab" tab_id="profile" title="Profile" %}
+              {% endcomponent %}
+              {% component "Tab" tab_id="profile" title="Profile" %}
                 Profile content
-              {% endbootstrap5 %}
-              {% bootstrap5 "Tab" tab_id="contact" title="Contact" %}
+              {% endcomponent %}
+              {% component "Tab" tab_id="contact" title="Contact" %}
                 Contact content
-              {% endbootstrap5 %}
-            {% endbootstrap5 %}
+              {% endcomponent %}
+            {% endcomponent %}
         """)
             rendered = template.render(Context())
 
@@ -60,18 +60,18 @@ class TestTabs(SimpleTestCase):
     def test_pills_variant(self):
         with mock_component_id():
             template = Template("""
-            {% load bootstrap5 %}
-            {% bootstrap5 "Tabs" variant="pills" %}
-              {% bootstrap5 "Tab" tab_id="home" title="Home" %}
+            {% load component_tags %}
+            {% component "Tabs" variant="pills" %}
+              {% component "Tab" tab_id="home" title="Home" %}
                 Home content
-              {% endbootstrap5 %}
-              {% bootstrap5 "Tab" tab_id="profile" title="Profile" %}
+              {% endcomponent %}
+              {% component "Tab" tab_id="profile" title="Profile" %}
                 Profile content
-              {% endbootstrap5 %}
-              {% bootstrap5 "Tab" tab_id="contact" title="Contact" %}
+              {% endcomponent %}
+              {% component "Tab" tab_id="contact" title="Contact" %}
                 Contact content
-              {% endbootstrap5 %}
-            {% endbootstrap5 %}
+              {% endcomponent %}
+            {% endcomponent %}
         """)
             rendered = template.render(Context())
 
@@ -108,15 +108,15 @@ class TestTabs(SimpleTestCase):
     def test_underline_variant(self):
         with mock_component_id():
             template = Template("""
-            {% load bootstrap5 %}
-            {% bootstrap5 "Tabs" variant="underline" %}
-              {% bootstrap5 "Tab" tab_id="home" title="Home" %}
+            {% load component_tags %}
+            {% component "Tabs" variant="underline" %}
+              {% component "Tab" tab_id="home" title="Home" %}
                 Home content
-              {% endbootstrap5 %}
-              {% bootstrap5 "Tab" tab_id="profile" title="Profile" %}
+              {% endcomponent %}
+              {% component "Tab" tab_id="profile" title="Profile" %}
                 Profile content
-              {% endbootstrap5 %}
-            {% endbootstrap5 %}
+              {% endcomponent %}
+            {% endcomponent %}
         """)
             rendered = template.render(Context())
 
@@ -147,18 +147,18 @@ class TestTabs(SimpleTestCase):
     def test_tabs_with_fill(self):
         with mock_component_id():
             template = Template("""
-            {% load bootstrap5 %}
-            {% bootstrap5 "Tabs" fill=True %}
-              {% bootstrap5 "Tab" tab_id="home" title="Home" %}
+            {% load component_tags %}
+            {% component "Tabs" fill=True %}
+              {% component "Tab" tab_id="home" title="Home" %}
                 Home content
-              {% endbootstrap5 %}
-              {% bootstrap5 "Tab" tab_id="profile" title="Much longer nav link" %}
+              {% endcomponent %}
+              {% component "Tab" tab_id="profile" title="Much longer nav link" %}
                 Profile content
-              {% endbootstrap5 %}
-              {% bootstrap5 "Tab" tab_id="contact" title="Link" %}
+              {% endcomponent %}
+              {% component "Tab" tab_id="contact" title="Link" %}
                 Contact content
-              {% endbootstrap5 %}
-            {% endbootstrap5 %}
+              {% endcomponent %}
+            {% endcomponent %}
         """)
             rendered = template.render(Context())
 
@@ -195,18 +195,18 @@ class TestTabs(SimpleTestCase):
     def test_tabs_with_justified(self):
         with mock_component_id():
             template = Template("""
-            {% load bootstrap5 %}
-            {% bootstrap5 "Tabs" justified=True %}
-              {% bootstrap5 "Tab" tab_id="home" title="Home" %}
+            {% load component_tags %}
+            {% component "Tabs" justified=True %}
+              {% component "Tab" tab_id="home" title="Home" %}
                 Home content
-              {% endbootstrap5 %}
-              {% bootstrap5 "Tab" tab_id="profile" title="Much longer nav link" %}
+              {% endcomponent %}
+              {% component "Tab" tab_id="profile" title="Much longer nav link" %}
                 Profile content
-              {% endbootstrap5 %}
-              {% bootstrap5 "Tab" tab_id="contact" title="Link" %}
+              {% endcomponent %}
+              {% component "Tab" tab_id="contact" title="Link" %}
                 Contact content
-              {% endbootstrap5 %}
-            {% endbootstrap5 %}
+              {% endcomponent %}
+            {% endcomponent %}
         """)
             rendered = template.render(Context())
 
@@ -243,18 +243,18 @@ class TestTabs(SimpleTestCase):
     def test_pills_with_fill(self):
         with mock_component_id():
             template = Template("""
-            {% load bootstrap5 %}
-            {% bootstrap5 "Tabs" variant="pills" fill=True %}
-              {% bootstrap5 "Tab" tab_id="home" title="Home" %}
+            {% load component_tags %}
+            {% component "Tabs" variant="pills" fill=True %}
+              {% component "Tab" tab_id="home" title="Home" %}
                 Home content
-              {% endbootstrap5 %}
-              {% bootstrap5 "Tab" tab_id="profile" title="Profile" %}
+              {% endcomponent %}
+              {% component "Tab" tab_id="profile" title="Profile" %}
                 Profile content
-              {% endbootstrap5 %}
-              {% bootstrap5 "Tab" tab_id="contact" title="Contact" %}
+              {% endcomponent %}
+              {% component "Tab" tab_id="contact" title="Contact" %}
                 Contact content
-              {% endbootstrap5 %}
-            {% endbootstrap5 %}
+              {% endcomponent %}
+            {% endcomponent %}
         """)
             rendered = template.render(Context())
 
@@ -291,18 +291,18 @@ class TestTabs(SimpleTestCase):
     def test_pills_with_justified(self):
         with mock_component_id():
             template = Template("""
-            {% load bootstrap5 %}
-            {% bootstrap5 "Tabs" variant="pills" justified=True %}
-              {% bootstrap5 "Tab" tab_id="home" title="Home" %}
+            {% load component_tags %}
+            {% component "Tabs" variant="pills" justified=True %}
+              {% component "Tab" tab_id="home" title="Home" %}
                 Home content
-              {% endbootstrap5 %}
-              {% bootstrap5 "Tab" tab_id="profile" title="Profile" %}
+              {% endcomponent %}
+              {% component "Tab" tab_id="profile" title="Profile" %}
                 Profile content
-              {% endbootstrap5 %}
-              {% bootstrap5 "Tab" tab_id="contact" title="Contact" %}
+              {% endcomponent %}
+              {% component "Tab" tab_id="contact" title="Contact" %}
                 Contact content
-              {% endbootstrap5 %}
-            {% endbootstrap5 %}
+              {% endcomponent %}
+            {% endcomponent %}
         """)
             rendered = template.render(Context())
 
@@ -339,21 +339,21 @@ class TestTabs(SimpleTestCase):
     def test_tabs_with_disabled_tab(self):
         with mock_component_id():
             template = Template("""
-            {% load bootstrap5 %}
-            {% bootstrap5 "Tabs" %}
-              {% bootstrap5 "Tab" tab_id="home" title="Home" %}
+            {% load component_tags %}
+            {% component "Tabs" %}
+              {% component "Tab" tab_id="home" title="Home" %}
                 Home content
-              {% endbootstrap5 %}
-              {% bootstrap5 "Tab" tab_id="profile" title="Profile" %}
+              {% endcomponent %}
+              {% component "Tab" tab_id="profile" title="Profile" %}
                 Profile content
-              {% endbootstrap5 %}
-              {% bootstrap5 "Tab" tab_id="contact" title="Contact" %}
+              {% endcomponent %}
+              {% component "Tab" tab_id="contact" title="Contact" %}
                 Contact content
-              {% endbootstrap5 %}
-              {% bootstrap5 "Tab" tab_id="disabled" title="Disabled" disabled=True %}
+              {% endcomponent %}
+              {% component "Tab" tab_id="disabled" title="Disabled" disabled=True %}
                 Disabled content
-              {% endbootstrap5 %}
-            {% endbootstrap5 %}
+              {% endcomponent %}
+            {% endcomponent %}
         """)
             rendered = template.render(Context())
 
@@ -396,18 +396,18 @@ class TestTabs(SimpleTestCase):
     def test_tabs_with_default_active_tab(self):
         with mock_component_id():
             template = Template("""
-            {% load bootstrap5 %}
-            {% bootstrap5 "Tabs" default_active_tab="profile" %}
-              {% bootstrap5 "Tab" tab_id="home" title="Home" %}
+            {% load component_tags %}
+            {% component "Tabs" default_active_tab="profile" %}
+              {% component "Tab" tab_id="home" title="Home" %}
                 Home content
-              {% endbootstrap5 %}
-              {% bootstrap5 "Tab" tab_id="profile" title="Profile" %}
+              {% endcomponent %}
+              {% component "Tab" tab_id="profile" title="Profile" %}
                 Profile content
-              {% endbootstrap5 %}
-              {% bootstrap5 "Tab" tab_id="contact" title="Contact" %}
+              {% endcomponent %}
+              {% component "Tab" tab_id="contact" title="Contact" %}
                 Contact content
-              {% endbootstrap5 %}
-            {% endbootstrap5 %}
+              {% endcomponent %}
+            {% endcomponent %}
         """)
             rendered = template.render(Context())
 
@@ -444,15 +444,15 @@ class TestTabs(SimpleTestCase):
     def test_tabs_with_custom_tab_class(self):
         with mock_component_id():
             template = Template("""
-            {% load bootstrap5 %}
-            {% bootstrap5 "Tabs" %}
-              {% bootstrap5 "Tab" tab_id="home" title="Home" tab_class="custom-class" %}
+            {% load component_tags %}
+            {% component "Tabs" %}
+              {% component "Tab" tab_id="home" title="Home" tab_class="custom-class" %}
                 Home content
-              {% endbootstrap5 %}
-              {% bootstrap5 "Tab" tab_id="profile" title="Profile" %}
+              {% endcomponent %}
+              {% component "Tab" tab_id="profile" title="Profile" %}
                 Profile content
-              {% endbootstrap5 %}
-            {% endbootstrap5 %}
+              {% endcomponent %}
+            {% endcomponent %}
         """)
             rendered = template.render(Context())
 

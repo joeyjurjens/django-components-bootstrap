@@ -1,11 +1,9 @@
 from django.template import Context
-from django_components import Component, SlotInput, register, types
+from django_components import Component, SlotInput, types
 
 from django_components_bootstrap.components.bootstrap5.types import ButtonTag
-from django_components_bootstrap.templatetags.bootstrap5 import bs5_registry
 
 
-@register("Collapse", registry=bs5_registry)
 class Collapse(Component):
     class Kwargs:
         show: bool = False
@@ -32,7 +30,7 @@ class Collapse(Component):
         }
 
     template: types.django_html = """
-        {% load component_tags bootstrap5 %}
+        {% load component_tags %}
 
         {% provide "collapse" collapse_id=collapse_id %}
             {% slot "toggle" / %}
@@ -43,7 +41,6 @@ class Collapse(Component):
     """
 
 
-@register("CollapseToggle", registry=bs5_registry)
 class CollapseToggle(Component):
     class Kwargs:
         as_: ButtonTag = "button"
@@ -73,7 +70,7 @@ class CollapseToggle(Component):
         }
 
     template: types.django_html = """
-    {% load component_tags bootstrap5 %}
+    {% load component_tags %}
 
         {% if tag == "button" %}
             <button {% html_attrs attrs type=button_type data-bs-toggle="collapse" data-bs-target="#{{ target_id }}" defaults:aria-expanded=expanded defaults:aria-controls=target_id %}>

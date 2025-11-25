@@ -1,11 +1,9 @@
 from django.template import Context
-from django_components import Component, SlotInput, register, types
+from django_components import Component, SlotInput, types
 
 from django_components_bootstrap.components.bootstrap5.types import Size
-from django_components_bootstrap.templatetags.bootstrap5 import bs5_registry
 
 
-@register("InputGroup", registry=bs5_registry)
 class InputGroup(Component):
     class Kwargs:
         size: Size | None = None
@@ -28,7 +26,7 @@ class InputGroup(Component):
         }
 
     template: types.django_html = """
-        {% load component_tags bootstrap5 %}
+        {% load component_tags %}
 
         <div {% html_attrs attrs class=classes %}>
             {% slot "default" / %}
@@ -36,7 +34,6 @@ class InputGroup(Component):
     """
 
 
-@register("InputGroupText", registry=bs5_registry)
 class InputGroupText(Component):
     class Kwargs:
         attrs: dict | None = None
@@ -50,7 +47,7 @@ class InputGroupText(Component):
         }
 
     template: types.django_html = """
-        {% load component_tags bootstrap5 %}
+        {% load component_tags %}
 
         <span {% html_attrs attrs class="input-group-text" %}>
             {% slot "default" / %}
@@ -58,7 +55,6 @@ class InputGroupText(Component):
     """
 
 
-@register("InputGroupRadio", registry=bs5_registry)
 class InputGroupRadio(Component):
     class Kwargs:
         attrs: dict | None = None
@@ -72,7 +68,7 @@ class InputGroupRadio(Component):
         }
 
     template: types.django_html = """
-    {% load component_tags bootstrap5 %}
+    {% load component_tags %}
 
         <div class="input-group-text">
             <input {% html_attrs attrs type="radio" class="form-check-input mt-0" %} />
@@ -80,7 +76,6 @@ class InputGroupRadio(Component):
     """
 
 
-@register("InputGroupCheckbox", registry=bs5_registry)
 class InputGroupCheckbox(Component):
     class Kwargs:
         attrs: dict | None = None
@@ -94,7 +89,7 @@ class InputGroupCheckbox(Component):
         }
 
     template: types.django_html = """
-    {% load component_tags bootstrap5 %}
+    {% load component_tags %}
 
         <div class="input-group-text">
             <input {% html_attrs attrs type="checkbox" class="form-check-input mt-0" %} />
@@ -102,7 +97,6 @@ class InputGroupCheckbox(Component):
     """
 
 
-@register("FloatingLabel", registry=bs5_registry)
 class FloatingLabel(Component):
     class Kwargs:
         label: str
@@ -120,7 +114,7 @@ class FloatingLabel(Component):
         }
 
     template: types.django_html = """
-        {% load component_tags bootstrap5 %}
+        {% load component_tags %}
 
         {% provide "formgroup" control_id=control_id %}
             <div {% html_attrs attrs class="form-floating" %}>

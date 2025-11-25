@@ -1,11 +1,9 @@
 from django.template import Context
-from django_components import Component, register, types
+from django_components import Component, types
 
 from django_components_bootstrap.components.bootstrap5.types import BgColor, Size, Variant
-from django_components_bootstrap.templatetags.bootstrap5 import bs5_registry
 
 
-@register("Placeholder", registry=bs5_registry)
 class Placeholder(Component):
     class Kwargs:
         as_: str = "span"
@@ -40,13 +38,12 @@ class Placeholder(Component):
         }
 
     template: types.django_html = """
-        {% load component_tags bootstrap5 %}
+        {% load component_tags %}
 
         <{{ tag }} {% html_attrs attrs class=classes %}></{{ tag }}>
     """
 
 
-@register("PlaceholderButton", registry=bs5_registry)
 class PlaceholderButton(Component):
     class Kwargs:
         variant: Variant = "primary"
@@ -68,7 +65,7 @@ class PlaceholderButton(Component):
         }
 
     template: types.django_html = """
-        {% load component_tags bootstrap5 %}
+        {% load component_tags %}
 
         <button {% html_attrs attrs class=classes disabled=True defaults:aria-hidden="true" %}></button>
     """

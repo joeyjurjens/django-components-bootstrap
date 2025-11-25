@@ -9,12 +9,12 @@ class TestDropdownButton(SimpleTestCase):
 
     def test_basic(self):
         template = Template("""
-            {% load bootstrap5 %}
-            {% bootstrap5 "DropdownButton" title="Dropdown button" variant="secondary" %}
-              {% bootstrap5 "DropdownItem" href="#" %}Action{% endbootstrap5 %}
-              {% bootstrap5 "DropdownItem" href="#" %}Another action{% endbootstrap5 %}
-              {% bootstrap5 "DropdownItem" href="#" %}Something else here{% endbootstrap5 %}
-            {% endbootstrap5 %}
+            {% load component_tags %}
+            {% component "DropdownButton" title="Dropdown button" variant="secondary" %}
+              {% component "DropdownItem" href="#" %}Action{% endcomponent %}
+              {% component "DropdownItem" href="#" %}Another action{% endcomponent %}
+              {% component "DropdownItem" href="#" %}Something else here{% endcomponent %}
+            {% endcomponent %}
         """)
         rendered = template.render(Context())
 
@@ -35,11 +35,11 @@ class TestDropdownButton(SimpleTestCase):
 
     def test_variant_primary(self):
         template = Template("""
-            {% load bootstrap5 %}
-            {% bootstrap5 "DropdownButton" title="Primary" variant="primary" %}
-              {% bootstrap5 "DropdownItem" href="#" %}Action{% endbootstrap5 %}
-              {% bootstrap5 "DropdownItem" href="#" %}Another action{% endbootstrap5 %}
-            {% endbootstrap5 %}
+            {% load component_tags %}
+            {% component "DropdownButton" title="Primary" variant="primary" %}
+              {% component "DropdownItem" href="#" %}Action{% endcomponent %}
+              {% component "DropdownItem" href="#" %}Another action{% endcomponent %}
+            {% endcomponent %}
         """)
         rendered = template.render(Context())
 
@@ -59,11 +59,11 @@ class TestDropdownButton(SimpleTestCase):
 
     def test_variant_success(self):
         template = Template("""
-            {% load bootstrap5 %}
-            {% bootstrap5 "DropdownButton" title="Success" variant="success" %}
-              {% bootstrap5 "DropdownItem" href="#" %}Action{% endbootstrap5 %}
-              {% bootstrap5 "DropdownItem" href="#" %}Another action{% endbootstrap5 %}
-            {% endbootstrap5 %}
+            {% load component_tags %}
+            {% component "DropdownButton" title="Success" variant="success" %}
+              {% component "DropdownItem" href="#" %}Action{% endcomponent %}
+              {% component "DropdownItem" href="#" %}Another action{% endcomponent %}
+            {% endcomponent %}
         """)
         rendered = template.render(Context())
 
@@ -83,11 +83,11 @@ class TestDropdownButton(SimpleTestCase):
 
     def test_variant_danger(self):
         template = Template("""
-            {% load bootstrap5 %}
-            {% bootstrap5 "DropdownButton" title="Danger" variant="danger" %}
-              {% bootstrap5 "DropdownItem" href="#" %}Action{% endbootstrap5 %}
-              {% bootstrap5 "DropdownItem" href="#" %}Another action{% endbootstrap5 %}
-            {% endbootstrap5 %}
+            {% load component_tags %}
+            {% component "DropdownButton" title="Danger" variant="danger" %}
+              {% component "DropdownItem" href="#" %}Action{% endcomponent %}
+              {% component "DropdownItem" href="#" %}Another action{% endcomponent %}
+            {% endcomponent %}
         """)
         rendered = template.render(Context())
 
@@ -107,11 +107,11 @@ class TestDropdownButton(SimpleTestCase):
 
     def test_variant_warning(self):
         template = Template("""
-            {% load bootstrap5 %}
-            {% bootstrap5 "DropdownButton" title="Warning" variant="warning" %}
-              {% bootstrap5 "DropdownItem" href="#" %}Action{% endbootstrap5 %}
-              {% bootstrap5 "DropdownItem" href="#" %}Another action{% endbootstrap5 %}
-            {% endbootstrap5 %}
+            {% load component_tags %}
+            {% component "DropdownButton" title="Warning" variant="warning" %}
+              {% component "DropdownItem" href="#" %}Action{% endcomponent %}
+              {% component "DropdownItem" href="#" %}Another action{% endcomponent %}
+            {% endcomponent %}
         """)
         rendered = template.render(Context())
 
@@ -131,11 +131,11 @@ class TestDropdownButton(SimpleTestCase):
 
     def test_variant_info(self):
         template = Template("""
-            {% load bootstrap5 %}
-            {% bootstrap5 "DropdownButton" title="Info" variant="info" %}
-              {% bootstrap5 "DropdownItem" href="#" %}Action{% endbootstrap5 %}
-              {% bootstrap5 "DropdownItem" href="#" %}Another action{% endbootstrap5 %}
-            {% endbootstrap5 %}
+            {% load component_tags %}
+            {% component "DropdownButton" title="Info" variant="info" %}
+              {% component "DropdownItem" href="#" %}Action{% endcomponent %}
+              {% component "DropdownItem" href="#" %}Another action{% endcomponent %}
+            {% endcomponent %}
         """)
         rendered = template.render(Context())
 
@@ -155,11 +155,11 @@ class TestDropdownButton(SimpleTestCase):
 
     def test_variant_light(self):
         template = Template("""
-            {% load bootstrap5 %}
-            {% bootstrap5 "DropdownButton" title="Light" variant="light" %}
-              {% bootstrap5 "DropdownItem" href="#" %}Action{% endbootstrap5 %}
-              {% bootstrap5 "DropdownItem" href="#" %}Another action{% endbootstrap5 %}
-            {% endbootstrap5 %}
+            {% load component_tags %}
+            {% component "DropdownButton" title="Light" variant="light" %}
+              {% component "DropdownItem" href="#" %}Action{% endcomponent %}
+              {% component "DropdownItem" href="#" %}Another action{% endcomponent %}
+            {% endcomponent %}
         """)
         rendered = template.render(Context())
 
@@ -179,11 +179,11 @@ class TestDropdownButton(SimpleTestCase):
 
     def test_variant_dark(self):
         template = Template("""
-            {% load bootstrap5 %}
-            {% bootstrap5 "DropdownButton" title="Dark" variant="dark" %}
-              {% bootstrap5 "DropdownItem" href="#" %}Action{% endbootstrap5 %}
-              {% bootstrap5 "DropdownItem" href="#" %}Another action{% endbootstrap5 %}
-            {% endbootstrap5 %}
+            {% load component_tags %}
+            {% component "DropdownButton" title="Dark" variant="dark" %}
+              {% component "DropdownItem" href="#" %}Action{% endcomponent %}
+              {% component "DropdownItem" href="#" %}Another action{% endcomponent %}
+            {% endcomponent %}
         """)
         rendered = template.render(Context())
 
@@ -203,11 +203,11 @@ class TestDropdownButton(SimpleTestCase):
 
     def test_size_large(self):
         template = Template("""
-            {% load bootstrap5 %}
-            {% bootstrap5 "DropdownButton" title="Large button" variant="secondary" size="lg" %}
-              {% bootstrap5 "DropdownItem" href="#" %}Action{% endbootstrap5 %}
-              {% bootstrap5 "DropdownItem" href="#" %}Another action{% endbootstrap5 %}
-            {% endbootstrap5 %}
+            {% load component_tags %}
+            {% component "DropdownButton" title="Large button" variant="secondary" size="lg" %}
+              {% component "DropdownItem" href="#" %}Action{% endcomponent %}
+              {% component "DropdownItem" href="#" %}Another action{% endcomponent %}
+            {% endcomponent %}
         """)
         rendered = template.render(Context())
 
@@ -227,11 +227,11 @@ class TestDropdownButton(SimpleTestCase):
 
     def test_size_small(self):
         template = Template("""
-            {% load bootstrap5 %}
-            {% bootstrap5 "DropdownButton" title="Small button" variant="secondary" size="sm" %}
-              {% bootstrap5 "DropdownItem" href="#" %}Action{% endbootstrap5 %}
-              {% bootstrap5 "DropdownItem" href="#" %}Another action{% endbootstrap5 %}
-            {% endbootstrap5 %}
+            {% load component_tags %}
+            {% component "DropdownButton" title="Small button" variant="secondary" size="sm" %}
+              {% component "DropdownItem" href="#" %}Action{% endcomponent %}
+              {% component "DropdownItem" href="#" %}Another action{% endcomponent %}
+            {% endcomponent %}
         """)
         rendered = template.render(Context())
 
@@ -251,11 +251,11 @@ class TestDropdownButton(SimpleTestCase):
 
     def test_dark_menu(self):
         template = Template("""
-            {% load bootstrap5 %}
-            {% bootstrap5 "DropdownButton" title="Dropdown" variant="secondary" dark=True %}
-              {% bootstrap5 "DropdownItem" href="#" %}Action{% endbootstrap5 %}
-              {% bootstrap5 "DropdownItem" href="#" %}Another action{% endbootstrap5 %}
-            {% endbootstrap5 %}
+            {% load component_tags %}
+            {% component "DropdownButton" title="Dropdown" variant="secondary" dark=True %}
+              {% component "DropdownItem" href="#" %}Action{% endcomponent %}
+              {% component "DropdownItem" href="#" %}Another action{% endcomponent %}
+            {% endcomponent %}
         """)
         rendered = template.render(Context())
 
@@ -275,11 +275,11 @@ class TestDropdownButton(SimpleTestCase):
 
     def test_menu_alignment_end(self):
         template = Template("""
-            {% load bootstrap5 %}
-            {% bootstrap5 "DropdownButton" title="Dropdown" variant="secondary" align="end" %}
-              {% bootstrap5 "DropdownItem" href="#" %}Action{% endbootstrap5 %}
-              {% bootstrap5 "DropdownItem" href="#" %}Another action{% endbootstrap5 %}
-            {% endbootstrap5 %}
+            {% load component_tags %}
+            {% component "DropdownButton" title="Dropdown" variant="secondary" align="end" %}
+              {% component "DropdownItem" href="#" %}Action{% endcomponent %}
+              {% component "DropdownItem" href="#" %}Another action{% endcomponent %}
+            {% endcomponent %}
         """)
         rendered = template.render(Context())
 
@@ -303,14 +303,14 @@ class TestSplitButton(SimpleTestCase):
 
     def test_basic_split_button(self):
         template = Template("""
-            {% load bootstrap5 %}
-            {% bootstrap5 "SplitButton" title="Primary" variant="primary" %}
-              {% bootstrap5 "DropdownItem" href="#" %}Action{% endbootstrap5 %}
-              {% bootstrap5 "DropdownItem" href="#" %}Another action{% endbootstrap5 %}
-              {% bootstrap5 "DropdownItem" href="#" %}Something else here{% endbootstrap5 %}
-              {% bootstrap5 "DropdownDivider" / %}
-              {% bootstrap5 "DropdownItem" href="#" %}Separated link{% endbootstrap5 %}
-            {% endbootstrap5 %}
+            {% load component_tags %}
+            {% component "SplitButton" title="Primary" variant="primary" %}
+              {% component "DropdownItem" href="#" %}Action{% endcomponent %}
+              {% component "DropdownItem" href="#" %}Another action{% endcomponent %}
+              {% component "DropdownItem" href="#" %}Something else here{% endcomponent %}
+              {% component "DropdownDivider" / %}
+              {% component "DropdownItem" href="#" %}Separated link{% endcomponent %}
+            {% endcomponent %}
         """)
         rendered = template.render(Context())
 
@@ -338,13 +338,13 @@ class TestSplitButton(SimpleTestCase):
 
     def test_split_button_danger(self):
         template = Template("""
-            {% load bootstrap5 %}
-            {% bootstrap5 "SplitButton" title="Danger" variant="danger" %}
-              {% bootstrap5 "DropdownItem" href="#" %}Action{% endbootstrap5 %}
-              {% bootstrap5 "DropdownItem" href="#" %}Another action{% endbootstrap5 %}
-              {% bootstrap5 "DropdownDivider" / %}
-              {% bootstrap5 "DropdownItem" href="#" %}Separated link{% endbootstrap5 %}
-            {% endbootstrap5 %}
+            {% load component_tags %}
+            {% component "SplitButton" title="Danger" variant="danger" %}
+              {% component "DropdownItem" href="#" %}Action{% endcomponent %}
+              {% component "DropdownItem" href="#" %}Another action{% endcomponent %}
+              {% component "DropdownDivider" / %}
+              {% component "DropdownItem" href="#" %}Separated link{% endcomponent %}
+            {% endcomponent %}
         """)
         rendered = template.render(Context())
 
@@ -371,11 +371,11 @@ class TestSplitButton(SimpleTestCase):
 
     def test_split_button_success(self):
         template = Template("""
-            {% load bootstrap5 %}
-            {% bootstrap5 "SplitButton" title="Success" variant="success" %}
-              {% bootstrap5 "DropdownItem" href="#" %}Action{% endbootstrap5 %}
-              {% bootstrap5 "DropdownItem" href="#" %}Another action{% endbootstrap5 %}
-            {% endbootstrap5 %}
+            {% load component_tags %}
+            {% component "SplitButton" title="Success" variant="success" %}
+              {% component "DropdownItem" href="#" %}Action{% endcomponent %}
+              {% component "DropdownItem" href="#" %}Another action{% endcomponent %}
+            {% endcomponent %}
         """)
         rendered = template.render(Context())
 
@@ -400,11 +400,11 @@ class TestSplitButton(SimpleTestCase):
 
     def test_split_button_large(self):
         template = Template("""
-            {% load bootstrap5 %}
-            {% bootstrap5 "SplitButton" title="Large button" variant="primary" size="lg" %}
-              {% bootstrap5 "DropdownItem" href="#" %}Action{% endbootstrap5 %}
-              {% bootstrap5 "DropdownItem" href="#" %}Another action{% endbootstrap5 %}
-            {% endbootstrap5 %}
+            {% load component_tags %}
+            {% component "SplitButton" title="Large button" variant="primary" size="lg" %}
+              {% component "DropdownItem" href="#" %}Action{% endcomponent %}
+              {% component "DropdownItem" href="#" %}Another action{% endcomponent %}
+            {% endcomponent %}
         """)
         rendered = template.render(Context())
 
@@ -429,11 +429,11 @@ class TestSplitButton(SimpleTestCase):
 
     def test_split_button_small(self):
         template = Template("""
-            {% load bootstrap5 %}
-            {% bootstrap5 "SplitButton" title="Small button" variant="secondary" size="sm" %}
-              {% bootstrap5 "DropdownItem" href="#" %}Action{% endbootstrap5 %}
-              {% bootstrap5 "DropdownItem" href="#" %}Another action{% endbootstrap5 %}
-            {% endbootstrap5 %}
+            {% load component_tags %}
+            {% component "SplitButton" title="Small button" variant="secondary" size="sm" %}
+              {% component "DropdownItem" href="#" %}Action{% endcomponent %}
+              {% component "DropdownItem" href="#" %}Another action{% endcomponent %}
+            {% endcomponent %}
         """)
         rendered = template.render(Context())
 
@@ -458,11 +458,11 @@ class TestSplitButton(SimpleTestCase):
 
     def test_split_button_custom_toggle_label(self):
         template = Template("""
-            {% load bootstrap5 %}
-            {% bootstrap5 "SplitButton" title="Action" variant="primary" toggle_label="Custom toggle" %}
-              {% bootstrap5 "DropdownItem" href="#" %}Action{% endbootstrap5 %}
-              {% bootstrap5 "DropdownItem" href="#" %}Another action{% endbootstrap5 %}
-            {% endbootstrap5 %}
+            {% load component_tags %}
+            {% component "SplitButton" title="Action" variant="primary" toggle_label="Custom toggle" %}
+              {% component "DropdownItem" href="#" %}Action{% endcomponent %}
+              {% component "DropdownItem" href="#" %}Another action{% endcomponent %}
+            {% endcomponent %}
         """)
         rendered = template.render(Context())
 

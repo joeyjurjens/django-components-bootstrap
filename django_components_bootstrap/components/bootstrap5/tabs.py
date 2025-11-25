@@ -3,10 +3,9 @@ from typing import NamedTuple
 from django.template import Context
 from django.utils.safestring import mark_safe
 from django.utils.text import slugify
-from django_components import Component, SlotInput, register, types
+from django_components import Component, SlotInput, types
 
 from django_components_bootstrap.components.bootstrap5.types import NOT_PROVIDED, NavVariant
-from django_components_bootstrap.templatetags.bootstrap5 import bs5_registry
 
 
 class TabContext(NamedTuple):
@@ -15,7 +14,6 @@ class TabContext(NamedTuple):
     enabled: bool
 
 
-@register("TabContainer", registry=bs5_registry)
 class TabContainer(Component):
     class Kwargs:
         id: str | None = None
@@ -33,7 +31,7 @@ class TabContainer(Component):
         }
 
     template: types.django_html = """
-        {% load component_tags bootstrap5 %}
+        {% load component_tags %}
 
         {% provide "tab_container" id=container_id %}
             <div {% html_attrs attrs %}>
@@ -43,7 +41,6 @@ class TabContainer(Component):
     """
 
 
-@register("TabContent", registry=bs5_registry)
 class TabContent(Component):
     class Kwargs:
         as_: str = "div"
@@ -59,7 +56,7 @@ class TabContent(Component):
         }
 
     template: types.django_html = """
-        {% load component_tags bootstrap5 %}
+        {% load component_tags %}
 
         <{{ tag }} {% html_attrs attrs defaults:class="tab-content" %}>
             {% slot "default" / %}
@@ -67,7 +64,6 @@ class TabContent(Component):
     """
 
 
-@register("TabPane", registry=bs5_registry)
 class TabPane(Component):
     class Kwargs:
         active: bool = False
@@ -92,7 +88,7 @@ class TabPane(Component):
         }
 
     template: types.django_html = """
-        {% load component_tags bootstrap5 %}
+        {% load component_tags %}
 
         <{{ tag }} {% html_attrs attrs class=classes defaults:role="tabpanel" defaults:tabindex="0" %}>
             {% slot "default" / %}
@@ -100,7 +96,6 @@ class TabPane(Component):
     """
 
 
-@register("TabsRenderer", registry=bs5_registry)
 class TabsRenderer(Component):
     class Kwargs:
         tabs_id: str
@@ -126,30 +121,29 @@ class TabsRenderer(Component):
         }
 
     template: types.django_html = """
-        {% load component_tags bootstrap5 %}
+        {% load component_tags %}
 
         <div {% html_attrs attrs %}>
-            {% bootstrap5 "Nav" variant=variant fill=fill justified=justified as_="ul" attrs:id=tabs_id attrs:role="tablist" %}
+            {% component "Nav" variant=variant fill=fill justified=justified as_="ul" attrs:id=tabs_id attrs:role="tablist" %}
                 {% for tab in tab_data %}
-                    {% bootstrap5 "NavItem" as_="li" attrs:role="presentation" %}
-                        {% bootstrap5 "NavLink" as_="button" active=tab.is_active disabled=tab.disabled attrs:id=tab.nav_tab_id attrs:data-bs-toggle="tab" attrs:data-bs-target="#{{ tab.pane_id }}" attrs:role="tab" attrs:aria-controls=tab.pane_id attrs:aria-selected=tab.aria_selected attrs:class=tab.tab_class %}
+                    {% component "NavItem" as_="li" attrs:role="presentation" %}
+                        {% component "NavLink" as_="button" active=tab.is_active disabled=tab.disabled attrs:id=tab.nav_tab_id attrs:data-bs-toggle="tab" attrs:data-bs-target="#{{ tab.pane_id }}" attrs:role="tab" attrs:aria-controls=tab.pane_id attrs:aria-selected=tab.aria_selected attrs:class=tab.tab_class %}
                             {{ tab.title }}
-                        {% endbootstrap5 %}
-                    {% endbootstrap5 %}
+                        {% endcomponent %}
+                    {% endcomponent %}
                 {% endfor %}
-            {% endbootstrap5 %}
-            {% bootstrap5 "TabContent" %}
+            {% endcomponent %}
+            {% component "TabContent" %}
                 {% for tab in tab_data %}
-                    {% bootstrap5 "TabPane" active=tab.is_active attrs:id=tab.pane_id attrs:aria-labelledby=tab.nav_tab_id %}
+                    {% component "TabPane" active=tab.is_active attrs:id=tab.pane_id attrs:aria-labelledby=tab.nav_tab_id %}
                         {{ tab.content }}
-                    {% endbootstrap5 %}
+                    {% endcomponent %}
                 {% endfor %}
-            {% endbootstrap5 %}
+            {% endcomponent %}
         </div>
     """
 
 
-@register("Tabs", registry=bs5_registry)
 class Tabs(Component):
     class Kwargs:
         id: str | None = None
@@ -177,7 +171,7 @@ class Tabs(Component):
         }
 
     template: types.django_html = """
-        {% load component_tags bootstrap5 %}
+        {% load component_tags %}
 
         {% provide "_tabs" id=tabs_id tab_data=tab_data default_active_tab=default_active_tab enabled=True %}
             {% slot "default" / %}
@@ -201,7 +195,6 @@ class Tabs(Component):
         )
 
 
-@register("Tab", registry=bs5_registry)
 class Tab(Component):
     class Kwargs:
         tab_id: str
@@ -228,26 +221,20 @@ class Tab(Component):
         nav_tab_id = f"{slugs[0]}-tab-{slugs[1]}"
         pane_id = f"{slugs[0]}-pane-{slugs[1]}"
 
-        is_active = (
-            kwargs.tab_id == tabs_ctx.default_active_tab
-            if tabs_ctx.default_active_tab
-            else len(tabs_ctx.tab_data) == 0
-        )
-
         return {
             "parent_tabs": tabs_ctx.tab_data,
+            "default_active_tab": tabs_ctx.default_active_tab,
             "nav_tab_id": nav_tab_id,
             "pane_id": pane_id,
             "tab_id": kwargs.tab_id,
             "title": kwargs.title,
             "disabled": kwargs.disabled,
             "tab_class": kwargs.tab_class or "",
-            "is_active": is_active,
             "empty_tab_data": [],
         }
 
     template: types.django_html = """
-        {% load component_tags bootstrap5 %}
+        {% load component_tags %}
 
         {% provide "_tabs" id="" tab_data=empty_tab_data default_active_tab="" enabled=False %}
             {% slot "default" / %}
@@ -256,12 +243,20 @@ class Tab(Component):
 
     def on_render_after(self, context, template, content):
         parent_tabs: list[dict] = context["parent_tabs"]
-        is_active = context["is_active"]
+        default_active_tab = context["default_active_tab"]
+        tab_id = context["tab_id"]
+
+        is_active = (
+            tab_id == default_active_tab
+            if default_active_tab
+            else len(parent_tabs) == 0
+        )
+
         parent_tabs.append(
             {
                 "nav_tab_id": context["nav_tab_id"],
                 "pane_id": context["pane_id"],
-                "tab_id": context["tab_id"],
+                "tab_id": tab_id,
                 "title": context["title"],
                 "disabled": context["disabled"],
                 "tab_class": context["tab_class"],

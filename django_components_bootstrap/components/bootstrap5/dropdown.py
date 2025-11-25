@@ -1,5 +1,5 @@
 from django.template import Context
-from django_components import Component, SlotInput, register, types
+from django_components import Component, SlotInput, types
 
 from django_components_bootstrap.components.bootstrap5.types import (
     AlignmentStartEnd,
@@ -11,10 +11,8 @@ from django_components_bootstrap.components.bootstrap5.types import (
     Size,
     VariantWithLink,
 )
-from django_components_bootstrap.templatetags.bootstrap5 import bs5_registry
 
 
-@register("Dropdown", registry=bs5_registry)
 class Dropdown(Component):
     class Kwargs:
         direction: DropdownDirection = "down"
@@ -52,7 +50,7 @@ class Dropdown(Component):
         }
 
     template: types.django_html = """
-        {% load component_tags bootstrap5 %}
+        {% load component_tags %}
 
         {% provide "dropdown" dropdown_id=dropdown_id direction=direction auto_close=auto_close %}
             <div {% html_attrs attrs class=wrapper_class %} {% if auto_close %}data-bs-auto-close="{{ auto_close }}"{% endif %}>
@@ -62,7 +60,6 @@ class Dropdown(Component):
     """
 
 
-@register("DropdownToggle", registry=bs5_registry)
 class DropdownToggle(Component):
     class Kwargs:
         variant: VariantWithLink = "primary"
@@ -91,7 +88,7 @@ class DropdownToggle(Component):
         }
 
     template: types.django_html = """
-        {% load component_tags bootstrap5 %}
+        {% load component_tags %}
 
         <button {% html_attrs attrs class=classes type="button" data-bs-toggle="dropdown" defaults:aria-expanded="false" disabled=disabled %}>
             {% slot "default" / %}
@@ -99,7 +96,6 @@ class DropdownToggle(Component):
     """
 
 
-@register("DropdownMenu", registry=bs5_registry)
 class DropdownMenu(Component):
     class Kwargs:
         align: AlignmentStartEnd | None = None
@@ -145,7 +141,7 @@ class DropdownMenu(Component):
         }
 
     template: types.django_html = """
-        {% load component_tags bootstrap5 %}
+        {% load component_tags %}
 
         <ul {% html_attrs attrs class=classes %}>
             {% slot "default" / %}
@@ -153,7 +149,6 @@ class DropdownMenu(Component):
     """
 
 
-@register("DropdownItem", registry=bs5_registry)
 class DropdownItem(Component):
     class Kwargs:
         as_: AnchorOrButton = "a"
@@ -189,7 +184,7 @@ class DropdownItem(Component):
         }
 
     template: types.django_html = """
-        {% load component_tags bootstrap5 %}
+        {% load component_tags %}
 
         <li>
             {% if tag == "a" %}
@@ -205,7 +200,6 @@ class DropdownItem(Component):
     """
 
 
-@register("DropdownDivider", registry=bs5_registry)
 class DropdownDivider(Component):
     class Kwargs:
         attrs: dict | None = None
@@ -216,13 +210,12 @@ class DropdownDivider(Component):
         }
 
     template: types.django_html = """
-        {% load component_tags bootstrap5 %}
+        {% load component_tags %}
 
         <li><hr {% html_attrs attrs class="dropdown-divider" %}></li>
     """
 
 
-@register("DropdownHeader", registry=bs5_registry)
 class DropdownHeader(Component):
     class Kwargs:
         as_: HeadingLevel = "h6"
@@ -238,7 +231,7 @@ class DropdownHeader(Component):
         }
 
     template: types.django_html = """
-        {% load component_tags bootstrap5 %}
+        {% load component_tags %}
 
         <li>
             <{{ tag }} {% html_attrs attrs class="dropdown-header" %}>
@@ -248,7 +241,6 @@ class DropdownHeader(Component):
     """
 
 
-@register("DropdownItemText", registry=bs5_registry)
 class DropdownItemText(Component):
     class Kwargs:
         attrs: dict | None = None
@@ -262,7 +254,7 @@ class DropdownItemText(Component):
         }
 
     template: types.django_html = """
-        {% load component_tags bootstrap5 %}
+        {% load component_tags %}
 
         <li>
             <span {% html_attrs attrs class="dropdown-item-text" %}>

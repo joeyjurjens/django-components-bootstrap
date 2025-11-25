@@ -1,11 +1,9 @@
 from django.template import Context
-from django_components import Component, SlotInput, register, types
+from django_components import Component, SlotInput, types
 
 from django_components_bootstrap.components.bootstrap5.types import Size
-from django_components_bootstrap.templatetags.bootstrap5 import bs5_registry
 
 
-@register("Pagination", registry=bs5_registry)
 class Pagination(Component):
     class Kwargs:
         size: Size | None = None
@@ -27,7 +25,7 @@ class Pagination(Component):
         }
 
     template: types.django_html = """
-        {% load component_tags bootstrap5 %}
+        {% load component_tags %}
 
         <nav {% html_attrs attrs defaults:aria-label="Page navigation" %}>
             <ul {% html_attrs ul_attrs class=classes %}>
@@ -37,7 +35,6 @@ class Pagination(Component):
     """
 
 
-@register("PaginationItem", registry=bs5_registry)
 class PaginationItem(Component):
     class Kwargs:
         active: bool = False
@@ -66,7 +63,7 @@ class PaginationItem(Component):
         }
 
     template: types.django_html = """
-        {% load component_tags bootstrap5 %}
+        {% load component_tags %}
 
         <li {% html_attrs attrs class=classes %}>
             <a {% html_attrs class="page-link" href=href defaults:aria-label=aria_label %}{% if active %} aria-current="page"{% endif %}{% if disabled %} tabindex="-1" aria-disabled="true"{% endif %}>
@@ -76,12 +73,10 @@ class PaginationItem(Component):
     """
 
 
-@register("PageItem", registry=bs5_registry)
 class PageItem(PaginationItem):
     pass
 
 
-@register("PageLink", registry=bs5_registry)
 class PageLink(Component):
     class Kwargs:
         href: str = "#"
@@ -99,7 +94,7 @@ class PageLink(Component):
         }
 
     template: types.django_html = """
-        {% load component_tags bootstrap5 %}
+        {% load component_tags %}
 
         <a {% html_attrs attrs class="page-link" href=href defaults:aria-label=aria_label %}>
             {% slot "default" / %}
@@ -107,7 +102,6 @@ class PageLink(Component):
     """
 
 
-@register("PaginationFirst", registry=bs5_registry)
 class PaginationFirst(Component):
     class Kwargs:
         disabled: bool = False
@@ -130,7 +124,7 @@ class PaginationFirst(Component):
         }
 
     template: types.django_html = """
-    {% load component_tags bootstrap5 %}
+    {% load component_tags %}
 
         <li {% html_attrs attrs class=classes %}>
             <a class="page-link" href="{{ href }}"{% if disabled %} tabindex="-1" aria-disabled="true"{% endif %}>
@@ -141,7 +135,6 @@ class PaginationFirst(Component):
     """
 
 
-@register("PaginationPrev", registry=bs5_registry)
 class PaginationPrev(Component):
     class Kwargs:
         disabled: bool = False
@@ -164,7 +157,7 @@ class PaginationPrev(Component):
         }
 
     template: types.django_html = """
-    {% load component_tags bootstrap5 %}
+    {% load component_tags %}
 
         <li {% html_attrs attrs class=classes %}>
             <a class="page-link" href="{{ href }}"{% if disabled %} tabindex="-1" aria-disabled="true"{% endif %}>
@@ -175,7 +168,6 @@ class PaginationPrev(Component):
     """
 
 
-@register("PaginationNext", registry=bs5_registry)
 class PaginationNext(Component):
     class Kwargs:
         disabled: bool = False
@@ -198,7 +190,7 @@ class PaginationNext(Component):
         }
 
     template: types.django_html = """
-    {% load component_tags bootstrap5 %}
+    {% load component_tags %}
 
         <li {% html_attrs attrs class=classes %}>
             <a class="page-link" href="{{ href }}"{% if disabled %} tabindex="-1" aria-disabled="true"{% endif %}>
@@ -209,7 +201,6 @@ class PaginationNext(Component):
     """
 
 
-@register("PaginationLast", registry=bs5_registry)
 class PaginationLast(Component):
     class Kwargs:
         disabled: bool = False
@@ -232,7 +223,7 @@ class PaginationLast(Component):
         }
 
     template: types.django_html = """
-    {% load component_tags bootstrap5 %}
+    {% load component_tags %}
 
         <li {% html_attrs attrs class=classes %}>
             <a class="page-link" href="{{ href }}"{% if disabled %} tabindex="-1" aria-disabled="true"{% endif %}>
@@ -243,7 +234,6 @@ class PaginationLast(Component):
     """
 
 
-@register("PaginationEllipsis", registry=bs5_registry)
 class PaginationEllipsis(Component):
     class Kwargs:
         disabled: bool = False
@@ -264,7 +254,7 @@ class PaginationEllipsis(Component):
         }
 
     template: types.django_html = """
-    {% load component_tags bootstrap5 %}
+    {% load component_tags %}
 
         <li {% html_attrs attrs class=classes %}>
             <span class="page-link">

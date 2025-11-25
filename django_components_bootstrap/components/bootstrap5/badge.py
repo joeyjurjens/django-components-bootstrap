@@ -1,10 +1,8 @@
 from django.template import Context
-from django_components import Component, SlotInput, register, types
-
-from django_components_bootstrap.templatetags.bootstrap5 import bs5_registry
+from django_components import Component, SlotInput, types
 
 
-@register("Badge", registry=bs5_registry)
+
 class Badge(Component):
     class Kwargs:
         bg: str = "primary"
@@ -36,7 +34,7 @@ class Badge(Component):
         }
 
     template: types.django_html = """
-        {% load component_tags bootstrap5 %}
+        {% load component_tags %}
 
         <{{ tag }} {% html_attrs attrs class=css_class %}>
             {% slot "default" / %}

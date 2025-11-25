@@ -1,15 +1,13 @@
 from django.template import Context
-from django_components import Component, SlotInput, register, types
+from django_components import Component, SlotInput, types
 
 from django_components_bootstrap.components.bootstrap5.types import (
     Alignment,
     CardImgVariant,
     HeadingLevel,
 )
-from django_components_bootstrap.templatetags.bootstrap5 import bs5_registry
 
 
-@register("Card", registry=bs5_registry)
 class Card(Component):
     class Kwargs:
         as_: str = "div"
@@ -45,13 +43,13 @@ class Card(Component):
         }
 
     template: types.django_html = """
-        {% load component_tags bootstrap5 %}
+        {% load component_tags %}
 
         <{{ tag }} {% html_attrs attrs class=classes %}>
             {% if body %}
-                {% bootstrap5 "CardBody" %}
+                {% component "CardBody" %}
                     {% slot "default" / %}
-                {% endbootstrap5 %}
+                {% endcomponent %}
             {% else %}
                 {% slot "default" / %}
             {% endif %}
@@ -59,7 +57,6 @@ class Card(Component):
     """
 
 
-@register("CardHeader", registry=bs5_registry)
 class CardHeader(Component):
     class Kwargs:
         attrs: dict | None = None
@@ -73,7 +70,7 @@ class CardHeader(Component):
         }
 
     template: types.django_html = """
-        {% load component_tags bootstrap5 %}
+        {% load component_tags %}
 
         <div {% html_attrs attrs class="card-header" %}>
             {% slot "default" / %}
@@ -81,7 +78,6 @@ class CardHeader(Component):
     """
 
 
-@register("CardBody", registry=bs5_registry)
 class CardBody(Component):
     class Kwargs:
         attrs: dict | None = None
@@ -95,7 +91,7 @@ class CardBody(Component):
         }
 
     template: types.django_html = """
-    {% load component_tags bootstrap5 %}
+    {% load component_tags %}
 
         <div {% html_attrs attrs class="card-body" %}>
             {% slot "default" / %}
@@ -103,7 +99,6 @@ class CardBody(Component):
     """
 
 
-@register("CardFooter", registry=bs5_registry)
 class CardFooter(Component):
     class Kwargs:
         attrs: dict | None = None
@@ -117,7 +112,7 @@ class CardFooter(Component):
         }
 
     template: types.django_html = """
-    {% load component_tags bootstrap5 %}
+    {% load component_tags %}
 
         <div {% html_attrs attrs class="card-footer" %}>
             {% slot "default" / %}
@@ -125,7 +120,6 @@ class CardFooter(Component):
     """
 
 
-@register("CardTitle", registry=bs5_registry)
 class CardTitle(Component):
     class Kwargs:
         as_: HeadingLevel = "h5"
@@ -141,7 +135,7 @@ class CardTitle(Component):
         }
 
     template: types.django_html = """
-    {% load component_tags bootstrap5 %}
+    {% load component_tags %}
 
         <{{ tag }} {% html_attrs attrs class="card-title" %}>
             {% slot "default" / %}
@@ -149,7 +143,6 @@ class CardTitle(Component):
     """
 
 
-@register("CardSubtitle", registry=bs5_registry)
 class CardSubtitle(Component):
     class Kwargs:
         as_: HeadingLevel = "h6"
@@ -165,7 +158,7 @@ class CardSubtitle(Component):
         }
 
     template: types.django_html = """
-    {% load component_tags bootstrap5 %}
+    {% load component_tags %}
 
         <{{ tag }} {% html_attrs attrs class="card-subtitle" %}>
             {% slot "default" / %}
@@ -173,7 +166,6 @@ class CardSubtitle(Component):
     """
 
 
-@register("CardText", registry=bs5_registry)
 class CardText(Component):
     class Kwargs:
         attrs: dict | None = None
@@ -187,7 +179,7 @@ class CardText(Component):
         }
 
     template: types.django_html = """
-        {% load component_tags bootstrap5 %}
+        {% load component_tags %}
 
         <p {% html_attrs attrs class="card-text" %}>
             {% slot "default" / %}
@@ -195,7 +187,6 @@ class CardText(Component):
     """
 
 
-@register("CardLink", registry=bs5_registry)
 class CardLink(Component):
     class Kwargs:
         href: str = "#"
@@ -211,7 +202,7 @@ class CardLink(Component):
         }
 
     template: types.django_html = """
-        {% load component_tags bootstrap5 %}
+        {% load component_tags %}
 
         <a {% html_attrs attrs href=href class="card-link" %}>
             {% slot "default" / %}
@@ -219,7 +210,6 @@ class CardLink(Component):
     """
 
 
-@register("CardImg", registry=bs5_registry)
 class CardImg(Component):
     class Kwargs:
         src: str
@@ -246,13 +236,12 @@ class CardImg(Component):
         }
 
     template: types.django_html = """
-        {% load component_tags bootstrap5 %}
+        {% load component_tags %}
 
         <img {% html_attrs attrs src=src alt=alt class=img_class %} />
     """
 
 
-@register("CardImgOverlay", registry=bs5_registry)
 class CardImgOverlay(Component):
     class Kwargs:
         attrs: dict | None = None
@@ -266,7 +255,7 @@ class CardImgOverlay(Component):
         }
 
     template: types.django_html = """
-    {% load component_tags bootstrap5 %}
+    {% load component_tags %}
 
         <div {% html_attrs attrs class="card-img-overlay" %}>
             {% slot "default" / %}
@@ -274,7 +263,6 @@ class CardImgOverlay(Component):
     """
 
 
-@register("CardGroup", registry=bs5_registry)
 class CardGroup(Component):
     class Kwargs:
         attrs: dict | None = None
@@ -288,7 +276,7 @@ class CardGroup(Component):
         }
 
     template: types.django_html = """
-    {% load component_tags bootstrap5 %}
+    {% load component_tags %}
 
         <div {% html_attrs attrs class="card-group" %}>
             {% slot "default" / %}

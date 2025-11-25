@@ -9,10 +9,10 @@ class ProgressTests(SimpleTestCase):
 
     def test_basic(self):
         template = Template("""
-            {% load bootstrap5 %}
-            {% bootstrap5 "Progress" %}
-                {% bootstrap5 "ProgressBar" now=25 / %}
-            {% endbootstrap5 %}
+            {% load component_tags %}
+            {% component "Progress" %}
+                {% component "ProgressBar" now=25 / %}
+            {% endcomponent %}
         """)
         rendered = normalize_html(template.render(Context({})))
 
@@ -26,10 +26,10 @@ class ProgressTests(SimpleTestCase):
 
     def test_basic_0_percent(self):
         template = Template("""
-            {% load bootstrap5 %}
-            {% bootstrap5 "Progress" %}
-                {% bootstrap5 "ProgressBar" now=0 / %}
-            {% endbootstrap5 %}
+            {% load component_tags %}
+            {% component "Progress" %}
+                {% component "ProgressBar" now=0 / %}
+            {% endcomponent %}
         """)
         rendered = normalize_html(template.render(Context({})))
 
@@ -43,10 +43,10 @@ class ProgressTests(SimpleTestCase):
 
     def test_basic_50_percent(self):
         template = Template("""
-            {% load bootstrap5 %}
-            {% bootstrap5 "Progress" %}
-                {% bootstrap5 "ProgressBar" now=50 / %}
-            {% endbootstrap5 %}
+            {% load component_tags %}
+            {% component "Progress" %}
+                {% component "ProgressBar" now=50 / %}
+            {% endcomponent %}
         """)
         rendered = normalize_html(template.render(Context({})))
 
@@ -60,10 +60,10 @@ class ProgressTests(SimpleTestCase):
 
     def test_basic_75_percent(self):
         template = Template("""
-            {% load bootstrap5 %}
-            {% bootstrap5 "Progress" %}
-                {% bootstrap5 "ProgressBar" now=75 / %}
-            {% endbootstrap5 %}
+            {% load component_tags %}
+            {% component "Progress" %}
+                {% component "ProgressBar" now=75 / %}
+            {% endcomponent %}
         """)
         rendered = normalize_html(template.render(Context({})))
 
@@ -77,10 +77,10 @@ class ProgressTests(SimpleTestCase):
 
     def test_basic_100_percent(self):
         template = Template("""
-            {% load bootstrap5 %}
-            {% bootstrap5 "Progress" %}
-                {% bootstrap5 "ProgressBar" now=100 / %}
-            {% endbootstrap5 %}
+            {% load component_tags %}
+            {% component "Progress" %}
+                {% component "ProgressBar" now=100 / %}
+            {% endcomponent %}
         """)
         rendered = normalize_html(template.render(Context({})))
 
@@ -95,10 +95,10 @@ class ProgressTests(SimpleTestCase):
     # Heights
     def test_height_1px(self):
         template = Template("""
-            {% load bootstrap5 %}
-            {% bootstrap5 "Progress" height="1px" %}
-                {% bootstrap5 "ProgressBar" now=25 / %}
-            {% endbootstrap5 %}
+            {% load component_tags %}
+            {% component "Progress" height="1px" %}
+                {% component "ProgressBar" now=25 / %}
+            {% endcomponent %}
         """)
         rendered = normalize_html(template.render(Context({})))
 
@@ -112,10 +112,10 @@ class ProgressTests(SimpleTestCase):
 
     def test_height_20px(self):
         template = Template("""
-            {% load bootstrap5 %}
-            {% bootstrap5 "Progress" height="20px" %}
-                {% bootstrap5 "ProgressBar" now=25 / %}
-            {% endbootstrap5 %}
+            {% load component_tags %}
+            {% component "Progress" height="20px" %}
+                {% component "ProgressBar" now=25 / %}
+            {% endcomponent %}
         """)
         rendered = normalize_html(template.render(Context({})))
 
@@ -130,10 +130,10 @@ class ProgressTests(SimpleTestCase):
     # With Label
     def test_with_label(self):
         template = Template("""
-            {% load bootstrap5 %}
-            {% bootstrap5 "Progress" %}
-                {% bootstrap5 "ProgressBar" now=25 %}25%{% endbootstrap5 %}
-            {% endbootstrap5 %}
+            {% load component_tags %}
+            {% component "Progress" %}
+                {% component "ProgressBar" now=25 %}25%{% endcomponent %}
+            {% endcomponent %}
         """)
         rendered = normalize_html(template.render(Context({})))
 
@@ -148,10 +148,10 @@ class ProgressTests(SimpleTestCase):
     # Background Colors - All 8 Variants
     def test_variant_success(self):
         template = Template("""
-            {% load bootstrap5 %}
-            {% bootstrap5 "Progress" %}
-                {% bootstrap5 "ProgressBar" now=25 variant="success" / %}
-            {% endbootstrap5 %}
+            {% load component_tags %}
+            {% component "Progress" %}
+                {% component "ProgressBar" now=25 variant="success" / %}
+            {% endcomponent %}
         """)
         rendered = normalize_html(template.render(Context({})))
 
@@ -165,10 +165,10 @@ class ProgressTests(SimpleTestCase):
 
     def test_variant_info(self):
         template = Template("""
-            {% load bootstrap5 %}
-            {% bootstrap5 "Progress" %}
-                {% bootstrap5 "ProgressBar" now=50 variant="info" / %}
-            {% endbootstrap5 %}
+            {% load component_tags %}
+            {% component "Progress" %}
+                {% component "ProgressBar" now=50 variant="info" / %}
+            {% endcomponent %}
         """)
         rendered = normalize_html(template.render(Context({})))
 
@@ -182,10 +182,10 @@ class ProgressTests(SimpleTestCase):
 
     def test_variant_warning(self):
         template = Template("""
-            {% load bootstrap5 %}
-            {% bootstrap5 "Progress" %}
-                {% bootstrap5 "ProgressBar" now=75 variant="warning" / %}
-            {% endbootstrap5 %}
+            {% load component_tags %}
+            {% component "Progress" %}
+                {% component "ProgressBar" now=75 variant="warning" / %}
+            {% endcomponent %}
         """)
         rendered = normalize_html(template.render(Context({})))
 
@@ -199,10 +199,10 @@ class ProgressTests(SimpleTestCase):
 
     def test_variant_danger(self):
         template = Template("""
-            {% load bootstrap5 %}
-            {% bootstrap5 "Progress" %}
-                {% bootstrap5 "ProgressBar" now=100 variant="danger" / %}
-            {% endbootstrap5 %}
+            {% load component_tags %}
+            {% component "Progress" %}
+                {% component "ProgressBar" now=100 variant="danger" / %}
+            {% endcomponent %}
         """)
         rendered = normalize_html(template.render(Context({})))
 
@@ -216,10 +216,10 @@ class ProgressTests(SimpleTestCase):
 
     def test_variant_primary(self):
         template = Template("""
-            {% load bootstrap5 %}
-            {% bootstrap5 "Progress" %}
-                {% bootstrap5 "ProgressBar" now=30 variant="primary" / %}
-            {% endbootstrap5 %}
+            {% load component_tags %}
+            {% component "Progress" %}
+                {% component "ProgressBar" now=30 variant="primary" / %}
+            {% endcomponent %}
         """)
         rendered = normalize_html(template.render(Context({})))
 
@@ -233,10 +233,10 @@ class ProgressTests(SimpleTestCase):
 
     def test_variant_secondary(self):
         template = Template("""
-            {% load bootstrap5 %}
-            {% bootstrap5 "Progress" %}
-                {% bootstrap5 "ProgressBar" now=40 variant="secondary" / %}
-            {% endbootstrap5 %}
+            {% load component_tags %}
+            {% component "Progress" %}
+                {% component "ProgressBar" now=40 variant="secondary" / %}
+            {% endcomponent %}
         """)
         rendered = normalize_html(template.render(Context({})))
 
@@ -250,10 +250,10 @@ class ProgressTests(SimpleTestCase):
 
     def test_variant_light(self):
         template = Template("""
-            {% load bootstrap5 %}
-            {% bootstrap5 "Progress" %}
-                {% bootstrap5 "ProgressBar" now=60 variant="light" / %}
-            {% endbootstrap5 %}
+            {% load component_tags %}
+            {% component "Progress" %}
+                {% component "ProgressBar" now=60 variant="light" / %}
+            {% endcomponent %}
         """)
         rendered = normalize_html(template.render(Context({})))
 
@@ -267,10 +267,10 @@ class ProgressTests(SimpleTestCase):
 
     def test_variant_dark(self):
         template = Template("""
-            {% load bootstrap5 %}
-            {% bootstrap5 "Progress" %}
-                {% bootstrap5 "ProgressBar" now=80 variant="dark" / %}
-            {% endbootstrap5 %}
+            {% load component_tags %}
+            {% component "Progress" %}
+                {% component "ProgressBar" now=80 variant="dark" / %}
+            {% endcomponent %}
         """)
         rendered = normalize_html(template.render(Context({})))
 
@@ -285,10 +285,10 @@ class ProgressTests(SimpleTestCase):
     # Variants with Labels
     def test_variant_success_with_label(self):
         template = Template("""
-            {% load bootstrap5 %}
-            {% bootstrap5 "Progress" %}
-                {% bootstrap5 "ProgressBar" now=25 variant="success" %}25%{% endbootstrap5 %}
-            {% endbootstrap5 %}
+            {% load component_tags %}
+            {% component "Progress" %}
+                {% component "ProgressBar" now=25 variant="success" %}25%{% endcomponent %}
+            {% endcomponent %}
         """)
         rendered = normalize_html(template.render(Context({})))
 
@@ -302,10 +302,10 @@ class ProgressTests(SimpleTestCase):
 
     def test_variant_info_with_label(self):
         template = Template("""
-            {% load bootstrap5 %}
-            {% bootstrap5 "Progress" %}
-                {% bootstrap5 "ProgressBar" now=50 variant="info" %}50%{% endbootstrap5 %}
-            {% endbootstrap5 %}
+            {% load component_tags %}
+            {% component "Progress" %}
+                {% component "ProgressBar" now=50 variant="info" %}50%{% endcomponent %}
+            {% endcomponent %}
         """)
         rendered = normalize_html(template.render(Context({})))
 
@@ -319,10 +319,10 @@ class ProgressTests(SimpleTestCase):
 
     def test_variant_warning_with_label(self):
         template = Template("""
-            {% load bootstrap5 %}
-            {% bootstrap5 "Progress" %}
-                {% bootstrap5 "ProgressBar" now=75 variant="warning" %}75%{% endbootstrap5 %}
-            {% endbootstrap5 %}
+            {% load component_tags %}
+            {% component "Progress" %}
+                {% component "ProgressBar" now=75 variant="warning" %}75%{% endcomponent %}
+            {% endcomponent %}
         """)
         rendered = normalize_html(template.render(Context({})))
 
@@ -336,10 +336,10 @@ class ProgressTests(SimpleTestCase):
 
     def test_variant_danger_with_label(self):
         template = Template("""
-            {% load bootstrap5 %}
-            {% bootstrap5 "Progress" %}
-                {% bootstrap5 "ProgressBar" now=100 variant="danger" %}100%{% endbootstrap5 %}
-            {% endbootstrap5 %}
+            {% load component_tags %}
+            {% component "Progress" %}
+                {% component "ProgressBar" now=100 variant="danger" %}100%{% endcomponent %}
+            {% endcomponent %}
         """)
         rendered = normalize_html(template.render(Context({})))
 
@@ -354,18 +354,18 @@ class ProgressTests(SimpleTestCase):
     # Multiple Bars
     def test_multiple_bars(self):
         template = Template("""
-            {% load bootstrap5 %}
-            {% bootstrap5 "ProgressStacked" %}
-                {% bootstrap5 "Progress" attrs:style="width: 15%" %}
-                    {% bootstrap5 "ProgressBar" now=15 / %}
-                {% endbootstrap5 %}
-                {% bootstrap5 "Progress" attrs:style="width: 30%" %}
-                    {% bootstrap5 "ProgressBar" now=30 variant="success" / %}
-                {% endbootstrap5 %}
-                {% bootstrap5 "Progress" attrs:style="width: 20%" %}
-                    {% bootstrap5 "ProgressBar" now=20 variant="info" / %}
-                {% endbootstrap5 %}
-            {% endbootstrap5 %}
+            {% load component_tags %}
+            {% component "ProgressStacked" %}
+                {% component "Progress" attrs:style="width: 15%" %}
+                    {% component "ProgressBar" now=15 / %}
+                {% endcomponent %}
+                {% component "Progress" attrs:style="width: 30%" %}
+                    {% component "ProgressBar" now=30 variant="success" / %}
+                {% endcomponent %}
+                {% component "Progress" attrs:style="width: 20%" %}
+                    {% component "ProgressBar" now=20 variant="info" / %}
+                {% endcomponent %}
+            {% endcomponent %}
         """)
         rendered = normalize_html(template.render(Context({})))
 
@@ -376,10 +376,10 @@ class ProgressTests(SimpleTestCase):
     # Striped Bars
     def test_striped_basic(self):
         template = Template("""
-            {% load bootstrap5 %}
-            {% bootstrap5 "Progress" %}
-                {% bootstrap5 "ProgressBar" now=10 striped=True / %}
-            {% endbootstrap5 %}
+            {% load component_tags %}
+            {% component "Progress" %}
+                {% component "ProgressBar" now=10 striped=True / %}
+            {% endcomponent %}
         """)
         rendered = normalize_html(template.render(Context({})))
 
@@ -393,10 +393,10 @@ class ProgressTests(SimpleTestCase):
 
     def test_striped_success(self):
         template = Template("""
-            {% load bootstrap5 %}
-            {% bootstrap5 "Progress" %}
-                {% bootstrap5 "ProgressBar" now=25 variant="success" striped=True / %}
-            {% endbootstrap5 %}
+            {% load component_tags %}
+            {% component "Progress" %}
+                {% component "ProgressBar" now=25 variant="success" striped=True / %}
+            {% endcomponent %}
         """)
         rendered = normalize_html(template.render(Context({})))
 
@@ -410,10 +410,10 @@ class ProgressTests(SimpleTestCase):
 
     def test_striped_info(self):
         template = Template("""
-            {% load bootstrap5 %}
-            {% bootstrap5 "Progress" %}
-                {% bootstrap5 "ProgressBar" now=50 variant="info" striped=True / %}
-            {% endbootstrap5 %}
+            {% load component_tags %}
+            {% component "Progress" %}
+                {% component "ProgressBar" now=50 variant="info" striped=True / %}
+            {% endcomponent %}
         """)
         rendered = normalize_html(template.render(Context({})))
 
@@ -427,10 +427,10 @@ class ProgressTests(SimpleTestCase):
 
     def test_striped_warning(self):
         template = Template("""
-            {% load bootstrap5 %}
-            {% bootstrap5 "Progress" %}
-                {% bootstrap5 "ProgressBar" now=75 variant="warning" striped=True / %}
-            {% endbootstrap5 %}
+            {% load component_tags %}
+            {% component "Progress" %}
+                {% component "ProgressBar" now=75 variant="warning" striped=True / %}
+            {% endcomponent %}
         """)
         rendered = normalize_html(template.render(Context({})))
 
@@ -444,10 +444,10 @@ class ProgressTests(SimpleTestCase):
 
     def test_striped_danger(self):
         template = Template("""
-            {% load bootstrap5 %}
-            {% bootstrap5 "Progress" %}
-                {% bootstrap5 "ProgressBar" now=100 variant="danger" striped=True / %}
-            {% endbootstrap5 %}
+            {% load component_tags %}
+            {% component "Progress" %}
+                {% component "ProgressBar" now=100 variant="danger" striped=True / %}
+            {% endcomponent %}
         """)
         rendered = normalize_html(template.render(Context({})))
 
@@ -461,10 +461,10 @@ class ProgressTests(SimpleTestCase):
 
     def test_striped_primary(self):
         template = Template("""
-            {% load bootstrap5 %}
-            {% bootstrap5 "Progress" %}
-                {% bootstrap5 "ProgressBar" now=40 variant="primary" striped=True / %}
-            {% endbootstrap5 %}
+            {% load component_tags %}
+            {% component "Progress" %}
+                {% component "ProgressBar" now=40 variant="primary" striped=True / %}
+            {% endcomponent %}
         """)
         rendered = normalize_html(template.render(Context({})))
 
@@ -478,10 +478,10 @@ class ProgressTests(SimpleTestCase):
 
     def test_striped_secondary(self):
         template = Template("""
-            {% load bootstrap5 %}
-            {% bootstrap5 "Progress" %}
-                {% bootstrap5 "ProgressBar" now=60 variant="secondary" striped=True / %}
-            {% endbootstrap5 %}
+            {% load component_tags %}
+            {% component "Progress" %}
+                {% component "ProgressBar" now=60 variant="secondary" striped=True / %}
+            {% endcomponent %}
         """)
         rendered = normalize_html(template.render(Context({})))
 
@@ -495,10 +495,10 @@ class ProgressTests(SimpleTestCase):
 
     def test_striped_light(self):
         template = Template("""
-            {% load bootstrap5 %}
-            {% bootstrap5 "Progress" %}
-                {% bootstrap5 "ProgressBar" now=70 variant="light" striped=True / %}
-            {% endbootstrap5 %}
+            {% load component_tags %}
+            {% component "Progress" %}
+                {% component "ProgressBar" now=70 variant="light" striped=True / %}
+            {% endcomponent %}
         """)
         rendered = normalize_html(template.render(Context({})))
 
@@ -512,10 +512,10 @@ class ProgressTests(SimpleTestCase):
 
     def test_striped_dark(self):
         template = Template("""
-            {% load bootstrap5 %}
-            {% bootstrap5 "Progress" %}
-                {% bootstrap5 "ProgressBar" now=90 variant="dark" striped=True / %}
-            {% endbootstrap5 %}
+            {% load component_tags %}
+            {% component "Progress" %}
+                {% component "ProgressBar" now=90 variant="dark" striped=True / %}
+            {% endcomponent %}
         """)
         rendered = normalize_html(template.render(Context({})))
 
@@ -530,10 +530,10 @@ class ProgressTests(SimpleTestCase):
     # Animated Striped Bars
     def test_animated_striped(self):
         template = Template("""
-            {% load bootstrap5 %}
-            {% bootstrap5 "Progress" %}
-                {% bootstrap5 "ProgressBar" now=75 animated=True / %}
-            {% endbootstrap5 %}
+            {% load component_tags %}
+            {% component "Progress" %}
+                {% component "ProgressBar" now=75 animated=True / %}
+            {% endcomponent %}
         """)
         rendered = normalize_html(template.render(Context({})))
 
@@ -547,10 +547,10 @@ class ProgressTests(SimpleTestCase):
 
     def test_animated_striped_success(self):
         template = Template("""
-            {% load bootstrap5 %}
-            {% bootstrap5 "Progress" %}
-                {% bootstrap5 "ProgressBar" now=50 variant="success" animated=True / %}
-            {% endbootstrap5 %}
+            {% load component_tags %}
+            {% component "Progress" %}
+                {% component "ProgressBar" now=50 variant="success" animated=True / %}
+            {% endcomponent %}
         """)
         rendered = normalize_html(template.render(Context({})))
 
@@ -564,10 +564,10 @@ class ProgressTests(SimpleTestCase):
 
     def test_animated_striped_info(self):
         template = Template("""
-            {% load bootstrap5 %}
-            {% bootstrap5 "Progress" %}
-                {% bootstrap5 "ProgressBar" now=60 variant="info" animated=True / %}
-            {% endbootstrap5 %}
+            {% load component_tags %}
+            {% component "Progress" %}
+                {% component "ProgressBar" now=60 variant="info" animated=True / %}
+            {% endcomponent %}
         """)
         rendered = normalize_html(template.render(Context({})))
 
@@ -581,10 +581,10 @@ class ProgressTests(SimpleTestCase):
 
     def test_animated_striped_warning(self):
         template = Template("""
-            {% load bootstrap5 %}
-            {% bootstrap5 "Progress" %}
-                {% bootstrap5 "ProgressBar" now=80 variant="warning" animated=True / %}
-            {% endbootstrap5 %}
+            {% load component_tags %}
+            {% component "Progress" %}
+                {% component "ProgressBar" now=80 variant="warning" animated=True / %}
+            {% endcomponent %}
         """)
         rendered = normalize_html(template.render(Context({})))
 
@@ -598,10 +598,10 @@ class ProgressTests(SimpleTestCase):
 
     def test_animated_striped_danger(self):
         template = Template("""
-            {% load bootstrap5 %}
-            {% bootstrap5 "Progress" %}
-                {% bootstrap5 "ProgressBar" now=90 variant="danger" animated=True / %}
-            {% endbootstrap5 %}
+            {% load component_tags %}
+            {% component "Progress" %}
+                {% component "ProgressBar" now=90 variant="danger" animated=True / %}
+            {% endcomponent %}
         """)
         rendered = normalize_html(template.render(Context({})))
 

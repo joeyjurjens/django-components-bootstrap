@@ -1,5 +1,5 @@
 from django.template import Context
-from django_components import Component, SlotInput, register, types
+from django_components import Component, SlotInput, types
 
 from django_components_bootstrap.components.bootstrap5.types import (
     AnchorOrButton,
@@ -7,10 +7,8 @@ from django_components_bootstrap.components.bootstrap5.types import (
     NavTag,
     NavVariant,
 )
-from django_components_bootstrap.templatetags.bootstrap5 import bs5_registry
 
 
-@register("Nav", registry=bs5_registry)
 class Nav(Component):
     class Kwargs:
         variant: NavVariant | None = None
@@ -50,7 +48,7 @@ class Nav(Component):
         }
 
     template: types.django_html = """
-        {% load component_tags bootstrap5 %}
+        {% load component_tags %}
 
         <{{ tag }} {% html_attrs attrs class=classes defaults:role=role %}>
             {% slot "default" / %}
@@ -58,7 +56,6 @@ class Nav(Component):
     """
 
 
-@register("NavItem", registry=bs5_registry)
 class NavItem(Component):
     class Kwargs:
         as_: NavItemTag = "li"
@@ -74,7 +71,7 @@ class NavItem(Component):
         }
 
     template: types.django_html = """
-    {% load component_tags bootstrap5 %}
+    {% load component_tags %}
 
         <{{ tag }} {% html_attrs attrs class="nav-item" %}>
             {% slot "default" / %}
@@ -82,7 +79,6 @@ class NavItem(Component):
     """
 
 
-@register("NavLink", registry=bs5_registry)
 class NavLink(Component):
     class Kwargs:
         as_: AnchorOrButton = "a"
@@ -118,7 +114,7 @@ class NavLink(Component):
         }
 
     template: types.django_html = """
-        {% load component_tags bootstrap5 %}
+        {% load component_tags %}
 
         {% if tag == "a" %}
             <a {% html_attrs attrs href=href class=classes defaults:aria-disabled=aria_disabled defaults:aria-current=aria_current %}>

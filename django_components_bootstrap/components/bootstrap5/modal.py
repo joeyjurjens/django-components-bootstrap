@@ -1,5 +1,5 @@
 from django.template import Context
-from django_components import Component, SlotInput, register, types
+from django_components import Component, SlotInput, types
 
 from django_components_bootstrap.components.bootstrap5.types import (
     BackdropBehavior,
@@ -8,10 +8,8 @@ from django_components_bootstrap.components.bootstrap5.types import (
     ResponsiveBreakpoint,
     SizeWithXl,
 )
-from django_components_bootstrap.templatetags.bootstrap5 import bs5_registry
 
 
-@register("Modal", registry=bs5_registry)
 class Modal(Component):
     class Kwargs:
         size: SizeWithXl | None = None
@@ -65,7 +63,7 @@ class Modal(Component):
         }
 
     template: types.django_html = """
-        {% load component_tags bootstrap5 %}
+        {% load component_tags %}
 
         {% provide "modal" modal_id=modal_id %}
             <div {% html_attrs attrs id=modal_id class=modal_classes tabindex="-1" defaults:aria-labelledby="{{ modal_id }}-label" defaults:aria-hidden="true" %} {% if backdrop %}data-bs-backdrop="{{ backdrop }}"{% endif %}{% if not keyboard %} data-bs-keyboard="false"{% endif %}>
@@ -79,7 +77,6 @@ class Modal(Component):
     """
 
 
-@register("ModalHeader", registry=bs5_registry)
 class ModalHeader(Component):
     class Kwargs:
         close_button: bool = True
@@ -99,18 +96,17 @@ class ModalHeader(Component):
         }
 
     template: types.django_html = """
-        {% load component_tags bootstrap5 %}
+        {% load component_tags %}
 
         <div {% html_attrs attrs class="modal-header" %}>
             {% slot "default" / %}
             {% if close_button %}
-                {% bootstrap5 "CloseButton" variant=close_variant attrs:aria-label=close_label attrs:data-bs-dismiss="modal" / %}
+                {% component "CloseButton" variant=close_variant attrs:aria-label=close_label attrs:data-bs-dismiss="modal" / %}
             {% endif %}
         </div>
     """
 
 
-@register("ModalBody", registry=bs5_registry)
 class ModalBody(Component):
     class Kwargs:
         attrs: dict | None = None
@@ -124,7 +120,7 @@ class ModalBody(Component):
         }
 
     template: types.django_html = """
-    {% load component_tags bootstrap5 %}
+    {% load component_tags %}
 
         <div {% html_attrs attrs class="modal-body" %}>
             {% slot "default" / %}
@@ -132,7 +128,6 @@ class ModalBody(Component):
     """
 
 
-@register("ModalFooter", registry=bs5_registry)
 class ModalFooter(Component):
     class Kwargs:
         attrs: dict | None = None
@@ -146,7 +141,7 @@ class ModalFooter(Component):
         }
 
     template: types.django_html = """
-    {% load component_tags bootstrap5 %}
+    {% load component_tags %}
 
         <div {% html_attrs attrs class="modal-footer" %}>
             {% slot "default" / %}
@@ -154,7 +149,6 @@ class ModalFooter(Component):
     """
 
 
-@register("ModalTitle", registry=bs5_registry)
 class ModalTitle(Component):
     class Kwargs:
         as_: HeadingLevel = "h5"
@@ -174,7 +168,7 @@ class ModalTitle(Component):
         }
 
     template: types.django_html = """
-        {% load component_tags bootstrap5 %}
+        {% load component_tags %}
 
         <{{ tag }} {% html_attrs attrs class="modal-title" id="{{ modal_id }}-label" %}>
             {% slot "default" / %}
@@ -182,7 +176,6 @@ class ModalTitle(Component):
     """
 
 
-@register("ModalToggle", registry=bs5_registry)
 class ModalToggle(Component):
     class Kwargs:
         as_: ButtonTag = "button"
@@ -202,7 +195,7 @@ class ModalToggle(Component):
         }
 
     template: types.django_html = """
-        {% load component_tags bootstrap5 %}
+        {% load component_tags %}
 
         <{{ tag }} {% html_attrs attrs data-bs-toggle="modal" data-bs-target="#{{ target_id }}" %}>
             {% slot "default" / %}

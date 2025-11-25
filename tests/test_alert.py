@@ -10,10 +10,10 @@ class AlertTests(SimpleTestCase):
     # All 8 Color Variants
     def test_variant_primary(self):
         template = Template("""
-            {% load bootstrap5 %}
-            {% bootstrap5 "Alert" variant="primary" %}
+            {% load component_tags %}
+            {% component "Alert" variant="primary" %}
                 A simple primary alert—check it out!
-            {% endbootstrap5 %}
+            {% endcomponent %}
         """)
         rendered = normalize_html(template.render(Context({})))
 
@@ -27,10 +27,10 @@ class AlertTests(SimpleTestCase):
 
     def test_variant_secondary(self):
         template = Template("""
-            {% load bootstrap5 %}
-            {% bootstrap5 "Alert" variant="secondary" %}
+            {% load component_tags %}
+            {% component "Alert" variant="secondary" %}
                 A simple secondary alert—check it out!
-            {% endbootstrap5 %}
+            {% endcomponent %}
         """)
         rendered = normalize_html(template.render(Context({})))
 
@@ -44,10 +44,10 @@ class AlertTests(SimpleTestCase):
 
     def test_variant_success(self):
         template = Template("""
-            {% load bootstrap5 %}
-            {% bootstrap5 "Alert" variant="success" %}
+            {% load component_tags %}
+            {% component "Alert" variant="success" %}
                 A simple success alert—check it out!
-            {% endbootstrap5 %}
+            {% endcomponent %}
         """)
         rendered = normalize_html(template.render(Context({})))
 
@@ -61,10 +61,10 @@ class AlertTests(SimpleTestCase):
 
     def test_variant_danger(self):
         template = Template("""
-            {% load bootstrap5 %}
-            {% bootstrap5 "Alert" variant="danger" %}
+            {% load component_tags %}
+            {% component "Alert" variant="danger" %}
                 A simple danger alert—check it out!
-            {% endbootstrap5 %}
+            {% endcomponent %}
         """)
         rendered = normalize_html(template.render(Context({})))
 
@@ -78,10 +78,10 @@ class AlertTests(SimpleTestCase):
 
     def test_variant_warning(self):
         template = Template("""
-            {% load bootstrap5 %}
-            {% bootstrap5 "Alert" variant="warning" %}
+            {% load component_tags %}
+            {% component "Alert" variant="warning" %}
                 A simple warning alert—check it out!
-            {% endbootstrap5 %}
+            {% endcomponent %}
         """)
         rendered = normalize_html(template.render(Context({})))
 
@@ -95,10 +95,10 @@ class AlertTests(SimpleTestCase):
 
     def test_variant_info(self):
         template = Template("""
-            {% load bootstrap5 %}
-            {% bootstrap5 "Alert" variant="info" %}
+            {% load component_tags %}
+            {% component "Alert" variant="info" %}
                 A simple info alert—check it out!
-            {% endbootstrap5 %}
+            {% endcomponent %}
         """)
         rendered = normalize_html(template.render(Context({})))
 
@@ -112,10 +112,10 @@ class AlertTests(SimpleTestCase):
 
     def test_variant_light(self):
         template = Template("""
-            {% load bootstrap5 %}
-            {% bootstrap5 "Alert" variant="light" %}
+            {% load component_tags %}
+            {% component "Alert" variant="light" %}
                 A simple light alert—check it out!
-            {% endbootstrap5 %}
+            {% endcomponent %}
         """)
         rendered = normalize_html(template.render(Context({})))
 
@@ -129,10 +129,10 @@ class AlertTests(SimpleTestCase):
 
     def test_variant_dark(self):
         template = Template("""
-            {% load bootstrap5 %}
-            {% bootstrap5 "Alert" variant="dark" %}
+            {% load component_tags %}
+            {% component "Alert" variant="dark" %}
                 A simple dark alert—check it out!
-            {% endbootstrap5 %}
+            {% endcomponent %}
         """)
         rendered = normalize_html(template.render(Context({})))
 
@@ -147,10 +147,10 @@ class AlertTests(SimpleTestCase):
     # With Links
     def test_link_color_primary(self):
         template = Template("""
-            {% load bootstrap5 %}
-            {% bootstrap5 "Alert" variant="primary" %}
-                A simple primary alert with {% bootstrap5 "AlertLink" href="#" %}an example link{% endbootstrap5 %}. Give it a click if you like.
-            {% endbootstrap5 %}
+            {% load component_tags %}
+            {% component "Alert" variant="primary" %}
+                A simple primary alert with {% component "AlertLink" href="#" %}an example link{% endcomponent %}. Give it a click if you like.
+            {% endcomponent %}
         """)
         rendered = normalize_html(template.render(Context({})))
 
@@ -164,10 +164,10 @@ class AlertTests(SimpleTestCase):
 
     def test_link_color_success(self):
         template = Template("""
-            {% load bootstrap5 %}
-            {% bootstrap5 "Alert" variant="success" %}
-                A simple success alert with {% bootstrap5 "AlertLink" href="#" %}an example link{% endbootstrap5 %}.
-            {% endbootstrap5 %}
+            {% load component_tags %}
+            {% component "Alert" variant="success" %}
+                A simple success alert with {% component "AlertLink" href="#" %}an example link{% endcomponent %}.
+            {% endcomponent %}
         """)
         rendered = normalize_html(template.render(Context({})))
 
@@ -181,10 +181,10 @@ class AlertTests(SimpleTestCase):
 
     def test_link_color_danger(self):
         template = Template("""
-            {% load bootstrap5 %}
-            {% bootstrap5 "Alert" variant="danger" %}
-                A simple danger alert with {% bootstrap5 "AlertLink" href="#" %}an example link{% endbootstrap5 %}.
-            {% endbootstrap5 %}
+            {% load component_tags %}
+            {% component "Alert" variant="danger" %}
+                A simple danger alert with {% component "AlertLink" href="#" %}an example link{% endcomponent %}.
+            {% endcomponent %}
         """)
         rendered = normalize_html(template.render(Context({})))
 
@@ -199,13 +199,13 @@ class AlertTests(SimpleTestCase):
     # With Additional Content
     def test_additional_content(self):
         template = Template("""
-            {% load bootstrap5 %}
-            {% bootstrap5 "Alert" variant="success" %}
-                {% bootstrap5 "AlertHeading" %}Well done!{% endbootstrap5 %}
+            {% load component_tags %}
+            {% component "Alert" variant="success" %}
+                {% component "AlertHeading" %}Well done!{% endcomponent %}
                 <p>Aww yeah, you successfully read this important alert message. This example text is going to run a bit longer so that you can see how spacing within an alert works with this kind of content.</p>
                 <hr>
                 <p class="mb-0">Whenever you need to, be sure to use margin utilities to keep things nice and tidy.</p>
-            {% endbootstrap5 %}
+            {% endcomponent %}
         """)
         rendered = normalize_html(template.render(Context({})))
 
@@ -222,13 +222,13 @@ class AlertTests(SimpleTestCase):
 
     def test_with_icon(self):
         template = Template("""
-            {% load bootstrap5 %}
-            {% bootstrap5 "Alert" variant="primary" attrs:class="d-flex align-items-center" %}
+            {% load component_tags %}
+            {% component "Alert" variant="primary" attrs:class="d-flex align-items-center" %}
                 <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Info:"><use xlink:href="#info-fill"/></svg>
                 <div>
                     An example alert with an icon
                 </div>
-            {% endbootstrap5 %}
+            {% endcomponent %}
         """)
         rendered = normalize_html(template.render(Context({})))
 
@@ -240,10 +240,10 @@ class AlertTests(SimpleTestCase):
     # Dismissible Variants - All Colors
     def test_dismissible_primary(self):
         template = Template("""
-            {% load bootstrap5 %}
-            {% bootstrap5 "Alert" variant="primary" dismissible=True %}
+            {% load component_tags %}
+            {% component "Alert" variant="primary" dismissible=True %}
                 A simple primary dismissible alert—check it out!
-            {% endbootstrap5 %}
+            {% endcomponent %}
         """)
         rendered = normalize_html(template.render(Context({})))
 
@@ -258,10 +258,10 @@ class AlertTests(SimpleTestCase):
 
     def test_dismissible_secondary(self):
         template = Template("""
-            {% load bootstrap5 %}
-            {% bootstrap5 "Alert" variant="secondary" dismissible=True %}
+            {% load component_tags %}
+            {% component "Alert" variant="secondary" dismissible=True %}
                 A simple secondary dismissible alert—check it out!
-            {% endbootstrap5 %}
+            {% endcomponent %}
         """)
         rendered = normalize_html(template.render(Context({})))
 
@@ -276,10 +276,10 @@ class AlertTests(SimpleTestCase):
 
     def test_dismissible_success(self):
         template = Template("""
-            {% load bootstrap5 %}
-            {% bootstrap5 "Alert" variant="success" dismissible=True %}
+            {% load component_tags %}
+            {% component "Alert" variant="success" dismissible=True %}
                 A simple success dismissible alert—check it out!
-            {% endbootstrap5 %}
+            {% endcomponent %}
         """)
         rendered = normalize_html(template.render(Context({})))
 
@@ -294,10 +294,10 @@ class AlertTests(SimpleTestCase):
 
     def test_dismissible_danger(self):
         template = Template("""
-            {% load bootstrap5 %}
-            {% bootstrap5 "Alert" variant="danger" dismissible=True %}
+            {% load component_tags %}
+            {% component "Alert" variant="danger" dismissible=True %}
                 A simple danger dismissible alert—check it out!
-            {% endbootstrap5 %}
+            {% endcomponent %}
         """)
         rendered = normalize_html(template.render(Context({})))
 
@@ -312,10 +312,10 @@ class AlertTests(SimpleTestCase):
 
     def test_dismissible_warning(self):
         template = Template("""
-            {% load bootstrap5 %}
-            {% bootstrap5 "Alert" variant="warning" dismissible=True %}
+            {% load component_tags %}
+            {% component "Alert" variant="warning" dismissible=True %}
                 <strong>Holy guacamole!</strong> You should check in on some of those fields below.
-            {% endbootstrap5 %}
+            {% endcomponent %}
         """)
         rendered = normalize_html(template.render(Context({})))
 
@@ -330,10 +330,10 @@ class AlertTests(SimpleTestCase):
 
     def test_dismissible_info(self):
         template = Template("""
-            {% load bootstrap5 %}
-            {% bootstrap5 "Alert" variant="info" dismissible=True %}
+            {% load component_tags %}
+            {% component "Alert" variant="info" dismissible=True %}
                 A simple info dismissible alert—check it out!
-            {% endbootstrap5 %}
+            {% endcomponent %}
         """)
         rendered = normalize_html(template.render(Context({})))
 
@@ -348,10 +348,10 @@ class AlertTests(SimpleTestCase):
 
     def test_dismissible_light(self):
         template = Template("""
-            {% load bootstrap5 %}
-            {% bootstrap5 "Alert" variant="light" dismissible=True %}
+            {% load component_tags %}
+            {% component "Alert" variant="light" dismissible=True %}
                 A simple light dismissible alert—check it out!
-            {% endbootstrap5 %}
+            {% endcomponent %}
         """)
         rendered = normalize_html(template.render(Context({})))
 
@@ -366,10 +366,10 @@ class AlertTests(SimpleTestCase):
 
     def test_dismissible_dark(self):
         template = Template("""
-            {% load bootstrap5 %}
-            {% bootstrap5 "Alert" variant="dark" dismissible=True %}
+            {% load component_tags %}
+            {% component "Alert" variant="dark" dismissible=True %}
                 A simple dark dismissible alert—check it out!
-            {% endbootstrap5 %}
+            {% endcomponent %}
         """)
         rendered = normalize_html(template.render(Context({})))
 

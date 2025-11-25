@@ -12,10 +12,10 @@ class TooltipTestCase(SimpleTestCase):
 
     def test_tooltip_basic(self):
         template = Template("""
-            {% load bootstrap5 %}
-            {% bootstrap5 "Tooltip" text="Default tooltip" placement="top" %}
+            {% load component_tags %}
+            {% component "Tooltip" text="Default tooltip" placement="top" %}
                 <a href="#">inline links</a>
-            {% endbootstrap5 %}
+            {% endcomponent %}
         """)
         rendered = template.render(Context({}))
 
@@ -29,10 +29,10 @@ class TooltipTestCase(SimpleTestCase):
 
     def test_tooltip_placement_top(self):
         template = Template("""
-            {% load bootstrap5 %}
-            {% bootstrap5 "Tooltip" text="Tooltip on top" placement="top" %}
-                {% bootstrap5 "Button" variant="secondary" %}Top{% endbootstrap5 %}
-            {% endbootstrap5 %}
+            {% load component_tags %}
+            {% component "Tooltip" text="Tooltip on top" placement="top" %}
+                {% component "Button" variant="secondary" %}Top{% endcomponent %}
+            {% endcomponent %}
         """)
         rendered = template.render(Context({}))
 
@@ -46,10 +46,10 @@ class TooltipTestCase(SimpleTestCase):
 
     def test_tooltip_placement_right(self):
         template = Template("""
-            {% load bootstrap5 %}
-            {% bootstrap5 "Tooltip" text="Tooltip on right" placement="right" %}
-                {% bootstrap5 "Button" variant="secondary" %}Right{% endbootstrap5 %}
-            {% endbootstrap5 %}
+            {% load component_tags %}
+            {% component "Tooltip" text="Tooltip on right" placement="right" %}
+                {% component "Button" variant="secondary" %}Right{% endcomponent %}
+            {% endcomponent %}
         """)
         rendered = template.render(Context({}))
 
@@ -63,10 +63,10 @@ class TooltipTestCase(SimpleTestCase):
 
     def test_tooltip_placement_bottom(self):
         template = Template("""
-            {% load bootstrap5 %}
-            {% bootstrap5 "Tooltip" text="Tooltip on bottom" placement="bottom" %}
-                {% bootstrap5 "Button" variant="secondary" %}Bottom{% endbootstrap5 %}
-            {% endbootstrap5 %}
+            {% load component_tags %}
+            {% component "Tooltip" text="Tooltip on bottom" placement="bottom" %}
+                {% component "Button" variant="secondary" %}Bottom{% endcomponent %}
+            {% endcomponent %}
         """)
         rendered = template.render(Context({}))
 
@@ -80,10 +80,10 @@ class TooltipTestCase(SimpleTestCase):
 
     def test_tooltip_placement_left(self):
         template = Template("""
-            {% load bootstrap5 %}
-            {% bootstrap5 "Tooltip" text="Tooltip on left" placement="left" %}
-                {% bootstrap5 "Button" variant="secondary" %}Left{% endbootstrap5 %}
-            {% endbootstrap5 %}
+            {% load component_tags %}
+            {% component "Tooltip" text="Tooltip on left" placement="left" %}
+                {% component "Button" variant="secondary" %}Left{% endcomponent %}
+            {% endcomponent %}
         """)
         rendered = template.render(Context({}))
 
@@ -97,12 +97,12 @@ class TooltipTestCase(SimpleTestCase):
 
     def test_tooltip_with_button(self):
         template = Template("""
-            {% load bootstrap5 %}
-            {% bootstrap5 "Tooltip" text="This top tooltip is themed via CSS variables." placement="top" %}
-                {% bootstrap5 "Button" variant="secondary" attrs:data-bs-custom-class="custom-tooltip" %}
+            {% load component_tags %}
+            {% component "Tooltip" text="This top tooltip is themed via CSS variables." placement="top" %}
+                {% component "Button" variant="secondary" attrs:data-bs-custom-class="custom-tooltip" %}
                     Custom tooltip
-                {% endbootstrap5 %}
-            {% endbootstrap5 %}
+                {% endcomponent %}
+            {% endcomponent %}
         """)
         rendered = template.render(Context({}))
 
@@ -118,12 +118,12 @@ class TooltipTestCase(SimpleTestCase):
 
     def test_tooltip_disabled_button_wrapper(self):
         template = Template("""
-            {% load bootstrap5 %}
-            {% bootstrap5 "Tooltip" text="Disabled tooltip" placement="top" %}
+            {% load component_tags %}
+            {% component "Tooltip" text="Disabled tooltip" placement="top" %}
                 <span class="d-inline-block" tabindex="0">
-                    {% bootstrap5 "Button" variant="primary" type="button" disabled=True %}Disabled button{% endbootstrap5 %}
+                    {% component "Button" variant="primary" type="button" disabled=True %}Disabled button{% endcomponent %}
                 </span>
-            {% endbootstrap5 %}
+            {% endcomponent %}
         """)
         rendered = template.render(Context({}))
 

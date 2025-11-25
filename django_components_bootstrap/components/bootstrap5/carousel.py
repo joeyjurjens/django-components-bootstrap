@@ -1,16 +1,14 @@
 from django.template import Context
 from django.utils.safestring import mark_safe
-from django_components import Component, SlotInput, register, types
+from django_components import Component, SlotInput, types
 
 from django_components_bootstrap.components.bootstrap5.types import (
     CarouselPause,
     CarouselRide,
     ThemeVariant,
 )
-from django_components_bootstrap.templatetags.bootstrap5 import bs5_registry
 
 
-@register("Carousel", registry=bs5_registry)
 class Carousel(Component):
     class Kwargs:
         fade: bool = False
@@ -47,7 +45,7 @@ class Carousel(Component):
         }
 
     template: types.django_html = """
-        {% load component_tags bootstrap5 %}
+        {% load component_tags %}
 
         {% provide "carousel" carousel_id=carousel_id items=items %}
             {% slot "default" required / %}
@@ -77,7 +75,6 @@ class Carousel(Component):
         )
 
 
-@register("CarouselRenderer", registry=bs5_registry)
 class CarouselRenderer(Component):
     class Kwargs:
         carousel_id: str
@@ -124,14 +121,14 @@ class CarouselRenderer(Component):
         }
 
     template: types.django_html = """
-        {% load component_tags bootstrap5 %}
+        {% load component_tags %}
 
         {% provide "carousel" carousel_id=carousel_id %}
             <div {% html_attrs attrs id=carousel_id class=classes data-bs-ride=data_bs_ride data-bs-interval=data_bs_interval data-bs-keyboard=data_bs_keyboard data-bs-pause=data_bs_pause data-bs-touch=data_bs_touch data-bs-theme=data_bs_theme %}>
                 {% if show_indicators %}
                     <div class="carousel-indicators">
                         {% for item in items %}
-                            {% bootstrap5 "CarouselIndicator" slide_to=forloop.counter0 active=item.active / %}
+                            {% component "CarouselIndicator" slide_to=forloop.counter0 active=item.active / %}
                         {% endfor %}
                     </div>
                 {% endif %}
@@ -153,7 +150,6 @@ class CarouselRenderer(Component):
     """
 
 
-@register("CarouselItem", registry=bs5_registry)
 class CarouselItem(Component):
     class Kwargs:
         active: bool = False
@@ -179,7 +175,7 @@ class CarouselItem(Component):
         }
 
     template: types.django_html = """
-        {% load component_tags bootstrap5 %}
+        {% load component_tags %}
 
         <div {% html_attrs attrs class=classes data-bs-interval=interval %}>
             {% slot "default" / %}
@@ -196,7 +192,6 @@ class CarouselItem(Component):
         return None
 
 
-@register("CarouselCaption", registry=bs5_registry)
 class CarouselCaption(Component):
     class Kwargs:
         attrs: dict | None = None
@@ -210,7 +205,7 @@ class CarouselCaption(Component):
         }
 
     template: types.django_html = """
-    {% load component_tags bootstrap5 %}
+    {% load component_tags %}
 
         <div {% html_attrs attrs class="carousel-caption" %}>
             {% slot "default" / %}
@@ -218,7 +213,6 @@ class CarouselCaption(Component):
     """
 
 
-@register("CarouselIndicator", registry=bs5_registry)
 class CarouselIndicator(Component):
     class Kwargs:
         slide_to: int = 0
@@ -248,7 +242,7 @@ class CarouselIndicator(Component):
         }
 
     template: types.django_html = """
-        {% load component_tags bootstrap5 %}
+        {% load component_tags %}
 
         <button {% html_attrs attrs type="button" data-bs-target="#{{ carousel_id }}" data-bs-slide-to=slide_to defaults:aria-label=aria_label %}{% if classes %} class="{{ classes }}"{% endif %}{% if active %} aria-current="true"{% endif %}></button>
     """

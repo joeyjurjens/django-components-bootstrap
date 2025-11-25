@@ -1,5 +1,5 @@
 from django.template import Context
-from django_components import Component, SlotInput, register, types
+from django_components import Component, SlotInput, types
 
 from django_components_bootstrap.components.bootstrap5.types import (
     AnchorOrSpan,
@@ -8,10 +8,8 @@ from django_components_bootstrap.components.bootstrap5.types import (
     NavbarPlacement,
     ThemeVariant,
 )
-from django_components_bootstrap.templatetags.bootstrap5 import bs5_registry
 
 
-@register("Navbar", registry=bs5_registry)
 class Navbar(Component):
     class Kwargs:
         expand: Breakpoint | None = None
@@ -56,7 +54,7 @@ class Navbar(Component):
         }
 
     template: types.django_html = """
-        {% load component_tags bootstrap5 %}
+        {% load component_tags %}
 
         {% provide "navbar" navbar_collapse_id=navbar_collapse_id %}
             <nav {% html_attrs attrs class=classes %} {% if theme %}data-bs-theme="{{ theme }}"{% endif %}>
@@ -72,7 +70,6 @@ class Navbar(Component):
     """
 
 
-@register("NavbarBrand", registry=bs5_registry)
 class NavbarBrand(Component):
     class Kwargs:
         as_: AnchorOrSpan = "a"
@@ -90,7 +87,7 @@ class NavbarBrand(Component):
         }
 
     template: types.django_html = """
-        {% load component_tags bootstrap5 %}
+        {% load component_tags %}
 
         {% if tag == "a" %}
             <a {% html_attrs attrs class="navbar-brand" href=href %}>
@@ -104,7 +101,6 @@ class NavbarBrand(Component):
     """
 
 
-@register("NavbarToggler", registry=bs5_registry)
 class NavbarToggler(Component):
     class Kwargs:
         attrs: dict | None = None
@@ -122,7 +118,7 @@ class NavbarToggler(Component):
         }
 
     template: types.django_html = """
-        {% load component_tags bootstrap5 %}
+        {% load component_tags %}
 
         <button {% html_attrs attrs class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#{{ target_id }}" defaults:aria-controls=target_id defaults:aria-expanded="false" defaults:aria-label="Toggle navigation" %}>
             {% if slot_default_filled %}
@@ -134,7 +130,6 @@ class NavbarToggler(Component):
     """
 
 
-@register("NavbarCollapse", registry=bs5_registry)
 class NavbarCollapse(Component):
     class Kwargs:
         attrs: dict | None = None
@@ -152,7 +147,7 @@ class NavbarCollapse(Component):
         }
 
     template: types.django_html = """
-        {% load component_tags bootstrap5 %}
+        {% load component_tags %}
 
         <div {% html_attrs attrs class="collapse navbar-collapse" id=collapse_id %}>
             {% slot "default" / %}
@@ -160,7 +155,6 @@ class NavbarCollapse(Component):
     """
 
 
-@register("NavbarNav", registry=bs5_registry)
 class NavbarNav(Component):
     class Kwargs:
         scroll: bool = False
@@ -180,7 +174,7 @@ class NavbarNav(Component):
         }
 
     template: types.django_html = """
-        {% load component_tags bootstrap5 %}
+        {% load component_tags %}
 
         <ul {% html_attrs attrs class=classes %}>
             {% slot "default" / %}
@@ -188,7 +182,6 @@ class NavbarNav(Component):
     """
 
 
-@register("NavbarText", registry=bs5_registry)
 class NavbarText(Component):
     class Kwargs:
         attrs: dict | None = None
@@ -202,7 +195,7 @@ class NavbarText(Component):
         }
 
     template: types.django_html = """
-        {% load component_tags bootstrap5 %}
+        {% load component_tags %}
 
         <span {% html_attrs attrs class="navbar-text" %}>
             {% slot "default" / %}

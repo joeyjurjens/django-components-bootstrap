@@ -1,10 +1,8 @@
 from django.template import Context
-from django_components import Component, register, types
-
-from django_components_bootstrap.templatetags.bootstrap5 import bs5_registry
+from django_components import Component, types
 
 
-@register("Image", registry=bs5_registry)
+
 class Image(Component):
     class Kwargs:
         src: str
@@ -34,7 +32,7 @@ class Image(Component):
         }
 
     template: types.django_html = """
-        {% load component_tags bootstrap5 %}
+        {% load component_tags %}
 
         {% if classes %}
             <img {% html_attrs attrs src=src alt=alt class=classes %} />

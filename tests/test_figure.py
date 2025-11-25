@@ -9,11 +9,11 @@ class FigureTests(SimpleTestCase):
 
     def test_basic(self):
         template = Template("""
-            {% load bootstrap5 %}
-            {% bootstrap5 "Figure" %}
-                {% bootstrap5 "FigureImage" src="https://placehold.net/600x400.png" alt="Figure image" / %}
-                {% bootstrap5 "FigureCaption" %}A caption for the above image.{% endbootstrap5 %}
-            {% endbootstrap5 %}
+            {% load component_tags %}
+            {% component "Figure" %}
+                {% component "FigureImage" src="https://placehold.net/600x400.png" alt="Figure image" / %}
+                {% component "FigureCaption" %}A caption for the above image.{% endcomponent %}
+            {% endcomponent %}
         """)
         rendered = normalize_html(template.render(Context({})))
 
@@ -28,11 +28,11 @@ class FigureTests(SimpleTestCase):
 
     def test_caption_right_aligned(self):
         template = Template("""
-            {% load bootstrap5 %}
-            {% bootstrap5 "Figure" %}
-                {% bootstrap5 "FigureImage" src="https://placehold.net/600x400.png" alt="Figure image" / %}
-                {% bootstrap5 "FigureCaption" %}A caption for the above image.{% endbootstrap5 %}
-            {% endbootstrap5 %}
+            {% load component_tags %}
+            {% component "Figure" %}
+                {% component "FigureImage" src="https://placehold.net/600x400.png" alt="Figure image" / %}
+                {% component "FigureCaption" %}A caption for the above image.{% endcomponent %}
+            {% endcomponent %}
         """)
         rendered = normalize_html(template.render(Context({})))
 
@@ -47,11 +47,11 @@ class FigureTests(SimpleTestCase):
 
     def test_caption_center_aligned(self):
         template = Template("""
-            {% load bootstrap5 %}
-            {% bootstrap5 "Figure" %}
-                {% bootstrap5 "FigureImage" src="https://placehold.net/600x400.png" alt="Figure image" / %}
-                {% bootstrap5 "FigureCaption" %}A caption for the above image.{% endbootstrap5 %}
-            {% endbootstrap5 %}
+            {% load component_tags %}
+            {% component "Figure" %}
+                {% component "FigureImage" src="https://placehold.net/600x400.png" alt="Figure image" / %}
+                {% component "FigureCaption" %}A caption for the above image.{% endcomponent %}
+            {% endcomponent %}
         """)
         rendered = normalize_html(template.render(Context({})))
 
@@ -66,11 +66,11 @@ class FigureTests(SimpleTestCase):
 
     def test_without_rounded(self):
         template = Template("""
-            {% load bootstrap5 %}
-            {% bootstrap5 "Figure" %}
-                {% bootstrap5 "FigureImage" src="https://placehold.net/600x400.png" alt="Figure image" / %}
-                {% bootstrap5 "FigureCaption" %}A caption for the above image.{% endbootstrap5 %}
-            {% endbootstrap5 %}
+            {% load component_tags %}
+            {% component "Figure" %}
+                {% component "FigureImage" src="https://placehold.net/600x400.png" alt="Figure image" / %}
+                {% component "FigureCaption" %}A caption for the above image.{% endcomponent %}
+            {% endcomponent %}
         """)
         rendered = normalize_html(template.render(Context({})))
 
@@ -85,11 +85,11 @@ class FigureTests(SimpleTestCase):
 
     def test_not_fluid(self):
         template = Template("""
-            {% load bootstrap5 %}
-            {% bootstrap5 "Figure" %}
-                {% bootstrap5 "FigureImage" src="https://placehold.net/600x400.png" alt="Figure image" fluid=False / %}
-                {% bootstrap5 "FigureCaption" %}A caption for the above image.{% endbootstrap5 %}
-            {% endbootstrap5 %}
+            {% load component_tags %}
+            {% component "Figure" %}
+                {% component "FigureImage" src="https://placehold.net/600x400.png" alt="Figure image" fluid=False / %}
+                {% component "FigureCaption" %}A caption for the above image.{% endcomponent %}
+            {% endcomponent %}
         """)
         rendered = normalize_html(template.render(Context({})))
 

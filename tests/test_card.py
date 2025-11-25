@@ -9,15 +9,15 @@ class TestCard(SimpleTestCase):
 
     def test_basic_with_image(self):
         template = Template("""
-            {% load bootstrap5 %}
-            {% bootstrap5 "Card" %}
-              {% bootstrap5 "CardImg" src="https://placehold.net/600x400.png" alt="Card image" position="top" / %}
-              {% bootstrap5 "CardBody" %}
-                {% bootstrap5 "CardTitle" %}Card title{% endbootstrap5 %}
-                {% bootstrap5 "CardText" %}Some quick example text to build on the card title and make up the bulk of the card's content.{% endbootstrap5 %}
+            {% load component_tags %}
+            {% component "Card" %}
+              {% component "CardImg" src="https://placehold.net/600x400.png" alt="Card image" position="top" / %}
+              {% component "CardBody" %}
+                {% component "CardTitle" %}Card title{% endcomponent %}
+                {% component "CardText" %}Some quick example text to build on the card title and make up the bulk of the card's content.{% endcomponent %}
                 <a href="#" class="btn btn-primary">Go somewhere</a>
-              {% endbootstrap5 %}
-            {% endbootstrap5 %}
+              {% endcomponent %}
+            {% endcomponent %}
         """)
         rendered = template.render(Context())
 
@@ -36,20 +36,20 @@ class TestCard(SimpleTestCase):
 
     def test_with_header_and_footer(self):
         template = Template("""
-            {% load bootstrap5 %}
-            {% bootstrap5 "Card" text_align="center" %}
-              {% bootstrap5 "CardHeader" %}
+            {% load component_tags %}
+            {% component "Card" text_align="center" %}
+              {% component "CardHeader" %}
                 Featured
-              {% endbootstrap5 %}
-              {% bootstrap5 "CardBody" %}
-                {% bootstrap5 "CardTitle" %}Special title treatment{% endbootstrap5 %}
-                {% bootstrap5 "CardText" %}With supporting text below as a natural lead-in to additional content.{% endbootstrap5 %}
+              {% endcomponent %}
+              {% component "CardBody" %}
+                {% component "CardTitle" %}Special title treatment{% endcomponent %}
+                {% component "CardText" %}With supporting text below as a natural lead-in to additional content.{% endcomponent %}
                 <a href="#" class="btn btn-primary">Go somewhere</a>
-              {% endbootstrap5 %}
-              {% bootstrap5 "CardFooter" %}
+              {% endcomponent %}
+              {% component "CardFooter" %}
                 2 days ago
-              {% endbootstrap5 %}
-            {% endbootstrap5 %}
+              {% endcomponent %}
+            {% endcomponent %}
         """)
         rendered = template.render(Context())
 
@@ -73,15 +73,15 @@ class TestCard(SimpleTestCase):
 
     def test_with_image_cap(self):
         template = Template("""
-            {% load bootstrap5 %}
-            {% bootstrap5 "Card" %}
-              {% bootstrap5 "CardImg" src="https://placehold.net/600x400.png" alt="Card image" position="top" / %}
-              {% bootstrap5 "CardBody" %}
-                {% bootstrap5 "CardTitle" %}Card title{% endbootstrap5 %}
-                {% bootstrap5 "CardText" %}This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.{% endbootstrap5 %}
-                {% bootstrap5 "CardText" %}<small class="text-body-secondary">Last updated 3 mins ago</small>{% endbootstrap5 %}
-              {% endbootstrap5 %}
-            {% endbootstrap5 %}
+            {% load component_tags %}
+            {% component "Card" %}
+              {% component "CardImg" src="https://placehold.net/600x400.png" alt="Card image" position="top" / %}
+              {% component "CardBody" %}
+                {% component "CardTitle" %}Card title{% endcomponent %}
+                {% component "CardText" %}This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.{% endcomponent %}
+                {% component "CardText" %}<small class="text-body-secondary">Last updated 3 mins ago</small>{% endcomponent %}
+              {% endcomponent %}
+            {% endcomponent %}
         """)
         rendered = template.render(Context())
 
@@ -100,12 +100,12 @@ class TestCard(SimpleTestCase):
 
     def test_body_only(self):
         template = Template("""
-            {% load bootstrap5 %}
-            {% bootstrap5 "Card" %}
-              {% bootstrap5 "CardBody" %}
+            {% load component_tags %}
+            {% component "Card" %}
+              {% component "CardBody" %}
                 This is some text within a card body.
-              {% endbootstrap5 %}
-            {% endbootstrap5 %}
+              {% endcomponent %}
+            {% endcomponent %}
         """)
         rendered = template.render(Context())
 
@@ -121,16 +121,16 @@ class TestCard(SimpleTestCase):
 
     def test_with_title_subtitle_links(self):
         template = Template("""
-            {% load bootstrap5 %}
-            {% bootstrap5 "Card" %}
-              {% bootstrap5 "CardBody" %}
-                {% bootstrap5 "CardTitle" %}Card title{% endbootstrap5 %}
-                {% bootstrap5 "CardSubtitle" %}Card subtitle{% endbootstrap5 %}
-                {% bootstrap5 "CardText" %}Some quick example text to build on the card title and make up the bulk of the card's content.{% endbootstrap5 %}
+            {% load component_tags %}
+            {% component "Card" %}
+              {% component "CardBody" %}
+                {% component "CardTitle" %}Card title{% endcomponent %}
+                {% component "CardSubtitle" %}Card subtitle{% endcomponent %}
+                {% component "CardText" %}Some quick example text to build on the card title and make up the bulk of the card's content.{% endcomponent %}
                 <a href="#" class="card-link">Card link</a>
                 <a href="#" class="card-link">Another link</a>
-              {% endbootstrap5 %}
-            {% endbootstrap5 %}
+              {% endcomponent %}
+            {% endcomponent %}
         """)
         rendered = template.render(Context())
 
@@ -150,15 +150,15 @@ class TestCard(SimpleTestCase):
 
     def test_with_image_bottom(self):
         template = Template("""
-            {% load bootstrap5 %}
-            {% bootstrap5 "Card" %}
-              {% bootstrap5 "CardBody" %}
-                {% bootstrap5 "CardTitle" %}Card title{% endbootstrap5 %}
-                {% bootstrap5 "CardText" %}This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.{% endbootstrap5 %}
-                {% bootstrap5 "CardText" %}<small class="text-body-secondary">Last updated 3 mins ago</small>{% endbootstrap5 %}
-              {% endbootstrap5 %}
-              {% bootstrap5 "CardImg" src="https://placehold.net/600x400.png" alt="Card image" position="bottom" / %}
-            {% endbootstrap5 %}
+            {% load component_tags %}
+            {% component "Card" %}
+              {% component "CardBody" %}
+                {% component "CardTitle" %}Card title{% endcomponent %}
+                {% component "CardText" %}This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.{% endcomponent %}
+                {% component "CardText" %}<small class="text-body-secondary">Last updated 3 mins ago</small>{% endcomponent %}
+              {% endcomponent %}
+              {% component "CardImg" src="https://placehold.net/600x400.png" alt="Card image" position="bottom" / %}
+            {% endcomponent %}
         """)
         rendered = template.render(Context())
 
@@ -177,14 +177,14 @@ class TestCard(SimpleTestCase):
 
     def test_bg_primary(self):
         template = Template("""
-            {% load bootstrap5 %}
-            {% bootstrap5 "Card" bg="primary" attrs={"class": "mb-3", "style": "max-width: 18rem;"} %}
-              {% bootstrap5 "CardHeader" %}Header{% endbootstrap5 %}
-              {% bootstrap5 "CardBody" %}
-                {% bootstrap5 "CardTitle" %}Primary card title{% endbootstrap5 %}
-                {% bootstrap5 "CardText" %}Some quick example text to build on the card title and make up the bulk of the card's content.{% endbootstrap5 %}
-              {% endbootstrap5 %}
-            {% endbootstrap5 %}
+            {% load component_tags %}
+            {% component "Card" bg="primary" attrs={"class": "mb-3", "style": "max-width: 18rem;"} %}
+              {% component "CardHeader" %}Header{% endcomponent %}
+              {% component "CardBody" %}
+                {% component "CardTitle" %}Primary card title{% endcomponent %}
+                {% component "CardText" %}Some quick example text to build on the card title and make up the bulk of the card's content.{% endcomponent %}
+              {% endcomponent %}
+            {% endcomponent %}
         """)
         rendered = template.render(Context())
 
@@ -202,14 +202,14 @@ class TestCard(SimpleTestCase):
 
     def test_bg_secondary(self):
         template = Template("""
-            {% load bootstrap5 %}
-            {% bootstrap5 "Card" bg="secondary" attrs={"class": "mb-3", "style": "max-width: 18rem;"} %}
-              {% bootstrap5 "CardHeader" %}Header{% endbootstrap5 %}
-              {% bootstrap5 "CardBody" %}
-                {% bootstrap5 "CardTitle" %}Secondary card title{% endbootstrap5 %}
-                {% bootstrap5 "CardText" %}Some quick example text to build on the card title and make up the bulk of the card's content.{% endbootstrap5 %}
-              {% endbootstrap5 %}
-            {% endbootstrap5 %}
+            {% load component_tags %}
+            {% component "Card" bg="secondary" attrs={"class": "mb-3", "style": "max-width: 18rem;"} %}
+              {% component "CardHeader" %}Header{% endcomponent %}
+              {% component "CardBody" %}
+                {% component "CardTitle" %}Secondary card title{% endcomponent %}
+                {% component "CardText" %}Some quick example text to build on the card title and make up the bulk of the card's content.{% endcomponent %}
+              {% endcomponent %}
+            {% endcomponent %}
         """)
         rendered = template.render(Context())
 
@@ -227,14 +227,14 @@ class TestCard(SimpleTestCase):
 
     def test_bg_success(self):
         template = Template("""
-            {% load bootstrap5 %}
-            {% bootstrap5 "Card" bg="success" attrs={"class": "mb-3", "style": "max-width: 18rem;"} %}
-              {% bootstrap5 "CardHeader" %}Header{% endbootstrap5 %}
-              {% bootstrap5 "CardBody" %}
-                {% bootstrap5 "CardTitle" %}Success card title{% endbootstrap5 %}
-                {% bootstrap5 "CardText" %}Some quick example text to build on the card title and make up the bulk of the card's content.{% endbootstrap5 %}
-              {% endbootstrap5 %}
-            {% endbootstrap5 %}
+            {% load component_tags %}
+            {% component "Card" bg="success" attrs={"class": "mb-3", "style": "max-width: 18rem;"} %}
+              {% component "CardHeader" %}Header{% endcomponent %}
+              {% component "CardBody" %}
+                {% component "CardTitle" %}Success card title{% endcomponent %}
+                {% component "CardText" %}Some quick example text to build on the card title and make up the bulk of the card's content.{% endcomponent %}
+              {% endcomponent %}
+            {% endcomponent %}
         """)
         rendered = template.render(Context())
 
@@ -252,14 +252,14 @@ class TestCard(SimpleTestCase):
 
     def test_bg_danger(self):
         template = Template("""
-            {% load bootstrap5 %}
-            {% bootstrap5 "Card" bg="danger" attrs={"class": "mb-3", "style": "max-width: 18rem;"} %}
-              {% bootstrap5 "CardHeader" %}Header{% endbootstrap5 %}
-              {% bootstrap5 "CardBody" %}
-                {% bootstrap5 "CardTitle" %}Danger card title{% endbootstrap5 %}
-                {% bootstrap5 "CardText" %}Some quick example text to build on the card title and make up the bulk of the card's content.{% endbootstrap5 %}
-              {% endbootstrap5 %}
-            {% endbootstrap5 %}
+            {% load component_tags %}
+            {% component "Card" bg="danger" attrs={"class": "mb-3", "style": "max-width: 18rem;"} %}
+              {% component "CardHeader" %}Header{% endcomponent %}
+              {% component "CardBody" %}
+                {% component "CardTitle" %}Danger card title{% endcomponent %}
+                {% component "CardText" %}Some quick example text to build on the card title and make up the bulk of the card's content.{% endcomponent %}
+              {% endcomponent %}
+            {% endcomponent %}
         """)
         rendered = template.render(Context())
 
@@ -277,14 +277,14 @@ class TestCard(SimpleTestCase):
 
     def test_border_primary(self):
         template = Template("""
-            {% load bootstrap5 %}
-            {% bootstrap5 "Card" border="primary" attrs={"class": "mb-3", "style": "max-width: 18rem;"} %}
-              {% bootstrap5 "CardHeader" %}Header{% endbootstrap5 %}
-              {% bootstrap5 "CardBody" %}
-                {% bootstrap5 "CardTitle" %}Primary card title{% endbootstrap5 %}
-                {% bootstrap5 "CardText" %}Some quick example text to build on the card title and make up the bulk of the card's content.{% endbootstrap5 %}
-              {% endbootstrap5 %}
-            {% endbootstrap5 %}
+            {% load component_tags %}
+            {% component "Card" border="primary" attrs={"class": "mb-3", "style": "max-width: 18rem;"} %}
+              {% component "CardHeader" %}Header{% endcomponent %}
+              {% component "CardBody" %}
+                {% component "CardTitle" %}Primary card title{% endcomponent %}
+                {% component "CardText" %}Some quick example text to build on the card title and make up the bulk of the card's content.{% endcomponent %}
+              {% endcomponent %}
+            {% endcomponent %}
         """)
         rendered = template.render(Context())
 
@@ -302,14 +302,14 @@ class TestCard(SimpleTestCase):
 
     def test_text_align_center(self):
         template = Template("""
-            {% load bootstrap5 %}
-            {% bootstrap5 "Card" text_align="center" attrs={"class": "mb-3", "style": "width: 18rem;"} %}
-              {% bootstrap5 "CardBody" %}
-                {% bootstrap5 "CardTitle" %}Special title treatment{% endbootstrap5 %}
-                {% bootstrap5 "CardText" %}With supporting text below as a natural lead-in to additional content.{% endbootstrap5 %}
+            {% load component_tags %}
+            {% component "Card" text_align="center" attrs={"class": "mb-3", "style": "width: 18rem;"} %}
+              {% component "CardBody" %}
+                {% component "CardTitle" %}Special title treatment{% endcomponent %}
+                {% component "CardText" %}With supporting text below as a natural lead-in to additional content.{% endcomponent %}
                 <a href="#" class="btn btn-primary">Go somewhere</a>
-              {% endbootstrap5 %}
-            {% endbootstrap5 %}
+              {% endcomponent %}
+            {% endcomponent %}
         """)
         rendered = template.render(Context())
 
@@ -327,14 +327,14 @@ class TestCard(SimpleTestCase):
 
     def test_text_align_end(self):
         template = Template("""
-            {% load bootstrap5 %}
-            {% bootstrap5 "Card" text_align="end" %}
-              {% bootstrap5 "CardBody" %}
-                {% bootstrap5 "CardTitle" %}Special title treatment{% endbootstrap5 %}
-                {% bootstrap5 "CardText" %}With supporting text below as a natural lead-in to additional content.{% endbootstrap5 %}
+            {% load component_tags %}
+            {% component "Card" text_align="end" %}
+              {% component "CardBody" %}
+                {% component "CardTitle" %}Special title treatment{% endcomponent %}
+                {% component "CardText" %}With supporting text below as a natural lead-in to additional content.{% endcomponent %}
                 <a href="#" class="btn btn-primary">Go somewhere</a>
-              {% endbootstrap5 %}
-            {% endbootstrap5 %}
+              {% endcomponent %}
+            {% endcomponent %}
         """)
         rendered = template.render(Context())
 

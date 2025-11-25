@@ -1,11 +1,9 @@
 from django.template import Context
-from django_components import Component, SlotInput, register, types
+from django_components import Component, SlotInput, types
 
 from django_components_bootstrap.components.bootstrap5.types import Breakpoint, StackDirection
-from django_components_bootstrap.templatetags.bootstrap5 import bs5_registry
 
 
-@register("Stack", registry=bs5_registry)
 class Stack(Component):
     class Kwargs:
         direction: StackDirection = "vertical"
@@ -36,7 +34,7 @@ class Stack(Component):
         }
 
     template: types.django_html = """
-        {% load component_tags bootstrap5 %}
+        {% load component_tags %}
 
         <div {% html_attrs attrs class=classes %}>
             {% slot "default" / %}

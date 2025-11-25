@@ -12,10 +12,10 @@ class PopoverTestCase(SimpleTestCase):
 
     def test_popover_basic(self):
         template = Template("""
-            {% load bootstrap5 %}
-            {% bootstrap5 "Popover" title="Popover title" content="And here's some amazing content. It's very engaging. Right?" placement="top" %}
-                {% bootstrap5 "Button" variant="danger" size="lg" %}Click to toggle popover{% endbootstrap5 %}
-            {% endbootstrap5 %}
+            {% load component_tags %}
+            {% component "Popover" title="Popover title" content="And here's some amazing content. It's very engaging. Right?" placement="top" %}
+                {% component "Button" variant="danger" size="lg" %}Click to toggle popover{% endcomponent %}
+            {% endcomponent %}
         """)
         rendered = template.render(Context({}))
 
@@ -29,10 +29,10 @@ class PopoverTestCase(SimpleTestCase):
 
     def test_popover_placement_top(self):
         template = Template("""
-            {% load bootstrap5 %}
-            {% bootstrap5 "Popover" title="Top popover" content="Popover content on top" placement="top" %}
-                {% bootstrap5 "Button" variant="secondary" attrs:data-bs-container="body" %}Popover on top{% endbootstrap5 %}
-            {% endbootstrap5 %}
+            {% load component_tags %}
+            {% component "Popover" title="Top popover" content="Popover content on top" placement="top" %}
+                {% component "Button" variant="secondary" attrs:data-bs-container="body" %}Popover on top{% endcomponent %}
+            {% endcomponent %}
         """)
         rendered = template.render(Context({}))
 
@@ -46,10 +46,10 @@ class PopoverTestCase(SimpleTestCase):
 
     def test_popover_placement_right(self):
         template = Template("""
-            {% load bootstrap5 %}
-            {% bootstrap5 "Popover" title="Right popover" content="Popover content on right" placement="right" %}
-                {% bootstrap5 "Button" variant="secondary" attrs:data-bs-container="body" %}Popover on right{% endbootstrap5 %}
-            {% endbootstrap5 %}
+            {% load component_tags %}
+            {% component "Popover" title="Right popover" content="Popover content on right" placement="right" %}
+                {% component "Button" variant="secondary" attrs:data-bs-container="body" %}Popover on right{% endcomponent %}
+            {% endcomponent %}
         """)
         rendered = template.render(Context({}))
 
@@ -63,10 +63,10 @@ class PopoverTestCase(SimpleTestCase):
 
     def test_popover_placement_bottom(self):
         template = Template("""
-            {% load bootstrap5 %}
-            {% bootstrap5 "Popover" title="Bottom popover" content="Popover content on bottom" placement="bottom" %}
-                {% bootstrap5 "Button" variant="secondary" attrs:data-bs-container="body" %}Popover on bottom{% endbootstrap5 %}
-            {% endbootstrap5 %}
+            {% load component_tags %}
+            {% component "Popover" title="Bottom popover" content="Popover content on bottom" placement="bottom" %}
+                {% component "Button" variant="secondary" attrs:data-bs-container="body" %}Popover on bottom{% endcomponent %}
+            {% endcomponent %}
         """)
         rendered = template.render(Context({}))
 
@@ -80,10 +80,10 @@ class PopoverTestCase(SimpleTestCase):
 
     def test_popover_placement_left(self):
         template = Template("""
-            {% load bootstrap5 %}
-            {% bootstrap5 "Popover" title="Left popover" content="Popover content on left" placement="left" %}
-                {% bootstrap5 "Button" variant="secondary" attrs:data-bs-container="body" %}Popover on left{% endbootstrap5 %}
-            {% endbootstrap5 %}
+            {% load component_tags %}
+            {% component "Popover" title="Left popover" content="Popover content on left" placement="left" %}
+                {% component "Button" variant="secondary" attrs:data-bs-container="body" %}Popover on left{% endcomponent %}
+            {% endcomponent %}
         """)
         rendered = template.render(Context({}))
 
@@ -97,10 +97,10 @@ class PopoverTestCase(SimpleTestCase):
 
     def test_popover_custom_styled(self):
         template = Template("""
-            {% load bootstrap5 %}
-            {% bootstrap5 "Popover" title="Custom popover" content="This popover is themed via CSS variables." placement="right" attrs:data-bs-custom-class="custom-popover" %}
-                {% bootstrap5 "Button" variant="secondary" %}Custom popover{% endbootstrap5 %}
-            {% endbootstrap5 %}
+            {% load component_tags %}
+            {% component "Popover" title="Custom popover" content="This popover is themed via CSS variables." placement="right" attrs:data-bs-custom-class="custom-popover" %}
+                {% component "Button" variant="secondary" %}Custom popover{% endcomponent %}
+            {% endcomponent %}
         """)
         rendered = template.render(Context({}))
 
@@ -114,10 +114,10 @@ class PopoverTestCase(SimpleTestCase):
 
     def test_popover_dismissible(self):
         template = Template("""
-            {% load bootstrap5 %}
-            {% bootstrap5 "Popover" title="Dismissible popover" content="And here's some amazing content. It's very engaging. Right?" placement="top" trigger="focus" %}
+            {% load component_tags %}
+            {% component "Popover" title="Dismissible popover" content="And here's some amazing content. It's very engaging. Right?" placement="top" trigger="focus" %}
                 <a tabindex="0" class="btn btn-lg btn-danger" role="button">Dismissible popover</a>
-            {% endbootstrap5 %}
+            {% endcomponent %}
         """)
         rendered = template.render(Context({}))
 
@@ -131,12 +131,12 @@ class PopoverTestCase(SimpleTestCase):
 
     def test_popover_disabled_button_wrapper(self):
         template = Template("""
-            {% load bootstrap5 %}
-            {% bootstrap5 "Popover" title="Disabled popover" content="Popover on disabled button" placement="top" trigger="hover" %}
+            {% load component_tags %}
+            {% component "Popover" title="Disabled popover" content="Popover on disabled button" placement="top" trigger="hover" %}
                 <span class="d-inline-block" tabindex="0">
-                    {% bootstrap5 "Button" variant="primary" type="button" disabled=True %}Disabled button{% endbootstrap5 %}
+                    {% component "Button" variant="primary" type="button" disabled=True %}Disabled button{% endcomponent %}
                 </span>
-            {% endbootstrap5 %}
+            {% endcomponent %}
         """)
         rendered = template.render(Context({}))
 

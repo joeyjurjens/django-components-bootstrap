@@ -1,10 +1,8 @@
 from django.template import Context
-from django_components import Component, register, types
-
-from django_components_bootstrap.templatetags.bootstrap5 import bs5_registry
+from django_components import Component, types
 
 
-@register("CloseButton", registry=bs5_registry)
+
 class CloseButton(Component):
     class Kwargs:
         variant: str | None = None
@@ -28,7 +26,7 @@ class CloseButton(Component):
         }
 
     template: types.django_html = """
-        {% load component_tags bootstrap5 %}
+        {% load component_tags %}
 
         <button {% html_attrs attrs type="button" class=classes defaults:aria-label="Close" disabled=disabled %}></button>
     """

@@ -1,11 +1,9 @@
 from django.template import Context
-from django_components import Component, SlotInput, register, types
+from django_components import Component, SlotInput, types
 
 from django_components_bootstrap.components.bootstrap5.types import Size, ToggleButtonType, Variant
-from django_components_bootstrap.templatetags.bootstrap5 import bs5_registry
 
 
-@register("ToggleButtonGroup", registry=bs5_registry)
 class ToggleButtonGroup(Component):
     class Kwargs:
         name: str
@@ -30,7 +28,7 @@ class ToggleButtonGroup(Component):
         }
 
     template: types.django_html = """
-        {% load component_tags bootstrap5 %}
+        {% load component_tags %}
 
         <div {% html_attrs attrs class=classes role="group" %}>
             {% slot "default" / %}
@@ -38,7 +36,6 @@ class ToggleButtonGroup(Component):
     """
 
 
-@register("ToggleButton", registry=bs5_registry)
 class ToggleButton(Component):
     class Kwargs:
         type: ToggleButtonType = "checkbox"
@@ -90,7 +87,7 @@ class ToggleButton(Component):
         }
 
     template: types.django_html = """
-        {% load component_tags bootstrap5 %}
+        {% load component_tags %}
 
         <input {% html_attrs input_attrs %} />
         <label {% html_attrs attrs class=label_classes for=id %}>

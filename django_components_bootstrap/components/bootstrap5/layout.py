@@ -1,14 +1,12 @@
 from django.template import Context
-from django_components import Component, SlotInput, register, types
+from django_components import Component, SlotInput, types
 
 from django_components_bootstrap.components.bootstrap5.types import (
     BreakpointOrAuto,
     ContainerFluid,
 )
-from django_components_bootstrap.templatetags.bootstrap5 import bs5_registry
 
 
-@register("Container", registry=bs5_registry)
 class Container(Component):
     class Kwargs:
         as_: str = "div"
@@ -33,7 +31,7 @@ class Container(Component):
         }
 
     template: types.django_html = """
-        {% load component_tags bootstrap5 %}
+        {% load component_tags %}
 
         <{{ tag }} {% html_attrs attrs class=container_class %}>
             {% slot "default" / %}
@@ -41,7 +39,6 @@ class Container(Component):
     """
 
 
-@register("Row", registry=bs5_registry)
 class Row(Component):
     class Kwargs:
         as_: str = "div"
@@ -89,7 +86,7 @@ class Row(Component):
         }
 
     template: types.django_html = """
-        {% load component_tags bootstrap5 %}
+        {% load component_tags %}
 
         <{{ tag }} {% html_attrs attrs class=classes %}>
             {% slot "default" / %}
@@ -97,7 +94,6 @@ class Row(Component):
     """
 
 
-@register("Col", registry=bs5_registry)
 class Col(Component):
     class Kwargs:
         as_: str = "div"
@@ -170,7 +166,7 @@ class Col(Component):
         }
 
     template: types.django_html = """
-    {% load component_tags bootstrap5 %}
+    {% load component_tags %}
 
         <{{ tag }} {% html_attrs attrs class=classes %}>
             {% slot "default" / %}

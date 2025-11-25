@@ -21,15 +21,35 @@ INSTALLED_APPS = [
 ## Quick Start
 
 ```django
-{% load bootstrap5 %}
+{% load component_tags %}
 
-{% bootstrap5 "Button" variant="primary" %}
+{% component "Button" variant="primary" %}
     Click me!
-{% endbootstrap5 %}
+{% endcomponent %}
 
-{% bootstrap5 "Alert" variant="success" dismissible=True %}
+{% component "Alert" variant="success" dismissible=True %}
     <strong>Success!</strong> Your changes have been saved.
-{% endbootstrap5 %}
+{% endcomponent %}
+```
+
+## Configuration
+
+By default, all Bootstrap components are automatically registered when the app loads. To disable auto-registration:
+
+```python
+DJANGO_COMPONENTS_BOOTSTRAP = {
+    "AUTO_REGISTER": False,
+}
+```
+
+When auto-registration is disabled, you can manually import and register components:
+
+```python
+from django_components import registry
+from django_components_bootstrap.components.bootstrap5 import Button, Alert
+
+registry.register("Button", Button)
+registry.register("MyAlert", Alert)  # Register under a custom name
 ```
 
 ## Documentation
@@ -59,7 +79,3 @@ cd docs
 python generate_docs.py
 mkdocs serve
 ```
-
-## License
-
-MIT License

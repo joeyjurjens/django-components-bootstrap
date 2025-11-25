@@ -1,5 +1,5 @@
 from django.template import Context
-from django_components import Component, SlotInput, register, types
+from django_components import Component, SlotInput, types
 
 from django_components_bootstrap.components.bootstrap5.types import (
     BackdropBehavior,
@@ -8,10 +8,8 @@ from django_components_bootstrap.components.bootstrap5.types import (
     HeadingLevel,
     OffcanvasPlacement,
 )
-from django_components_bootstrap.templatetags.bootstrap5 import bs5_registry
 
 
-@register("Offcanvas", registry=bs5_registry)
 class Offcanvas(Component):
     class Kwargs:
         placement: OffcanvasPlacement = "start"
@@ -43,7 +41,7 @@ class Offcanvas(Component):
         }
 
     template: types.django_html = """
-        {% load component_tags bootstrap5 %}
+        {% load component_tags %}
 
         {% provide "offcanvas" offcanvas_id=offcanvas_id %}
             {% slot "toggle" / %}
@@ -54,7 +52,6 @@ class Offcanvas(Component):
     """
 
 
-@register("OffcanvasHeader", registry=bs5_registry)
 class OffcanvasHeader(Component):
     class Kwargs:
         close_button: bool = True
@@ -74,18 +71,17 @@ class OffcanvasHeader(Component):
         }
 
     template: types.django_html = """
-        {% load component_tags bootstrap5 %}
+        {% load component_tags %}
 
         <div {% html_attrs attrs class="offcanvas-header" %}>
             {% slot "default" / %}
             {% if close_button %}
-                {% bootstrap5 "CloseButton" variant=close_variant attrs:aria-label=close_label attrs:data-bs-dismiss="offcanvas" / %}
+                {% component "CloseButton" variant=close_variant attrs:aria-label=close_label attrs:data-bs-dismiss="offcanvas" / %}
             {% endif %}
         </div>
     """
 
 
-@register("OffcanvasBody", registry=bs5_registry)
 class OffcanvasBody(Component):
     class Kwargs:
         attrs: dict | None = None
@@ -99,7 +95,7 @@ class OffcanvasBody(Component):
         }
 
     template: types.django_html = """
-    {% load component_tags bootstrap5 %}
+    {% load component_tags %}
 
         <div {% html_attrs attrs class="offcanvas-body" %}>
             {% slot "default" / %}
@@ -107,7 +103,6 @@ class OffcanvasBody(Component):
     """
 
 
-@register("OffcanvasTitle", registry=bs5_registry)
 class OffcanvasTitle(Component):
     class Kwargs:
         as_: HeadingLevel = "h5"
@@ -127,7 +122,7 @@ class OffcanvasTitle(Component):
         }
 
     template: types.django_html = """
-        {% load component_tags bootstrap5 %}
+        {% load component_tags %}
 
         <{{ tag }} {% html_attrs attrs class="offcanvas-title" id="{{ offcanvas_id }}-label" %}>
             {% slot "default" / %}
@@ -135,7 +130,6 @@ class OffcanvasTitle(Component):
     """
 
 
-@register("OffcanvasToggle", registry=bs5_registry)
 class OffcanvasToggle(Component):
     class Kwargs:
         as_: ButtonTag = "button"
@@ -155,7 +149,7 @@ class OffcanvasToggle(Component):
         }
 
     template: types.django_html = """
-        {% load component_tags bootstrap5 %}
+        {% load component_tags %}
 
         <{{ tag }} {% html_attrs attrs data-bs-toggle="offcanvas" data-bs-target="#{{ target_id }}" defaults:aria-controls=target_id %}>
             {% slot "default" / %}

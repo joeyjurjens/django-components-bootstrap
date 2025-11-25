@@ -23,7 +23,7 @@ _id_patcher = patch("django_components.component._gen_component_id", side_effect
 
 def render_example(template_code, use_mock_ids=False):
     try:
-        template_str = f"{{% load bootstrap5 %}}\n{template_code}"
+        template_str = f"{{% load component_tags %}}\n{template_code}"
         if use_mock_ids:
             # When using mock IDs, we need to create template AND render within the patch context
             with _id_patcher:
@@ -71,7 +71,7 @@ def extract_examples_from_test_file(test_file_path):
 
         if templates:
             template_code = templates[0].strip()
-            template_code = re.sub(r"{%\s*load\s+bootstrap5\s*%}\s*", "", template_code).strip()
+            template_code = re.sub(r"{%\s*load\s+component_tags\s*%}\s*", "", template_code).strip()
 
             examples.append(
                 {
