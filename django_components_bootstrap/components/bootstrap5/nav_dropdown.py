@@ -18,7 +18,7 @@ class NavDropdown(Component):
         default: SlotInput
 
     def get_template_data(self, args, kwargs: Kwargs, slots: Slots, context: Context):
-        dropdown_id = f"nav-dropdown-{self.id}"
+        dropdown_id = (kwargs.attrs or {}).get("id") or f"nav-dropdown-{self.id}"
 
         # Merge default attrs with user-provided attrs
         # User attrs override defaults

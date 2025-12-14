@@ -26,7 +26,7 @@ class Carousel(Component):
         default: SlotInput
 
     def get_template_data(self, args, kwargs: Kwargs, slots, context: Context):
-        carousel_id = f"carousel-{self.id}"
+        carousel_id = (kwargs.attrs or {}).get("id") or f"carousel-{self.id}"
         items = []
 
         return {
@@ -124,7 +124,7 @@ class CarouselRenderer(Component):
         {% load component_tags %}
 
         {% provide "carousel" carousel_id=carousel_id %}
-            <div {% html_attrs attrs id=carousel_id class=classes data-bs-ride=data_bs_ride data-bs-interval=data_bs_interval data-bs-keyboard=data_bs_keyboard data-bs-pause=data_bs_pause data-bs-touch=data_bs_touch data-bs-theme=data_bs_theme %}>
+            <div {% html_attrs attrs defaults:id=carousel_id class=classes data-bs-ride=data_bs_ride data-bs-interval=data_bs_interval data-bs-keyboard=data_bs_keyboard data-bs-pause=data_bs_pause data-bs-touch=data_bs_touch data-bs-theme=data_bs_theme %}>
                 {% if show_indicators %}
                     <div class="carousel-indicators">
                         {% for item in items %}

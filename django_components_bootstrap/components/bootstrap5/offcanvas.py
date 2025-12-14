@@ -24,7 +24,7 @@ class Offcanvas(Component):
         toggle: SlotInput = None
 
     def get_template_data(self, args, kwargs: Kwargs, slots: Slots, context: Context):
-        offcanvas_id = f"offcanvas-{self.id}"
+        offcanvas_id = (kwargs.attrs or {}).get("id") or f"offcanvas-{self.id}"
 
         if kwargs.responsive:
             classes = [f"offcanvas-{kwargs.responsive}", f"offcanvas-{kwargs.placement}"]
@@ -45,7 +45,7 @@ class Offcanvas(Component):
 
         {% provide "offcanvas" offcanvas_id=offcanvas_id %}
             {% slot "toggle" / %}
-            <div {% html_attrs attrs id=offcanvas_id class=classes tabindex="-1" defaults:aria-labelledby="{{ offcanvas_id }}-label" %} {% if backdrop %}data-bs-backdrop="{{ backdrop }}"{% endif %}{% if scroll %} data-bs-scroll="true"{% endif %}{% if not keyboard %} data-bs-keyboard="false"{% endif %}>
+            <div {% html_attrs attrs defaults:id=offcanvas_id class=classes tabindex="-1" defaults:aria-labelledby="{{ offcanvas_id }}-label" %} {% if backdrop %}data-bs-backdrop="{{ backdrop }}"{% endif %}{% if scroll %} data-bs-scroll="true"{% endif %}{% if not keyboard %} data-bs-keyboard="false"{% endif %}>
                 {% slot "default" / %}
             </div>
         {% endprovide %}

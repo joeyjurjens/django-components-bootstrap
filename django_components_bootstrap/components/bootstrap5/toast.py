@@ -52,8 +52,6 @@ class Toast(Component):
         default: SlotInput
 
     def get_template_data(self, args, kwargs: Kwargs, slots: Slots, context: Context):
-        toast_id = f"toast-{self.id}"
-
         classes = ["toast"]
 
         if kwargs.show:
@@ -75,6 +73,8 @@ class Toast(Component):
         autohide_attr = "false" if not kwargs.autohide else None
         delay_attr = str(kwargs.delay) if kwargs.autohide and kwargs.delay != 5000 else None
 
+        toast_id = (kwargs.attrs or {}).get("id") or f"toast-{self.id}"
+
         return {
             "toast_id": toast_id,
             "classes": " ".join(classes),
@@ -86,7 +86,7 @@ class Toast(Component):
     template: types.django_html = """
         {% load component_tags %}
 
-        <div {% html_attrs attrs id=toast_id class=classes role="alert" defaults:aria-live="assertive" defaults:aria-atomic="true" data-bs-autohide=autohide_attr data-bs-delay=delay_attr %}>
+        <div {% html_attrs attrs defaults:id=toast_id class=classes role="alert" defaults:aria-live="assertive" defaults:aria-atomic="true" data-bs-autohide=autohide_attr data-bs-delay=delay_attr %}>
             {% slot "default" / %}
         </div>
     """

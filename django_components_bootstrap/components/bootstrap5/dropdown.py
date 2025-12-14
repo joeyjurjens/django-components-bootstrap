@@ -24,7 +24,7 @@ class Dropdown(Component):
         default: SlotInput
 
     def get_template_data(self, args, kwargs: Kwargs, slots: Slots, context: Context):
-        dropdown_id = f"dropdown-{self.id}"
+        dropdown_id = (kwargs.attrs or {}).get("id") or f"dropdown-{self.id}"
 
         if kwargs.centered:
             if kwargs.direction == "up":

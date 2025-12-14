@@ -397,7 +397,7 @@ class FormCheck(Component):
 
         has_label = kwargs.label is not None
 
-        control_id = f"formcheck-{self.id}"
+        control_id = (kwargs.attrs or {}).get("id") or f"formcheck-{self.id}"
 
         return {
             "wrapper_classes": " ".join(wrapper_classes),

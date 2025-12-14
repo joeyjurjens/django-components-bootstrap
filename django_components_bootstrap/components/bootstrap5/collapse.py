@@ -15,7 +15,7 @@ class Collapse(Component):
         toggle: SlotInput = None
 
     def get_template_data(self, args, kwargs: Kwargs, slots: Slots, context: Context):
-        collapse_id = f"collapse-{self.id}"
+        collapse_id = (kwargs.attrs or {}).get("id") or f"collapse-{self.id}"
 
         classes = ["collapse"]
         if kwargs.horizontal:
@@ -34,7 +34,7 @@ class Collapse(Component):
 
         {% provide "collapse" collapse_id=collapse_id %}
             {% slot "toggle" / %}
-            <div {% html_attrs attrs id=collapse_id class=classes %}>
+            <div {% html_attrs attrs defaults:id=collapse_id class=classes %}>
                 {% slot "default" / %}
             </div>
         {% endprovide %}

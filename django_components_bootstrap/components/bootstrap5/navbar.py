@@ -43,7 +43,7 @@ class Navbar(Component):
             else:
                 container_class = f"container-{kwargs.container}"
 
-        navbar_collapse_id = f"navbar-collapse-{self.id}"
+        navbar_collapse_id = (kwargs.attrs or {}).get("id") or f"navbar-collapse-{self.id}"
 
         return {
             "classes": " ".join(classes),
@@ -149,7 +149,7 @@ class NavbarCollapse(Component):
     template: types.django_html = """
         {% load component_tags %}
 
-        <div {% html_attrs attrs class="collapse navbar-collapse" id=collapse_id %}>
+        <div {% html_attrs attrs class="collapse navbar-collapse" defaults:id=collapse_id %}>
             {% slot "default" / %}
         </div>
     """

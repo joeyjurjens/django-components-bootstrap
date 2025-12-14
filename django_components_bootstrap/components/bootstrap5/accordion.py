@@ -12,7 +12,7 @@ class Accordion(Component):
         default: SlotInput
 
     def get_template_data(self, args, kwargs: Kwargs, slots: Slots, context: Context):
-        accordion_id = f"accordion-{self.id}"
+        accordion_id = (kwargs.attrs or {}).get("id") or f"accordion-{self.id}"
 
         css_classes = ["accordion"]
         if kwargs.flush:
@@ -29,7 +29,7 @@ class Accordion(Component):
         {% load component_tags %}
 
         {% provide "accordion" accordion_id=accordion_id always_open=always_open %}
-            <div {% html_attrs attrs class=css_class id=accordion_id %}>
+            <div {% html_attrs attrs class=css_class defaults:id=accordion_id %}>
                 {% slot "default" / %}
             </div>
         {% endprovide %}
@@ -47,8 +47,9 @@ class AccordionItem(Component):
     def get_template_data(self, args, kwargs: Kwargs, slots: Slots, context: Context):
         accordion = self.inject("accordion")
 
-        heading_id = f"heading-{self.id}"
-        collapse_id = f"collapse-{self.id}"
+        item_id = (kwargs.attrs or {}).get("id") or f"accordion-item-{self.id}"
+        heading_id = f"{item_id}-heading"
+        collapse_id = f"{item_id}-collapse"
         data_bs_parent = f"#{accordion.accordion_id}"
 
         return {
@@ -123,7 +124,7 @@ class AccordionHeader(Component):
     template: types.django_html = """
         {% load component_tags %}
 
-        <h2 {% html_attrs attrs class="accordion-header" id=heading_id %}>
+        <h2 {% html_attrs attrs class="accordion-header" defaults:id=heading_id %}>
             {% component "AccordionButton" disabled=disabled %}
                 {% slot "default" / %}
             {% endcomponent %}

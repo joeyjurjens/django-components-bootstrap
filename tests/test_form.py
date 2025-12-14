@@ -68,8 +68,8 @@ class FormTestCase(SimpleTestCase):
 
         expected = """
             <div class="form-check" id="exampleCheck1">
-                <input type="checkbox" class="form-check-input" id="formcheck-ctest01">
-                <label class="form-check-label" for="formcheck-ctest01">Check me out</label>
+                <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                <label class="form-check-label" for="exampleCheck1">Check me out</label>
             </div>
         """
 
@@ -86,8 +86,8 @@ class FormTestCase(SimpleTestCase):
 
         expected = """
             <div class="form-check" id="exampleRadio1">
-                <input class="form-check-input" type="radio" name="exampleRadio" id="formcheck-ctest01">
-                <label class="form-check-label" for="formcheck-ctest01">Option one</label>
+                <input class="form-check-input" type="radio" name="exampleRadio" id="exampleRadio1">
+                <label class="form-check-label" for="exampleRadio1">Option one</label>
             </div>
         """
 
@@ -148,12 +148,12 @@ class FormTestCase(SimpleTestCase):
 
         expected = """
             <div class="form-check form-check-inline" id="inlineCheckbox1">
-                <input class="form-check-input" type="checkbox" id="formcheck-ctest01" value="option1">
-                <label class="form-check-label" for="formcheck-ctest01">1</label>
+                <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+                <label class="form-check-label" for="inlineCheckbox1">1</label>
             </div>
             <div class="form-check form-check-inline" id="inlineCheckbox2">
-                <input class="form-check-input" type="checkbox" id="formcheck-ctest04" value="option2">
-                <label class="form-check-label" for="formcheck-ctest04">2</label>
+                <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
+                <label class="form-check-label" for="inlineCheckbox2">2</label>
             </div>
         """
 
@@ -170,8 +170,8 @@ class FormTestCase(SimpleTestCase):
 
         expected = """
             <div class="form-check" id="disabledCheck">
-                <input class="form-check-input" type="checkbox" id="formcheck-ctest01" disabled>
-                <label class="form-check-label" for="formcheck-ctest01">Disabled checkbox</label>
+                <input class="form-check-input" type="checkbox" id="disabledCheck" disabled>
+                <label class="form-check-label" for="disabledCheck">Disabled checkbox</label>
             </div>
         """
 
@@ -188,8 +188,8 @@ class FormTestCase(SimpleTestCase):
 
         expected = """
             <div class="form-check form-switch" id="flexSwitchCheckDefault">
-                <input class="form-check-input" type="checkbox" role="switch" id="formcheck-ctest01">
-                <label class="form-check-label" for="formcheck-ctest01">Default switch checkbox input</label>
+                <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault">
+                <label class="form-check-label" for="flexSwitchCheckDefault">Default switch checkbox input</label>
             </div>
         """
 

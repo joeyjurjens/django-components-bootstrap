@@ -16,14 +16,13 @@ class TabContext(NamedTuple):
 
 class TabContainer(Component):
     class Kwargs:
-        id: str | None = None
         attrs: dict | None = None
 
     class Slots:
         default: SlotInput
 
     def get_template_data(self, args, kwargs: Kwargs, slots: Slots, context: Context):
-        container_id = kwargs.id or f"tab-container-{self.id}"
+        container_id = (kwargs.attrs or {}).get("id") or f"tab-container-{self.id}"
 
         return {
             "container_id": container_id,
@@ -141,7 +140,6 @@ class TabsRenderer(Component):
 
 class Tabs(Component):
     class Kwargs:
-        id: str | None = None
         variant: NavVariant = "tabs"
         fill: bool = False
         justified: bool = False
@@ -151,7 +149,7 @@ class Tabs(Component):
         default: SlotInput
 
     def get_template_data(self, args, kwargs: Kwargs, slots: Slots, context: Context):
-        tabs_id = kwargs.id or f"tabs-{self.id}"
+        tabs_id = (kwargs.attrs or {}).get("id") or f"tabs-{self.id}"
         tab_data: list[dict] = []
 
         return {

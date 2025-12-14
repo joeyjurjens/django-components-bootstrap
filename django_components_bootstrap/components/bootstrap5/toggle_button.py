@@ -52,7 +52,7 @@ class ToggleButton(Component):
         default: SlotInput
 
     def get_template_data(self, args, kwargs: Kwargs, slots: Slots, context: Context):
-        toggle_id = f"toggle-button-{self.id}"
+        toggle_id = (kwargs.attrs or {}).get("id") or f"toggle-button-{self.id}"
 
         input_attrs = {
             "type": kwargs.type,
@@ -79,18 +79,21 @@ class ToggleButton(Component):
         if kwargs.size:
             label_classes.append(f"btn-{kwargs.size}")
 
+        # Exclude id from label attrs since it's used for the input
+        label_attrs = {k: v for k, v in (kwargs.attrs or {}).items() if k != "id"}
+
         return {
             "input_attrs": input_attrs,
             "label_classes": " ".join(label_classes),
             "id": toggle_id,
-            "attrs": kwargs.attrs,
+            "label_attrs": label_attrs,
         }
 
     template: types.django_html = """
         {% load component_tags %}
 
         <input {% html_attrs input_attrs %} />
-        <label {% html_attrs attrs class=label_classes for=id %}>
+        <label {% html_attrs label_attrs class=label_classes for=id %}>
             {% slot "default" / %}
         </label>
     """

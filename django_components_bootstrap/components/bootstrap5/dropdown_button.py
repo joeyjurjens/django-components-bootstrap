@@ -20,7 +20,7 @@ class DropdownButton(Component):
         default: SlotInput
 
     def get_template_data(self, args, kwargs: Kwargs, slots: Slots, context: Context):
-        dropdown_id = f"dropdown-button-{self.id}"
+        dropdown_id = (kwargs.attrs or {}).get("id") or f"dropdown-button-{self.id}"
 
         return {
             "dropdown_id": dropdown_id,
@@ -68,7 +68,7 @@ class SplitButton(Component):
         default: SlotInput
 
     def get_template_data(self, args, kwargs: Kwargs, slots: Slots, context: Context):
-        dropdown_id = f"split-button-{self.id}"
+        dropdown_id = (kwargs.attrs or {}).get("id") or f"split-button-{self.id}"
 
         return {
             "dropdown_id": dropdown_id,

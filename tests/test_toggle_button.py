@@ -16,8 +16,8 @@ class TestToggleButton(SimpleTestCase):
             rendered = template.render(Context())
 
         expected = """
-            <input type="checkbox" class="btn-check" id="toggle-button-ctest01" autocomplete="off">
-            <label class="btn btn-primary" for="toggle-button-ctest01" id="btn-check">Single toggle</label>
+            <input type="checkbox" class="btn-check" id="btn-check" autocomplete="off">
+            <label class="btn btn-primary" for="btn-check">Single toggle</label>
         """
 
         self.assertHTMLEqual(normalize_html(rendered), normalize_html(expected))
@@ -32,8 +32,8 @@ class TestToggleButton(SimpleTestCase):
             rendered = template.render(Context())
 
         expected = """
-            <input type="checkbox" class="btn-check" id="toggle-button-ctest01" checked autocomplete="off">
-            <label class="btn btn-primary" for="toggle-button-ctest01" id="btn-check-2">Checked</label>
+            <input type="checkbox" class="btn-check" id="btn-check-2" checked autocomplete="off">
+            <label class="btn btn-primary" for="btn-check-2">Checked</label>
         """
 
         self.assertHTMLEqual(normalize_html(rendered), normalize_html(expected))
@@ -48,8 +48,8 @@ class TestToggleButton(SimpleTestCase):
             rendered = template.render(Context())
 
         expected = """
-            <input type="checkbox" class="btn-check" id="toggle-button-ctest01" autocomplete="off" disabled>
-            <label class="btn btn-primary" for="toggle-button-ctest01" id="btn-check-3">Disabled</label>
+            <input type="checkbox" class="btn-check" id="btn-check-3" autocomplete="off" disabled>
+            <label class="btn btn-primary" for="btn-check-3">Disabled</label>
         """
 
         self.assertHTMLEqual(normalize_html(rendered), normalize_html(expected))
@@ -64,8 +64,8 @@ class TestToggleButton(SimpleTestCase):
             rendered = template.render(Context())
 
         expected = """
-            <input type="radio" class="btn-check" name="options" id="toggle-button-ctest01" autocomplete="off" checked>
-            <label class="btn btn-secondary" for="toggle-button-ctest01" id="option1">Checked</label>
+            <input type="radio" class="btn-check" name="options" id="option1" autocomplete="off" checked>
+            <label class="btn btn-secondary" for="option1">Checked</label>
         """
 
         self.assertHTMLEqual(normalize_html(rendered), normalize_html(expected))
@@ -80,8 +80,8 @@ class TestToggleButton(SimpleTestCase):
             rendered = template.render(Context())
 
         expected = """
-            <input type="radio" class="btn-check" name="options" id="toggle-button-ctest01" autocomplete="off">
-            <label class="btn btn-secondary" for="toggle-button-ctest01" id="option2">Radio</label>
+            <input type="radio" class="btn-check" name="options" id="option2" autocomplete="off">
+            <label class="btn btn-secondary" for="option2">Radio</label>
         """
 
         self.assertHTMLEqual(normalize_html(rendered), normalize_html(expected))
@@ -96,8 +96,8 @@ class TestToggleButton(SimpleTestCase):
             rendered = template.render(Context())
 
         expected = """
-            <input type="radio" class="btn-check" name="options" id="toggle-button-ctest01" autocomplete="off" disabled>
-            <label class="btn btn-secondary" for="toggle-button-ctest01" id="option3">Disabled</label>
+            <input type="radio" class="btn-check" name="options" id="option3" autocomplete="off" disabled>
+            <label class="btn btn-secondary" for="option3">Disabled</label>
         """
 
         self.assertHTMLEqual(normalize_html(rendered), normalize_html(expected))
