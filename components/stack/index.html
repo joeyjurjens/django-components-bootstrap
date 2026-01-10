@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        <link rel="canonical" href="https://joeyjurjens.github.io/django-components-bootstrap/components/stack/">
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+        <title>Stack - Django Components Bootstrap</title>
+        <link href="../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../css/fontawesome.min.css" rel="stylesheet">
+        <link href="../../css/brands.min.css" rel="stylesheet">
+        <link href="../../css/solid.min.css" rel="stylesheet">
+        <link href="../../css/v4-font-face.min.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
+        <link id="hljs-light" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" >
+        <link id="hljs-dark" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark.min.css" disabled>
+        <link href="../../stylesheets/extra.css" rel="stylesheet">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../..">Django Components Bootstrap</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar-collapse" aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="nav-item">
+                                <a href="../.." class="nav-link">Home</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle active" aria-current="page" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Components</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../accordion/" class="dropdown-item">Accordion</a>
+</li>
+                                    
+<li>
+    <a href="../alert/" class="dropdown-item">Alert</a>
+</li>
+                                    
+<li>
+    <a href="../badge/" class="dropdown-item">Badge</a>
+</li>
+                                    
+<li>
+    <a href="../breadcrumb/" class="dropdown-item">Breadcrumb</a>
+</li>
+                                    
+<li>
+    <a href="../button/" class="dropdown-item">Button</a>
+</li>
+                                    
+<li>
+    <a href="../buttongroup/" class="dropdown-item">Button Group</a>
+</li>
+                                    
+<li>
+    <a href="../card/" class="dropdown-item">Card</a>
+</li>
+                                    
+<li>
+    <a href="../carousel/" class="dropdown-item">Carousel</a>
+</li>
+                                    
+<li>
+    <a href="../closebutton/" class="dropdown-item">Close Button</a>
+</li>
+                                    
+<li>
+    <a href="../collapse/" class="dropdown-item">Collapse</a>
+</li>
+                                    
+<li>
+    <a href="../dropdown/" class="dropdown-item">Dropdown</a>
+</li>
+                                    
+<li>
+    <a href="../dropdownbutton/" class="dropdown-item">Dropdown Button</a>
+</li>
+                                    
+<li>
+    <a href="../figure/" class="dropdown-item">Figure</a>
+</li>
+                                    
+<li>
+    <a href="../form/" class="dropdown-item">Form</a>
+</li>
+                                    
+<li>
+    <a href="../image/" class="dropdown-item">Image</a>
+</li>
+                                    
+<li>
+    <a href="../layout/" class="dropdown-item">Layout</a>
+</li>
+                                    
+<li>
+    <a href="../listgroup/" class="dropdown-item">List Group</a>
+</li>
+                                    
+<li>
+    <a href="../modal/" class="dropdown-item">Modal</a>
+</li>
+                                    
+<li>
+    <a href="../nav/" class="dropdown-item">Nav</a>
+</li>
+                                    
+<li>
+    <a href="../navdropdown/" class="dropdown-item">Nav Dropdown</a>
+</li>
+                                    
+<li>
+    <a href="../navbar/" class="dropdown-item">Navbar</a>
+</li>
+                                    
+<li>
+    <a href="../offcanvas/" class="dropdown-item">Offcanvas</a>
+</li>
+                                    
+<li>
+    <a href="../pagination/" class="dropdown-item">Pagination</a>
+</li>
+                                    
+<li>
+    <a href="../placeholder/" class="dropdown-item">Placeholder</a>
+</li>
+                                    
+<li>
+    <a href="../popover/" class="dropdown-item">Popover</a>
+</li>
+                                    
+<li>
+    <a href="../progress/" class="dropdown-item">Progress</a>
+</li>
+                                    
+<li>
+    <a href="../spinner/" class="dropdown-item">Spinner</a>
+</li>
+                                    
+<li>
+    <a href="./" class="dropdown-item active" aria-current="page">Stack</a>
+</li>
+                                    
+<li>
+    <a href="../table/" class="dropdown-item">Table</a>
+</li>
+                                    
+<li>
+    <a href="../tabs/" class="dropdown-item">Tabs</a>
+</li>
+                                    
+<li>
+    <a href="../toast/" class="dropdown-item">Toast</a>
+</li>
+                                    
+<li>
+    <a href="../togglebutton/" class="dropdown-item">Toggle Button</a>
+</li>
+                                    
+<li>
+    <a href="../tooltip/" class="dropdown-item">Tooltip</a>
+</li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ms-md-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-bs-toggle="modal" data-bs-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a rel="prev" href="../spinner/" class="nav-link">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" href="../table/" class="nav-link">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="https://github.com/joeyjurjens/django-components-bootstrap/edit/master/docs/components/stack.md" class="nav-link">Edit on joeyjurjens/django-components-bootstrap
+                                    </a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-bs-toggle="collapse" data-bs-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-body-tertiary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-bs-level="1"><a href="#stack" class="nav-link">Stack</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="2"><a href="#vstack" class="nav-link">Vstack</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#hstack" class="nav-link">Hstack</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#hstack-with-spacer" class="nav-link">Hstack With Spacer</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#hstack-with-vertical-rule" class="nav-link">Hstack With Vertical Rule</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#vstack-buttons" class="nav-link">Vstack Buttons</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#hstack-inline-form" class="nav-link">Hstack Inline Form</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#vstack-no-gap" class="nav-link">Vstack No Gap</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#hstack-no-gap" class="nav-link">Hstack No Gap</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="stack">Stack</h1>
+<h2 id="vstack">Vstack</h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;Stack&quot;</span> <span class="nv">direction</span><span class="o">=</span><span class="s2">&quot;vertical&quot;</span> <span class="nv">gap</span><span class="o">=</span><span class="m">3</span> <span class="cp">%}</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="x">                &lt;div class=&quot;p-2&quot;&gt;First item&lt;/div&gt;</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="x">                &lt;div class=&quot;p-2&quot;&gt;Second item&lt;/div&gt;</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="x">                &lt;div class=&quot;p-2&quot;&gt;Third item&lt;/div&gt;</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="x">            </span><span class="cp">{%</span> <span class="k">endcomponent</span> <span class="cp">%}</span>
+</code></pre></div>
+<p><strong>Preview:</strong></p>
+<div class="bs-example">
+<div class="vstack gap-3" data-djc-id-ch0FEvH="">
+
+                <div class="p-2">First item</div>
+                <div class="p-2">Second item</div>
+                <div class="p-2">Third item</div>
+
+        </div>
+</div>
+
+<hr />
+<h2 id="hstack">Hstack</h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;Stack&quot;</span> <span class="nv">direction</span><span class="o">=</span><span class="s2">&quot;horizontal&quot;</span> <span class="nv">gap</span><span class="o">=</span><span class="m">3</span> <span class="cp">%}</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="x">                &lt;div class=&quot;p-2&quot;&gt;First item&lt;/div&gt;</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="x">                &lt;div class=&quot;p-2&quot;&gt;Second item&lt;/div&gt;</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="x">                &lt;div class=&quot;p-2&quot;&gt;Third item&lt;/div&gt;</span>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="x">            </span><span class="cp">{%</span> <span class="k">endcomponent</span> <span class="cp">%}</span>
+</code></pre></div>
+<p><strong>Preview:</strong></p>
+<div class="bs-example">
+<div class="hstack gap-3" data-djc-id-cbAJzsG="">
+
+                <div class="p-2">First item</div>
+                <div class="p-2">Second item</div>
+                <div class="p-2">Third item</div>
+
+        </div>
+</div>
+
+<hr />
+<h2 id="hstack-with-spacer">Hstack With Spacer</h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;Stack&quot;</span> <span class="nv">direction</span><span class="o">=</span><span class="s2">&quot;horizontal&quot;</span> <span class="nv">gap</span><span class="o">=</span><span class="m">3</span> <span class="cp">%}</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="x">                &lt;div class=&quot;p-2&quot;&gt;First item&lt;/div&gt;</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="x">                &lt;div class=&quot;p-2 ms-auto&quot;&gt;Second item&lt;/div&gt;</span>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="x">                &lt;div class=&quot;p-2&quot;&gt;Third item&lt;/div&gt;</span>
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="x">            </span><span class="cp">{%</span> <span class="k">endcomponent</span> <span class="cp">%}</span>
+</code></pre></div>
+<p><strong>Preview:</strong></p>
+<div class="bs-example">
+<div class="hstack gap-3" data-djc-id-cMcELED="">
+
+                <div class="p-2">First item</div>
+                <div class="p-2 ms-auto">Second item</div>
+                <div class="p-2">Third item</div>
+
+        </div>
+</div>
+
+<hr />
+<h2 id="hstack-with-vertical-rule">Hstack With Vertical Rule</h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;Stack&quot;</span> <span class="nv">direction</span><span class="o">=</span><span class="s2">&quot;horizontal&quot;</span> <span class="nv">gap</span><span class="o">=</span><span class="m">3</span> <span class="cp">%}</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="x">                &lt;div class=&quot;p-2&quot;&gt;First item&lt;/div&gt;</span>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="x">                &lt;div class=&quot;p-2 ms-auto&quot;&gt;Second item&lt;/div&gt;</span>
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="x">                &lt;div class=&quot;vr&quot;&gt;&lt;/div&gt;</span>
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="x">                &lt;div class=&quot;p-2&quot;&gt;Third item&lt;/div&gt;</span>
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="x">            </span><span class="cp">{%</span> <span class="k">endcomponent</span> <span class="cp">%}</span>
+</code></pre></div>
+<p><strong>Preview:</strong></p>
+<div class="bs-example">
+<div class="hstack gap-3" data-djc-id-cMWF0UV="">
+
+                <div class="p-2">First item</div>
+                <div class="p-2 ms-auto">Second item</div>
+                <div class="vr"></div>
+                <div class="p-2">Third item</div>
+
+        </div>
+</div>
+
+<hr />
+<h2 id="vstack-buttons">Vstack Buttons</h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;Stack&quot;</span> <span class="nv">direction</span><span class="o">=</span><span class="s2">&quot;vertical&quot;</span> <span class="nv">gap</span><span class="o">=</span><span class="m">2</span> <span class="cp">%}</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="x">                &lt;button type=&quot;button&quot; class=&quot;btn btn-secondary&quot;&gt;Save changes&lt;/button&gt;</span>
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="x">                &lt;button type=&quot;button&quot; class=&quot;btn btn-outline-secondary&quot;&gt;Cancel&lt;/button&gt;</span>
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="x">            </span><span class="cp">{%</span> <span class="k">endcomponent</span> <span class="cp">%}</span>
+</code></pre></div>
+<p><strong>Preview:</strong></p>
+<div class="bs-example">
+<div class="vstack gap-2" data-djc-id-cguFndk="">
+
+                <button type="button" class="btn btn-secondary">Save changes</button>
+                <button type="button" class="btn btn-outline-secondary">Cancel</button>
+
+        </div>
+</div>
+
+<hr />
+<h2 id="hstack-inline-form">Hstack Inline Form</h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;Stack&quot;</span> <span class="nv">direction</span><span class="o">=</span><span class="s2">&quot;horizontal&quot;</span> <span class="nv">gap</span><span class="o">=</span><span class="m">3</span> <span class="cp">%}</span>
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="x">                &lt;input class=&quot;form-control me-auto&quot; type=&quot;text&quot; placeholder=&quot;Add your item here...&quot; aria-label=&quot;Add your item here...&quot;&gt;</span>
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="x">                &lt;button type=&quot;button&quot; class=&quot;btn btn-secondary&quot;&gt;Submit&lt;/button&gt;</span>
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="x">                &lt;div class=&quot;vr&quot;&gt;&lt;/div&gt;</span>
+<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="x">                &lt;button type=&quot;button&quot; class=&quot;btn btn-outline-danger&quot;&gt;Reset&lt;/button&gt;</span>
+<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="x">            </span><span class="cp">{%</span> <span class="k">endcomponent</span> <span class="cp">%}</span>
+</code></pre></div>
+<p><strong>Preview:</strong></p>
+<div class="bs-example">
+<div class="hstack gap-3" data-djc-id-cZjdvfU="">
+
+                <input class="form-control me-auto" type="text" placeholder="Add your item here..." aria-label="Add your item here..."/>
+                <button type="button" class="btn btn-secondary">Submit</button>
+                <div class="vr"></div>
+                <button type="button" class="btn btn-outline-danger">Reset</button>
+
+        </div>
+</div>
+
+<hr />
+<h2 id="vstack-no-gap">Vstack No Gap</h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;Stack&quot;</span> <span class="nv">direction</span><span class="o">=</span><span class="s2">&quot;vertical&quot;</span> <span class="cp">%}</span>
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="x">                &lt;div class=&quot;p-2&quot;&gt;First item&lt;/div&gt;</span>
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="x">                &lt;div class=&quot;p-2&quot;&gt;Second item&lt;/div&gt;</span>
+<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="x">                &lt;div class=&quot;p-2&quot;&gt;Third item&lt;/div&gt;</span>
+<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="x">            </span><span class="cp">{%</span> <span class="k">endcomponent</span> <span class="cp">%}</span>
+</code></pre></div>
+<p><strong>Preview:</strong></p>
+<div class="bs-example">
+<div class="vstack" data-djc-id-cU6PtgR="">
+
+                <div class="p-2">First item</div>
+                <div class="p-2">Second item</div>
+                <div class="p-2">Third item</div>
+
+        </div>
+</div>
+
+<hr />
+<h2 id="hstack-no-gap">Hstack No Gap</h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;Stack&quot;</span> <span class="nv">direction</span><span class="o">=</span><span class="s2">&quot;horizontal&quot;</span> <span class="cp">%}</span>
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="x">                &lt;div class=&quot;p-2&quot;&gt;First item&lt;/div&gt;</span>
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="x">                &lt;div class=&quot;p-2&quot;&gt;Second item&lt;/div&gt;</span>
+<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="x">                &lt;div class=&quot;p-2&quot;&gt;Third item&lt;/div&gt;</span>
+<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a><span class="x">            </span><span class="cp">{%</span> <span class="k">endcomponent</span> <span class="cp">%}</span>
+</code></pre></div>
+<p><strong>Preview:</strong></p>
+<div class="bs-example">
+<div class="hstack" data-djc-id-cH40lin="">
+
+                <div class="p-2">First item</div>
+                <div class="p-2">Second item</div>
+                <div class="p-2">Third item</div>
+
+        </div>
+</div>
+
+<hr /></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script src="../../js/bootstrap.bundle.min.js"></script>
+        <script>
+            var base_url = "../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../js/base.js"></script>
+        <script src="../../javascripts/bootstrap-init.js"></script>
+        <script src="../../search/main.js"></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

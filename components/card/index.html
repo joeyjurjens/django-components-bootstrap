@@ -1,0 +1,995 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        <link rel="canonical" href="https://joeyjurjens.github.io/django-components-bootstrap/components/card/">
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+        <title>Card - Django Components Bootstrap</title>
+        <link href="../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../css/fontawesome.min.css" rel="stylesheet">
+        <link href="../../css/brands.min.css" rel="stylesheet">
+        <link href="../../css/solid.min.css" rel="stylesheet">
+        <link href="../../css/v4-font-face.min.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
+        <link id="hljs-light" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" >
+        <link id="hljs-dark" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark.min.css" disabled>
+        <link href="../../stylesheets/extra.css" rel="stylesheet">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../..">Django Components Bootstrap</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar-collapse" aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="nav-item">
+                                <a href="../.." class="nav-link">Home</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle active" aria-current="page" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Components</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../accordion/" class="dropdown-item">Accordion</a>
+</li>
+                                    
+<li>
+    <a href="../alert/" class="dropdown-item">Alert</a>
+</li>
+                                    
+<li>
+    <a href="../badge/" class="dropdown-item">Badge</a>
+</li>
+                                    
+<li>
+    <a href="../breadcrumb/" class="dropdown-item">Breadcrumb</a>
+</li>
+                                    
+<li>
+    <a href="../button/" class="dropdown-item">Button</a>
+</li>
+                                    
+<li>
+    <a href="../buttongroup/" class="dropdown-item">Button Group</a>
+</li>
+                                    
+<li>
+    <a href="./" class="dropdown-item active" aria-current="page">Card</a>
+</li>
+                                    
+<li>
+    <a href="../carousel/" class="dropdown-item">Carousel</a>
+</li>
+                                    
+<li>
+    <a href="../closebutton/" class="dropdown-item">Close Button</a>
+</li>
+                                    
+<li>
+    <a href="../collapse/" class="dropdown-item">Collapse</a>
+</li>
+                                    
+<li>
+    <a href="../dropdown/" class="dropdown-item">Dropdown</a>
+</li>
+                                    
+<li>
+    <a href="../dropdownbutton/" class="dropdown-item">Dropdown Button</a>
+</li>
+                                    
+<li>
+    <a href="../figure/" class="dropdown-item">Figure</a>
+</li>
+                                    
+<li>
+    <a href="../form/" class="dropdown-item">Form</a>
+</li>
+                                    
+<li>
+    <a href="../image/" class="dropdown-item">Image</a>
+</li>
+                                    
+<li>
+    <a href="../layout/" class="dropdown-item">Layout</a>
+</li>
+                                    
+<li>
+    <a href="../listgroup/" class="dropdown-item">List Group</a>
+</li>
+                                    
+<li>
+    <a href="../modal/" class="dropdown-item">Modal</a>
+</li>
+                                    
+<li>
+    <a href="../nav/" class="dropdown-item">Nav</a>
+</li>
+                                    
+<li>
+    <a href="../navdropdown/" class="dropdown-item">Nav Dropdown</a>
+</li>
+                                    
+<li>
+    <a href="../navbar/" class="dropdown-item">Navbar</a>
+</li>
+                                    
+<li>
+    <a href="../offcanvas/" class="dropdown-item">Offcanvas</a>
+</li>
+                                    
+<li>
+    <a href="../pagination/" class="dropdown-item">Pagination</a>
+</li>
+                                    
+<li>
+    <a href="../placeholder/" class="dropdown-item">Placeholder</a>
+</li>
+                                    
+<li>
+    <a href="../popover/" class="dropdown-item">Popover</a>
+</li>
+                                    
+<li>
+    <a href="../progress/" class="dropdown-item">Progress</a>
+</li>
+                                    
+<li>
+    <a href="../spinner/" class="dropdown-item">Spinner</a>
+</li>
+                                    
+<li>
+    <a href="../stack/" class="dropdown-item">Stack</a>
+</li>
+                                    
+<li>
+    <a href="../table/" class="dropdown-item">Table</a>
+</li>
+                                    
+<li>
+    <a href="../tabs/" class="dropdown-item">Tabs</a>
+</li>
+                                    
+<li>
+    <a href="../toast/" class="dropdown-item">Toast</a>
+</li>
+                                    
+<li>
+    <a href="../togglebutton/" class="dropdown-item">Toggle Button</a>
+</li>
+                                    
+<li>
+    <a href="../tooltip/" class="dropdown-item">Tooltip</a>
+</li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ms-md-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-bs-toggle="modal" data-bs-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a rel="prev" href="../buttongroup/" class="nav-link">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" href="../carousel/" class="nav-link">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="https://github.com/joeyjurjens/django-components-bootstrap/edit/master/docs/components/card.md" class="nav-link">Edit on joeyjurjens/django-components-bootstrap
+                                    </a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-bs-toggle="collapse" data-bs-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-body-tertiary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-bs-level="1"><a href="#card" class="nav-link">Card</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="2"><a href="#basic-with-image" class="nav-link">Basic With Image</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#with-header-and-footer" class="nav-link">With Header And Footer</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#with-image-cap" class="nav-link">With Image Cap</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#body-only" class="nav-link">Body Only</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#with-title-subtitle-links" class="nav-link">With Title Subtitle Links</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#with-image-bottom" class="nav-link">With Image Bottom</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#bg-primary" class="nav-link">Bg Primary</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#bg-secondary" class="nav-link">Bg Secondary</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#bg-success" class="nav-link">Bg Success</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#bg-danger" class="nav-link">Bg Danger</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#border-primary" class="nav-link">Border Primary</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#text-align-center" class="nav-link">Text Align Center</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#text-align-end" class="nav-link">Text Align End</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="card">Card</h1>
+<h2 id="basic-with-image">Basic With Image</h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;Card&quot;</span> <span class="cp">%}</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="x">              </span><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;CardImg&quot;</span> <span class="nv">src</span><span class="o">=</span><span class="s2">&quot;https://placehold.net/600x400.png&quot;</span> <span class="nv">alt</span><span class="o">=</span><span class="s2">&quot;Card image&quot;</span> <span class="nv">position</span><span class="o">=</span><span class="s2">&quot;top&quot;</span> <span class="o">/</span> <span class="cp">%}</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="x">              </span><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;CardBody&quot;</span> <span class="cp">%}</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="x">                </span><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;CardTitle&quot;</span> <span class="cp">%}</span><span class="x">Card title</span><span class="cp">{%</span> <span class="k">endcomponent</span> <span class="cp">%}</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="x">                </span><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;CardText&quot;</span> <span class="cp">%}</span><span class="x">Some quick example text to build on the card title and make up the bulk of the card&#39;s content.</span><span class="cp">{%</span> <span class="k">endcomponent</span> <span class="cp">%}</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="x">                &lt;a href=&quot;#&quot; class=&quot;btn btn-primary&quot;&gt;Go somewhere&lt;/a&gt;</span>
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="x">              </span><span class="cp">{%</span> <span class="k">endcomponent</span> <span class="cp">%}</span>
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="x">            </span><span class="cp">{%</span> <span class="k">endcomponent</span> <span class="cp">%}</span>
+</code></pre></div>
+<p><strong>Preview:</strong></p>
+<div class="bs-example">
+<div class="card" data-djc-id-cHHbmLC="">
+
+
+
+
+
+        <img src="https://placehold.net/600x400.png" alt="Card image" class="card-img-top"  data-djc-id-cc8n9BJ=""/>
+
+
+
+
+        <div class="card-body" data-djc-id-cJ2o7EC="">
+
+
+
+
+        <h5 class="card-title" data-djc-id-cepOkEo="">
+            Card title
+        </h5>
+
+
+
+
+        <p class="card-text" data-djc-id-c1bDzpJ="">
+            Some quick example text to build on the card title and make up the bulk of the card's content.
+        </p>
+
+                <a href="#" class="btn btn-primary">Go somewhere</a>
+
+        </div>
+
+
+
+        </div>
+</div>
+
+<hr />
+<h2 id="with-header-and-footer">With Header And Footer</h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;Card&quot;</span> <span class="nv">text_align</span><span class="o">=</span><span class="s2">&quot;center&quot;</span> <span class="cp">%}</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="x">              </span><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;CardHeader&quot;</span> <span class="cp">%}</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="x">                Featured</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="x">              </span><span class="cp">{%</span> <span class="k">endcomponent</span> <span class="cp">%}</span>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="x">              </span><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;CardBody&quot;</span> <span class="cp">%}</span>
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="x">                </span><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;CardTitle&quot;</span> <span class="cp">%}</span><span class="x">Special title treatment</span><span class="cp">{%</span> <span class="k">endcomponent</span> <span class="cp">%}</span>
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="x">                </span><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;CardText&quot;</span> <span class="cp">%}</span><span class="x">With supporting text below as a natural lead-in to additional content.</span><span class="cp">{%</span> <span class="k">endcomponent</span> <span class="cp">%}</span>
+<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="x">                &lt;a href=&quot;#&quot; class=&quot;btn btn-primary&quot;&gt;Go somewhere&lt;/a&gt;</span>
+<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="x">              </span><span class="cp">{%</span> <span class="k">endcomponent</span> <span class="cp">%}</span>
+<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="x">              </span><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;CardFooter&quot;</span> <span class="cp">%}</span>
+<a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a><span class="x">                2 days ago</span>
+<a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a><span class="x">              </span><span class="cp">{%</span> <span class="k">endcomponent</span> <span class="cp">%}</span>
+<a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a><span class="x">            </span><span class="cp">{%</span> <span class="k">endcomponent</span> <span class="cp">%}</span>
+</code></pre></div>
+<p><strong>Preview:</strong></p>
+<div class="bs-example">
+<div class="card text-center" data-djc-id-ci85kAp="">
+
+
+
+
+
+        <div class="card-header" data-djc-id-cWkIGUP="">
+
+                Featured
+
+        </div>
+
+
+
+
+        <div class="card-body" data-djc-id-cZu5jbv="">
+
+
+
+
+        <h5 class="card-title" data-djc-id-cgaG62V="">
+            Special title treatment
+        </h5>
+
+
+
+
+        <p class="card-text" data-djc-id-cJbtOxT="">
+            With supporting text below as a natural lead-in to additional content.
+        </p>
+
+                <a href="#" class="btn btn-primary">Go somewhere</a>
+
+        </div>
+
+
+
+
+        <div class="card-footer" data-djc-id-cI0qGkO="">
+
+                2 days ago
+
+        </div>
+
+
+
+        </div>
+</div>
+
+<hr />
+<h2 id="with-image-cap">With Image Cap</h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;Card&quot;</span> <span class="cp">%}</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="x">              </span><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;CardImg&quot;</span> <span class="nv">src</span><span class="o">=</span><span class="s2">&quot;https://placehold.net/600x400.png&quot;</span> <span class="nv">alt</span><span class="o">=</span><span class="s2">&quot;Card image&quot;</span> <span class="nv">position</span><span class="o">=</span><span class="s2">&quot;top&quot;</span> <span class="o">/</span> <span class="cp">%}</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="x">              </span><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;CardBody&quot;</span> <span class="cp">%}</span>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="x">                </span><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;CardTitle&quot;</span> <span class="cp">%}</span><span class="x">Card title</span><span class="cp">{%</span> <span class="k">endcomponent</span> <span class="cp">%}</span>
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="x">                </span><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;CardText&quot;</span> <span class="cp">%}</span><span class="x">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</span><span class="cp">{%</span> <span class="k">endcomponent</span> <span class="cp">%}</span>
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="x">                </span><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;CardText&quot;</span> <span class="cp">%}</span><span class="x">&lt;small class=&quot;text-body-secondary&quot;&gt;Last updated 3 mins ago&lt;/small&gt;</span><span class="cp">{%</span> <span class="k">endcomponent</span> <span class="cp">%}</span>
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="x">              </span><span class="cp">{%</span> <span class="k">endcomponent</span> <span class="cp">%}</span>
+<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="x">            </span><span class="cp">{%</span> <span class="k">endcomponent</span> <span class="cp">%}</span>
+</code></pre></div>
+<p><strong>Preview:</strong></p>
+<div class="bs-example">
+<div class="card" data-djc-id-cQsSy9X="">
+
+
+
+
+
+        <img src="https://placehold.net/600x400.png" alt="Card image" class="card-img-top"  data-djc-id-cE13Rde=""/>
+
+
+
+
+        <div class="card-body" data-djc-id-cYZ4MNW="">
+
+
+
+
+        <h5 class="card-title" data-djc-id-cv2F8Hp="">
+            Card title
+        </h5>
+
+
+
+
+        <p class="card-text" data-djc-id-chyC6No="">
+            This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.
+        </p>
+
+
+
+
+        <p class="card-text" data-djc-id-cQTNFFD="">
+            <small class="text-body-secondary">Last updated 3 mins ago</small>
+        </p>
+
+
+        </div>
+
+
+
+        </div>
+</div>
+
+<hr />
+<h2 id="body-only">Body Only</h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;Card&quot;</span> <span class="cp">%}</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="x">              </span><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;CardBody&quot;</span> <span class="cp">%}</span>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="x">                This is some text within a card body.</span>
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="x">              </span><span class="cp">{%</span> <span class="k">endcomponent</span> <span class="cp">%}</span>
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="x">            </span><span class="cp">{%</span> <span class="k">endcomponent</span> <span class="cp">%}</span>
+</code></pre></div>
+<p><strong>Preview:</strong></p>
+<div class="bs-example">
+<div class="card" data-djc-id-cSiH7dL="">
+
+
+
+
+
+        <div class="card-body" data-djc-id-cgebNiX="">
+
+                This is some text within a card body.
+
+        </div>
+
+
+
+        </div>
+</div>
+
+<hr />
+<h2 id="with-title-subtitle-links">With Title Subtitle Links</h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;Card&quot;</span> <span class="cp">%}</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="x">              </span><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;CardBody&quot;</span> <span class="cp">%}</span>
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="x">                </span><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;CardTitle&quot;</span> <span class="cp">%}</span><span class="x">Card title</span><span class="cp">{%</span> <span class="k">endcomponent</span> <span class="cp">%}</span>
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="x">                </span><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;CardSubtitle&quot;</span> <span class="cp">%}</span><span class="x">Card subtitle</span><span class="cp">{%</span> <span class="k">endcomponent</span> <span class="cp">%}</span>
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="x">                </span><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;CardText&quot;</span> <span class="cp">%}</span><span class="x">Some quick example text to build on the card title and make up the bulk of the card&#39;s content.</span><span class="cp">{%</span> <span class="k">endcomponent</span> <span class="cp">%}</span>
+<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="x">                &lt;a href=&quot;#&quot; class=&quot;card-link&quot;&gt;Card link&lt;/a&gt;</span>
+<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a><span class="x">                &lt;a href=&quot;#&quot; class=&quot;card-link&quot;&gt;Another link&lt;/a&gt;</span>
+<a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a><span class="x">              </span><span class="cp">{%</span> <span class="k">endcomponent</span> <span class="cp">%}</span>
+<a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a><span class="x">            </span><span class="cp">{%</span> <span class="k">endcomponent</span> <span class="cp">%}</span>
+</code></pre></div>
+<p><strong>Preview:</strong></p>
+<div class="bs-example">
+<div class="card" data-djc-id-cT6lnDd="">
+
+
+
+
+
+        <div class="card-body" data-djc-id-cTzHmvS="">
+
+
+
+
+        <h5 class="card-title" data-djc-id-c1v4Cxg="">
+            Card title
+        </h5>
+
+
+
+
+        <h6 class="card-subtitle" data-djc-id-cLf9lmK="">
+            Card subtitle
+        </h6>
+
+
+
+
+        <p class="card-text" data-djc-id-c8iuf1h="">
+            Some quick example text to build on the card title and make up the bulk of the card's content.
+        </p>
+
+                <a href="#" class="card-link">Card link</a>
+                <a href="#" class="card-link">Another link</a>
+
+        </div>
+
+
+
+        </div>
+</div>
+
+<hr />
+<h2 id="with-image-bottom">With Image Bottom</h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;Card&quot;</span> <span class="cp">%}</span>
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="x">              </span><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;CardBody&quot;</span> <span class="cp">%}</span>
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="x">                </span><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;CardTitle&quot;</span> <span class="cp">%}</span><span class="x">Card title</span><span class="cp">{%</span> <span class="k">endcomponent</span> <span class="cp">%}</span>
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="x">                </span><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;CardText&quot;</span> <span class="cp">%}</span><span class="x">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</span><span class="cp">{%</span> <span class="k">endcomponent</span> <span class="cp">%}</span>
+<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="x">                </span><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;CardText&quot;</span> <span class="cp">%}</span><span class="x">&lt;small class=&quot;text-body-secondary&quot;&gt;Last updated 3 mins ago&lt;/small&gt;</span><span class="cp">{%</span> <span class="k">endcomponent</span> <span class="cp">%}</span>
+<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="x">              </span><span class="cp">{%</span> <span class="k">endcomponent</span> <span class="cp">%}</span>
+<a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a><span class="x">              </span><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;CardImg&quot;</span> <span class="nv">src</span><span class="o">=</span><span class="s2">&quot;https://placehold.net/600x400.png&quot;</span> <span class="nv">alt</span><span class="o">=</span><span class="s2">&quot;Card image&quot;</span> <span class="nv">position</span><span class="o">=</span><span class="s2">&quot;bottom&quot;</span> <span class="o">/</span> <span class="cp">%}</span>
+<a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a><span class="x">            </span><span class="cp">{%</span> <span class="k">endcomponent</span> <span class="cp">%}</span>
+</code></pre></div>
+<p><strong>Preview:</strong></p>
+<div class="bs-example">
+<div class="card" data-djc-id-ccYdFOw="">
+
+
+
+
+
+        <div class="card-body" data-djc-id-ctLuRfT="">
+
+
+
+
+        <h5 class="card-title" data-djc-id-cvFNzRu="">
+            Card title
+        </h5>
+
+
+
+
+        <p class="card-text" data-djc-id-cBsvbus="">
+            This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.
+        </p>
+
+
+
+
+        <p class="card-text" data-djc-id-clALS0f="">
+            <small class="text-body-secondary">Last updated 3 mins ago</small>
+        </p>
+
+
+        </div>
+
+
+
+
+        <img src="https://placehold.net/600x400.png" alt="Card image" class="card-img-bottom"  data-djc-id-cVVOWZj=""/>
+
+
+
+        </div>
+</div>
+
+<hr />
+<h2 id="bg-primary">Bg Primary</h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;Card&quot;</span> <span class="nv">bg</span><span class="o">=</span><span class="s2">&quot;primary&quot;</span> <span class="nv">attrs</span><span class="o">={</span><span class="s2">&quot;class&quot;</span><span class="o">:</span> <span class="s2">&quot;mb-3&quot;</span><span class="o">,</span> <span class="s2">&quot;style&quot;</span><span class="o">:</span> <span class="s2">&quot;max-width: 18rem;&quot;</span><span class="o">}</span> <span class="cp">%}</span>
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="x">              </span><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;CardHeader&quot;</span> <span class="cp">%}</span><span class="x">Header</span><span class="cp">{%</span> <span class="k">endcomponent</span> <span class="cp">%}</span>
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="x">              </span><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;CardBody&quot;</span> <span class="cp">%}</span>
+<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="x">                </span><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;CardTitle&quot;</span> <span class="cp">%}</span><span class="x">Primary card title</span><span class="cp">{%</span> <span class="k">endcomponent</span> <span class="cp">%}</span>
+<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="x">                </span><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;CardText&quot;</span> <span class="cp">%}</span><span class="x">Some quick example text to build on the card title and make up the bulk of the card&#39;s content.</span><span class="cp">{%</span> <span class="k">endcomponent</span> <span class="cp">%}</span>
+<a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a><span class="x">              </span><span class="cp">{%</span> <span class="k">endcomponent</span> <span class="cp">%}</span>
+<a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a><span class="x">            </span><span class="cp">{%</span> <span class="k">endcomponent</span> <span class="cp">%}</span>
+</code></pre></div>
+<p><strong>Preview:</strong></p>
+<div class="bs-example">
+<div class="mb-3 card text-bg-primary" style="max-width: 18rem;" data-djc-id-cU2btLB="">
+
+
+
+
+
+        <div class="card-header" data-djc-id-coIphpc="">
+            Header
+        </div>
+
+
+
+
+        <div class="card-body" data-djc-id-cFYYyHi="">
+
+
+
+
+        <h5 class="card-title" data-djc-id-cvBFePl="">
+            Primary card title
+        </h5>
+
+
+
+
+        <p class="card-text" data-djc-id-cPVS9Hg="">
+            Some quick example text to build on the card title and make up the bulk of the card's content.
+        </p>
+
+
+        </div>
+
+
+
+        </div>
+</div>
+
+<hr />
+<h2 id="bg-secondary">Bg Secondary</h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;Card&quot;</span> <span class="nv">bg</span><span class="o">=</span><span class="s2">&quot;secondary&quot;</span> <span class="nv">attrs</span><span class="o">={</span><span class="s2">&quot;class&quot;</span><span class="o">:</span> <span class="s2">&quot;mb-3&quot;</span><span class="o">,</span> <span class="s2">&quot;style&quot;</span><span class="o">:</span> <span class="s2">&quot;max-width: 18rem;&quot;</span><span class="o">}</span> <span class="cp">%}</span>
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="x">              </span><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;CardHeader&quot;</span> <span class="cp">%}</span><span class="x">Header</span><span class="cp">{%</span> <span class="k">endcomponent</span> <span class="cp">%}</span>
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="x">              </span><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;CardBody&quot;</span> <span class="cp">%}</span>
+<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="x">                </span><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;CardTitle&quot;</span> <span class="cp">%}</span><span class="x">Secondary card title</span><span class="cp">{%</span> <span class="k">endcomponent</span> <span class="cp">%}</span>
+<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a><span class="x">                </span><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;CardText&quot;</span> <span class="cp">%}</span><span class="x">Some quick example text to build on the card title and make up the bulk of the card&#39;s content.</span><span class="cp">{%</span> <span class="k">endcomponent</span> <span class="cp">%}</span>
+<a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a><span class="x">              </span><span class="cp">{%</span> <span class="k">endcomponent</span> <span class="cp">%}</span>
+<a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a><span class="x">            </span><span class="cp">{%</span> <span class="k">endcomponent</span> <span class="cp">%}</span>
+</code></pre></div>
+<p><strong>Preview:</strong></p>
+<div class="bs-example">
+<div class="mb-3 card text-bg-secondary" style="max-width: 18rem;" data-djc-id-cJZsP7q="">
+
+
+
+
+
+        <div class="card-header" data-djc-id-cGvPlHU="">
+            Header
+        </div>
+
+
+
+
+        <div class="card-body" data-djc-id-cJzYvmT="">
+
+
+
+
+        <h5 class="card-title" data-djc-id-cFb6AI1="">
+            Secondary card title
+        </h5>
+
+
+
+
+        <p class="card-text" data-djc-id-c43D8UA="">
+            Some quick example text to build on the card title and make up the bulk of the card's content.
+        </p>
+
+
+        </div>
+
+
+
+        </div>
+</div>
+
+<hr />
+<h2 id="bg-success">Bg Success</h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;Card&quot;</span> <span class="nv">bg</span><span class="o">=</span><span class="s2">&quot;success&quot;</span> <span class="nv">attrs</span><span class="o">={</span><span class="s2">&quot;class&quot;</span><span class="o">:</span> <span class="s2">&quot;mb-3&quot;</span><span class="o">,</span> <span class="s2">&quot;style&quot;</span><span class="o">:</span> <span class="s2">&quot;max-width: 18rem;&quot;</span><span class="o">}</span> <span class="cp">%}</span>
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="x">              </span><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;CardHeader&quot;</span> <span class="cp">%}</span><span class="x">Header</span><span class="cp">{%</span> <span class="k">endcomponent</span> <span class="cp">%}</span>
+<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="x">              </span><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;CardBody&quot;</span> <span class="cp">%}</span>
+<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="x">                </span><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;CardTitle&quot;</span> <span class="cp">%}</span><span class="x">Success card title</span><span class="cp">{%</span> <span class="k">endcomponent</span> <span class="cp">%}</span>
+<a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a><span class="x">                </span><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;CardText&quot;</span> <span class="cp">%}</span><span class="x">Some quick example text to build on the card title and make up the bulk of the card&#39;s content.</span><span class="cp">{%</span> <span class="k">endcomponent</span> <span class="cp">%}</span>
+<a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a><span class="x">              </span><span class="cp">{%</span> <span class="k">endcomponent</span> <span class="cp">%}</span>
+<a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a><span class="x">            </span><span class="cp">{%</span> <span class="k">endcomponent</span> <span class="cp">%}</span>
+</code></pre></div>
+<p><strong>Preview:</strong></p>
+<div class="bs-example">
+<div class="mb-3 card text-bg-success" style="max-width: 18rem;" data-djc-id-cXrJZk4="">
+
+
+
+
+
+        <div class="card-header" data-djc-id-cOtxa2B="">
+            Header
+        </div>
+
+
+
+
+        <div class="card-body" data-djc-id-c2DDsWk="">
+
+
+
+
+        <h5 class="card-title" data-djc-id-cEcy8fb="">
+            Success card title
+        </h5>
+
+
+
+
+        <p class="card-text" data-djc-id-caF5vzg="">
+            Some quick example text to build on the card title and make up the bulk of the card's content.
+        </p>
+
+
+        </div>
+
+
+
+        </div>
+</div>
+
+<hr />
+<h2 id="bg-danger">Bg Danger</h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;Card&quot;</span> <span class="nv">bg</span><span class="o">=</span><span class="s2">&quot;danger&quot;</span> <span class="nv">attrs</span><span class="o">={</span><span class="s2">&quot;class&quot;</span><span class="o">:</span> <span class="s2">&quot;mb-3&quot;</span><span class="o">,</span> <span class="s2">&quot;style&quot;</span><span class="o">:</span> <span class="s2">&quot;max-width: 18rem;&quot;</span><span class="o">}</span> <span class="cp">%}</span>
+<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="x">              </span><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;CardHeader&quot;</span> <span class="cp">%}</span><span class="x">Header</span><span class="cp">{%</span> <span class="k">endcomponent</span> <span class="cp">%}</span>
+<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="x">              </span><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;CardBody&quot;</span> <span class="cp">%}</span>
+<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="x">                </span><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;CardTitle&quot;</span> <span class="cp">%}</span><span class="x">Danger card title</span><span class="cp">{%</span> <span class="k">endcomponent</span> <span class="cp">%}</span>
+<a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a><span class="x">                </span><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;CardText&quot;</span> <span class="cp">%}</span><span class="x">Some quick example text to build on the card title and make up the bulk of the card&#39;s content.</span><span class="cp">{%</span> <span class="k">endcomponent</span> <span class="cp">%}</span>
+<a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a><span class="x">              </span><span class="cp">{%</span> <span class="k">endcomponent</span> <span class="cp">%}</span>
+<a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a><span class="x">            </span><span class="cp">{%</span> <span class="k">endcomponent</span> <span class="cp">%}</span>
+</code></pre></div>
+<p><strong>Preview:</strong></p>
+<div class="bs-example">
+<div class="mb-3 card text-bg-danger" style="max-width: 18rem;" data-djc-id-cBxIPSj="">
+
+
+
+
+
+        <div class="card-header" data-djc-id-c3gvjVT="">
+            Header
+        </div>
+
+
+
+
+        <div class="card-body" data-djc-id-cUdZi0t="">
+
+
+
+
+        <h5 class="card-title" data-djc-id-cf1vvn2="">
+            Danger card title
+        </h5>
+
+
+
+
+        <p class="card-text" data-djc-id-cju78VI="">
+            Some quick example text to build on the card title and make up the bulk of the card's content.
+        </p>
+
+
+        </div>
+
+
+
+        </div>
+</div>
+
+<hr />
+<h2 id="border-primary">Border Primary</h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;Card&quot;</span> <span class="nv">border</span><span class="o">=</span><span class="s2">&quot;primary&quot;</span> <span class="nv">attrs</span><span class="o">={</span><span class="s2">&quot;class&quot;</span><span class="o">:</span> <span class="s2">&quot;mb-3&quot;</span><span class="o">,</span> <span class="s2">&quot;style&quot;</span><span class="o">:</span> <span class="s2">&quot;max-width: 18rem;&quot;</span><span class="o">}</span> <span class="cp">%}</span>
+<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="x">              </span><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;CardHeader&quot;</span> <span class="cp">%}</span><span class="x">Header</span><span class="cp">{%</span> <span class="k">endcomponent</span> <span class="cp">%}</span>
+<a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a><span class="x">              </span><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;CardBody&quot;</span> <span class="cp">%}</span>
+<a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a><span class="x">                </span><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;CardTitle&quot;</span> <span class="cp">%}</span><span class="x">Primary card title</span><span class="cp">{%</span> <span class="k">endcomponent</span> <span class="cp">%}</span>
+<a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a><span class="x">                </span><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;CardText&quot;</span> <span class="cp">%}</span><span class="x">Some quick example text to build on the card title and make up the bulk of the card&#39;s content.</span><span class="cp">{%</span> <span class="k">endcomponent</span> <span class="cp">%}</span>
+<a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a><span class="x">              </span><span class="cp">{%</span> <span class="k">endcomponent</span> <span class="cp">%}</span>
+<a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a><span class="x">            </span><span class="cp">{%</span> <span class="k">endcomponent</span> <span class="cp">%}</span>
+</code></pre></div>
+<p><strong>Preview:</strong></p>
+<div class="bs-example">
+<div class="mb-3 card border-primary" style="max-width: 18rem;" data-djc-id-c5tzaR1="">
+
+
+
+
+
+        <div class="card-header" data-djc-id-cCV82oj="">
+            Header
+        </div>
+
+
+
+
+        <div class="card-body" data-djc-id-cmToSEJ="">
+
+
+
+
+        <h5 class="card-title" data-djc-id-c982P8S="">
+            Primary card title
+        </h5>
+
+
+
+
+        <p class="card-text" data-djc-id-cCMVx1j="">
+            Some quick example text to build on the card title and make up the bulk of the card's content.
+        </p>
+
+
+        </div>
+
+
+
+        </div>
+</div>
+
+<hr />
+<h2 id="text-align-center">Text Align Center</h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;Card&quot;</span> <span class="nv">text_align</span><span class="o">=</span><span class="s2">&quot;center&quot;</span> <span class="nv">attrs</span><span class="o">={</span><span class="s2">&quot;class&quot;</span><span class="o">:</span> <span class="s2">&quot;mb-3&quot;</span><span class="o">,</span> <span class="s2">&quot;style&quot;</span><span class="o">:</span> <span class="s2">&quot;width: 18rem;&quot;</span><span class="o">}</span> <span class="cp">%}</span>
+<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="x">              </span><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;CardBody&quot;</span> <span class="cp">%}</span>
+<a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a><span class="x">                </span><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;CardTitle&quot;</span> <span class="cp">%}</span><span class="x">Special title treatment</span><span class="cp">{%</span> <span class="k">endcomponent</span> <span class="cp">%}</span>
+<a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a><span class="x">                </span><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;CardText&quot;</span> <span class="cp">%}</span><span class="x">With supporting text below as a natural lead-in to additional content.</span><span class="cp">{%</span> <span class="k">endcomponent</span> <span class="cp">%}</span>
+<a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a><span class="x">                &lt;a href=&quot;#&quot; class=&quot;btn btn-primary&quot;&gt;Go somewhere&lt;/a&gt;</span>
+<a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a><span class="x">              </span><span class="cp">{%</span> <span class="k">endcomponent</span> <span class="cp">%}</span>
+<a id="__codelineno-11-7" name="__codelineno-11-7" href="#__codelineno-11-7"></a><span class="x">            </span><span class="cp">{%</span> <span class="k">endcomponent</span> <span class="cp">%}</span>
+</code></pre></div>
+<p><strong>Preview:</strong></p>
+<div class="bs-example">
+<div class="mb-3 card text-center" style="width: 18rem;" data-djc-id-cRE7OWq="">
+
+
+
+
+
+        <div class="card-body" data-djc-id-cUriUHL="">
+
+
+
+
+        <h5 class="card-title" data-djc-id-cnYN1mp="">
+            Special title treatment
+        </h5>
+
+
+
+
+        <p class="card-text" data-djc-id-cuDm2Qj="">
+            With supporting text below as a natural lead-in to additional content.
+        </p>
+
+                <a href="#" class="btn btn-primary">Go somewhere</a>
+
+        </div>
+
+
+
+        </div>
+</div>
+
+<hr />
+<h2 id="text-align-end">Text Align End</h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;Card&quot;</span> <span class="nv">text_align</span><span class="o">=</span><span class="s2">&quot;end&quot;</span> <span class="cp">%}</span>
+<a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="x">              </span><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;CardBody&quot;</span> <span class="cp">%}</span>
+<a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a><span class="x">                </span><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;CardTitle&quot;</span> <span class="cp">%}</span><span class="x">Special title treatment</span><span class="cp">{%</span> <span class="k">endcomponent</span> <span class="cp">%}</span>
+<a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a><span class="x">                </span><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;CardText&quot;</span> <span class="cp">%}</span><span class="x">With supporting text below as a natural lead-in to additional content.</span><span class="cp">{%</span> <span class="k">endcomponent</span> <span class="cp">%}</span>
+<a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a><span class="x">                &lt;a href=&quot;#&quot; class=&quot;btn btn-primary&quot;&gt;Go somewhere&lt;/a&gt;</span>
+<a id="__codelineno-12-6" name="__codelineno-12-6" href="#__codelineno-12-6"></a><span class="x">              </span><span class="cp">{%</span> <span class="k">endcomponent</span> <span class="cp">%}</span>
+<a id="__codelineno-12-7" name="__codelineno-12-7" href="#__codelineno-12-7"></a><span class="x">            </span><span class="cp">{%</span> <span class="k">endcomponent</span> <span class="cp">%}</span>
+</code></pre></div>
+<p><strong>Preview:</strong></p>
+<div class="bs-example">
+<div class="card text-end" data-djc-id-cujPvxT="">
+
+
+
+
+
+        <div class="card-body" data-djc-id-cr7MFSC="">
+
+
+
+
+        <h5 class="card-title" data-djc-id-c7JLqwf="">
+            Special title treatment
+        </h5>
+
+
+
+
+        <p class="card-text" data-djc-id-cqz7TQ7="">
+            With supporting text below as a natural lead-in to additional content.
+        </p>
+
+                <a href="#" class="btn btn-primary">Go somewhere</a>
+
+        </div>
+
+
+
+        </div>
+</div>
+
+<hr /></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script src="../../js/bootstrap.bundle.min.js"></script>
+        <script>
+            var base_url = "../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../js/base.js"></script>
+        <script src="../../javascripts/bootstrap-init.js"></script>
+        <script src="../../search/main.js"></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

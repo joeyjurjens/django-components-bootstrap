@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        <link rel="canonical" href="https://joeyjurjens.github.io/django-components-bootstrap/components/button/">
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+        <title>Button - Django Components Bootstrap</title>
+        <link href="../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../css/fontawesome.min.css" rel="stylesheet">
+        <link href="../../css/brands.min.css" rel="stylesheet">
+        <link href="../../css/solid.min.css" rel="stylesheet">
+        <link href="../../css/v4-font-face.min.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
+        <link id="hljs-light" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" >
+        <link id="hljs-dark" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark.min.css" disabled>
+        <link href="../../stylesheets/extra.css" rel="stylesheet">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../..">Django Components Bootstrap</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar-collapse" aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="nav-item">
+                                <a href="../.." class="nav-link">Home</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle active" aria-current="page" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Components</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../accordion/" class="dropdown-item">Accordion</a>
+</li>
+                                    
+<li>
+    <a href="../alert/" class="dropdown-item">Alert</a>
+</li>
+                                    
+<li>
+    <a href="../badge/" class="dropdown-item">Badge</a>
+</li>
+                                    
+<li>
+    <a href="../breadcrumb/" class="dropdown-item">Breadcrumb</a>
+</li>
+                                    
+<li>
+    <a href="./" class="dropdown-item active" aria-current="page">Button</a>
+</li>
+                                    
+<li>
+    <a href="../buttongroup/" class="dropdown-item">Button Group</a>
+</li>
+                                    
+<li>
+    <a href="../card/" class="dropdown-item">Card</a>
+</li>
+                                    
+<li>
+    <a href="../carousel/" class="dropdown-item">Carousel</a>
+</li>
+                                    
+<li>
+    <a href="../closebutton/" class="dropdown-item">Close Button</a>
+</li>
+                                    
+<li>
+    <a href="../collapse/" class="dropdown-item">Collapse</a>
+</li>
+                                    
+<li>
+    <a href="../dropdown/" class="dropdown-item">Dropdown</a>
+</li>
+                                    
+<li>
+    <a href="../dropdownbutton/" class="dropdown-item">Dropdown Button</a>
+</li>
+                                    
+<li>
+    <a href="../figure/" class="dropdown-item">Figure</a>
+</li>
+                                    
+<li>
+    <a href="../form/" class="dropdown-item">Form</a>
+</li>
+                                    
+<li>
+    <a href="../image/" class="dropdown-item">Image</a>
+</li>
+                                    
+<li>
+    <a href="../layout/" class="dropdown-item">Layout</a>
+</li>
+                                    
+<li>
+    <a href="../listgroup/" class="dropdown-item">List Group</a>
+</li>
+                                    
+<li>
+    <a href="../modal/" class="dropdown-item">Modal</a>
+</li>
+                                    
+<li>
+    <a href="../nav/" class="dropdown-item">Nav</a>
+</li>
+                                    
+<li>
+    <a href="../navdropdown/" class="dropdown-item">Nav Dropdown</a>
+</li>
+                                    
+<li>
+    <a href="../navbar/" class="dropdown-item">Navbar</a>
+</li>
+                                    
+<li>
+    <a href="../offcanvas/" class="dropdown-item">Offcanvas</a>
+</li>
+                                    
+<li>
+    <a href="../pagination/" class="dropdown-item">Pagination</a>
+</li>
+                                    
+<li>
+    <a href="../placeholder/" class="dropdown-item">Placeholder</a>
+</li>
+                                    
+<li>
+    <a href="../popover/" class="dropdown-item">Popover</a>
+</li>
+                                    
+<li>
+    <a href="../progress/" class="dropdown-item">Progress</a>
+</li>
+                                    
+<li>
+    <a href="../spinner/" class="dropdown-item">Spinner</a>
+</li>
+                                    
+<li>
+    <a href="../stack/" class="dropdown-item">Stack</a>
+</li>
+                                    
+<li>
+    <a href="../table/" class="dropdown-item">Table</a>
+</li>
+                                    
+<li>
+    <a href="../tabs/" class="dropdown-item">Tabs</a>
+</li>
+                                    
+<li>
+    <a href="../toast/" class="dropdown-item">Toast</a>
+</li>
+                                    
+<li>
+    <a href="../togglebutton/" class="dropdown-item">Toggle Button</a>
+</li>
+                                    
+<li>
+    <a href="../tooltip/" class="dropdown-item">Tooltip</a>
+</li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ms-md-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-bs-toggle="modal" data-bs-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a rel="prev" href="../breadcrumb/" class="nav-link">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" href="../buttongroup/" class="nav-link">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="https://github.com/joeyjurjens/django-components-bootstrap/edit/master/docs/components/button.md" class="nav-link">Edit on joeyjurjens/django-components-bootstrap
+                                    </a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-bs-toggle="collapse" data-bs-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-body-tertiary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-bs-level="1"><a href="#button" class="nav-link">Button</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="2"><a href="#variant-primary" class="nav-link">Variant Primary</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#variant-secondary" class="nav-link">Variant Secondary</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#variant-success" class="nav-link">Variant Success</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#variant-danger" class="nav-link">Variant Danger</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#variant-warning" class="nav-link">Variant Warning</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#variant-info" class="nav-link">Variant Info</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#variant-light" class="nav-link">Variant Light</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#variant-dark" class="nav-link">Variant Dark</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#variant-link" class="nav-link">Variant Link</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#outline-primary" class="nav-link">Outline Primary</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#outline-secondary" class="nav-link">Outline Secondary</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#size-large" class="nav-link">Size Large</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#size-small" class="nav-link">Size Small</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#disabled" class="nav-link">Disabled</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#link-button" class="nav-link">Link Button</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#link-button-disabled" class="nav-link">Link Button Disabled</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#active-state" class="nav-link">Active State</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="button">Button</h1>
+<h2 id="variant-primary">Variant Primary</h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;Button&quot;</span> <span class="nv">variant</span><span class="o">=</span><span class="s2">&quot;primary&quot;</span> <span class="cp">%}</span><span class="x">Primary</span><span class="cp">{%</span> <span class="k">endcomponent</span> <span class="cp">%}</span>
+</code></pre></div>
+<p><strong>Preview:</strong></p>
+<div class="bs-example">
+<button type="button" class="btn btn-primary" data-djc-id-cYVVN9p="">
+            Primary
+        </button>
+</div>
+
+<hr />
+<h2 id="variant-secondary">Variant Secondary</h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;Button&quot;</span> <span class="nv">variant</span><span class="o">=</span><span class="s2">&quot;secondary&quot;</span> <span class="cp">%}</span><span class="x">Secondary</span><span class="cp">{%</span> <span class="k">endcomponent</span> <span class="cp">%}</span>
+</code></pre></div>
+<p><strong>Preview:</strong></p>
+<div class="bs-example">
+<button type="button" class="btn btn-secondary" data-djc-id-ceko0Rv="">
+            Secondary
+        </button>
+</div>
+
+<hr />
+<h2 id="variant-success">Variant Success</h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;Button&quot;</span> <span class="nv">variant</span><span class="o">=</span><span class="s2">&quot;success&quot;</span> <span class="cp">%}</span><span class="x">Success</span><span class="cp">{%</span> <span class="k">endcomponent</span> <span class="cp">%}</span>
+</code></pre></div>
+<p><strong>Preview:</strong></p>
+<div class="bs-example">
+<button type="button" class="btn btn-success" data-djc-id-c7pUX1e="">
+            Success
+        </button>
+</div>
+
+<hr />
+<h2 id="variant-danger">Variant Danger</h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;Button&quot;</span> <span class="nv">variant</span><span class="o">=</span><span class="s2">&quot;danger&quot;</span> <span class="cp">%}</span><span class="x">Danger</span><span class="cp">{%</span> <span class="k">endcomponent</span> <span class="cp">%}</span>
+</code></pre></div>
+<p><strong>Preview:</strong></p>
+<div class="bs-example">
+<button type="button" class="btn btn-danger" data-djc-id-clAxI4d="">
+            Danger
+        </button>
+</div>
+
+<hr />
+<h2 id="variant-warning">Variant Warning</h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;Button&quot;</span> <span class="nv">variant</span><span class="o">=</span><span class="s2">&quot;warning&quot;</span> <span class="cp">%}</span><span class="x">Warning</span><span class="cp">{%</span> <span class="k">endcomponent</span> <span class="cp">%}</span>
+</code></pre></div>
+<p><strong>Preview:</strong></p>
+<div class="bs-example">
+<button type="button" class="btn btn-warning" data-djc-id-cj3LfC6="">
+            Warning
+        </button>
+</div>
+
+<hr />
+<h2 id="variant-info">Variant Info</h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;Button&quot;</span> <span class="nv">variant</span><span class="o">=</span><span class="s2">&quot;info&quot;</span> <span class="cp">%}</span><span class="x">Info</span><span class="cp">{%</span> <span class="k">endcomponent</span> <span class="cp">%}</span>
+</code></pre></div>
+<p><strong>Preview:</strong></p>
+<div class="bs-example">
+<button type="button" class="btn btn-info" data-djc-id-cDxKuFm="">
+            Info
+        </button>
+</div>
+
+<hr />
+<h2 id="variant-light">Variant Light</h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;Button&quot;</span> <span class="nv">variant</span><span class="o">=</span><span class="s2">&quot;light&quot;</span> <span class="cp">%}</span><span class="x">Light</span><span class="cp">{%</span> <span class="k">endcomponent</span> <span class="cp">%}</span>
+</code></pre></div>
+<p><strong>Preview:</strong></p>
+<div class="bs-example">
+<button type="button" class="btn btn-light" data-djc-id-cTNdXll="">
+            Light
+        </button>
+</div>
+
+<hr />
+<h2 id="variant-dark">Variant Dark</h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;Button&quot;</span> <span class="nv">variant</span><span class="o">=</span><span class="s2">&quot;dark&quot;</span> <span class="cp">%}</span><span class="x">Dark</span><span class="cp">{%</span> <span class="k">endcomponent</span> <span class="cp">%}</span>
+</code></pre></div>
+<p><strong>Preview:</strong></p>
+<div class="bs-example">
+<button type="button" class="btn btn-dark" data-djc-id-ct3KLys="">
+            Dark
+        </button>
+</div>
+
+<hr />
+<h2 id="variant-link">Variant Link</h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;Button&quot;</span> <span class="nv">variant</span><span class="o">=</span><span class="s2">&quot;link&quot;</span> <span class="cp">%}</span><span class="x">Link</span><span class="cp">{%</span> <span class="k">endcomponent</span> <span class="cp">%}</span>
+</code></pre></div>
+<p><strong>Preview:</strong></p>
+<div class="bs-example">
+<button type="button" class="btn btn-link" data-djc-id-cypmbwh="">
+            Link
+        </button>
+</div>
+
+<hr />
+<h2 id="outline-primary">Outline Primary</h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;Button&quot;</span> <span class="nv">variant</span><span class="o">=</span><span class="s2">&quot;primary&quot;</span> <span class="nv">outline</span><span class="o">=</span><span class="kp">True</span> <span class="cp">%}</span><span class="x">Primary</span><span class="cp">{%</span> <span class="k">endcomponent</span> <span class="cp">%}</span>
+</code></pre></div>
+<p><strong>Preview:</strong></p>
+<div class="bs-example">
+<button type="button" class="btn btn-outline-primary" data-djc-id-cmcV9IF="">
+            Primary
+        </button>
+</div>
+
+<hr />
+<h2 id="outline-secondary">Outline Secondary</h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;Button&quot;</span> <span class="nv">variant</span><span class="o">=</span><span class="s2">&quot;secondary&quot;</span> <span class="nv">outline</span><span class="o">=</span><span class="kp">True</span> <span class="cp">%}</span><span class="x">Secondary</span><span class="cp">{%</span> <span class="k">endcomponent</span> <span class="cp">%}</span>
+</code></pre></div>
+<p><strong>Preview:</strong></p>
+<div class="bs-example">
+<button type="button" class="btn btn-outline-secondary" data-djc-id-c4QC8ws="">
+            Secondary
+        </button>
+</div>
+
+<hr />
+<h2 id="size-large">Size Large</h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;Button&quot;</span> <span class="nv">variant</span><span class="o">=</span><span class="s2">&quot;primary&quot;</span> <span class="nv">size</span><span class="o">=</span><span class="s2">&quot;lg&quot;</span> <span class="cp">%}</span><span class="x">Large button</span><span class="cp">{%</span> <span class="k">endcomponent</span> <span class="cp">%}</span>
+</code></pre></div>
+<p><strong>Preview:</strong></p>
+<div class="bs-example">
+<button type="button" class="btn btn-primary btn-lg" data-djc-id-cny6NZ8="">
+            Large button
+        </button>
+</div>
+
+<hr />
+<h2 id="size-small">Size Small</h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;Button&quot;</span> <span class="nv">variant</span><span class="o">=</span><span class="s2">&quot;primary&quot;</span> <span class="nv">size</span><span class="o">=</span><span class="s2">&quot;sm&quot;</span> <span class="cp">%}</span><span class="x">Small button</span><span class="cp">{%</span> <span class="k">endcomponent</span> <span class="cp">%}</span>
+</code></pre></div>
+<p><strong>Preview:</strong></p>
+<div class="bs-example">
+<button type="button" class="btn btn-primary btn-sm" data-djc-id-c8JKkzQ="">
+            Small button
+        </button>
+</div>
+
+<hr />
+<h2 id="disabled">Disabled</h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;Button&quot;</span> <span class="nv">variant</span><span class="o">=</span><span class="s2">&quot;primary&quot;</span> <span class="nv">disabled</span><span class="o">=</span><span class="kp">True</span> <span class="cp">%}</span><span class="x">Disabled button</span><span class="cp">{%</span> <span class="k">endcomponent</span> <span class="cp">%}</span>
+</code></pre></div>
+<p><strong>Preview:</strong></p>
+<div class="bs-example">
+<button type="button" disabled class="btn btn-primary" data-djc-id-cvS1Glp="">
+            Disabled button
+        </button>
+</div>
+
+<hr />
+<h2 id="link-button">Link Button</h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;Button&quot;</span> <span class="nv">variant</span><span class="o">=</span><span class="s2">&quot;primary&quot;</span> <span class="nv">as_</span><span class="o">=</span><span class="s2">&quot;a&quot;</span> <span class="nv">href</span><span class="o">=</span><span class="s2">&quot;#&quot;</span> <span class="cp">%}</span><span class="x">Link</span><span class="cp">{%</span> <span class="k">endcomponent</span> <span class="cp">%}</span>
+</code></pre></div>
+<p><strong>Preview:</strong></p>
+<div class="bs-example">
+<a href="#" role="button" class="btn btn-primary" data-djc-id-c4AHRzu="">
+            Link
+        </a>
+</div>
+
+<hr />
+<h2 id="link-button-disabled">Link Button Disabled</h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;Button&quot;</span> <span class="nv">variant</span><span class="o">=</span><span class="s2">&quot;primary&quot;</span> <span class="nv">as_</span><span class="o">=</span><span class="s2">&quot;a&quot;</span> <span class="nv">href</span><span class="o">=</span><span class="s2">&quot;#&quot;</span> <span class="nv">disabled</span><span class="o">=</span><span class="kp">True</span> <span class="cp">%}</span><span class="x">Disabled link</span><span class="cp">{%</span> <span class="k">endcomponent</span> <span class="cp">%}</span>
+</code></pre></div>
+<p><strong>Preview:</strong></p>
+<div class="bs-example">
+<a href="#" role="button" tabindex="-1" aria-disabled="true" class="btn btn-primary disabled" data-djc-id-cW6Y9c5="">
+            Disabled link
+        </a>
+</div>
+
+<hr />
+<h2 id="active-state">Active State</h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;Button&quot;</span> <span class="nv">variant</span><span class="o">=</span><span class="s2">&quot;primary&quot;</span> <span class="nv">active</span><span class="o">=</span><span class="kp">True</span> <span class="cp">%}</span><span class="x">Active button</span><span class="cp">{%</span> <span class="k">endcomponent</span> <span class="cp">%}</span>
+</code></pre></div>
+<p><strong>Preview:</strong></p>
+<div class="bs-example">
+<button type="button" aria-pressed="true" class="btn btn-primary active" data-djc-id-cZJMbBx="">
+            Active button
+        </button>
+</div>
+
+<hr /></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script src="../../js/bootstrap.bundle.min.js"></script>
+        <script>
+            var base_url = "../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../js/base.js"></script>
+        <script src="../../javascripts/bootstrap-init.js"></script>
+        <script src="../../search/main.js"></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

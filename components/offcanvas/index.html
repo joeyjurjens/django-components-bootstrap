@@ -1,0 +1,1132 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        <link rel="canonical" href="https://joeyjurjens.github.io/django-components-bootstrap/components/offcanvas/">
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+        <title>Offcanvas - Django Components Bootstrap</title>
+        <link href="../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../css/fontawesome.min.css" rel="stylesheet">
+        <link href="../../css/brands.min.css" rel="stylesheet">
+        <link href="../../css/solid.min.css" rel="stylesheet">
+        <link href="../../css/v4-font-face.min.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
+        <link id="hljs-light" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" >
+        <link id="hljs-dark" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark.min.css" disabled>
+        <link href="../../stylesheets/extra.css" rel="stylesheet">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../..">Django Components Bootstrap</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar-collapse" aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="nav-item">
+                                <a href="../.." class="nav-link">Home</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle active" aria-current="page" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Components</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../accordion/" class="dropdown-item">Accordion</a>
+</li>
+                                    
+<li>
+    <a href="../alert/" class="dropdown-item">Alert</a>
+</li>
+                                    
+<li>
+    <a href="../badge/" class="dropdown-item">Badge</a>
+</li>
+                                    
+<li>
+    <a href="../breadcrumb/" class="dropdown-item">Breadcrumb</a>
+</li>
+                                    
+<li>
+    <a href="../button/" class="dropdown-item">Button</a>
+</li>
+                                    
+<li>
+    <a href="../buttongroup/" class="dropdown-item">Button Group</a>
+</li>
+                                    
+<li>
+    <a href="../card/" class="dropdown-item">Card</a>
+</li>
+                                    
+<li>
+    <a href="../carousel/" class="dropdown-item">Carousel</a>
+</li>
+                                    
+<li>
+    <a href="../closebutton/" class="dropdown-item">Close Button</a>
+</li>
+                                    
+<li>
+    <a href="../collapse/" class="dropdown-item">Collapse</a>
+</li>
+                                    
+<li>
+    <a href="../dropdown/" class="dropdown-item">Dropdown</a>
+</li>
+                                    
+<li>
+    <a href="../dropdownbutton/" class="dropdown-item">Dropdown Button</a>
+</li>
+                                    
+<li>
+    <a href="../figure/" class="dropdown-item">Figure</a>
+</li>
+                                    
+<li>
+    <a href="../form/" class="dropdown-item">Form</a>
+</li>
+                                    
+<li>
+    <a href="../image/" class="dropdown-item">Image</a>
+</li>
+                                    
+<li>
+    <a href="../layout/" class="dropdown-item">Layout</a>
+</li>
+                                    
+<li>
+    <a href="../listgroup/" class="dropdown-item">List Group</a>
+</li>
+                                    
+<li>
+    <a href="../modal/" class="dropdown-item">Modal</a>
+</li>
+                                    
+<li>
+    <a href="../nav/" class="dropdown-item">Nav</a>
+</li>
+                                    
+<li>
+    <a href="../navdropdown/" class="dropdown-item">Nav Dropdown</a>
+</li>
+                                    
+<li>
+    <a href="../navbar/" class="dropdown-item">Navbar</a>
+</li>
+                                    
+<li>
+    <a href="./" class="dropdown-item active" aria-current="page">Offcanvas</a>
+</li>
+                                    
+<li>
+    <a href="../pagination/" class="dropdown-item">Pagination</a>
+</li>
+                                    
+<li>
+    <a href="../placeholder/" class="dropdown-item">Placeholder</a>
+</li>
+                                    
+<li>
+    <a href="../popover/" class="dropdown-item">Popover</a>
+</li>
+                                    
+<li>
+    <a href="../progress/" class="dropdown-item">Progress</a>
+</li>
+                                    
+<li>
+    <a href="../spinner/" class="dropdown-item">Spinner</a>
+</li>
+                                    
+<li>
+    <a href="../stack/" class="dropdown-item">Stack</a>
+</li>
+                                    
+<li>
+    <a href="../table/" class="dropdown-item">Table</a>
+</li>
+                                    
+<li>
+    <a href="../tabs/" class="dropdown-item">Tabs</a>
+</li>
+                                    
+<li>
+    <a href="../toast/" class="dropdown-item">Toast</a>
+</li>
+                                    
+<li>
+    <a href="../togglebutton/" class="dropdown-item">Toggle Button</a>
+</li>
+                                    
+<li>
+    <a href="../tooltip/" class="dropdown-item">Tooltip</a>
+</li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ms-md-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-bs-toggle="modal" data-bs-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a rel="prev" href="../navbar/" class="nav-link">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" href="../pagination/" class="nav-link">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="https://github.com/joeyjurjens/django-components-bootstrap/edit/master/docs/components/offcanvas.md" class="nav-link">Edit on joeyjurjens/django-components-bootstrap
+                                    </a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-bs-toggle="collapse" data-bs-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-body-tertiary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-bs-level="1"><a href="#offcanvas" class="nav-link">Offcanvas</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="2"><a href="#basic" class="nav-link">Basic</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#offcanvas-placement-start" class="nav-link">Offcanvas Placement Start</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#offcanvas-placement-end" class="nav-link">Offcanvas Placement End</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#offcanvas-placement-top" class="nav-link">Offcanvas Placement Top</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#offcanvas-placement-bottom" class="nav-link">Offcanvas Placement Bottom</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#offcanvas-body-scrolling-enabled" class="nav-link">Offcanvas Body Scrolling Enabled</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#offcanvas-with-backdrop" class="nav-link">Offcanvas With Backdrop</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#offcanvas-static-backdrop" class="nav-link">Offcanvas Static Backdrop</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#offcanvas-no-backdrop" class="nav-link">Offcanvas No Backdrop</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#offcanvas-responsive-lg" class="nav-link">Offcanvas Responsive Lg</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#offcanvas-responsive-md" class="nav-link">Offcanvas Responsive Md</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#offcanvas-without-close-button" class="nav-link">Offcanvas Without Close Button</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#offcanvas-custom-title-heading" class="nav-link">Offcanvas Custom Title Heading</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="offcanvas">Offcanvas</h1>
+<h2 id="basic">Basic</h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;Offcanvas&quot;</span> <span class="nv">scroll</span><span class="o">=</span><span class="kp">False</span> <span class="nv">keyboard</span><span class="o">=</span><span class="kp">False</span> <span class="cp">%}</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="x">              </span><span class="cp">{%</span> <span class="k">fill</span> <span class="s2">&quot;toggle&quot;</span> <span class="cp">%}</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="x">                </span><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;OffcanvasToggle&quot;</span> <span class="nv">attrs</span><span class="o">={</span><span class="s2">&quot;class&quot;</span><span class="o">:</span> <span class="s2">&quot;btn btn-primary&quot;</span><span class="o">,</span> <span class="s2">&quot;type&quot;</span><span class="o">:</span> <span class="s2">&quot;button&quot;</span><span class="o">}</span> <span class="cp">%}</span><span class="x">Toggle Offcanvas</span><span class="cp">{%</span> <span class="k">endcomponent</span> <span class="cp">%}</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="x">              </span><span class="cp">{%</span> <span class="k">endfill</span> <span class="cp">%}</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="x">              </span><span class="cp">{%</span> <span class="k">fill</span> <span class="s2">&quot;default&quot;</span> <span class="cp">%}</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="x">                </span><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;OffcanvasHeader&quot;</span> <span class="cp">%}</span>
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="x">                  </span><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;OffcanvasTitle&quot;</span> <span class="cp">%}</span><span class="x">Offcanvas</span><span class="cp">{%</span> <span class="k">endcomponent</span> <span class="cp">%}</span>
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="x">                </span><span class="cp">{%</span> <span class="k">endcomponent</span> <span class="cp">%}</span>
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="x">                </span><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;OffcanvasBody&quot;</span> <span class="cp">%}</span>
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="x">                  Content for the offcanvas goes here. You can place just about any Bootstrap component or custom elements here.</span>
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="x">                </span><span class="cp">{%</span> <span class="k">endcomponent</span> <span class="cp">%}</span>
+<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="x">              </span><span class="cp">{%</span> <span class="k">endfill</span> <span class="cp">%}</span>
+<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="x">            </span><span class="cp">{%</span> <span class="k">endcomponent</span> <span class="cp">%}</span>
+</code></pre></div>
+<p><strong>Preview:</strong></p>
+<div class="bs-example">
+<button aria-controls="offcanvas-cDdNPa3" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvas-cDdNPa3" class="btn btn-primary" data-djc-id-cDdNPa3="" data-djc-id-cCX4oEW="">
+            Toggle Offcanvas
+        </button>
+
+
+            <div id="offcanvas-cDdNPa3" aria-labelledby="offcanvas-cDdNPa3-label" tabindex="-1" class="offcanvas offcanvas-start"  data-bs-keyboard="false" data-djc-id-cDdNPa3="">
+
+
+
+
+        <div class="offcanvas-header" data-djc-id-cZ7el9z="">
+
+
+
+
+        <h5 id="offcanvas-cDdNPa3-label" class="offcanvas-title" data-djc-id-cS7Xgd1="">
+            Offcanvas
+        </h5>
+
+
+
+
+
+
+        <button aria-label="Close" data-bs-dismiss="offcanvas" type="button" class="btn-close" data-djc-id-ctd8CFU=""></button>
+
+
+        </div>
+
+
+
+
+        <div class="offcanvas-body" data-djc-id-c8biNwV="">
+
+                  Content for the offcanvas goes here. You can place just about any Bootstrap component or custom elements here.
+
+        </div>
+
+
+            </div>
+</div>
+
+<hr />
+<h2 id="offcanvas-placement-start">Offcanvas Placement Start</h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;Offcanvas&quot;</span> <span class="nv">placement</span><span class="o">=</span><span class="s2">&quot;start&quot;</span> <span class="cp">%}</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="x">              </span><span class="cp">{%</span> <span class="k">fill</span> <span class="s2">&quot;toggle&quot;</span> <span class="cp">%}</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="x">                </span><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;OffcanvasToggle&quot;</span> <span class="nv">attrs</span><span class="o">:</span><span class="nv">class</span><span class="o">=</span><span class="s2">&quot;btn btn-primary&quot;</span> <span class="cp">%}</span><span class="x">Toggle Offcanvas</span><span class="cp">{%</span> <span class="k">endcomponent</span> <span class="cp">%}</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="x">              </span><span class="cp">{%</span> <span class="k">endfill</span> <span class="cp">%}</span>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="x">              </span><span class="cp">{%</span> <span class="k">fill</span> <span class="s2">&quot;default&quot;</span> <span class="cp">%}</span>
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="x">                </span><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;OffcanvasHeader&quot;</span> <span class="cp">%}</span>
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="x">                  </span><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;OffcanvasTitle&quot;</span> <span class="cp">%}</span><span class="x">Offcanvas Start</span><span class="cp">{%</span> <span class="k">endcomponent</span> <span class="cp">%}</span>
+<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="x">                </span><span class="cp">{%</span> <span class="k">endcomponent</span> <span class="cp">%}</span>
+<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="x">                </span><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;OffcanvasBody&quot;</span> <span class="cp">%}</span>
+<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="x">                  &lt;p&gt;This offcanvas appears from the start (left).&lt;/p&gt;</span>
+<a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a><span class="x">                </span><span class="cp">{%</span> <span class="k">endcomponent</span> <span class="cp">%}</span>
+<a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a><span class="x">              </span><span class="cp">{%</span> <span class="k">endfill</span> <span class="cp">%}</span>
+<a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a><span class="x">            </span><span class="cp">{%</span> <span class="k">endcomponent</span> <span class="cp">%}</span>
+</code></pre></div>
+<p><strong>Preview:</strong></p>
+<div class="bs-example">
+<button aria-controls="offcanvas-ct5WULy" data-bs-toggle="offcanvas" data-bs-target="#offcanvas-ct5WULy" class="btn btn-primary" data-djc-id-ct5WULy="" data-djc-id-c11Mzgq="">
+            Toggle Offcanvas
+        </button>
+
+
+            <div id="offcanvas-ct5WULy" aria-labelledby="offcanvas-ct5WULy-label" tabindex="-1" class="offcanvas offcanvas-start"  data-djc-id-ct5WULy="">
+
+
+
+
+        <div class="offcanvas-header" data-djc-id-cVSFdwF="">
+
+
+
+
+        <h5 id="offcanvas-ct5WULy-label" class="offcanvas-title" data-djc-id-cAChEVp="">
+            Offcanvas Start
+        </h5>
+
+
+
+
+
+
+        <button aria-label="Close" data-bs-dismiss="offcanvas" type="button" class="btn-close" data-djc-id-cLQeH1y=""></button>
+
+
+        </div>
+
+
+
+
+        <div class="offcanvas-body" data-djc-id-cgQvvYM="">
+
+                  <p>This offcanvas appears from the start (left).</p>
+
+        </div>
+
+
+            </div>
+</div>
+
+<hr />
+<h2 id="offcanvas-placement-end">Offcanvas Placement End</h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;Offcanvas&quot;</span> <span class="nv">placement</span><span class="o">=</span><span class="s2">&quot;end&quot;</span> <span class="cp">%}</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="x">              </span><span class="cp">{%</span> <span class="k">fill</span> <span class="s2">&quot;toggle&quot;</span> <span class="cp">%}</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="x">                </span><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;OffcanvasToggle&quot;</span> <span class="nv">attrs</span><span class="o">:</span><span class="nv">class</span><span class="o">=</span><span class="s2">&quot;btn btn-primary&quot;</span> <span class="cp">%}</span><span class="x">Toggle Offcanvas</span><span class="cp">{%</span> <span class="k">endcomponent</span> <span class="cp">%}</span>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="x">              </span><span class="cp">{%</span> <span class="k">endfill</span> <span class="cp">%}</span>
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="x">              </span><span class="cp">{%</span> <span class="k">fill</span> <span class="s2">&quot;default&quot;</span> <span class="cp">%}</span>
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="x">                </span><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;OffcanvasHeader&quot;</span> <span class="cp">%}</span>
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="x">                  </span><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;OffcanvasTitle&quot;</span> <span class="cp">%}</span><span class="x">Offcanvas End</span><span class="cp">{%</span> <span class="k">endcomponent</span> <span class="cp">%}</span>
+<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="x">                </span><span class="cp">{%</span> <span class="k">endcomponent</span> <span class="cp">%}</span>
+<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="x">                </span><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;OffcanvasBody&quot;</span> <span class="cp">%}</span>
+<a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a><span class="x">                  &lt;p&gt;This offcanvas appears from the end (right).&lt;/p&gt;</span>
+<a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a><span class="x">                </span><span class="cp">{%</span> <span class="k">endcomponent</span> <span class="cp">%}</span>
+<a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a><span class="x">              </span><span class="cp">{%</span> <span class="k">endfill</span> <span class="cp">%}</span>
+<a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a><span class="x">            </span><span class="cp">{%</span> <span class="k">endcomponent</span> <span class="cp">%}</span>
+</code></pre></div>
+<p><strong>Preview:</strong></p>
+<div class="bs-example">
+<button aria-controls="offcanvas-cT9xBsD" data-bs-toggle="offcanvas" data-bs-target="#offcanvas-cT9xBsD" class="btn btn-primary" data-djc-id-cT9xBsD="" data-djc-id-cuTau9I="">
+            Toggle Offcanvas
+        </button>
+
+
+            <div id="offcanvas-cT9xBsD" aria-labelledby="offcanvas-cT9xBsD-label" tabindex="-1" class="offcanvas offcanvas-end"  data-djc-id-cT9xBsD="">
+
+
+
+
+        <div class="offcanvas-header" data-djc-id-c0JBMk1="">
+
+
+
+
+        <h5 id="offcanvas-cT9xBsD-label" class="offcanvas-title" data-djc-id-cW2eJo5="">
+            Offcanvas End
+        </h5>
+
+
+
+
+
+
+        <button aria-label="Close" data-bs-dismiss="offcanvas" type="button" class="btn-close" data-djc-id-cTKdpn9=""></button>
+
+
+        </div>
+
+
+
+
+        <div class="offcanvas-body" data-djc-id-cZxcvOx="">
+
+                  <p>This offcanvas appears from the end (right).</p>
+
+        </div>
+
+
+            </div>
+</div>
+
+<hr />
+<h2 id="offcanvas-placement-top">Offcanvas Placement Top</h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;Offcanvas&quot;</span> <span class="nv">placement</span><span class="o">=</span><span class="s2">&quot;top&quot;</span> <span class="cp">%}</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="x">              </span><span class="cp">{%</span> <span class="k">fill</span> <span class="s2">&quot;toggle&quot;</span> <span class="cp">%}</span>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="x">                </span><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;OffcanvasToggle&quot;</span> <span class="nv">attrs</span><span class="o">:</span><span class="nv">class</span><span class="o">=</span><span class="s2">&quot;btn btn-primary&quot;</span> <span class="cp">%}</span><span class="x">Toggle Offcanvas</span><span class="cp">{%</span> <span class="k">endcomponent</span> <span class="cp">%}</span>
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="x">              </span><span class="cp">{%</span> <span class="k">endfill</span> <span class="cp">%}</span>
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="x">              </span><span class="cp">{%</span> <span class="k">fill</span> <span class="s2">&quot;default&quot;</span> <span class="cp">%}</span>
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="x">                </span><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;OffcanvasHeader&quot;</span> <span class="cp">%}</span>
+<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="x">                  </span><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;OffcanvasTitle&quot;</span> <span class="cp">%}</span><span class="x">Offcanvas Top</span><span class="cp">{%</span> <span class="k">endcomponent</span> <span class="cp">%}</span>
+<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="x">                </span><span class="cp">{%</span> <span class="k">endcomponent</span> <span class="cp">%}</span>
+<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a><span class="x">                </span><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;OffcanvasBody&quot;</span> <span class="cp">%}</span>
+<a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a><span class="x">                  &lt;p&gt;This offcanvas appears from the top.&lt;/p&gt;</span>
+<a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a><span class="x">                </span><span class="cp">{%</span> <span class="k">endcomponent</span> <span class="cp">%}</span>
+<a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a><span class="x">              </span><span class="cp">{%</span> <span class="k">endfill</span> <span class="cp">%}</span>
+<a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a><span class="x">            </span><span class="cp">{%</span> <span class="k">endcomponent</span> <span class="cp">%}</span>
+</code></pre></div>
+<p><strong>Preview:</strong></p>
+<div class="bs-example">
+<button aria-controls="offcanvas-cfTrM23" data-bs-toggle="offcanvas" data-bs-target="#offcanvas-cfTrM23" class="btn btn-primary" data-djc-id-cfTrM23="" data-djc-id-cTpRKJW="">
+            Toggle Offcanvas
+        </button>
+
+
+            <div id="offcanvas-cfTrM23" aria-labelledby="offcanvas-cfTrM23-label" tabindex="-1" class="offcanvas offcanvas-top"  data-djc-id-cfTrM23="">
+
+
+
+
+        <div class="offcanvas-header" data-djc-id-cIxfcMa="">
+
+
+
+
+        <h5 id="offcanvas-cfTrM23-label" class="offcanvas-title" data-djc-id-c8vk7hJ="">
+            Offcanvas Top
+        </h5>
+
+
+
+
+
+
+        <button aria-label="Close" data-bs-dismiss="offcanvas" type="button" class="btn-close" data-djc-id-cpjrtOZ=""></button>
+
+
+        </div>
+
+
+
+
+        <div class="offcanvas-body" data-djc-id-cVQ7wrn="">
+
+                  <p>This offcanvas appears from the top.</p>
+
+        </div>
+
+
+            </div>
+</div>
+
+<hr />
+<h2 id="offcanvas-placement-bottom">Offcanvas Placement Bottom</h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;Offcanvas&quot;</span> <span class="nv">placement</span><span class="o">=</span><span class="s2">&quot;bottom&quot;</span> <span class="cp">%}</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="x">              </span><span class="cp">{%</span> <span class="k">fill</span> <span class="s2">&quot;toggle&quot;</span> <span class="cp">%}</span>
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="x">                </span><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;OffcanvasToggle&quot;</span> <span class="nv">attrs</span><span class="o">:</span><span class="nv">class</span><span class="o">=</span><span class="s2">&quot;btn btn-primary&quot;</span> <span class="cp">%}</span><span class="x">Toggle Offcanvas</span><span class="cp">{%</span> <span class="k">endcomponent</span> <span class="cp">%}</span>
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="x">              </span><span class="cp">{%</span> <span class="k">endfill</span> <span class="cp">%}</span>
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="x">              </span><span class="cp">{%</span> <span class="k">fill</span> <span class="s2">&quot;default&quot;</span> <span class="cp">%}</span>
+<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="x">                </span><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;OffcanvasHeader&quot;</span> <span class="cp">%}</span>
+<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a><span class="x">                  </span><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;OffcanvasTitle&quot;</span> <span class="cp">%}</span><span class="x">Offcanvas Bottom</span><span class="cp">{%</span> <span class="k">endcomponent</span> <span class="cp">%}</span>
+<a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a><span class="x">                </span><span class="cp">{%</span> <span class="k">endcomponent</span> <span class="cp">%}</span>
+<a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a><span class="x">                </span><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;OffcanvasBody&quot;</span> <span class="cp">%}</span>
+<a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a><span class="x">                  &lt;p&gt;This offcanvas appears from the bottom.&lt;/p&gt;</span>
+<a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a><span class="x">                </span><span class="cp">{%</span> <span class="k">endcomponent</span> <span class="cp">%}</span>
+<a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a><span class="x">              </span><span class="cp">{%</span> <span class="k">endfill</span> <span class="cp">%}</span>
+<a id="__codelineno-4-13" name="__codelineno-4-13" href="#__codelineno-4-13"></a><span class="x">            </span><span class="cp">{%</span> <span class="k">endcomponent</span> <span class="cp">%}</span>
+</code></pre></div>
+<p><strong>Preview:</strong></p>
+<div class="bs-example">
+<button aria-controls="offcanvas-cjDxLZI" data-bs-toggle="offcanvas" data-bs-target="#offcanvas-cjDxLZI" class="btn btn-primary" data-djc-id-cjDxLZI="" data-djc-id-csB6gkW="">
+            Toggle Offcanvas
+        </button>
+
+
+            <div id="offcanvas-cjDxLZI" aria-labelledby="offcanvas-cjDxLZI-label" tabindex="-1" class="offcanvas offcanvas-bottom"  data-djc-id-cjDxLZI="">
+
+
+
+
+        <div class="offcanvas-header" data-djc-id-cWfbywV="">
+
+
+
+
+        <h5 id="offcanvas-cjDxLZI-label" class="offcanvas-title" data-djc-id-czrzzmm="">
+            Offcanvas Bottom
+        </h5>
+
+
+
+
+
+
+        <button aria-label="Close" data-bs-dismiss="offcanvas" type="button" class="btn-close" data-djc-id-c2Rauji=""></button>
+
+
+        </div>
+
+
+
+
+        <div class="offcanvas-body" data-djc-id-cxtZT55="">
+
+                  <p>This offcanvas appears from the bottom.</p>
+
+        </div>
+
+
+            </div>
+</div>
+
+<hr />
+<h2 id="offcanvas-body-scrolling-enabled">Offcanvas Body Scrolling Enabled</h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;Offcanvas&quot;</span> <span class="nv">scroll</span><span class="o">=</span><span class="kp">True</span> <span class="nv">backdrop</span><span class="o">=</span><span class="s2">&quot;false&quot;</span> <span class="cp">%}</span>
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="x">              </span><span class="cp">{%</span> <span class="k">fill</span> <span class="s2">&quot;toggle&quot;</span> <span class="cp">%}</span>
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="x">                </span><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;OffcanvasToggle&quot;</span> <span class="nv">attrs</span><span class="o">:</span><span class="nv">class</span><span class="o">=</span><span class="s2">&quot;btn btn-primary&quot;</span> <span class="cp">%}</span><span class="x">Toggle Offcanvas</span><span class="cp">{%</span> <span class="k">endcomponent</span> <span class="cp">%}</span>
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="x">              </span><span class="cp">{%</span> <span class="k">endfill</span> <span class="cp">%}</span>
+<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="x">              </span><span class="cp">{%</span> <span class="k">fill</span> <span class="s2">&quot;default&quot;</span> <span class="cp">%}</span>
+<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="x">                </span><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;OffcanvasHeader&quot;</span> <span class="cp">%}</span>
+<a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a><span class="x">                  </span><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;OffcanvasTitle&quot;</span> <span class="cp">%}</span><span class="x">Offcanvas with body scrolling</span><span class="cp">{%</span> <span class="k">endcomponent</span> <span class="cp">%}</span>
+<a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a><span class="x">                </span><span class="cp">{%</span> <span class="k">endcomponent</span> <span class="cp">%}</span>
+<a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a><span class="x">                </span><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;OffcanvasBody&quot;</span> <span class="cp">%}</span>
+<a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a><span class="x">                  &lt;p&gt;Try scrolling the rest of the page to see this option in action.&lt;/p&gt;</span>
+<a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a><span class="x">                </span><span class="cp">{%</span> <span class="k">endcomponent</span> <span class="cp">%}</span>
+<a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a><span class="x">              </span><span class="cp">{%</span> <span class="k">endfill</span> <span class="cp">%}</span>
+<a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a><span class="x">            </span><span class="cp">{%</span> <span class="k">endcomponent</span> <span class="cp">%}</span>
+</code></pre></div>
+<p><strong>Preview:</strong></p>
+<div class="bs-example">
+<button aria-controls="offcanvas-ccopewT" data-bs-toggle="offcanvas" data-bs-target="#offcanvas-ccopewT" class="btn btn-primary" data-djc-id-ccopewT="" data-djc-id-ca0Dc9y="">
+            Toggle Offcanvas
+        </button>
+
+
+            <div id="offcanvas-ccopewT" aria-labelledby="offcanvas-ccopewT-label" tabindex="-1" class="offcanvas offcanvas-start" data-bs-backdrop="false" data-bs-scroll="true" data-djc-id-ccopewT="">
+
+
+
+
+        <div class="offcanvas-header" data-djc-id-cpS58qK="">
+
+
+
+
+        <h5 id="offcanvas-ccopewT-label" class="offcanvas-title" data-djc-id-cEIkgL9="">
+            Offcanvas with body scrolling
+        </h5>
+
+
+
+
+
+
+        <button aria-label="Close" data-bs-dismiss="offcanvas" type="button" class="btn-close" data-djc-id-chuQUZM=""></button>
+
+
+        </div>
+
+
+
+
+        <div class="offcanvas-body" data-djc-id-cRBGjDu="">
+
+                  <p>Try scrolling the rest of the page to see this option in action.</p>
+
+        </div>
+
+
+            </div>
+</div>
+
+<hr />
+<h2 id="offcanvas-with-backdrop">Offcanvas With Backdrop</h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;Offcanvas&quot;</span> <span class="nv">scroll</span><span class="o">=</span><span class="kp">True</span> <span class="cp">%}</span>
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="x">              </span><span class="cp">{%</span> <span class="k">fill</span> <span class="s2">&quot;toggle&quot;</span> <span class="cp">%}</span>
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="x">                </span><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;OffcanvasToggle&quot;</span> <span class="nv">attrs</span><span class="o">:</span><span class="nv">class</span><span class="o">=</span><span class="s2">&quot;btn btn-primary&quot;</span> <span class="cp">%}</span><span class="x">Toggle Offcanvas</span><span class="cp">{%</span> <span class="k">endcomponent</span> <span class="cp">%}</span>
+<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="x">              </span><span class="cp">{%</span> <span class="k">endfill</span> <span class="cp">%}</span>
+<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="x">              </span><span class="cp">{%</span> <span class="k">fill</span> <span class="s2">&quot;default&quot;</span> <span class="cp">%}</span>
+<a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a><span class="x">                </span><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;OffcanvasHeader&quot;</span> <span class="cp">%}</span>
+<a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a><span class="x">                  </span><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;OffcanvasTitle&quot;</span> <span class="cp">%}</span><span class="x">Backdrop with scrolling</span><span class="cp">{%</span> <span class="k">endcomponent</span> <span class="cp">%}</span>
+<a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a><span class="x">                </span><span class="cp">{%</span> <span class="k">endcomponent</span> <span class="cp">%}</span>
+<a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a><span class="x">                </span><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;OffcanvasBody&quot;</span> <span class="cp">%}</span>
+<a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a><span class="x">                  &lt;p&gt;Try scrolling the rest of the page to see this option in action.&lt;/p&gt;</span>
+<a id="__codelineno-6-11" name="__codelineno-6-11" href="#__codelineno-6-11"></a><span class="x">                </span><span class="cp">{%</span> <span class="k">endcomponent</span> <span class="cp">%}</span>
+<a id="__codelineno-6-12" name="__codelineno-6-12" href="#__codelineno-6-12"></a><span class="x">              </span><span class="cp">{%</span> <span class="k">endfill</span> <span class="cp">%}</span>
+<a id="__codelineno-6-13" name="__codelineno-6-13" href="#__codelineno-6-13"></a><span class="x">            </span><span class="cp">{%</span> <span class="k">endcomponent</span> <span class="cp">%}</span>
+</code></pre></div>
+<p><strong>Preview:</strong></p>
+<div class="bs-example">
+<button aria-controls="offcanvas-cjYg2ot" data-bs-toggle="offcanvas" data-bs-target="#offcanvas-cjYg2ot" class="btn btn-primary" data-djc-id-cjYg2ot="" data-djc-id-c99Y3HE="">
+            Toggle Offcanvas
+        </button>
+
+
+            <div id="offcanvas-cjYg2ot" aria-labelledby="offcanvas-cjYg2ot-label" tabindex="-1" class="offcanvas offcanvas-start"  data-bs-scroll="true" data-djc-id-cjYg2ot="">
+
+
+
+
+        <div class="offcanvas-header" data-djc-id-cEEpgXo="">
+
+
+
+
+        <h5 id="offcanvas-cjYg2ot-label" class="offcanvas-title" data-djc-id-cd6LKw2="">
+            Backdrop with scrolling
+        </h5>
+
+
+
+
+
+
+        <button aria-label="Close" data-bs-dismiss="offcanvas" type="button" class="btn-close" data-djc-id-cA1IE7X=""></button>
+
+
+        </div>
+
+
+
+
+        <div class="offcanvas-body" data-djc-id-c2JBrkP="">
+
+                  <p>Try scrolling the rest of the page to see this option in action.</p>
+
+        </div>
+
+
+            </div>
+</div>
+
+<hr />
+<h2 id="offcanvas-static-backdrop">Offcanvas Static Backdrop</h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;Offcanvas&quot;</span> <span class="nv">backdrop</span><span class="o">=</span><span class="s2">&quot;static&quot;</span> <span class="cp">%}</span>
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="x">              </span><span class="cp">{%</span> <span class="k">fill</span> <span class="s2">&quot;toggle&quot;</span> <span class="cp">%}</span>
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="x">                </span><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;OffcanvasToggle&quot;</span> <span class="nv">attrs</span><span class="o">:</span><span class="nv">class</span><span class="o">=</span><span class="s2">&quot;btn btn-primary&quot;</span> <span class="cp">%}</span><span class="x">Toggle Offcanvas</span><span class="cp">{%</span> <span class="k">endcomponent</span> <span class="cp">%}</span>
+<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="x">              </span><span class="cp">{%</span> <span class="k">endfill</span> <span class="cp">%}</span>
+<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a><span class="x">              </span><span class="cp">{%</span> <span class="k">fill</span> <span class="s2">&quot;default&quot;</span> <span class="cp">%}</span>
+<a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a><span class="x">                </span><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;OffcanvasHeader&quot;</span> <span class="cp">%}</span>
+<a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a><span class="x">                  </span><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;OffcanvasTitle&quot;</span> <span class="cp">%}</span><span class="x">Static Backdrop</span><span class="cp">{%</span> <span class="k">endcomponent</span> <span class="cp">%}</span>
+<a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a><span class="x">                </span><span class="cp">{%</span> <span class="k">endcomponent</span> <span class="cp">%}</span>
+<a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a><span class="x">                </span><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;OffcanvasBody&quot;</span> <span class="cp">%}</span>
+<a id="__codelineno-7-10" name="__codelineno-7-10" href="#__codelineno-7-10"></a><span class="x">                  &lt;p&gt;I will not close if you click outside of me.&lt;/p&gt;</span>
+<a id="__codelineno-7-11" name="__codelineno-7-11" href="#__codelineno-7-11"></a><span class="x">                </span><span class="cp">{%</span> <span class="k">endcomponent</span> <span class="cp">%}</span>
+<a id="__codelineno-7-12" name="__codelineno-7-12" href="#__codelineno-7-12"></a><span class="x">              </span><span class="cp">{%</span> <span class="k">endfill</span> <span class="cp">%}</span>
+<a id="__codelineno-7-13" name="__codelineno-7-13" href="#__codelineno-7-13"></a><span class="x">            </span><span class="cp">{%</span> <span class="k">endcomponent</span> <span class="cp">%}</span>
+</code></pre></div>
+<p><strong>Preview:</strong></p>
+<div class="bs-example">
+<button aria-controls="offcanvas-cfv6n4s" data-bs-toggle="offcanvas" data-bs-target="#offcanvas-cfv6n4s" class="btn btn-primary" data-djc-id-cfv6n4s="" data-djc-id-cvKSB9w="">
+            Toggle Offcanvas
+        </button>
+
+
+            <div id="offcanvas-cfv6n4s" aria-labelledby="offcanvas-cfv6n4s-label" tabindex="-1" class="offcanvas offcanvas-start" data-bs-backdrop="static" data-djc-id-cfv6n4s="">
+
+
+
+
+        <div class="offcanvas-header" data-djc-id-cHXl7IF="">
+
+
+
+
+        <h5 id="offcanvas-cfv6n4s-label" class="offcanvas-title" data-djc-id-cuGsSAE="">
+            Static Backdrop
+        </h5>
+
+
+
+
+
+
+        <button aria-label="Close" data-bs-dismiss="offcanvas" type="button" class="btn-close" data-djc-id-cmoZ8cp=""></button>
+
+
+        </div>
+
+
+
+
+        <div class="offcanvas-body" data-djc-id-cx17rc7="">
+
+                  <p>I will not close if you click outside of me.</p>
+
+        </div>
+
+
+            </div>
+</div>
+
+<hr />
+<h2 id="offcanvas-no-backdrop">Offcanvas No Backdrop</h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;Offcanvas&quot;</span> <span class="nv">backdrop</span><span class="o">=</span><span class="s2">&quot;false&quot;</span> <span class="cp">%}</span>
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="x">              </span><span class="cp">{%</span> <span class="k">fill</span> <span class="s2">&quot;toggle&quot;</span> <span class="cp">%}</span>
+<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="x">                </span><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;OffcanvasToggle&quot;</span> <span class="nv">attrs</span><span class="o">:</span><span class="nv">class</span><span class="o">=</span><span class="s2">&quot;btn btn-primary&quot;</span> <span class="cp">%}</span><span class="x">Toggle Offcanvas</span><span class="cp">{%</span> <span class="k">endcomponent</span> <span class="cp">%}</span>
+<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="x">              </span><span class="cp">{%</span> <span class="k">endfill</span> <span class="cp">%}</span>
+<a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a><span class="x">              </span><span class="cp">{%</span> <span class="k">fill</span> <span class="s2">&quot;default&quot;</span> <span class="cp">%}</span>
+<a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a><span class="x">                </span><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;OffcanvasHeader&quot;</span> <span class="cp">%}</span>
+<a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a><span class="x">                  </span><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;OffcanvasTitle&quot;</span> <span class="cp">%}</span><span class="x">No Backdrop</span><span class="cp">{%</span> <span class="k">endcomponent</span> <span class="cp">%}</span>
+<a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a><span class="x">                </span><span class="cp">{%</span> <span class="k">endcomponent</span> <span class="cp">%}</span>
+<a id="__codelineno-8-9" name="__codelineno-8-9" href="#__codelineno-8-9"></a><span class="x">                </span><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;OffcanvasBody&quot;</span> <span class="cp">%}</span>
+<a id="__codelineno-8-10" name="__codelineno-8-10" href="#__codelineno-8-10"></a><span class="x">                  &lt;p&gt;This offcanvas has no backdrop.&lt;/p&gt;</span>
+<a id="__codelineno-8-11" name="__codelineno-8-11" href="#__codelineno-8-11"></a><span class="x">                </span><span class="cp">{%</span> <span class="k">endcomponent</span> <span class="cp">%}</span>
+<a id="__codelineno-8-12" name="__codelineno-8-12" href="#__codelineno-8-12"></a><span class="x">              </span><span class="cp">{%</span> <span class="k">endfill</span> <span class="cp">%}</span>
+<a id="__codelineno-8-13" name="__codelineno-8-13" href="#__codelineno-8-13"></a><span class="x">            </span><span class="cp">{%</span> <span class="k">endcomponent</span> <span class="cp">%}</span>
+</code></pre></div>
+<p><strong>Preview:</strong></p>
+<div class="bs-example">
+<button aria-controls="offcanvas-c1yQ7ba" data-bs-toggle="offcanvas" data-bs-target="#offcanvas-c1yQ7ba" class="btn btn-primary" data-djc-id-c1yQ7ba="" data-djc-id-cwPOOLS="">
+            Toggle Offcanvas
+        </button>
+
+
+            <div id="offcanvas-c1yQ7ba" aria-labelledby="offcanvas-c1yQ7ba-label" tabindex="-1" class="offcanvas offcanvas-start" data-bs-backdrop="false" data-djc-id-c1yQ7ba="">
+
+
+
+
+        <div class="offcanvas-header" data-djc-id-cJFps95="">
+
+
+
+
+        <h5 id="offcanvas-c1yQ7ba-label" class="offcanvas-title" data-djc-id-cRcEILK="">
+            No Backdrop
+        </h5>
+
+
+
+
+
+
+        <button aria-label="Close" data-bs-dismiss="offcanvas" type="button" class="btn-close" data-djc-id-ccAY66p=""></button>
+
+
+        </div>
+
+
+
+
+        <div class="offcanvas-body" data-djc-id-cfadiBJ="">
+
+                  <p>This offcanvas has no backdrop.</p>
+
+        </div>
+
+
+            </div>
+</div>
+
+<hr />
+<h2 id="offcanvas-responsive-lg">Offcanvas Responsive Lg</h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;Offcanvas&quot;</span> <span class="nv">responsive</span><span class="o">=</span><span class="s2">&quot;lg&quot;</span> <span class="nv">placement</span><span class="o">=</span><span class="s2">&quot;end&quot;</span> <span class="cp">%}</span>
+<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="x">              </span><span class="cp">{%</span> <span class="k">fill</span> <span class="s2">&quot;toggle&quot;</span> <span class="cp">%}</span>
+<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="x">                </span><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;OffcanvasToggle&quot;</span> <span class="nv">attrs</span><span class="o">:</span><span class="nv">class</span><span class="o">=</span><span class="s2">&quot;btn btn-primary&quot;</span> <span class="cp">%}</span><span class="x">Toggle Offcanvas</span><span class="cp">{%</span> <span class="k">endcomponent</span> <span class="cp">%}</span>
+<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="x">              </span><span class="cp">{%</span> <span class="k">endfill</span> <span class="cp">%}</span>
+<a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a><span class="x">              </span><span class="cp">{%</span> <span class="k">fill</span> <span class="s2">&quot;default&quot;</span> <span class="cp">%}</span>
+<a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a><span class="x">                </span><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;OffcanvasHeader&quot;</span> <span class="cp">%}</span>
+<a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a><span class="x">                  </span><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;OffcanvasTitle&quot;</span> <span class="cp">%}</span><span class="x">Responsive offcanvas</span><span class="cp">{%</span> <span class="k">endcomponent</span> <span class="cp">%}</span>
+<a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a><span class="x">                </span><span class="cp">{%</span> <span class="k">endcomponent</span> <span class="cp">%}</span>
+<a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a><span class="x">                </span><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;OffcanvasBody&quot;</span> <span class="cp">%}</span>
+<a id="__codelineno-9-10" name="__codelineno-9-10" href="#__codelineno-9-10"></a><span class="x">                  &lt;p&gt;This is content within an offcanvas-lg.&lt;/p&gt;</span>
+<a id="__codelineno-9-11" name="__codelineno-9-11" href="#__codelineno-9-11"></a><span class="x">                </span><span class="cp">{%</span> <span class="k">endcomponent</span> <span class="cp">%}</span>
+<a id="__codelineno-9-12" name="__codelineno-9-12" href="#__codelineno-9-12"></a><span class="x">              </span><span class="cp">{%</span> <span class="k">endfill</span> <span class="cp">%}</span>
+<a id="__codelineno-9-13" name="__codelineno-9-13" href="#__codelineno-9-13"></a><span class="x">            </span><span class="cp">{%</span> <span class="k">endcomponent</span> <span class="cp">%}</span>
+</code></pre></div>
+<p><strong>Preview:</strong></p>
+<div class="bs-example">
+<button aria-controls="offcanvas-cdaLZeA" data-bs-toggle="offcanvas" data-bs-target="#offcanvas-cdaLZeA" class="btn btn-primary" data-djc-id-cdaLZeA="" data-djc-id-cwWz7Sq="">
+            Toggle Offcanvas
+        </button>
+
+
+            <div id="offcanvas-cdaLZeA" aria-labelledby="offcanvas-cdaLZeA-label" tabindex="-1" class="offcanvas-lg offcanvas-end"  data-djc-id-cdaLZeA="">
+
+
+
+
+        <div class="offcanvas-header" data-djc-id-cpkBwEx="">
+
+
+
+
+        <h5 id="offcanvas-cdaLZeA-label" class="offcanvas-title" data-djc-id-cCxrFdQ="">
+            Responsive offcanvas
+        </h5>
+
+
+
+
+
+
+        <button aria-label="Close" data-bs-dismiss="offcanvas" type="button" class="btn-close" data-djc-id-c4cAY30=""></button>
+
+
+        </div>
+
+
+
+
+        <div class="offcanvas-body" data-djc-id-c3YOPmO="">
+
+                  <p>This is content within an offcanvas-lg.</p>
+
+        </div>
+
+
+            </div>
+</div>
+
+<hr />
+<h2 id="offcanvas-responsive-md">Offcanvas Responsive Md</h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;Offcanvas&quot;</span> <span class="nv">responsive</span><span class="o">=</span><span class="s2">&quot;md&quot;</span> <span class="cp">%}</span>
+<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="x">              </span><span class="cp">{%</span> <span class="k">fill</span> <span class="s2">&quot;toggle&quot;</span> <span class="cp">%}</span>
+<a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a><span class="x">                </span><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;OffcanvasToggle&quot;</span> <span class="nv">attrs</span><span class="o">:</span><span class="nv">class</span><span class="o">=</span><span class="s2">&quot;btn btn-primary&quot;</span> <span class="cp">%}</span><span class="x">Toggle Offcanvas</span><span class="cp">{%</span> <span class="k">endcomponent</span> <span class="cp">%}</span>
+<a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a><span class="x">              </span><span class="cp">{%</span> <span class="k">endfill</span> <span class="cp">%}</span>
+<a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a><span class="x">              </span><span class="cp">{%</span> <span class="k">fill</span> <span class="s2">&quot;default&quot;</span> <span class="cp">%}</span>
+<a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a><span class="x">                </span><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;OffcanvasHeader&quot;</span> <span class="cp">%}</span>
+<a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a><span class="x">                  </span><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;OffcanvasTitle&quot;</span> <span class="cp">%}</span><span class="x">Responsive MD offcanvas</span><span class="cp">{%</span> <span class="k">endcomponent</span> <span class="cp">%}</span>
+<a id="__codelineno-10-8" name="__codelineno-10-8" href="#__codelineno-10-8"></a><span class="x">                </span><span class="cp">{%</span> <span class="k">endcomponent</span> <span class="cp">%}</span>
+<a id="__codelineno-10-9" name="__codelineno-10-9" href="#__codelineno-10-9"></a><span class="x">                </span><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;OffcanvasBody&quot;</span> <span class="cp">%}</span>
+<a id="__codelineno-10-10" name="__codelineno-10-10" href="#__codelineno-10-10"></a><span class="x">                  &lt;p&gt;This is content within an offcanvas-md.&lt;/p&gt;</span>
+<a id="__codelineno-10-11" name="__codelineno-10-11" href="#__codelineno-10-11"></a><span class="x">                </span><span class="cp">{%</span> <span class="k">endcomponent</span> <span class="cp">%}</span>
+<a id="__codelineno-10-12" name="__codelineno-10-12" href="#__codelineno-10-12"></a><span class="x">              </span><span class="cp">{%</span> <span class="k">endfill</span> <span class="cp">%}</span>
+<a id="__codelineno-10-13" name="__codelineno-10-13" href="#__codelineno-10-13"></a><span class="x">            </span><span class="cp">{%</span> <span class="k">endcomponent</span> <span class="cp">%}</span>
+</code></pre></div>
+<p><strong>Preview:</strong></p>
+<div class="bs-example">
+<button aria-controls="offcanvas-ch7bJ91" data-bs-toggle="offcanvas" data-bs-target="#offcanvas-ch7bJ91" class="btn btn-primary" data-djc-id-ch7bJ91="" data-djc-id-cqb2BXa="">
+            Toggle Offcanvas
+        </button>
+
+
+            <div id="offcanvas-ch7bJ91" aria-labelledby="offcanvas-ch7bJ91-label" tabindex="-1" class="offcanvas-md offcanvas-start"  data-djc-id-ch7bJ91="">
+
+
+
+
+        <div class="offcanvas-header" data-djc-id-cutRrez="">
+
+
+
+
+        <h5 id="offcanvas-ch7bJ91-label" class="offcanvas-title" data-djc-id-cKU9BMB="">
+            Responsive MD offcanvas
+        </h5>
+
+
+
+
+
+
+        <button aria-label="Close" data-bs-dismiss="offcanvas" type="button" class="btn-close" data-djc-id-cy74cGz=""></button>
+
+
+        </div>
+
+
+
+
+        <div class="offcanvas-body" data-djc-id-cHwA6Fh="">
+
+                  <p>This is content within an offcanvas-md.</p>
+
+        </div>
+
+
+            </div>
+</div>
+
+<hr />
+<h2 id="offcanvas-without-close-button">Offcanvas Without Close Button</h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;Offcanvas&quot;</span> <span class="cp">%}</span>
+<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="x">              </span><span class="cp">{%</span> <span class="k">fill</span> <span class="s2">&quot;toggle&quot;</span> <span class="cp">%}</span>
+<a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a><span class="x">                </span><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;OffcanvasToggle&quot;</span> <span class="nv">attrs</span><span class="o">:</span><span class="nv">class</span><span class="o">=</span><span class="s2">&quot;btn btn-primary&quot;</span> <span class="cp">%}</span><span class="x">Toggle Offcanvas</span><span class="cp">{%</span> <span class="k">endcomponent</span> <span class="cp">%}</span>
+<a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a><span class="x">              </span><span class="cp">{%</span> <span class="k">endfill</span> <span class="cp">%}</span>
+<a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a><span class="x">              </span><span class="cp">{%</span> <span class="k">fill</span> <span class="s2">&quot;default&quot;</span> <span class="cp">%}</span>
+<a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a><span class="x">                </span><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;OffcanvasHeader&quot;</span> <span class="nv">close_button</span><span class="o">=</span><span class="kp">False</span> <span class="cp">%}</span>
+<a id="__codelineno-11-7" name="__codelineno-11-7" href="#__codelineno-11-7"></a><span class="x">                  </span><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;OffcanvasTitle&quot;</span> <span class="cp">%}</span><span class="x">No Close Button</span><span class="cp">{%</span> <span class="k">endcomponent</span> <span class="cp">%}</span>
+<a id="__codelineno-11-8" name="__codelineno-11-8" href="#__codelineno-11-8"></a><span class="x">                </span><span class="cp">{%</span> <span class="k">endcomponent</span> <span class="cp">%}</span>
+<a id="__codelineno-11-9" name="__codelineno-11-9" href="#__codelineno-11-9"></a><span class="x">                </span><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;OffcanvasBody&quot;</span> <span class="cp">%}</span>
+<a id="__codelineno-11-10" name="__codelineno-11-10" href="#__codelineno-11-10"></a><span class="x">                  &lt;p&gt;This offcanvas header has no close button.&lt;/p&gt;</span>
+<a id="__codelineno-11-11" name="__codelineno-11-11" href="#__codelineno-11-11"></a><span class="x">                </span><span class="cp">{%</span> <span class="k">endcomponent</span> <span class="cp">%}</span>
+<a id="__codelineno-11-12" name="__codelineno-11-12" href="#__codelineno-11-12"></a><span class="x">              </span><span class="cp">{%</span> <span class="k">endfill</span> <span class="cp">%}</span>
+<a id="__codelineno-11-13" name="__codelineno-11-13" href="#__codelineno-11-13"></a><span class="x">            </span><span class="cp">{%</span> <span class="k">endcomponent</span> <span class="cp">%}</span>
+</code></pre></div>
+<p><strong>Preview:</strong></p>
+<div class="bs-example">
+<button aria-controls="offcanvas-cgSLlRf" data-bs-toggle="offcanvas" data-bs-target="#offcanvas-cgSLlRf" class="btn btn-primary" data-djc-id-cgSLlRf="" data-djc-id-cAkDT4m="">
+            Toggle Offcanvas
+        </button>
+
+
+            <div id="offcanvas-cgSLlRf" aria-labelledby="offcanvas-cgSLlRf-label" tabindex="-1" class="offcanvas offcanvas-start"  data-djc-id-cgSLlRf="">
+
+
+
+
+        <div class="offcanvas-header" data-djc-id-c43hi44="">
+
+
+
+
+        <h5 id="offcanvas-cgSLlRf-label" class="offcanvas-title" data-djc-id-cfd5IXE="">
+            No Close Button
+        </h5>
+
+
+
+        </div>
+
+
+
+
+        <div class="offcanvas-body" data-djc-id-cfHbJPS="">
+
+                  <p>This offcanvas header has no close button.</p>
+
+        </div>
+
+
+            </div>
+</div>
+
+<hr />
+<h2 id="offcanvas-custom-title-heading">Offcanvas Custom Title Heading</h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;Offcanvas&quot;</span> <span class="cp">%}</span>
+<a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="x">              </span><span class="cp">{%</span> <span class="k">fill</span> <span class="s2">&quot;toggle&quot;</span> <span class="cp">%}</span>
+<a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a><span class="x">                </span><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;OffcanvasToggle&quot;</span> <span class="nv">attrs</span><span class="o">:</span><span class="nv">class</span><span class="o">=</span><span class="s2">&quot;btn btn-primary&quot;</span> <span class="cp">%}</span><span class="x">Toggle Offcanvas</span><span class="cp">{%</span> <span class="k">endcomponent</span> <span class="cp">%}</span>
+<a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a><span class="x">              </span><span class="cp">{%</span> <span class="k">endfill</span> <span class="cp">%}</span>
+<a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a><span class="x">              </span><span class="cp">{%</span> <span class="k">fill</span> <span class="s2">&quot;default&quot;</span> <span class="cp">%}</span>
+<a id="__codelineno-12-6" name="__codelineno-12-6" href="#__codelineno-12-6"></a><span class="x">                </span><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;OffcanvasHeader&quot;</span> <span class="cp">%}</span>
+<a id="__codelineno-12-7" name="__codelineno-12-7" href="#__codelineno-12-7"></a><span class="x">                  </span><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;OffcanvasTitle&quot;</span> <span class="nv">as_</span><span class="o">=</span><span class="s2">&quot;h3&quot;</span> <span class="cp">%}</span><span class="x">Custom Heading</span><span class="cp">{%</span> <span class="k">endcomponent</span> <span class="cp">%}</span>
+<a id="__codelineno-12-8" name="__codelineno-12-8" href="#__codelineno-12-8"></a><span class="x">                </span><span class="cp">{%</span> <span class="k">endcomponent</span> <span class="cp">%}</span>
+<a id="__codelineno-12-9" name="__codelineno-12-9" href="#__codelineno-12-9"></a><span class="x">                </span><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;OffcanvasBody&quot;</span> <span class="cp">%}</span>
+<a id="__codelineno-12-10" name="__codelineno-12-10" href="#__codelineno-12-10"></a><span class="x">                  &lt;p&gt;This offcanvas title uses h3.&lt;/p&gt;</span>
+<a id="__codelineno-12-11" name="__codelineno-12-11" href="#__codelineno-12-11"></a><span class="x">                </span><span class="cp">{%</span> <span class="k">endcomponent</span> <span class="cp">%}</span>
+<a id="__codelineno-12-12" name="__codelineno-12-12" href="#__codelineno-12-12"></a><span class="x">              </span><span class="cp">{%</span> <span class="k">endfill</span> <span class="cp">%}</span>
+<a id="__codelineno-12-13" name="__codelineno-12-13" href="#__codelineno-12-13"></a><span class="x">            </span><span class="cp">{%</span> <span class="k">endcomponent</span> <span class="cp">%}</span>
+</code></pre></div>
+<p><strong>Preview:</strong></p>
+<div class="bs-example">
+<button aria-controls="offcanvas-cGd5ui8" data-bs-toggle="offcanvas" data-bs-target="#offcanvas-cGd5ui8" class="btn btn-primary" data-djc-id-cGd5ui8="" data-djc-id-cxSBcYh="">
+            Toggle Offcanvas
+        </button>
+
+
+            <div id="offcanvas-cGd5ui8" aria-labelledby="offcanvas-cGd5ui8-label" tabindex="-1" class="offcanvas offcanvas-start"  data-djc-id-cGd5ui8="">
+
+
+
+
+        <div class="offcanvas-header" data-djc-id-csm8iph="">
+
+
+
+
+        <h3 id="offcanvas-cGd5ui8-label" class="offcanvas-title" data-djc-id-cPrw2GW="">
+            Custom Heading
+        </h3>
+
+
+
+
+
+
+        <button aria-label="Close" data-bs-dismiss="offcanvas" type="button" class="btn-close" data-djc-id-cZB1ei0=""></button>
+
+
+        </div>
+
+
+
+
+        <div class="offcanvas-body" data-djc-id-cYjvUbG="">
+
+                  <p>This offcanvas title uses h3.</p>
+
+        </div>
+
+
+            </div>
+</div>
+
+<hr /></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script src="../../js/bootstrap.bundle.min.js"></script>
+        <script>
+            var base_url = "../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../js/base.js"></script>
+        <script src="../../javascripts/bootstrap-init.js"></script>
+        <script src="../../search/main.js"></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

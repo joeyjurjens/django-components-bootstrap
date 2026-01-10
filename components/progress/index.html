@@ -1,0 +1,1264 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        <link rel="canonical" href="https://joeyjurjens.github.io/django-components-bootstrap/components/progress/">
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+        <title>Progress - Django Components Bootstrap</title>
+        <link href="../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../css/fontawesome.min.css" rel="stylesheet">
+        <link href="../../css/brands.min.css" rel="stylesheet">
+        <link href="../../css/solid.min.css" rel="stylesheet">
+        <link href="../../css/v4-font-face.min.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
+        <link id="hljs-light" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" >
+        <link id="hljs-dark" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark.min.css" disabled>
+        <link href="../../stylesheets/extra.css" rel="stylesheet">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../..">Django Components Bootstrap</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar-collapse" aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="nav-item">
+                                <a href="../.." class="nav-link">Home</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle active" aria-current="page" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Components</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../accordion/" class="dropdown-item">Accordion</a>
+</li>
+                                    
+<li>
+    <a href="../alert/" class="dropdown-item">Alert</a>
+</li>
+                                    
+<li>
+    <a href="../badge/" class="dropdown-item">Badge</a>
+</li>
+                                    
+<li>
+    <a href="../breadcrumb/" class="dropdown-item">Breadcrumb</a>
+</li>
+                                    
+<li>
+    <a href="../button/" class="dropdown-item">Button</a>
+</li>
+                                    
+<li>
+    <a href="../buttongroup/" class="dropdown-item">Button Group</a>
+</li>
+                                    
+<li>
+    <a href="../card/" class="dropdown-item">Card</a>
+</li>
+                                    
+<li>
+    <a href="../carousel/" class="dropdown-item">Carousel</a>
+</li>
+                                    
+<li>
+    <a href="../closebutton/" class="dropdown-item">Close Button</a>
+</li>
+                                    
+<li>
+    <a href="../collapse/" class="dropdown-item">Collapse</a>
+</li>
+                                    
+<li>
+    <a href="../dropdown/" class="dropdown-item">Dropdown</a>
+</li>
+                                    
+<li>
+    <a href="../dropdownbutton/" class="dropdown-item">Dropdown Button</a>
+</li>
+                                    
+<li>
+    <a href="../figure/" class="dropdown-item">Figure</a>
+</li>
+                                    
+<li>
+    <a href="../form/" class="dropdown-item">Form</a>
+</li>
+                                    
+<li>
+    <a href="../image/" class="dropdown-item">Image</a>
+</li>
+                                    
+<li>
+    <a href="../layout/" class="dropdown-item">Layout</a>
+</li>
+                                    
+<li>
+    <a href="../listgroup/" class="dropdown-item">List Group</a>
+</li>
+                                    
+<li>
+    <a href="../modal/" class="dropdown-item">Modal</a>
+</li>
+                                    
+<li>
+    <a href="../nav/" class="dropdown-item">Nav</a>
+</li>
+                                    
+<li>
+    <a href="../navdropdown/" class="dropdown-item">Nav Dropdown</a>
+</li>
+                                    
+<li>
+    <a href="../navbar/" class="dropdown-item">Navbar</a>
+</li>
+                                    
+<li>
+    <a href="../offcanvas/" class="dropdown-item">Offcanvas</a>
+</li>
+                                    
+<li>
+    <a href="../pagination/" class="dropdown-item">Pagination</a>
+</li>
+                                    
+<li>
+    <a href="../placeholder/" class="dropdown-item">Placeholder</a>
+</li>
+                                    
+<li>
+    <a href="../popover/" class="dropdown-item">Popover</a>
+</li>
+                                    
+<li>
+    <a href="./" class="dropdown-item active" aria-current="page">Progress</a>
+</li>
+                                    
+<li>
+    <a href="../spinner/" class="dropdown-item">Spinner</a>
+</li>
+                                    
+<li>
+    <a href="../stack/" class="dropdown-item">Stack</a>
+</li>
+                                    
+<li>
+    <a href="../table/" class="dropdown-item">Table</a>
+</li>
+                                    
+<li>
+    <a href="../tabs/" class="dropdown-item">Tabs</a>
+</li>
+                                    
+<li>
+    <a href="../toast/" class="dropdown-item">Toast</a>
+</li>
+                                    
+<li>
+    <a href="../togglebutton/" class="dropdown-item">Toggle Button</a>
+</li>
+                                    
+<li>
+    <a href="../tooltip/" class="dropdown-item">Tooltip</a>
+</li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ms-md-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-bs-toggle="modal" data-bs-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a rel="prev" href="../popover/" class="nav-link">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" href="../spinner/" class="nav-link">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="https://github.com/joeyjurjens/django-components-bootstrap/edit/master/docs/components/progress.md" class="nav-link">Edit on joeyjurjens/django-components-bootstrap
+                                    </a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-bs-toggle="collapse" data-bs-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-body-tertiary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-bs-level="1"><a href="#progress" class="nav-link">Progress</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="2"><a href="#basic" class="nav-link">Basic</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#basic-0-percent" class="nav-link">Basic 0 Percent</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#basic-50-percent" class="nav-link">Basic 50 Percent</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#basic-75-percent" class="nav-link">Basic 75 Percent</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#basic-100-percent" class="nav-link">Basic 100 Percent</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#height-1px" class="nav-link">Height 1Px</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#height-20px" class="nav-link">Height 20Px</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#with-label" class="nav-link">With Label</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#variant-success" class="nav-link">Variant Success</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#variant-info" class="nav-link">Variant Info</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#variant-warning" class="nav-link">Variant Warning</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#variant-danger" class="nav-link">Variant Danger</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#variant-primary" class="nav-link">Variant Primary</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#variant-secondary" class="nav-link">Variant Secondary</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#variant-light" class="nav-link">Variant Light</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#variant-dark" class="nav-link">Variant Dark</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#variant-success-with-label" class="nav-link">Variant Success With Label</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#variant-info-with-label" class="nav-link">Variant Info With Label</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#variant-warning-with-label" class="nav-link">Variant Warning With Label</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#variant-danger-with-label" class="nav-link">Variant Danger With Label</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#multiple-bars" class="nav-link">Multiple Bars</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#striped-basic" class="nav-link">Striped Basic</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#striped-success" class="nav-link">Striped Success</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#striped-info" class="nav-link">Striped Info</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#striped-warning" class="nav-link">Striped Warning</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#striped-danger" class="nav-link">Striped Danger</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#striped-primary" class="nav-link">Striped Primary</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#striped-secondary" class="nav-link">Striped Secondary</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#striped-light" class="nav-link">Striped Light</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#striped-dark" class="nav-link">Striped Dark</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#animated-striped" class="nav-link">Animated Striped</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#animated-striped-success" class="nav-link">Animated Striped Success</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#animated-striped-info" class="nav-link">Animated Striped Info</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#animated-striped-warning" class="nav-link">Animated Striped Warning</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#animated-striped-danger" class="nav-link">Animated Striped Danger</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="progress">Progress</h1>
+<h2 id="basic">Basic</h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;Progress&quot;</span> <span class="cp">%}</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="x">                </span><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;ProgressBar&quot;</span> <span class="nv">now</span><span class="o">=</span><span class="m">25</span> <span class="o">/</span> <span class="cp">%}</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="x">            </span><span class="cp">{%</span> <span class="k">endcomponent</span> <span class="cp">%}</span>
+</code></pre></div>
+<p><strong>Preview:</strong></p>
+<div class="bs-example">
+<div class="progress"  data-djc-id-cDGUGgn="">
+
+
+
+
+        <div class="progress-bar" style="width: 25.0%" data-djc-id-cVEVOG2="">
+
+
+        </div>
+
+
+        </div>
+</div>
+
+<hr />
+<h2 id="basic-0-percent">Basic 0 Percent</h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;Progress&quot;</span> <span class="cp">%}</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="x">                </span><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;ProgressBar&quot;</span> <span class="nv">now</span><span class="o">=</span><span class="m">0</span> <span class="o">/</span> <span class="cp">%}</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="x">            </span><span class="cp">{%</span> <span class="k">endcomponent</span> <span class="cp">%}</span>
+</code></pre></div>
+<p><strong>Preview:</strong></p>
+<div class="bs-example">
+<div class="progress"  data-djc-id-cHZHw4D="">
+
+
+
+
+        <div class="progress-bar" style="width: 0.0%" data-djc-id-cBkeMKk="">
+
+
+        </div>
+
+
+        </div>
+</div>
+
+<hr />
+<h2 id="basic-50-percent">Basic 50 Percent</h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;Progress&quot;</span> <span class="cp">%}</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="x">                </span><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;ProgressBar&quot;</span> <span class="nv">now</span><span class="o">=</span><span class="m">50</span> <span class="o">/</span> <span class="cp">%}</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="x">            </span><span class="cp">{%</span> <span class="k">endcomponent</span> <span class="cp">%}</span>
+</code></pre></div>
+<p><strong>Preview:</strong></p>
+<div class="bs-example">
+<div class="progress"  data-djc-id-cIqr2L1="">
+
+
+
+
+        <div class="progress-bar" style="width: 50.0%" data-djc-id-cPvzhIQ="">
+
+
+        </div>
+
+
+        </div>
+</div>
+
+<hr />
+<h2 id="basic-75-percent">Basic 75 Percent</h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;Progress&quot;</span> <span class="cp">%}</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="x">                </span><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;ProgressBar&quot;</span> <span class="nv">now</span><span class="o">=</span><span class="m">75</span> <span class="o">/</span> <span class="cp">%}</span>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="x">            </span><span class="cp">{%</span> <span class="k">endcomponent</span> <span class="cp">%}</span>
+</code></pre></div>
+<p><strong>Preview:</strong></p>
+<div class="bs-example">
+<div class="progress"  data-djc-id-cEFTokO="">
+
+
+
+
+        <div class="progress-bar" style="width: 75.0%" data-djc-id-cqXqXu5="">
+
+
+        </div>
+
+
+        </div>
+</div>
+
+<hr />
+<h2 id="basic-100-percent">Basic 100 Percent</h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;Progress&quot;</span> <span class="cp">%}</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="x">                </span><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;ProgressBar&quot;</span> <span class="nv">now</span><span class="o">=</span><span class="m">100</span> <span class="o">/</span> <span class="cp">%}</span>
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="x">            </span><span class="cp">{%</span> <span class="k">endcomponent</span> <span class="cp">%}</span>
+</code></pre></div>
+<p><strong>Preview:</strong></p>
+<div class="bs-example">
+<div class="progress"  data-djc-id-ctVQceh="">
+
+
+
+
+        <div class="progress-bar" style="width: 100.0%" data-djc-id-c5Ak47d="">
+
+
+        </div>
+
+
+        </div>
+</div>
+
+<hr />
+<h2 id="height-1px">Height 1Px</h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;Progress&quot;</span> <span class="nv">height</span><span class="o">=</span><span class="s2">&quot;1px&quot;</span> <span class="cp">%}</span>
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="x">                </span><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;ProgressBar&quot;</span> <span class="nv">now</span><span class="o">=</span><span class="m">25</span> <span class="o">/</span> <span class="cp">%}</span>
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="x">            </span><span class="cp">{%</span> <span class="k">endcomponent</span> <span class="cp">%}</span>
+</code></pre></div>
+<p><strong>Preview:</strong></p>
+<div class="bs-example">
+<div class="progress" style="height: 1px;" data-djc-id-ca4EKym="">
+
+
+
+
+        <div class="progress-bar" style="width: 25.0%" data-djc-id-cMd4bFP="">
+
+
+        </div>
+
+
+        </div>
+</div>
+
+<hr />
+<h2 id="height-20px">Height 20Px</h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;Progress&quot;</span> <span class="nv">height</span><span class="o">=</span><span class="s2">&quot;20px&quot;</span> <span class="cp">%}</span>
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="x">                </span><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;ProgressBar&quot;</span> <span class="nv">now</span><span class="o">=</span><span class="m">25</span> <span class="o">/</span> <span class="cp">%}</span>
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="x">            </span><span class="cp">{%</span> <span class="k">endcomponent</span> <span class="cp">%}</span>
+</code></pre></div>
+<p><strong>Preview:</strong></p>
+<div class="bs-example">
+<div class="progress" style="height: 20px;" data-djc-id-cu23XF2="">
+
+
+
+
+        <div class="progress-bar" style="width: 25.0%" data-djc-id-cfAd3Su="">
+
+
+        </div>
+
+
+        </div>
+</div>
+
+<hr />
+<h2 id="with-label">With Label</h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;Progress&quot;</span> <span class="cp">%}</span>
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="x">                </span><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;ProgressBar&quot;</span> <span class="nv">now</span><span class="o">=</span><span class="m">25</span> <span class="cp">%}</span><span class="x">25%</span><span class="cp">{%</span> <span class="k">endcomponent</span> <span class="cp">%}</span>
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="x">            </span><span class="cp">{%</span> <span class="k">endcomponent</span> <span class="cp">%}</span>
+</code></pre></div>
+<p><strong>Preview:</strong></p>
+<div class="bs-example">
+<div class="progress"  data-djc-id-cjvI5Pp="">
+
+
+
+
+        <div class="progress-bar" style="width: 25.0%" data-djc-id-c1RggpF="">
+
+            25%
+        </div>
+
+
+        </div>
+</div>
+
+<hr />
+<h2 id="variant-success">Variant Success</h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;Progress&quot;</span> <span class="cp">%}</span>
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="x">                </span><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;ProgressBar&quot;</span> <span class="nv">now</span><span class="o">=</span><span class="m">25</span> <span class="nv">variant</span><span class="o">=</span><span class="s2">&quot;success&quot;</span> <span class="o">/</span> <span class="cp">%}</span>
+<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="x">            </span><span class="cp">{%</span> <span class="k">endcomponent</span> <span class="cp">%}</span>
+</code></pre></div>
+<p><strong>Preview:</strong></p>
+<div class="bs-example">
+<div class="progress"  data-djc-id-c6Njlkd="">
+
+
+
+
+        <div class="progress-bar bg-success" style="width: 25.0%" data-djc-id-cNo6lIY="">
+
+
+        </div>
+
+
+        </div>
+</div>
+
+<hr />
+<h2 id="variant-info">Variant Info</h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;Progress&quot;</span> <span class="cp">%}</span>
+<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="x">                </span><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;ProgressBar&quot;</span> <span class="nv">now</span><span class="o">=</span><span class="m">50</span> <span class="nv">variant</span><span class="o">=</span><span class="s2">&quot;info&quot;</span> <span class="o">/</span> <span class="cp">%}</span>
+<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="x">            </span><span class="cp">{%</span> <span class="k">endcomponent</span> <span class="cp">%}</span>
+</code></pre></div>
+<p><strong>Preview:</strong></p>
+<div class="bs-example">
+<div class="progress"  data-djc-id-cULELRB="">
+
+
+
+
+        <div class="progress-bar bg-info" style="width: 50.0%" data-djc-id-cfaXI7R="">
+
+
+        </div>
+
+
+        </div>
+</div>
+
+<hr />
+<h2 id="variant-warning">Variant Warning</h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;Progress&quot;</span> <span class="cp">%}</span>
+<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="x">                </span><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;ProgressBar&quot;</span> <span class="nv">now</span><span class="o">=</span><span class="m">75</span> <span class="nv">variant</span><span class="o">=</span><span class="s2">&quot;warning&quot;</span> <span class="o">/</span> <span class="cp">%}</span>
+<a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a><span class="x">            </span><span class="cp">{%</span> <span class="k">endcomponent</span> <span class="cp">%}</span>
+</code></pre></div>
+<p><strong>Preview:</strong></p>
+<div class="bs-example">
+<div class="progress"  data-djc-id-cUsFQ7q="">
+
+
+
+
+        <div class="progress-bar bg-warning" style="width: 75.0%" data-djc-id-cvfVUse="">
+
+
+        </div>
+
+
+        </div>
+</div>
+
+<hr />
+<h2 id="variant-danger">Variant Danger</h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;Progress&quot;</span> <span class="cp">%}</span>
+<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="x">                </span><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;ProgressBar&quot;</span> <span class="nv">now</span><span class="o">=</span><span class="m">100</span> <span class="nv">variant</span><span class="o">=</span><span class="s2">&quot;danger&quot;</span> <span class="o">/</span> <span class="cp">%}</span>
+<a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a><span class="x">            </span><span class="cp">{%</span> <span class="k">endcomponent</span> <span class="cp">%}</span>
+</code></pre></div>
+<p><strong>Preview:</strong></p>
+<div class="bs-example">
+<div class="progress"  data-djc-id-cs1q3X0="">
+
+
+
+
+        <div class="progress-bar bg-danger" style="width: 100.0%" data-djc-id-cCLDO5l="">
+
+
+        </div>
+
+
+        </div>
+</div>
+
+<hr />
+<h2 id="variant-primary">Variant Primary</h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;Progress&quot;</span> <span class="cp">%}</span>
+<a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="x">                </span><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;ProgressBar&quot;</span> <span class="nv">now</span><span class="o">=</span><span class="m">30</span> <span class="nv">variant</span><span class="o">=</span><span class="s2">&quot;primary&quot;</span> <span class="o">/</span> <span class="cp">%}</span>
+<a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a><span class="x">            </span><span class="cp">{%</span> <span class="k">endcomponent</span> <span class="cp">%}</span>
+</code></pre></div>
+<p><strong>Preview:</strong></p>
+<div class="bs-example">
+<div class="progress"  data-djc-id-ccA1ooT="">
+
+
+
+
+        <div class="progress-bar bg-primary" style="width: 30.0%" data-djc-id-cNyjrXT="">
+
+
+        </div>
+
+
+        </div>
+</div>
+
+<hr />
+<h2 id="variant-secondary">Variant Secondary</h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;Progress&quot;</span> <span class="cp">%}</span>
+<a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a><span class="x">                </span><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;ProgressBar&quot;</span> <span class="nv">now</span><span class="o">=</span><span class="m">40</span> <span class="nv">variant</span><span class="o">=</span><span class="s2">&quot;secondary&quot;</span> <span class="o">/</span> <span class="cp">%}</span>
+<a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a><span class="x">            </span><span class="cp">{%</span> <span class="k">endcomponent</span> <span class="cp">%}</span>
+</code></pre></div>
+<p><strong>Preview:</strong></p>
+<div class="bs-example">
+<div class="progress"  data-djc-id-cQolZiP="">
+
+
+
+
+        <div class="progress-bar bg-secondary" style="width: 40.0%" data-djc-id-cu8UsVW="">
+
+
+        </div>
+
+
+        </div>
+</div>
+
+<hr />
+<h2 id="variant-light">Variant Light</h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;Progress&quot;</span> <span class="cp">%}</span>
+<a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a><span class="x">                </span><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;ProgressBar&quot;</span> <span class="nv">now</span><span class="o">=</span><span class="m">60</span> <span class="nv">variant</span><span class="o">=</span><span class="s2">&quot;light&quot;</span> <span class="o">/</span> <span class="cp">%}</span>
+<a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a><span class="x">            </span><span class="cp">{%</span> <span class="k">endcomponent</span> <span class="cp">%}</span>
+</code></pre></div>
+<p><strong>Preview:</strong></p>
+<div class="bs-example">
+<div class="progress"  data-djc-id-cnUFkTq="">
+
+
+
+
+        <div class="progress-bar bg-light" style="width: 60.0%" data-djc-id-c7ZhhE8="">
+
+
+        </div>
+
+
+        </div>
+</div>
+
+<hr />
+<h2 id="variant-dark">Variant Dark</h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;Progress&quot;</span> <span class="cp">%}</span>
+<a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a><span class="x">                </span><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;ProgressBar&quot;</span> <span class="nv">now</span><span class="o">=</span><span class="m">80</span> <span class="nv">variant</span><span class="o">=</span><span class="s2">&quot;dark&quot;</span> <span class="o">/</span> <span class="cp">%}</span>
+<a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a><span class="x">            </span><span class="cp">{%</span> <span class="k">endcomponent</span> <span class="cp">%}</span>
+</code></pre></div>
+<p><strong>Preview:</strong></p>
+<div class="bs-example">
+<div class="progress"  data-djc-id-c1NEWKj="">
+
+
+
+
+        <div class="progress-bar bg-dark" style="width: 80.0%" data-djc-id-cXQkDJj="">
+
+
+        </div>
+
+
+        </div>
+</div>
+
+<hr />
+<h2 id="variant-success-with-label">Variant Success With Label</h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;Progress&quot;</span> <span class="cp">%}</span>
+<a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a><span class="x">                </span><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;ProgressBar&quot;</span> <span class="nv">now</span><span class="o">=</span><span class="m">25</span> <span class="nv">variant</span><span class="o">=</span><span class="s2">&quot;success&quot;</span> <span class="cp">%}</span><span class="x">25%</span><span class="cp">{%</span> <span class="k">endcomponent</span> <span class="cp">%}</span>
+<a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a><span class="x">            </span><span class="cp">{%</span> <span class="k">endcomponent</span> <span class="cp">%}</span>
+</code></pre></div>
+<p><strong>Preview:</strong></p>
+<div class="bs-example">
+<div class="progress"  data-djc-id-cXFpduV="">
+
+
+
+
+        <div class="progress-bar bg-success" style="width: 25.0%" data-djc-id-cdFYeoh="">
+
+            25%
+        </div>
+
+
+        </div>
+</div>
+
+<hr />
+<h2 id="variant-info-with-label">Variant Info With Label</h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;Progress&quot;</span> <span class="cp">%}</span>
+<a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a><span class="x">                </span><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;ProgressBar&quot;</span> <span class="nv">now</span><span class="o">=</span><span class="m">50</span> <span class="nv">variant</span><span class="o">=</span><span class="s2">&quot;info&quot;</span> <span class="cp">%}</span><span class="x">50%</span><span class="cp">{%</span> <span class="k">endcomponent</span> <span class="cp">%}</span>
+<a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a><span class="x">            </span><span class="cp">{%</span> <span class="k">endcomponent</span> <span class="cp">%}</span>
+</code></pre></div>
+<p><strong>Preview:</strong></p>
+<div class="bs-example">
+<div class="progress"  data-djc-id-ctawDDg="">
+
+
+
+
+        <div class="progress-bar bg-info" style="width: 50.0%" data-djc-id-cvM6tH5="">
+
+            50%
+        </div>
+
+
+        </div>
+</div>
+
+<hr />
+<h2 id="variant-warning-with-label">Variant Warning With Label</h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;Progress&quot;</span> <span class="cp">%}</span>
+<a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a><span class="x">                </span><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;ProgressBar&quot;</span> <span class="nv">now</span><span class="o">=</span><span class="m">75</span> <span class="nv">variant</span><span class="o">=</span><span class="s2">&quot;warning&quot;</span> <span class="cp">%}</span><span class="x">75%</span><span class="cp">{%</span> <span class="k">endcomponent</span> <span class="cp">%}</span>
+<a id="__codelineno-18-3" name="__codelineno-18-3" href="#__codelineno-18-3"></a><span class="x">            </span><span class="cp">{%</span> <span class="k">endcomponent</span> <span class="cp">%}</span>
+</code></pre></div>
+<p><strong>Preview:</strong></p>
+<div class="bs-example">
+<div class="progress"  data-djc-id-crQSJdy="">
+
+
+
+
+        <div class="progress-bar bg-warning" style="width: 75.0%" data-djc-id-c7iTP9a="">
+
+            75%
+        </div>
+
+
+        </div>
+</div>
+
+<hr />
+<h2 id="variant-danger-with-label">Variant Danger With Label</h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;Progress&quot;</span> <span class="cp">%}</span>
+<a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a><span class="x">                </span><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;ProgressBar&quot;</span> <span class="nv">now</span><span class="o">=</span><span class="m">100</span> <span class="nv">variant</span><span class="o">=</span><span class="s2">&quot;danger&quot;</span> <span class="cp">%}</span><span class="x">100%</span><span class="cp">{%</span> <span class="k">endcomponent</span> <span class="cp">%}</span>
+<a id="__codelineno-19-3" name="__codelineno-19-3" href="#__codelineno-19-3"></a><span class="x">            </span><span class="cp">{%</span> <span class="k">endcomponent</span> <span class="cp">%}</span>
+</code></pre></div>
+<p><strong>Preview:</strong></p>
+<div class="bs-example">
+<div class="progress"  data-djc-id-cvXozOh="">
+
+
+
+
+        <div class="progress-bar bg-danger" style="width: 100.0%" data-djc-id-cvatDKg="">
+
+            100%
+        </div>
+
+
+        </div>
+</div>
+
+<hr />
+<h2 id="multiple-bars">Multiple Bars</h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;ProgressStacked&quot;</span> <span class="cp">%}</span>
+<a id="__codelineno-20-2" name="__codelineno-20-2" href="#__codelineno-20-2"></a><span class="x">                </span><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;Progress&quot;</span> <span class="nv">attrs</span><span class="o">:</span><span class="nv">style</span><span class="o">=</span><span class="s2">&quot;width: 15%&quot;</span> <span class="cp">%}</span>
+<a id="__codelineno-20-3" name="__codelineno-20-3" href="#__codelineno-20-3"></a><span class="x">                    </span><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;ProgressBar&quot;</span> <span class="nv">now</span><span class="o">=</span><span class="m">15</span> <span class="o">/</span> <span class="cp">%}</span>
+<a id="__codelineno-20-4" name="__codelineno-20-4" href="#__codelineno-20-4"></a><span class="x">                </span><span class="cp">{%</span> <span class="k">endcomponent</span> <span class="cp">%}</span>
+<a id="__codelineno-20-5" name="__codelineno-20-5" href="#__codelineno-20-5"></a><span class="x">                </span><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;Progress&quot;</span> <span class="nv">attrs</span><span class="o">:</span><span class="nv">style</span><span class="o">=</span><span class="s2">&quot;width: 30%&quot;</span> <span class="cp">%}</span>
+<a id="__codelineno-20-6" name="__codelineno-20-6" href="#__codelineno-20-6"></a><span class="x">                    </span><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;ProgressBar&quot;</span> <span class="nv">now</span><span class="o">=</span><span class="m">30</span> <span class="nv">variant</span><span class="o">=</span><span class="s2">&quot;success&quot;</span> <span class="o">/</span> <span class="cp">%}</span>
+<a id="__codelineno-20-7" name="__codelineno-20-7" href="#__codelineno-20-7"></a><span class="x">                </span><span class="cp">{%</span> <span class="k">endcomponent</span> <span class="cp">%}</span>
+<a id="__codelineno-20-8" name="__codelineno-20-8" href="#__codelineno-20-8"></a><span class="x">                </span><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;Progress&quot;</span> <span class="nv">attrs</span><span class="o">:</span><span class="nv">style</span><span class="o">=</span><span class="s2">&quot;width: 20%&quot;</span> <span class="cp">%}</span>
+<a id="__codelineno-20-9" name="__codelineno-20-9" href="#__codelineno-20-9"></a><span class="x">                    </span><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;ProgressBar&quot;</span> <span class="nv">now</span><span class="o">=</span><span class="m">20</span> <span class="nv">variant</span><span class="o">=</span><span class="s2">&quot;info&quot;</span> <span class="o">/</span> <span class="cp">%}</span>
+<a id="__codelineno-20-10" name="__codelineno-20-10" href="#__codelineno-20-10"></a><span class="x">                </span><span class="cp">{%</span> <span class="k">endcomponent</span> <span class="cp">%}</span>
+<a id="__codelineno-20-11" name="__codelineno-20-11" href="#__codelineno-20-11"></a><span class="x">            </span><span class="cp">{%</span> <span class="k">endcomponent</span> <span class="cp">%}</span>
+</code></pre></div>
+<p><strong>Preview:</strong></p>
+<div class="bs-example">
+<div class="progress-stacked" data-djc-id-cIFDDRb="">
+
+
+
+
+        <div class="progress" style="width: 15%;"  data-djc-id-c7iuumU="">
+
+
+
+
+        <div class="progress-bar" style="width: 15.0%" data-djc-id-cfq2b6J="">
+
+
+        </div>
+
+
+        </div>
+
+
+
+
+        <div class="progress" style="width: 30%;"  data-djc-id-cTReJsI="">
+
+
+
+
+        <div class="progress-bar bg-success" style="width: 30.0%" data-djc-id-cXMx2fs="">
+
+
+        </div>
+
+
+        </div>
+
+
+
+
+        <div class="progress" style="width: 20%;"  data-djc-id-c9sAXjM="">
+
+
+
+
+        <div class="progress-bar bg-info" style="width: 20.0%" data-djc-id-c49SDnx="">
+
+
+        </div>
+
+
+        </div>
+
+
+        </div>
+</div>
+
+<hr />
+<h2 id="striped-basic">Striped Basic</h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;Progress&quot;</span> <span class="cp">%}</span>
+<a id="__codelineno-21-2" name="__codelineno-21-2" href="#__codelineno-21-2"></a><span class="x">                </span><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;ProgressBar&quot;</span> <span class="nv">now</span><span class="o">=</span><span class="m">10</span> <span class="nv">striped</span><span class="o">=</span><span class="kp">True</span> <span class="o">/</span> <span class="cp">%}</span>
+<a id="__codelineno-21-3" name="__codelineno-21-3" href="#__codelineno-21-3"></a><span class="x">            </span><span class="cp">{%</span> <span class="k">endcomponent</span> <span class="cp">%}</span>
+</code></pre></div>
+<p><strong>Preview:</strong></p>
+<div class="bs-example">
+<div class="progress"  data-djc-id-cxdV3gZ="">
+
+
+
+
+        <div class="progress-bar progress-bar-striped" style="width: 10.0%" data-djc-id-c4xqvsG="">
+
+
+        </div>
+
+
+        </div>
+</div>
+
+<hr />
+<h2 id="striped-success">Striped Success</h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;Progress&quot;</span> <span class="cp">%}</span>
+<a id="__codelineno-22-2" name="__codelineno-22-2" href="#__codelineno-22-2"></a><span class="x">                </span><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;ProgressBar&quot;</span> <span class="nv">now</span><span class="o">=</span><span class="m">25</span> <span class="nv">variant</span><span class="o">=</span><span class="s2">&quot;success&quot;</span> <span class="nv">striped</span><span class="o">=</span><span class="kp">True</span> <span class="o">/</span> <span class="cp">%}</span>
+<a id="__codelineno-22-3" name="__codelineno-22-3" href="#__codelineno-22-3"></a><span class="x">            </span><span class="cp">{%</span> <span class="k">endcomponent</span> <span class="cp">%}</span>
+</code></pre></div>
+<p><strong>Preview:</strong></p>
+<div class="bs-example">
+<div class="progress"  data-djc-id-cXGKsgN="">
+
+
+
+
+        <div class="progress-bar bg-success progress-bar-striped" style="width: 25.0%" data-djc-id-cR1vVap="">
+
+
+        </div>
+
+
+        </div>
+</div>
+
+<hr />
+<h2 id="striped-info">Striped Info</h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;Progress&quot;</span> <span class="cp">%}</span>
+<a id="__codelineno-23-2" name="__codelineno-23-2" href="#__codelineno-23-2"></a><span class="x">                </span><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;ProgressBar&quot;</span> <span class="nv">now</span><span class="o">=</span><span class="m">50</span> <span class="nv">variant</span><span class="o">=</span><span class="s2">&quot;info&quot;</span> <span class="nv">striped</span><span class="o">=</span><span class="kp">True</span> <span class="o">/</span> <span class="cp">%}</span>
+<a id="__codelineno-23-3" name="__codelineno-23-3" href="#__codelineno-23-3"></a><span class="x">            </span><span class="cp">{%</span> <span class="k">endcomponent</span> <span class="cp">%}</span>
+</code></pre></div>
+<p><strong>Preview:</strong></p>
+<div class="bs-example">
+<div class="progress"  data-djc-id-cF02v8F="">
+
+
+
+
+        <div class="progress-bar bg-info progress-bar-striped" style="width: 50.0%" data-djc-id-cmCLb4k="">
+
+
+        </div>
+
+
+        </div>
+</div>
+
+<hr />
+<h2 id="striped-warning">Striped Warning</h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;Progress&quot;</span> <span class="cp">%}</span>
+<a id="__codelineno-24-2" name="__codelineno-24-2" href="#__codelineno-24-2"></a><span class="x">                </span><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;ProgressBar&quot;</span> <span class="nv">now</span><span class="o">=</span><span class="m">75</span> <span class="nv">variant</span><span class="o">=</span><span class="s2">&quot;warning&quot;</span> <span class="nv">striped</span><span class="o">=</span><span class="kp">True</span> <span class="o">/</span> <span class="cp">%}</span>
+<a id="__codelineno-24-3" name="__codelineno-24-3" href="#__codelineno-24-3"></a><span class="x">            </span><span class="cp">{%</span> <span class="k">endcomponent</span> <span class="cp">%}</span>
+</code></pre></div>
+<p><strong>Preview:</strong></p>
+<div class="bs-example">
+<div class="progress"  data-djc-id-c74JIOf="">
+
+
+
+
+        <div class="progress-bar bg-warning progress-bar-striped" style="width: 75.0%" data-djc-id-cqcueFQ="">
+
+
+        </div>
+
+
+        </div>
+</div>
+
+<hr />
+<h2 id="striped-danger">Striped Danger</h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;Progress&quot;</span> <span class="cp">%}</span>
+<a id="__codelineno-25-2" name="__codelineno-25-2" href="#__codelineno-25-2"></a><span class="x">                </span><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;ProgressBar&quot;</span> <span class="nv">now</span><span class="o">=</span><span class="m">100</span> <span class="nv">variant</span><span class="o">=</span><span class="s2">&quot;danger&quot;</span> <span class="nv">striped</span><span class="o">=</span><span class="kp">True</span> <span class="o">/</span> <span class="cp">%}</span>
+<a id="__codelineno-25-3" name="__codelineno-25-3" href="#__codelineno-25-3"></a><span class="x">            </span><span class="cp">{%</span> <span class="k">endcomponent</span> <span class="cp">%}</span>
+</code></pre></div>
+<p><strong>Preview:</strong></p>
+<div class="bs-example">
+<div class="progress"  data-djc-id-co0ZYZ1="">
+
+
+
+
+        <div class="progress-bar bg-danger progress-bar-striped" style="width: 100.0%" data-djc-id-cBY1Fsh="">
+
+
+        </div>
+
+
+        </div>
+</div>
+
+<hr />
+<h2 id="striped-primary">Striped Primary</h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;Progress&quot;</span> <span class="cp">%}</span>
+<a id="__codelineno-26-2" name="__codelineno-26-2" href="#__codelineno-26-2"></a><span class="x">                </span><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;ProgressBar&quot;</span> <span class="nv">now</span><span class="o">=</span><span class="m">40</span> <span class="nv">variant</span><span class="o">=</span><span class="s2">&quot;primary&quot;</span> <span class="nv">striped</span><span class="o">=</span><span class="kp">True</span> <span class="o">/</span> <span class="cp">%}</span>
+<a id="__codelineno-26-3" name="__codelineno-26-3" href="#__codelineno-26-3"></a><span class="x">            </span><span class="cp">{%</span> <span class="k">endcomponent</span> <span class="cp">%}</span>
+</code></pre></div>
+<p><strong>Preview:</strong></p>
+<div class="bs-example">
+<div class="progress"  data-djc-id-ckpkBnd="">
+
+
+
+
+        <div class="progress-bar bg-primary progress-bar-striped" style="width: 40.0%" data-djc-id-cr4pOCk="">
+
+
+        </div>
+
+
+        </div>
+</div>
+
+<hr />
+<h2 id="striped-secondary">Striped Secondary</h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-27-1" name="__codelineno-27-1" href="#__codelineno-27-1"></a><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;Progress&quot;</span> <span class="cp">%}</span>
+<a id="__codelineno-27-2" name="__codelineno-27-2" href="#__codelineno-27-2"></a><span class="x">                </span><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;ProgressBar&quot;</span> <span class="nv">now</span><span class="o">=</span><span class="m">60</span> <span class="nv">variant</span><span class="o">=</span><span class="s2">&quot;secondary&quot;</span> <span class="nv">striped</span><span class="o">=</span><span class="kp">True</span> <span class="o">/</span> <span class="cp">%}</span>
+<a id="__codelineno-27-3" name="__codelineno-27-3" href="#__codelineno-27-3"></a><span class="x">            </span><span class="cp">{%</span> <span class="k">endcomponent</span> <span class="cp">%}</span>
+</code></pre></div>
+<p><strong>Preview:</strong></p>
+<div class="bs-example">
+<div class="progress"  data-djc-id-cE0Mpzg="">
+
+
+
+
+        <div class="progress-bar bg-secondary progress-bar-striped" style="width: 60.0%" data-djc-id-c1g7sAH="">
+
+
+        </div>
+
+
+        </div>
+</div>
+
+<hr />
+<h2 id="striped-light">Striped Light</h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-28-1" name="__codelineno-28-1" href="#__codelineno-28-1"></a><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;Progress&quot;</span> <span class="cp">%}</span>
+<a id="__codelineno-28-2" name="__codelineno-28-2" href="#__codelineno-28-2"></a><span class="x">                </span><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;ProgressBar&quot;</span> <span class="nv">now</span><span class="o">=</span><span class="m">70</span> <span class="nv">variant</span><span class="o">=</span><span class="s2">&quot;light&quot;</span> <span class="nv">striped</span><span class="o">=</span><span class="kp">True</span> <span class="o">/</span> <span class="cp">%}</span>
+<a id="__codelineno-28-3" name="__codelineno-28-3" href="#__codelineno-28-3"></a><span class="x">            </span><span class="cp">{%</span> <span class="k">endcomponent</span> <span class="cp">%}</span>
+</code></pre></div>
+<p><strong>Preview:</strong></p>
+<div class="bs-example">
+<div class="progress"  data-djc-id-cSAa5nf="">
+
+
+
+
+        <div class="progress-bar bg-light progress-bar-striped" style="width: 70.0%" data-djc-id-cYlvMy5="">
+
+
+        </div>
+
+
+        </div>
+</div>
+
+<hr />
+<h2 id="striped-dark">Striped Dark</h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-29-1" name="__codelineno-29-1" href="#__codelineno-29-1"></a><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;Progress&quot;</span> <span class="cp">%}</span>
+<a id="__codelineno-29-2" name="__codelineno-29-2" href="#__codelineno-29-2"></a><span class="x">                </span><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;ProgressBar&quot;</span> <span class="nv">now</span><span class="o">=</span><span class="m">90</span> <span class="nv">variant</span><span class="o">=</span><span class="s2">&quot;dark&quot;</span> <span class="nv">striped</span><span class="o">=</span><span class="kp">True</span> <span class="o">/</span> <span class="cp">%}</span>
+<a id="__codelineno-29-3" name="__codelineno-29-3" href="#__codelineno-29-3"></a><span class="x">            </span><span class="cp">{%</span> <span class="k">endcomponent</span> <span class="cp">%}</span>
+</code></pre></div>
+<p><strong>Preview:</strong></p>
+<div class="bs-example">
+<div class="progress"  data-djc-id-cvMEpsn="">
+
+
+
+
+        <div class="progress-bar bg-dark progress-bar-striped" style="width: 90.0%" data-djc-id-c6fJ4X8="">
+
+
+        </div>
+
+
+        </div>
+</div>
+
+<hr />
+<h2 id="animated-striped">Animated Striped</h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-30-1" name="__codelineno-30-1" href="#__codelineno-30-1"></a><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;Progress&quot;</span> <span class="cp">%}</span>
+<a id="__codelineno-30-2" name="__codelineno-30-2" href="#__codelineno-30-2"></a><span class="x">                </span><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;ProgressBar&quot;</span> <span class="nv">now</span><span class="o">=</span><span class="m">75</span> <span class="nv">animated</span><span class="o">=</span><span class="kp">True</span> <span class="o">/</span> <span class="cp">%}</span>
+<a id="__codelineno-30-3" name="__codelineno-30-3" href="#__codelineno-30-3"></a><span class="x">            </span><span class="cp">{%</span> <span class="k">endcomponent</span> <span class="cp">%}</span>
+</code></pre></div>
+<p><strong>Preview:</strong></p>
+<div class="bs-example">
+<div class="progress"  data-djc-id-cMHp7ty="">
+
+
+
+
+        <div class="progress-bar progress-bar-striped progress-bar-animated" style="width: 75.0%" data-djc-id-cGtXXgo="">
+
+
+        </div>
+
+
+        </div>
+</div>
+
+<hr />
+<h2 id="animated-striped-success">Animated Striped Success</h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-31-1" name="__codelineno-31-1" href="#__codelineno-31-1"></a><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;Progress&quot;</span> <span class="cp">%}</span>
+<a id="__codelineno-31-2" name="__codelineno-31-2" href="#__codelineno-31-2"></a><span class="x">                </span><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;ProgressBar&quot;</span> <span class="nv">now</span><span class="o">=</span><span class="m">50</span> <span class="nv">variant</span><span class="o">=</span><span class="s2">&quot;success&quot;</span> <span class="nv">animated</span><span class="o">=</span><span class="kp">True</span> <span class="o">/</span> <span class="cp">%}</span>
+<a id="__codelineno-31-3" name="__codelineno-31-3" href="#__codelineno-31-3"></a><span class="x">            </span><span class="cp">{%</span> <span class="k">endcomponent</span> <span class="cp">%}</span>
+</code></pre></div>
+<p><strong>Preview:</strong></p>
+<div class="bs-example">
+<div class="progress"  data-djc-id-cF4aSBi="">
+
+
+
+
+        <div class="progress-bar bg-success progress-bar-striped progress-bar-animated" style="width: 50.0%" data-djc-id-cxSrdxW="">
+
+
+        </div>
+
+
+        </div>
+</div>
+
+<hr />
+<h2 id="animated-striped-info">Animated Striped Info</h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-32-1" name="__codelineno-32-1" href="#__codelineno-32-1"></a><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;Progress&quot;</span> <span class="cp">%}</span>
+<a id="__codelineno-32-2" name="__codelineno-32-2" href="#__codelineno-32-2"></a><span class="x">                </span><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;ProgressBar&quot;</span> <span class="nv">now</span><span class="o">=</span><span class="m">60</span> <span class="nv">variant</span><span class="o">=</span><span class="s2">&quot;info&quot;</span> <span class="nv">animated</span><span class="o">=</span><span class="kp">True</span> <span class="o">/</span> <span class="cp">%}</span>
+<a id="__codelineno-32-3" name="__codelineno-32-3" href="#__codelineno-32-3"></a><span class="x">            </span><span class="cp">{%</span> <span class="k">endcomponent</span> <span class="cp">%}</span>
+</code></pre></div>
+<p><strong>Preview:</strong></p>
+<div class="bs-example">
+<div class="progress"  data-djc-id-c9nsE7n="">
+
+
+
+
+        <div class="progress-bar bg-info progress-bar-striped progress-bar-animated" style="width: 60.0%" data-djc-id-cSSSOBI="">
+
+
+        </div>
+
+
+        </div>
+</div>
+
+<hr />
+<h2 id="animated-striped-warning">Animated Striped Warning</h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-33-1" name="__codelineno-33-1" href="#__codelineno-33-1"></a><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;Progress&quot;</span> <span class="cp">%}</span>
+<a id="__codelineno-33-2" name="__codelineno-33-2" href="#__codelineno-33-2"></a><span class="x">                </span><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;ProgressBar&quot;</span> <span class="nv">now</span><span class="o">=</span><span class="m">80</span> <span class="nv">variant</span><span class="o">=</span><span class="s2">&quot;warning&quot;</span> <span class="nv">animated</span><span class="o">=</span><span class="kp">True</span> <span class="o">/</span> <span class="cp">%}</span>
+<a id="__codelineno-33-3" name="__codelineno-33-3" href="#__codelineno-33-3"></a><span class="x">            </span><span class="cp">{%</span> <span class="k">endcomponent</span> <span class="cp">%}</span>
+</code></pre></div>
+<p><strong>Preview:</strong></p>
+<div class="bs-example">
+<div class="progress"  data-djc-id-cCd9woT="">
+
+
+
+
+        <div class="progress-bar bg-warning progress-bar-striped progress-bar-animated" style="width: 80.0%" data-djc-id-crUKL8r="">
+
+
+        </div>
+
+
+        </div>
+</div>
+
+<hr />
+<h2 id="animated-striped-danger">Animated Striped Danger</h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-34-1" name="__codelineno-34-1" href="#__codelineno-34-1"></a><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;Progress&quot;</span> <span class="cp">%}</span>
+<a id="__codelineno-34-2" name="__codelineno-34-2" href="#__codelineno-34-2"></a><span class="x">                </span><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;ProgressBar&quot;</span> <span class="nv">now</span><span class="o">=</span><span class="m">90</span> <span class="nv">variant</span><span class="o">=</span><span class="s2">&quot;danger&quot;</span> <span class="nv">animated</span><span class="o">=</span><span class="kp">True</span> <span class="o">/</span> <span class="cp">%}</span>
+<a id="__codelineno-34-3" name="__codelineno-34-3" href="#__codelineno-34-3"></a><span class="x">            </span><span class="cp">{%</span> <span class="k">endcomponent</span> <span class="cp">%}</span>
+</code></pre></div>
+<p><strong>Preview:</strong></p>
+<div class="bs-example">
+<div class="progress"  data-djc-id-cCsjcsN="">
+
+
+
+
+        <div class="progress-bar bg-danger progress-bar-striped progress-bar-animated" style="width: 90.0%" data-djc-id-cYcOYfh="">
+
+
+        </div>
+
+
+        </div>
+</div>
+
+<hr /></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script src="../../js/bootstrap.bundle.min.js"></script>
+        <script>
+            var base_url = "../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../js/base.js"></script>
+        <script src="../../javascripts/bootstrap-init.js"></script>
+        <script src="../../search/main.js"></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

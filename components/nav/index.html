@@ -1,0 +1,1384 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        <link rel="canonical" href="https://joeyjurjens.github.io/django-components-bootstrap/components/nav/">
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+        <title>Nav - Django Components Bootstrap</title>
+        <link href="../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../css/fontawesome.min.css" rel="stylesheet">
+        <link href="../../css/brands.min.css" rel="stylesheet">
+        <link href="../../css/solid.min.css" rel="stylesheet">
+        <link href="../../css/v4-font-face.min.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
+        <link id="hljs-light" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" >
+        <link id="hljs-dark" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark.min.css" disabled>
+        <link href="../../stylesheets/extra.css" rel="stylesheet">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../..">Django Components Bootstrap</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar-collapse" aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="nav-item">
+                                <a href="../.." class="nav-link">Home</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle active" aria-current="page" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Components</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../accordion/" class="dropdown-item">Accordion</a>
+</li>
+                                    
+<li>
+    <a href="../alert/" class="dropdown-item">Alert</a>
+</li>
+                                    
+<li>
+    <a href="../badge/" class="dropdown-item">Badge</a>
+</li>
+                                    
+<li>
+    <a href="../breadcrumb/" class="dropdown-item">Breadcrumb</a>
+</li>
+                                    
+<li>
+    <a href="../button/" class="dropdown-item">Button</a>
+</li>
+                                    
+<li>
+    <a href="../buttongroup/" class="dropdown-item">Button Group</a>
+</li>
+                                    
+<li>
+    <a href="../card/" class="dropdown-item">Card</a>
+</li>
+                                    
+<li>
+    <a href="../carousel/" class="dropdown-item">Carousel</a>
+</li>
+                                    
+<li>
+    <a href="../closebutton/" class="dropdown-item">Close Button</a>
+</li>
+                                    
+<li>
+    <a href="../collapse/" class="dropdown-item">Collapse</a>
+</li>
+                                    
+<li>
+    <a href="../dropdown/" class="dropdown-item">Dropdown</a>
+</li>
+                                    
+<li>
+    <a href="../dropdownbutton/" class="dropdown-item">Dropdown Button</a>
+</li>
+                                    
+<li>
+    <a href="../figure/" class="dropdown-item">Figure</a>
+</li>
+                                    
+<li>
+    <a href="../form/" class="dropdown-item">Form</a>
+</li>
+                                    
+<li>
+    <a href="../image/" class="dropdown-item">Image</a>
+</li>
+                                    
+<li>
+    <a href="../layout/" class="dropdown-item">Layout</a>
+</li>
+                                    
+<li>
+    <a href="../listgroup/" class="dropdown-item">List Group</a>
+</li>
+                                    
+<li>
+    <a href="../modal/" class="dropdown-item">Modal</a>
+</li>
+                                    
+<li>
+    <a href="./" class="dropdown-item active" aria-current="page">Nav</a>
+</li>
+                                    
+<li>
+    <a href="../navdropdown/" class="dropdown-item">Nav Dropdown</a>
+</li>
+                                    
+<li>
+    <a href="../navbar/" class="dropdown-item">Navbar</a>
+</li>
+                                    
+<li>
+    <a href="../offcanvas/" class="dropdown-item">Offcanvas</a>
+</li>
+                                    
+<li>
+    <a href="../pagination/" class="dropdown-item">Pagination</a>
+</li>
+                                    
+<li>
+    <a href="../placeholder/" class="dropdown-item">Placeholder</a>
+</li>
+                                    
+<li>
+    <a href="../popover/" class="dropdown-item">Popover</a>
+</li>
+                                    
+<li>
+    <a href="../progress/" class="dropdown-item">Progress</a>
+</li>
+                                    
+<li>
+    <a href="../spinner/" class="dropdown-item">Spinner</a>
+</li>
+                                    
+<li>
+    <a href="../stack/" class="dropdown-item">Stack</a>
+</li>
+                                    
+<li>
+    <a href="../table/" class="dropdown-item">Table</a>
+</li>
+                                    
+<li>
+    <a href="../tabs/" class="dropdown-item">Tabs</a>
+</li>
+                                    
+<li>
+    <a href="../toast/" class="dropdown-item">Toast</a>
+</li>
+                                    
+<li>
+    <a href="../togglebutton/" class="dropdown-item">Toggle Button</a>
+</li>
+                                    
+<li>
+    <a href="../tooltip/" class="dropdown-item">Tooltip</a>
+</li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ms-md-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-bs-toggle="modal" data-bs-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a rel="prev" href="../modal/" class="nav-link">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" href="../navdropdown/" class="nav-link">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="https://github.com/joeyjurjens/django-components-bootstrap/edit/master/docs/components/nav.md" class="nav-link">Edit on joeyjurjens/django-components-bootstrap
+                                    </a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-bs-toggle="collapse" data-bs-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-body-tertiary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-bs-level="1"><a href="#nav" class="nav-link">Nav</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="2"><a href="#basic" class="nav-link">Basic</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#basic-nav-element" class="nav-link">Basic Nav Element</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#tabs" class="nav-link">Tabs</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#pills" class="nav-link">Pills</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#underline" class="nav-link">Underline</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#vertical" class="nav-link">Vertical</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#vertical-nav-element" class="nav-link">Vertical Nav Element</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#fill" class="nav-link">Fill</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#fill-nav-element" class="nav-link">Fill Nav Element</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#justified" class="nav-link">Justified</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#justified-nav-element" class="nav-link">Justified Nav Element</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#button-links" class="nav-link">Button Links</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#custom-attrs" class="nav-link">Custom Attrs</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#custom-role" class="nav-link">Custom Role</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="nav">Nav</h1>
+<h2 id="basic">Basic</h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;Nav&quot;</span> <span class="nv">as_</span><span class="o">=</span><span class="s2">&quot;ul&quot;</span> <span class="cp">%}</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="x">              </span><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;NavItem&quot;</span> <span class="cp">%}</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="x">                </span><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;NavLink&quot;</span> <span class="nv">active</span><span class="o">=</span><span class="kp">True</span> <span class="nv">href</span><span class="o">=</span><span class="s2">&quot;#&quot;</span> <span class="cp">%}</span><span class="x">Active</span><span class="cp">{%</span> <span class="k">endcomponent</span> <span class="cp">%}</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="x">              </span><span class="cp">{%</span> <span class="k">endcomponent</span> <span class="cp">%}</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="x">              </span><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;NavItem&quot;</span> <span class="cp">%}</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="x">                </span><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;NavLink&quot;</span> <span class="nv">href</span><span class="o">=</span><span class="s2">&quot;#&quot;</span> <span class="cp">%}</span><span class="x">Link</span><span class="cp">{%</span> <span class="k">endcomponent</span> <span class="cp">%}</span>
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="x">              </span><span class="cp">{%</span> <span class="k">endcomponent</span> <span class="cp">%}</span>
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="x">              </span><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;NavItem&quot;</span> <span class="cp">%}</span>
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="x">                </span><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;NavLink&quot;</span> <span class="nv">href</span><span class="o">=</span><span class="s2">&quot;#&quot;</span> <span class="cp">%}</span><span class="x">Link</span><span class="cp">{%</span> <span class="k">endcomponent</span> <span class="cp">%}</span>
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="x">              </span><span class="cp">{%</span> <span class="k">endcomponent</span> <span class="cp">%}</span>
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="x">              </span><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;NavItem&quot;</span> <span class="cp">%}</span>
+<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="x">                </span><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;NavLink&quot;</span> <span class="nv">disabled</span><span class="o">=</span><span class="kp">True</span> <span class="cp">%}</span><span class="x">Disabled</span><span class="cp">{%</span> <span class="k">endcomponent</span> <span class="cp">%}</span>
+<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="x">              </span><span class="cp">{%</span> <span class="k">endcomponent</span> <span class="cp">%}</span>
+<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a><span class="x">            </span><span class="cp">{%</span> <span class="k">endcomponent</span> <span class="cp">%}</span>
+</code></pre></div>
+<p><strong>Preview:</strong></p>
+<div class="bs-example">
+<ul class="nav" data-djc-id-cxjduYj="">
+
+
+
+
+        <li class="nav-item" data-djc-id-crDcMzj="">
+
+
+
+
+
+            <a aria-current="page" href="#" class="nav-link active" data-djc-id-cBWLw3b="">
+                Active
+            </a>
+
+
+
+        </li>
+
+
+
+
+        <li class="nav-item" data-djc-id-cMUUVhy="">
+
+
+
+
+
+            <a href="#" class="nav-link" data-djc-id-cHc9qf7="">
+                Link
+            </a>
+
+
+
+        </li>
+
+
+
+
+        <li class="nav-item" data-djc-id-cthvR80="">
+
+
+
+
+
+            <a href="#" class="nav-link" data-djc-id-c4uHXhC="">
+                Link
+            </a>
+
+
+
+        </li>
+
+
+
+
+        <li class="nav-item" data-djc-id-cUFEtGt="">
+
+
+
+
+
+            <a aria-disabled="true" class="nav-link disabled" data-djc-id-c7gIfmG="">
+                Disabled
+            </a>
+
+
+
+        </li>
+
+
+        </ul>
+</div>
+
+<hr />
+<h2 id="basic-nav-element">Basic Nav Element</h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;Nav&quot;</span> <span class="cp">%}</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="x">              </span><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;NavLink&quot;</span> <span class="nv">active</span><span class="o">=</span><span class="kp">True</span> <span class="nv">href</span><span class="o">=</span><span class="s2">&quot;#&quot;</span> <span class="cp">%}</span><span class="x">Active</span><span class="cp">{%</span> <span class="k">endcomponent</span> <span class="cp">%}</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="x">              </span><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;NavLink&quot;</span> <span class="nv">href</span><span class="o">=</span><span class="s2">&quot;#&quot;</span> <span class="cp">%}</span><span class="x">Link</span><span class="cp">{%</span> <span class="k">endcomponent</span> <span class="cp">%}</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="x">              </span><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;NavLink&quot;</span> <span class="nv">href</span><span class="o">=</span><span class="s2">&quot;#&quot;</span> <span class="cp">%}</span><span class="x">Link</span><span class="cp">{%</span> <span class="k">endcomponent</span> <span class="cp">%}</span>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="x">              </span><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;NavLink&quot;</span> <span class="nv">disabled</span><span class="o">=</span><span class="kp">True</span> <span class="cp">%}</span><span class="x">Disabled</span><span class="cp">{%</span> <span class="k">endcomponent</span> <span class="cp">%}</span>
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="x">            </span><span class="cp">{%</span> <span class="k">endcomponent</span> <span class="cp">%}</span>
+</code></pre></div>
+<p><strong>Preview:</strong></p>
+<div class="bs-example">
+<nav class="nav" data-djc-id-cEEfKTz="">
+
+
+
+
+
+            <a aria-current="page" href="#" class="nav-link active" data-djc-id-czFJMX0="">
+                Active
+            </a>
+
+
+
+
+
+
+            <a href="#" class="nav-link" data-djc-id-cbusRp5="">
+                Link
+            </a>
+
+
+
+
+
+
+            <a href="#" class="nav-link" data-djc-id-cOfETex="">
+                Link
+            </a>
+
+
+
+
+
+
+            <a aria-disabled="true" class="nav-link disabled" data-djc-id-c7dQy7v="">
+                Disabled
+            </a>
+
+
+
+        </nav>
+</div>
+
+<hr />
+<h2 id="tabs">Tabs</h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;Nav&quot;</span> <span class="nv">variant</span><span class="o">=</span><span class="s2">&quot;tabs&quot;</span> <span class="nv">as_</span><span class="o">=</span><span class="s2">&quot;ul&quot;</span> <span class="cp">%}</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="x">              </span><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;NavItem&quot;</span> <span class="cp">%}</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="x">                </span><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;NavLink&quot;</span> <span class="nv">active</span><span class="o">=</span><span class="kp">True</span> <span class="nv">href</span><span class="o">=</span><span class="s2">&quot;#&quot;</span> <span class="cp">%}</span><span class="x">Active</span><span class="cp">{%</span> <span class="k">endcomponent</span> <span class="cp">%}</span>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="x">              </span><span class="cp">{%</span> <span class="k">endcomponent</span> <span class="cp">%}</span>
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="x">              </span><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;NavItem&quot;</span> <span class="cp">%}</span>
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="x">                </span><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;NavLink&quot;</span> <span class="nv">href</span><span class="o">=</span><span class="s2">&quot;#&quot;</span> <span class="cp">%}</span><span class="x">Link</span><span class="cp">{%</span> <span class="k">endcomponent</span> <span class="cp">%}</span>
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="x">              </span><span class="cp">{%</span> <span class="k">endcomponent</span> <span class="cp">%}</span>
+<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="x">              </span><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;NavItem&quot;</span> <span class="cp">%}</span>
+<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="x">                </span><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;NavLink&quot;</span> <span class="nv">href</span><span class="o">=</span><span class="s2">&quot;#&quot;</span> <span class="cp">%}</span><span class="x">Link</span><span class="cp">{%</span> <span class="k">endcomponent</span> <span class="cp">%}</span>
+<a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a><span class="x">              </span><span class="cp">{%</span> <span class="k">endcomponent</span> <span class="cp">%}</span>
+<a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a><span class="x">              </span><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;NavItem&quot;</span> <span class="cp">%}</span>
+<a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a><span class="x">                </span><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;NavLink&quot;</span> <span class="nv">disabled</span><span class="o">=</span><span class="kp">True</span> <span class="cp">%}</span><span class="x">Disabled</span><span class="cp">{%</span> <span class="k">endcomponent</span> <span class="cp">%}</span>
+<a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a><span class="x">              </span><span class="cp">{%</span> <span class="k">endcomponent</span> <span class="cp">%}</span>
+<a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a><span class="x">            </span><span class="cp">{%</span> <span class="k">endcomponent</span> <span class="cp">%}</span>
+</code></pre></div>
+<p><strong>Preview:</strong></p>
+<div class="bs-example">
+<ul class="nav nav-tabs" data-djc-id-cpprBIr="">
+
+
+
+
+        <li class="nav-item" data-djc-id-cFcXrO4="">
+
+
+
+
+
+            <a aria-current="page" href="#" class="nav-link active" data-djc-id-ccmlRUK="">
+                Active
+            </a>
+
+
+
+        </li>
+
+
+
+
+        <li class="nav-item" data-djc-id-c2k5Upm="">
+
+
+
+
+
+            <a href="#" class="nav-link" data-djc-id-ci2TQwc="">
+                Link
+            </a>
+
+
+
+        </li>
+
+
+
+
+        <li class="nav-item" data-djc-id-cTywsUJ="">
+
+
+
+
+
+            <a href="#" class="nav-link" data-djc-id-curF187="">
+                Link
+            </a>
+
+
+
+        </li>
+
+
+
+
+        <li class="nav-item" data-djc-id-cPHBnGG="">
+
+
+
+
+
+            <a aria-disabled="true" class="nav-link disabled" data-djc-id-cEJL6Mx="">
+                Disabled
+            </a>
+
+
+
+        </li>
+
+
+        </ul>
+</div>
+
+<hr />
+<h2 id="pills">Pills</h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;Nav&quot;</span> <span class="nv">variant</span><span class="o">=</span><span class="s2">&quot;pills&quot;</span> <span class="nv">as_</span><span class="o">=</span><span class="s2">&quot;ul&quot;</span> <span class="cp">%}</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="x">              </span><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;NavItem&quot;</span> <span class="cp">%}</span>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="x">                </span><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;NavLink&quot;</span> <span class="nv">active</span><span class="o">=</span><span class="kp">True</span> <span class="nv">href</span><span class="o">=</span><span class="s2">&quot;#&quot;</span> <span class="cp">%}</span><span class="x">Active</span><span class="cp">{%</span> <span class="k">endcomponent</span> <span class="cp">%}</span>
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="x">              </span><span class="cp">{%</span> <span class="k">endcomponent</span> <span class="cp">%}</span>
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="x">              </span><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;NavItem&quot;</span> <span class="cp">%}</span>
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="x">                </span><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;NavLink&quot;</span> <span class="nv">href</span><span class="o">=</span><span class="s2">&quot;#&quot;</span> <span class="cp">%}</span><span class="x">Link</span><span class="cp">{%</span> <span class="k">endcomponent</span> <span class="cp">%}</span>
+<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="x">              </span><span class="cp">{%</span> <span class="k">endcomponent</span> <span class="cp">%}</span>
+<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="x">              </span><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;NavItem&quot;</span> <span class="cp">%}</span>
+<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a><span class="x">                </span><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;NavLink&quot;</span> <span class="nv">href</span><span class="o">=</span><span class="s2">&quot;#&quot;</span> <span class="cp">%}</span><span class="x">Link</span><span class="cp">{%</span> <span class="k">endcomponent</span> <span class="cp">%}</span>
+<a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a><span class="x">              </span><span class="cp">{%</span> <span class="k">endcomponent</span> <span class="cp">%}</span>
+<a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a><span class="x">              </span><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;NavItem&quot;</span> <span class="cp">%}</span>
+<a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a><span class="x">                </span><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;NavLink&quot;</span> <span class="nv">disabled</span><span class="o">=</span><span class="kp">True</span> <span class="cp">%}</span><span class="x">Disabled</span><span class="cp">{%</span> <span class="k">endcomponent</span> <span class="cp">%}</span>
+<a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a><span class="x">              </span><span class="cp">{%</span> <span class="k">endcomponent</span> <span class="cp">%}</span>
+<a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a><span class="x">            </span><span class="cp">{%</span> <span class="k">endcomponent</span> <span class="cp">%}</span>
+</code></pre></div>
+<p><strong>Preview:</strong></p>
+<div class="bs-example">
+<ul class="nav nav-pills" data-djc-id-cUVcwZM="">
+
+
+
+
+        <li class="nav-item" data-djc-id-cv3OBzX="">
+
+
+
+
+
+            <a aria-current="page" href="#" class="nav-link active" data-djc-id-cYUQHHu="">
+                Active
+            </a>
+
+
+
+        </li>
+
+
+
+
+        <li class="nav-item" data-djc-id-cf24o1H="">
+
+
+
+
+
+            <a href="#" class="nav-link" data-djc-id-ch7c4Qx="">
+                Link
+            </a>
+
+
+
+        </li>
+
+
+
+
+        <li class="nav-item" data-djc-id-cKUPvZE="">
+
+
+
+
+
+            <a href="#" class="nav-link" data-djc-id-caHU9Fs="">
+                Link
+            </a>
+
+
+
+        </li>
+
+
+
+
+        <li class="nav-item" data-djc-id-cUftRcy="">
+
+
+
+
+
+            <a aria-disabled="true" class="nav-link disabled" data-djc-id-cXBy2xP="">
+                Disabled
+            </a>
+
+
+
+        </li>
+
+
+        </ul>
+</div>
+
+<hr />
+<h2 id="underline">Underline</h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;Nav&quot;</span> <span class="nv">variant</span><span class="o">=</span><span class="s2">&quot;underline&quot;</span> <span class="nv">as_</span><span class="o">=</span><span class="s2">&quot;ul&quot;</span> <span class="cp">%}</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="x">              </span><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;NavItem&quot;</span> <span class="cp">%}</span>
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="x">                </span><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;NavLink&quot;</span> <span class="nv">active</span><span class="o">=</span><span class="kp">True</span> <span class="nv">href</span><span class="o">=</span><span class="s2">&quot;#&quot;</span> <span class="cp">%}</span><span class="x">Active</span><span class="cp">{%</span> <span class="k">endcomponent</span> <span class="cp">%}</span>
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="x">              </span><span class="cp">{%</span> <span class="k">endcomponent</span> <span class="cp">%}</span>
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="x">              </span><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;NavItem&quot;</span> <span class="cp">%}</span>
+<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="x">                </span><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;NavLink&quot;</span> <span class="nv">href</span><span class="o">=</span><span class="s2">&quot;#&quot;</span> <span class="cp">%}</span><span class="x">Link</span><span class="cp">{%</span> <span class="k">endcomponent</span> <span class="cp">%}</span>
+<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a><span class="x">              </span><span class="cp">{%</span> <span class="k">endcomponent</span> <span class="cp">%}</span>
+<a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a><span class="x">              </span><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;NavItem&quot;</span> <span class="cp">%}</span>
+<a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a><span class="x">                </span><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;NavLink&quot;</span> <span class="nv">href</span><span class="o">=</span><span class="s2">&quot;#&quot;</span> <span class="cp">%}</span><span class="x">Link</span><span class="cp">{%</span> <span class="k">endcomponent</span> <span class="cp">%}</span>
+<a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a><span class="x">              </span><span class="cp">{%</span> <span class="k">endcomponent</span> <span class="cp">%}</span>
+<a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a><span class="x">              </span><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;NavItem&quot;</span> <span class="cp">%}</span>
+<a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a><span class="x">                </span><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;NavLink&quot;</span> <span class="nv">disabled</span><span class="o">=</span><span class="kp">True</span> <span class="cp">%}</span><span class="x">Disabled</span><span class="cp">{%</span> <span class="k">endcomponent</span> <span class="cp">%}</span>
+<a id="__codelineno-4-13" name="__codelineno-4-13" href="#__codelineno-4-13"></a><span class="x">              </span><span class="cp">{%</span> <span class="k">endcomponent</span> <span class="cp">%}</span>
+<a id="__codelineno-4-14" name="__codelineno-4-14" href="#__codelineno-4-14"></a><span class="x">            </span><span class="cp">{%</span> <span class="k">endcomponent</span> <span class="cp">%}</span>
+</code></pre></div>
+<p><strong>Preview:</strong></p>
+<div class="bs-example">
+<ul class="nav nav-underline" data-djc-id-cnCdlDB="">
+
+
+
+
+        <li class="nav-item" data-djc-id-c9aYmaf="">
+
+
+
+
+
+            <a aria-current="page" href="#" class="nav-link active" data-djc-id-ckOhrQP="">
+                Active
+            </a>
+
+
+
+        </li>
+
+
+
+
+        <li class="nav-item" data-djc-id-cXhFaSX="">
+
+
+
+
+
+            <a href="#" class="nav-link" data-djc-id-cQERLL5="">
+                Link
+            </a>
+
+
+
+        </li>
+
+
+
+
+        <li class="nav-item" data-djc-id-cw64uIc="">
+
+
+
+
+
+            <a href="#" class="nav-link" data-djc-id-cVRFt8Z="">
+                Link
+            </a>
+
+
+
+        </li>
+
+
+
+
+        <li class="nav-item" data-djc-id-c6UxFwz="">
+
+
+
+
+
+            <a aria-disabled="true" class="nav-link disabled" data-djc-id-cuH7uow="">
+                Disabled
+            </a>
+
+
+
+        </li>
+
+
+        </ul>
+</div>
+
+<hr />
+<h2 id="vertical">Vertical</h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;Nav&quot;</span> <span class="nv">vertical</span><span class="o">=</span><span class="kp">True</span> <span class="nv">as_</span><span class="o">=</span><span class="s2">&quot;ul&quot;</span> <span class="cp">%}</span>
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="x">              </span><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;NavItem&quot;</span> <span class="cp">%}</span>
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="x">                </span><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;NavLink&quot;</span> <span class="nv">active</span><span class="o">=</span><span class="kp">True</span> <span class="nv">href</span><span class="o">=</span><span class="s2">&quot;#&quot;</span> <span class="cp">%}</span><span class="x">Active</span><span class="cp">{%</span> <span class="k">endcomponent</span> <span class="cp">%}</span>
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="x">              </span><span class="cp">{%</span> <span class="k">endcomponent</span> <span class="cp">%}</span>
+<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="x">              </span><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;NavItem&quot;</span> <span class="cp">%}</span>
+<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="x">                </span><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;NavLink&quot;</span> <span class="nv">href</span><span class="o">=</span><span class="s2">&quot;#&quot;</span> <span class="cp">%}</span><span class="x">Link</span><span class="cp">{%</span> <span class="k">endcomponent</span> <span class="cp">%}</span>
+<a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a><span class="x">              </span><span class="cp">{%</span> <span class="k">endcomponent</span> <span class="cp">%}</span>
+<a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a><span class="x">              </span><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;NavItem&quot;</span> <span class="cp">%}</span>
+<a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a><span class="x">                </span><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;NavLink&quot;</span> <span class="nv">href</span><span class="o">=</span><span class="s2">&quot;#&quot;</span> <span class="cp">%}</span><span class="x">Link</span><span class="cp">{%</span> <span class="k">endcomponent</span> <span class="cp">%}</span>
+<a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a><span class="x">              </span><span class="cp">{%</span> <span class="k">endcomponent</span> <span class="cp">%}</span>
+<a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a><span class="x">              </span><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;NavItem&quot;</span> <span class="cp">%}</span>
+<a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a><span class="x">                </span><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;NavLink&quot;</span> <span class="nv">disabled</span><span class="o">=</span><span class="kp">True</span> <span class="cp">%}</span><span class="x">Disabled</span><span class="cp">{%</span> <span class="k">endcomponent</span> <span class="cp">%}</span>
+<a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a><span class="x">              </span><span class="cp">{%</span> <span class="k">endcomponent</span> <span class="cp">%}</span>
+<a id="__codelineno-5-14" name="__codelineno-5-14" href="#__codelineno-5-14"></a><span class="x">            </span><span class="cp">{%</span> <span class="k">endcomponent</span> <span class="cp">%}</span>
+</code></pre></div>
+<p><strong>Preview:</strong></p>
+<div class="bs-example">
+<ul class="nav flex-column" data-djc-id-coAdjIY="">
+
+
+
+
+        <li class="nav-item" data-djc-id-ctabe0n="">
+
+
+
+
+
+            <a aria-current="page" href="#" class="nav-link active" data-djc-id-cGLdnT6="">
+                Active
+            </a>
+
+
+
+        </li>
+
+
+
+
+        <li class="nav-item" data-djc-id-cMBzaO5="">
+
+
+
+
+
+            <a href="#" class="nav-link" data-djc-id-cVTQ4vT="">
+                Link
+            </a>
+
+
+
+        </li>
+
+
+
+
+        <li class="nav-item" data-djc-id-cHssuzC="">
+
+
+
+
+
+            <a href="#" class="nav-link" data-djc-id-cYqa7FS="">
+                Link
+            </a>
+
+
+
+        </li>
+
+
+
+
+        <li class="nav-item" data-djc-id-csFu6hS="">
+
+
+
+
+
+            <a aria-disabled="true" class="nav-link disabled" data-djc-id-cj8fVA5="">
+                Disabled
+            </a>
+
+
+
+        </li>
+
+
+        </ul>
+</div>
+
+<hr />
+<h2 id="vertical-nav-element">Vertical Nav Element</h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;Nav&quot;</span> <span class="nv">vertical</span><span class="o">=</span><span class="kp">True</span> <span class="cp">%}</span>
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="x">              </span><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;NavLink&quot;</span> <span class="nv">active</span><span class="o">=</span><span class="kp">True</span> <span class="nv">href</span><span class="o">=</span><span class="s2">&quot;#&quot;</span> <span class="cp">%}</span><span class="x">Active</span><span class="cp">{%</span> <span class="k">endcomponent</span> <span class="cp">%}</span>
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="x">              </span><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;NavLink&quot;</span> <span class="nv">href</span><span class="o">=</span><span class="s2">&quot;#&quot;</span> <span class="cp">%}</span><span class="x">Link</span><span class="cp">{%</span> <span class="k">endcomponent</span> <span class="cp">%}</span>
+<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="x">              </span><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;NavLink&quot;</span> <span class="nv">href</span><span class="o">=</span><span class="s2">&quot;#&quot;</span> <span class="cp">%}</span><span class="x">Link</span><span class="cp">{%</span> <span class="k">endcomponent</span> <span class="cp">%}</span>
+<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="x">              </span><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;NavLink&quot;</span> <span class="nv">disabled</span><span class="o">=</span><span class="kp">True</span> <span class="cp">%}</span><span class="x">Disabled</span><span class="cp">{%</span> <span class="k">endcomponent</span> <span class="cp">%}</span>
+<a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a><span class="x">            </span><span class="cp">{%</span> <span class="k">endcomponent</span> <span class="cp">%}</span>
+</code></pre></div>
+<p><strong>Preview:</strong></p>
+<div class="bs-example">
+<nav class="nav flex-column" data-djc-id-cJF5vUr="">
+
+
+
+
+
+            <a aria-current="page" href="#" class="nav-link active" data-djc-id-c559bAd="">
+                Active
+            </a>
+
+
+
+
+
+
+            <a href="#" class="nav-link" data-djc-id-cglY7PI="">
+                Link
+            </a>
+
+
+
+
+
+
+            <a href="#" class="nav-link" data-djc-id-c2zmbjR="">
+                Link
+            </a>
+
+
+
+
+
+
+            <a aria-disabled="true" class="nav-link disabled" data-djc-id-c2RlwWu="">
+                Disabled
+            </a>
+
+
+
+        </nav>
+</div>
+
+<hr />
+<h2 id="fill">Fill</h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;Nav&quot;</span> <span class="nv">variant</span><span class="o">=</span><span class="s2">&quot;pills&quot;</span> <span class="nv">fill</span><span class="o">=</span><span class="kp">True</span> <span class="nv">as_</span><span class="o">=</span><span class="s2">&quot;ul&quot;</span> <span class="cp">%}</span>
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="x">              </span><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;NavItem&quot;</span> <span class="cp">%}</span>
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="x">                </span><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;NavLink&quot;</span> <span class="nv">active</span><span class="o">=</span><span class="kp">True</span> <span class="nv">href</span><span class="o">=</span><span class="s2">&quot;#&quot;</span> <span class="cp">%}</span><span class="x">Active</span><span class="cp">{%</span> <span class="k">endcomponent</span> <span class="cp">%}</span>
+<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="x">              </span><span class="cp">{%</span> <span class="k">endcomponent</span> <span class="cp">%}</span>
+<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a><span class="x">              </span><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;NavItem&quot;</span> <span class="cp">%}</span>
+<a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a><span class="x">                </span><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;NavLink&quot;</span> <span class="nv">href</span><span class="o">=</span><span class="s2">&quot;#&quot;</span> <span class="cp">%}</span><span class="x">Much longer nav link</span><span class="cp">{%</span> <span class="k">endcomponent</span> <span class="cp">%}</span>
+<a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a><span class="x">              </span><span class="cp">{%</span> <span class="k">endcomponent</span> <span class="cp">%}</span>
+<a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a><span class="x">              </span><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;NavItem&quot;</span> <span class="cp">%}</span>
+<a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a><span class="x">                </span><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;NavLink&quot;</span> <span class="nv">href</span><span class="o">=</span><span class="s2">&quot;#&quot;</span> <span class="cp">%}</span><span class="x">Link</span><span class="cp">{%</span> <span class="k">endcomponent</span> <span class="cp">%}</span>
+<a id="__codelineno-7-10" name="__codelineno-7-10" href="#__codelineno-7-10"></a><span class="x">              </span><span class="cp">{%</span> <span class="k">endcomponent</span> <span class="cp">%}</span>
+<a id="__codelineno-7-11" name="__codelineno-7-11" href="#__codelineno-7-11"></a><span class="x">              </span><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;NavItem&quot;</span> <span class="cp">%}</span>
+<a id="__codelineno-7-12" name="__codelineno-7-12" href="#__codelineno-7-12"></a><span class="x">                </span><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;NavLink&quot;</span> <span class="nv">disabled</span><span class="o">=</span><span class="kp">True</span> <span class="cp">%}</span><span class="x">Disabled</span><span class="cp">{%</span> <span class="k">endcomponent</span> <span class="cp">%}</span>
+<a id="__codelineno-7-13" name="__codelineno-7-13" href="#__codelineno-7-13"></a><span class="x">              </span><span class="cp">{%</span> <span class="k">endcomponent</span> <span class="cp">%}</span>
+<a id="__codelineno-7-14" name="__codelineno-7-14" href="#__codelineno-7-14"></a><span class="x">            </span><span class="cp">{%</span> <span class="k">endcomponent</span> <span class="cp">%}</span>
+</code></pre></div>
+<p><strong>Preview:</strong></p>
+<div class="bs-example">
+<ul class="nav nav-pills nav-fill" data-djc-id-cVTeNxT="">
+
+
+
+
+        <li class="nav-item" data-djc-id-cOoXZ6N="">
+
+
+
+
+
+            <a aria-current="page" href="#" class="nav-link active" data-djc-id-cuyRDK5="">
+                Active
+            </a>
+
+
+
+        </li>
+
+
+
+
+        <li class="nav-item" data-djc-id-cK3Iqsv="">
+
+
+
+
+
+            <a href="#" class="nav-link" data-djc-id-cgr1FOx="">
+                Much longer nav link
+            </a>
+
+
+
+        </li>
+
+
+
+
+        <li class="nav-item" data-djc-id-c8uMTq7="">
+
+
+
+
+
+            <a href="#" class="nav-link" data-djc-id-cQC4AiK="">
+                Link
+            </a>
+
+
+
+        </li>
+
+
+
+
+        <li class="nav-item" data-djc-id-cQ7QFf9="">
+
+
+
+
+
+            <a aria-disabled="true" class="nav-link disabled" data-djc-id-ctHmNG8="">
+                Disabled
+            </a>
+
+
+
+        </li>
+
+
+        </ul>
+</div>
+
+<hr />
+<h2 id="fill-nav-element">Fill Nav Element</h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;Nav&quot;</span> <span class="nv">variant</span><span class="o">=</span><span class="s2">&quot;pills&quot;</span> <span class="nv">fill</span><span class="o">=</span><span class="kp">True</span> <span class="cp">%}</span>
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="x">              </span><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;NavLink&quot;</span> <span class="nv">active</span><span class="o">=</span><span class="kp">True</span> <span class="nv">href</span><span class="o">=</span><span class="s2">&quot;#&quot;</span> <span class="cp">%}</span><span class="x">Active</span><span class="cp">{%</span> <span class="k">endcomponent</span> <span class="cp">%}</span>
+<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="x">              </span><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;NavLink&quot;</span> <span class="nv">href</span><span class="o">=</span><span class="s2">&quot;#&quot;</span> <span class="cp">%}</span><span class="x">Much longer nav link</span><span class="cp">{%</span> <span class="k">endcomponent</span> <span class="cp">%}</span>
+<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="x">              </span><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;NavLink&quot;</span> <span class="nv">href</span><span class="o">=</span><span class="s2">&quot;#&quot;</span> <span class="cp">%}</span><span class="x">Link</span><span class="cp">{%</span> <span class="k">endcomponent</span> <span class="cp">%}</span>
+<a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a><span class="x">              </span><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;NavLink&quot;</span> <span class="nv">disabled</span><span class="o">=</span><span class="kp">True</span> <span class="cp">%}</span><span class="x">Disabled</span><span class="cp">{%</span> <span class="k">endcomponent</span> <span class="cp">%}</span>
+<a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a><span class="x">            </span><span class="cp">{%</span> <span class="k">endcomponent</span> <span class="cp">%}</span>
+</code></pre></div>
+<p><strong>Preview:</strong></p>
+<div class="bs-example">
+<nav class="nav nav-pills nav-fill" data-djc-id-cMSOiIg="">
+
+
+
+
+
+            <a aria-current="page" href="#" class="nav-link active" data-djc-id-ck4Ez29="">
+                Active
+            </a>
+
+
+
+
+
+
+            <a href="#" class="nav-link" data-djc-id-c5UQNuJ="">
+                Much longer nav link
+            </a>
+
+
+
+
+
+
+            <a href="#" class="nav-link" data-djc-id-cJCVxnX="">
+                Link
+            </a>
+
+
+
+
+
+
+            <a aria-disabled="true" class="nav-link disabled" data-djc-id-civ8mu3="">
+                Disabled
+            </a>
+
+
+
+        </nav>
+</div>
+
+<hr />
+<h2 id="justified">Justified</h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;Nav&quot;</span> <span class="nv">variant</span><span class="o">=</span><span class="s2">&quot;pills&quot;</span> <span class="nv">justified</span><span class="o">=</span><span class="kp">True</span> <span class="nv">as_</span><span class="o">=</span><span class="s2">&quot;ul&quot;</span> <span class="cp">%}</span>
+<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="x">              </span><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;NavItem&quot;</span> <span class="cp">%}</span>
+<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="x">                </span><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;NavLink&quot;</span> <span class="nv">active</span><span class="o">=</span><span class="kp">True</span> <span class="nv">href</span><span class="o">=</span><span class="s2">&quot;#&quot;</span> <span class="cp">%}</span><span class="x">Active</span><span class="cp">{%</span> <span class="k">endcomponent</span> <span class="cp">%}</span>
+<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="x">              </span><span class="cp">{%</span> <span class="k">endcomponent</span> <span class="cp">%}</span>
+<a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a><span class="x">              </span><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;NavItem&quot;</span> <span class="cp">%}</span>
+<a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a><span class="x">                </span><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;NavLink&quot;</span> <span class="nv">href</span><span class="o">=</span><span class="s2">&quot;#&quot;</span> <span class="cp">%}</span><span class="x">Much longer nav link</span><span class="cp">{%</span> <span class="k">endcomponent</span> <span class="cp">%}</span>
+<a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a><span class="x">              </span><span class="cp">{%</span> <span class="k">endcomponent</span> <span class="cp">%}</span>
+<a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a><span class="x">              </span><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;NavItem&quot;</span> <span class="cp">%}</span>
+<a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a><span class="x">                </span><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;NavLink&quot;</span> <span class="nv">href</span><span class="o">=</span><span class="s2">&quot;#&quot;</span> <span class="cp">%}</span><span class="x">Link</span><span class="cp">{%</span> <span class="k">endcomponent</span> <span class="cp">%}</span>
+<a id="__codelineno-9-10" name="__codelineno-9-10" href="#__codelineno-9-10"></a><span class="x">              </span><span class="cp">{%</span> <span class="k">endcomponent</span> <span class="cp">%}</span>
+<a id="__codelineno-9-11" name="__codelineno-9-11" href="#__codelineno-9-11"></a><span class="x">              </span><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;NavItem&quot;</span> <span class="cp">%}</span>
+<a id="__codelineno-9-12" name="__codelineno-9-12" href="#__codelineno-9-12"></a><span class="x">                </span><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;NavLink&quot;</span> <span class="nv">disabled</span><span class="o">=</span><span class="kp">True</span> <span class="cp">%}</span><span class="x">Disabled</span><span class="cp">{%</span> <span class="k">endcomponent</span> <span class="cp">%}</span>
+<a id="__codelineno-9-13" name="__codelineno-9-13" href="#__codelineno-9-13"></a><span class="x">              </span><span class="cp">{%</span> <span class="k">endcomponent</span> <span class="cp">%}</span>
+<a id="__codelineno-9-14" name="__codelineno-9-14" href="#__codelineno-9-14"></a><span class="x">            </span><span class="cp">{%</span> <span class="k">endcomponent</span> <span class="cp">%}</span>
+</code></pre></div>
+<p><strong>Preview:</strong></p>
+<div class="bs-example">
+<ul class="nav nav-pills nav-justified" data-djc-id-cHVSIy8="">
+
+
+
+
+        <li class="nav-item" data-djc-id-c6Cmqft="">
+
+
+
+
+
+            <a aria-current="page" href="#" class="nav-link active" data-djc-id-cTZF6uO="">
+                Active
+            </a>
+
+
+
+        </li>
+
+
+
+
+        <li class="nav-item" data-djc-id-c69Wv80="">
+
+
+
+
+
+            <a href="#" class="nav-link" data-djc-id-csovt0w="">
+                Much longer nav link
+            </a>
+
+
+
+        </li>
+
+
+
+
+        <li class="nav-item" data-djc-id-c5I4LIe="">
+
+
+
+
+
+            <a href="#" class="nav-link" data-djc-id-c31F70e="">
+                Link
+            </a>
+
+
+
+        </li>
+
+
+
+
+        <li class="nav-item" data-djc-id-c5FeAmp="">
+
+
+
+
+
+            <a aria-disabled="true" class="nav-link disabled" data-djc-id-ckreaPd="">
+                Disabled
+            </a>
+
+
+
+        </li>
+
+
+        </ul>
+</div>
+
+<hr />
+<h2 id="justified-nav-element">Justified Nav Element</h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;Nav&quot;</span> <span class="nv">variant</span><span class="o">=</span><span class="s2">&quot;pills&quot;</span> <span class="nv">justified</span><span class="o">=</span><span class="kp">True</span> <span class="cp">%}</span>
+<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="x">              </span><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;NavLink&quot;</span> <span class="nv">active</span><span class="o">=</span><span class="kp">True</span> <span class="nv">href</span><span class="o">=</span><span class="s2">&quot;#&quot;</span> <span class="cp">%}</span><span class="x">Active</span><span class="cp">{%</span> <span class="k">endcomponent</span> <span class="cp">%}</span>
+<a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a><span class="x">              </span><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;NavLink&quot;</span> <span class="nv">href</span><span class="o">=</span><span class="s2">&quot;#&quot;</span> <span class="cp">%}</span><span class="x">Much longer nav link</span><span class="cp">{%</span> <span class="k">endcomponent</span> <span class="cp">%}</span>
+<a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a><span class="x">              </span><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;NavLink&quot;</span> <span class="nv">href</span><span class="o">=</span><span class="s2">&quot;#&quot;</span> <span class="cp">%}</span><span class="x">Link</span><span class="cp">{%</span> <span class="k">endcomponent</span> <span class="cp">%}</span>
+<a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a><span class="x">              </span><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;NavLink&quot;</span> <span class="nv">disabled</span><span class="o">=</span><span class="kp">True</span> <span class="cp">%}</span><span class="x">Disabled</span><span class="cp">{%</span> <span class="k">endcomponent</span> <span class="cp">%}</span>
+<a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a><span class="x">            </span><span class="cp">{%</span> <span class="k">endcomponent</span> <span class="cp">%}</span>
+</code></pre></div>
+<p><strong>Preview:</strong></p>
+<div class="bs-example">
+<nav class="nav nav-pills nav-justified" data-djc-id-coCMoaa="">
+
+
+
+
+
+            <a aria-current="page" href="#" class="nav-link active" data-djc-id-cxXbyzq="">
+                Active
+            </a>
+
+
+
+
+
+
+            <a href="#" class="nav-link" data-djc-id-c3j0zIc="">
+                Much longer nav link
+            </a>
+
+
+
+
+
+
+            <a href="#" class="nav-link" data-djc-id-cbxrYIa="">
+                Link
+            </a>
+
+
+
+
+
+
+            <a aria-disabled="true" class="nav-link disabled" data-djc-id-cwW5aoM="">
+                Disabled
+            </a>
+
+
+
+        </nav>
+</div>
+
+<hr />
+<h2 id="button-links">Button Links</h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;Nav&quot;</span> <span class="nv">variant</span><span class="o">=</span><span class="s2">&quot;pills&quot;</span> <span class="nv">as_</span><span class="o">=</span><span class="s2">&quot;ul&quot;</span> <span class="cp">%}</span>
+<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="x">              </span><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;NavItem&quot;</span> <span class="cp">%}</span>
+<a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a><span class="x">                </span><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;NavLink&quot;</span> <span class="nv">as_</span><span class="o">=</span><span class="s2">&quot;button&quot;</span> <span class="nv">active</span><span class="o">=</span><span class="kp">True</span> <span class="cp">%}</span><span class="x">Active</span><span class="cp">{%</span> <span class="k">endcomponent</span> <span class="cp">%}</span>
+<a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a><span class="x">              </span><span class="cp">{%</span> <span class="k">endcomponent</span> <span class="cp">%}</span>
+<a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a><span class="x">              </span><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;NavItem&quot;</span> <span class="cp">%}</span>
+<a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a><span class="x">                </span><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;NavLink&quot;</span> <span class="nv">as_</span><span class="o">=</span><span class="s2">&quot;button&quot;</span> <span class="cp">%}</span><span class="x">Link</span><span class="cp">{%</span> <span class="k">endcomponent</span> <span class="cp">%}</span>
+<a id="__codelineno-11-7" name="__codelineno-11-7" href="#__codelineno-11-7"></a><span class="x">              </span><span class="cp">{%</span> <span class="k">endcomponent</span> <span class="cp">%}</span>
+<a id="__codelineno-11-8" name="__codelineno-11-8" href="#__codelineno-11-8"></a><span class="x">              </span><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;NavItem&quot;</span> <span class="cp">%}</span>
+<a id="__codelineno-11-9" name="__codelineno-11-9" href="#__codelineno-11-9"></a><span class="x">                </span><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;NavLink&quot;</span> <span class="nv">as_</span><span class="o">=</span><span class="s2">&quot;button&quot;</span> <span class="cp">%}</span><span class="x">Link</span><span class="cp">{%</span> <span class="k">endcomponent</span> <span class="cp">%}</span>
+<a id="__codelineno-11-10" name="__codelineno-11-10" href="#__codelineno-11-10"></a><span class="x">              </span><span class="cp">{%</span> <span class="k">endcomponent</span> <span class="cp">%}</span>
+<a id="__codelineno-11-11" name="__codelineno-11-11" href="#__codelineno-11-11"></a><span class="x">              </span><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;NavItem&quot;</span> <span class="cp">%}</span>
+<a id="__codelineno-11-12" name="__codelineno-11-12" href="#__codelineno-11-12"></a><span class="x">                </span><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;NavLink&quot;</span> <span class="nv">as_</span><span class="o">=</span><span class="s2">&quot;button&quot;</span> <span class="nv">disabled</span><span class="o">=</span><span class="kp">True</span> <span class="cp">%}</span><span class="x">Disabled</span><span class="cp">{%</span> <span class="k">endcomponent</span> <span class="cp">%}</span>
+<a id="__codelineno-11-13" name="__codelineno-11-13" href="#__codelineno-11-13"></a><span class="x">              </span><span class="cp">{%</span> <span class="k">endcomponent</span> <span class="cp">%}</span>
+<a id="__codelineno-11-14" name="__codelineno-11-14" href="#__codelineno-11-14"></a><span class="x">            </span><span class="cp">{%</span> <span class="k">endcomponent</span> <span class="cp">%}</span>
+</code></pre></div>
+<p><strong>Preview:</strong></p>
+<div class="bs-example">
+<ul class="nav nav-pills" data-djc-id-caI9Ys1="">
+
+
+
+
+        <li class="nav-item" data-djc-id-c6840b1="">
+
+
+
+
+
+            <button type="button" class="nav-link active" data-djc-id-cuGod0J="">
+                Active
+            </button>
+
+
+
+        </li>
+
+
+
+
+        <li class="nav-item" data-djc-id-cFBs4Kx="">
+
+
+
+
+
+            <button type="button" class="nav-link" data-djc-id-cOTtKrn="">
+                Link
+            </button>
+
+
+
+        </li>
+
+
+
+
+        <li class="nav-item" data-djc-id-cTno5j0="">
+
+
+
+
+
+            <button type="button" class="nav-link" data-djc-id-cpt9oMB="">
+                Link
+            </button>
+
+
+
+        </li>
+
+
+
+
+        <li class="nav-item" data-djc-id-cirLOqc="">
+
+
+
+
+
+            <button type="button" disabled class="nav-link disabled" data-djc-id-c3674Vk="">
+                Disabled
+            </button>
+
+
+
+        </li>
+
+
+        </ul>
+</div>
+
+<hr />
+<h2 id="custom-attrs">Custom Attrs</h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;Nav&quot;</span> <span class="nv">attrs</span><span class="o">:</span><span class="nv">class</span><span class="o">=</span><span class="s2">&quot;custom-nav&quot;</span> <span class="cp">%}</span>
+<a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="x">              </span><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;NavLink&quot;</span> <span class="nv">active</span><span class="o">=</span><span class="kp">True</span> <span class="nv">href</span><span class="o">=</span><span class="s2">&quot;#&quot;</span> <span class="cp">%}</span><span class="x">Active</span><span class="cp">{%</span> <span class="k">endcomponent</span> <span class="cp">%}</span>
+<a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a><span class="x">              </span><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;NavLink&quot;</span> <span class="nv">href</span><span class="o">=</span><span class="s2">&quot;#&quot;</span> <span class="cp">%}</span><span class="x">Link</span><span class="cp">{%</span> <span class="k">endcomponent</span> <span class="cp">%}</span>
+<a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a><span class="x">            </span><span class="cp">{%</span> <span class="k">endcomponent</span> <span class="cp">%}</span>
+</code></pre></div>
+<p><strong>Preview:</strong></p>
+<div class="bs-example">
+<nav class="custom-nav nav" data-djc-id-cJkIyNR="">
+
+
+
+
+
+            <a aria-current="page" href="#" class="nav-link active" data-djc-id-cHWZPxh="">
+                Active
+            </a>
+
+
+
+
+
+
+            <a href="#" class="nav-link" data-djc-id-c8DEtig="">
+                Link
+            </a>
+
+
+
+        </nav>
+</div>
+
+<hr />
+<h2 id="custom-role">Custom Role</h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;Nav&quot;</span> <span class="nv">role</span><span class="o">=</span><span class="s2">&quot;tablist&quot;</span> <span class="cp">%}</span>
+<a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a><span class="x">              </span><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;NavLink&quot;</span> <span class="nv">active</span><span class="o">=</span><span class="kp">True</span> <span class="nv">href</span><span class="o">=</span><span class="s2">&quot;#&quot;</span> <span class="cp">%}</span><span class="x">Active</span><span class="cp">{%</span> <span class="k">endcomponent</span> <span class="cp">%}</span>
+<a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a><span class="x">              </span><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;NavLink&quot;</span> <span class="nv">href</span><span class="o">=</span><span class="s2">&quot;#&quot;</span> <span class="cp">%}</span><span class="x">Link</span><span class="cp">{%</span> <span class="k">endcomponent</span> <span class="cp">%}</span>
+<a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a><span class="x">            </span><span class="cp">{%</span> <span class="k">endcomponent</span> <span class="cp">%}</span>
+</code></pre></div>
+<p><strong>Preview:</strong></p>
+<div class="bs-example">
+<nav role="tablist" class="nav" data-djc-id-cVMMp5D="">
+
+
+
+
+
+            <a aria-current="page" href="#" class="nav-link active" data-djc-id-cRIqA5S="">
+                Active
+            </a>
+
+
+
+
+
+
+            <a href="#" class="nav-link" data-djc-id-c4TeXHR="">
+                Link
+            </a>
+
+
+
+        </nav>
+</div>
+
+<hr /></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script src="../../js/bootstrap.bundle.min.js"></script>
+        <script>
+            var base_url = "../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../js/base.js"></script>
+        <script src="../../javascripts/bootstrap-init.js"></script>
+        <script src="../../search/main.js"></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

@@ -1,0 +1,1074 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        <link rel="canonical" href="https://joeyjurjens.github.io/django-components-bootstrap/components/form/">
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+        <title>Form - Django Components Bootstrap</title>
+        <link href="../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../css/fontawesome.min.css" rel="stylesheet">
+        <link href="../../css/brands.min.css" rel="stylesheet">
+        <link href="../../css/solid.min.css" rel="stylesheet">
+        <link href="../../css/v4-font-face.min.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
+        <link id="hljs-light" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" >
+        <link id="hljs-dark" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark.min.css" disabled>
+        <link href="../../stylesheets/extra.css" rel="stylesheet">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../..">Django Components Bootstrap</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar-collapse" aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="nav-item">
+                                <a href="../.." class="nav-link">Home</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle active" aria-current="page" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Components</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../accordion/" class="dropdown-item">Accordion</a>
+</li>
+                                    
+<li>
+    <a href="../alert/" class="dropdown-item">Alert</a>
+</li>
+                                    
+<li>
+    <a href="../badge/" class="dropdown-item">Badge</a>
+</li>
+                                    
+<li>
+    <a href="../breadcrumb/" class="dropdown-item">Breadcrumb</a>
+</li>
+                                    
+<li>
+    <a href="../button/" class="dropdown-item">Button</a>
+</li>
+                                    
+<li>
+    <a href="../buttongroup/" class="dropdown-item">Button Group</a>
+</li>
+                                    
+<li>
+    <a href="../card/" class="dropdown-item">Card</a>
+</li>
+                                    
+<li>
+    <a href="../carousel/" class="dropdown-item">Carousel</a>
+</li>
+                                    
+<li>
+    <a href="../closebutton/" class="dropdown-item">Close Button</a>
+</li>
+                                    
+<li>
+    <a href="../collapse/" class="dropdown-item">Collapse</a>
+</li>
+                                    
+<li>
+    <a href="../dropdown/" class="dropdown-item">Dropdown</a>
+</li>
+                                    
+<li>
+    <a href="../dropdownbutton/" class="dropdown-item">Dropdown Button</a>
+</li>
+                                    
+<li>
+    <a href="../figure/" class="dropdown-item">Figure</a>
+</li>
+                                    
+<li>
+    <a href="./" class="dropdown-item active" aria-current="page">Form</a>
+</li>
+                                    
+<li>
+    <a href="../image/" class="dropdown-item">Image</a>
+</li>
+                                    
+<li>
+    <a href="../layout/" class="dropdown-item">Layout</a>
+</li>
+                                    
+<li>
+    <a href="../listgroup/" class="dropdown-item">List Group</a>
+</li>
+                                    
+<li>
+    <a href="../modal/" class="dropdown-item">Modal</a>
+</li>
+                                    
+<li>
+    <a href="../nav/" class="dropdown-item">Nav</a>
+</li>
+                                    
+<li>
+    <a href="../navdropdown/" class="dropdown-item">Nav Dropdown</a>
+</li>
+                                    
+<li>
+    <a href="../navbar/" class="dropdown-item">Navbar</a>
+</li>
+                                    
+<li>
+    <a href="../offcanvas/" class="dropdown-item">Offcanvas</a>
+</li>
+                                    
+<li>
+    <a href="../pagination/" class="dropdown-item">Pagination</a>
+</li>
+                                    
+<li>
+    <a href="../placeholder/" class="dropdown-item">Placeholder</a>
+</li>
+                                    
+<li>
+    <a href="../popover/" class="dropdown-item">Popover</a>
+</li>
+                                    
+<li>
+    <a href="../progress/" class="dropdown-item">Progress</a>
+</li>
+                                    
+<li>
+    <a href="../spinner/" class="dropdown-item">Spinner</a>
+</li>
+                                    
+<li>
+    <a href="../stack/" class="dropdown-item">Stack</a>
+</li>
+                                    
+<li>
+    <a href="../table/" class="dropdown-item">Table</a>
+</li>
+                                    
+<li>
+    <a href="../tabs/" class="dropdown-item">Tabs</a>
+</li>
+                                    
+<li>
+    <a href="../toast/" class="dropdown-item">Toast</a>
+</li>
+                                    
+<li>
+    <a href="../togglebutton/" class="dropdown-item">Toggle Button</a>
+</li>
+                                    
+<li>
+    <a href="../tooltip/" class="dropdown-item">Tooltip</a>
+</li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ms-md-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-bs-toggle="modal" data-bs-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a rel="prev" href="../figure/" class="nav-link">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" href="../image/" class="nav-link">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="https://github.com/joeyjurjens/django-components-bootstrap/edit/master/docs/components/form.md" class="nav-link">Edit on joeyjurjens/django-components-bootstrap
+                                    </a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-bs-toggle="collapse" data-bs-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-body-tertiary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-bs-level="1"><a href="#form" class="nav-link">Form</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="2"><a href="#basic-form" class="nav-link">Basic Form</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#form-with-text" class="nav-link">Form With Text</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#form-checkbox" class="nav-link">Form Checkbox</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#form-radio" class="nav-link">Form Radio</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#form-control-sizes" class="nav-link">Form Control Sizes</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#form-control-disabled" class="nav-link">Form Control Disabled</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#form-control-readonly" class="nav-link">Form Control Readonly</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#form-check-inline" class="nav-link">Form Check Inline</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#form-check-disabled" class="nav-link">Form Check Disabled</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#form-switch" class="nav-link">Form Switch</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#form-range-basic" class="nav-link">Form Range Basic</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#form-range-disabled" class="nav-link">Form Range Disabled</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#form-range-min-max" class="nav-link">Form Range Min Max</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#form-range-step" class="nav-link">Form Range Step</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#input-group-with-text" class="nav-link">Input Group With Text</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#input-group-with-button" class="nav-link">Input Group With Button</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#input-group-with-checkbox" class="nav-link">Input Group With Checkbox</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#input-group-with-radio" class="nav-link">Input Group With Radio</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#input-group-sizing" class="nav-link">Input Group Sizing</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#input-group-multiple-inputs" class="nav-link">Input Group Multiple Inputs</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#input-group-multiple-addons" class="nav-link">Input Group Multiple Addons</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#floating-label-basic" class="nav-link">Floating Label Basic</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#floating-label-with-textarea" class="nav-link">Floating Label With Textarea</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#floating-label-with-select" class="nav-link">Floating Label With Select</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#form-floating-low-level" class="nav-link">Form Floating Low Level</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="form">Form</h1>
+<h2 id="basic-form">Basic Form</h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;Form&quot;</span> <span class="cp">%}</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="x">                </span><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;FormGroup&quot;</span> <span class="nv">control_id</span><span class="o">=</span><span class="s2">&quot;exampleInputEmail1&quot;</span> <span class="cp">%}</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="x">                    </span><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;FormLabel&quot;</span> <span class="cp">%}</span><span class="x">Email address</span><span class="cp">{%</span> <span class="k">endcomponent</span> <span class="cp">%}</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="x">                    </span><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;FormControl&quot;</span> <span class="nv">type</span><span class="o">=</span><span class="s2">&quot;email&quot;</span> <span class="o">/</span> <span class="cp">%}</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="x">                </span><span class="cp">{%</span> <span class="k">endcomponent</span> <span class="cp">%}</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="x">                </span><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;Button&quot;</span> <span class="nv">type</span><span class="o">=</span><span class="s2">&quot;submit&quot;</span> <span class="nv">variant</span><span class="o">=</span><span class="s2">&quot;primary&quot;</span> <span class="cp">%}</span><span class="x">Submit</span><span class="cp">{%</span> <span class="k">endcomponent</span> <span class="cp">%}</span>
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="x">            </span><span class="cp">{%</span> <span class="k">endcomponent</span> <span class="cp">%}</span>
+</code></pre></div>
+<p><strong>Preview:</strong></p>
+<div class="bs-example">
+<form  data-djc-id-c3Dv3Mz="">
+
+
+
+
+
+            <div  data-djc-id-cgJnl2E="">
+
+
+
+
+        <label for="exampleInputEmail1" class="form-label" data-djc-id-cw5mnU3="">
+            Email address
+        </label>
+
+
+
+
+        <input type="email" id="exampleInputEmail1" class="form-control"  data-djc-id-cdQoaTN=""/>
+
+
+            </div>
+
+
+
+
+
+        <button type="submit" class="btn btn-primary" data-djc-id-cdDtefV="">
+            Submit
+        </button>
+
+
+        </form>
+</div>
+
+<hr />
+<h2 id="form-with-text">Form With Text</h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;FormGroup&quot;</span> <span class="nv">control_id</span><span class="o">=</span><span class="s2">&quot;exampleInputEmail1&quot;</span> <span class="cp">%}</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="x">                </span><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;FormLabel&quot;</span> <span class="cp">%}</span><span class="x">Email address</span><span class="cp">{%</span> <span class="k">endcomponent</span> <span class="cp">%}</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="x">                </span><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;FormControl&quot;</span> <span class="nv">type</span><span class="o">=</span><span class="s2">&quot;email&quot;</span> <span class="o">/</span> <span class="cp">%}</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="x">                </span><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;FormText&quot;</span> <span class="cp">%}</span><span class="x">We&#39;ll never share your email with anyone else.</span><span class="cp">{%</span> <span class="k">endcomponent</span> <span class="cp">%}</span>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="x">            </span><span class="cp">{%</span> <span class="k">endcomponent</span> <span class="cp">%}</span>
+</code></pre></div>
+<p><strong>Preview:</strong></p>
+<div class="bs-example">
+<div  data-djc-id-c7wzu3U="">
+
+
+
+
+        <label for="exampleInputEmail1" class="form-label" data-djc-id-cJtq8iY="">
+            Email address
+        </label>
+
+
+
+
+        <input type="email" id="exampleInputEmail1" class="form-control"  data-djc-id-cTKSLPm=""/>
+
+
+
+
+        <div class="form-text" data-djc-id-coZAh0s="">
+            We'll never share your email with anyone else.
+        </div>
+
+
+            </div>
+</div>
+
+<hr />
+<h2 id="form-checkbox">Form Checkbox</h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;FormCheck&quot;</span> <span class="nv">attrs</span><span class="o">:</span><span class="nv">id</span><span class="o">=</span><span class="s2">&quot;exampleCheck1&quot;</span> <span class="nv">label</span><span class="o">=</span><span class="s2">&quot;Check me out&quot;</span> <span class="o">/</span> <span class="cp">%}</span>
+</code></pre></div>
+<p><strong>Preview:</strong></p>
+<div class="bs-example">
+<div id="exampleCheck1" class="form-check" data-djc-id-cQzpsSu="">
+
+
+
+
+        <input type="checkbox" id="exampleCheck1" class="form-check-input"  data-djc-id-caw83P2=""/>
+
+
+
+
+
+        <label for="exampleCheck1" class="form-check-label" data-djc-id-ctkVsRG="">
+
+                            Check me out
+
+        </label>
+
+
+
+            </div>
+</div>
+
+<hr />
+<h2 id="form-radio">Form Radio</h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;FormCheck&quot;</span> <span class="nv">type</span><span class="o">=</span><span class="s2">&quot;radio&quot;</span> <span class="nv">name</span><span class="o">=</span><span class="s2">&quot;exampleRadio&quot;</span> <span class="nv">attrs</span><span class="o">:</span><span class="nv">id</span><span class="o">=</span><span class="s2">&quot;exampleRadio1&quot;</span> <span class="nv">label</span><span class="o">=</span><span class="s2">&quot;Option one&quot;</span> <span class="o">/</span> <span class="cp">%}</span>
+</code></pre></div>
+<p><strong>Preview:</strong></p>
+<div class="bs-example">
+<div id="exampleRadio1" class="form-check" data-djc-id-c3CnWym="">
+
+
+
+
+        <input type="radio" id="exampleRadio1" name="exampleRadio" class="form-check-input"  data-djc-id-cJk7z0M=""/>
+
+
+
+
+
+        <label for="exampleRadio1" class="form-check-label" data-djc-id-cj72vyC="">
+
+                            Option one
+
+        </label>
+
+
+
+            </div>
+</div>
+
+<hr />
+<h2 id="form-control-sizes">Form Control Sizes</h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;FormControl&quot;</span> <span class="nv">size</span><span class="o">=</span><span class="s2">&quot;lg&quot;</span> <span class="nv">placeholder</span><span class="o">=</span><span class="s2">&quot;.form-control-lg&quot;</span> <span class="o">/</span> <span class="cp">%}</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="x">            </span><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;FormControl&quot;</span> <span class="nv">placeholder</span><span class="o">=</span><span class="s2">&quot;Default input&quot;</span> <span class="o">/</span> <span class="cp">%}</span>
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="x">            </span><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;FormControl&quot;</span> <span class="nv">size</span><span class="o">=</span><span class="s2">&quot;sm&quot;</span> <span class="nv">placeholder</span><span class="o">=</span><span class="s2">&quot;.form-control-sm&quot;</span> <span class="o">/</span> <span class="cp">%}</span>
+</code></pre></div>
+<p><strong>Preview:</strong></p>
+<div class="bs-example">
+<input type="text" placeholder=".form-control-lg" class="form-control form-control-lg"  data-djc-id-cEsrYh6=""/>
+
+
+
+
+        <input type="text" placeholder="Default input" class="form-control"  data-djc-id-coTZ0Hi=""/>
+
+
+
+
+        <input type="text" placeholder=".form-control-sm" class="form-control form-control-sm"  data-djc-id-c85Rsut=""/>
+</div>
+
+<hr />
+<h2 id="form-control-disabled">Form Control Disabled</h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;FormControl&quot;</span> <span class="nv">placeholder</span><span class="o">=</span><span class="s2">&quot;Disabled input&quot;</span> <span class="nv">disabled</span><span class="o">=</span><span class="kp">True</span> <span class="o">/</span> <span class="cp">%}</span>
+</code></pre></div>
+<p><strong>Preview:</strong></p>
+<div class="bs-example">
+<input type="text" placeholder="Disabled input" disabled class="form-control"  data-djc-id-cWWuBGO=""/>
+</div>
+
+<hr />
+<h2 id="form-control-readonly">Form Control Readonly</h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;FormControl&quot;</span> <span class="nv">placeholder</span><span class="o">=</span><span class="s2">&quot;Readonly input&quot;</span> <span class="nv">readonly</span><span class="o">=</span><span class="kp">True</span> <span class="nv">value</span><span class="o">=</span><span class="s2">&quot;readonly&quot;</span> <span class="o">/</span> <span class="cp">%}</span>
+</code></pre></div>
+<p><strong>Preview:</strong></p>
+<div class="bs-example">
+<input type="text" value="readonly" placeholder="Readonly input" readonly class="form-control"  data-djc-id-c94ZJs1=""/>
+</div>
+
+<hr />
+<h2 id="form-check-inline">Form Check Inline</h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;FormCheck&quot;</span> <span class="nv">inline</span><span class="o">=</span><span class="kp">True</span> <span class="nv">attrs</span><span class="o">:</span><span class="nv">id</span><span class="o">=</span><span class="s2">&quot;inlineCheckbox1&quot;</span> <span class="nv">value</span><span class="o">=</span><span class="s2">&quot;option1&quot;</span> <span class="nv">label</span><span class="o">=</span><span class="s2">&quot;1&quot;</span> <span class="o">/</span> <span class="cp">%}</span>
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="x">                </span><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;FormCheck&quot;</span> <span class="nv">inline</span><span class="o">=</span><span class="kp">True</span> <span class="nv">attrs</span><span class="o">:</span><span class="nv">id</span><span class="o">=</span><span class="s2">&quot;inlineCheckbox2&quot;</span> <span class="nv">value</span><span class="o">=</span><span class="s2">&quot;option2&quot;</span> <span class="nv">label</span><span class="o">=</span><span class="s2">&quot;2&quot;</span> <span class="o">/</span> <span class="cp">%}</span>
+</code></pre></div>
+<p><strong>Preview:</strong></p>
+<div class="bs-example">
+<div id="inlineCheckbox1" class="form-check form-check-inline" data-djc-id-c5BURWe="">
+
+
+
+
+        <input type="checkbox" id="inlineCheckbox1" value="option1" class="form-check-input"  data-djc-id-cPT67qu=""/>
+
+
+
+
+
+        <label for="inlineCheckbox1" class="form-check-label" data-djc-id-coWjRE6="">
+
+                            1
+
+        </label>
+
+
+
+            </div>
+
+
+
+
+
+
+            <div id="inlineCheckbox2" class="form-check form-check-inline" data-djc-id-ceFgMst="">
+
+
+
+
+        <input type="checkbox" id="inlineCheckbox2" value="option2" class="form-check-input"  data-djc-id-cFARn2j=""/>
+
+
+
+
+
+        <label for="inlineCheckbox2" class="form-check-label" data-djc-id-cwkirGO="">
+
+                            2
+
+        </label>
+
+
+
+            </div>
+</div>
+
+<hr />
+<h2 id="form-check-disabled">Form Check Disabled</h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;FormCheck&quot;</span> <span class="nv">attrs</span><span class="o">:</span><span class="nv">id</span><span class="o">=</span><span class="s2">&quot;disabledCheck&quot;</span> <span class="nv">label</span><span class="o">=</span><span class="s2">&quot;Disabled checkbox&quot;</span> <span class="nv">disabled</span><span class="o">=</span><span class="kp">True</span> <span class="o">/</span> <span class="cp">%}</span>
+</code></pre></div>
+<p><strong>Preview:</strong></p>
+<div class="bs-example">
+<div id="disabledCheck" class="form-check" data-djc-id-cyVTZOl="">
+
+
+
+
+        <input type="checkbox" id="disabledCheck" disabled class="form-check-input"  data-djc-id-cmEezC4=""/>
+
+
+
+
+
+        <label for="disabledCheck" class="form-check-label" data-djc-id-cilPXeg="">
+
+                            Disabled checkbox
+
+        </label>
+
+
+
+            </div>
+</div>
+
+<hr />
+<h2 id="form-switch">Form Switch</h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;FormCheck&quot;</span> <span class="nv">type</span><span class="o">=</span><span class="s2">&quot;switch&quot;</span> <span class="nv">attrs</span><span class="o">:</span><span class="nv">id</span><span class="o">=</span><span class="s2">&quot;flexSwitchCheckDefault&quot;</span> <span class="nv">label</span><span class="o">=</span><span class="s2">&quot;Default switch checkbox input&quot;</span> <span class="o">/</span> <span class="cp">%}</span>
+</code></pre></div>
+<p><strong>Preview:</strong></p>
+<div class="bs-example">
+<div id="flexSwitchCheckDefault" class="form-check form-switch" data-djc-id-cMvp4OZ="">
+
+
+
+
+        <input type="checkbox" id="flexSwitchCheckDefault" role="switch" class="form-check-input"  data-djc-id-cAJR081=""/>
+
+
+
+
+
+        <label for="flexSwitchCheckDefault" class="form-check-label" data-djc-id-cMtAUcG="">
+
+                            Default switch checkbox input
+
+        </label>
+
+
+
+            </div>
+</div>
+
+<hr />
+<h2 id="form-range-basic">Form Range Basic</h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;FormRange&quot;</span> <span class="o">/</span> <span class="cp">%}</span>
+</code></pre></div>
+<p><strong>Preview:</strong></p>
+<div class="bs-example">
+<input type="range" min="0" max="100" step="1" class="form-range"  data-djc-id-cUlrMac=""/>
+</div>
+
+<hr />
+<h2 id="form-range-disabled">Form Range Disabled</h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;FormRange&quot;</span> <span class="nv">disabled</span><span class="o">=</span><span class="kp">True</span> <span class="o">/</span> <span class="cp">%}</span>
+</code></pre></div>
+<p><strong>Preview:</strong></p>
+<div class="bs-example">
+<input disabled type="range" min="0" max="100" step="1" class="form-range"  data-djc-id-cXWFs3v=""/>
+</div>
+
+<hr />
+<h2 id="form-range-min-max">Form Range Min Max</h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;FormRange&quot;</span> <span class="nv">min</span><span class="o">=</span><span class="m">0</span> <span class="nv">max</span><span class="o">=</span><span class="m">5</span> <span class="o">/</span> <span class="cp">%}</span>
+</code></pre></div>
+<p><strong>Preview:</strong></p>
+<div class="bs-example">
+<input type="range" min="0" max="5" step="1" class="form-range"  data-djc-id-cCEQtFi=""/>
+</div>
+
+<hr />
+<h2 id="form-range-step">Form Range Step</h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;FormRange&quot;</span> <span class="nv">min</span><span class="o">=</span><span class="m">0</span> <span class="nv">max</span><span class="o">=</span><span class="m">5</span> <span class="nv">step</span><span class="o">=</span><span class="m">0.5</span> <span class="o">/</span> <span class="cp">%}</span>
+</code></pre></div>
+<p><strong>Preview:</strong></p>
+<div class="bs-example">
+<input type="range" min="0" max="5" step="0.5" class="form-range"  data-djc-id-cv7O3bs=""/>
+</div>
+
+<hr />
+<h2 id="input-group-with-text">Input Group With Text</h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;InputGroup&quot;</span> <span class="cp">%}</span>
+<a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a><span class="x">                </span><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;InputGroupText&quot;</span> <span class="cp">%}</span><span class="x">@</span><span class="cp">{%</span> <span class="k">endcomponent</span> <span class="cp">%}</span>
+<a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a><span class="x">                </span><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;FormControl&quot;</span> <span class="nv">placeholder</span><span class="o">=</span><span class="s2">&quot;Username&quot;</span> <span class="o">/</span> <span class="cp">%}</span>
+<a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a><span class="x">            </span><span class="cp">{%</span> <span class="k">endcomponent</span> <span class="cp">%}</span>
+</code></pre></div>
+<p><strong>Preview:</strong></p>
+<div class="bs-example">
+<div class="input-group" data-djc-id-c2GbF1q="">
+
+
+
+
+        <span class="input-group-text" data-djc-id-cAaa4oR="">
+            @
+        </span>
+
+
+
+
+        <input type="text" placeholder="Username" class="form-control"  data-djc-id-cYPspVU=""/>
+
+
+        </div>
+</div>
+
+<hr />
+<h2 id="input-group-with-button">Input Group With Button</h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;InputGroup&quot;</span> <span class="cp">%}</span>
+<a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a><span class="x">                </span><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;Button&quot;</span> <span class="nv">variant</span><span class="o">=</span><span class="s2">&quot;outline-secondary&quot;</span> <span class="nv">type</span><span class="o">=</span><span class="s2">&quot;button&quot;</span> <span class="cp">%}</span><span class="x">Button</span><span class="cp">{%</span> <span class="k">endcomponent</span> <span class="cp">%}</span>
+<a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a><span class="x">                </span><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;FormControl&quot;</span> <span class="nv">placeholder</span><span class="o">=</span><span class="s2">&quot;&quot;</span> <span class="o">/</span> <span class="cp">%}</span>
+<a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a><span class="x">            </span><span class="cp">{%</span> <span class="k">endcomponent</span> <span class="cp">%}</span>
+</code></pre></div>
+<p><strong>Preview:</strong></p>
+<div class="bs-example">
+<div class="input-group" data-djc-id-c9L612v="">
+
+
+
+
+        <button type="button" class="btn btn-outline-secondary" data-djc-id-cpnCeS3="">
+            Button
+        </button>
+
+
+
+
+        <input type="text" placeholder="" class="form-control"  data-djc-id-cpnVl9W=""/>
+
+
+        </div>
+</div>
+
+<hr />
+<h2 id="input-group-with-checkbox">Input Group With Checkbox</h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;InputGroup&quot;</span> <span class="cp">%}</span>
+<a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a><span class="x">                </span><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;InputGroupCheckbox&quot;</span> <span class="nv">attrs</span><span class="o">:</span><span class="nv">value</span><span class="o">=</span><span class="s2">&quot;&quot;</span> <span class="o">/</span> <span class="cp">%}</span>
+<a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a><span class="x">                </span><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;FormControl&quot;</span> <span class="o">/</span> <span class="cp">%}</span>
+<a id="__codelineno-16-4" name="__codelineno-16-4" href="#__codelineno-16-4"></a><span class="x">            </span><span class="cp">{%</span> <span class="k">endcomponent</span> <span class="cp">%}</span>
+</code></pre></div>
+<p><strong>Preview:</strong></p>
+<div class="bs-example">
+<div class="input-group" data-djc-id-cJxq3gw="">
+
+
+
+
+        <div class="input-group-text" data-djc-id-cpDTyR7="">
+            <input value="" type="checkbox" class="form-check-input mt-0" />
+        </div>
+
+
+
+
+        <input type="text" class="form-control"  data-djc-id-cXXcufb=""/>
+
+
+        </div>
+</div>
+
+<hr />
+<h2 id="input-group-with-radio">Input Group With Radio</h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;InputGroup&quot;</span> <span class="cp">%}</span>
+<a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a><span class="x">                </span><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;InputGroupRadio&quot;</span> <span class="nv">attrs</span><span class="o">:</span><span class="nv">value</span><span class="o">=</span><span class="s2">&quot;&quot;</span> <span class="o">/</span> <span class="cp">%}</span>
+<a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a><span class="x">                </span><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;FormControl&quot;</span> <span class="o">/</span> <span class="cp">%}</span>
+<a id="__codelineno-17-4" name="__codelineno-17-4" href="#__codelineno-17-4"></a><span class="x">            </span><span class="cp">{%</span> <span class="k">endcomponent</span> <span class="cp">%}</span>
+</code></pre></div>
+<p><strong>Preview:</strong></p>
+<div class="bs-example">
+<div class="input-group" data-djc-id-cmcXflg="">
+
+
+
+
+        <div class="input-group-text" data-djc-id-c0gSe3o="">
+            <input value="" type="radio" class="form-check-input mt-0" />
+        </div>
+
+
+
+
+        <input type="text" class="form-control"  data-djc-id-c5xOCxe=""/>
+
+
+        </div>
+</div>
+
+<hr />
+<h2 id="input-group-sizing">Input Group Sizing</h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;InputGroup&quot;</span> <span class="nv">size</span><span class="o">=</span><span class="s2">&quot;sm&quot;</span> <span class="cp">%}</span>
+<a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a><span class="x">                </span><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;InputGroupText&quot;</span> <span class="cp">%}</span><span class="x">Small</span><span class="cp">{%</span> <span class="k">endcomponent</span> <span class="cp">%}</span>
+<a id="__codelineno-18-3" name="__codelineno-18-3" href="#__codelineno-18-3"></a><span class="x">                </span><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;FormControl&quot;</span> <span class="o">/</span> <span class="cp">%}</span>
+<a id="__codelineno-18-4" name="__codelineno-18-4" href="#__codelineno-18-4"></a><span class="x">            </span><span class="cp">{%</span> <span class="k">endcomponent</span> <span class="cp">%}</span>
+<a id="__codelineno-18-5" name="__codelineno-18-5" href="#__codelineno-18-5"></a><span class="x">            </span><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;InputGroup&quot;</span> <span class="cp">%}</span>
+<a id="__codelineno-18-6" name="__codelineno-18-6" href="#__codelineno-18-6"></a><span class="x">                </span><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;InputGroupText&quot;</span> <span class="cp">%}</span><span class="x">Default</span><span class="cp">{%</span> <span class="k">endcomponent</span> <span class="cp">%}</span>
+<a id="__codelineno-18-7" name="__codelineno-18-7" href="#__codelineno-18-7"></a><span class="x">                </span><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;FormControl&quot;</span> <span class="o">/</span> <span class="cp">%}</span>
+<a id="__codelineno-18-8" name="__codelineno-18-8" href="#__codelineno-18-8"></a><span class="x">            </span><span class="cp">{%</span> <span class="k">endcomponent</span> <span class="cp">%}</span>
+<a id="__codelineno-18-9" name="__codelineno-18-9" href="#__codelineno-18-9"></a><span class="x">            </span><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;InputGroup&quot;</span> <span class="nv">size</span><span class="o">=</span><span class="s2">&quot;lg&quot;</span> <span class="cp">%}</span>
+<a id="__codelineno-18-10" name="__codelineno-18-10" href="#__codelineno-18-10"></a><span class="x">                </span><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;InputGroupText&quot;</span> <span class="cp">%}</span><span class="x">Large</span><span class="cp">{%</span> <span class="k">endcomponent</span> <span class="cp">%}</span>
+<a id="__codelineno-18-11" name="__codelineno-18-11" href="#__codelineno-18-11"></a><span class="x">                </span><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;FormControl&quot;</span> <span class="o">/</span> <span class="cp">%}</span>
+<a id="__codelineno-18-12" name="__codelineno-18-12" href="#__codelineno-18-12"></a><span class="x">            </span><span class="cp">{%</span> <span class="k">endcomponent</span> <span class="cp">%}</span>
+</code></pre></div>
+<p><strong>Preview:</strong></p>
+<div class="bs-example">
+<div class="input-group input-group-sm" data-djc-id-cn9Jjwb="">
+
+
+
+
+        <span class="input-group-text" data-djc-id-cCtQBD6="">
+            Small
+        </span>
+
+
+
+
+        <input type="text" class="form-control"  data-djc-id-cHa2oEI=""/>
+
+
+        </div>
+
+
+
+
+        <div class="input-group" data-djc-id-cFx9WO1="">
+
+
+
+
+        <span class="input-group-text" data-djc-id-cyuktqV="">
+            Default
+        </span>
+
+
+
+
+        <input type="text" class="form-control"  data-djc-id-cdntUdJ=""/>
+
+
+        </div>
+
+
+
+
+        <div class="input-group input-group-lg" data-djc-id-cob3fcf="">
+
+
+
+
+        <span class="input-group-text" data-djc-id-c7tz5nE="">
+            Large
+        </span>
+
+
+
+
+        <input type="text" class="form-control"  data-djc-id-cJm5bKg=""/>
+
+
+        </div>
+</div>
+
+<hr />
+<h2 id="input-group-multiple-inputs">Input Group Multiple Inputs</h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;InputGroup&quot;</span> <span class="cp">%}</span>
+<a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a><span class="x">                </span><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;InputGroupText&quot;</span> <span class="cp">%}</span><span class="x">First and last name</span><span class="cp">{%</span> <span class="k">endcomponent</span> <span class="cp">%}</span>
+<a id="__codelineno-19-3" name="__codelineno-19-3" href="#__codelineno-19-3"></a><span class="x">                </span><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;FormControl&quot;</span> <span class="o">/</span> <span class="cp">%}</span>
+<a id="__codelineno-19-4" name="__codelineno-19-4" href="#__codelineno-19-4"></a><span class="x">                </span><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;FormControl&quot;</span> <span class="o">/</span> <span class="cp">%}</span>
+<a id="__codelineno-19-5" name="__codelineno-19-5" href="#__codelineno-19-5"></a><span class="x">            </span><span class="cp">{%</span> <span class="k">endcomponent</span> <span class="cp">%}</span>
+</code></pre></div>
+<p><strong>Preview:</strong></p>
+<div class="bs-example">
+<div class="input-group" data-djc-id-c0BWr4a="">
+
+
+
+
+        <span class="input-group-text" data-djc-id-cJ99W9G="">
+            First and last name
+        </span>
+
+
+
+
+        <input type="text" class="form-control"  data-djc-id-cQOFDSX=""/>
+
+
+
+
+        <input type="text" class="form-control"  data-djc-id-cKmIBl0=""/>
+
+
+        </div>
+</div>
+
+<hr />
+<h2 id="input-group-multiple-addons">Input Group Multiple Addons</h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;InputGroup&quot;</span> <span class="cp">%}</span>
+<a id="__codelineno-20-2" name="__codelineno-20-2" href="#__codelineno-20-2"></a><span class="x">                </span><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;InputGroupText&quot;</span> <span class="cp">%}</span><span class="x">$</span><span class="cp">{%</span> <span class="k">endcomponent</span> <span class="cp">%}</span>
+<a id="__codelineno-20-3" name="__codelineno-20-3" href="#__codelineno-20-3"></a><span class="x">                </span><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;InputGroupText&quot;</span> <span class="cp">%}</span><span class="x">0.00</span><span class="cp">{%</span> <span class="k">endcomponent</span> <span class="cp">%}</span>
+<a id="__codelineno-20-4" name="__codelineno-20-4" href="#__codelineno-20-4"></a><span class="x">                </span><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;FormControl&quot;</span> <span class="o">/</span> <span class="cp">%}</span>
+<a id="__codelineno-20-5" name="__codelineno-20-5" href="#__codelineno-20-5"></a><span class="x">            </span><span class="cp">{%</span> <span class="k">endcomponent</span> <span class="cp">%}</span>
+</code></pre></div>
+<p><strong>Preview:</strong></p>
+<div class="bs-example">
+<div class="input-group" data-djc-id-cSlbyYM="">
+
+
+
+
+        <span class="input-group-text" data-djc-id-cdjm3rM="">
+            $
+        </span>
+
+
+
+
+        <span class="input-group-text" data-djc-id-cfogMyG="">
+            0.00
+        </span>
+
+
+
+
+        <input type="text" class="form-control"  data-djc-id-cPD28WQ=""/>
+
+
+        </div>
+</div>
+
+<hr />
+<h2 id="floating-label-basic">Floating Label Basic</h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;FloatingLabel&quot;</span> <span class="nv">label</span><span class="o">=</span><span class="s2">&quot;Email address&quot;</span> <span class="nv">control_id</span><span class="o">=</span><span class="s2">&quot;floatingInput&quot;</span> <span class="cp">%}</span>
+<a id="__codelineno-21-2" name="__codelineno-21-2" href="#__codelineno-21-2"></a><span class="x">                </span><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;FormControl&quot;</span> <span class="nv">type</span><span class="o">=</span><span class="s2">&quot;email&quot;</span> <span class="nv">placeholder</span><span class="o">=</span><span class="s2">&quot;name@example.com&quot;</span> <span class="o">/</span> <span class="cp">%}</span>
+<a id="__codelineno-21-3" name="__codelineno-21-3" href="#__codelineno-21-3"></a><span class="x">            </span><span class="cp">{%</span> <span class="k">endcomponent</span> <span class="cp">%}</span>
+</code></pre></div>
+<p><strong>Preview:</strong></p>
+<div class="bs-example">
+<div class="form-floating" data-djc-id-cKzCAvC="">
+
+
+
+
+        <input type="email" id="floatingInput" placeholder="name@example.com" class="form-control"  data-djc-id-cn27dt9=""/>
+
+
+                <label for="floatingInput">Email address</label>
+            </div>
+</div>
+
+<hr />
+<h2 id="floating-label-with-textarea">Floating Label With Textarea</h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;FloatingLabel&quot;</span> <span class="nv">label</span><span class="o">=</span><span class="s2">&quot;Comments&quot;</span> <span class="nv">control_id</span><span class="o">=</span><span class="s2">&quot;floatingTextarea&quot;</span> <span class="cp">%}</span>
+<a id="__codelineno-22-2" name="__codelineno-22-2" href="#__codelineno-22-2"></a><span class="x">                </span><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;FormTextarea&quot;</span> <span class="nv">placeholder</span><span class="o">=</span><span class="s2">&quot;Leave a comment here&quot;</span> <span class="nv">attrs</span><span class="o">:</span><span class="nv">style</span><span class="o">=</span><span class="s2">&quot;height: 100px&quot;</span> <span class="nv">attrs</span><span class="o">:</span><span class="nv">rows</span><span class="o">=</span><span class="s2">&quot;5&quot;</span> <span class="o">/</span> <span class="cp">%}</span>
+<a id="__codelineno-22-3" name="__codelineno-22-3" href="#__codelineno-22-3"></a><span class="x">            </span><span class="cp">{%</span> <span class="k">endcomponent</span> <span class="cp">%}</span>
+</code></pre></div>
+<p><strong>Preview:</strong></p>
+<div class="bs-example">
+<div class="form-floating" data-djc-id-cry9B45="">
+
+
+
+
+        <textarea rows="5" id="floatingTextarea" placeholder="Leave a comment here" class="form-control" style="height: 100px;" data-djc-id-cPgyAmD=""></textarea>
+
+
+                <label for="floatingTextarea">Comments</label>
+            </div>
+</div>
+
+<hr />
+<h2 id="floating-label-with-select">Floating Label With Select</h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;FloatingLabel&quot;</span> <span class="nv">label</span><span class="o">=</span><span class="s2">&quot;Works with selects&quot;</span> <span class="nv">control_id</span><span class="o">=</span><span class="s2">&quot;floatingSelect&quot;</span> <span class="cp">%}</span>
+<a id="__codelineno-23-2" name="__codelineno-23-2" href="#__codelineno-23-2"></a><span class="x">                </span><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;FormSelect&quot;</span> <span class="cp">%}</span>
+<a id="__codelineno-23-3" name="__codelineno-23-3" href="#__codelineno-23-3"></a><span class="x">                    &lt;option selected&gt;Open this select menu&lt;/option&gt;</span>
+<a id="__codelineno-23-4" name="__codelineno-23-4" href="#__codelineno-23-4"></a><span class="x">                    &lt;option value=&quot;1&quot;&gt;One&lt;/option&gt;</span>
+<a id="__codelineno-23-5" name="__codelineno-23-5" href="#__codelineno-23-5"></a><span class="x">                    &lt;option value=&quot;2&quot;&gt;Two&lt;/option&gt;</span>
+<a id="__codelineno-23-6" name="__codelineno-23-6" href="#__codelineno-23-6"></a><span class="x">                    &lt;option value=&quot;3&quot;&gt;Three&lt;/option&gt;</span>
+<a id="__codelineno-23-7" name="__codelineno-23-7" href="#__codelineno-23-7"></a><span class="x">                </span><span class="cp">{%</span> <span class="k">endcomponent</span> <span class="cp">%}</span>
+<a id="__codelineno-23-8" name="__codelineno-23-8" href="#__codelineno-23-8"></a><span class="x">            </span><span class="cp">{%</span> <span class="k">endcomponent</span> <span class="cp">%}</span>
+</code></pre></div>
+<p><strong>Preview:</strong></p>
+<div class="bs-example">
+<div class="form-floating" data-djc-id-cIzezFE="">
+
+
+
+
+        <select id="floatingSelect" class="form-select" data-djc-id-c5PjtbQ="">
+
+                    <option selected>Open this select menu</option>
+                    <option value="1">One</option>
+                    <option value="2">Two</option>
+                    <option value="3">Three</option>
+
+        </select>
+
+
+                <label for="floatingSelect">Works with selects</label>
+            </div>
+</div>
+
+<hr />
+<h2 id="form-floating-low-level">Form Floating Low Level</h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;FormFloating&quot;</span> <span class="cp">%}</span>
+<a id="__codelineno-24-2" name="__codelineno-24-2" href="#__codelineno-24-2"></a><span class="x">                </span><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;FormControl&quot;</span> <span class="nv">type</span><span class="o">=</span><span class="s2">&quot;email&quot;</span> <span class="nv">attrs</span><span class="o">:</span><span class="nv">id</span><span class="o">=</span><span class="s2">&quot;floatingInputCustom&quot;</span> <span class="nv">placeholder</span><span class="o">=</span><span class="s2">&quot;name@example.com&quot;</span> <span class="o">/</span> <span class="cp">%}</span>
+<a id="__codelineno-24-3" name="__codelineno-24-3" href="#__codelineno-24-3"></a><span class="x">                &lt;label for=&quot;floatingInputCustom&quot;&gt;Email address&lt;/label&gt;</span>
+<a id="__codelineno-24-4" name="__codelineno-24-4" href="#__codelineno-24-4"></a><span class="x">            </span><span class="cp">{%</span> <span class="k">endcomponent</span> <span class="cp">%}</span>
+</code></pre></div>
+<p><strong>Preview:</strong></p>
+<div class="bs-example">
+<div class="form-floating" data-djc-id-cM8jjvF="">
+
+
+
+
+        <input type="email" id="floatingInputCustom" placeholder="name@example.com" class="form-control"  data-djc-id-cYte95s=""/>
+
+                <label for="floatingInputCustom">Email address</label>
+
+        </div>
+</div>
+
+<hr /></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script src="../../js/bootstrap.bundle.min.js"></script>
+        <script>
+            var base_url = "../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../js/base.js"></script>
+        <script src="../../javascripts/bootstrap-init.js"></script>
+        <script src="../../search/main.js"></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

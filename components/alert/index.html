@@ -1,0 +1,810 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        <link rel="canonical" href="https://joeyjurjens.github.io/django-components-bootstrap/components/alert/">
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+        <title>Alert - Django Components Bootstrap</title>
+        <link href="../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../css/fontawesome.min.css" rel="stylesheet">
+        <link href="../../css/brands.min.css" rel="stylesheet">
+        <link href="../../css/solid.min.css" rel="stylesheet">
+        <link href="../../css/v4-font-face.min.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
+        <link id="hljs-light" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" >
+        <link id="hljs-dark" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark.min.css" disabled>
+        <link href="../../stylesheets/extra.css" rel="stylesheet">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../..">Django Components Bootstrap</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar-collapse" aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="nav-item">
+                                <a href="../.." class="nav-link">Home</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle active" aria-current="page" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Components</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../accordion/" class="dropdown-item">Accordion</a>
+</li>
+                                    
+<li>
+    <a href="./" class="dropdown-item active" aria-current="page">Alert</a>
+</li>
+                                    
+<li>
+    <a href="../badge/" class="dropdown-item">Badge</a>
+</li>
+                                    
+<li>
+    <a href="../breadcrumb/" class="dropdown-item">Breadcrumb</a>
+</li>
+                                    
+<li>
+    <a href="../button/" class="dropdown-item">Button</a>
+</li>
+                                    
+<li>
+    <a href="../buttongroup/" class="dropdown-item">Button Group</a>
+</li>
+                                    
+<li>
+    <a href="../card/" class="dropdown-item">Card</a>
+</li>
+                                    
+<li>
+    <a href="../carousel/" class="dropdown-item">Carousel</a>
+</li>
+                                    
+<li>
+    <a href="../closebutton/" class="dropdown-item">Close Button</a>
+</li>
+                                    
+<li>
+    <a href="../collapse/" class="dropdown-item">Collapse</a>
+</li>
+                                    
+<li>
+    <a href="../dropdown/" class="dropdown-item">Dropdown</a>
+</li>
+                                    
+<li>
+    <a href="../dropdownbutton/" class="dropdown-item">Dropdown Button</a>
+</li>
+                                    
+<li>
+    <a href="../figure/" class="dropdown-item">Figure</a>
+</li>
+                                    
+<li>
+    <a href="../form/" class="dropdown-item">Form</a>
+</li>
+                                    
+<li>
+    <a href="../image/" class="dropdown-item">Image</a>
+</li>
+                                    
+<li>
+    <a href="../layout/" class="dropdown-item">Layout</a>
+</li>
+                                    
+<li>
+    <a href="../listgroup/" class="dropdown-item">List Group</a>
+</li>
+                                    
+<li>
+    <a href="../modal/" class="dropdown-item">Modal</a>
+</li>
+                                    
+<li>
+    <a href="../nav/" class="dropdown-item">Nav</a>
+</li>
+                                    
+<li>
+    <a href="../navdropdown/" class="dropdown-item">Nav Dropdown</a>
+</li>
+                                    
+<li>
+    <a href="../navbar/" class="dropdown-item">Navbar</a>
+</li>
+                                    
+<li>
+    <a href="../offcanvas/" class="dropdown-item">Offcanvas</a>
+</li>
+                                    
+<li>
+    <a href="../pagination/" class="dropdown-item">Pagination</a>
+</li>
+                                    
+<li>
+    <a href="../placeholder/" class="dropdown-item">Placeholder</a>
+</li>
+                                    
+<li>
+    <a href="../popover/" class="dropdown-item">Popover</a>
+</li>
+                                    
+<li>
+    <a href="../progress/" class="dropdown-item">Progress</a>
+</li>
+                                    
+<li>
+    <a href="../spinner/" class="dropdown-item">Spinner</a>
+</li>
+                                    
+<li>
+    <a href="../stack/" class="dropdown-item">Stack</a>
+</li>
+                                    
+<li>
+    <a href="../table/" class="dropdown-item">Table</a>
+</li>
+                                    
+<li>
+    <a href="../tabs/" class="dropdown-item">Tabs</a>
+</li>
+                                    
+<li>
+    <a href="../toast/" class="dropdown-item">Toast</a>
+</li>
+                                    
+<li>
+    <a href="../togglebutton/" class="dropdown-item">Toggle Button</a>
+</li>
+                                    
+<li>
+    <a href="../tooltip/" class="dropdown-item">Tooltip</a>
+</li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ms-md-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-bs-toggle="modal" data-bs-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a rel="prev" href="../accordion/" class="nav-link">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" href="../badge/" class="nav-link">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="https://github.com/joeyjurjens/django-components-bootstrap/edit/master/docs/components/alert.md" class="nav-link">Edit on joeyjurjens/django-components-bootstrap
+                                    </a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-bs-toggle="collapse" data-bs-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-body-tertiary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-bs-level="1"><a href="#alert" class="nav-link">Alert</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="2"><a href="#variant-primary" class="nav-link">Variant Primary</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#variant-secondary" class="nav-link">Variant Secondary</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#variant-success" class="nav-link">Variant Success</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#variant-danger" class="nav-link">Variant Danger</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#variant-warning" class="nav-link">Variant Warning</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#variant-info" class="nav-link">Variant Info</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#variant-light" class="nav-link">Variant Light</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#variant-dark" class="nav-link">Variant Dark</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#link-color-primary" class="nav-link">Link Color Primary</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#link-color-success" class="nav-link">Link Color Success</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#link-color-danger" class="nav-link">Link Color Danger</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#additional-content" class="nav-link">Additional Content</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#with-icon" class="nav-link">With Icon</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#dismissible-primary" class="nav-link">Dismissible Primary</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#dismissible-secondary" class="nav-link">Dismissible Secondary</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#dismissible-success" class="nav-link">Dismissible Success</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#dismissible-danger" class="nav-link">Dismissible Danger</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#dismissible-warning" class="nav-link">Dismissible Warning</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#dismissible-info" class="nav-link">Dismissible Info</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#dismissible-light" class="nav-link">Dismissible Light</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#dismissible-dark" class="nav-link">Dismissible Dark</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="alert">Alert</h1>
+<h2 id="variant-primary">Variant Primary</h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;Alert&quot;</span> <span class="nv">variant</span><span class="o">=</span><span class="s2">&quot;primary&quot;</span> <span class="cp">%}</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="x">                A simple primary alert—check it out!</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="x">            </span><span class="cp">{%</span> <span class="k">endcomponent</span> <span class="cp">%}</span>
+</code></pre></div>
+<p><strong>Preview:</strong></p>
+<div class="bs-example">
+<div role="alert" class="alert alert-primary" data-djc-id-c4ht9Wu="">
+
+                A simple primary alert—check it out!
+
+
+        </div>
+</div>
+
+<hr />
+<h2 id="variant-secondary">Variant Secondary</h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;Alert&quot;</span> <span class="nv">variant</span><span class="o">=</span><span class="s2">&quot;secondary&quot;</span> <span class="cp">%}</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="x">                A simple secondary alert—check it out!</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="x">            </span><span class="cp">{%</span> <span class="k">endcomponent</span> <span class="cp">%}</span>
+</code></pre></div>
+<p><strong>Preview:</strong></p>
+<div class="bs-example">
+<div role="alert" class="alert alert-secondary" data-djc-id-cMG86vv="">
+
+                A simple secondary alert—check it out!
+
+
+        </div>
+</div>
+
+<hr />
+<h2 id="variant-success">Variant Success</h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;Alert&quot;</span> <span class="nv">variant</span><span class="o">=</span><span class="s2">&quot;success&quot;</span> <span class="cp">%}</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="x">                A simple success alert—check it out!</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="x">            </span><span class="cp">{%</span> <span class="k">endcomponent</span> <span class="cp">%}</span>
+</code></pre></div>
+<p><strong>Preview:</strong></p>
+<div class="bs-example">
+<div role="alert" class="alert alert-success" data-djc-id-c6f8Xwd="">
+
+                A simple success alert—check it out!
+
+
+        </div>
+</div>
+
+<hr />
+<h2 id="variant-danger">Variant Danger</h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;Alert&quot;</span> <span class="nv">variant</span><span class="o">=</span><span class="s2">&quot;danger&quot;</span> <span class="cp">%}</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="x">                A simple danger alert—check it out!</span>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="x">            </span><span class="cp">{%</span> <span class="k">endcomponent</span> <span class="cp">%}</span>
+</code></pre></div>
+<p><strong>Preview:</strong></p>
+<div class="bs-example">
+<div role="alert" class="alert alert-danger" data-djc-id-cAWVDLf="">
+
+                A simple danger alert—check it out!
+
+
+        </div>
+</div>
+
+<hr />
+<h2 id="variant-warning">Variant Warning</h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;Alert&quot;</span> <span class="nv">variant</span><span class="o">=</span><span class="s2">&quot;warning&quot;</span> <span class="cp">%}</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="x">                A simple warning alert—check it out!</span>
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="x">            </span><span class="cp">{%</span> <span class="k">endcomponent</span> <span class="cp">%}</span>
+</code></pre></div>
+<p><strong>Preview:</strong></p>
+<div class="bs-example">
+<div role="alert" class="alert alert-warning" data-djc-id-c4tG9wU="">
+
+                A simple warning alert—check it out!
+
+
+        </div>
+</div>
+
+<hr />
+<h2 id="variant-info">Variant Info</h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;Alert&quot;</span> <span class="nv">variant</span><span class="o">=</span><span class="s2">&quot;info&quot;</span> <span class="cp">%}</span>
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="x">                A simple info alert—check it out!</span>
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="x">            </span><span class="cp">{%</span> <span class="k">endcomponent</span> <span class="cp">%}</span>
+</code></pre></div>
+<p><strong>Preview:</strong></p>
+<div class="bs-example">
+<div role="alert" class="alert alert-info" data-djc-id-cNEKkYw="">
+
+                A simple info alert—check it out!
+
+
+        </div>
+</div>
+
+<hr />
+<h2 id="variant-light">Variant Light</h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;Alert&quot;</span> <span class="nv">variant</span><span class="o">=</span><span class="s2">&quot;light&quot;</span> <span class="cp">%}</span>
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="x">                A simple light alert—check it out!</span>
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="x">            </span><span class="cp">{%</span> <span class="k">endcomponent</span> <span class="cp">%}</span>
+</code></pre></div>
+<p><strong>Preview:</strong></p>
+<div class="bs-example">
+<div role="alert" class="alert alert-light" data-djc-id-cZRN1Ho="">
+
+                A simple light alert—check it out!
+
+
+        </div>
+</div>
+
+<hr />
+<h2 id="variant-dark">Variant Dark</h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;Alert&quot;</span> <span class="nv">variant</span><span class="o">=</span><span class="s2">&quot;dark&quot;</span> <span class="cp">%}</span>
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="x">                A simple dark alert—check it out!</span>
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="x">            </span><span class="cp">{%</span> <span class="k">endcomponent</span> <span class="cp">%}</span>
+</code></pre></div>
+<p><strong>Preview:</strong></p>
+<div class="bs-example">
+<div role="alert" class="alert alert-dark" data-djc-id-cXlsSy8="">
+
+                A simple dark alert—check it out!
+
+
+        </div>
+</div>
+
+<hr />
+<h2 id="link-color-primary">Link Color Primary</h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;Alert&quot;</span> <span class="nv">variant</span><span class="o">=</span><span class="s2">&quot;primary&quot;</span> <span class="cp">%}</span>
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="x">                A simple primary alert with </span><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;AlertLink&quot;</span> <span class="nv">href</span><span class="o">=</span><span class="s2">&quot;#&quot;</span> <span class="cp">%}</span><span class="x">an example link</span><span class="cp">{%</span> <span class="k">endcomponent</span> <span class="cp">%}</span><span class="x">. Give it a click if you like.</span>
+<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="x">            </span><span class="cp">{%</span> <span class="k">endcomponent</span> <span class="cp">%}</span>
+</code></pre></div>
+<p><strong>Preview:</strong></p>
+<div class="bs-example">
+<div role="alert" class="alert alert-primary" data-djc-id-cNROZaJ="">
+
+                A simple primary alert with 
+
+
+        <a href="#" class="alert-link" data-djc-id-cYfTJ5z="">
+            an example link
+        </a>
+    . Give it a click if you like.
+
+
+        </div>
+</div>
+
+<hr />
+<h2 id="link-color-success">Link Color Success</h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;Alert&quot;</span> <span class="nv">variant</span><span class="o">=</span><span class="s2">&quot;success&quot;</span> <span class="cp">%}</span>
+<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="x">                A simple success alert with </span><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;AlertLink&quot;</span> <span class="nv">href</span><span class="o">=</span><span class="s2">&quot;#&quot;</span> <span class="cp">%}</span><span class="x">an example link</span><span class="cp">{%</span> <span class="k">endcomponent</span> <span class="cp">%}</span><span class="x">.</span>
+<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="x">            </span><span class="cp">{%</span> <span class="k">endcomponent</span> <span class="cp">%}</span>
+</code></pre></div>
+<p><strong>Preview:</strong></p>
+<div class="bs-example">
+<div role="alert" class="alert alert-success" data-djc-id-ceOFP12="">
+
+                A simple success alert with 
+
+
+        <a href="#" class="alert-link" data-djc-id-cbXFTz9="">
+            an example link
+        </a>
+    .
+
+
+        </div>
+</div>
+
+<hr />
+<h2 id="link-color-danger">Link Color Danger</h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;Alert&quot;</span> <span class="nv">variant</span><span class="o">=</span><span class="s2">&quot;danger&quot;</span> <span class="cp">%}</span>
+<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="x">                A simple danger alert with </span><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;AlertLink&quot;</span> <span class="nv">href</span><span class="o">=</span><span class="s2">&quot;#&quot;</span> <span class="cp">%}</span><span class="x">an example link</span><span class="cp">{%</span> <span class="k">endcomponent</span> <span class="cp">%}</span><span class="x">.</span>
+<a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a><span class="x">            </span><span class="cp">{%</span> <span class="k">endcomponent</span> <span class="cp">%}</span>
+</code></pre></div>
+<p><strong>Preview:</strong></p>
+<div class="bs-example">
+<div role="alert" class="alert alert-danger" data-djc-id-cyWohZj="">
+
+                A simple danger alert with 
+
+
+        <a href="#" class="alert-link" data-djc-id-cAikZny="">
+            an example link
+        </a>
+    .
+
+
+        </div>
+</div>
+
+<hr />
+<h2 id="additional-content">Additional Content</h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;Alert&quot;</span> <span class="nv">variant</span><span class="o">=</span><span class="s2">&quot;success&quot;</span> <span class="cp">%}</span>
+<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="x">                </span><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;AlertHeading&quot;</span> <span class="cp">%}</span><span class="x">Well done!</span><span class="cp">{%</span> <span class="k">endcomponent</span> <span class="cp">%}</span>
+<a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a><span class="x">                &lt;p&gt;Aww yeah, you successfully read this important alert message. This example text is going to run a bit longer so that you can see how spacing within an alert works with this kind of content.&lt;/p&gt;</span>
+<a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a><span class="x">                &lt;hr&gt;</span>
+<a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a><span class="x">                &lt;p class=&quot;mb-0&quot;&gt;Whenever you need to, be sure to use margin utilities to keep things nice and tidy.&lt;/p&gt;</span>
+<a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a><span class="x">            </span><span class="cp">{%</span> <span class="k">endcomponent</span> <span class="cp">%}</span>
+</code></pre></div>
+<p><strong>Preview:</strong></p>
+<div class="bs-example">
+<div role="alert" class="alert alert-success" data-djc-id-cNV8dIT="">
+
+
+
+
+        <h4 class="alert-heading" data-djc-id-c7fr18w="">
+            Well done!
+        </h4>
+
+                <p>Aww yeah, you successfully read this important alert message. This example text is going to run a bit longer so that you can see how spacing within an alert works with this kind of content.</p>
+                <hr/>
+                <p class="mb-0">Whenever you need to, be sure to use margin utilities to keep things nice and tidy.</p>
+
+
+        </div>
+</div>
+
+<hr />
+<h2 id="with-icon">With Icon</h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;Alert&quot;</span> <span class="nv">variant</span><span class="o">=</span><span class="s2">&quot;primary&quot;</span> <span class="nv">attrs</span><span class="o">:</span><span class="nv">class</span><span class="o">=</span><span class="s2">&quot;d-flex align-items-center&quot;</span> <span class="cp">%}</span>
+<a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="x">                &lt;svg class=&quot;bi flex-shrink-0 me-2&quot; width=&quot;24&quot; height=&quot;24&quot; role=&quot;img&quot; aria-label=&quot;Info:&quot;&gt;&lt;use xlink:href=&quot;#info-fill&quot;/&gt;&lt;/svg&gt;</span>
+<a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a><span class="x">                &lt;div&gt;</span>
+<a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a><span class="x">                    An example alert with an icon</span>
+<a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a><span class="x">                &lt;/div&gt;</span>
+<a id="__codelineno-12-6" name="__codelineno-12-6" href="#__codelineno-12-6"></a><span class="x">            </span><span class="cp">{%</span> <span class="k">endcomponent</span> <span class="cp">%}</span>
+</code></pre></div>
+<p><strong>Preview:</strong></p>
+<div class="bs-example">
+<div role="alert" class="d-flex align-items-center alert alert-primary" data-djc-id-cPjqS5Q="">
+
+                <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Info:"><use xlink:href="#info-fill"/></svg>
+                <div>
+                    An example alert with an icon
+                </div>
+
+
+        </div>
+</div>
+
+<hr />
+<h2 id="dismissible-primary">Dismissible Primary</h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;Alert&quot;</span> <span class="nv">variant</span><span class="o">=</span><span class="s2">&quot;primary&quot;</span> <span class="nv">dismissible</span><span class="o">=</span><span class="kp">True</span> <span class="cp">%}</span>
+<a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a><span class="x">                A simple primary dismissible alert—check it out!</span>
+<a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a><span class="x">            </span><span class="cp">{%</span> <span class="k">endcomponent</span> <span class="cp">%}</span>
+</code></pre></div>
+<p><strong>Preview:</strong></p>
+<div class="bs-example">
+<div role="alert" class="alert alert-primary alert-dismissible fade show" data-djc-id-crtwq4n="">
+
+                A simple primary dismissible alert—check it out!
+
+
+
+
+
+        <button aria-label="Close" data-bs-dismiss="alert" type="button" class="btn-close" data-djc-id-cNlxIq5=""></button>
+
+
+        </div>
+</div>
+
+<hr />
+<h2 id="dismissible-secondary">Dismissible Secondary</h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;Alert&quot;</span> <span class="nv">variant</span><span class="o">=</span><span class="s2">&quot;secondary&quot;</span> <span class="nv">dismissible</span><span class="o">=</span><span class="kp">True</span> <span class="cp">%}</span>
+<a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a><span class="x">                A simple secondary dismissible alert—check it out!</span>
+<a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a><span class="x">            </span><span class="cp">{%</span> <span class="k">endcomponent</span> <span class="cp">%}</span>
+</code></pre></div>
+<p><strong>Preview:</strong></p>
+<div class="bs-example">
+<div role="alert" class="alert alert-secondary alert-dismissible fade show" data-djc-id-cfLnADM="">
+
+                A simple secondary dismissible alert—check it out!
+
+
+
+
+
+        <button aria-label="Close" data-bs-dismiss="alert" type="button" class="btn-close" data-djc-id-cGFjtCz=""></button>
+
+
+        </div>
+</div>
+
+<hr />
+<h2 id="dismissible-success">Dismissible Success</h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;Alert&quot;</span> <span class="nv">variant</span><span class="o">=</span><span class="s2">&quot;success&quot;</span> <span class="nv">dismissible</span><span class="o">=</span><span class="kp">True</span> <span class="cp">%}</span>
+<a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a><span class="x">                A simple success dismissible alert—check it out!</span>
+<a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a><span class="x">            </span><span class="cp">{%</span> <span class="k">endcomponent</span> <span class="cp">%}</span>
+</code></pre></div>
+<p><strong>Preview:</strong></p>
+<div class="bs-example">
+<div role="alert" class="alert alert-success alert-dismissible fade show" data-djc-id-cZbgobB="">
+
+                A simple success dismissible alert—check it out!
+
+
+
+
+
+        <button aria-label="Close" data-bs-dismiss="alert" type="button" class="btn-close" data-djc-id-cBGHLv7=""></button>
+
+
+        </div>
+</div>
+
+<hr />
+<h2 id="dismissible-danger">Dismissible Danger</h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;Alert&quot;</span> <span class="nv">variant</span><span class="o">=</span><span class="s2">&quot;danger&quot;</span> <span class="nv">dismissible</span><span class="o">=</span><span class="kp">True</span> <span class="cp">%}</span>
+<a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a><span class="x">                A simple danger dismissible alert—check it out!</span>
+<a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a><span class="x">            </span><span class="cp">{%</span> <span class="k">endcomponent</span> <span class="cp">%}</span>
+</code></pre></div>
+<p><strong>Preview:</strong></p>
+<div class="bs-example">
+<div role="alert" class="alert alert-danger alert-dismissible fade show" data-djc-id-cmRLU9d="">
+
+                A simple danger dismissible alert—check it out!
+
+
+
+
+
+        <button aria-label="Close" data-bs-dismiss="alert" type="button" class="btn-close" data-djc-id-cwUpRhu=""></button>
+
+
+        </div>
+</div>
+
+<hr />
+<h2 id="dismissible-warning">Dismissible Warning</h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;Alert&quot;</span> <span class="nv">variant</span><span class="o">=</span><span class="s2">&quot;warning&quot;</span> <span class="nv">dismissible</span><span class="o">=</span><span class="kp">True</span> <span class="cp">%}</span>
+<a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a><span class="x">                &lt;strong&gt;Holy guacamole!&lt;/strong&gt; You should check in on some of those fields below.</span>
+<a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a><span class="x">            </span><span class="cp">{%</span> <span class="k">endcomponent</span> <span class="cp">%}</span>
+</code></pre></div>
+<p><strong>Preview:</strong></p>
+<div class="bs-example">
+<div role="alert" class="alert alert-warning alert-dismissible fade show" data-djc-id-cB8fpbj="">
+
+                <strong>Holy guacamole!</strong> You should check in on some of those fields below.
+
+
+
+
+
+        <button aria-label="Close" data-bs-dismiss="alert" type="button" class="btn-close" data-djc-id-c61JpVF=""></button>
+
+
+        </div>
+</div>
+
+<hr />
+<h2 id="dismissible-info">Dismissible Info</h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;Alert&quot;</span> <span class="nv">variant</span><span class="o">=</span><span class="s2">&quot;info&quot;</span> <span class="nv">dismissible</span><span class="o">=</span><span class="kp">True</span> <span class="cp">%}</span>
+<a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a><span class="x">                A simple info dismissible alert—check it out!</span>
+<a id="__codelineno-18-3" name="__codelineno-18-3" href="#__codelineno-18-3"></a><span class="x">            </span><span class="cp">{%</span> <span class="k">endcomponent</span> <span class="cp">%}</span>
+</code></pre></div>
+<p><strong>Preview:</strong></p>
+<div class="bs-example">
+<div role="alert" class="alert alert-info alert-dismissible fade show" data-djc-id-cBLiYOY="">
+
+                A simple info dismissible alert—check it out!
+
+
+
+
+
+        <button aria-label="Close" data-bs-dismiss="alert" type="button" class="btn-close" data-djc-id-c1cbxj5=""></button>
+
+
+        </div>
+</div>
+
+<hr />
+<h2 id="dismissible-light">Dismissible Light</h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;Alert&quot;</span> <span class="nv">variant</span><span class="o">=</span><span class="s2">&quot;light&quot;</span> <span class="nv">dismissible</span><span class="o">=</span><span class="kp">True</span> <span class="cp">%}</span>
+<a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a><span class="x">                A simple light dismissible alert—check it out!</span>
+<a id="__codelineno-19-3" name="__codelineno-19-3" href="#__codelineno-19-3"></a><span class="x">            </span><span class="cp">{%</span> <span class="k">endcomponent</span> <span class="cp">%}</span>
+</code></pre></div>
+<p><strong>Preview:</strong></p>
+<div class="bs-example">
+<div role="alert" class="alert alert-light alert-dismissible fade show" data-djc-id-cPOCKXG="">
+
+                A simple light dismissible alert—check it out!
+
+
+
+
+
+        <button aria-label="Close" data-bs-dismiss="alert" type="button" class="btn-close" data-djc-id-cSIPw7N=""></button>
+
+
+        </div>
+</div>
+
+<hr />
+<h2 id="dismissible-dark">Dismissible Dark</h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a><span class="cp">{%</span> <span class="k">component</span> <span class="s2">&quot;Alert&quot;</span> <span class="nv">variant</span><span class="o">=</span><span class="s2">&quot;dark&quot;</span> <span class="nv">dismissible</span><span class="o">=</span><span class="kp">True</span> <span class="cp">%}</span>
+<a id="__codelineno-20-2" name="__codelineno-20-2" href="#__codelineno-20-2"></a><span class="x">                A simple dark dismissible alert—check it out!</span>
+<a id="__codelineno-20-3" name="__codelineno-20-3" href="#__codelineno-20-3"></a><span class="x">            </span><span class="cp">{%</span> <span class="k">endcomponent</span> <span class="cp">%}</span>
+</code></pre></div>
+<p><strong>Preview:</strong></p>
+<div class="bs-example">
+<div role="alert" class="alert alert-dark alert-dismissible fade show" data-djc-id-cUWPiK4="">
+
+                A simple dark dismissible alert—check it out!
+
+
+
+
+
+        <button aria-label="Close" data-bs-dismiss="alert" type="button" class="btn-close" data-djc-id-cWX93SK=""></button>
+
+
+        </div>
+</div>
+
+<hr /></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script src="../../js/bootstrap.bundle.min.js"></script>
+        <script>
+            var base_url = "../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../js/base.js"></script>
+        <script src="../../javascripts/bootstrap-init.js"></script>
+        <script src="../../search/main.js"></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>
