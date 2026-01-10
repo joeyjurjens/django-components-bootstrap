@@ -115,6 +115,38 @@ def create_component_page(component_name, examples, snippets_dir):
     return md_content
 
 
+def create_index_page(component_docs):
+    md_content = """# Django Components Bootstrap
+
+Bootstrap 5 components for Django, inspired by the React-Bootstrap API.
+
+## Installation
+
+```bash
+pip install django-components-bootstrap
+```
+
+## Quick Start
+
+Add to your `INSTALLED_APPS`:
+
+```python
+INSTALLED_APPS = [
+    # ...
+    "django_components",
+    "django_components_bootstrap",
+]
+```
+
+## Components
+
+"""
+    for component_name in sorted(component_docs.keys()):
+        md_content += f"- [{component_name}](components/{component_name.lower()}.md)\n"
+
+    return md_content
+
+
 def main():
     docs_dir = Path("source")
     docs_dir.mkdir(exist_ok=True)
@@ -140,6 +172,9 @@ def main():
         page_content = create_component_page(component_name, examples, snippets_dir)
         output_file = docs_dir / "components" / f"{component_name.lower()}.md"
         output_file.write_text(page_content)
+
+    index_content = create_index_page(component_docs)
+    (docs_dir / "index.md").write_text(index_content)
 
     print(f"Generated documentation for {len(component_docs)} components:\n")
     for name, examples in sorted(component_docs.items()):
