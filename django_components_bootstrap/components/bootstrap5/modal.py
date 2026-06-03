@@ -85,7 +85,7 @@ class ModalHeader(Component):
         attrs: dict | None = None
 
     class Slots:
-        default: SlotInput
+        default: SlotInput = None
 
     def get_template_data(self, args, kwargs: Kwargs, slots: Slots, context: Context):
         return {

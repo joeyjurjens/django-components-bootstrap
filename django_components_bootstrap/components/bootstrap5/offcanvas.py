@@ -60,13 +60,19 @@ class OffcanvasHeader(Component):
         attrs: dict | None = None
 
     class Slots:
-        default: SlotInput
+        default: SlotInput = None
 
     def get_template_data(self, args, kwargs: Kwargs, slots: Slots, context: Context):
+        try:
+            offcanvas = self.inject("offcanvas")
+            offcanvas_id = offcanvas.offcanvas_id
+        except KeyError:
+            offcanvas_id = None
         return {
             "close_button": kwargs.close_button,
             "close_label": kwargs.close_label,
             "close_variant": kwargs.close_variant,
+            "offcanvas_id": offcanvas_id,
             "attrs": kwargs.attrs,
         }
 
@@ -76,7 +82,7 @@ class OffcanvasHeader(Component):
         <div {% html_attrs attrs class="offcanvas-header" %}>
             {% slot "default" / %}
             {% if close_button %}
-                {% component "CloseButton" variant=close_variant attrs:aria-label=close_label attrs:data-bs-dismiss="offcanvas" / %}
+                {% component "CloseButton" variant=close_variant attrs:aria-label=close_label attrs:data-bs-dismiss="offcanvas" attrs:data-bs-target="#{{ offcanvas_id }}" / %}
             {% endif %}
         </div>
     """
