@@ -13,9 +13,6 @@ class Placeholder(Component):
         xs: int | None = None
         attrs: dict | None = None
 
-    class Slots:
-        pass
-
     def get_template_data(self, args, kwargs: Kwargs, slots, context: Context):
         classes = ["placeholder"]
 
@@ -49,9 +46,6 @@ class PlaceholderButton(Component):
         variant: Variant = "primary"
         xs: int | None = None
         attrs: dict | None = None
-
-    class Slots:
-        pass
 
     def get_template_data(self, args, kwargs: Kwargs, slots, context: Context):
         classes = ["btn", f"btn-{kwargs.variant}", "placeholder"]

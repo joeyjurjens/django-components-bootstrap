@@ -108,7 +108,7 @@ class AccordionTests(SimpleTestCase):
             {% component "Accordion" %}
                 {% component "AccordionItem" default_open=True %}
                     {% component "AccordionHeader" %}
-                        Accordion Item <span class="badge bg-primary">New</span>
+                        Accordion Item {% component "Badge" bg="primary" %}New{% endcomponent %}
                     {% endcomponent %}
                     {% component "AccordionBody" %}
                         This accordion item has a badge in the header.
@@ -118,7 +118,7 @@ class AccordionTests(SimpleTestCase):
         """)
             rendered = normalize_html(template.render(Context({})))
 
-        self.assertIn('<span class="badge bg-primary">New</span>', rendered)
+        self.assertIn('<span class="badge text-bg-primary"> New </span>', rendered)
         self.assertIn("Accordion Item", rendered)
 
     @djc_test

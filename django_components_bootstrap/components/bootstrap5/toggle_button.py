@@ -1,7 +1,12 @@
 from django.template import Context
 from django_components import Component, SlotInput, types
 
-from django_components_bootstrap.components.bootstrap5.types import Size, ToggleButtonType, Variant
+from django_components_bootstrap.components.bootstrap5.types import (
+    NOT_PROVIDED,
+    Size,
+    ToggleButtonType,
+    Variant,
+)
 
 
 class ToggleButtonGroup(Component):
@@ -23,22 +28,24 @@ class ToggleButtonGroup(Component):
         return {
             "classes": " ".join(classes),
             "type": kwargs.type,
-            "name": kwargs.name,
+            "group_name": kwargs.name,
             "attrs": kwargs.attrs,
         }
 
     template: types.django_html = """
         {% load component_tags %}
 
-        <div {% html_attrs attrs class=classes role="group" %}>
-            {% slot "default" / %}
-        </div>
+        {% provide "toggle_button_group" type=type group_name=group_name %}
+            <div {% html_attrs attrs class=classes role="group" %}>
+                {% slot "default" / %}
+            </div>
+        {% endprovide %}
     """
 
 
 class ToggleButton(Component):
     class Kwargs:
-        type: ToggleButtonType = "checkbox"
+        type: ToggleButtonType | None = None
         name: str | None = None
         value: str | None = None
         checked: bool = False
@@ -52,17 +59,29 @@ class ToggleButton(Component):
         default: SlotInput
 
     def get_template_data(self, args, kwargs: Kwargs, slots: Slots, context: Context):
+        group = self.inject("toggle_button_group", NOT_PROVIDED)
+
+        # A group's `type` is authoritative for all its buttons (Bootstrap's
+        # `.btn-group` toggle pattern doesn't support mixing radio/checkbox
+        # inputs); a button's own `name` still wins over the group's.
+        if group is not NOT_PROVIDED:
+            toggle_type = group.type
+            toggle_name = kwargs.name if kwargs.name is not None else group.group_name
+        else:
+            toggle_type = kwargs.type if kwargs.type is not None else "checkbox"
+            toggle_name = kwargs.name
+
         toggle_id = (kwargs.attrs or {}).get("id") or f"toggle-button-{self.id}"
 
         input_attrs = {
-            "type": kwargs.type,
+            "type": toggle_type,
             "class": "btn-check",
             "id": toggle_id,
             "autocomplete": "off",
         }
 
-        if kwargs.name:
-            input_attrs["name"] = kwargs.name
+        if toggle_name:
+            input_attrs["name"] = toggle_name
         if kwargs.value:
             input_attrs["value"] = kwargs.value
         if kwargs.checked:

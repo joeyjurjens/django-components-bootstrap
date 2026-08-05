@@ -101,15 +101,15 @@ class ListGroupItem(Component):
         {% load component_tags %}
 
         {% if tag == "a" and href %}
-            <a {% html_attrs attrs href=href class=classes aria-current=aria_current aria-disabled=aria_disabled %}>
+            <a {% html_attrs attrs href=href class=classes defaults:aria-current=aria_current defaults:aria-disabled=aria_disabled %}>
                 {% slot "default" / %}
             </a>
         {% elif tag == "button" %}
-            <button {% html_attrs attrs class=classes type=button_type aria-current=aria_current disabled=button_disabled %}>
+            <button {% html_attrs attrs class=classes defaults:type=button_type defaults:aria-current=aria_current defaults:disabled=button_disabled %}>
                 {% slot "default" / %}
             </button>
         {% else %}
-            <{{ tag }} {% html_attrs attrs class=classes aria-current=aria_current aria-disabled=aria_disabled %}>
+            <{{ tag }} {% html_attrs attrs class=classes defaults:aria-current=aria_current defaults:aria-disabled=aria_disabled %}>
                 {% slot "default" / %}
             </{{ tag }}>
         {% endif %}

@@ -34,7 +34,7 @@ class TestOffcanvas(SimpleTestCase):
             <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvas-ctest01" aria-labelledby="offcanvas-ctest01-label" data-bs-keyboard="false">
               <div class="offcanvas-header">
                 <h5 class="offcanvas-title" id="offcanvas-ctest01-label">Offcanvas</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#offcanvas-ctest01" aria-label="Close"></button>
               </div>
               <div class="offcanvas-body">
                 Content for the offcanvas goes here. You can place just about any Bootstrap component or custom elements here.
@@ -70,7 +70,7 @@ class TestOffcanvas(SimpleTestCase):
             <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvas-ctest01" aria-labelledby="offcanvas-ctest01-label">
               <div class="offcanvas-header">
                 <h5 class="offcanvas-title" id="offcanvas-ctest01-label">Offcanvas Start</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#offcanvas-ctest01" aria-label="Close"></button>
               </div>
               <div class="offcanvas-body">
                 <p>This offcanvas appears from the start (left).</p>
@@ -106,7 +106,7 @@ class TestOffcanvas(SimpleTestCase):
             <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvas-ctest01" aria-labelledby="offcanvas-ctest01-label">
               <div class="offcanvas-header">
                 <h5 class="offcanvas-title" id="offcanvas-ctest01-label">Offcanvas End</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#offcanvas-ctest01" aria-label="Close"></button>
               </div>
               <div class="offcanvas-body">
                 <p>This offcanvas appears from the end (right).</p>
@@ -142,7 +142,7 @@ class TestOffcanvas(SimpleTestCase):
             <div class="offcanvas offcanvas-top" tabindex="-1" id="offcanvas-ctest01" aria-labelledby="offcanvas-ctest01-label">
               <div class="offcanvas-header">
                 <h5 class="offcanvas-title" id="offcanvas-ctest01-label">Offcanvas Top</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#offcanvas-ctest01" aria-label="Close"></button>
               </div>
               <div class="offcanvas-body">
                 <p>This offcanvas appears from the top.</p>
@@ -178,7 +178,7 @@ class TestOffcanvas(SimpleTestCase):
             <div class="offcanvas offcanvas-bottom" tabindex="-1" id="offcanvas-ctest01" aria-labelledby="offcanvas-ctest01-label">
               <div class="offcanvas-header">
                 <h5 class="offcanvas-title" id="offcanvas-ctest01-label">Offcanvas Bottom</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#offcanvas-ctest01" aria-label="Close"></button>
               </div>
               <div class="offcanvas-body">
                 <p>This offcanvas appears from the bottom.</p>
@@ -214,7 +214,7 @@ class TestOffcanvas(SimpleTestCase):
             <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvas-ctest01" aria-labelledby="offcanvas-ctest01-label" data-bs-backdrop="false" data-bs-scroll="true">
               <div class="offcanvas-header">
                 <h5 class="offcanvas-title" id="offcanvas-ctest01-label">Offcanvas with body scrolling</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#offcanvas-ctest01" aria-label="Close"></button>
               </div>
               <div class="offcanvas-body">
                 <p>Try scrolling the rest of the page to see this option in action.</p>
@@ -250,7 +250,7 @@ class TestOffcanvas(SimpleTestCase):
             <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvas-ctest01" aria-labelledby="offcanvas-ctest01-label" data-bs-scroll="true">
               <div class="offcanvas-header">
                 <h5 class="offcanvas-title" id="offcanvas-ctest01-label">Backdrop with scrolling</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#offcanvas-ctest01" aria-label="Close"></button>
               </div>
               <div class="offcanvas-body">
                 <p>Try scrolling the rest of the page to see this option in action.</p>
@@ -286,7 +286,7 @@ class TestOffcanvas(SimpleTestCase):
             <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvas-ctest01" aria-labelledby="offcanvas-ctest01-label" data-bs-backdrop="static">
               <div class="offcanvas-header">
                 <h5 class="offcanvas-title" id="offcanvas-ctest01-label">Static Backdrop</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#offcanvas-ctest01" aria-label="Close"></button>
               </div>
               <div class="offcanvas-body">
                 <p>I will not close if you click outside of me.</p>
@@ -322,7 +322,7 @@ class TestOffcanvas(SimpleTestCase):
             <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvas-ctest01" aria-labelledby="offcanvas-ctest01-label" data-bs-backdrop="false">
               <div class="offcanvas-header">
                 <h5 class="offcanvas-title" id="offcanvas-ctest01-label">No Backdrop</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#offcanvas-ctest01" aria-label="Close"></button>
               </div>
               <div class="offcanvas-body">
                 <p>This offcanvas has no backdrop.</p>
@@ -358,7 +358,7 @@ class TestOffcanvas(SimpleTestCase):
             <div class="offcanvas-lg offcanvas-end" tabindex="-1" id="offcanvas-ctest01" aria-labelledby="offcanvas-ctest01-label">
               <div class="offcanvas-header">
                 <h5 class="offcanvas-title" id="offcanvas-ctest01-label">Responsive offcanvas</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#offcanvas-ctest01" aria-label="Close"></button>
               </div>
               <div class="offcanvas-body">
                 <p>This is content within an offcanvas-lg.</p>
@@ -394,7 +394,7 @@ class TestOffcanvas(SimpleTestCase):
             <div class="offcanvas-md offcanvas-start" tabindex="-1" id="offcanvas-ctest01" aria-labelledby="offcanvas-ctest01-label">
               <div class="offcanvas-header">
                 <h5 class="offcanvas-title" id="offcanvas-ctest01-label">Responsive MD offcanvas</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#offcanvas-ctest01" aria-label="Close"></button>
               </div>
               <div class="offcanvas-body">
                 <p>This is content within an offcanvas-md.</p>
@@ -465,7 +465,7 @@ class TestOffcanvas(SimpleTestCase):
             <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvas-ctest01" aria-labelledby="offcanvas-ctest01-label">
               <div class="offcanvas-header">
                 <h3 class="offcanvas-title" id="offcanvas-ctest01-label">Custom Heading</h3>
-                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#offcanvas-ctest01" aria-label="Close"></button>
               </div>
               <div class="offcanvas-body">
                 <p>This offcanvas title uses h3.</p>

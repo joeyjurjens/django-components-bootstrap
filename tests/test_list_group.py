@@ -187,21 +187,21 @@ class ListGroupTests(SimpleTestCase):
                       <div class="fw-bold">Subheading</div>
                       Content for list item
                     </div>
-                    <span class="badge text-bg-primary rounded-pill">14</span>
+                    {% component "Badge" bg="primary" pill=True %}14{% endcomponent %}
                 {% endcomponent %}
                 {% component "ListGroupItem" attrs:class="d-flex justify-content-between align-items-start" %}
                     <div class="ms-2 me-auto">
                       <div class="fw-bold">Subheading</div>
                       Content for list item
                     </div>
-                    <span class="badge text-bg-primary rounded-pill">14</span>
+                    {% component "Badge" bg="primary" pill=True %}14{% endcomponent %}
                 {% endcomponent %}
                 {% component "ListGroupItem" attrs:class="d-flex justify-content-between align-items-start" %}
                     <div class="ms-2 me-auto">
                       <div class="fw-bold">Subheading</div>
                       Content for list item
                     </div>
-                    <span class="badge text-bg-primary rounded-pill">14</span>
+                    {% component "Badge" bg="primary" pill=True %}14{% endcomponent %}
                 {% endcomponent %}
             {% endcomponent %}
         """)
@@ -370,15 +370,15 @@ class ListGroupTests(SimpleTestCase):
             {% component "ListGroup" %}
                 {% component "ListGroupItem" attrs:class="d-flex justify-content-between align-items-center" %}
                     A list item
-                    <span class="badge text-bg-primary rounded-pill">14</span>
+                    {% component "Badge" bg="primary" pill=True %}14{% endcomponent %}
                 {% endcomponent %}
                 {% component "ListGroupItem" attrs:class="d-flex justify-content-between align-items-center" %}
                     A second list item
-                    <span class="badge text-bg-primary rounded-pill">2</span>
+                    {% component "Badge" bg="primary" pill=True %}2{% endcomponent %}
                 {% endcomponent %}
                 {% component "ListGroupItem" attrs:class="d-flex justify-content-between align-items-center" %}
                     A third list item
-                    <span class="badge text-bg-primary rounded-pill">1</span>
+                    {% component "Badge" bg="primary" pill=True %}1{% endcomponent %}
                 {% endcomponent %}
             {% endcomponent %}
         """)
@@ -471,16 +471,16 @@ class ListGroupTests(SimpleTestCase):
             {% load component_tags %}
             {% component "ListGroup" %}
                 {% component "ListGroupItem" %}
-                    <input class="form-check-input me-1" type="checkbox" value="" id="firstCheckbox">
-                    <label class="form-check-label" for="firstCheckbox">First checkbox</label>
+                    {% component "FormCheckInput" attrs:class="me-1" value="" attrs:id="firstCheckbox" / %}
+                    {% component "FormCheckLabel" for_="firstCheckbox" %}First checkbox{% endcomponent %}
                 {% endcomponent %}
                 {% component "ListGroupItem" %}
-                    <input class="form-check-input me-1" type="checkbox" value="" id="secondCheckbox">
-                    <label class="form-check-label" for="secondCheckbox">Second checkbox</label>
+                    {% component "FormCheckInput" attrs:class="me-1" value="" attrs:id="secondCheckbox" / %}
+                    {% component "FormCheckLabel" for_="secondCheckbox" %}Second checkbox{% endcomponent %}
                 {% endcomponent %}
                 {% component "ListGroupItem" %}
-                    <input class="form-check-input me-1" type="checkbox" value="" id="thirdCheckbox">
-                    <label class="form-check-label" for="thirdCheckbox">Third checkbox</label>
+                    {% component "FormCheckInput" attrs:class="me-1" value="" attrs:id="thirdCheckbox" / %}
+                    {% component "FormCheckLabel" for_="thirdCheckbox" %}Third checkbox{% endcomponent %}
                 {% endcomponent %}
             {% endcomponent %}
         """)
@@ -510,16 +510,16 @@ class ListGroupTests(SimpleTestCase):
             {% load component_tags %}
             {% component "ListGroup" %}
                 {% component "ListGroupItem" %}
-                    <input class="form-check-input me-1" type="radio" name="listGroupRadio" value="" id="firstRadio" checked>
-                    <label class="form-check-label" for="firstRadio">First radio</label>
+                    {% component "FormCheckInput" type="radio" attrs:class="me-1" name="listGroupRadio" value="" attrs:id="firstRadio" checked=True / %}
+                    {% component "FormCheckLabel" for_="firstRadio" %}First radio{% endcomponent %}
                 {% endcomponent %}
                 {% component "ListGroupItem" %}
-                    <input class="form-check-input me-1" type="radio" name="listGroupRadio" value="" id="secondRadio">
-                    <label class="form-check-label" for="secondRadio">Second radio</label>
+                    {% component "FormCheckInput" type="radio" attrs:class="me-1" name="listGroupRadio" value="" attrs:id="secondRadio" / %}
+                    {% component "FormCheckLabel" for_="secondRadio" %}Second radio{% endcomponent %}
                 {% endcomponent %}
                 {% component "ListGroupItem" %}
-                    <input class="form-check-input me-1" type="radio" name="listGroupRadio" value="" id="thirdRadio">
-                    <label class="form-check-label" for="thirdRadio">Third radio</label>
+                    {% component "FormCheckInput" type="radio" attrs:class="me-1" name="listGroupRadio" value="" attrs:id="thirdRadio" / %}
+                    {% component "FormCheckLabel" for_="thirdRadio" %}Third radio{% endcomponent %}
                 {% endcomponent %}
             {% endcomponent %}
         """)

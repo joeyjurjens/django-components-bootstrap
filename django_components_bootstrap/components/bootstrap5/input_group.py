@@ -59,10 +59,7 @@ class InputGroupRadio(Component):
     class Kwargs:
         attrs: dict | None = None
 
-    class Slots:
-        pass
-
-    def get_template_data(self, args, kwargs: Kwargs, slots: Slots, context: Context):
+    def get_template_data(self, args, kwargs: Kwargs, slots, context: Context):
         return {
             "attrs": kwargs.attrs,
         }
@@ -80,10 +77,7 @@ class InputGroupCheckbox(Component):
     class Kwargs:
         attrs: dict | None = None
 
-    class Slots:
-        pass
-
-    def get_template_data(self, args, kwargs: Kwargs, slots: Slots, context: Context):
+    def get_template_data(self, args, kwargs: Kwargs, slots, context: Context):
         return {
             "attrs": kwargs.attrs,
         }

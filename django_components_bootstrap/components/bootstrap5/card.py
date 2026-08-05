@@ -217,10 +217,7 @@ class CardImg(Component):
         position: CardImgVariant | None = None
         attrs: dict | None = None
 
-    class Slots:
-        pass
-
-    def get_template_data(self, args, kwargs: Kwargs, slots: Slots, context: Context):
+    def get_template_data(self, args, kwargs: Kwargs, slots, context: Context):
         if kwargs.position == "top":
             img_class = "card-img-top"
         elif kwargs.position == "bottom":

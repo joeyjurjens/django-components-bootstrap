@@ -18,7 +18,25 @@ def mock_gen_id():
     return f"ctest{_component_id_counter['value']:02d}"
 
 
-_id_patcher = patch("django_components.component._gen_component_id", side_effect=mock_gen_id)
+def _gen_component_id_patch_target():
+    """
+    Resolve the patch target for django-components' internal component-id generator.
+
+    It was renamed and moved between library versions:
+    - django-components <= 0.147: `django_components.component._gen_component_id`
+    - django-components >= 0.148: `django_components.component_render.gen_component_id`
+    """
+    try:
+        from django_components import component_render
+    except ImportError:
+        return "django_components.component._gen_component_id"
+
+    if hasattr(component_render, "gen_component_id"):
+        return "django_components.component_render.gen_component_id"
+    return "django_components.component._gen_component_id"
+
+
+_id_patcher = patch(_gen_component_id_patch_target(), side_effect=mock_gen_id)
 
 
 def render_example(template_code, use_mock_ids=False):

@@ -115,7 +115,7 @@ class TestToast(SimpleTestCase):
         with mock_component_id():
             template = Template("""
                 {% load component_tags %}
-                <div class="toast-container position-static">
+                {% component "ToastContainer" attrs:class="position-static" %}
                   {% component "Toast" %}
                     {% component "ToastHeader" %}
                       <img src="https://placehold.net/600x400.png" class="rounded me-2" alt="Toast icon">
@@ -137,13 +137,13 @@ class TestToast(SimpleTestCase):
                       Heads up, toasts will stack automatically
                     {% endcomponent %}
                   {% endcomponent %}
-                </div>
+                {% endcomponent %}
             """)
             rendered = template.render(Context())
 
         expected = """
             <div class="toast-container position-static">
-              <div class="toast" role="alert" aria-live="assertive" aria-atomic="true" id="toast-ctest01">
+              <div class="toast" role="alert" aria-live="assertive" aria-atomic="true" id="toast-ctest02">
                 <div class="toast-header">
                   <img src="https://placehold.net/600x400.png" class="rounded me-2" alt="Toast icon">
                   <strong class="me-auto">Bootstrap</strong>
@@ -155,7 +155,7 @@ class TestToast(SimpleTestCase):
                 </div>
               </div>
 
-              <div class="toast" role="alert" aria-live="assertive" aria-atomic="true" id="toast-ctest05">
+              <div class="toast" role="alert" aria-live="assertive" aria-atomic="true" id="toast-ctest03">
                 <div class="toast-header">
                   <img src="https://placehold.net/600x400.png" class="rounded me-2" alt="Toast icon">
                   <strong class="me-auto">Bootstrap</strong>

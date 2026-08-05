@@ -53,7 +53,7 @@ class Dropdown(Component):
         {% load component_tags %}
 
         {% provide "dropdown" dropdown_id=dropdown_id direction=direction auto_close=auto_close %}
-            <div {% html_attrs attrs class=wrapper_class %} {% if auto_close %}data-bs-auto-close="{{ auto_close }}"{% endif %}>
+            <div {% html_attrs attrs class=wrapper_class %}>
                 {% slot "default" / %}
             </div>
         {% endprovide %}
@@ -73,6 +73,8 @@ class DropdownToggle(Component):
         default: SlotInput | None = None
 
     def get_template_data(self, args, kwargs: Kwargs, slots: Slots, context: Context):
+        dropdown = self.inject("dropdown")
+
         classes = ["btn", f"btn-{kwargs.variant}", "dropdown-toggle"]
         if kwargs.split:
             classes.append("dropdown-toggle-split")
@@ -84,13 +86,14 @@ class DropdownToggle(Component):
         return {
             "classes": " ".join(classes),
             "disabled": disabled,
+            "auto_close": dropdown.auto_close,
             "attrs": kwargs.attrs,
         }
 
     template: types.django_html = """
         {% load component_tags %}
 
-        <button {% html_attrs attrs class=classes type="button" data-bs-toggle="dropdown" defaults:aria-expanded="false" disabled=disabled %}>
+        <button {% html_attrs attrs class=classes type="button" data-bs-toggle="dropdown" defaults:aria-expanded="false" defaults:disabled=disabled %} {% if auto_close %}data-bs-auto-close="{{ auto_close }}"{% endif %}>
             {% slot "default" / %}
         </button>
     """
@@ -188,11 +191,11 @@ class DropdownItem(Component):
 
         <li>
             {% if tag == "a" %}
-                <a {% html_attrs attrs href=href class=classes aria-current=aria_current aria-disabled=link_aria_disabled tabindex=link_tabindex %}>
+                <a {% html_attrs attrs href=href class=classes defaults:aria-current=aria_current defaults:aria-disabled=link_aria_disabled defaults:tabindex=link_tabindex %}>
                     {% slot "default" / %}
                 </a>
             {% else %}
-                <button {% html_attrs attrs type="button" class=classes aria-current=aria_current disabled=button_disabled %}>
+                <button {% html_attrs attrs type="button" class=classes defaults:aria-current=aria_current defaults:disabled=button_disabled %}>
                     {% slot "default" / %}
                 </button>
             {% endif %}

@@ -25,6 +25,7 @@ class Modal(Component):
 
     class Slots:
         default: SlotInput
+        toggle: SlotInput | None = None
 
     def get_template_data(self, args, kwargs: Kwargs, slots: Slots, context: Context):
         modal_id = (kwargs.attrs or {}).get("id") or f"modal-{self.id}"
@@ -66,6 +67,7 @@ class Modal(Component):
         {% load component_tags %}
 
         {% provide "modal" modal_id=modal_id %}
+            {% slot "toggle" / %}
             <div {% html_attrs attrs defaults:id=modal_id class=modal_classes tabindex="-1" defaults:aria-labelledby="{{ modal_id }}-label" defaults:aria-hidden="true" %} {% if backdrop %}data-bs-backdrop="{{ backdrop }}"{% endif %}{% if not keyboard %} data-bs-keyboard="false"{% endif %}>
                 <div class="{{ dialog_classes }}">
                     <div class="{{ content_classes }}">
@@ -85,7 +87,7 @@ class ModalHeader(Component):
         attrs: dict | None = None
 
     class Slots:
-        default: SlotInput = None
+        default: SlotInput | None = None
 
     def get_template_data(self, args, kwargs: Kwargs, slots: Slots, context: Context):
         return {

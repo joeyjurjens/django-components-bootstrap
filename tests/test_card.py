@@ -15,7 +15,7 @@ class TestCard(SimpleTestCase):
               {% component "CardBody" %}
                 {% component "CardTitle" %}Card title{% endcomponent %}
                 {% component "CardText" %}Some quick example text to build on the card title and make up the bulk of the card's content.{% endcomponent %}
-                <a href="#" class="btn btn-primary">Go somewhere</a>
+                {% component "Button" href="#" %}Go somewhere{% endcomponent %}
               {% endcomponent %}
             {% endcomponent %}
         """)
@@ -27,7 +27,7 @@ class TestCard(SimpleTestCase):
               <div class="card-body">
                 <h5 class="card-title">Card title</h5>
                 <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                <a href="#" class="btn btn-primary">Go somewhere</a>
+                <a href="#" class="btn btn-primary" role="button">Go somewhere</a>
               </div>
             </div>
         """
@@ -44,7 +44,7 @@ class TestCard(SimpleTestCase):
               {% component "CardBody" %}
                 {% component "CardTitle" %}Special title treatment{% endcomponent %}
                 {% component "CardText" %}With supporting text below as a natural lead-in to additional content.{% endcomponent %}
-                <a href="#" class="btn btn-primary">Go somewhere</a>
+                <a href="#" class="btn btn-primary" role="button">Go somewhere</a>
               {% endcomponent %}
               {% component "CardFooter" %}
                 2 days ago
@@ -61,7 +61,7 @@ class TestCard(SimpleTestCase):
               <div class="card-body">
                 <h5 class="card-title">Special title treatment</h5>
                 <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                <a href="#" class="btn btn-primary">Go somewhere</a>
+                <a href="#" class="btn btn-primary" role="button">Go somewhere</a>
               </div>
               <div class="card-footer">
                 2 days ago
@@ -127,8 +127,8 @@ class TestCard(SimpleTestCase):
                 {% component "CardTitle" %}Card title{% endcomponent %}
                 {% component "CardSubtitle" %}Card subtitle{% endcomponent %}
                 {% component "CardText" %}Some quick example text to build on the card title and make up the bulk of the card's content.{% endcomponent %}
-                <a href="#" class="card-link">Card link</a>
-                <a href="#" class="card-link">Another link</a>
+                {% component "CardLink" href="#" %}Card link{% endcomponent %}
+                {% component "CardLink" href="#" %}Another link{% endcomponent %}
               {% endcomponent %}
             {% endcomponent %}
         """)
@@ -307,7 +307,7 @@ class TestCard(SimpleTestCase):
               {% component "CardBody" %}
                 {% component "CardTitle" %}Special title treatment{% endcomponent %}
                 {% component "CardText" %}With supporting text below as a natural lead-in to additional content.{% endcomponent %}
-                <a href="#" class="btn btn-primary">Go somewhere</a>
+                {% component "Button" href="#" %}Go somewhere{% endcomponent %}
               {% endcomponent %}
             {% endcomponent %}
         """)
@@ -318,7 +318,7 @@ class TestCard(SimpleTestCase):
               <div class="card-body">
                 <h5 class="card-title">Special title treatment</h5>
                 <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                <a href="#" class="btn btn-primary">Go somewhere</a>
+                <a href="#" class="btn btn-primary" role="button">Go somewhere</a>
               </div>
             </div>
         """
@@ -332,7 +332,7 @@ class TestCard(SimpleTestCase):
               {% component "CardBody" %}
                 {% component "CardTitle" %}Special title treatment{% endcomponent %}
                 {% component "CardText" %}With supporting text below as a natural lead-in to additional content.{% endcomponent %}
-                <a href="#" class="btn btn-primary">Go somewhere</a>
+                {% component "Button" href="#" %}Go somewhere{% endcomponent %}
               {% endcomponent %}
             {% endcomponent %}
         """)
@@ -343,7 +343,7 @@ class TestCard(SimpleTestCase):
               <div class="card-body">
                 <h5 class="card-title">Special title treatment</h5>
                 <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                <a href="#" class="btn btn-primary">Go somewhere</a>
+                <a href="#" class="btn btn-primary" role="button">Go somewhere</a>
               </div>
             </div>
         """

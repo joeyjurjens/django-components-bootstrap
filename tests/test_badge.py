@@ -23,9 +23,9 @@ class BadgeTests(SimpleTestCase):
     def test_in_button(self):
         template = Template("""
             {% load component_tags %}
-            <button type="button" class="btn btn-primary">
+            {% component "Button" %}
               Notifications {% component "Badge" bg="secondary" %}4{% endcomponent %}
-            </button>
+            {% endcomponent %}
         """)
         rendered = normalize_html(template.render(Context({})))
 

@@ -56,7 +56,7 @@ class BreadcrumbItem(Component):
     template: types.django_html = """
     {% load component_tags %}
 
-        <{{ tag }} {% html_attrs attrs class=css_class aria-current=aria_current %}>
+        <{{ tag }} {% html_attrs attrs class=css_class defaults:aria-current=aria_current %}>
             {% if not active and href %}
                 <a href="{{ href }}">{% slot "default" / %}</a>
             {% else %}

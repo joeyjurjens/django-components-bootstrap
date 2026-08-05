@@ -86,7 +86,7 @@ class Toast(Component):
     template: types.django_html = """
         {% load component_tags %}
 
-        <div {% html_attrs attrs defaults:id=toast_id class=classes role="alert" defaults:aria-live="assertive" defaults:aria-atomic="true" data-bs-autohide=autohide_attr data-bs-delay=delay_attr %}>
+        <div {% html_attrs attrs defaults:id=toast_id class=classes role="alert" defaults:aria-live="assertive" defaults:aria-atomic="true" defaults:data-bs-autohide=autohide_attr defaults:data-bs-delay=delay_attr %}>
             {% slot "default" / %}
         </div>
     """
@@ -100,7 +100,7 @@ class ToastHeader(Component):
         attrs: dict | None = None
 
     class Slots:
-        default: SlotInput
+        default: SlotInput | None = None
 
     def get_template_data(self, args, kwargs: Kwargs, slots: Slots, context: Context):
         return {

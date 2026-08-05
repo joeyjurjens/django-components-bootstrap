@@ -1,5 +1,5 @@
 from django.template import Context
-from django_components import Component, SlotInput, types
+from django_components import Component, types
 
 from django_components_bootstrap.components.bootstrap5.types import Size, SpinnerVariant, Variant
 
@@ -12,10 +12,7 @@ class Spinner(Component):
         label: str = "Loading..."
         attrs: dict | None = None
 
-    class Slots:
-        default: SlotInput | None = None
-
-    def get_template_data(self, args, kwargs: Kwargs, slots: Slots, context: Context):
+    def get_template_data(self, args, kwargs: Kwargs, slots, context: Context):
         base_class = f"spinner-{kwargs.animation}"
         classes = [base_class]
 

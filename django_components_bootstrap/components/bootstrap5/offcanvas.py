@@ -21,7 +21,7 @@ class Offcanvas(Component):
 
     class Slots:
         default: SlotInput
-        toggle: SlotInput = None
+        toggle: SlotInput | None = None
 
     def get_template_data(self, args, kwargs: Kwargs, slots: Slots, context: Context):
         offcanvas_id = (kwargs.attrs or {}).get("id") or f"offcanvas-{self.id}"
@@ -60,7 +60,7 @@ class OffcanvasHeader(Component):
         attrs: dict | None = None
 
     class Slots:
-        default: SlotInput = None
+        default: SlotInput | None = None
 
     def get_template_data(self, args, kwargs: Kwargs, slots: Slots, context: Context):
         try:

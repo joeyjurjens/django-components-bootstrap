@@ -2,6 +2,24 @@ import re
 from unittest.mock import patch
 
 
+def _gen_component_id_patch_target():
+    """
+    Resolve the patch target for django-components' internal component-id generator.
+
+    It was renamed and moved between library versions:
+    - django-components <= 0.147: `django_components.component._gen_component_id`
+    - django-components >= 0.148: `django_components.component_render.gen_component_id`
+    """
+    try:
+        from django_components import component_render
+    except ImportError:
+        return "django_components.component._gen_component_id"
+
+    if hasattr(component_render, "gen_component_id"):
+        return "django_components.component_render.gen_component_id"
+    return "django_components.component._gen_component_id"
+
+
 def normalize_html(html):
     # Remove data-djc-id attributes
     html = re.sub(r'\s*data-djc-id-[^=]*="[^"]*"', "", html)
@@ -26,7 +44,7 @@ def mock_component_id():
         # Pad the counter to ensure consistent length
         return f"ctest{counter['value']:02d}"
 
-    return patch("django_components.component._gen_component_id", side_effect=mock_gen_id)
+    return patch(_gen_component_id_patch_target(), side_effect=mock_gen_id)
 
 
 def mock_component_ids(cls):
@@ -41,12 +59,19 @@ def mock_component_ids(cls):
         # Clear django-components caches to prevent ID collisions between tests
         from django_components.component import component_context_cache
         from django_components.provide import component_provides, provide_cache
-        from django_components.slots import slot_fills_cache
 
         component_context_cache.clear()
         component_provides.clear()
         provide_cache.clear()
-        slot_fills_cache.clear()
+
+        # django-components < 0.148 tracked slot fills in a separate module-level
+        # cache; newer versions read them off the component instance directly.
+        try:
+            from django_components.slots import slot_fills_cache
+
+            slot_fills_cache.clear()
+        except ImportError:
+            pass
 
         # Reset the counter before each test
         self._id_counter = {"value": 0}
@@ -55,9 +80,7 @@ def mock_component_ids(cls):
             self._id_counter["value"] += 1
             return f"ctest{self._id_counter['value']:02d}"
 
-        self._id_patcher = patch(
-            "django_components.component._gen_component_id", side_effect=mock_gen_id
-        )
+        self._id_patcher = patch(_gen_component_id_patch_target(), side_effect=mock_gen_id)
         self._id_patcher.start()
 
         if original_setup:

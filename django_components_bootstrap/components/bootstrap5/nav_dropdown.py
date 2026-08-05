@@ -28,6 +28,8 @@ class NavDropdown(Component):
             "data-bs-toggle": "dropdown",
             "aria-expanded": "false",
         }
+        if kwargs.auto_close:
+            default_attrs["data-bs-auto-close"] = kwargs.auto_close
         merged_attrs = {**default_attrs, **(kwargs.attrs or {})}
 
         return {

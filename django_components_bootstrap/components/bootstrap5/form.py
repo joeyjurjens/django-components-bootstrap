@@ -123,10 +123,7 @@ class FormControl(Component):
         name: str | None = None
         attrs: dict | None = None
 
-    class Slots:
-        pass
-
-    def get_template_data(self, args, kwargs: Kwargs, slots: Slots, context: Context):
+    def get_template_data(self, args, kwargs: Kwargs, slots, context: Context):
         formgroup = self.inject("formgroup", NOT_PROVIDED)
         control_id = formgroup.control_id if formgroup is not NOT_PROVIDED else None
 
@@ -270,35 +267,32 @@ class FormSelect(Component):
 class FormCheckInput(Component):
     class Kwargs:
         type: FormCheckType | None = None
-        disabled: bool = False
-        checked: bool = False
-        is_valid: bool = False
-        is_invalid: bool = False
+        disabled: bool | None = None
+        checked: bool | None = None
+        is_valid: bool | None = None
+        is_invalid: bool | None = None
         name: str | None = None
         value: str | None = None
         attrs: dict | None = None
 
-    class Slots:
-        pass
-
-    def get_template_data(self, args, kwargs: Kwargs, slots: Slots, context: Context):
+    def get_template_data(self, args, kwargs: Kwargs, slots, context: Context):
         formcheck = self.inject("formcheck", NOT_PROVIDED)
         if formcheck is not NOT_PROVIDED:
             control_id = formcheck.control_id
-            check_type = formcheck.type
-            is_valid = formcheck.is_valid if hasattr(formcheck, "is_valid") else kwargs.is_valid
+            check_type = kwargs.type if kwargs.type is not None else formcheck.type
+            is_valid = kwargs.is_valid if kwargs.is_valid is not None else formcheck.is_valid
             is_invalid = (
-                formcheck.is_invalid if hasattr(formcheck, "is_invalid") else kwargs.is_invalid
+                kwargs.is_invalid if kwargs.is_invalid is not None else formcheck.is_invalid
             )
-            disabled = formcheck.disabled if hasattr(formcheck, "disabled") else kwargs.disabled
-            checked = formcheck.checked if hasattr(formcheck, "checked") else kwargs.checked
+            disabled = kwargs.disabled if kwargs.disabled is not None else formcheck.disabled
+            checked = kwargs.checked if kwargs.checked is not None else formcheck.checked
         else:
             control_id = None
             check_type = kwargs.type if kwargs.type else "checkbox"
-            is_valid = kwargs.is_valid
-            is_invalid = kwargs.is_invalid
-            disabled = kwargs.disabled
-            checked = kwargs.checked
+            is_valid = bool(kwargs.is_valid)
+            is_invalid = bool(kwargs.is_invalid)
+            disabled = bool(kwargs.disabled)
+            checked = bool(kwargs.checked)
 
         input_type = "checkbox" if check_type == "switch" else check_type
 
@@ -346,12 +340,12 @@ class FormCheckLabel(Component):
     def get_template_data(self, args, kwargs: Kwargs, slots: Slots, context: Context):
         formcheck = self.inject("formcheck", NOT_PROVIDED)
         if formcheck is not NOT_PROVIDED:
-            control_id = formcheck.control_id
+            control_id = kwargs.for_ if kwargs.for_ else formcheck.control_id
         else:
             control_id = kwargs.for_
 
         return {
-            "for_": control_id if control_id else kwargs.for_,
+            "for_": control_id,
             "title": kwargs.title,
             "attrs": kwargs.attrs or {},
         }

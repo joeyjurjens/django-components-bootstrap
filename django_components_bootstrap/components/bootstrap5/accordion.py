@@ -98,7 +98,7 @@ class AccordionButton(Component):
     template: types.django_html = """
         {% load component_tags %}
 
-        <button {% html_attrs attrs class=button_classes type="button" data-bs-toggle="collapse" data-bs-target="#{{ collapse_id }}" defaults:aria-expanded=aria_expanded defaults:aria-controls=collapse_id disabled=disabled %}>
+        <button {% html_attrs attrs class=button_classes type="button" data-bs-toggle="collapse" data-bs-target="#{{ collapse_id }}" defaults:aria-expanded=aria_expanded defaults:aria-controls=collapse_id defaults:disabled=disabled %}>
             {% slot "default" / %}
         </button>
     """

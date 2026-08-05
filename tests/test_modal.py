@@ -21,8 +21,8 @@ class TestModal(SimpleTestCase):
                 <p>Modal body text goes here.</p>
               {% endcomponent %}
               {% component "ModalFooter" %}
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Save changes</button>
+                {% component "Button" variant="secondary" attrs:data-bs-dismiss="modal" %}Close{% endcomponent %}
+                {% component "Button" %}Save changes{% endcomponent %}
               {% endcomponent %}
             {% endcomponent %}
         """)
@@ -405,17 +405,17 @@ class TestModal(SimpleTestCase):
                 <form>
                   <div class="mb-3">
                     <label for="recipient-name" class="col-form-label">Recipient:</label>
-                    <input type="text" class="form-control" id="recipient-name">
+                    {% component "FormControl" attrs:id="recipient-name" / %}
                   </div>
                   <div class="mb-3">
                     <label for="message-text" class="col-form-label">Message:</label>
-                    <textarea class="form-control" id="message-text"></textarea>
+                    {% component "FormTextarea" attrs:id="message-text" / %}
                   </div>
                 </form>
               {% endcomponent %}
               {% component "ModalFooter" %}
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Send message</button>
+                {% component "Button" variant="secondary" attrs:data-bs-dismiss="modal" %}Close{% endcomponent %}
+                {% component "Button" %}Send message{% endcomponent %}
               {% endcomponent %}
             {% endcomponent %}
         """)
@@ -437,7 +437,7 @@ class TestModal(SimpleTestCase):
                       </div>
                       <div class="mb-3">
                         <label for="message-text" class="col-form-label">Message:</label>
-                        <textarea class="form-control" id="message-text"></textarea>
+                        <textarea class="form-control" id="message-text" rows="3"></textarea>
                       </div>
                     </form>
                   </div>

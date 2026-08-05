@@ -16,6 +16,7 @@ class TabContext(NamedTuple):
 
 class TabContainer(Component):
     class Kwargs:
+        active_key: str | None = None
         attrs: dict | None = None
 
     class Slots:
@@ -26,14 +27,15 @@ class TabContainer(Component):
 
         return {
             "container_id": container_id,
+            "active_key": kwargs.active_key,
             "attrs": kwargs.attrs or {},
         }
 
     template: types.django_html = """
         {% load component_tags %}
 
-        {% provide "tab_container" id=container_id %}
-            <div {% html_attrs attrs %}>
+        {% provide "tab_container" id=container_id active_key=active_key %}
+            <div {% html_attrs attrs defaults:id=container_id %}>
                 {% slot "default" / %}
             </div>
         {% endprovide %}
@@ -65,7 +67,8 @@ class TabContent(Component):
 
 class TabPane(Component):
     class Kwargs:
-        active: bool = False
+        event_key: str | None = None
+        active: bool | None = None
         fade: bool = True
         as_: str = "div"
         attrs: dict | None = None
@@ -74,22 +77,38 @@ class TabPane(Component):
         default: SlotInput
 
     def get_template_data(self, args, kwargs: Kwargs, slots: Slots, context: Context):
+        tab_container = self.inject("tab_container", NOT_PROVIDED)
+
+        is_active = kwargs.active
+        generated_id = None
+        generated_labelledby = None
+
+        if kwargs.event_key is not None and tab_container is not NOT_PROVIDED:
+            if is_active is None:
+                is_active = kwargs.event_key == tab_container.active_key
+            generated_id = f"{tab_container.id}-pane-{kwargs.event_key}"
+            generated_labelledby = f"{tab_container.id}-tab-{kwargs.event_key}"
+
+        is_active = bool(is_active)
+
         classes = ["tab-pane"]
         if kwargs.fade:
             classes.append("fade")
-        if kwargs.active:
+        if is_active:
             classes.append("show active")
 
         return {
             "tag": kwargs.as_,
             "classes": " ".join(classes),
+            "generated_id": generated_id,
+            "generated_labelledby": generated_labelledby,
             "attrs": kwargs.attrs or {},
         }
 
     template: types.django_html = """
         {% load component_tags %}
 
-        <{{ tag }} {% html_attrs attrs class=classes defaults:role="tabpanel" defaults:tabindex="0" %}>
+        <{{ tag }} {% html_attrs attrs class=classes defaults:role="tabpanel" defaults:tabindex="0" defaults:id=generated_id defaults:aria-labelledby=generated_labelledby %}>
             {% slot "default" / %}
         </{{ tag }}>
     """
@@ -172,9 +191,16 @@ class Tabs(Component):
     def on_render_after(self, context, template, content):
         tab_data: list[dict] = context["tab_data"]
 
-        if tab_data and not any(tab["is_active"] for tab in tab_data):
-            tab_data[0]["is_active"] = True
-            tab_data[0]["aria_selected"] = "true"
+        active_tabs = [tab for tab in tab_data if tab["is_active"]]
+        for extra_tab in active_tabs[1:]:
+            extra_tab["is_active"] = False
+            extra_tab["aria_selected"] = "false"
+
+        if tab_data and not active_tabs:
+            default_tab = next((tab for tab in tab_data if not tab["disabled"]), None)
+            if default_tab is not None:
+                default_tab["is_active"] = True
+                default_tab["aria_selected"] = "true"
 
         return TabsRenderer.render(
             kwargs={

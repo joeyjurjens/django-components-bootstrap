@@ -3,6 +3,7 @@ from django.utils.safestring import mark_safe
 from django_components import Component, SlotInput, types
 
 from django_components_bootstrap.components.bootstrap5.types import (
+    NOT_PROVIDED,
     CarouselPause,
     CarouselRide,
     ThemeVariant,
@@ -124,7 +125,7 @@ class CarouselRenderer(Component):
         {% load component_tags %}
 
         {% provide "carousel" carousel_id=carousel_id %}
-            <div {% html_attrs attrs defaults:id=carousel_id class=classes data-bs-ride=data_bs_ride data-bs-interval=data_bs_interval data-bs-keyboard=data_bs_keyboard data-bs-pause=data_bs_pause data-bs-touch=data_bs_touch data-bs-theme=data_bs_theme %}>
+            <div {% html_attrs attrs defaults:id=carousel_id class=classes defaults:data-bs-ride=data_bs_ride defaults:data-bs-interval=data_bs_interval defaults:data-bs-keyboard=data_bs_keyboard defaults:data-bs-pause=data_bs_pause defaults:data-bs-touch=data_bs_touch defaults:data-bs-theme=data_bs_theme %}>
                 {% if show_indicators %}
                     <div class="carousel-indicators">
                         {% for item in items %}
@@ -177,7 +178,7 @@ class CarouselItem(Component):
     template: types.django_html = """
         {% load component_tags %}
 
-        <div {% html_attrs attrs class=classes data-bs-interval=interval %}>
+        <div {% html_attrs attrs class=classes defaults:data-bs-interval=interval %}>
             {% slot "default" / %}
         </div>
     """
@@ -219,12 +220,9 @@ class CarouselIndicator(Component):
         active: bool = False
         attrs: dict | None = None
 
-    class Slots:
-        default: SlotInput | None = None
-
-    def get_template_data(self, args, kwargs: Kwargs, slots: Slots, context: Context):
-        carousel_data = self.inject("carousel", None)
-        carousel_id = carousel_data.carousel_id if carousel_data else ""
+    def get_template_data(self, args, kwargs: Kwargs, slots, context: Context):
+        carousel_data = self.inject("carousel", NOT_PROVIDED)
+        carousel_id = carousel_data.carousel_id if carousel_data is not NOT_PROVIDED else ""
 
         classes = []
         if kwargs.active:

@@ -97,8 +97,8 @@ class StackTests(SimpleTestCase):
         template = Template("""
             {% load component_tags %}
             {% component "Stack" direction="vertical" gap=2 %}
-                <button type="button" class="btn btn-secondary">Save changes</button>
-                <button type="button" class="btn btn-outline-secondary">Cancel</button>
+                {% component "Button" variant="secondary" %}Save changes{% endcomponent %}
+                {% component "Button" variant="secondary" outline=True %}Cancel{% endcomponent %}
             {% endcomponent %}
         """)
         rendered = normalize_html(template.render(Context({})))
@@ -116,10 +116,10 @@ class StackTests(SimpleTestCase):
         template = Template("""
             {% load component_tags %}
             {% component "Stack" direction="horizontal" gap=3 %}
-                <input class="form-control me-auto" type="text" placeholder="Add your item here..." aria-label="Add your item here...">
-                <button type="button" class="btn btn-secondary">Submit</button>
+                {% component "FormControl" placeholder="Add your item here..." attrs:class="me-auto" attrs:aria-label="Add your item here..." / %}
+                {% component "Button" variant="secondary" %}Submit{% endcomponent %}
                 <div class="vr"></div>
-                <button type="button" class="btn btn-outline-danger">Reset</button>
+                {% component "Button" variant="danger" outline=True %}Reset{% endcomponent %}
             {% endcomponent %}
         """)
         rendered = normalize_html(template.render(Context({})))

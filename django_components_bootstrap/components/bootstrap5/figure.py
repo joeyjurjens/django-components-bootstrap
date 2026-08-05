@@ -30,9 +30,6 @@ class FigureImage(Component):
         fluid: bool = True
         attrs: dict | None = None
 
-    class Slots:
-        pass
-
     def get_template_data(self, args, kwargs: Kwargs, slots, context: Context):
         classes = ["figure-img"]
         if kwargs.fluid:

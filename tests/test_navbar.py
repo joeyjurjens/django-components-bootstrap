@@ -153,8 +153,8 @@ class NavbarTestCase(SimpleTestCase):
             {% component "Navbar" expand="lg" attrs:class="bg-body-tertiary" %}
                 {% component "NavbarBrand" href="#" %}Navbar{% endcomponent %}
                 <form class="d-flex" role="search">
-                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                    <button class="btn btn-outline-success" type="submit">Search</button>
+                    {% component "FormControl" type="search" placeholder="Search" attrs:class="me-2" attrs:aria-label="Search" / %}
+                    {% component "Button" variant="success" outline=True type="submit" %}Search{% endcomponent %}
                 </form>
             {% endcomponent %}
         """)

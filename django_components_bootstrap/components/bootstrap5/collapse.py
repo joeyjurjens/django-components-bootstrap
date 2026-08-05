@@ -12,7 +12,7 @@ class Collapse(Component):
 
     class Slots:
         default: SlotInput
-        toggle: SlotInput = None
+        toggle: SlotInput | None = None
 
     def get_template_data(self, args, kwargs: Kwargs, slots: Slots, context: Context):
         collapse_id = (kwargs.attrs or {}).get("id") or f"collapse-{self.id}"
@@ -26,13 +26,14 @@ class Collapse(Component):
         return {
             "collapse_id": collapse_id,
             "classes": " ".join(classes),
+            "show": kwargs.show,
             "attrs": kwargs.attrs,
         }
 
     template: types.django_html = """
         {% load component_tags %}
 
-        {% provide "collapse" collapse_id=collapse_id %}
+        {% provide "collapse" collapse_id=collapse_id show=show %}
             {% slot "toggle" / %}
             <div {% html_attrs attrs defaults:id=collapse_id class=classes %}>
                 {% slot "default" / %}
@@ -44,7 +45,7 @@ class Collapse(Component):
 class CollapseToggle(Component):
     class Kwargs:
         as_: ButtonTag = "button"
-        expanded: bool = False
+        expanded: bool | None = None
         href: str | None = None
         attrs: dict | None = None
 
@@ -54,6 +55,7 @@ class CollapseToggle(Component):
     def get_template_data(self, args, kwargs: Kwargs, slots: Slots, context: Context):
         collapse = self.inject("collapse")
         target_id = collapse.collapse_id
+        is_expanded = kwargs.expanded if kwargs.expanded is not None else collapse.show
 
         button_type = "button" if kwargs.as_ == "button" else None
         link_href = kwargs.href or f"#{target_id}" if kwargs.as_ != "button" else None
@@ -62,7 +64,7 @@ class CollapseToggle(Component):
         return {
             "tag": kwargs.as_,
             "target_id": target_id,
-            "expanded": "true" if kwargs.expanded else "false",
+            "expanded": "true" if is_expanded else "false",
             "button_type": button_type,
             "link_href": link_href,
             "link_role": link_role,
@@ -73,11 +75,11 @@ class CollapseToggle(Component):
     {% load component_tags %}
 
         {% if tag == "button" %}
-            <button {% html_attrs attrs type=button_type data-bs-toggle="collapse" data-bs-target="#{{ target_id }}" defaults:aria-expanded=expanded defaults:aria-controls=target_id %}>
+            <button {% html_attrs attrs defaults:type=button_type data-bs-toggle="collapse" data-bs-target="#{{ target_id }}" defaults:aria-expanded=expanded defaults:aria-controls=target_id %}>
                 {% slot "default" / %}
             </button>
         {% else %}
-            <a {% html_attrs attrs href=link_href data-bs-toggle="collapse" role=link_role defaults:aria-expanded=expanded defaults:aria-controls=target_id %}>
+            <a {% html_attrs attrs defaults:href=link_href data-bs-toggle="collapse" defaults:role=link_role defaults:aria-expanded=expanded defaults:aria-controls=target_id %}>
                 {% slot "default" / %}
             </a>
         {% endif %}

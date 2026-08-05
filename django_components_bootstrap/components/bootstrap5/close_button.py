@@ -8,9 +8,6 @@ class CloseButton(Component):
         disabled: bool = False
         attrs: dict | None = None
 
-    class Slots:
-        pass
-
     def get_template_data(self, args, kwargs: Kwargs, slots, context: Context):
         classes = ["btn-close"]
         if kwargs.variant:
@@ -27,5 +24,5 @@ class CloseButton(Component):
     template: types.django_html = """
         {% load component_tags %}
 
-        <button {% html_attrs attrs type="button" class=classes defaults:aria-label="Close" disabled=disabled %}></button>
+        <button {% html_attrs attrs type="button" class=classes defaults:aria-label="Close" defaults:disabled=disabled %}></button>
     """

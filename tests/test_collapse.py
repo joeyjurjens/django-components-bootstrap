@@ -18,9 +18,9 @@ class TestCollapse(SimpleTestCase):
                 {% component "CollapseToggle" attrs:class="btn btn-primary" %}Toggle collapse{% endcomponent %}
               {% endfill %}
               {% fill "default" %}
-                <div class="card card-body">
+                {% component "Card" body=True %}
                   Some placeholder content for the collapse component. This panel is hidden by default but revealed when the user activates the relevant trigger.
-                </div>
+                {% endcomponent %}
               {% endfill %}
             {% endcomponent %}
         """)
@@ -29,8 +29,10 @@ class TestCollapse(SimpleTestCase):
         expected = """
             <button type="button" class="btn btn-primary" data-bs-toggle="collapse" data-bs-target="#collapse-ctest01" aria-expanded="false" aria-controls="collapse-ctest01">Toggle collapse</button>
             <div class="collapse" id="collapse-ctest01">
-              <div class="card card-body">
-                Some placeholder content for the collapse component. This panel is hidden by default but revealed when the user activates the relevant trigger.
+              <div class="card">
+                <div class="card-body">
+                  Some placeholder content for the collapse component. This panel is hidden by default but revealed when the user activates the relevant trigger.
+                </div>
               </div>
             </div>
         """
@@ -48,9 +50,9 @@ class TestCollapse(SimpleTestCase):
                   {% component "CollapseToggle" as_="a" attrs={"class": "btn btn-primary"} %}Toggle first element{% endcomponent %}
                 {% endfill %}
                 {% fill "default" %}
-                  <div class="card card-body">
+                  {% component "Card" body=True %}
                     Some placeholder content for the first collapse component.
-                  </div>
+                  {% endcomponent %}
                 {% endfill %}
               {% endcomponent %}
               {% component "Collapse" %}
@@ -58,9 +60,9 @@ class TestCollapse(SimpleTestCase):
                   {% component "CollapseToggle" attrs={"class": "btn btn-primary"} %}Toggle second element{% endcomponent %}
                 {% endfill %}
                 {% fill "default" %}
-                  <div class="card card-body">
+                  {% component "Card" body=True %}
                     Some placeholder content for the second collapse component.
-                  </div>
+                  {% endcomponent %}
                 {% endfill %}
               {% endcomponent %}
             </p>
@@ -80,9 +82,9 @@ class TestCollapse(SimpleTestCase):
                 {% component "CollapseToggle" attrs:class="btn btn-primary" %}Toggle horizontal collapse{% endcomponent %}
               {% endfill %}
               {% fill "default" %}
-                <div class="card card-body" style="width: 300px;">
+                {% component "Card" body=True attrs:style="width: 300px;" %}
                   This is some placeholder content for a horizontal collapse. It's hidden by default and shown when triggered.
-                </div>
+                {% endcomponent %}
               {% endfill %}
             {% endcomponent %}
         """)
@@ -91,8 +93,10 @@ class TestCollapse(SimpleTestCase):
         expected = """
             <button type="button" class="btn btn-primary" data-bs-toggle="collapse" data-bs-target="#collapse-ctest01" aria-expanded="false" aria-controls="collapse-ctest01">Toggle horizontal collapse</button>
             <div class="collapse collapse-horizontal" id="collapse-ctest01">
-              <div class="card card-body" style="width: 300px;">
-                This is some placeholder content for a horizontal collapse. It's hidden by default and shown when triggered.
+              <div class="card" style="width: 300px;">
+                <div class="card-body">
+                  This is some placeholder content for a horizontal collapse. It's hidden by default and shown when triggered.
+                </div>
               </div>
             </div>
         """
@@ -111,9 +115,9 @@ class TestCollapse(SimpleTestCase):
                 {% endcomponent %}
               {% endfill %}
               {% fill "default" %}
-                <div class="card card-body">
+                {% component "Card" body=True %}
                   Some placeholder content for the collapse component. This panel is hidden by default but revealed when the user activates the relevant trigger.
-                </div>
+                {% endcomponent %}
               {% endfill %}
             {% endcomponent %}
         """)
@@ -124,8 +128,10 @@ class TestCollapse(SimpleTestCase):
               Button with data-bs-target
             </button>
             <div class="collapse" id="collapse-ctest01">
-              <div class="card card-body">
-                Some placeholder content for the collapse component. This panel is hidden by default but revealed when the user activates the relevant trigger.
+              <div class="card">
+                <div class="card-body">
+                  Some placeholder content for the collapse component. This panel is hidden by default but revealed when the user activates the relevant trigger.
+                </div>
               </div>
             </div>
         """
@@ -144,9 +150,9 @@ class TestCollapse(SimpleTestCase):
                 {% endcomponent %}
               {% endfill %}
               {% fill "default" %}
-                <div class="card card-body">
+                {% component "Card" body=True %}
                   Some placeholder content for the collapse component. This panel is hidden by default but revealed when the user activates the relevant trigger.
-                </div>
+                {% endcomponent %}
               {% endfill %}
             {% endcomponent %}
         """)
@@ -157,8 +163,10 @@ class TestCollapse(SimpleTestCase):
               Link with href
             </a>
             <div class="collapse" id="collapse-ctest01">
-              <div class="card card-body">
-                Some placeholder content for the collapse component. This panel is hidden by default but revealed when the user activates the relevant trigger.
+              <div class="card">
+                <div class="card-body">
+                  Some placeholder content for the collapse component. This panel is hidden by default but revealed when the user activates the relevant trigger.
+                </div>
               </div>
             </div>
         """

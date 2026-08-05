@@ -10,13 +10,13 @@ class PlaceholderTests(SimpleTestCase):
     def test_basic(self):
         template = Template("""
             {% load component_tags %}
-            <p class="card-text placeholder-glow">
+            {% component "CardText" attrs:class="placeholder-glow" %}
                 {% component "Placeholder" xs=7 / %}
                 {% component "Placeholder" xs=4 / %}
                 {% component "Placeholder" xs=4 / %}
                 {% component "Placeholder" xs=6 / %}
                 {% component "Placeholder" xs=8 / %}
-            </p>
+            {% endcomponent %}
         """)
         rendered = normalize_html(template.render(Context({})))
 

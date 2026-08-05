@@ -77,11 +77,11 @@ class PaginationTests(SimpleTestCase):
         template = Template("""
             {% load component_tags %}
             {% component "Pagination" %}
-                <li class="page-item"><a href="#" class="page-link">Previous</a></li>
+                {% component "PaginationItem" href="#" %}Previous{% endcomponent %}
                 {% component "PaginationItem" href="#" %}1{% endcomponent %}
                 {% component "PaginationItem" href="#" active=True %}2{% endcomponent %}
                 {% component "PaginationItem" href="#" %}3{% endcomponent %}
-                <li class="page-item"><a class="page-link" href="#">Next</a></li>
+                {% component "PaginationItem" href="#" %}Next{% endcomponent %}
             {% endcomponent %}
         """)
         rendered = normalize_html(template.render(Context({})))

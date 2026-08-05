@@ -72,6 +72,14 @@ uv sync --all-extras
 pytest
 ```
 
+### Linting & Formatting
+
+```bash
+uv run ruff format .        # format code
+uv run ruff check .         # lint
+uv run ruff check --fix .   # lint, auto-fixing what it can
+```
+
 ### Building Documentation
 
 ```bash

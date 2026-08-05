@@ -11,13 +11,11 @@ authors = [
     { name = "Joey Jurjens", email = "joeyjurjens@gmail.com" }
 ]
 classifiers = [
-    "Development Status :: 3 - Alpha",
+    "Development Status :: 4 - Beta",
     "Framework :: Django",
-    "Framework :: Django :: 5.2",
     "Intended Audience :: Developers",
     "License :: OSI Approved :: MIT License",
     "Programming Language :: Python :: 3",
-    "Programming Language :: Python :: 3.10",
 ]
 keywords = ["django", "components", "bootstrap"]
 

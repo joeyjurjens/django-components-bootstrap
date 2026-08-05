@@ -116,7 +116,7 @@ class PopoverTestCase(SimpleTestCase):
         template = Template("""
             {% load component_tags %}
             {% component "Popover" title="Dismissible popover" content="And here's some amazing content. It's very engaging. Right?" placement="top" trigger="focus" %}
-                <a tabindex="0" class="btn btn-lg btn-danger" role="button">Dismissible popover</a>
+                {% component "Button" as_="a" variant="danger" size="lg" attrs:tabindex="0" %}Dismissible popover{% endcomponent %}
             {% endcomponent %}
         """)
         rendered = template.render(Context({}))

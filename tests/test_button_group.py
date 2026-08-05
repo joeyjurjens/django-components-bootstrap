@@ -51,14 +51,9 @@ class TestButtonGroup(SimpleTestCase):
         template = Template("""
             {% load component_tags %}
             {% component "ButtonGroup" %}
-              <input type="checkbox" class="btn-check" id="btncheck1" autocomplete="off">
-              <label class="btn btn-outline-primary" for="btncheck1">Checkbox 1</label>
-
-              <input type="checkbox" class="btn-check" id="btncheck2" autocomplete="off">
-              <label class="btn btn-outline-primary" for="btncheck2">Checkbox 2</label>
-
-              <input type="checkbox" class="btn-check" id="btncheck3" autocomplete="off">
-              <label class="btn btn-outline-primary" for="btncheck3">Checkbox 3</label>
+              {% component "ToggleButton" attrs:id="btncheck1" %}Checkbox 1{% endcomponent %}
+              {% component "ToggleButton" attrs:id="btncheck2" %}Checkbox 2{% endcomponent %}
+              {% component "ToggleButton" attrs:id="btncheck3" %}Checkbox 3{% endcomponent %}
             {% endcomponent %}
         """)
         rendered = template.render(Context())
@@ -72,14 +67,9 @@ class TestButtonGroup(SimpleTestCase):
         template = Template("""
             {% load component_tags %}
             {% component "ButtonGroup" %}
-              <input type="radio" class="btn-check" name="btnradio" id="btnradio1" autocomplete="off" checked>
-              <label class="btn btn-outline-primary" for="btnradio1">Radio 1</label>
-
-              <input type="radio" class="btn-check" name="btnradio" id="btnradio2" autocomplete="off">
-              <label class="btn btn-outline-primary" for="btnradio2">Radio 2</label>
-
-              <input type="radio" class="btn-check" name="btnradio" id="btnradio3" autocomplete="off">
-              <label class="btn btn-outline-primary" for="btnradio3">Radio 3</label>
+              {% component "ToggleButton" type="radio" name="btnradio" attrs:id="btnradio1" checked=True %}Radio 1{% endcomponent %}
+              {% component "ToggleButton" type="radio" name="btnradio" attrs:id="btnradio2" %}Radio 2{% endcomponent %}
+              {% component "ToggleButton" type="radio" name="btnradio" attrs:id="btnradio3" %}Radio 3{% endcomponent %}
             {% endcomponent %}
         """)
         rendered = template.render(Context())

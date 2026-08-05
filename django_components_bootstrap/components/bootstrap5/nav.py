@@ -2,6 +2,7 @@ from django.template import Context
 from django_components import Component, SlotInput, types
 
 from django_components_bootstrap.components.bootstrap5.types import (
+    NOT_PROVIDED,
     AnchorOrButton,
     NavItemTag,
     NavTag,
@@ -83,7 +84,8 @@ class NavLink(Component):
     class Kwargs:
         as_: AnchorOrButton = "a"
         href: str = "#"
-        active: bool = False
+        event_key: str | None = None
+        active: bool | None = None
         disabled: bool = False
         attrs: dict | None = None
 
@@ -91,15 +93,36 @@ class NavLink(Component):
         default: SlotInput
 
     def get_template_data(self, args, kwargs: Kwargs, slots: Slots, context: Context):
+        tab_container = self.inject("tab_container", NOT_PROVIDED)
+
+        is_active = kwargs.active
+        is_tab = False
+        generated_id = None
+        generated_controls = None
+        data_bs_target = None
+
+        if kwargs.event_key is not None and tab_container is not NOT_PROVIDED:
+            is_tab = True
+            if is_active is None:
+                is_active = kwargs.event_key == tab_container.active_key
+            generated_id = f"{tab_container.id}-tab-{kwargs.event_key}"
+            generated_controls = f"{tab_container.id}-pane-{kwargs.event_key}"
+            data_bs_target = f"#{generated_controls}"
+
+        is_active = bool(is_active)
+
         classes = ["nav-link"]
-        if kwargs.active:
+        if is_active:
             classes.append("active")
         if kwargs.disabled:
             classes.append("disabled")
 
         button_disabled = True if kwargs.as_ == "button" and kwargs.disabled else None
         aria_disabled = "true" if kwargs.as_ == "a" and kwargs.disabled else None
-        aria_current = "page" if kwargs.active and kwargs.as_ == "a" else None
+        aria_current = "page" if is_active and kwargs.as_ == "a" and not is_tab else None
+        aria_selected = "true" if is_tab and is_active else "false" if is_tab else None
+        role = "tab" if is_tab else None
+        data_bs_toggle = "tab" if is_tab else None
 
         link_href = None if kwargs.disabled else kwargs.href
 
@@ -110,6 +133,12 @@ class NavLink(Component):
             "button_disabled": button_disabled,
             "aria_disabled": aria_disabled,
             "aria_current": aria_current,
+            "aria_selected": aria_selected,
+            "role": role,
+            "data_bs_toggle": data_bs_toggle,
+            "data_bs_target": data_bs_target,
+            "generated_id": generated_id,
+            "generated_controls": generated_controls,
             "attrs": kwargs.attrs,
         }
 
@@ -117,11 +146,11 @@ class NavLink(Component):
         {% load component_tags %}
 
         {% if tag == "a" %}
-            <a {% html_attrs attrs href=href class=classes defaults:aria-disabled=aria_disabled defaults:aria-current=aria_current %}>
+            <a {% html_attrs attrs defaults:href=href class=classes defaults:aria-disabled=aria_disabled defaults:aria-current=aria_current defaults:id=generated_id defaults:role=role defaults:data-bs-toggle=data_bs_toggle defaults:data-bs-target=data_bs_target defaults:aria-controls=generated_controls defaults:aria-selected=aria_selected %}>
                 {% slot "default" / %}
             </a>
         {% else %}
-            <button {% html_attrs attrs defaults:type="button" class=classes disabled=button_disabled defaults:aria-current=aria_current %}>
+            <button {% html_attrs attrs defaults:type="button" class=classes defaults:disabled=button_disabled defaults:aria-current=aria_current defaults:id=generated_id defaults:role=role defaults:data-bs-toggle=data_bs_toggle defaults:data-bs-target=data_bs_target defaults:aria-controls=generated_controls defaults:aria-selected=aria_selected %}>
                 {% slot "default" / %}
             </button>
         {% endif %}

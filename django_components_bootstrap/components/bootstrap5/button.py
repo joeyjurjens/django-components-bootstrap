@@ -55,7 +55,7 @@ class Button(Component):
         button_type = kwargs.type if tag == "button" else None
         button_disabled = kwargs.disabled if tag == "button" else None
         aria_pressed = "true" if kwargs.active else None
-        link_href = kwargs.href or "#" if is_link else None
+        link_href = kwargs.href if is_link else None
         link_target = kwargs.target if is_link else None
         link_role = "button" if is_link else None
         link_aria_disabled = "true" if is_link and kwargs.disabled else None
@@ -78,7 +78,7 @@ class Button(Component):
     template: types.django_html = """
         {% load component_tags %}
 
-        <{{ tag }} {% html_attrs attrs class=classes type=button_type disabled=button_disabled aria-pressed=aria_pressed href=link_href target=link_target role=link_role aria-disabled=link_aria_disabled tabindex=link_tabindex %}>
+        <{{ tag }} {% html_attrs attrs class=classes defaults:type=button_type defaults:disabled=button_disabled defaults:aria-pressed=aria_pressed defaults:href=link_href defaults:target=link_target defaults:role=link_role defaults:aria-disabled=link_aria_disabled defaults:tabindex=link_tabindex %}>
             {% slot "default" / %}
         </{{ tag }}>
     """

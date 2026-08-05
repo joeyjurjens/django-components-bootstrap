@@ -270,6 +270,112 @@ class TestTabs(SimpleTestCase):
         self.assertHTMLEqual(normalize_html(rendered), normalize_html(expected))
 
     @djc_test
+    def test_manual_composition_with_tab_container(self):
+        with mock_component_id():
+            template = Template("""
+            {% load component_tags %}
+            {% component "TabContainer" active_key="profile" %}
+              {% component "Nav" variant="tabs" as_="ul" attrs:role="tablist" %}
+                {% component "NavItem" as_="li" attrs:role="presentation" %}
+                  {% component "NavLink" as_="button" event_key="home" %}
+                    Home
+                  {% endcomponent %}
+                {% endcomponent %}
+                {% component "NavItem" as_="li" attrs:role="presentation" %}
+                  {% component "NavLink" as_="button" event_key="profile" %}
+                    Profile
+                  {% endcomponent %}
+                {% endcomponent %}
+              {% endcomponent %}
+              {% component "TabContent" %}
+                {% component "TabPane" event_key="home" %}
+                  Home content
+                {% endcomponent %}
+                {% component "TabPane" event_key="profile" %}
+                  Profile content
+                {% endcomponent %}
+              {% endcomponent %}
+            {% endcomponent %}
+        """)
+            rendered = template.render(Context())
+
+        expected = """
+            <div id="tab-container-ctest01">
+              <ul class="nav nav-tabs" role="tablist">
+                <li class="nav-item" role="presentation">
+                  <button class="nav-link" id="tab-container-ctest01-tab-home" data-bs-toggle="tab" data-bs-target="#tab-container-ctest01-pane-home" type="button" role="tab" aria-controls="tab-container-ctest01-pane-home" aria-selected="false">Home</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                  <button class="nav-link active" id="tab-container-ctest01-tab-profile" data-bs-toggle="tab" data-bs-target="#tab-container-ctest01-pane-profile" type="button" role="tab" aria-controls="tab-container-ctest01-pane-profile" aria-selected="true">Profile</button>
+                </li>
+              </ul>
+              <div class="tab-content">
+                <div class="tab-pane fade" id="tab-container-ctest01-pane-home" role="tabpanel" aria-labelledby="tab-container-ctest01-tab-home" tabindex="0">
+                  Home content
+                </div>
+                <div class="tab-pane fade show active" id="tab-container-ctest01-pane-profile" role="tabpanel" aria-labelledby="tab-container-ctest01-tab-profile" tabindex="0">
+                  Profile content
+                </div>
+              </div>
+            </div>
+        """
+
+        self.assertHTMLEqual(normalize_html(rendered), normalize_html(expected))
+
+    @djc_test
+    def test_manual_composition_with_disabled_tab(self):
+        with mock_component_id():
+            template = Template("""
+            {% load component_tags %}
+            {% component "TabContainer" active_key="home" %}
+              {% component "Nav" variant="tabs" as_="ul" attrs:role="tablist" %}
+                {% component "NavItem" as_="li" attrs:role="presentation" %}
+                  {% component "NavLink" as_="button" event_key="home" %}
+                    Home
+                  {% endcomponent %}
+                {% endcomponent %}
+                {% component "NavItem" as_="li" attrs:role="presentation" %}
+                  {% component "NavLink" as_="button" event_key="settings" disabled=True %}
+                    Settings
+                  {% endcomponent %}
+                {% endcomponent %}
+              {% endcomponent %}
+              {% component "TabContent" %}
+                {% component "TabPane" event_key="home" %}
+                  Home content
+                {% endcomponent %}
+                {% component "TabPane" event_key="settings" %}
+                  Settings content
+                {% endcomponent %}
+              {% endcomponent %}
+            {% endcomponent %}
+        """)
+            rendered = template.render(Context())
+
+        expected = """
+            <div id="tab-container-ctest01">
+              <ul class="nav nav-tabs" role="tablist">
+                <li class="nav-item" role="presentation">
+                  <button class="nav-link active" id="tab-container-ctest01-tab-home" data-bs-toggle="tab" data-bs-target="#tab-container-ctest01-pane-home" type="button" role="tab" aria-controls="tab-container-ctest01-pane-home" aria-selected="true">Home</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                  <button class="nav-link disabled" id="tab-container-ctest01-tab-settings" data-bs-toggle="tab" data-bs-target="#tab-container-ctest01-pane-settings" type="button" role="tab" aria-controls="tab-container-ctest01-pane-settings" aria-selected="false" disabled>Settings</button>
+                </li>
+              </ul>
+              <div class="tab-content">
+                <div class="tab-pane fade show active" id="tab-container-ctest01-pane-home" role="tabpanel" aria-labelledby="tab-container-ctest01-tab-home" tabindex="0">
+                  Home content
+                </div>
+                <div class="tab-pane fade" id="tab-container-ctest01-pane-settings" role="tabpanel" aria-labelledby="tab-container-ctest01-tab-settings" tabindex="0">
+                  Settings content
+                </div>
+              </div>
+            </div>
+        """
+
+        self.assertHTMLEqual(normalize_html(rendered), normalize_html(expected))
+
+    @djc_test
     def test_tabs_with_active_tab(self):
         with mock_component_id():
             template = Template("""
